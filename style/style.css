@@ -169,3 +169,13 @@ html > body {
 #redapple {
 	float: left;
 }
+.login {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 500px;
+	height: 300px;
+	margin-left: -75px;
+	margin-top: -68px;
+}
+
