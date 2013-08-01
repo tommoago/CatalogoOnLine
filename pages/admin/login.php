@@ -2,6 +2,7 @@
 include '../simpleheader.php';
 ?>
 
+
 <div class="login">
 	<form method="post" action="autenticate.php">
 		<p>
