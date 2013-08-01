@@ -180,8 +180,8 @@ html > body {
 	margin-top: -68px;
 }
 .prod {
-	border-bottom: solid;
-	border-top: solid;
+	border-bottom: solid 1px;
+	border-top:solid 1px; ;
 	width: 80%;
 	float: left;
 }
