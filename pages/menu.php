@@ -2,10 +2,10 @@
 	<h2>Categorie</h2>
 	<ul id="list">
 		<li class="color">
-			<a href="#">category1</a>
+			<a href="/MelaRossa/pages/product.php">category1</a>
 		</li>
 		<li>
-			<a href="#">category2</a>
+			<a href="/MelaRossa/pages/moreproducts.php">category2</a>
 		</li>
 		<li class="color">
 			<a href="#">category3</a>
