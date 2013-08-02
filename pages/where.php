@@ -67,7 +67,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB99tx-VW27RMBJxGIQi96sfZ8
 
 	function initialize() {
 		var mapOptions = {
-			zoom : 3,
+			zoom : 15,
 			center : chicago,
 			mapTypeId : google.maps.MapTypeId.ROADMAP
 		};
