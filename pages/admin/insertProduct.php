@@ -47,8 +47,6 @@ try {
         'c_qty' => $cardboard_qty,
         'cat_id' => $categories_id);
 
-    print_r($data);
-
     $STH = $DBH->prepare("INSERT INTO products (name, description, new, offer, evidence, 
                                                 wholesale_price, retail_price, super_price,
                                                 purchase_price, cod, barcode, single_qty,
