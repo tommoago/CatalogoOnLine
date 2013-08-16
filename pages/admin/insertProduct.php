@@ -2,33 +2,34 @@
 
 $username = "root";
 $password = "root";
+
+$name = $_POST['name'];
+$description = $_POST['descr'];
+$new = 0;
+if (isset($_POST['new'])) {
+    $new = 1;
+}
+$offer = 0;
+if (isset($_POST['offer'])) {
+    $offer = 1;
+}
+$evidence = 0;
+if (isset($_POST['evidence'])) {
+    $evidence = 1;
+}
+$wholesale_price = $_POST['w_price'];
+$retail_price = $_POST['r_price'];
+$super_price = $_POST['s_price'];
+$purchase_price = $_POST['p_price'];
+$cod = $_POST['cod'];
+$barcode = $_POST['barcode'];
+$single_qty = $_POST['s_qty'];
+$pack_qty = $_POST['p_qty'];
+$cardboard_qty = $_POST['c_qty'];
+$categories_id = $_POST['cat_id'];
+
 try {
     $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
-
-    $name = $_POST['name'];
-    $description = $_POST['descr'];
-    $new = 0;
-    if (isset($_POST['new'])) {
-        $new = 1;  
-    }
-    $offer = 0;
-    if (isset($_POST['offer'])) {
-        $offer = 1;  
-    }
-    $evidence = 0;
-    if (isset($_POST['evidence'])) {
-        $evidence = 1;  
-    }
-    $wholesale_price = $_POST['w_price'];
-    $retail_price = $_POST['r_price'];
-    $super_price = $_POST['s_price'];
-    $purchase_price = $_POST['p_price'];
-    $cod = $_POST['cod'];
-    $barcode = $_POST['barcode'];
-    $single_qty = $_POST['s_qty'];
-    $pack_qty = $_POST['p_qty'];
-    $cardboard_qty = $_POST['c_qty'];
-    $categories_id = $_POST['cat_id'];
 
     $data = array('name' => $name,
         'descr' => $description,
@@ -45,9 +46,9 @@ try {
         'p_qty' => $pack_qty,
         'c_qty' => $cardboard_qty,
         'cat_id' => $categories_id);
-    
+
     print_r($data);
-    
+
     $STH = $DBH->prepare("INSERT INTO products (name, description, new, offer, evidence, 
                                                 wholesale_price, retail_price, super_price,
                                                 purchase_price, cod, barcode, single_qty,
