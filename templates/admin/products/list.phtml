@@ -21,7 +21,7 @@
                 <td>Single Qty</td>
                 <td>Pack Qty</td>
                 <td>Cardboard Qty</td>
-                <td>Categoy</td>
+                <td>Category</td>
             </tr>
             {% for prod in prods %}
             <tr>
@@ -39,9 +39,9 @@
                 <td>{{ prod.single_qty }}</td>
                 <td>{{ prod.pack_qty }}</td>
                 <td>{{ prod.cardboard_qty }}</td>
-                <td>{{ prod.categoy }}</td>
-                <td><a href=''>elimina</a></td>
-                <td><a href=''>modifica</a></td>
+                <td>{{ prod.category }}</td>
+                <td><a href='delete.php?id={{ prod.id }}'>elimina</a></td>
+                <td><a href='prepareUpdate.php?id={{ prod.id }}'>modifica</a></td>
             </tr>
             {% endfor %}
         </table>

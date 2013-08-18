@@ -7,8 +7,8 @@ $loader = new Twig_Loader_Filesystem('../../../templates/admin/products');
 $twig = new Twig_Environment($loader, array('cache' => '../../../templates/cache',));
 $template = $twig->loadTemplate('insert.phtml');
 
-$username = "root";
-$password = "root";
+$username = 'root';
+$password = 'root';
 $result = array();
 
 try {

@@ -3,6 +3,7 @@
 $username = 'root';
 $password = 'root';
 
+$id = $_POST['id'];
 $name = $_POST['name'];
 $description = $_POST['descr'];
 $new = 0;
@@ -45,15 +46,26 @@ try {
         's_qty' => $single_qty,
         'p_qty' => $pack_qty,
         'c_qty' => $cardboard_qty,
-        'cat_id' => $categories_id);
+        'cat_id' => $categories_id,
+        'id' => $id);
 
-    $STH = $DBH->prepare('INSERT INTO products (name, description, new, offer, evidence, 
-                                                wholesale_price, retail_price, super_price,
-                                                purchase_price, cod, barcode, single_qty,
-                                                pack_qty, cardboard_qty, categories_id) 
-                                        value (:name, :descr, :new, :offer, :evidence, :w_price,
-                                               :r_price, :s_price, :p_price, :cod, :barcode,
-                                               :s_qty, :p_qty, :c_qty, :cat_id)');
+    $STH = $DBH->prepare('UPDATE products SET  
+                            name = :name, 
+                            description = :descr, 
+                            new = :new, 
+                            offer = :offer, 
+                            evidence = :evidence, 
+                            wholesale_price = :w_price, 
+                            retail_price = :r_price, 
+                            super_price = :s_price,
+                            purchase_price = :p_price, 
+                            cod = :cod, 
+                            barcode = :barcode, 
+                            single_qty = :s_qty,
+                            pack_qty = :p_qty, 
+                            cardboard_qty = :c_qty, 
+                            categories_id =  :cat_id
+                          WHERE id = :id');
     $STH->execute($data);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();

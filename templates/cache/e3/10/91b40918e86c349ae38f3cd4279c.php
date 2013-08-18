@@ -1,7 +1,7 @@
 <?php
 
-/* display.phtml */
-class __TwigTemplate_b2c0a6855a6ad319bcc267d9fcae2583 extends Twig_Template
+/* list.phtml */
+class __TwigTemplate_e31091b40918e86c349ae38f3cd4279c extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -108,8 +108,14 @@ class __TwigTemplate_b2c0a6855a6ad319bcc267d9fcae2583 extends Twig_Template
             // line 42
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["prod"]) ? $context["prod"] : null), "categoy"), "html", null, true);
             echo "</td>
-                <td><a href=''>elimina</a></td>
-                <td><a href=''>modifica</a></td>
+                <td><a href='delete.php?id=";
+            // line 43
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["prod"]) ? $context["prod"] : null), "id"), "html", null, true);
+            echo "'>elimina</a></td>
+                <td><a href='prepareUpdate.php?id=";
+            // line 44
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["prod"]) ? $context["prod"] : null), "id"), "html", null, true);
+            echo "'>modifica</a></td>
             </tr>
             ";
         }
@@ -125,7 +131,7 @@ class __TwigTemplate_b2c0a6855a6ad319bcc267d9fcae2583 extends Twig_Template
 
     public function getTemplateName()
     {
-        return "display.phtml";
+        return "list.phtml";
     }
 
     public function isTraitable()
@@ -135,6 +141,6 @@ class __TwigTemplate_b2c0a6855a6ad319bcc267d9fcae2583 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  120 => 47,  109 => 42,  105 => 41,  101 => 40,  97 => 39,  93 => 38,  89 => 37,  85 => 36,  81 => 35,  77 => 34,  73 => 33,  69 => 32,  65 => 31,  61 => 30,  57 => 29,  53 => 28,  50 => 27,  46 => 26,  19 => 1,);
+        return array (  126 => 47,  117 => 44,  113 => 43,  109 => 42,  105 => 41,  101 => 40,  97 => 39,  93 => 38,  89 => 37,  85 => 36,  81 => 35,  77 => 34,  73 => 33,  69 => 32,  65 => 31,  61 => 30,  57 => 29,  53 => 28,  50 => 27,  46 => 26,  19 => 1,);
     }
 }
