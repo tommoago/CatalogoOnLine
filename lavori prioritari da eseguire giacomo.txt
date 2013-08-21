@@ -1,0 +1,6 @@
+Installare meccanismo di upload foto 
+Ultimare crud prodotti(aggiungere inserimetno foto dopo l'incorporamento dello stile)
+validare crud prodotti, probabilmente in js(dopo l'incorporamento dello stile)
+
+cercare metodologia di implementazione multilingua(occhio al cinese per lo stile)
+
