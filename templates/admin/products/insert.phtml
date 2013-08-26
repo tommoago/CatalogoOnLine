@@ -5,7 +5,9 @@
         <title></title>
     </head>
     <body>
-        <form action="insert.php" method="post" style="padding-left: 270px;">
+        <form action="insert.php" method="post" style="padding-left: 270px;" enctype="multipart/form-data">
+            <p>Select a file to upload<p> <input type="file" name="uploaded" id="file"><br> 
+            
             <p>Name</p> <input type="text" name="name"/><br>
 
             <p>Description</p><input type="text" name="descr"/><br>
