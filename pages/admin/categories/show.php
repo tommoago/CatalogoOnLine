@@ -3,7 +3,7 @@
 require_once '../../../vendor/twig/twig/lib/Twig/Autoloader.php';
 Twig_Autoloader::register();
 
-$loader = new Twig_Loader_Filesystem('../../../templates/admin/categories');
+$loader = new Twig_Loader_Filesystem('../../../templates/admin/products');
 $twig = new Twig_Environment($loader, array('cache' => '../../../templates/cache',));
 $template = $twig->loadTemplate('show.phtml');
 
@@ -15,7 +15,7 @@ $result = array();
 
 try {
     $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
-    $stmt = $DBH->prepare('SELECT * FROM categories WHERE id = :id');
+    $stmt = $DBH->prepare('SELECT * FROM products WHERE id = :id');
     $stmt->execute(array('id' => $id));
     $stmt->execute();
 
@@ -24,5 +24,5 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('cat' => $result));
+$template->display(array('prod' => $result));
 ?>
