@@ -1,207 +1,90 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-	<head>
-		<title>Mela Rossa Cash & Carry</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<link rel="stylesheet" type="text/css" href="/MelaRossa/style/style.css" />
-	</head>
+{% include 'header.phtml' %}
+<div id='content'>
 
-	<body>
-		<div id="header">
-			<div id="header_inside">
-				<img id="redapple" src="/MelaRossa/images/halfredapplep2ok.png" height="168px" width="168px"/><h1 id="headertitle">Mela Rossa Cash & Carry</h1>
-				<ul id="menu">
-					<li>
-						<a href="/MelaRossa/index.php" class="but1_active">Home Page</a>
-					</li>
-					<li>
-						<a href="" class="but2">Chi siamo</a>
-					</li>
-					<li>
-						<a href="/MelaRossa/pages/where.php" class="but3">Dove siamo</a>
-					</li>
-					<li>
-						<a href="" class="but4">Contatti</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div id='content'>
-			<div id="sidebar">
-				<h2>Categorie</h2>
-				<ul id="list">
-					<li class="color">
-						<a href="/melarossa/pages/admin/products/prepareInsert.php">Insert Product</a>
-					</li>
-					<li>
-						<a href="/melarossa/pages/admin/products/list.php">List all products</a>
-					</li>
-					<li class="color">
-						<a href="#">category3</a>
-					</li>
-					<li>
-						<a href="#">category4</a>
-					</li>
-					<li class="color">
-						<a href="#">category5</a>
-					</li>
-					<li>
-						<a href="#">category6</a>
-					</li>
-					<li class="color">
-						<a href="#">category7</a>
-					</li>
-					<li>
-						<a href="#">category8</a>
-					</li>
-					<li class="color">
-						<a href="#">category9</a>
-					</li>
-					<li>
-						<a href="#">category10</a>
-					</li>
-					<li class="color">
-						<a href="#">category1</a>
-					</li>
-					<li>
-						<a href="#">category2</a>
-					</li>
-					<li class="color">
-						<a href="#">category3</a>
-					</li>
-					<li>
-						<a href="#">category4</a>
-					</li>
-					<li class="color">
-						<a href="#">category5</a>
-					</li>
-					<li>
-						<a href="#">category6</a>
-					</li>
-					<li class="color">
-						<a href="#">category7</a>
-					</li>
-					<li>
-						<a href="#">category8</a>
-					</li>
-					<li class="color">
-						<a href="#">category9</a>
-					</li>
-					<li>
-						<a href="#">category10</a>
-					</li>
-				</ul>
-			</div>
-			<form action="insert.php" method="post" style="padding-left: 270px;" enctype="multipart/form-data">
-				Select a file to upload:
-				<input type="file" name="uploaded" id="file">
-				<br>
+	{% include 'menu.phtml' %}
 
-				Name:
-				<input type="text" name="name"/>
-				<br>
+	<form action="insert.php" method="post" style="padding-left: 270px;" enctype="multipart/form-data">
+		Select a file to upload:
+		<input type="file" name="uploaded" id="file">
+		<br>
 
-				Description:
+		Name:
+		<input type="text" name="name"/>
+		<br>
 
-				<input type="text" name="descr"/>
-				<br>
+		Description:
 
-				New:
+		<input type="text" name="descr"/>
+		<br>
 
-				<input type="checkbox" name="new" />
-				<br>
+		New:
 
-				Offer:
+		<input type="checkbox" name="new" />
+		<br>
 
-				<input type="checkbox" name="offer" />
-				<br>
+		Offer:
 
-				Evidence:
+		<input type="checkbox" name="offer" />
+		<br>
 
-				<input type="checkbox" name="evidence" />
+		Evidence:
 
-				Wholesale Price:
+		<input type="checkbox" name="evidence" />
 
-				<input type="text" name="w_price"/>
-				<br>
+		Wholesale Price:
 
-				Retail Price:
-				<input type="text" name="r_price"/>
-				<br>
+		<input type="text" name="w_price"/>
+		<br>
 
-				Super Price:
+		Retail Price:
+		<input type="text" name="r_price"/>
+		<br>
 
-				<input type="text" name="s_price"/>
-				<br>
+		Super Price:
 
-				Purchase Price:
+		<input type="text" name="s_price"/>
+		<br>
 
-				<input type="text" name="p_price"/>
-				<br>
+		Purchase Price:
 
-				Cod:
+		<input type="text" name="p_price"/>
+		<br>
 
-				<input type="text" name="cod"/>
-				<br>
+		Cod:
 
-				Barcode:
+		<input type="text" name="cod"/>
+		<br>
 
-				<input type="text" name="barcode"/>
-				<br>
+		Barcode:
 
-				Single Qty:
+		<input type="text" name="barcode"/>
+		<br>
 
-				<input type="text" name="s_qty"/>
-				<br>
+		Single Qty:
 
-				pack Qty:
+		<input type="text" name="s_qty"/>
+		<br>
 
-				<input type="text" name="p_qty"/>
-				<br>
+		pack Qty:
 
-				Cardboard Qty:
+		<input type="text" name="p_qty"/>
+		<br>
 
-				<input type="text" name="c_qty"/>
-				<br>
+		Cardboard Qty:
 
-				Categoy:
+		<input type="text" name="c_qty"/>
+		<br>
 
-				<select name="cat_id">
-					{% for cat in cats %}
-					<option value="{{ cat.id }}">{{ cat.name }}</option>
-					{% endfor %}
-				</select>
+		Categoy:
 
-				<input type="submit" value="invio"/>
+		<select name="cat_id">
+			{% for cat in cats %}
+			<option value="{{ cat.id }}">{{ cat.name }}</option>
+			{% endfor %}
+		</select>
 
-			</form>
-		</div>
-		<div id="footer">
-			<div id="footer_inside">
-				<ul class="footer_menu">
-					<li>
-						<a href="/MelaRossa/index.php">Home Page</a>|
-					</li>
-					<li>
-						<a href="">Chi siamo</a>|
-					</li>
-					<li>
-						<a href="/MelaRossa/pages/where.php">Dove siamo</a>|
-					</li>
-					<li>
-						<a href="">Contatti</a>
-					</li>
-				</ul>
-				<br />
-				<br />
-				<p>
-					Copyright &copy;. All rights reserved. Design by Giacomo Bianchetto
-				</p>
-				<p style="float: right;">
-					<a href="/MelaRossa/pages/admin/login.php">Admin</a> | <a href="/MelaRossa/pages/user/login.php">User</a>
-				</p>
-			</div>
-		</div>
-	</body>
-</html>
+		<input type="submit" value="invio"/>
+
+	</form>
+</div>
+{% include 'footer.phtml' %}

@@ -1,7 +1,8 @@
 <?php
-include 'pages/header.php';
+include 'templates/header.phtml';
 include 'pages/validation.php';
 ?>
+
 <script type="text/javascript" src="/MelaRossa/scripts/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="/MelaRossa/scripts/jquery.jcarousel.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/MelaRossa/style/skin.css">
@@ -12,7 +13,7 @@ include 'pages/validation.php';
 </script>
 <div id="content">
 	<?php
-	include 'pages/menu.php';
+	include 'templates/menu.phtml';
 	?>
 	<center>
 		<div style="height: 200px; width: 500px;">
@@ -51,4 +52,4 @@ include 'pages/validation.php';
 	</center>
 </div>
 <?php
-include 'pages/footer.php';
+include 'templates/footer.phtml';

@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include '../templates/header.phtml';
 ?>
 <script type="text/javascript"
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB99tx-VW27RMBJxGIQi96sfZ89Q870K5c&sensor=true"></script>
@@ -92,4 +92,4 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB99tx-VW27RMBJxGIQi96sfZ8
 <div id="map-canvas" style="height: 500px; color: black;"></div>
 <?php
 
-include 'footer.php';
+include '../templates/footer.phtml';
