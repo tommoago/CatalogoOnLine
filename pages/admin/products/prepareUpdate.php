@@ -46,11 +46,10 @@ try {
     } 
     
     //mette immagine
-    $stmt = $DBH->prepare('SELECT * FROM product_images WHERE id = :id');
-    $stmt->execute(array('id' => $id));
-    $image = $stmt->fetch();
-    $product['image'] =$image['path'];
-    
+    $stmt3 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
+    $stmt3->execute(array('id' => $id));
+    $imm = $stmt3->fetch();
+    $product['image'] = $imm['path'];
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
