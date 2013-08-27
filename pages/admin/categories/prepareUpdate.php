@@ -3,9 +3,9 @@
 require_once '../../../vendor/twig/twig/lib/Twig/Autoloader.php';
 Twig_Autoloader::register();
 
-$loader = new Twig_Loader_Filesystem('../../../templates/admin/categories');
+$loader = new Twig_Loader_Filesystem('../../../templates');
 $twig = new Twig_Environment($loader/*, array('cache' => '../../../templates/cache')*/);
-$template = $twig->loadTemplate('update.phtml');
+$template = $twig->loadTemplate('admin/categories/pdate.phtml');
 
 $username = 'root';
 $password = 'root';
