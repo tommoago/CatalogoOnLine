@@ -220,3 +220,6 @@ nbproject/
 
 #template twig cache
 templates/cache
+
+#cartella immagini
+images/uploads

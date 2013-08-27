@@ -1,4 +1,5 @@
 <?php
+include '../../../classes/imgUploader.php';
 
 $username = 'root';
 $password = 'root';
