@@ -3,8 +3,8 @@
 require_once '../../../vendor/twig/twig/lib/Twig/Autoloader.php';
 Twig_Autoloader::register();
 
-$loader = new Twig_Loader_Filesystem('../../../templates/admin/products');
-$twig = new Twig_Environment($loader, array('cache' => '../../../templates/cache',));
+$loader = new Twig_Loader_Filesystem('../../../templates/admin/categories');
+$twig = new Twig_Environment($loader/*, array('cache' => '../../../templates/cache',)*/);
 $template = $twig->loadTemplate('show.phtml');
 
 $username = 'root';
@@ -15,14 +15,21 @@ $result = array();
 
 try {
     $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
-    $stmt = $DBH->prepare('SELECT * FROM products WHERE id = :id');
+    $stmt = $DBH->prepare('SELECT * FROM categories WHERE id = :id');
     $stmt->execute(array('id' => $id));
-    $stmt->execute();
 
-    $result = $stmt->fetchAll();
+    $category = $stmt->fetch();
+    
+    $stmt2 = $DBH->prepare('SELECT * FROM categories WHERE id = :id');
+    $stmt2->execute(array('id' => $category['categories_id']));
+    $cat = $stmt2->fetch();
+    $category['category'] = $cat['name'];
+    if($cat['name'] == ''){
+        $category['category'] = 'none';
+    }
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('prod' => $result));
+$template->display(array('cat' => $category));
 ?>

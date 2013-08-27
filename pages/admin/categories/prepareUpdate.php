@@ -23,19 +23,19 @@ try {
     //tira fuori solo un risultato
     $category = $stmt->fetch();
     
-    //marca la categoria appartenente 
+    //marca la categoria appartenente ed esclude se stessa
     foreach($result as &$row) {
       $row['selected'] = '';
-      if ($row['id'] == $product['categories_id']){
+      if ($row['id'] == $category['categories_id']){
           $row['selected'] = 'selected';
       }
+      if($row['id'] == $category['id']){
+          unset($row['id']);
+      }
     } 
-    
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
 
 $template->display(array('cat' => $category, 'cats' => $result));
-?>
-
 ?>

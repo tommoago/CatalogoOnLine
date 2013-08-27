@@ -1,15 +1,9 @@
 <?php
+
 include '../../../classes/imgUploader.php';
 
 $username = 'root';
 $password = 'root';
-
-$pathName = '';
-if ($_FILES['uploaded']['name'] != '') {
-    $img = new imgUploader();
-    $img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);
-    $pathName = $img->getPathName();
-}
 
 $id = $_POST['id'];
 $name = $_POST['name'];
@@ -39,6 +33,22 @@ $categories_id = $_POST['cat_id'];
 
 try {
     $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
+
+    $pathName = '';
+    if ($_FILES['uploaded']['name'] != '') {
+        //elimina immagine
+        $stmt3 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
+        $stmt3->execute(array('id' => $id));
+        $imm = $stmt3->fetch();
+
+        unlink('../../' . $imm['path']);
+        
+        //elimina immagine
+        $img = new imgUploader();
+        $img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);
+        $pathName = $img->getPathName();
+    }
+
     $data = array('name' => $name,
         'descr' => $description,
         'new' => $new,
@@ -74,7 +84,7 @@ try {
                             categories_id =  :cat_id
                           WHERE id = :id');
     $STH->execute($data);
-    
+
     if ($pathName != '') {
         print_r($pathName);
         $data2 = array('path' => $pathName, 'id' => $id);
@@ -84,7 +94,7 @@ try {
 
         $STH2->execute($data2);
     }
-    
+
     header('location:show.php?id=' . $id);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();

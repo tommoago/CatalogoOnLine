@@ -5,12 +5,6 @@ $password = 'root';
 
 $id = $_POST['id'];
 $name = $_POST['name'];
-
-$img = new imgUploader();
-$img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);
-$pathName = $img->getPathName();
-
-
 $categories_id = $_POST['cat_id'];
 
 try {
@@ -23,6 +17,7 @@ try {
                             categories_id =  :cat_id
                           WHERE id = :id');
     $STH->execute($data);
+    header('location:show.php?id=' . $id);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }

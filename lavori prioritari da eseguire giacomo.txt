@@ -1,10 +1,23 @@
 
-Ultimare crud prodotti(aggiungere inserimetno foto dopo l'incorporamento dello stile)
-validare crud prodotti, probabilmente in js(dopo l'incorporamento dello stile)
+-Ultimare crud prodotti(aggiungere inserimetno foto dopo l'incorporamento dello stile)
+-validare crud prodotti, probabilmente in js(dopo l'incorporamento dello stile)
 
-cercare metodologia di implementazione multilingua(occhio al cinese per lo stile)
+-cercare metodologia di implementazione multilingua(occhio al cinese per lo stile)
 
 
-meccanismo di login
+- meccanismo di login
 
 per log di PDO: $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+cruds
+-prodotti ok
+-cats 
+      delete metti errori
+      insert ok
+      list ok
+      prepareInsert ok
+      prepareUpdate ok
+      show ok
+      update ok
+      creare errori per le seguenti casisstiche: ci sono prodotti nella categoria, la categoria dipende da un altra la categoria ha sottocategorie
