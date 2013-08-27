@@ -5,7 +5,7 @@ Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem('../../../templates');
 $twig = new Twig_Environment($loader/*, array('cache' => '../../../templates/cache')*/);
-$template = $twig->loadTemplate('admin/categories/pdate.phtml');
+$template = $twig->loadTemplate('admin/categories/update.phtml');
 
 $username = 'root';
 $password = 'root';
