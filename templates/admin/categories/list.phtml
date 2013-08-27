@@ -1,137 +1,22 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-	<head>
-		<title>Mela Rossa Cash & Carry</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<link rel="stylesheet" type="text/css" href="/MelaRossa/style/style.css" />
-	</head>
+{% include 'header.phtml' %}
+<div id='content'>
 
-	<body>
-		<div id="header">
-			<div id="header_inside">
-				<img id="redapple" src="/MelaRossa/images/halfredapplep2ok.png" height="168px" width="168px"/><h1 id="headertitle">Mela Rossa Cash & Carry</h1>
-				<ul id="menu">
-					<li>
-						<a href="/MelaRossa/index.php" class="but1_active">Home Page</a>
-					</li>
-					<li>
-						<a href="" class="but2">Chi siamo</a>
-					</li>
-					<li>
-						<a href="/MelaRossa/pages/where.php" class="but3">Dove siamo</a>
-					</li>
-					<li>
-						<a href="" class="but4">Contatti</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div id='content'>
-			<div id="sidebar">
-				<h2>Categorie</h2>
-				<ul id="list">
-					<li class="color">
-						<a href="/melarossa/pages/admin/products/prepareInsert.php">Insert Product</a>
-					</li>
-					<li>
-						<a href="/melarossa/pages/admin/products/list.php">List all products</a>
-					</li>
-					<li class="color">
-						<a href="#">category3</a>
-					</li>
-					<li>
-						<a href="#">category4</a>
-					</li>
-					<li class="color">
-						<a href="#">category5</a>
-					</li>
-					<li>
-						<a href="#">category6</a>
-					</li>
-					<li class="color">
-						<a href="#">category7</a>
-					</li>
-					<li>
-						<a href="#">category8</a>
-					</li>
-					<li class="color">
-						<a href="#">category9</a>
-					</li>
-					<li>
-						<a href="#">category10</a>
-					</li>
-					<li class="color">
-						<a href="#">category1</a>
-					</li>
-					<li>
-						<a href="#">category2</a>
-					</li>
-					<li class="color">
-						<a href="#">category3</a>
-					</li>
-					<li>
-						<a href="#">category4</a>
-					</li>
-					<li class="color">
-						<a href="#">category5</a>
-					</li>
-					<li>
-						<a href="#">category6</a>
-					</li>
-					<li class="color">
-						<a href="#">category7</a>
-					</li>
-					<li>
-						<a href="#">category8</a>
-					</li>
-					<li class="color">
-						<a href="#">category9</a>
-					</li>
-					<li>
-						<a href="#">category10</a>
-					</li>
-				</ul>
-			</div>
-        <table border='1' style='margin: 50px;'>
-            <tr>
-                <td>Name</td> 
-                <td>Category</td>
-            </tr>
-            {% for cat in cats %}
-            <tr>
-                <td><a href='show.php?id={{ cat.id }}'>{{ cat.name }}</a></td> 
-                <td>{{ cat.category }}</td>
-                <td><a href='delete.php?id={{ cat.id }}'>elimina</a></td>
-                <td><a href='prepareUpdate.php?id={{ cat.id }}'>modifica</a></td>
-            </tr>
-            {% endfor %}
-        </table></div>
-		<div id="footer">
-			<div id="footer_inside">
-				<ul class="footer_menu">
-					<li>
-						<a href="/MelaRossa/index.php">Home Page</a>|
-					</li>
-					<li>
-						<a href="">Chi siamo</a>|
-					</li>
-					<li>
-						<a href="/MelaRossa/pages/where.php">Dove siamo</a>|
-					</li>
-					<li>
-						<a href="">Contatti</a>
-					</li>
-				</ul>
-				<br />
-				<br />
-				<p>
-					Copyright &copy;. All rights reserved. Design by Giacomo Bianchetto
-				</p>
-				<p style="float: right;">
-					<a href="/MelaRossa/pages/admin/login.php">Admin</a> | <a href="/MelaRossa/pages/user/login.php">User</a>
-				</p>
-			</div>
-		</div>
-	</body>
-</html>
+	{% include 'menu.phtml' %}
+	<table border='1' style='margin: 50px;'>
+		<tr>
+			<td>Name</td>
+			<td>Category</td>
+		</tr>
+		{% for cat in cats %}
+		<tr>
+			<td>{{ cat.name }}</td>
+			<td>{{ cat.category }}</td>
+			<td><a href='delete.php?id={{ cat.id }}'>elimina</a></td>
+			<td><a href='prepareUpdate.php?id={{ cat.id }}'>modifica</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+
+{% include 'footer.phtml' %}
+

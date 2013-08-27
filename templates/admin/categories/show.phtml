@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <table border='1' style='margin: 50px;'>
-            <tr>
-                <td>Name</td> 
-                <td>Category</td>
-            </tr>
-            <tr>
-                <td>{{ cat.name }}</td> 
-                <td>{{ cat.category }}</td>
-                 <td><a href='delete.php?id={{ cat.id }}'>elimina</a></td>
-                <td><a href='prepareUpdate.php?id={{ cat.id }}'>modifica</a></td>
-            </tr>
-        </table>
-    </body>
-</html>
+{% include 'header.phtml' %}
+<div id='content'>
+
+	{% include 'menu.phtml' %}
+	<table border='1' style='margin: 50px;'>
+		<tr>
+			<td>Name</td>
+			<td>Category</td>
+		</tr>
+		<tr>
+			<td>{{ cat.name }}</td>
+			<td>{{ cat.category }}</td>
+			<td><a href='delete.php?id={{ cat.id }}'>elimina</a></td>
+			<td><a href='prepareUpdate.php?id={{ cat.id }}'>modifica</a></td>
+		</tr>
+	</table>
+	{% include 'footer.phtml' %}
