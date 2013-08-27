@@ -35,7 +35,6 @@ $categories_id = $_POST['cat_id'];
 
 try {
     $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
-
     $data = array('name' => $name,
         'descr' => $description,
         'new' => $new,
@@ -61,11 +60,11 @@ try {
                                                :s_qty, :p_qty, :c_qty, :cat_id)');
     $STH->execute($data);
     $idProd = $DBH->lastInsertId();
+    
     $data2 =array('path' => $pathName,
                   'prod_id' => $idProd);
     $STH2 = $DBH->prepare('INSERT INTO product_images (path, products_id) 
-                                               value (:path, :prod_id');
-    
+                                                value (:path, :prod_id)');
     $STH2->execute($data2);
     header('location:show.php?id='.$idProd);
 } catch (PDOException $e) {

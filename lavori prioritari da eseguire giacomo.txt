@@ -7,3 +7,4 @@ cercare metodologia di implementazione multilingua(occhio al cinese per lo stile
 
 meccanismo di login
 
+per log di PDO: $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
