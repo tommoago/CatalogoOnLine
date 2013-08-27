@@ -1,53 +1,111 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <form action="update.php" method="post" style="padding-left: 270px;" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="{{ prod.id }}"/><br>
-            <p>Image saved (leave blank to keep this)</p><img src="../../{{ prod.image }}">
-            <p>Select a file to upload<p> <input type="file" name="uploaded" id="file"><br> 
-                
-            <p>Name</p> <input type="text" name="name" value="{{ prod.name }}"/><br>
+{% include 'header.phtml' %}
+<div id='content'>
 
-            <p>Description</p><input type="text" name="descr" value="{{ prod.description }}"/><br>
+	{% include 'menu.phtml' %}
+	<form action="update.php" method="post" style="padding-left: 270px;" enctype="multipart/form-data">
+		<input type="hidden" name="id" value="{{ prod.id }}"/>
+		<br>
+		<p>
+			Select a file to upload
+		<p>
+			<input type="file" name="uploaded" id="file" value="{{ prod.image }}">
+			<br>
 
-            <p>New</p><input type="checkbox" name="new" {{ prod.c_new }}/><br>
+		<p>
+			Name
+		</p>
+		<input type="text" name="name" value="{{ prod.name }}"/>
+		<br>
 
-            <p>Offer</p><input type="checkbox" name="offer" {{ prod.c_offer }}/><br>
+		<p>
+			Description
+		</p>
+		<input type="text" name="descr" value="{{ prod.description }}"/>
+		<br>
 
-            <p>Evidence</p><input type="checkbox" name="evidence" {{ prod.c_evidence }}/><br>
+		<p>
+			New
+		</p>
+		<input type="checkbox" name="new" {{ prod.c_new }}/>
+		<br>
 
-            <p>Wholesale Price</p><input type="text" name="w_price" value="{{ prod.wholesale_price }}"/><br>
+		<p>
+			Offer
+		</p>
+		<input type="checkbox" name="offer" {{ prod.c_offer }}/>
+		<br>
 
-            <p>Retail Price</p><input type="text" name="r_price" value="{{ prod.retail_price }}"/><br>
+		<p>
+			Evidence
+		</p>
+		<input type="checkbox" name="evidence" {{ prod.c_evidence }}/>
+		<br>
 
-            <p>Super Price</p><input type="text" name="s_price" value="{{ prod.super_price }}"/><br>
+		<p>
+			Wholesale Price
+		</p>
+		<input type="text" name="w_price" value="{{ prod.wholesale_price }}"/>
+		<br>
 
-            <p>Purchase Price</p><input type="text" name="p_price" value="{{ prod.purchase_price }}"/><br>
+		<p>
+			Retail Price
+		</p>
+		<input type="text" name="r_price" value="{{ prod.retail_price }}"/>
+		<br>
 
-            <p>Cod</p><input type="text" name="cod" value="{{ prod.cod }}"/><br>
+		<p>
+			Super Price
+		</p>
+		<input type="text" name="s_price" value="{{ prod.super_price }}"/>
+		<br>
 
-            <p>Barcode</p><input type="text" name="barcode" value="{{ prod.barcode }}"/><br>
+		<p>
+			Purchase Price
+		</p>
+		<input type="text" name="p_price" value="{{ prod.purchase_price }}"/>
+		<br>
 
-            <p>Single Qty</p><input type="text" name="s_qty" value="{{ prod.single_qty }}"/><br>
+		<p>
+			Cod
+		</p>
+		<input type="text" name="cod" value="{{ prod.cod }}"/>
+		<br>
 
-            <p>pack Qty</p><input type="text" name="p_qty" value="{{ prod.pack_qty }}"/><br>
+		<p>
+			Barcode
+		</p>
+		<input type="text" name="barcode" value="{{ prod.barcode }}"/>
+		<br>
 
-            <p>Cardboard Qty</p><input type="text" name="c_qty" value="{{ prod.cardboard_qty }}"/><br>
+		<p>
+			Single Qty
+		</p>
+		<input type="text" name="s_qty" value="{{ prod.single_qty }}"/>
+		<br>
 
-            <p>Categoy</p>
+		<p>
+			pack Qty
+		</p>
+		<input type="text" name="p_qty" value="{{ prod.pack_qty }}"/>
+		<br>
 
-            <select name="cat_id">
-                {% for cat in cats %}
-                <option value="{{ cat.id }}" {{ cat.selected }}>{{ cat.name }}</option>
-                {% endfor %}
-            </select>
+		<p>
+			Cardboard Qty
+		</p>
+		<input type="text" name="c_qty" value="{{ prod.cardboard_qty }}"/>
+		<br>
 
-            <input type="submit" value="invio"/>
+		<p>
+			Categoy
+		</p>
 
-        </form>
-    </body>
-</html>
+		<select name="cat_id">
+			{% for cat in cats %}
+			<option value="{{ cat.id }}" {{ cat.selected }}>{{ cat.name }}</option>
+			{% endfor %}
+		</select>
+
+		<input type="submit" value="invio"/>
+
+	</form>
+	{% include 'footer.phtml' %}

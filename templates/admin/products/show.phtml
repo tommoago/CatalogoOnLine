@@ -1,48 +1,44 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <img src="../../{{ prod.image }}">
-        <table border='1' style='margin: 50px;'>
-            <tr>
-                <td>Name</td> 
-                <td>Description</td>
-                <td>New</td>
-                <td>Offer</td>
-                <td>Evidence</td>
-                <td>Wholesale Price</td>
-                <td>Retail Price</td>
-                <td>Super Price</td>
-                <td>Purchase Price</td>
-                <td>Cod</td>
-                <td>Barcode</td>
-                <td>Single Qty</td>
-                <td>Pack Qty</td>
-                <td>Cardboard Qty</td>
-                <td>Category</td>
-            </tr>
-            <tr>
-                <td>{{ prod.name }}</td> 
-                <td>{{ prod.description }}</td>
-                <td>{{ prod.new }}</td>
-                <td>{{ prod.offer }}</td>
-                <td>{{ prod.evidence }}</td>
-                <td>{{ prod.wholesale_price }}</td>
-                <td>{{ prod.retail_price }}</td>
-                <td>{{ prod.super_price }}</td>
-                <td>{{ prod.purchase_price }}</td>
-                <td>{{ prod.cod }}</td>
-                <td>{{ prod.barcode }}</td>
-                <td>{{ prod.single_qty }}</td>
-                <td>{{ prod.pack_qty }}</td>
-                <td>{{ prod.cardboard_qty }}</td>
-                <td>{{ prod.category }}</td>
-                 <td><a href='delete.php?id={{ prod.id }}'>elimina</a></td>
-                <td><a href='prepareUpdate.php?id={{ prod.id }}'>modifica</a></td>
-            </tr>
-        </table>
-    </body>
-</html>
+{% include 'header.phtml' %}
+<div id='content'>
+
+	{% include 'menu.phtml' %}
+	<img src="../../{{ prod.image }}">
+	<table border='1' style='margin: 50px;'>
+		<tr>
+			<td>Name</td>
+			<td>Description</td>
+			<td>New</td>
+			<td>Offer</td>
+			<td>Evidence</td>
+			<td>Wholesale Price</td>
+			<td>Retail Price</td>
+			<td>Super Price</td>
+			<td>Purchase Price</td>
+			<td>Cod</td>
+			<td>Barcode</td>
+			<td>Single Qty</td>
+			<td>Pack Qty</td>
+			<td>Cardboard Qty</td>
+			<td>Category</td>
+		</tr>
+		<tr>
+			<td>{{ prod.name }}</td>
+			<td>{{ prod.description }}</td>
+			<td>{{ prod.new }}</td>
+			<td>{{ prod.offer }}</td>
+			<td>{{ prod.evidence }}</td>
+			<td>{{ prod.wholesale_price }}</td>
+			<td>{{ prod.retail_price }}</td>
+			<td>{{ prod.super_price }}</td>
+			<td>{{ prod.purchase_price }}</td>
+			<td>{{ prod.cod }}</td>
+			<td>{{ prod.barcode }}</td>
+			<td>{{ prod.single_qty }}</td>
+			<td>{{ prod.pack_qty }}</td>
+			<td>{{ prod.cardboard_qty }}</td>
+			<td>{{ prod.category }}</td>
+			<td><a href='delete.php?id={{ prod.id }}'>elimina</a></td>
+			<td><a href='prepareUpdate.php?id={{ prod.id }}'>modifica</a></td>
+		</tr>
+	</table>
+	{% include 'footer.phtml' %}
