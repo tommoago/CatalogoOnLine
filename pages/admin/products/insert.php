@@ -3,6 +3,10 @@
 $username = 'root';
 $password = 'root';
 
+$img = new imgUploader();
+$img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);
+$pathName = $img->getPathName();
+
 $name = $_POST['name'];
 $description = $_POST['descr'];
 $new = 0;
@@ -55,8 +59,14 @@ try {
                                                :r_price, :s_price, :p_price, :cod, :barcode,
                                                :s_qty, :p_qty, :c_qty, :cat_id)');
     $STH->execute($data);
+    $idProd = $DBH->lastInsertId();
+    $data2 =array('path' => $pathName,
+                  'prod_id' => $idProd);
+    $STH2 = $DBH->prepare('INSERT INTO product_images (path, products_id) 
+                                               value (:path, :prod_id');
     
-    header('location:show.php?id='.$DBH->lastInsertId());
+    $STH2->execute($data2);
+    header('location:show.php?id='.$idProd);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
