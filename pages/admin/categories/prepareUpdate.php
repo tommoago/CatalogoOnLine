@@ -35,7 +35,6 @@ try {
       }
       $i++;
     } 
-    print_r($result);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
