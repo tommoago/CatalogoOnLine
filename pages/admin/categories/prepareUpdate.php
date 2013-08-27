@@ -24,15 +24,18 @@ try {
     $category = $stmt->fetch();
     
     //marca la categoria appartenente ed esclude se stessa
+    $i = 0;
     foreach($result as &$row) {
       $row['selected'] = '';
       if ($row['id'] == $category['categories_id']){
           $row['selected'] = 'selected';
       }
       if($row['id'] == $category['id']){
-          unset($row['id']);
+          unset($result[$i]);
       }
+      $i++;
     } 
+    print_r($result);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
