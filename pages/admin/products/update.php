@@ -1,9 +1,15 @@
-
-
 <?php
+include '../../../classes/imgUploader.php';
 
 $username = 'root';
 $password = 'root';
+
+$pathName = '';
+if ($_FILES['uploaded']['name'] != '') {
+    $img = new imgUploader();
+    $img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);
+    $pathName = $img->getPathName();
+}
 
 $id = $_POST['id'];
 $name = $_POST['name'];
@@ -33,7 +39,6 @@ $categories_id = $_POST['cat_id'];
 
 try {
     $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
-
     $data = array('name' => $name,
         'descr' => $description,
         'new' => $new,
@@ -69,14 +74,18 @@ try {
                             categories_id =  :cat_id
                           WHERE id = :id');
     $STH->execute($data);
-    $idProd = $DBH->lastInsertId();
-    $data2 =array('path' => $pathName,
-                  'prod_id' => $idProd);
-    $STH2 = $DBH->prepare('INSERT INTO product_images (path, products_id) 
-                                               value (:path, :prod_id');
     
-    $STH2->execute($data2);
-    header('location:show.php?id='.$idProd);
+    if ($pathName != '') {
+        print_r($pathName);
+        $data2 = array('path' => $pathName, 'id' => $id);
+        $STH2 = $DBH->prepare('UPDATE  product_images SET
+                                       path = :path 
+                               WHERE products_id = :id');
+
+        $STH2->execute($data2);
+    }
+    
+    header('location:show.php?id=' . $id);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
