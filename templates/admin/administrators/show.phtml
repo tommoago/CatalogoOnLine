@@ -2,22 +2,16 @@
 <div id='content'>
 
 	{% include 'menu.phtml' %}
-        <p>{{ message }}</p>
 	<table border='1' style='margin: 50px;'>
 		<tr>
 			<td>Name</td>
 			<td>Category</td>
 		</tr>
-		{% for cat in cats %}
 		<tr>
 			<td>{{ cat.name }}</td>
 			<td>{{ cat.category }}</td>
 			<td><a href='delete.php?id={{ cat.id }}'>elimina</a></td>
 			<td><a href='prepareUpdate.php?id={{ cat.id }}'>modifica</a></td>
 		</tr>
-		{% endfor %}
 	</table>
-</div>
-
-{% include 'footer.phtml' %}
-
+	{% include 'footer.phtml' %}

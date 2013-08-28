@@ -1,0 +1,20 @@
+{% include 'header.phtml' %}
+<div id='content'>
+    {% include 'menu.phtml' %}
+    <p> Name</p>
+    <input type="text" name="name" value="{{ cat.name }}"/>
+    <br>
+    <p>
+        Category
+    </p>
+
+    <select name="cat_id">
+        {% for category in cats %}
+        <option value="{{ category.id }}" {{ category.selected }}>{{ category.name }}</option>
+        {% endfor %}
+    </select>
+
+    <input type="submit" value="invio"/>
+
+</form>
+{% include 'footer.phtml' %}

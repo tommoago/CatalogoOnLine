@@ -10,10 +10,7 @@ $template = $twig->loadTemplate('admin/categories/list.phtml');
 $username = 'root';
 $password = 'root';
 $result = array();
-$message = '';
-if (isset($_GET['message'])) {
-    $message = $_GET['message'];
-}
+
 try {
     $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
     $stmt = $DBH->prepare('SELECT * FROM categories');
@@ -32,5 +29,5 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('cats' => $result, 'message' => $message));
+$template->display(array('cats' => $result));
 ?>

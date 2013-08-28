@@ -1,0 +1,12 @@
+- validare crud , probabilmente in js(dopo l'incorporamento dello stile)
+- sistemare layout campi nei form/list della pagina content
+-layout admin ok (per ora)
+-creare layout front end(quindi spostare i templates sotto admin, ed eseguire le relative modifiche nei loader)
+
+per log di PDO: $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+cruds
+-prodotti ok
+-cats ok
+-admin prima fase
