@@ -5,16 +5,20 @@ $password = 'root';
 
 $id = $_POST['id'];
 $name = $_POST['name'];
-$categories_id = $_POST['cat_id'];
+$user = $_POST['user'];
+$passwd = $_POST['password'];
+$role = $_POST['role'];
 
 try {
     $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
 
-    $data = array('name' => $name, 'cat_id' => $categories_id, 'id' => $id);
+    $data = array('name' => $name, 'user' => $user, 'password' => $passwd, 'role' =>$role);
 
-    $STH = $DBH->prepare('UPDATE categories SET  
+    $STH = $DBH->prepare('UPDATE administrators SET  
                             name = :name, 
-                            categories_id =  :cat_id
+                            user = :user,
+                            password = :password,
+                            role = :role
                           WHERE id = :id');
     $STH->execute($data);
     header('location:show.php?id=' . $id);

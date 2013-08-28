@@ -4,20 +4,19 @@ $username = 'root';
 $password = 'root';
 
 $name = $_POST['name'];
-$categories_id = $_POST['cat_id'];
+$user = $_POST['user'];
+$passwd = $_POST['password'];
+$role = $_POST['role'];
 
 try {
     $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
-    $data = array('name' => $name);
-    if($categories_id != ''){
-        $data['cat_id'] = $categories_id;
-        $STH = $DBH->prepare('INSERT INTO categories (name, categories_id) value (:name, :cat_id)');
-    }else{
-        $STH = $DBH->prepare('INSERT INTO categories (name) value (:name)');
-    }
+    $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $data = array('name' => $name, 'user' => $user, 'password' => $passwd, 'role' =>$role);
+    $STH = $DBH->prepare('INSERT INTO administrators (name, user, password, role) 
+                                           value (:name, :user, :password, :role)');
     $STH->execute($data);
-    
-    header('location:show.php?id='.$DBH->lastInsertId());
+
+    header('location:show.php?id=' . $DBH->lastInsertId());
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }

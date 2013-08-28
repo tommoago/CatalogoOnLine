@@ -6,15 +6,19 @@
 				Name:
 				<input type="text" name="name"/>
 				<br>
-
-				Category:
-
-				<select name="cat_id">
-					{% for cat in cats %}
-					<option value="{{ cat.id }}">{{ cat.name }}</option>
-					{% endfor %}
+                                User:
+				<input type="text" name="user"/>
+				<br>
+                                Password:
+				<input type="password" name="password"/>
+				<br>
+                                Role:
+				<select name="role">
+					<option value="admin">admin</option>
+                                        <option value="operator">operator</option>
+                                        <option value="jack">jack</option>
 				</select>
-
+				<br>
 				<input type="submit" value="invio"/>
 
 			</form>

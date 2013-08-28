@@ -1,20 +1,28 @@
 {% include 'header.phtml' %}
 <div id='content'>
     {% include 'menu.phtml' %}
-    <p> Name</p>
-    <input type="text" name="name" value="{{ cat.name }}"/>
-    <br>
-    <p>
-        Category
-    </p>
+    <form action="update.php" method="post" style="padding-left: 270px;">
+        <input type="hidden" name="id" value="{{ admin.id }}"/>
+        <p> Name</p>
+        <input type="text" name="name" value="{{ admin.name }}"/>
+        <br>
+        <p> User</p>
+        <input type="text" name="user" value="{{ admin.user }}"/>
+        <br>
+        <p> Password</p>
+        <input type="password" name="password" />
+        <br>
+        <p>
+            role
+        </p>
 
-    <select name="cat_id">
-        {% for category in cats %}
-        <option value="{{ category.id }}" {{ category.selected }}>{{ category.name }}</option>
-        {% endfor %}
-    </select>
+        <select name="role">
+            <option value="admin" {{ admin.selected }}>admin</option>
+            <option value="operator" {{ admin.selected }}>operator</option>
+            <option value="jack" {{ admin.selected }}>jack</option>
+        </select>
 
-    <input type="submit" value="invio"/>
+        <input type="submit" value="invio"/>
 
-</form>
-{% include 'footer.phtml' %}
+    </form>
+    {% include 'footer.phtml' %}

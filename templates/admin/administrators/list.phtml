@@ -2,17 +2,20 @@
 <div id='content'>
 
 	{% include 'menu.phtml' %}
+        <p>{{ message }}</p>
 	<table border='1' style='margin: 50px;'>
 		<tr>
 			<td>Name</td>
-			<td>Category</td>
+			<td>user</td>
+                        <td>role</td>
 		</tr>
-		{% for cat in cats %}
+		{% for admin in admins %}
 		<tr>
-			<td>{{ cat.name }}</td>
-			<td>{{ cat.category }}</td>
-			<td><a href='delete.php?id={{ cat.id }}'>elimina</a></td>
-			<td><a href='prepareUpdate.php?id={{ cat.id }}'>modifica</a></td>
+			<td><a href='show.php?id={{ admin.id }}'>{{ admin.name }}</a></td>
+			<td>{{ admin.user }}</td>
+                        <td>{{ admin.role }}</td>
+			<td><a href='delete.php?id={{ admin.id }}'>elimina</a></td>
+			<td><a href='prepareUpdate.php?id={{ admin.id }}'>modifica</a></td>
 		</tr>
 		{% endfor %}
 	</table>
