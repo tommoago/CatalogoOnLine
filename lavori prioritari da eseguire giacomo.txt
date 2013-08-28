@@ -13,3 +13,5 @@ per log di PDO: $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 cruds
 -prodotti ok
 -cats ok
+-admins ok (metti eccezioni per customers)
+-customers (regola ordini fatti dai clienti) DA TESTARE

@@ -1,0 +1,39 @@
+<?php
+
+require_once '../../../vendor/twig/twig/lib/Twig/Autoloader.php';
+Twig_Autoloader::register();
+
+$loader = new Twig_Loader_Filesystem('../../../templates');
+$twig = new Twig_Environment($loader/*, array('cache' => '../../../templates/cache')*/);
+$template = $twig->loadTemplate('admin/customers/update.phtml');
+
+$username = 'root';
+$password = 'root';
+$id = $_GET['id'];
+
+try {
+    $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
+
+    $stmt = $DBH->prepare('SELECT * FROM customers WHERE id = :id');
+    $stmt->execute(array('id' => $id));
+    //tira fuori solo un risultato
+    $customer = $stmt->fetch();
+    
+    $stmt = $DBH->prepare('SELECT * FROM administrators');
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    
+    //marca l'a categoria'operatore appartenente 
+    foreach($result as &$row) {
+      $row['selected'] = '';
+      if ($row['id'] == $customer['administrators_id']){
+          $row['selected'] = 'selected';
+      }
+    } 
+  
+} catch (PDOException $e) {
+    echo 'ERROR: ' . $e->getMessage();
+}
+
+$template->display(array('cus' => $customer, 'admins' => $result));
+?>

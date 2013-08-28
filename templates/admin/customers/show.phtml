@@ -1,0 +1,30 @@
+{% include 'header.phtml' %}
+<div id='content'>
+
+    {% include 'menu.phtml' %}
+    <table border='1' style='margin: 50px;'>
+       <tr>
+			<td>Name</td>
+			<td>Surname</td>
+                        <td>Address</td>
+                        <td>Email</td>
+                        <td>Telephone</td>
+                        <td>Cellphone</td>
+                        <td>Active</td>
+                        <td>Operator</td>
+		</tr>
+		<tr>
+			<td><a href='show.php?id={{ cus.id }}'>{{ cus.name }}</a></td>
+			<td>{{ cus.surname }}</td>
+                        <td>{{ cus.address }}</td>
+                        <td>{{ cus.email }}</td>
+                        <td>{{ cus.telephone }}</td>
+                        <td>{{ cus.cellphone }}</td>
+                        <td>{{ cus.active }}</td>
+                        <td>{{ cus.operator }}</td>
+			<td><a href='delete.php?id={{ cus.id }}'>elimina</a></td>
+			<td><a href='prepareUpdate.php?id={{ cus.id }}'>modifica</a></td>
+		</tr>
+    </table>
+</div>
+{% include 'footer.phtml' %}

@@ -1,0 +1,96 @@
+{% include 'header.phtml' %}
+<div id='content'>
+    {% include 'menu.phtml' %}
+    <form action="update.php" method="post" style="padding-left: 270px;">
+        <input type="hidden" name="id" value="{{ cus.id }}"/>
+        <div class="totwidth">
+			<div class="panleft">
+				Name:
+			</div>
+			<div class="panleft">
+				<input type="text" name="name" value="{{ cus.name }}"/>
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				Surname:
+			</div>
+			<div class="panleft">
+				<input type="text" name="surname" value="{{ cus.surname }}"/>
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				Address:
+			</div>
+			<div class="panleft">
+				<input type="text" name="address" value="{{ cus.address }}"/>
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				Email:
+			</div>
+			<div class="panleft">
+				<input type="text" name="email" value="{{ cus.email }}"/>
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				Telephone:
+			</div>
+			<div class="panleft">
+				<input type="text" name="telephone" value="{{ cus.telephone }}"/>
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				Cellphone:
+			</div>
+			<div class="panleft">
+				<input type="text" name="cellphone" value="{{ cus.cellphone }}"/>
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				Active:
+			</div>
+			<div class="panleft">
+				<input type="text" name="active" value="{{ cus.active }}"/>
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				Password:
+			</div>
+			<div class="panleft">
+				<input type="password" name="password"/>
+			</div>
+		</div>
+		<br>
+		
+		<div class="totwidth">
+			<div class="panleft">
+				Operator:
+			</div>
+			<div class="panleft">
+				<select name="adm_id">
+					{% for adm in admins %}
+					<option value="{{ adm.id }}" {{ adm.selected }}>{{ adm.name }}</option>
+					{% endfor %}
+				</select>
+			</div>
+		</div>
+		<br>
+
+		<input type="submit" value="invio"/>
+
+    </form>
+    {% include 'footer.phtml' %}
