@@ -9,7 +9,10 @@ $address = $_POST['address'];
 $email = $_POST['email'];
 $telephone = $_POST['telephone'];
 $cellphone = $_POST['cellphone'];
-$active = $_POST['active'];
+$active = 0;
+if (isset($_POST['active'])) {
+    $active = 1;
+}
 $passwd = $_POST['password'];
 $admin_id = $_POST['adm_id'];
 

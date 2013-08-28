@@ -23,7 +23,12 @@ try {
     $stmt->execute();
     $result = $stmt->fetchAll();
     
-    //marca l'a categoria'operatore appartenente 
+    $customer['c_active'] ='';
+    if($customer['active'] == 1){
+        $customer['c_active'] ='checked';
+    }
+    
+    //marca loperatore appartenente 
     foreach($result as &$row) {
       $row['selected'] = '';
       if ($row['id'] == $customer['administrators_id']){

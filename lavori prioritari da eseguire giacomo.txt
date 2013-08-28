@@ -14,14 +14,10 @@ cruds
 -prodotti ok
 -cats ok
 -admins ok (metti eccezioni per customers)
--customers (regola ordini fatti dai clienti) DA TESTARE
+-customers (regola ordini fatti dai clienti)
 
 annotazione dopo test
 
--non funziona l inserimento della categoria di conseguenze nn ci sono categorie per i prodotti che all'inserimento danno errore
--manca stile nella list customer (ci penso io)
--active di customer dovrebbe essere un checkbutton e non un text
--nella list customer non compare il valore dell'operator
 -inserimento dei prodotti da questo errore "Sorry, you must CHMOD your upload target to 777!" 
 
 dato che non riesco a inserire prodotti e categorie nn riesco a provare modifica e cancellazione

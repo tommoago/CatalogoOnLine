@@ -3,7 +3,7 @@ class imgUploader {
 
     var $exts = array(".png", ".gif", ".png", ".jpg", ".jpeg"); //all the extensions that will be allowed to be uploaded 
     var $maxSize = 200000000; //if you set to "0" (no quotes), there will be no limit 
-    var $uploadTarget = "C:\DEV\WP\php\melarossa\images\uploads/"; //make sure you have the '/' at the end ../images/uploads/
+    var $uploadTarget = "../../../images/uploads/"; //make sure you have the '/' at the end ../images/uploads/
     var $fileName = ""; //this will be automatically set. you do not need to worry about this 
     var $tmpName = ""; //this will be automatically set. you do not need to worry about this 
     var $pathName = "";

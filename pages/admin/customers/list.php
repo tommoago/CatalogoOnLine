@@ -24,7 +24,7 @@ try {
         $stmt2 = $DBH->prepare('SELECT * FROM administrators WHERE id = :id');
         $stmt2->execute(array('id' => $row['administrators_id']));
         $adm = $stmt2->fetch();
-        $row['oprerator'] = $adm['user'];
+        $row['operator'] = $adm['user'];
     }
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
