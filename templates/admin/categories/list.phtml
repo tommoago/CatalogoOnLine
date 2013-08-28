@@ -10,7 +10,7 @@
 		</tr>
 		{% for cat in cats %}
 		<tr>
-			<td>{{ cat.name }}</td>
+			<td><a href='show.php?id={{ cat.id }}'>{{ cat.name }}</a></td>
 			<td>{{ cat.category }}</td>
 			<td><a href='delete.php?id={{ cat.id }}'>elimina</a></td>
 			<td><a href='prepareUpdate.php?id={{ cat.id }}'>modifica</a></td>
