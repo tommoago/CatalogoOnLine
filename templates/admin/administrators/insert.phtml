@@ -2,51 +2,50 @@
 <div id='content'>
 
 	{% include 'menu.phtml' %}
-			<form action="insert.php" method="post" style="padding-left: 270px;" enctype="multipart/form-data">
+	<form action="insert.php" method="post" style="padding-left: 270px;" enctype="multipart/form-data">
+		<div class="totwidth">
+			<div class="panleft">
 				Name:
+			</div>
+			<div class="panleft">
 				<input type="text" name="name"/>
-				<br>
-                                User:
-				<input type="text" name="user"/>
-				<br>
-                                Password:
-				<input type="password" name="password"/>
-				<br>
-                                Role:
-				<select name="role">
-					<option value="admin">admin</option>
-                                        <option value="operator">operator</option>
-                                        <option value="jack">jack</option>
-				</select>
-				<br>
-				<input type="submit" value="invio"/>
-
-			</form>
-		</div>
-		<div id="footer">
-			<div id="footer_inside">
-				<ul class="footer_menu">
-					<li>
-						<a href="/MelaRossa/index.php">Home Page</a>|
-					</li>
-					<li>
-						<a href="">Chi siamo</a>|
-					</li>
-					<li>
-						<a href="/MelaRossa/pages/where.php">Dove siamo</a>|
-					</li>
-					<li>
-						<a href="">Contatti</a>
-					</li>
-				</ul>
-				<br />
-				<br />
-				<p>
-					Copyright &copy;. All rights reserved. Design by Giacomo Bianchetto
-				</p>
-				<p style="float: right;">
-					<a href="/MelaRossa/pages/admin/login.php">Admin</a> | <a href="/MelaRossa/pages/user/login.php">User</a>
-				</p>
 			</div>
 		</div>
-	{% include 'footer.phtml' %}
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				User:
+			</div>
+			<div class="panleft">
+				<input type="text" name="user"/>
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				Password:
+			</div>
+			<div class="panleft">
+				<input type="password" name="password"/>
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				Role:
+			</div>
+			<div class="panleft">
+				<select name="role">
+					<option value="admin">admin</option>
+					<option value="operator">operator</option>
+					<option value="jack">jack</option>
+				</select>
+			</div>
+		</div>
+		<br>
+		<input type="submit" value="invio"/>
+
+	</form>
+</div>
+
+{% include 'footer.phtml' %}

@@ -2,18 +2,20 @@
 <div id='content'>
 
 	{% include 'menu.phtml' %}
-        <p>{{ message }}</p>
-	<table border='1' style='margin: 50px;'>
+	<p>
+		{{ message }}
+	</p>
+	<table class="tablelist" style='margin: 50px;'>
 		<tr>
 			<td>Name</td>
 			<td>user</td>
-                        <td>role</td>
+			<td>role</td>
 		</tr>
 		{% for admin in admins %}
 		<tr>
 			<td><a href='show.php?id={{ admin.id }}'>{{ admin.name }}</a></td>
 			<td>{{ admin.user }}</td>
-                        <td>{{ admin.role }}</td>
+			<td>{{ admin.role }}</td>
 			<td><a href='delete.php?id={{ admin.id }}'>elimina</a></td>
 			<td><a href='prepareUpdate.php?id={{ admin.id }}'>modifica</a></td>
 		</tr>

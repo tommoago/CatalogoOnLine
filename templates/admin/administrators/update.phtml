@@ -1,28 +1,50 @@
 {% include 'header.phtml' %}
 <div id='content'>
-    {% include 'menu.phtml' %}
-    <form action="update.php" method="post" style="padding-left: 270px;">
-        <input type="hidden" name="id" value="{{ admin.id }}"/>
-        <p> Name</p>
-        <input type="text" name="name" value="{{ admin.name }}"/>
-        <br>
-        <p> User</p>
-        <input type="text" name="user" value="{{ admin.user }}"/>
-        <br>
-        <p> Password</p>
-        <input type="password" name="password" />
-        <br>
-        <p>
-            role
-        </p>
+	{% include 'menu.phtml' %}
+	<form action="update.php" method="post" style="padding-left: 270px;">
+		<input type="hidden" name="id" value="{{ admin.id }}"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Name
+			</div>
+			<div class="panleft">
+				<input type="text" name="name" value="{{ admin.name }}"/>
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				User
+			</div>
+			<div class="panleft">
+				<input type="text" name="user" value="{{ admin.user }}"/>
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				Password
+			</div>
+			<div class="panleft">
+				<input type="password" name="password" />
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				role
+			</div>
+			<div class="panleft">
+				<select name="role">
+					<option value="admin" {{ admin.selected }}>admin</option>
+					<option value="operator" {{ admin.selected }}>operator</option>
+					<option value="jack" {{ admin.selected }}>jack</option>
+				</select>
+			</div>
+		</div>
 
-        <select name="role">
-            <option value="admin" {{ admin.selected }}>admin</option>
-            <option value="operator" {{ admin.selected }}>operator</option>
-            <option value="jack" {{ admin.selected }}>jack</option>
-        </select>
+		<input type="submit" value="invio"/>
 
-        <input type="submit" value="invio"/>
-
-    </form>
-    {% include 'footer.phtml' %}
+	</form>
+</div>
+{% include 'footer.phtml' %}

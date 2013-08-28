@@ -1,20 +1,20 @@
 {% include 'header.phtml' %}
 <div id='content'>
 
-    {% include 'menu.phtml' %}
-    <table border='1' style='margin: 50px;'>
-        <tr>
-            <td>Name</td>
-            <td>user</td>
-            <td>role</td>
-        </tr>
-        <tr>
-            <td>{{ admin.name }}</td>
-            <td>{{ admin.user }}</td>
-            <td>{{ admin.role }}</td>
-            <td><a href='delete.php?id={{ admin.id }}'>elimina</a></td>
-            <td><a href='prepareUpdate.php?id={{ admin.id }}'>modifica</a></td>
-        </tr>
-    </table>
+	{% include 'menu.phtml' %}
+	<table class="tablelist" style='margin: 50px;'>
+		<tr>
+			<td>Name</td>
+			<td>user</td>
+			<td>role</td>
+		</tr>
+		<tr>
+			<td>{{ admin.name }}</td>
+			<td>{{ admin.user }}</td>
+			<td>{{ admin.role }}</td>
+			<td><a href='delete.php?id={{ admin.id }}'>elimina</a></td>
+			<td><a href='prepareUpdate.php?id={{ admin.id }}'>modifica</a></td>
+		</tr>
+	</table>
 </div>
 {% include 'footer.phtml' %}
