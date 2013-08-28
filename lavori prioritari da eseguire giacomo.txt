@@ -3,9 +3,13 @@
 
 -cercare metodologia di implementazione multilingua(occhio al cinese per lo stile)
 
-- meccanismo di login
+-meccanismo di login con sesisoni e quant'altro
 
 -creare classe di conn database personalizzata
+
+-creare motore pdf
+
+-creare classe di variabili
 
 per log di PDO: $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -13,8 +17,9 @@ per log di PDO: $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 cruds
 -prodotti ok
 -cats ok
--admins ok (metti eccezioni per customers)
+-admins ok
 -customers (regola ordini fatti dai clienti)
+-orders (solo impostato, non va nulla)
 
 annotazione dopo test
 

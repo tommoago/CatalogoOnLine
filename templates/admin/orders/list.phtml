@@ -1,0 +1,25 @@
+{% include 'header.phtml' %}
+<div id='content'>
+
+	{% include 'menu.phtml' %}
+        <p>{{ message }}</p>
+	<table border='1' style='margin: 50px;'>
+		<tr>
+                        <td>ID</td>
+			<td>Date</td>
+			<td>Confirmed</td>
+                        <td>Operator</td>
+                        <td>Customer</td>
+		</tr>
+		{% for ord in cusorderstomers %}
+		<tr>
+			<td><a href='show.php?id={{ ord.id }}'>{{ ord.id }}</a></td>
+			<td>{{ ord.date }}</td>
+                        <td>{{ ord.confirmed }}</td>
+                        <td>{{ ord.operator }}</td>
+                        <td>{{ ord.customer }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+{% include 'footer.phtml' %}
