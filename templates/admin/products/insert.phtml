@@ -1,87 +1,155 @@
 {% include 'header.phtml' %}
 <div id='content'>
-
 	{% include 'menu.phtml' %}
-
 	<form action="insert.php" method="post" style="padding-left: 270px;" enctype="multipart/form-data">
-		Select a file to upload:
-		<input type="file" name="uploaded" id="file">
+		<div class="totwidth">
+			<div class="panleft">
+				Select a file to upload:
+			</div>
+			<div class="panleft">
+				<input type="file" name="uploaded" id="file">
+			</div>
+		</div>
 		<br>
-
-		Name:
-		<input type="text" name="name"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Name:
+			</div>
+			<div class="panleft">
+				<input type="text" name="name"/>
+			</div>
+		</div>
 		<br>
-
-		Description:
-
-		<input type="text" name="descr"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Description:
+			</div>
+			<div class="panleft">
+				<input type="text" name="descr"/>
+			</div>
+		</div>
 		<br>
-
-		New:
-
-		<input type="checkbox" name="new" />
+		<div class="totwidth">
+			<div class="panleft">
+				New:
+			</div>
+			<div class="panleft">
+				<input type="checkbox" name="new" />
+			</div>
+		</div>
 		<br>
-
-		Offer:
-
-		<input type="checkbox" name="offer" />
+		<div class="totwidth">
+			<div class="panleft">
+				Offer:
+			</div>
+			<div class="panleft">
+				<input type="checkbox" name="offer" />
+			</div>
+		</div>
 		<br>
-
-		Evidence:
-
-		<input type="checkbox" name="evidence" />
-
-		Wholesale Price:
-
-		<input type="text" name="w_price"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Evidence:
+			</div>
+			<div class="panleft">
+				<input type="checkbox" name="evidence" />
+			</div>
+		</div>
 		<br>
-
-		Retail Price:
-		<input type="text" name="r_price"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Wholesale Price:
+			</div>
+			<div class="panleft">
+				<input type="text" name="w_price"/>
+			</div>
+		</div>
 		<br>
-
-		Super Price:
-
-		<input type="text" name="s_price"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Retail Price:
+			</div>
+			<div class="panleft">
+				<input type="text" name="r_price"/>
+			</div>
+		</div>
 		<br>
-
-		Purchase Price:
-
-		<input type="text" name="p_price"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Super Price:
+			</div>
+			<div class="panleft">
+				<input type="text" name="s_price"/>
+			</div>
+		</div>
 		<br>
-
-		Cod:
-
-		<input type="text" name="cod"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Purchase Price:
+			</div>
+			<div class="panleft">
+				<input type="text" name="p_price"/>
+			</div>
+		</div>
 		<br>
-
-		Barcode:
-
-		<input type="text" name="barcode"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Cod:
+			</div>
+			<div class="panleft">
+				<input type="text" name="cod"/>
+			</div>
+		</div>
 		<br>
-
-		Single Qty:
-
-		<input type="text" name="s_qty"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Barcode:
+			</div>
+			<div class="panleft">
+				<input type="text" name="barcode"/>
+			</div>
+		</div>
 		<br>
-
-		pack Qty:
-
-		<input type="text" name="p_qty"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Single Qty:
+			</div>
+			<div class="panleft">
+				<input type="text" name="s_qty"/>
+			</div>
+		</div>
 		<br>
-
-		Cardboard Qty:
-
-		<input type="text" name="c_qty"/>
+		<div class="totwidth">
+			<div class="panleft">
+				pack Qty:
+			</div>
+			<div class="panleft">
+				<input type="text" name="p_qty"/>
+			</div>
+		</div>
 		<br>
-
-		Categoy:
-
-		<select name="cat_id">
-			{% for cat in cats %}
-			<option value="{{ cat.id }}">{{ cat.name }}</option>
-			{% endfor %}
-		</select>
+		<div class="totwidth">
+			<div class="panleft">
+				Cardboard Qty:
+			</div>
+			<div class="panleft">
+				<input type="text" name="c_qty"/>
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				Categoy:
+			</div>
+			<div class="panleft">
+				<select name="cat_id">
+					{% for cat in cats %}
+					<option value="{{ cat.id }}">{{ cat.name }}</option>
+					{% endfor %}
+				</select>
+			</div>
+		</div>
+		<br>
 
 		<input type="submit" value="invio"/>
 

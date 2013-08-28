@@ -3,108 +3,157 @@
 
 	{% include 'menu.phtml' %}
 	<form action="update.php" method="post" style="padding-left: 270px;" enctype="multipart/form-data">
+
 		<input type="hidden" name="id" value="{{ prod.id }}"/>
 		<br>
-		
-			Select a file to upload
-		
-			<input type="file" name="uploaded" id="file" value="{{ prod.image }}">
-			<br>
-
-	
-			Name
-		
-		<input type="text" name="name" value="{{ prod.name }}"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Select a file to upload
+			</div>
+			<div class="panleft">
+				<input type="file" name="uploaded" id="file" value="{{ prod.image }}">
+			</div>
+		</div>
 		<br>
-
-		
-			Description
-		
-		<input type="text" name="descr" value="{{ prod.description }}"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Name
+			</div>
+			<div class="panleft">
+				<input type="text" name="name" value="{{ prod.name }}"/>
+			</div>
+		</div>
 		<br>
-
-		
-			New
-		
-		<input type="checkbox" name="new" {{ prod.c_new }}/>
+		<div class="totwidth">
+			<div class="panleft">
+				Description
+			</div>
+			<div class="panleft">
+				<input type="text" name="descr" value="{{ prod.description }}"/>
+			</div>
+		</div>
 		<br>
-
-		
-			Offer
-		
-		<input type="checkbox" name="offer" {{ prod.c_offer }}/>
+		<div class="totwidth">
+			<div class="panleft">
+				New
+			</div>
+			<div class="panleft">
+				<input type="checkbox" name="new" {{ prod.c_new }}/>
+			</div>
+		</div>
 		<br>
-
-		
-			Evidence
-		
-		<input type="checkbox" name="evidence" {{ prod.c_evidence }}/>
+		<div class="totwidth">
+			<div class="panleft">
+				Offer
+			</div>
+			<div class="panleft">
+				<input type="checkbox" name="offer" {{ prod.c_offer }}/>
+			</div>
+		</div>
 		<br>
-
-		
-			Wholesale Price
-		
-		<input type="text" name="w_price" value="{{ prod.wholesale_price }}"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Evidence
+			</div>
+			<div class="panleft">
+				<input type="checkbox" name="evidence" {{ prod.c_evidence }}/>
+			</div>
+		</div>
 		<br>
-
-		
-			Retail Price
-		
-		<input type="text" name="r_price" value="{{ prod.retail_price }}"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Wholesale Price
+			</div>
+			<div class="panleft">
+				<input type="text" name="w_price" value="{{ prod.wholesale_price }}"/>
+			</div>
+		</div>
 		<br>
-
-		
-			Super Price
-		
-		<input type="text" name="s_price" value="{{ prod.super_price }}"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Retail Price
+			</div>
+			<div class="panleft">
+				<input type="text" name="r_price" value="{{ prod.retail_price }}"/>
+			</div>
+		</div>
 		<br>
-
-		
-			Purchase Price
-		
-		<input type="text" name="p_price" value="{{ prod.purchase_price }}"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Super Price
+			</div>
+			<div class="panleft">
+				<input type="text" name="s_price" value="{{ prod.super_price }}"/>
+			</div>
+		</div>
 		<br>
-
-	
-			Cod
-		
-		<input type="text" name="cod" value="{{ prod.cod }}"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Purchase Price
+			</div>
+			<div class="panleft">
+				<input type="text" name="p_price" value="{{ prod.purchase_price }}"/>
+			</div>
+		</div>
 		<br>
-
-		
-			Barcode
-		
-		<input type="text" name="barcode" value="{{ prod.barcode }}"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Cod
+			</div>
+			<div class="panleft">
+				<input type="text" name="cod" value="{{ prod.cod }}"/>
+			</div>
+		</div>
 		<br>
-
-	
-			Single Qty
-		
-		<input type="text" name="s_qty" value="{{ prod.single_qty }}"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Barcode
+			</div>
+			<div class="panleft">
+				<input type="text" name="barcode" value="{{ prod.barcode }}"/>
+			</div>
+		</div>
 		<br>
-
-		
-			pack Qty
-		
-		<input type="text" name="p_qty" value="{{ prod.pack_qty }}"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Single Qty
+			</div>
+			<div class="panleft">
+				<input type="text" name="s_qty" value="{{ prod.single_qty }}"/>
+			</div>
+		</div>
 		<br>
-
-		
-			Cardboard Qty
-		
-		<input type="text" name="c_qty" value="{{ prod.cardboard_qty }}"/>
+		<div class="totwidth">
+			<div class="panleft">
+				pack Qty
+			</div>
+			<div class="panleft">
+				<input type="text" name="p_qty" value="{{ prod.pack_qty }}"/>
+			</div>
+		</div>
 		<br>
-
-		
-			Categoy
-		
-
-		<select name="cat_id">
-			{% for cat in cats %}
-			<option value="{{ cat.id }}" {{ cat.selected }}>{{ cat.name }}</option>
-			{% endfor %}
-		</select>
-
+		<div class="totwidth">
+			<div class="panleft">
+				Cardboard Qty
+			</div>
+			<div class="panleft">
+				<input type="text" name="c_qty" value="{{ prod.cardboard_qty }}"/>
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				Categoy
+			</div>
+			<div class="panleft">
+				<select name="cat_id">
+					{% for cat in cats %}
+					<option value="{{ cat.id }}" {{ cat.selected }}>{{ cat.name }}</option>
+					{% endfor %}
+				</select>
+			</div>
+		</div>
+		<br>
 		<input type="submit" value="invio"/>
 
 	</form>

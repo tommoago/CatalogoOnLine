@@ -111,7 +111,6 @@ html > body {
 	background-position: top left;
 	background-repeat: repeat-x;
 	position: absolute;
-	bottom: 0;
 }
 #footer_inside {
 	width: 1000px;
@@ -186,3 +185,19 @@ html > body {
 	float: left;
 }
 
+.panleft {
+	float: left;
+	width: 20%;
+}
+.totwidth {
+	width: 100%;
+	margin-bottom: 10px;
+	height: 1px;
+}
+.tablelist tr {
+
+}
+.tablelist td {
+	border-right: dotted 1px;
+	border-bottom: solid 1px;
+}

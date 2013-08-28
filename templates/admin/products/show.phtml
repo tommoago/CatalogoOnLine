@@ -3,7 +3,7 @@
 
 	{% include 'menu.phtml' %}
 	<img src="../../{{ prod.image }}">
-	<table border='1' style='margin: 50px;'>
+	<table class="tablelist" style='margin: 50px;'>
 		<tr>
 			<td>Name</td>
 			<td>Description</td>
@@ -41,4 +41,5 @@
 			<td><a href='prepareUpdate.php?id={{ prod.id }}'>modifica</a></td>
 		</tr>
 	</table>
-	{% include 'footer.phtml' %}
+</div>
+{% include 'footer.phtml' %}
