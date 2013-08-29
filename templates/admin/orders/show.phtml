@@ -4,28 +4,28 @@
     {% include 'menu.phtml' %}
     <table border='1' style='margin: 50px;'>
        <tr>
-			<td>Name</td>
-			<td>Surname</td>
-                        <td>Address</td>
-                        <td>Email</td>
-                        <td>Telephone</td>
-                        <td>Cellphone</td>
-                        <td>Active</td>
+                        <td>ID</td>
+			<td>Date</td>
+			<td>Confirmed</td>
                         <td>Operator</td>
+                        <td>Customer</td>
 		</tr>
 		<tr>
-			<td>{{ cus.name }}</td>
-			<td>{{ cus.surname }}</td>
-                        <td>{{ cus.address }}</td>
-                        <td>{{ cus.email }}</td>
-                        <td>{{ cus.telephone }}</td>
-                        <td>{{ cus.cellphone }}</td>
-                        <td>{{ cus.active }}</td>
-                        <td>{{ cus.operator }}</td>
-			<td><a href='delete.php?id={{ cus.id }}'>elimina</a></td>
+			<td><a href='show.php?id={{ ord.id }}'>{{ ord.id }}</a></td>
+			<td>{{ ord.data }}</td>
+                        <td>{{ ord.confirmed }}</td>
+                        <td>{{ ord.operator }}</td>
+                        <td>{{ ord.customer }}</td>
 		</tr>
+		{% for prod in products %}
+                <tr>
+			<td><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
+			<td>{{ prod.quantity }}</td>
+		</tr>
+                {% endfor %}
     </table>
-    <a href='prepareUpdate.php?id={{ cus.id }}'>Conferma ordine</a>
-
+    {% if ord.confirmed != 1%}
+    <a href='confirm.php?id={{ ord.id }}'>Conferma ordine</a>
+    {% endif %}
 </div>
 {% include 'footer.phtml' %}

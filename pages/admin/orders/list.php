@@ -19,6 +19,18 @@ try {
     $stmt = $DBH->prepare('SELECT * FROM orders');
     $stmt->execute();
     $result = $stmt->fetchAll();
+    
+    foreach ($result as &$row) {
+        $stmt = $DBH->prepare('SELECT * FROM customers WHERE id = :id');
+        $stmt->execute(array('id' => $row['customers_id']));
+        $cus = $stmt->fetch();
+        $row['customer'] = $cus['name'];
+        
+        $stmt = $DBH->prepare('SELECT * FROM administrators WHERE id = :id');
+        $stmt->execute(array('id' => $row['operator']));
+        $op = $stmt->fetch();
+        $row['operator'] = $op['name'];
+    }
 
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();

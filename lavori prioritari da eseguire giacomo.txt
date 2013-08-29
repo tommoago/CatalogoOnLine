@@ -1,6 +1,4 @@
 
--validare crud , probabilmente in js(dopo l'incorporamento dello stile)
-
 -cercare metodologia di implementazione multilingua(occhio al cinese per lo stile)
 
 -meccanismo di login con sesisoni e quant'altro
@@ -19,10 +17,7 @@ cruds
 -cats ok
 -admins ok
 -customers (regola ordini fatti dai clienti)
--orders (solo impostato, non va nulla)
+-orders 50% (operazioni admin già disponnibili, ma devi popolare tabelle a mano)
 
 annotazione dopo test
-
--inserimento dei prodotti da questo errore "Sorry, you must CHMOD your upload target to 777!" 
-
-dato che non riesco a inserire prodotti e categorie nn riesco a provare modifica e cancellazione
+mi racc aggiorna sempre qua

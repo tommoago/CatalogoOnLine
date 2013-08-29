@@ -11,10 +11,10 @@
                         <td>Operator</td>
                         <td>Customer</td>
 		</tr>
-		{% for ord in cusorderstomers %}
+		{% for ord in orders %}
 		<tr>
 			<td><a href='show.php?id={{ ord.id }}'>{{ ord.id }}</a></td>
-			<td>{{ ord.date }}</td>
+			<td>{{ ord.data }}</td>
                         <td>{{ ord.confirmed }}</td>
                         <td>{{ ord.operator }}</td>
                         <td>{{ ord.customer }}</td>

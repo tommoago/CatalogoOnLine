@@ -3,19 +3,14 @@
 $username = 'root';
 $password = 'root';
 
-$id = $_POST['id'];
-$confirmed = 0;
-if (isset($_POST['confirmed'])) {
-    $confirmed = 1;
-}
+$id = $_GET['id'];
 
 try {
     $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
+     $data = array('id' => $id);
 
-     $data = array('confirmed' => $confirmed, 'id' => $id);
-
-    $STH = $DBH->prepare('UPDATE customers SET  
-                            confirmed = :confirmed
+    $STH = $DBH->prepare('UPDATE orders SET  
+                            confirmed = 1
                           WHERE id = :id');
     $STH->execute($data);
     header('location:show.php?id=' . $id);
