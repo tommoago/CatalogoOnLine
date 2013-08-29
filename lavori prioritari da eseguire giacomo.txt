@@ -1,24 +1,17 @@
-
--cercare metodologia di implementazione multilingua(occhio al cinese per lo stile)
-
--meccanismo di login con sesisoni e quant'altro
-
--creare classe di conn database personalizzata
+-meccanismo di login con sessioni e quant'altro
 
 -creare motore pdf
 
 -creare classe di variabili
 
-per log di PDO: 
-$DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+-cercare metodologia di implementazione multilingua(occhio al cinese per lo stile)
 
 cruds
--prodotti ok (problema prodotti su ordini)
+-prodotti ok  PAGINAZIONE (rimane cmq il fatto che se elimino un prod non rientra più nel dettaglio dell'ordine, quindi un documento valevole deve sempre essere creato e salvato nella cartella invoices oppure order_details)
 -cats ok
 -admins ok
--customers (regola ordini fatti dai clienti: cancello cliente ordine o disattivo cliente?)
--orders 50% (operazioni admin già disponnibili, ma devi popolare tabelle a mano) bisogna aggiungere l apossibilità di fare un PDF
+-customers (regola ordini fatti dai clienti: cancello cliente ordine o disattivo cliente?) scelgo di disattivre il cliente, chiedere a jack cosa fare.
+-orders 50% (operazioni admin già disponnibili, ma devi popolare tabelle a mano) bisogna aggiungere la possibilità di  visualizzare il pdf  
+        -ATTENZIONE, AGGIUNTA DELL'ID OPERATORE CON L'ID NELLA SESSIONE CORRENTE (alla conferma)
 
-annotazione dopo test
-mi racc aggiorna sempre qua
+annotazione dopo test TOMMA'
