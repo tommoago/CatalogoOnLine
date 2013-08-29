@@ -1,13 +1,16 @@
 {% include 'header.phtml' %}
+<script type="text/javascript" src="/melarossa/scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/melarossa/scripts/form.customers.validation.js"></script>
+<script type="text/javascript" src="/melarossa/scripts/jquery.validate.js"></script>
 <div id='content'>
 	{% include 'menu.phtml' %}
-	<form action="insert.php" method="post" style="padding-left: 270px;" enctype="multipart/form-data">
+	<form action="insert.php" method="post" style="padding-left: 270px;" id="formcustomers" enctype="multipart/form-data">
 		<div class="totwidth">
 			<div class="panleft">
 				Name:
 			</div>
 			<div class="panleft">
-				<input type="text" name="name"/>
+				<input type="text" id="name" name="name"/>
 			</div>
 		</div>
 		<br>
@@ -16,7 +19,7 @@
 				Surname:
 			</div>
 			<div class="panleft">
-				<input type="text" name="surname"/>
+				<input type="text" id="surname" name="surname"/>
 			</div>
 		</div>
 		<br>
@@ -25,7 +28,7 @@
 				Address:
 			</div>
 			<div class="panleft">
-				<input type="text" name="address"/>
+				<input type="text" id="address" name="address"/>
 			</div>
 		</div>
 		<br>
@@ -34,7 +37,7 @@
 				Email:
 			</div>
 			<div class="panleft">
-				<input type="text" name="email"/>
+				<input type="text" id="email" name="email"/>
 			</div>
 		</div>
 		<br>
@@ -43,7 +46,7 @@
 				Telephone:
 			</div>
 			<div class="panleft">
-				<input type="text" name="telephone"/>
+				<input type="text" id="telephone" name="telephone"/>
 			</div>
 		</div>
 		<br>
@@ -52,7 +55,7 @@
 				Cellphone:
 			</div>
 			<div class="panleft">
-				<input type="text" name="cellphone"/>
+				<input type="text" id="cellphone" name="cellphone"/>
 			</div>
 		</div>
 		<br>
@@ -70,7 +73,7 @@
 				Password:
 			</div>
 			<div class="panleft">
-				<input type="password" name="password"/>
+				<input type="password" id="password" name="password"/>
 			</div>
 		</div>
 		<br>

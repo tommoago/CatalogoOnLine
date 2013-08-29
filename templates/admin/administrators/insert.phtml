@@ -1,14 +1,17 @@
 {% include 'header.phtml' %}
+<script type="text/javascript" src="/melarossa/scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/melarossa/scripts/form.administrators.validation.js"></script>
+<script type="text/javascript" src="/melarossa/scripts/jquery.validate.js"></script>
 <div id='content'>
 
 	{% include 'menu.phtml' %}
-	<form action="insert.php" method="post" style="padding-left: 270px;" enctype="multipart/form-data">
+	<form action="insert.php" method="post" style="padding-left: 270px;" id="formadministrators" enctype="multipart/form-data">
 		<div class="totwidth">
 			<div class="panleft">
 				Name:
 			</div>
 			<div class="panleft">
-				<input type="text" name="name"/>
+				<input type="text" id="name" name="name"/>
 			</div>
 		</div>
 		<br>
@@ -17,7 +20,7 @@
 				User:
 			</div>
 			<div class="panleft">
-				<input type="text" name="user"/>
+				<input type="text" id="user" name="user"/>
 			</div>
 		</div>
 		<br>
@@ -26,7 +29,7 @@
 				Password:
 			</div>
 			<div class="panleft">
-				<input type="password" name="password"/>
+				<input type="password" id="password" name="password"/>
 			</div>
 		</div>
 		<br>
