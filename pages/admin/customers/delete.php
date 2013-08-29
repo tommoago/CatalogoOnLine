@@ -1,14 +1,12 @@
 <?php
-
-$username = 'root';
-$password = 'root';
+include '../../../classes/dataBase.php';
 
 $id = $_GET['id'];
 $message = '';
 $data = array('id' => $id);
 try {
-    $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
-    $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db = new dataBase();
+    $DBH = $db->connect();
 
     //cerco categorie associate
 //    $stmt = $DBH->prepare('SELECT * FROM categories WHERE categories_id = :id');

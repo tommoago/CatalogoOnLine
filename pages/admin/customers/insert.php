@@ -1,7 +1,5 @@
 <?php
-
-$username = 'root';
-$password = 'root';
+include '../../../classes/dataBase.php';
 
 $name = $_POST['name'];
 $surname = $_POST['surname'];
@@ -18,8 +16,8 @@ $admin_id = $_POST['adm_id'];
 
 
 try {
-    $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
-    $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db = new dataBase();
+    $DBH = $db->connect();
     $data = array('name' => $name, 
                   'surname' => $surname,
                   'address' => $address,

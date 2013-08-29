@@ -9,15 +9,16 @@
 
 -creare classe di variabili
 
-per log di PDO: $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+per log di PDO: 
+$DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
 cruds
--prodotti ok
+-prodotti ok (problema prodotti su ordini)
 -cats ok
 -admins ok
--customers (regola ordini fatti dai clienti)
--orders 50% (operazioni admin già disponnibili, ma devi popolare tabelle a mano)
+-customers (regola ordini fatti dai clienti: cancello cliente ordine o disattivo cliente?)
+-orders 50% (operazioni admin già disponnibili, ma devi popolare tabelle a mano) bisogna aggiungere l apossibilità di fare un PDF
 
 annotazione dopo test
 mi racc aggiorna sempre qua

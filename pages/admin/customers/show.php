@@ -1,5 +1,5 @@
 <?php
-
+include '../../../classes/dataBase.php';
 require_once '../../../vendor/twig/twig/lib/Twig/Autoloader.php';
 Twig_Autoloader::register();
 
@@ -7,14 +7,12 @@ $loader = new Twig_Loader_Filesystem('../../../templates');
 $twig = new Twig_Environment($loader/*, array('cache' => '../../../templates/cache',)*/);
 $template = $twig->loadTemplate('admin/customers/show.phtml');
 
-$username = 'root';
-$password = 'root';
-
 $id = $_GET['id'];
 $result = array();
 
 try {
-    $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
+    $db = new dataBase();
+    $DBH = $db->connect();
     $stmt = $DBH->prepare('SELECT * FROM customers WHERE id = :id');
     $stmt->execute(array('id' => $id));
     $customer = $stmt->fetch();

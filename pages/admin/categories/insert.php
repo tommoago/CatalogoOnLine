@@ -1,13 +1,12 @@
 <?php
-
-$username = 'root';
-$password = 'root';
+include '../../../classes/dataBase.php';
 
 $name = $_POST['name'];
 $categories_id = $_POST['cat_id'];
 
 try {
-    $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
+    $db = new dataBase();
+    $DBH = $db->connect();
     $data = array('name' => $name);
     if($categories_id != ''){
         $data['cat_id'] = $categories_id;

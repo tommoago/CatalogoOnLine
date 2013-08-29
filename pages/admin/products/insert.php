@@ -1,8 +1,6 @@
 <?php
 include '../../../classes/imgUploader.php';
-
-$username = 'root';
-$password = 'root';
+include '../../../classes/dataBase.php';
 
 $img = new imgUploader();
 $img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);
@@ -34,7 +32,8 @@ $cardboard_qty = $_POST['c_qty'];
 $categories_id = $_POST['cat_id'];
 
 try {
-    $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
+    $db = new dataBase();
+    $DBH = $db->connect();
     $data = array('name' => $name,
         'descr' => $description,
         'new' => $new,
@@ -66,7 +65,7 @@ try {
     $STH2 = $DBH->prepare('INSERT INTO product_images (path, products_id) 
                                                 value (:path, :prod_id)');
     $STH2->execute($data2);
-    header('location:show.php?id='.$idProd);
+//    header('location:show.php?id='.$idProd);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }

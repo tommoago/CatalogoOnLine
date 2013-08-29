@@ -1,9 +1,6 @@
 <?php
-
+include '../../../classes/dataBase.php';
 include '../../../classes/imgUploader.php';
-
-$username = 'root';
-$password = 'root';
 
 $id = $_POST['id'];
 $name = $_POST['name'];
@@ -32,7 +29,8 @@ $cardboard_qty = $_POST['c_qty'];
 $categories_id = $_POST['cat_id'];
 
 try {
-    $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
+    $db = new dataBase();
+    $DBH = $db->connect();
 
     $pathName = '';
     if ($_FILES['uploaded']['name'] != '') {

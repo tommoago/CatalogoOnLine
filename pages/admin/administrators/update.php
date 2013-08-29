@@ -1,7 +1,5 @@
 <?php
-
-$username = 'root';
-$password = 'root';
+include '../../../classes/dataBase.php';
 
 $id = $_POST['id'];
 $name = $_POST['name'];
@@ -10,8 +8,8 @@ $passwd = $_POST['password'];
 $role = $_POST['role'];
 
 try {
-    $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
-
+    $db = new dataBase();
+    $DBH = $db->connect();
     $data = array('name' => $name, 'user' => $user, 'password' => $passwd, 'role' =>$role);
 
     $STH = $DBH->prepare('UPDATE administrators SET  

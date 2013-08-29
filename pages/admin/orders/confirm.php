@@ -1,12 +1,11 @@
 <?php
-
-$username = 'root';
-$password = 'root';
+include '../../../classes/dataBase.php';
 
 $id = $_GET['id'];
 
 try {
-    $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
+    $db = new dataBase();
+    $DBH = $db->connect();
      $data = array('id' => $id);
 
     $STH = $DBH->prepare('UPDATE orders SET  

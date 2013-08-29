@@ -1,7 +1,5 @@
 <?php
-
-$username = 'root';
-$password = 'root';
+include '../../../classes/dataBase.php';
 
 $id = $_POST['id'];
 $name = $_POST['name'];
@@ -18,7 +16,8 @@ $passwd = $_POST['password'];
 $admin_id = $_POST['adm_id'];
 
 try {
-    $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
+    $db = new dataBase();
+    $DBH = $db->connect();
 
      $data = array('name' => $name, 
                    'surname' => $surname,

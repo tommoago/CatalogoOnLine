@@ -6,12 +6,12 @@ include '../simpleheader.php';
 <div class="login">
 	<form method="post" action="autenticate.php">
 		<p>
-			Inserisci l'user
+			Username
 		</p>
 		<input type="text" name="user"/>
 		<br>
 		<p>
-			Inserisci la password
+			Password
 		</p>
 		<input type="password" name="password"/>
 		<br>

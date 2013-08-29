@@ -1,7 +1,5 @@
 <?php
-
-$username = 'root';
-$password = 'root';
+include '../../../classes/dataBase.php';
 
 $name = $_POST['name'];
 $user = $_POST['user'];
@@ -9,8 +7,8 @@ $passwd = $_POST['password'];
 $role = $_POST['role'];
 
 try {
-    $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
-    $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db = new dataBase();
+    $DBH = $db->connect();
     $data = array('name' => $name, 'user' => $user, 'password' => $passwd, 'role' =>$role);
     $STH = $DBH->prepare('INSERT INTO administrators (name, user, password, role) 
                                            value (:name, :user, :password, :role)');

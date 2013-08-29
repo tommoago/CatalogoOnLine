@@ -1,12 +1,11 @@
 <?php
-
-$username = 'root';
-$password = 'root';
+include '../../../classes/dataBase.php';
 
 $id = $_GET['id'];
 
 try {
-    $DBH = new PDO('mysql:host=localhost;dbname=melarossa', $username, $password);
+    $db = new dataBase();
+    $DBH = $db->connect();
    
     $stmt3 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
     $stmt3->execute(array('id' => $id));
