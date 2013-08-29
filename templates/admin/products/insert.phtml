@@ -1,7 +1,10 @@
-{% include 'header.phtml' %}
+{% include 'header.phtml' %} 
+<script type="text/javascript" src="/melarossa/scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/melarossa/scripts/form.product.validation.js"></script>
+<script type="text/javascript" src="/melarossa/scripts/jquery.validate.js"></script>
 <div id='content'>
 	{% include 'menu.phtml' %}
-	<form action="insert.php" method="post" style="padding-left: 270px;" enctype="multipart/form-data">
+	<form action="insert.php" method="post" style="padding-left: 270px;" id="formproduct" enctype="multipart/form-data">
 		<div class="totwidth">
 			<div class="panleft">
 				Select a file to upload:
@@ -16,7 +19,7 @@
 				Name:
 			</div>
 			<div class="panleft">
-				<input type="text" name="name"/>
+				<input type="text" id="name" name="name"/>
 			</div>
 		</div>
 		<br>
@@ -25,7 +28,7 @@
 				Description:
 			</div>
 			<div class="panleft">
-				<input type="text" name="descr"/>
+				<input type="text" id="descr" name="descr"/>
 			</div>
 		</div>
 		<br>
@@ -61,7 +64,7 @@
 				Wholesale Price:
 			</div>
 			<div class="panleft">
-				<input type="text" name="w_price"/>
+				<input type="text" id="w_price" name="w_price"/>
 			</div>
 		</div>
 		<br>
@@ -70,7 +73,7 @@
 				Retail Price:
 			</div>
 			<div class="panleft">
-				<input type="text" name="r_price"/>
+				<input type="text" id="r_price" name="r_price"/>
 			</div>
 		</div>
 		<br>
@@ -79,7 +82,7 @@
 				Super Price:
 			</div>
 			<div class="panleft">
-				<input type="text" name="s_price"/>
+				<input type="text" id="s_price" name="s_price"/>
 			</div>
 		</div>
 		<br>
@@ -88,7 +91,7 @@
 				Purchase Price:
 			</div>
 			<div class="panleft">
-				<input type="text" name="p_price"/>
+				<input type="text" id="p_price" name="p_price"/>
 			</div>
 		</div>
 		<br>
@@ -97,7 +100,7 @@
 				Cod:
 			</div>
 			<div class="panleft">
-				<input type="text" name="cod"/>
+				<input type="text" id="cod" name="cod"/>
 			</div>
 		</div>
 		<br>
@@ -106,7 +109,7 @@
 				Barcode:
 			</div>
 			<div class="panleft">
-				<input type="text" name="barcode"/>
+				<input type="text" id="barcode" name="barcode"/>
 			</div>
 		</div>
 		<br>
@@ -115,7 +118,7 @@
 				Single Qty:
 			</div>
 			<div class="panleft">
-				<input type="text" name="s_qty"/>
+				<input type="text" id="s_qty" name="s_qty"/>
 			</div>
 		</div>
 		<br>
@@ -124,7 +127,7 @@
 				pack Qty:
 			</div>
 			<div class="panleft">
-				<input type="text" name="p_qty"/>
+				<input type="text" id="p_qty" name="p_qty"/>
 			</div>
 		</div>
 		<br>
@@ -133,7 +136,7 @@
 				Cardboard Qty:
 			</div>
 			<div class="panleft">
-				<input type="text" name="c_qty"/>
+				<input type="text" id="c_qty" name="c_qty"/>
 			</div>
 		</div>
 		<br>
