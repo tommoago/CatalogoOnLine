@@ -205,3 +205,7 @@ html > body {
 	color: red;
 	font: bold;
 }
+input[type=submit] {
+	width: 75px;
+	height: 30px;
+}

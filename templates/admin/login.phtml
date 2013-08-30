@@ -1,6 +1,9 @@
-{% include 'header.phtml' %} 
+{% include 'simpleheader.phtml' %}
+
 <div class="login">
-    <p>{{ message }}</p>
+	<p>
+		{{ message }}
+	</p>
 	<form method="post" action="authenticate.php">
 		<p>
 			Username
@@ -12,8 +15,7 @@
 		</p>
 		<input type="password" name="password"/>
 		<br>
-		<input type="submit" value="invio"/>
+		<input type="submit" value="invio" />
 
 	</form>
 </div>
-{% include 'footer.phtml' %}
