@@ -13,5 +13,6 @@ cruds
 -customers (regola ordini fatti dai clienti: cancello cliente ordine o disattivo cliente?) scelgo di disattivre il cliente, chiedere a jack cosa fare.
 -orders 50% (operazioni admin già disponnibili, ma devi popolare tabelle a mano) bisogna aggiungere la possibilità di  visualizzare il pdf  
         -ATTENZIONE, AGGIUNTA DELL'ID OPERATORE CON L'ID NELLA SESSIONE CORRENTE (alla conferma)
+        -funzione per controlli speciali su ordini e dipendenti (admin_role = jack)
 
 annotazione dopo test TOMMA'

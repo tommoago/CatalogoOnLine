@@ -1,24 +1,15 @@
 <?php
-include '../simpleheader.php';
+
+require_once '../../vendor/twig/twig/lib/Twig/Autoloader.php';
+Twig_Autoloader::register();
+
+$loader = new Twig_Loader_Filesystem('../../templates');
+$twig = new Twig_Environment($loader/*, array('cache' => '../../../templates/cache')*/);
+$template = $twig->loadTemplate('admin/login.phtml');
+
+$message = '';
+if(isset( $_GET['message']))
+ $message = $_GET['message'];
+
+$template->display(array('message' => $message));
 ?>
-
-
-<div class="login">
-	<form method="post" action="autenticate.php">
-		<p>
-			Username
-		</p>
-		<input type="text" name="user"/>
-		<br>
-		<p>
-			Password
-		</p>
-		<input type="password" name="password"/>
-		<br>
-		<input type="submit" value="invio"/>
-
-	</form>
-</div>
-</div>
-</body>
-</html>
