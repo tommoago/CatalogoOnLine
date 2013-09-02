@@ -1,6 +1,12 @@
-- validare crud , probabilmente in js(dopo l'incorporamento dello stile), mettere anche un js sulla ocnferma di processazione ordine
--sistemare layout campi nei form/list della pagina content
--layout admin ok (per ora)
+-conferma di processazione ordine
+-layout admin ok spsota anche il footer, replicheremo per la parte site
 -creare layout front end(quindi spostare i templates sotto admin, ed eseguire le relative modifiche nei loader)
 
-per log di PDO: $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+-mettere il no results found nelle pagine di list delle entità(come da esemio, fai un if)
+{% if users|length > 0 %}
+    <ul>
+        {% for user in users %}
+            <li>{{ user.username|e }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
