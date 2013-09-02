@@ -12,7 +12,7 @@ $role = $_POST['role'];
 try {
     $db = new dataBase();
     $DBH = $db->connect();
-    $data = array('name' => $name, 'user' => $user, 'password' => $passwd, 'role' =>$role);
+    $data = array('name' => $name, 'user' => $user, 'password' => $passwd, 'role' =>$role, 'id' => $id);
 
     $STH = $DBH->prepare('UPDATE administrators SET  
                             name = :name, 

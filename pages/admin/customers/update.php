@@ -15,6 +15,7 @@ if (isset($_POST['active'])) {
     $active = 1;
 }
 $passwd = $_POST['password'];
+$type = $_POST['type'];
 $admin_id = $_POST['adm_id'];
 
 try {
@@ -29,6 +30,7 @@ try {
                    'cellphone' => $cellphone,
                    'active' => $active,
                    'password' => $passwd,
+                   'type' => $type,
                    'administrators_id' => $admin_id,
                    'id' => $id);
 
@@ -41,6 +43,7 @@ try {
                             cellphone = :cellphone,
                             active = :active,
                             password = :password,
+                            type = :type,
                             administrators_id = :administrators_id
                           WHERE id = :id');
     $STH->execute($data);

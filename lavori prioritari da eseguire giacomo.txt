@@ -4,10 +4,9 @@
 
 -prodotti ok  PAGINAZIONE (rimane cmq il fatto che se elimino un prod non rientra più nel dettaglio dell'ordine, quindi un documento valevole deve sempre essere creato e salvato nella cartella invoices oppure order_details)
 
--customers (regola ordini fatti dai clienti: cancello cliente ordine o disattivo cliente?) scelgo di disattivre il cliente, chiedere a jack cosa fare. AGGIUNGI SELECT CON TIPO CLIENTE
+-customers (regola ordini fatti dai clienti: cancello cliente ordine o disattivo cliente?) scelgo di disattivre il cliente, chiedere a jack cosa fare.
 
 -orders 50% (operazioni admin già disponnibili, ma devi popolare tabelle a mano) bisogna aggiungere la possibilità di  visualizzare il pdf  
-        -ATTENZIONE, AGGIUNTA DELL'ID OPERATORE CON L'ID NELLA SESSIONE CORRENTE (alla conferma)
         -funzione per controlli speciali su ordini e dipendenti (admin_role = jack)
         -possibilità modificare ordini? se si come? (Parlare con jack)
 

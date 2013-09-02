@@ -30,14 +30,25 @@ try {
         $customer['c_active'] ='checked';
     }
     
-    //marca loperatore appartenente 
+    //marca l'operatore appartenente 
     foreach($result as &$row) {
       $row['selected'] = '';
       if ($row['id'] == $customer['administrators_id']){
           $row['selected'] = 'selected';
       }
     } 
-  
+    
+    switch ($customer['type']) {
+    case 'user':
+        $customer['selected_u']= 'selected';
+        break;
+    case 'seller':
+        $customer['selected_s']= 'selected';
+        break;
+    case 'other':
+        $customer['selected_o']= 'selected';
+        break;
+    }
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }

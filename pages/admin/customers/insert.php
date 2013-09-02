@@ -14,6 +14,7 @@ if (isset($_POST['active'])) {
     $active = 1;
 }
 $passwd = $_POST['password'];
+$type = $_POST['type'];
 $admin_id = $_POST['adm_id'];
 
 
@@ -28,6 +29,7 @@ try {
                   'cellphone' => $cellphone,
                   'active' => $active,
                   'password' => $passwd,
+                  'type' => $type,
                   'administrators_id' => $admin_id);
     $STH = $DBH->prepare('INSERT INTO customers (name, 
                                                  surname,
@@ -37,6 +39,7 @@ try {
                                                  cellphone,
                                                  active,
                                                  password,
+                                                 type,
                                                  administrators_id) 
                                            value (:name, 
                                                   :surname,
@@ -46,6 +49,7 @@ try {
                                                   :cellphone,
                                                   :active,
                                                   :password,
+                                                  :type,
                                                   :administrators_id)');
     $STH->execute($data);
 
