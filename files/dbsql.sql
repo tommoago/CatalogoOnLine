@@ -9,6 +9,8 @@ USE `melarossa` ;
 -- -----------------------------------------------------
 -- Table `melarossa`.`administrators`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `melarossa`.`administrators` ;
+
 CREATE TABLE IF NOT EXISTS `melarossa`.`administrators` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL DEFAULT NULL,
@@ -24,6 +26,8 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `melarossa`.`categories`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `melarossa`.`categories` ;
+
 CREATE TABLE IF NOT EXISTS `melarossa`.`categories` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NULL DEFAULT NULL,
@@ -43,6 +47,8 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `melarossa`.`customers`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `melarossa`.`customers` ;
+
 CREATE TABLE IF NOT EXISTS `melarossa`.`customers` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL DEFAULT NULL,
@@ -53,6 +59,7 @@ CREATE TABLE IF NOT EXISTS `melarossa`.`customers` (
   `cellphone` VARCHAR(45) NULL DEFAULT NULL,
   `active` TINYINT(1) NULL DEFAULT NULL,
   `password` VARCHAR(45) NOT NULL,
+  `type` VARCHAR(45) NULL DEFAULT NULL,
   `administrators_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`, `administrators_id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC),
@@ -70,6 +77,8 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `melarossa`.`orders`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `melarossa`.`orders` ;
+
 CREATE TABLE IF NOT EXISTS `melarossa`.`orders` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `data` DATETIME NULL DEFAULT NULL,
@@ -91,10 +100,11 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `melarossa`.`invoices`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `melarossa`.`invoices` ;
+
 CREATE TABLE IF NOT EXISTS `melarossa`.`invoices` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `path` VARCHAR(45) NULL DEFAULT NULL,
-  `name` VARCHAR(45) NULL DEFAULT NULL,
   `orders_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`, `orders_id`),
   INDEX `fk_invoices_orders1_idx` (`orders_id` ASC),
@@ -110,6 +120,8 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `melarossa`.`products`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `melarossa`.`products` ;
+
 CREATE TABLE IF NOT EXISTS `melarossa`.`products` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NULL DEFAULT NULL,
@@ -126,7 +138,6 @@ CREATE TABLE IF NOT EXISTS `melarossa`.`products` (
   `single_qty` INT(11) NULL DEFAULT NULL,
   `pack_qty` INT(11) NULL DEFAULT NULL,
   `cardboard_qty` INT(11) NULL DEFAULT NULL,
-  `productscol` VARCHAR(45) NULL DEFAULT NULL,
   `categories_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`, `categories_id`),
   INDEX `fk_products_categories_idx` (`categories_id` ASC),
@@ -143,10 +154,13 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `melarossa`.`orders_has_products`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `melarossa`.`orders_has_products` ;
+
 CREATE TABLE IF NOT EXISTS `melarossa`.`orders_has_products` (
   `orders_id` INT(11) NOT NULL,
   `products_id` INT(11) NOT NULL,
   `quantity` INT(11) NULL DEFAULT NULL,
+  `sold_price` DOUBLE NULL DEFAULT NULL,
   PRIMARY KEY (`orders_id`, `products_id`),
   INDEX `fk_orders_has_products_products1_idx` (`products_id` ASC),
   INDEX `fk_orders_has_products_orders1_idx` (`orders_id` ASC),
@@ -167,6 +181,8 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `melarossa`.`product_images`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `melarossa`.`product_images` ;
+
 CREATE TABLE IF NOT EXISTS `melarossa`.`product_images` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `path` VARCHAR(100) NULL DEFAULT NULL,
