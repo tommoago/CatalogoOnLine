@@ -27,6 +27,6 @@
     {% if ord.confirmed != 1%}
     <a href='confirm.php?id={{ ord.id }}'>Conferma ordine</a>
     {% endif %}
-    <input type="button"  value='pdf'>
+    <a href='print.php?id={{ ord.id }}&filetype=invoices'>pdf</a>
 </div>
 {% include 'footer.phtml' %}
