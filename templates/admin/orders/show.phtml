@@ -3,29 +3,30 @@
 
     {% include 'admin/menu.phtml' %}
     <table border='1' style='margin: 50px;'>
-       <tr>
-                        <td>ID</td>
-			<td>Date</td>
-			<td>Confirmed</td>
-                        <td>Operator</td>
-                        <td>Customer</td>
-		</tr>
-		<tr>
-			<td><a href='show.php?id={{ ord.id }}'>{{ ord.id }}</a></td>
-			<td>{{ ord.data }}</td>
-                        <td>{{ ord.confirmed }}</td>
-                        <td>{{ ord.operator }}</td>
-                        <td>{{ ord.customer }}</td>
-		</tr>
-		{% for prod in products %}
-                <tr>
-			<td><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
-			<td>{{ prod.quantity }}</td>
-		</tr>
-                {% endfor %}
+        <tr>
+            <td>ID</td>
+            <td>Date</td>
+            <td>Confirmed</td>
+            <td>Operator</td>
+            <td>Customer</td>
+        </tr>
+        <tr>
+            <td><a href='show.php?id={{ ord.id }}'>{{ ord.id }}</a></td>
+            <td>{{ ord.data }}</td>
+            <td>{{ ord.confirmed }}</td>
+            <td>{{ ord.operator }}</td>
+            <td>{{ ord.customer }}</td>
+        </tr>
+        {% for prod in products %}
+        <tr>
+            <td><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
+            <td>{{ prod.quantity }}</td>
+        </tr>
+        {% endfor %}
     </table>
     {% if ord.confirmed != 1%}
     <a href='confirm.php?id={{ ord.id }}'>Conferma ordine</a>
     {% endif %}
+    <input type="button"  value='pdf'>
 </div>
 {% include 'footer.phtml' %}
