@@ -2,24 +2,33 @@
 <div id='content'>
 
 	{% include 'admin/menu.phtml' %}
-        <p>{{ message }}</p>
+	<p>
+		{{ message }}
+	</p>
+	{% if orders|length > 0 %}
 	<table class="tablelist" style='margin: 50px;'>
 		<tr>
-                        <td>ID</td>
+			<td>ID</td>
 			<td>Date</td>
 			<td>Confirmed</td>
-                        <td>Operator</td>
-                        <td>Customer</td>
+			<td>Operator</td>
+			<td>Customer</td>
 		</tr>
 		{% for ord in orders %}
 		<tr>
 			<td><a href='show.php?id={{ ord.id }}'>{{ ord.id }}</a></td>
 			<td>{{ ord.data }}</td>
-                        <td>{{ ord.confirmed }}</td>
-                        <td>{{ ord.operator }}</td>
-                        <td>{{ ord.customer }}</td>
+			<td>{{ ord.confirmed }}</td>
+			<td>{{ ord.operator }}</td>
+			<td>{{ ord.customer }}</td>
 		</tr>
 		{% endfor %}
 	</table>
+	{%endif%}
+	{% if orders|length == 0 %}
+	<p>
+		no elements found
+	</p>
+	{% endif %}
 </div>
 {% include 'footer.phtml' %}

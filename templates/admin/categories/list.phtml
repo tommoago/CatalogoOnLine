@@ -2,7 +2,10 @@
 <div id='content'>
 
 	{% include 'admin/menu.phtml' %}
-        <p>{{ message }}</p>
+	<p>
+		{{ message }}
+	</p>
+	{% if cats|length > 0 %}
 	<table class="tablelist" style='margin: 50px;'>
 		<tr>
 			<td>Name</td>
@@ -17,6 +20,12 @@
 		</tr>
 		{% endfor %}
 	</table>
+	{%endif%}
+	{% if cats|length == 0 %}
+	<p>
+		no elements found
+	</p>
+	{% endif %}
 </div>
 
 {% include 'footer.phtml' %}

@@ -2,6 +2,7 @@
 <div id='content'>
 
 	{% include 'admin/menu.phtml' %}
+	{% if prods|length > 0 %}
 	<table class="tablelist" style='margin: 50px;'>
 		<tr>
 			<td>Name</td>
@@ -42,6 +43,12 @@
 		</tr>
 		{% endfor %}
 	</table>
+	{%endif%}
+	{% if prods|length == 0 %}
+	<p>
+		no elements found
+	</p>
+	{% endif %}
 </div>
 
 {% include 'footer.phtml' %}

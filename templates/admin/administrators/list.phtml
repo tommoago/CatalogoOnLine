@@ -5,6 +5,7 @@
 	<p>
 		{{ message }}
 	</p>
+	{% if admins|length > 0 %}
 	<table class="tablelist" style='margin: 50px;'>
 		<tr>
 			<td>Name</td>
@@ -21,6 +22,12 @@
 		</tr>
 		{% endfor %}
 	</table>
+	{% endif %}
+	{% if admins|length == 0 %}
+	<p>
+		no elements found
+	</p>
+	{% endif %}
 </div>
 
 {% include 'footer.phtml' %}
