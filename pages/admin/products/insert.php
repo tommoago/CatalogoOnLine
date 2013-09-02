@@ -1,6 +1,8 @@
 <?php
 include '../../../classes/imgUploader.php';
 include '../../../classes/dataBase.php';
+include '../../../classes/Session.php';
+$session = new Session();
 
 $img = new imgUploader();
 $img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);

@@ -306,6 +306,12 @@ class Twig_Extension_Core extends Twig_Extension
     {
         return 'core';
     }
+    
+    public function getGlobals() {
+        return array(
+            'pSession'   => $_SESSION,
+        ) ;
+    }
 }
 
 /**
@@ -1353,3 +1359,5 @@ function twig_array_batch($items, $size, $fill = null)
 
     return $result;
 }
+
+

@@ -1,5 +1,7 @@
 <?php
 include '../../../classes/dataBase.php';
+include '../../../classes/Session.php';
+$session = new Session();
 
 $id = $_POST['id'];
 $name = $_POST['name'];

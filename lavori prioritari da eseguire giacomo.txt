@@ -1,12 +1,10 @@
--meccanismo di login con sessioni e quant'altro
-
 -creare motore pdf
 
 -creare classe di variabili
 
 -cercare metodologia di implementazione multilingua(occhio al cinese per lo stile)
 
-cruds
+cruds Mettere l'opzione no results foud
 -prodotti ok  PAGINAZIONE (rimane cmq il fatto che se elimino un prod non rientra più nel dettaglio dell'ordine, quindi un documento valevole deve sempre essere creato e salvato nella cartella invoices oppure order_details)
 -cats ok
 -admins ok

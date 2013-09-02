@@ -1,6 +1,8 @@
 <?php
 
 include '../../../classes/dataBase.php';
+include '../../../classes/Session.php';
+$session = new Session();
 
 $id = $_GET['id'];
 $message = '';
