@@ -111,7 +111,7 @@ $pdf->Cell('25%', 6, $tot, 1, 0, 'C');
 //Create file
 $fileName = $fileType . '-order' . $order['id'] . '-date' . $order['data'];
 $filePath = '/melarossa/files/' . $fileType . '/' . $fileName . '.pdf';
-$pdf->Output( 'C:\\'. $fileName , 'F');
+$pdf->Output( 'C:\\'. $fileName , 'I');
 
 $save = array('path' => $filePath, 'id' => $id);
 try {
