@@ -11,9 +11,9 @@
         -possibilità modificare ordini? se si come? (Parlare con jack)
 
 
-- imposta layout pdf (con tutti i dati: DIPENDENZA CON CLASSI DI VARIABILI);
+- imposta layout pdf (per ulteriori grafiche e impostazioni chiedere al cliente)
 
--crea mailer (anche epr avviso conferma ordine su part eadmin)
+-crea mailer (anche epr avviso conferma ordine su parte admin)
 
 annotazione dopo test TOMMA'
 

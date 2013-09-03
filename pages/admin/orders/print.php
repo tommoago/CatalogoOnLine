@@ -26,6 +26,10 @@ try {
                             WHERE op.orders_id = :id AND p.id = op.products_id');
     $stmt3->execute($data);
     $products = $stmt3->fetchAll();
+    
+    $stmt4 = $DBH->prepare('SELECT * FROM company_info');
+    $stmt4->execute();
+    $company = $stmt4->fetch();
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
@@ -42,7 +46,7 @@ $pdf->Image('../../../images/appleRedLogo.jpg', 5, 10, '30%');
 
 //altezza riga
 $row_height = 6;
-//N max righe epr pagina
+//N max righe per pagina
 $max = 40;
 $rows = count($products);
 
@@ -58,13 +62,26 @@ $y_axis3 = 46;
 //imprime los titulos de columna para la pagina (quitar comentarios para activar)
 $pdf->SetFillColor(255, 255, 255);
 $pdf->SetFont('Arial', 'B', 11);
-$pdf->SetY($y_axis_initial);
 
+//set company info
+$pdf->SetY(15);
+$pdf->SetX(150);
+$pdf->Cell('100%', 6, $company['name'] , 0);
+$pdf->SetY(15+$row_height);
+$pdf->SetX(150);
+$pdf->Cell('100%', 6, 'Tel.: '.$company['telephone'] , 0);
+$pdf->SetY(15+($row_height*2));
+$pdf->SetX(150);
+$pdf->Cell('100%', 6, 'P.IVA: '.$company['piva'] , 0);
+$pdf->SetY(15+($row_height*3));
+$pdf->SetX(150);
+$pdf->Cell('100%', 6, $company['address'] , 0);
+
+//set customer info
 $pdf->SetY($y_axis3);
 $pdf->SetX($x_axis);
 $pdf->Cell('15%', 6, 'Cliente: lol' , 0);
 $pdf->Ln();
-$pdf->Cell('100%', 6, 'Consuntivo: lol' , 0);
 
 $pdf->SetY($y_axis1);
 $pdf->SetX($x_axis);
@@ -115,15 +132,15 @@ $sDate = $oDate->format("d-m-y");
 $fileName = $fileType . '-order' . $order['id'] . '-date' . $sDate . '.pdf';
 $filePath = '../../../files/' . $fileType . '/' . $fileName ;
 chmod('../../../files/' . $fileType  , 0777);
-$pdf->Output( $filePath, 'F');
+$pdf->Output( $filePath, 'I');
 
 $save = array('path' => $filePath, 'id' => $id);
 try {
-    $stmt4 = $DBH->prepare('INSERT INTO invoices (path,
+    $stmt5 = $DBH->prepare('INSERT INTO invoices (path,
                                                   orders_id) 
                                            value (:path,
                                                   :id)');
-    $stmt4->execute($save);
+    $stmt5->execute($save);
     header('location:show.php?id=' . $id);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
