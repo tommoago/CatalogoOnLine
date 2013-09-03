@@ -43,6 +43,11 @@
 		</tr>
 		{% endfor %}
 	</table>
+	{% for num in totPages %}
+
+	{{ num }}
+
+	{% endfor %}
 	{%endif%}
 	{% if prods|length == 0 %}
 	<p>

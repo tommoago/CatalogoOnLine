@@ -8,26 +8,35 @@ Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem('../../../templates');
 $twig = new Twig_Environment($loader/*, array('cache' => '../../../templates/cache')*/);
-$template = $twig->loadTemplate('admin/products/list.phtml');
+$template = $twig -> loadTemplate('admin/products/list.phtml');
 
 $result = array();
 
 try {
-    $db = new dataBase();
-    $DBH = $db->connect();
-    $stmt = $DBH->prepare('SELECT * FROM products');
-    $stmt->execute();
-    $result = $stmt->fetchAll();
+	$db = new dataBase();
+	$DBH = $db -> connect();
 
-    foreach ($result as &$row) {
-        $stmt = $DBH->prepare('SELECT * FROM categories WHERE id = :id');
-        $stmt->execute(array('id' => $row['categories_id']));
-        $cat = $stmt->fetch();
-        $row['category'] = $cat['name'];
-    }
+	$stmt = $DBH -> prepare('SELECT COUNT(*) FROM products');
+	$stmt -> execute();
+	$totProd = ($stmt -> fetchAll());
+	$totPages = $totProd[0];
+	echo $totPages[0] / 24;
+	$offset = $_GET{'offset'};
+	$limit = 24;
+
+	$stmt = $DBH -> prepare('SELECT * FROM products LIMIT ' . $offset . ', ' . $limit);
+	$stmt -> execute();
+	$result = $stmt -> fetchAll();
+
+	foreach ($result as &$row) {
+		$stmt = $DBH -> prepare('SELECT * FROM categories WHERE id = :id');
+		$stmt -> execute(array('id' => $row['categories_id']));
+		$cat = $stmt -> fetch();
+		$row['category'] = $cat['name'];
+	}
 } catch (PDOException $e) {
-    echo 'ERROR: ' . $e->getMessage();
+	echo 'ERROR: ' . $e -> getMessage();
 }
 
-$template->display(array('prods' => $result));
+$template -> display(array('prods' => $result, 'totPages' => ($totPages[0] / 24)));
 ?>
