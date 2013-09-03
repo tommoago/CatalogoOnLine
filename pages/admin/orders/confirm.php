@@ -21,24 +21,24 @@ try {
 
 $mail = new PHPMailer;
 
-$mail->IsSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp1.example.com;smtp2.example.com';  // Specify main and backup server
+//$mail->IsSMTP();                                      // Set mailer to use SMTP
+$mail->Host = 'gmail.com';  // Specify main and backup server
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'jswan';                            // SMTP username
-$mail->Password = 'secret';                           // SMTP password
-$mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
+$mail->Username = 'oz.ntone';                            // SMTP username
+$mail->Password = 'bmwM3e92';                           // SMTP password
+//$mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
 
-$mail->From = 'from@example.com';
+$mail->From = 'oz.ntone@gmail.com';
 $mail->FromName = 'Mailer';
-$mail->AddAddress('josh@example.net', 'Josh Adams');  // Add a recipient
-$mail->AddAddress('ellen@example.com');               // Name is optional
-$mail->AddReplyTo('info@example.com', 'Information');
-$mail->AddCC('cc@example.com');
-$mail->AddBCC('bcc@example.com');
+$mail->AddAddress('oz.nthr@hotmail.it');  // Add a recipient
+//$mail->AddAddress('ellen@example.com');               // Name is optional
+//$mail->AddReplyTo('info@example.com', 'Information');
+//$mail->AddCC('cc@example.com');
+//$mail->AddBCC('bcc@example.com');
 
 $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
-$mail->AddAttachment('/var/tmp/file.tar.gz');         // Add attachments
-$mail->AddAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+//$mail->AddAttachment('/var/tmp/file.tar.gz');         // Add attachments
+//$mail->AddAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->IsHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Here is the subject';
