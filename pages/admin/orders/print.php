@@ -108,10 +108,14 @@ $pdf->SetFont('Arial', 'B', 11);
 $pdf->Cell('25%', 6, 'Totale Ordine: ', 0, 0, 'C');
 $pdf->Cell('25%', 6, $tot, 1, 0, 'C');
 
+//Convert the date 
+$oDate = new DateTime($order['data']);
+$sDate = $oDate->format("d-m-y");
 //Create file
-$fileName = $fileType . '-order' . $order['id'] . '-date' . $order['data'];
-$filePath = '/melarossa/files/' . $fileType . '/' . $fileName . '.pdf';
-$pdf->Output( 'C:\\'. $fileName , 'I');
+$fileName = $fileType . '-order' . $order['id'] . '-date' . $sDate . '.pdf';
+$filePath = '../../../files/' . $fileType . '/' . $fileName ;
+chmod('../../../files/' . $fileType  , 0777);
+$pdf->Output( $filePath, 'F');
 
 $save = array('path' => $filePath, 'id' => $id);
 try {
@@ -120,6 +124,7 @@ try {
                                            value (:path,
                                                   :id)');
     $stmt4->execute($save);
+    header('location:show.php?id=' . $id);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }

@@ -2,7 +2,7 @@
 
 -cercare metodologia di implementazione multilingua(occhio al cinese per lo stile)
 
--prodotti ok  PAGINAZIONE (rimane cmq il fatto che se elimino un prod non rientra più nel dettaglio dell'ordine, quindi un documento valevole deve sempre essere creato e salvato nella cartella invoices oppure order_details)
+-prodotti (rimane cmq il fatto che se elimino un prod non rientra più nel dettaglio dell'ordine, quindi un documento valevole deve sempre essere creato e salvato nella cartella invoices oppure order_details)
 
 -customers (regola ordini fatti dai clienti: cancello cliente ordine o disattivo cliente?) scelgo di disattivre il cliente, chiedere a jack cosa fare.
 
@@ -11,6 +11,15 @@
         -possibilità modificare ordini? se si come? (Parlare con jack)
 
 
-- contorlla meccanismo pdf
+- imposta layout pdf (con tutti i dati: DIPENDENZA CON CLASSI DI VARIABILI);
+
+-crea mailer (anche epr avviso conferma ordine su part eadmin)
 
 annotazione dopo test TOMMA'
+
+
+annotazioni per caricamento online:
+-dati db:
+HOST: sql.ozntone.com
+USERID e DBNAME: ozntonec41438
+PASSWORD: oznt50584

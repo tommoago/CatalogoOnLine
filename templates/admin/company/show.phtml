@@ -1,0 +1,26 @@
+{% include 'header.phtml' %}
+<div id='content'>
+
+	{% include 'admin/menu.phtml' %}
+	<table class="tablelist" style='margin: 50px;'>
+		<tr>
+			<td>Name</td>
+			<td>Description</td>
+			<td>P. IVA</td>
+                        <td>Telephone</td>
+                        <td>Fax</td>
+                        <td>Address</td>
+                        
+		</tr>
+		<tr>
+			<td>{{ company.name }}</td>
+			<td>{{ company.description }}</td>
+			<td>{{ company.piva }}</td>
+                        <td>{{ company.telephone }}</td>
+                        <td>{{ company.fax }}</td>
+                        <td>{{ company.address }}</td>
+			<td><a href='prepareUpdate.php?id={{ company.id }}'>modifica</a></td>
+		</tr>
+	</table>
+</div>
+{% include 'admin/footer.phtml' %}

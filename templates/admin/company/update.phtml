@@ -1,0 +1,65 @@
+{% include 'header.phtml' %}
+<div id='content'>
+	{% include 'admin/menu.phtml' %}
+	<form action="update.php" method="post" style="padding-left: 270px;">
+		<input type="hidden" name="id" value="{{ company.id }}"/>
+		<div class="totwidth">
+			<div class="panleft">
+				Name
+			</div>
+			<div class="panleft">
+				<input type="text" name="name" value="{{ company.name }}"/>
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				Description
+			</div>
+			<div class="panleft">
+				<input type="text" name="description" value="{{ company.description }}"/>
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				P. IVA
+			</div>
+			<div class="panleft">
+				<input type="text" name="piva" value="{{ company.piva }}"/>
+			</div>
+		</div>
+		<br>
+                <div class="totwidth">
+			<div class="panleft">
+				Telephone
+			</div>
+			<div class="panleft">
+				<input type="text" name="telephone" value="{{ company.telephone }}"/>
+			</div>
+		</div>
+		<br>
+                <div class="totwidth">
+			<div class="panleft">
+				Fax
+			</div>
+			<div class="panleft">
+				<input type="text" name="fax" value="{{ company.fax }}"/>
+			</div>
+		</div>
+		<br>
+                <div class="totwidth">
+			<div class="panleft">
+				Address
+			</div>
+			<div class="panleft">
+				<input type="text" name="address" value="{{ company.address }}"/>
+			</div>
+		</div>
+		<br>
+
+		<input type="submit" value="invio"/>
+
+	</form>
+</div>
+{% include 'admin/footer.phtml' %}

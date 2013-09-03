@@ -28,5 +28,6 @@
     <a href='confirm.php?id={{ ord.id }}'>Conferma ordine</a>
     {% endif %}
     <a href='print.php?id={{ ord.id }}&filetype=invoices'>pdf</a>
+    <a href='print.php?id={{ ord.id }}&filetype=order_details'>details</a>
 </div>
 {% include 'admin/footer.phtml' %}
