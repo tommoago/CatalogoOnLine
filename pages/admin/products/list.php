@@ -13,7 +13,7 @@ $template = $twig->loadTemplate('admin/products/list.phtml');
 
 $result = array();
 $offset = $_GET['offset'];
-$limit = 5;
+$limit = 2;
 $numPages = 0;
 
 try {
@@ -24,7 +24,7 @@ try {
     $stmt->execute();
     $totProd = $stmt->fetch();
     $count = $totProd[0];
-    $numPages +=  $count/$limit;
+    $numPages += intval($count/$limit);
     if($count%$limit != 0){
         $numPages++;
     }

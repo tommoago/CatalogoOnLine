@@ -67,7 +67,7 @@ try {
     $STH2 = $DBH->prepare('INSERT INTO product_images (path, products_id) 
                                                 value (:path, :prod_id)');
     $STH2->execute($data2);
-//    header('location:show.php?id='.$idProd);
+    header('location:show.php?id='.$idProd);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }

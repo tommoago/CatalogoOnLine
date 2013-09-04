@@ -43,11 +43,16 @@
         </tr>
         {% endfor %}
     </table>
-    {% for i in range(low=1, high=totPages, step=1) %}
+        {% if totPages > 1 %}
+            <a href="list.php?offset=0">First</a>
+            {% set last = 0 %}
+            {% for i in range(low=1, high=totPages, step=1) %}
 
-        <a href="list.php?offset={{ i - 1}}">{{ i }}</a>
-
-    {% endfor %}
+                <a href="list.php?offset={{ i - 1}}">{{ i }}</a>
+                {% set last = i -1 %}
+            {% endfor %}
+             <a href="list.php?offset={{ last }}">Last</a>
+        {%endif%}
     {%endif%}
     {% if prods|length == 0 %}
     <p>

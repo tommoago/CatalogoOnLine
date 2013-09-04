@@ -86,7 +86,6 @@ try {
     $STH->execute($data);
 
     if ($pathName != '') {
-        print_r($pathName);
         $data2 = array('path' => $pathName, 'id' => $id);
         $STH2 = $DBH->prepare('UPDATE  product_images SET
                                        path = :path 
