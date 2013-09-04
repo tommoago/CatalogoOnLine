@@ -1,7 +1,7 @@
-{% include 'header.phtml' %}
+{% include 'admin/structure/header.phtml' %}
 <div id='content'>
 
-	{% include 'admin/menu.phtml' %}
+	{% include 'admin/structure/menu.phtml' %}
 	<form action="update.php" method="post" style="padding-left: 270px;" enctype="multipart/form-data">
 
 		<input type="hidden" name="id" value="{{ prod.id }}"/>
@@ -157,4 +157,4 @@
 		<input type="submit" value="invio"/>
 
 	</form>
-	{% include 'admin/footer.phtml' %}
+	{% include 'admin/structure/footer.phtml' %}

@@ -1,19 +1,11 @@
+-sistema pager(aggiungere previous e next per le pagine)
 -creare classe di variabili
 
 -cercare metodologia di implementazione multilingua(occhio al cinese per lo stile)
 
--prodotti (rimane cmq il fatto che se elimino un prod non rientra più nel dettaglio dell'ordine, quindi un documento valevole deve sempre essere creato e salvato nella cartella invoices oppure order_details)
-
--customers (regola ordini fatti dai clienti: cancello cliente ordine o disattivo cliente?) scelgo di disattivre il cliente, chiedere a jack cosa fare.
-
 -orders 50% (operazioni admin già disponnibili, ma devi popolare tabelle a mano) bisogna aggiungere la possibilità di  visualizzare il pdf  
-        -funzione per controlli speciali su ordini e dipendenti (admin_role = jack)
-        -possibilità modificare ordini? se si come? (Parlare con jack)
 
-
-- imposta layout pdf (per ulteriori grafiche e impostazioni chiedere al cliente)
-
--crea mailer (anche epr avviso conferma ordine su parte admin)
+-crea mailer (anche per avviso conferma ordine su parte admin)
 
 annotazione dopo test TOMMA'
 
@@ -23,3 +15,16 @@ annotazioni per caricamento online:
 HOST: sql.ozntone.com
 USERID e DBNAME: ozntonec41438
 PASSWORD: oznt50584
+
+
+Domande per cliente:
+
+-prodotti (rimane cmq il fatto che se elimino un prod non rientra più nel dettaglio dell'ordine, quindi un documento valevole deve sempre essere creato e salvato nella cartella invoices oppure order_details)
+
+-customers (regola ordini fatti dai clienti: cancello cliente ordine o disattivo cliente?) scelgo di disattivre il cliente, chiedere a jack cosa fare.
+
+-imposta layout pdf (per ulteriori grafiche e impostazioni chiedere al cliente)
+
+-funzione per controlli speciali su ordini e dipendenti (admin_role = jack)
+        
+-possibilità modificare ordini? se si come? (Parlare con jack)

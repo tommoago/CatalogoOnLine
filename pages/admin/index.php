@@ -8,7 +8,7 @@ Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem('../../templates');
 $twig = new Twig_Environment($loader/* , array('cache' => '../../../templates/cache') */);
-$template = $twig->loadTemplate('admin/index.phtml');
+$template = $twig->loadTemplate('admin/structure/index.phtml');
 
-$template->display(array('adm' => $_SESSION['user']));
+$template->display(array('adm' => $_SESSION['user'], 'index' => 'true'));
 ?>

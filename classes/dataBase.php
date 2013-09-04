@@ -11,13 +11,20 @@ class dataBase {
 
     function connect() {
 
-        $host = 'localhost';
-        $dbname = 'melarossa';
-        $user = 'root';
-        $pass = 'root';
+        $conf = array(
+            'host' => 'localhost',
+            'dbname' => 'melarossa',
+            'user' => 'root',
+            'pass' => 'root');
+        
+        $confProd = array(
+            'host' => 'sql.ozntone.com',
+            'dbname' => 'ozntonec41438',
+            'user' => 'ozntonec41438',
+            'pass' => 'oznt50584');
 
         try {
-            $DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+            $DBH = new PDO('mysql:host='.$conf['host'].';dbname='.$conf['dbname'], $conf['user'], $conf['pass']);
 //            per loggale errori
             $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $DBH;

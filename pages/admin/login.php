@@ -5,7 +5,7 @@ Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem('../../templates');
 $twig = new Twig_Environment($loader/*, array('cache' => '../../../templates/cache')*/);
-$template = $twig->loadTemplate('admin/login.phtml');
+$template = $twig->loadTemplate('admin/login/login.phtml');
 
 $message = '';
 if(isset( $_GET['message']))

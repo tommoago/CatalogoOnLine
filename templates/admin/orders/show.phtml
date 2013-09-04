@@ -1,7 +1,7 @@
-{% include 'header.phtml' %}
+{% include 'admin/structure/header.phtml' %}
 <div id='content'>
 
-    {% include 'admin/menu.phtml' %}
+    {% include 'admin/structure/menu.phtml' %}
     <table border='1' style='margin: 50px;'>
         <tr>
             <td>ID</td>
@@ -30,4 +30,4 @@
     <a href='print.php?id={{ ord.id }}&filetype=invoices'>pdf</a>
     <a href='print.php?id={{ ord.id }}&filetype=order_details'>details</a>
 </div>
-{% include 'admin/footer.phtml' %}
+{% include 'admin/structure/footer.phtml' %}

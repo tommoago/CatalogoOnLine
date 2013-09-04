@@ -3,9 +3,9 @@ include 'templates/header.phtml';
 include 'pages/validation.php';
 ?>
 
-<script type="text/javascript" src="/MelaRossa/scripts/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="/MelaRossa/scripts/jquery.jcarousel.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/MelaRossa/style/skin.css">
+<script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.jcarousel.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style/skin.css">
 <script type="text/javascript">
 	jQuery(document).ready(function() {
 		jQuery('#mycarousel').jcarousel();
