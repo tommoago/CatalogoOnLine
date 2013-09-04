@@ -2,15 +2,12 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
-DROP SCHEMA IF EXISTS `melarossa` ;
 CREATE SCHEMA IF NOT EXISTS `melarossa` DEFAULT CHARACTER SET utf8 ;
 USE `melarossa` ;
 
 -- -----------------------------------------------------
 -- Table `melarossa`.`administrators`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `melarossa`.`administrators` ;
-
 CREATE TABLE IF NOT EXISTS `melarossa`.`administrators` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL DEFAULT NULL,
@@ -19,15 +16,13 @@ CREATE TABLE IF NOT EXISTS `melarossa`.`administrators` (
   `role` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
+AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
 -- Table `melarossa`.`categories`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `melarossa`.`categories` ;
-
 CREATE TABLE IF NOT EXISTS `melarossa`.`categories` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NULL DEFAULT NULL,
@@ -45,10 +40,25 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
+-- Table `melarossa`.`company_info`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `melarossa`.`company_info` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL DEFAULT NULL,
+  `description` VARCHAR(45) NULL DEFAULT NULL,
+  `piva` VARCHAR(45) NULL DEFAULT NULL,
+  `telephone` VARCHAR(45) NULL DEFAULT NULL,
+  `fax` VARCHAR(45) NULL DEFAULT NULL,
+  `address` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 2
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
 -- Table `melarossa`.`customers`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `melarossa`.`customers` ;
-
 CREATE TABLE IF NOT EXISTS `melarossa`.`customers` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL DEFAULT NULL,
@@ -77,8 +87,6 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `melarossa`.`orders`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `melarossa`.`orders` ;
-
 CREATE TABLE IF NOT EXISTS `melarossa`.`orders` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `data` DATETIME NULL DEFAULT NULL,
@@ -100,11 +108,9 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `melarossa`.`invoices`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `melarossa`.`invoices` ;
-
 CREATE TABLE IF NOT EXISTS `melarossa`.`invoices` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `path` VARCHAR(45) NULL DEFAULT NULL,
+  `path` VARCHAR(150) NULL DEFAULT NULL,
   `orders_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`, `orders_id`),
   INDEX `fk_invoices_orders1_idx` (`orders_id` ASC),
@@ -114,14 +120,13 @@ CREATE TABLE IF NOT EXISTS `melarossa`.`invoices` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
+AUTO_INCREMENT = 33
 DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
 -- Table `melarossa`.`products`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `melarossa`.`products` ;
-
 CREATE TABLE IF NOT EXISTS `melarossa`.`products` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NULL DEFAULT NULL,
@@ -147,15 +152,13 @@ CREATE TABLE IF NOT EXISTS `melarossa`.`products` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 27
+AUTO_INCREMENT = 33
 DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
 -- Table `melarossa`.`orders_has_products`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `melarossa`.`orders_has_products` ;
-
 CREATE TABLE IF NOT EXISTS `melarossa`.`orders_has_products` (
   `orders_id` INT(11) NOT NULL,
   `products_id` INT(11) NOT NULL,
@@ -181,8 +184,6 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `melarossa`.`product_images`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `melarossa`.`product_images` ;
-
 CREATE TABLE IF NOT EXISTS `melarossa`.`product_images` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `path` VARCHAR(100) NULL DEFAULT NULL,
@@ -195,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `melarossa`.`product_images` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 17
+AUTO_INCREMENT = 23
 DEFAULT CHARACTER SET = utf8;
 
 
