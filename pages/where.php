@@ -93,3 +93,4 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB99tx-VW27RMBJxGIQi96sfZ8
 <?php
 
 include '../templates/footer.phtml';
+?>
