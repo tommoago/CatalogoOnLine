@@ -19,7 +19,7 @@ try {
         $_SESSION['user'] = $result;
         header('location:index.php');
     } else {
-        $message = 'Iinvalid credentials';
+        $message = 'Invalid credentials';
         header('location:login.php?message=' . $message);
     }
 } catch (PDOException $e) {
