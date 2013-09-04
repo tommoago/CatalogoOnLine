@@ -11,21 +11,22 @@ include '../templates/header.phtml';
 <div id="content">
 
     <form action="contact.php" method="post" style="padding-left: 270px;" id="formcustomers" enctype="multipart/form-data">
-        <div class="panleft">
+        <div >
             Email:
         </div>
-        <div class="panleft">
+        <div >
             <input type="text" id="email" name="email"/>
         </div>
         <br>
-        <div class="panleft">
+        <div >
             Testo:
         </div>
-        <div class="panleft">
+        <div >
             <textarea id="textarea" name="question" rows="4" cols="50">
                         At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
             </textarea>
         </div>
+        <input type="submit" value="invio"/>
     </form>
 
 </div>

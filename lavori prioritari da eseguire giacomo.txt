@@ -1,3 +1,4 @@
+-metti sessione in tutti TUTTI i file
 -sistema classe gestione sessione
 -sistema pager(aggiungere previous e next per le pagine)
 -creare classe di variabili
