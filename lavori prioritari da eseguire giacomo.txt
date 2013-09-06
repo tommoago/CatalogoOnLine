@@ -1,13 +1,14 @@
 -metti sessione in tutti TUTTI i file
--sistema classe gestione sessione
--sistema pager(aggiungere previous e next per le pagine)
--creare classe di variabili
 
--cercare metodologia di implementazione multilingua(occhio al cinese per lo stile)
+-creare classe di variabili
 
 -orders 50% (operazioni admin già disponnibili, ma devi popolare tabelle a mano) bisogna aggiungere la possibilità di  visualizzare il pdf  
 
 -crea mailer (anche per avviso conferma ordine su parte admin)
+
+-cercare metodologia di implementazione multilingua(occhio al cinese per lo stile)
+
+-sistema pager(aggiungere previous e next per le pagine)
 
 annotazione dopo test TOMMA'
 

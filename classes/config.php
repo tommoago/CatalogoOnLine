@@ -5,7 +5,7 @@
  * @author ozntone
  */
 class config {
-    
+
 }
 
 ?>

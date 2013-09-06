@@ -9,7 +9,7 @@ class Session {
         session_start();
         $this->check_login();
         if (!$this->logged_in) {
-            header('location:/melarossa/pages/admin/login.php');
+            header('location:' . $this->getPath() . 'pages/admin/login.php');
         }
     }
 
@@ -27,7 +27,7 @@ class Session {
         unset($this->user_id);
         $this->logged_in = false;
         session_destroy();
-        header('location:/melarossa');
+        header('location:' . $this->getPath());
     }
 
     private function check_login() {
@@ -39,10 +39,20 @@ class Session {
             $this->logged_in = false;
         }
     }
-    
+
     public function getUser_id() {
         return $this->user_id;
     }
 
+    private function getPath() {
+        $levels = substr_count($_SERVER['PHP_SELF'], "/");
+
+        for ($i = 1; $i < $levels - 1; $i++) {
+            $relativeDir .= "../";
+        }
+        return $relativeDir;
+    }
+
 }
+
 ?>
