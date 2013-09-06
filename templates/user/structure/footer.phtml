@@ -1,0 +1,24 @@
+<div id="footer">
+    {% set pathF = '' %}
+    {% if pSession.user.id != '' and index == '' %}
+        {% set pathF = '../' %}
+    {% endif %}
+    <div id="footer_inside">
+        <ul class="footer_menu">
+            <li>
+                <a href="{{ pathF }}index.php">Home Page Admin Panel</a>|
+            </li>
+            {% if pSession.user.id != ''%}
+            <li>
+                <a href="{{ pathF }}logout.php">Logout</a>
+            </li>
+            {% endif %}
+        </ul>
+        <br />
+        <br />
+        <p>
+            Copyright &copy;. All rights reserved. Design by Giacomo Bianchetto
+        </p>
+
+    </div>
+</div>

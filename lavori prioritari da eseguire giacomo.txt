@@ -10,7 +10,10 @@
 
 -sistema pager(aggiungere previous e next per le pagine)
 
-annotazione dopo test TOMMA'
+-Prossime sessioni lavori:
+
+-FRONT END strutturazione + templating
+-SEZIONE USER impostata, revisioni e test
 
 
 annotazioni per caricamento online:
