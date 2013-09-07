@@ -1,6 +1,5 @@
 -conferma di processazione ordine
--layout admin ok spsota anche il footer, replicheremo per la parte site
--creare layout front end(quindi spostare i templates sotto admin, ed eseguire le relative modifiche nei loader)
+-creare layout front end
 
 -TROVARE IL MODO DI RIDIMENSIONARE LE IMMAGINI IN MANIERA PROPORZIONALE
 
