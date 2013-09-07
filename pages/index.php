@@ -50,6 +50,20 @@ include 'validation.php';
 			</ul>
 		</div>
 	</center>
+	<div class="text">
+    <?php
+        print_r($_SERVER['PHP_SELF']);
+    $scriptname=end(explode('/',$_SERVER['PHP_SELF']));
+$scriptpath=str_replace($scriptname,'',$_SERVER['PHP_SELF']);
+echo '<br>';
+print_r($scriptpath);
+echo '<br>';
+print_r($_SERVER['SERVER_NAME']);
+echo '<br>';
+print_r($_SERVER["DOCUMENT_ROOT"]);
+
+?>
+</div>
 </div>
 <?php
 include '../templates/footer.phtml';

@@ -89,7 +89,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB99tx-VW27RMBJxGIQi96sfZ8
 	google.maps.event.addDomListener(window, 'load', initialize); 
 </script>
 
-<div id="map-canvas" style="height: 500px; color: black;"></div>
+<div id="map-canvas" style="margin-top: 50px; height: 500px; color: black;"></div>
 <?php
 
 include '../templates/footer.phtml';
