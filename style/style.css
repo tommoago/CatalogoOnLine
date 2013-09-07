@@ -19,17 +19,53 @@ html > body {
 	min-height: 100%;
 	height: auto;
 }
+h2{
+    color: #54503f
+}
 #header {
-	height: 200px;
-	background-image: url(../images/header_bg.gif);
+	height: 160px;
+	background-image: url(../images/header_bg.jpg);
 	background-position: top left;
 	background-repeat: repeat-x;
+    	margin-bottom: 40px;
+	border-bottom: 3px solid #d3cebb;
+
 }
 #header_inside {
 	width: 1000px;
 	margin: 0 auto;
 	position: relative;
 }
+#headertitle {
+	width: 50%;
+	float: left;
+	padding-top: 60px;
+	padding-left: 50px;
+     font-family: Helvetica, Arial, sans-serif;
+     font-weight: 100;
+     font-size: 40px;
+      color: #0b3e01
+}
+#redapple {
+	float: left;
+	background-image: url(../images/applelogo.svg);
+     background-size:160px auto;
+	height:160px;
+	width:160px;
+}
+
+#topmenu {
+     float: right;
+     padding-top: 130px;
+}
+#topmenu a{
+     color: #0b3e01;
+     text-decoration:none
+}
+#topmenu a:hover{
+     color: #041a00;
+     text-decoration:underline
+     } 
 #menu {
 	position: absolute;
 	top: 156px;
@@ -39,7 +75,7 @@ html > body {
 	display: inline;
 }
 #menu a {
-	margin: 0 1px 0 0;
+	margin: 5px 1px 0 0;
 	width: 110px;
 	text-align: center;
 	text-decoration: none;
@@ -47,32 +83,67 @@ html > body {
 	display: block;
 	float: left;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #0D0D0D;
+	font-size: 15px;
+	color: #b70404;
 	background-position: top left;
 	background-repeat: no-repeat;
 }
-#menu .but1_active, #menu .but1:hover {
-	background-color: red;
+#menu .but1_active {
+    margin-top:2px;
+	background-color: #d40303;
 	text-decoration: none;
 	color: white;
+    box-shadow:0px 2px 2px black;
 }
-#menu .but2_active, #menu .but2:hover {
-	background-color: red;
+#menu .but2_active {
+    margin-top:2px;
+	background-color: #d40303;
 	text-decoration: none;
-	color: #FFFFFF;
+	color: white;
+    box-shadow:0px 2px 2px black;
 }
-#menu .but3_active, #menu .but3:hover {
-	background-color: red;
+#menu .but3_active {
+    margin-top:2px;
+	background-color: #d40303;
 	text-decoration: none;
-	color: #FFFFFF;
+	color: white;
+    box-shadow:0px 2px 2px black;
 }
-#menu .but4_active, #menu .but4:hover {
-	background-color: red;
+#menu .but4_active {
+    margin-top:2px;
+	background-color: #d40303;
 	text-decoration: none;
-	color: #FFFFFF;
+	color: white;
+    box-shadow:0px 2px 2px black;
 }
-
+#menu .but1:hover {
+    margin-top:4px;
+	background-color: #ce6e6e;
+	text-decoration: none;
+	color: white;
+    height:13px
+}
+#menu .but2:hover {
+    margin-top:4px;
+	background-color: #ce6e6e;
+	text-decoration: none;
+	color: white;
+    height:13px
+}
+#menu .but3:hover {
+    margin-top:4px;
+	background-color: #ce6e6e;
+	text-decoration: none;
+	color: white;
+    height:13px
+}
+#menu .but4:hover {
+    margin-top:4px;
+	background-color: #ce6e6e;
+	text-decoration: none;
+	color: white;
+    height:13px
+}
 #sidebar {
 	width: 175px;
 	float: left;
@@ -101,9 +172,12 @@ html > body {
 	padding: 0 0 0 10px;
 }
 .color {
-	background-color: #ECECC5
+	background-color: #e1dcc8
 }
-
+.text{
+    color: #54503f;
+    margin-left: 270px
+}
 #footer {
 	width: 100%;
 	height: 142px;
@@ -158,16 +232,7 @@ html > body {
 #content {
 	width: auto;
 	display: block;
-	height: 600px;
-}
-#headertitle {
-	width: 50%;
-	float: left;
-	padding-top: 60px;
-	padding-left: 70px;
-}
-#redapple {
-	float: left;
+	height: auto;
 }
 .login {
 	position: absolute;
