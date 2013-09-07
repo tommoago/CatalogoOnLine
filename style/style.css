@@ -233,6 +233,8 @@ h2{
 	width: auto;
 	display: block;
 	height: auto;
+     min-height: 270px
+
 }
 .login {
 	position: absolute;
