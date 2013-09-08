@@ -2,8 +2,12 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     {% set path = '' %}
-    {% if pSession.user.id != '' and index == '' %}
-    {% set path = '../' %}
+    {% set logInOut = 'admin' %}
+    {% if pSession.user.id != ''  %}
+        {% set logInOut = 'logout' %}
+        {% if index == '' %}
+            {% set path = '../' %}
+        {% endif %}
     {% endif %}
     <head>
         <title>Mela Rossa Cash & Carry</title>
@@ -30,7 +34,9 @@
                     </li>
                 </ul>
                 <p id="topmenu">
-                    <a href="">Registrazione</a> | <a href="admin/login.php">Admin</a> | <a href="user/login.php">User</a> | <a href="">Carrello</a>
+                    {% if logInOut == 'logout' %}
+                        <a href="{{ path }}{{ logInOut }}.php">{{ logInOut }}</a> 
+                    {% endif %}
                 </p>
             </div>
         </div>

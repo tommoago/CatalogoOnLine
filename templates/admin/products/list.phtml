@@ -51,7 +51,7 @@
                 <a href="list.php?offset={{ i - 1}}">{{ i }}</a>
                 {% set last = i -1 %}
             {% endfor %}
-             <a href="list.php?offset={{ last }}">Last</a>
+             <a href="list.php?offset={{ totPages - 1 }}">Last</a>
         {%endif%}
     {%endif%}
     {% if prods|length == 0 %}
