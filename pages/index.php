@@ -12,7 +12,7 @@ include '../templates/header.phtml';
     <?php
     include '../templates/menu_1.phtml';
     ?>
-        <div style="height: 200px; width: 500px;">
+        <div>
             <ul id="mycarousel" class="jcarousel-skin-tango" >
                 <li>
                     <a href=""> <img src="http://static.flickr.com/66/199481236_dc98b5abb3_s.jpg" width="75" height="75" alt="" />

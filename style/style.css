@@ -187,7 +187,7 @@ h2{
 	position: absolute;
 }
 #footer_inside {
-	width: 1000px;
+	width: 100%;
 	height: 142px;
 	margin: 0 auto;
 	background-image: url(../images/telephone.jpg);
@@ -233,7 +233,7 @@ h2{
 	width: auto;
 	display: block;
 	height: auto;
-     min-height: 270px
+     min-height: 370px
 
 }
 .login {
@@ -276,4 +276,9 @@ input[type=submit] {
 	width: 75px;
 	height: 30px;
 }
-
+#accordion {
+    width: 270px;
+    float: left;
+    position: absolute;
+    margin: 15px;
+}
