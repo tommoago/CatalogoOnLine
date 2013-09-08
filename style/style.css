@@ -282,3 +282,11 @@ input[type=submit] {
     position: absolute;
     margin: 15px;
 }
+.right-side {
+    float: right;
+    width: 270px;
+    height: 400px;
+    border: 3px solid red;
+    margin-right: 15px;
+    margin-top: -102px
+}

@@ -45,7 +45,7 @@ include '../templates/header.phtml';
                 </li>
             </ul>
         </div>
-    
+	   <div class="right-side"> Ma LOL di brutto </div>
 </div>
 <?php
 
