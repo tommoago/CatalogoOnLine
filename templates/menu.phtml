@@ -1,35 +1,28 @@
-<div id="sidebar">
-	<h2>Categorie</h2>
-	<ul id="list">
-		<li class="color">
-			<a href="">Category</a>
-		</li>
-		<li>
-			<a href="">Category</a>
-		</li>
-		<li class="color">
-			<a href="">Category</a>
-		</li>
-		<li>
-			<a href="">Category</a>
-		</li>
-		<li class="color">
-			<a href="">Category</a>
-		</li>
-		<li>
-			<a href="">Category</a>
-		</li>
-		<li class="color">
-			<a href="">Category</a>
-		</li>
-		<li>
-			<a href="">Category</a>
-		</li>
-		<li class="color">
-			<a href="">Category</a>
-		</li>
-		<li>
-			<a href="">Category</a>
-		</li>   
-	</ul>
+<div id='content'>
+    <p>
+        {{ message }}
+    </p>
+
+    {% if cats|length > 0 %}
+
+        {% for cat in cats %}
+        <ul id="list">
+            <li>
+                <a href="products_category.php?id_cat={{ cat.id }}"> {{ cat.name }} </a>
+                {% for cat2 in cat.category %}
+                <ul id="list">
+                    <li>
+                        <a href="products_category.php?id_cat={{ cat2.id }}"> {{ cat2.name }} </a>
+                    </li>
+                </ul>
+                {% endfor %}
+            </li>
+        </ul>
+        {% endfor %}
+    {%endif%}
+    {% if cats|length == 0 %}
+    <p>
+        no elements found
+    </p>
+    {% endif %}
 </div>
