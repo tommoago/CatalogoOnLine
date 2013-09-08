@@ -1,12 +1,8 @@
 <?php
-
 include '../templates/header.phtml';
-include 'validation.php';
 ?>
 
-<script type="text/javascript" src="../scripts/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="../scripts/jquery.jcarousel.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../style/skin.css">
+
 <script type="text/javascript">
     jQuery(document).ready(function() {
         jQuery('#mycarousel').jcarousel();
@@ -14,9 +10,8 @@ include 'validation.php';
 </script>
 <div id="content">
     <?php
-    include 'menu.php';
+    include '../templates/menu_1.phtml';
     ?>
-    <center>
         <div style="height: 200px; width: 500px;">
             <ul id="mycarousel" class="jcarousel-skin-tango" >
                 <li>
@@ -50,10 +45,7 @@ include 'validation.php';
                 </li>
             </ul>
         </div>
-    </center>
-    <div class="text">
-
-    </div>
+    
 </div>
 <?php
 

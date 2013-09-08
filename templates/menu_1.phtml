@@ -1,0 +1,47 @@
+<script type="text/javascript">
+    $.post("menu.php",
+            function(data) {
+                if (data.length == 0) {
+                    $('#accordion').append("<p>No result found.</p>");
+                } else {
+                    var h3, div, a;
+                    for (var i = 0; i < data.length; i++) {
+                        var id = data[i]['id'];
+                        var divInn;
+                        h3 = document.createElement('h3');
+                        a = document.createElement('a');
+                        a.setAttribute('href', 'products_category.php?id_cat=' + id);
+                        a.appendChild(document.createTextNode(data[i]['name']));
+                        h3.appendChild(a);
+                        div = document.createElement('div');
+                        divInn = document.createElement('div');
+                        divInn.setAttribute('id', 'accordion'+id);
+                        div.appendChild(divInn);
+                        $('#accordion').append(h3);
+                        $('#accordion').append(div);
+                        var h3Inn, divU, aInn;
+                        for (var j = 0; j < data[i]['category'].length; j++) {
+                            var cat = data[i]['category'][j];
+                            var idInn = cat['id'];
+                            h3Inn = document.createElement('h3');
+                            aInn = document.createElement('a');
+                            aInn.setAttribute('href', 'products_category.php?id_cat=' + idInn);
+                            aInn.appendChild(document.createTextNode(cat['name']));
+                            h3Inn.appendChild(aInn);
+                            divU = document.createElement('div');
+                            div.appendChild(divInn);
+                            divInn.appendChild(h3Inn);
+                            divInn.appendChild(divU);
+                        }
+                        
+                        $('#'+divInn.id).accordion();
+                    }
+                }
+                $('#accordion').accordion();
+                
+            }, "json");
+
+</script>
+<div id='accordion'>
+
+</div>

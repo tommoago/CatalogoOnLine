@@ -27,6 +27,7 @@ try {
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
-$_SESSION['cats'] = $result;
-$template->display(array('cats' => $result));
+//print_r($result);
+echo json_encode($result);
+//$template->display(array('cats' => $result));
 ?>
