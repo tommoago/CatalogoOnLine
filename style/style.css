@@ -234,6 +234,7 @@ h2{
 	display: block;
 	height: auto;
      min-height: 370px
+     overflow: auto
 
 }
 .login {
