@@ -13,7 +13,7 @@ $template = $twig->loadTemplate('admin/products/list.phtml');
 
 $result = array();
 $offset = $_GET['offset'];
-$limit = 6;
+$limit = 3;
 $numPages = 0;
 
 try {
@@ -44,5 +44,9 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('prods' => $result, 'totPages' => $numPages));
+$lowRange = $offset/$limit-3;
+$maxRange = $offset/$limit;
+$maxRange < 3? $maxRange = 6 : $maxRange += 3;
+
+$template->display(array('prods' => $result, 'totPages' => $numPages, 'lr' => $lowRange, 'mr' => $maxRange));
 ?>

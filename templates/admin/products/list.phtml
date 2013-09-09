@@ -45,15 +45,24 @@
     </table>
         {% if totPages > 1 %}
             <a href="list.php?offset=0">First</a>
-            {% set last = 0 %}
-            {% for i in range(low=1, high=totPages, step=1) %}
-
-                <a href="list.php?offset={{ i - 1}}">{{ i }}</a>
-                {% set last = i -1 %}
+            {% if lr > 1 %}
+                <a href="list.php?offset={{ lr }}">Prev</a>
+            {%endif%}
+            
+            {% for i in range(low = lr, high = mr, step=1) %}
+                {% if (i  <= totPages) and (i > 0) %}
+                    <a href="list.php?offset={{ i - 1}}">{{ i }}</a>
+                {%endif%}
             {% endfor %}
+            
+            {% if (totPages - 1 > 6) and ((mr) < (totPages - 1))%}
+                <a href="list.php?offset={{ mr }}">Next</a>
+            {%endif%}
              <a href="list.php?offset={{ totPages - 1 }}">Last</a>
         {%endif%}
     {%endif%}
+    {{ mr }}
+    {{ totPages - 1 }}
     {% if prods|length == 0 %}
     <p>
         no elements found
