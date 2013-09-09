@@ -1,0 +1,21 @@
+{% include 'admin/structure/header.phtml' %}
+
+<div class="login">
+	<p>
+		{{ message }}
+	</p>
+	<form method="post" action="authenticate.php">
+		<p>
+			Email
+		</p>
+		<input type="text" name="email"/>
+		<br>
+		<p>
+			Password
+		</p>
+		<input type="password" name="password"/>
+		<br>
+		<input type="submit" value="invio" />
+
+	</form>
+</div>

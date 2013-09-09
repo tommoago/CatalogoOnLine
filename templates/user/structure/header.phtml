@@ -2,18 +2,26 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     {% set path = '' %}
-    {% if pSession.user.id != '' and index == '' %}
-        {% set path = '../' %}
+    {% set logInOut = 'user' %}
+    {% if pSession.user.id != ''  %}
+        {% set logInOut = 'logout' %}
+        {% if index == '' %}
+            {% set path = '../' %}
+        {% endif %}
     {% endif %}
     <head>
         <title>Mela Rossa Cash & Carry</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
         <link rel="stylesheet" type="text/css" href="{{ path }}../../style/style.css" />
+        <link rel="stylesheet" type="text/css" href="{{ path }}../../style/jquery-ui-1.9.2.custom.css">
+        <script type="text/javascript" src="{{ path }}../../scripts/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="{{ path }}../../scripts/jquery-ui-1.9.2.custom.js"></script>
     </head>
     <body>
         <div id="header">
             <div id="header_inside">
-                <img id="redapple" src="{{ path }}../../images/halfredapplep2ok.png" height="168px" width="168px"/><h1 id="headertitle">Mela Rossa Cash & Carry</h1>
+                <div id="redapple"></div>
+                <h1 id="headertitle">Mela Rossa Cash & Carry</h1>
                 <ul id="menu">
                     <li>
                         <a href="{{ path }}../../index.php" class="but1_active">Home Page</a>
@@ -28,5 +36,10 @@
                         <a href="" class="but4">Contatti</a>
                     </li>
                 </ul>
+                <p id="topmenu">
+                    {% if logInOut == 'logout' %}
+                        <a href="{{ path }}{{ logInOut }}.php">{{ logInOut }}</a> 
+                    {% endif %}
+                </p>
             </div>
         </div>

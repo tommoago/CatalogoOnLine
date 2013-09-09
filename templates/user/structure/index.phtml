@@ -1,8 +1,8 @@
-{% include 'admin/structure/header.phtml' %}
+{% include 'user/structure/header.phtml' %}
 <div id='content'>
 
-	{% include 'admin/structure/menu.phtml' %}
-        <p>Welcome {{ adm.name }} from here, you can start to control your website!</p>
+	{% include 'user/structure/menu.phtml' %}
+        <p>Welcome {{ pSession.user.name }} from here, you can start to control your profile!</p>
 </div>
 
-{% include 'admin/structure/footer.phtml' %}
+{% include 'user/structure/footer.phtml' %}

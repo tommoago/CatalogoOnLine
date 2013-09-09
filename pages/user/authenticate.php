@@ -11,8 +11,8 @@ $message = '';
 try {
     $db = new dataBase();
     $DBH = $db->connect();
-    $data = array('user' => $user, 'password' => $passwd);
-    $STH = $DBH->prepare('SELECT * FROM customers WHERE email = :email AND password = :password');
+    $data = array('email' => $email, 'password' => $passwd);
+    $STH = $DBH->prepare('SELECT * FROM customers WHERE email = :email AND password = :password AND active = 1');
     $STH->execute($data);
     $result = $STH->fetch();
     if (!empty($result)) {

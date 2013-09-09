@@ -1,32 +1,37 @@
 {% include 'user/structure/header.phtml' %}
 <div id='content'>
-
-	{% include 'user/structure/menu.phtml' %}
-	<table class="tablelist" style='margin: 50px;'>
-		<tr>
-			<td>Name</td>
-			<td>Surname</td>
-			<td>Address</td>
-			<td>Email</td>
-			<td>Telephone</td>
-			<td>Cellphone</td>
-			<td>Active</td>
-			<td>Operator</td>
-                        <td>Type</td>
-		</tr>
-		<tr>
-			<td>{{ cus.name }}</td>
-			<td>{{ cus.surname }}</td>
-			<td>{{ cus.address }}</td>
-			<td>{{ cus.email }}</td>
-			<td>{{ cus.telephone }}</td>
-			<td>{{ cus.cellphone }}</td>
-			<td>{{ cus.active }}</td>
-			<td>{{ cus.operator }}</td>
-                        <td>{{ cus.type }}</td>
-			<td><a href='deactivate.php?id={{ cus.id }}'>disattiva</a></td>
-			<td><a href='prepareUpdate.php?id={{ cus.id }}'>modifica</a></td>
-		</tr>
-	</table>
+    <script type="text/javascript">
+//        metodo interessante, ma da vedere perchè non funziona
+//        $('.confirmation').on('click', function() {
+//            return confirm('Are you sure to delete your account???');
+//        });
+    </script>
+    {% include 'user/structure/menu.phtml' %}
+    <table class="tablelist" style='margin: 50px;'>
+        <tr>
+            <td>Name</td>
+            <td>Surname</td>
+            <td>Address</td>
+            <td>Email</td>
+            <td>Telephone</td>
+            <td>Cellphone</td>
+            <td>Active</td>
+            <td>Operator</td>
+            <td>Type</td>
+        </tr>
+        <tr>
+            <td>{{ cus.name }}</td>
+            <td>{{ cus.surname }}</td>
+            <td>{{ cus.address }}</td>
+            <td>{{ cus.email }}</td>
+            <td>{{ cus.telephone }}</td>
+            <td>{{ cus.cellphone }}</td>
+            <td>{{ cus.active }}</td>
+            <td>{{ cus.operator }}</td>
+            <td>{{ cus.type }}</td>
+            <td><a href='deactivate.php?id={{ cus.id }}' onclick="return confirm('Are you sure to delete your account???')">Delete</a></td>
+            <td><a href='prepareUpdate.php?id={{ cus.id }}'>modifica</a></td>
+        </tr>
+    </table>
 </div>
 {% include 'user/structure/footer.phtml' %}
