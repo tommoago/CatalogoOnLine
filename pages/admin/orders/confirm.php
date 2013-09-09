@@ -17,7 +17,15 @@ try {
                           WHERE id = :id');
     $STH->execute($data);
     
-$mailer->send("oz.nthr@hotmail.it", "lmao", "subject", "body");
+    $STH = $DBH->prepare('SELECT * FROM orders WHERE id = :id');
+    $STH->execute(array('id' => $id));
+    $order = $STH->fetch();
+    
+    $STH = $DBH->prepare('SELECT * FROM customers WHERE id = :id');
+    $STH->execute(array('id' => $order['customers_id']));
+    $customer = $STH->fetch();
+    
+    $mailer->send($customer['email'], "lmao", "Order ". $order['id'] ." confirmation", "This mail is automatically sent to confirm your order with id: ". $order['id']);
 
     header('location:show.php?id=' . $id);
 } catch (PDOException $e) {
