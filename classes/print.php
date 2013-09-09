@@ -136,10 +136,8 @@ $pdf->Output( $filePath, 'I');
 
 $save = array('path' => $filePath, 'id' => $id);
 try {
-    $stmt5 = $DBH->prepare('INSERT INTO invoices (path,
-                                                  orders_id) 
-                                           value (:path,
-                                                  :id)');
+    $stmt5 = $DBH->prepare('INSERT INTO invoices (path, orders_id) 
+                                           value (:path, :id)');
     $stmt5->execute($save);
     header('location:show.php?id=' . $id);
 } catch (PDOException $e) {

@@ -22,7 +22,8 @@
         </tr>
         {% endfor %}
     </table>
-    <a href='print.php?id={{ ord.id }}&filetype=invoices'>pdf</a>
-    <a href='print.php?id={{ ord.id }}&filetype=order_details'>details</a>
+    {% if ord.file != ''%}
+        <a href='{{ ord.file }}'>pdf</a>
+    {% endif %}
 </div>
 {% include 'user/structure/footer.phtml' %}

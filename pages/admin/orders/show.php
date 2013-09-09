@@ -35,6 +35,11 @@ try {
                             WHERE op.orders_id = :id AND p.id = op.products_id');
     $stmt2->execute($data);
     $products = $stmt2->fetchAll();
+    
+    $stmt4 = $DBH->prepare('SELECT * FROM invoices WHERE orders_id = :id');
+    $stmt4->execute(array('id' => $order['id']));
+    $inv = $stmt4->fetch();
+    $order['file'] = $inv['path'];
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }

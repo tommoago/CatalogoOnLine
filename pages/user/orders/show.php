@@ -21,15 +21,22 @@ try {
     $stmt->execute($data);
     $order = $stmt->fetch();
 
-    $stmt = $DBH->prepare('SELECT * FROM administrators WHERE id = :id');
-    $stmt->execute(array('id' => $order['operator']));
-    $op = $stmt->fetch();
+    $stmt2 = $DBH->prepare('SELECT * FROM administrators WHERE id = :id');
+    $stmt2->execute(array('id' => $order['operator']));
+    $op = $stmt2->fetch();
     $order['operator'] = $op['name'];
 
-    $stmt2 = $DBH->prepare('SELECT * FROM products p, orders_has_products op 
+    $stmt3 = $DBH->prepare('SELECT * FROM products p, orders_has_products op 
                             WHERE op.orders_id = :id AND p.id = op.products_id');
-    $stmt2->execute($data);
-    $products = $stmt2->fetchAll();
+    $stmt3->execute($data);
+    $products = $stmt3->fetchAll();
+    
+    $stmt4 = $DBH->prepare('SELECT * FROM invoices WHERE orders_id = :id');
+    $stmt4->execute(array('id' => $order['id']));
+    $inv = $stmt4->fetch();
+    $order['file'] = $inv['path'];
+    
+    
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
