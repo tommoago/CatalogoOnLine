@@ -17,10 +17,10 @@ try {
                           WHERE id = :id');
     $STH->execute($data);
     
-    require '../../../classes/mailer/class.phpmailer.php';
+//    require '../../../classes/mailer/class.phpmailer.php';
+print_r($mailer->send("oz.nthr@hotmail.it", "lmao", "subject", "body"));
 
-
-    header('location:show.php?id=' . $id);
+//    header('location:show.php?id=' . $id);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
