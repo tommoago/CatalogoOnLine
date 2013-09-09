@@ -1,0 +1,28 @@
+{% include 'user/structure/header.phtml' %}
+<div id='content'>
+
+    {% include 'user/structure/menu.phtml' %}
+    <table border='1' style='margin: 50px;'>
+        <tr>
+            <td>ID</td>
+            <td>Date</td>
+            <td>Confirmed</td>
+            <td>Operator</td>
+        </tr>
+        <tr>
+            <td><a href='show.php?id={{ ord.id }}'>{{ ord.id }}</a></td>
+            <td>{{ ord.data }}</td>
+            <td>{{ ord.confirmed }}</td>
+            <td>{{ ord.operator }}</td>
+        </tr>
+        {% for prod in products %}
+        <tr>
+            <td><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
+            <td>{{ prod.quantity }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href='print.php?id={{ ord.id }}&filetype=invoices'>pdf</a>
+    <a href='print.php?id={{ ord.id }}&filetype=order_details'>details</a>
+</div>
+{% include 'user/structure/footer.phtml' %}

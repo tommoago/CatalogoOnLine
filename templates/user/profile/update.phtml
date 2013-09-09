@@ -2,13 +2,13 @@
 <div id='content'>
     {% include 'user/structure/menu.phtml' %}
     <form action="update.php" method="post" style="padding-left: 270px;">
-        <input type="hidden" name="id" value="{{ cus.id }}"/>
+        <input type="hidden" name="id" value="{{ usr.id }}"/>
         <div class="totwidth">
 			<div class="panleft">
 				Name:
 			</div>
 			<div class="panleft">
-				<input type="text" name="name" value="{{ cus.name }}"/>
+				<input type="text" name="name" value="{{ usr.name }}"/>
 			</div>
 		</div>
 		<br>
@@ -17,7 +17,7 @@
 				Surname:
 			</div>
 			<div class="panleft">
-				<input type="text" name="surname" value="{{ cus.surname }}"/>
+				<input type="text" name="surname" value="{{ usr.surname }}"/>
 			</div>
 		</div>
 		<br>
@@ -26,7 +26,7 @@
 				Address:
 			</div>
 			<div class="panleft">
-				<input type="text" name="address" value="{{ cus.address }}"/>
+				<input type="text" name="address" value="{{ usr.address }}"/>
 			</div>
 		</div>
 		<br>
@@ -35,7 +35,7 @@
 				Email:
 			</div>
 			<div class="panleft">
-				<input type="text" name="email" value="{{ cus.email }}"/>
+				<input type="text" name="email" value="{{ usr.email }}"/>
 			</div>
 		</div>
 		<br>
@@ -44,7 +44,7 @@
 				Telephone:
 			</div>
 			<div class="panleft">
-				<input type="text" name="telephone" value="{{ cus.telephone }}"/>
+				<input type="text" name="telephone" value="{{ usr.telephone }}"/>
 			</div>
 		</div>
 		<br>
@@ -53,7 +53,7 @@
 				Cellphone:
 			</div>
 			<div class="panleft">
-				<input type="text" name="cellphone" value="{{ cus.cellphone }}"/>
+				<input type="text" name="cellphone" value="{{ usr.cellphone }}"/>
 			</div>
 		</div>
 		<br>

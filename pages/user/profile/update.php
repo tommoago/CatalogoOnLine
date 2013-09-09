@@ -32,7 +32,7 @@ try {
                             email = :email,
                             telephone = :telephone,
                             cellphone = :cellphone,
-                            password = :password,
+                            password = :password
                           WHERE id = :id');
     $STH->execute($data);
     header('location:show.php?id=' . $id);

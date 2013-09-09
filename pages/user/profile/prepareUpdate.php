@@ -21,15 +21,15 @@ try {
     //tira fuori solo un risultato
     $user = $stmt->fetch();
     
-    switch ($customer['type']) {
+    switch ($user['type']) {
     case 'user':
-        $customer['selected_u']= 'selected';
+        $user['selected_u']= 'selected';
         break;
     case 'seller':
-        $customer['selected_s']= 'selected';
+        $user['selected_s']= 'selected';
         break;
     case 'other':
-        $customer['selected_o']= 'selected';
+        $user['selected_o']= 'selected';
         break;
     }
 } catch (PDOException $e) {
