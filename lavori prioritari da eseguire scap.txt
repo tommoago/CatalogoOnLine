@@ -1,5 +1,3 @@
-(((-conferma di processazione ordine ??? boh vabbè al prossimo giro vediamo, probabilmente era la validazione)))
-
 - fare un giro completo su ADMIN per vedere eventuali imperfezioni(usability, grafica).
 - fare un giro completo su USER per vedere eventuali imperfezioni(usability, grafica).
 - per quanto riguarda IE provvederò io.
