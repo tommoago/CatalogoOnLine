@@ -8,7 +8,7 @@ $(document).ready(function()
         },
         messages:
         {
-            name: " name required ",
+            name: " required ",
         }
     });
 });

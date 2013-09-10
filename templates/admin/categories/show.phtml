@@ -4,14 +4,14 @@
 	{% include 'admin/structure/menu.phtml' %}
 	<table class="tablelist" style='margin: 50px;'>
 		<tr>
-			<td>Name</td>
-			<td>Category</td>
+			<th>Name</th>
+			<th>Category</th>
 		</tr>
 		<tr>
 			<td>{{ cat.name }}</td>
 			<td>{{ cat.category }}</td>
-			<td><a href='delete.php?id={{ cat.id }}'>elimina</a></td>
-			<td><a href='prepareUpdate.php?id={{ cat.id }}'>modifica</a></td>
+			<td class="delete"><a href='delete.php?id={{ cat.id }}'>x</a></td>
+			<td class="edit"><a href='prepareUpdate.php?id={{ cat.id }}'>[&#133;]</a></td>
 		</tr>
 	</table>
 </div>

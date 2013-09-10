@@ -307,9 +307,8 @@ input[type=submit] {
 .tablelist {
     margin: 50px;
     border-collapse:collapse;
-    width:50%;
 }
-.tablelist td {
+td {
     font-size:1em;
     border:1px solid #ADA895;
     padding:3px 10px 2px 10px;
@@ -318,15 +317,34 @@ input[type=submit] {
     text-decoration: none;
 	word-wrap:break-word;
 }
-.tablelist td a{
+td a{
     font-size:1em;
     padding:3px 10px 2px 10px;
     color: black;
     background: #e1dcc8;
     text-decoration: none
 }
-.tablelist th {
+th {
     font-size:1em;
     padding:3px 0px 2px 0px;
     color: black
+}
+.delete {
+    color: transparent;
+    border: 0px solid black;
+    background: transparent;
+}
+.delete a{
+    color: red;
+    background: transparent;
+    font-family: Courier
+}
+.edit {
+    color: transparent;
+    border: 0px solid black;
+    background: transparent;
+}
+.edit a{
+    color: blue;
+    background: transparent;
 }

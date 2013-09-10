@@ -10,9 +10,9 @@ $(document).ready(function()
         },
         messages:
         {
-            name: " name required ",
-            user: " username required ",
-            password: " password required",
+            name: " required ",
+            user: " required ",
+            password: " required",
         }
     });
 });

@@ -5,21 +5,21 @@
 	<img src="../../{{ prod.image }}">
 	<table class="tablelist" style='margin: 50px;'>
 		<tr>
-			<td>Name</td>
-			<td>Description</td>
-			<td>New</td>
-			<td>Offer</td>
-			<td>Evidence</td>
-			<td>Wholesale Price</td>
-			<td>Retail Price</td>
-			<td>Super Price</td>
-			<td>Purchase Price</td>
-			<td>Cod</td>
-			<td>Barcode</td>
-			<td>Single Qty</td>
-			<td>Pack Qty</td>
-			<td>Cardboard Qty</td>
-			<td>Category</td>
+			<th>Name</th>
+			<th>Description</th>
+			<th>New</th>
+			<th>Offer</th>
+			<th>Evidence</th>
+			<th>Wholesale Price</th>
+			<th>Retail Price</th>
+			<th>Super Price</th>
+			<th>Purchase Price</th>
+			<th>Cod</th>
+			<th>Barcode</th>
+			<th>Single Qty</th>
+			<th>Pack Qty</th>
+			<th>Cardboard Qty</th>
+			<th>Category</th>
 		</tr>
 		<tr>
 			<td>{{ prod.name }}</td>
@@ -37,8 +37,8 @@
 			<td>{{ prod.pack_qty }}</td>
 			<td>{{ prod.cardboard_qty }}</td>
 			<td>{{ prod.category }}</td>
-			<td><a href='delete.php?id={{ prod.id }}'>elimina</a></td>
-			<td><a href='prepareUpdate.php?id={{ prod.id }}'>modifica</a></td>
+			<td class="delete"><a href='delete.php?id={{ prod.id }}'>x</a></td>
+			<td class="edit"><a href='prepareUpdate.php?id={{ prod.id }}'>[&#133;]</a></td>
 		</tr>
 	</table>
 </div>
