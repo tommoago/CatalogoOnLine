@@ -274,13 +274,6 @@ h2{
     margin-bottom: 10px;
     height: 1px;
 }
-.tablelist tr {
-
-}
-.tablelist td {
-    border-right: dotted 1px;
-    border-bottom: solid 1px;
-}
 .error {
     color: red;
     font: bold;
