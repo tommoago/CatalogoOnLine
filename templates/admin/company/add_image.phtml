@@ -1,0 +1,19 @@
+{% include 'admin/structure/header.phtml' %} 
+<script type="text/javascript" src="../../../scripts/jquery-1.9.1.min.js"></script>
+<div id='content'>
+	{% include 'admin/structure/menu.phtml' %}
+	<form action="addImage.php" method="post" style="padding-left: 270px;" id="formproduct" enctype="multipart/form-data">
+		<div class="totwidth">
+			<div class="panleft">
+				Select a file to upload:
+			</div>
+			<div class="panleft">
+				<input type="file" name="uploaded" id="file">
+			</div>
+		</div>
+		<br>
+		<input type="submit" value="invio"/>
+
+	</form>
+</div>
+{% include 'admin/structure/footer.phtml' %}
