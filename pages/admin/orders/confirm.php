@@ -9,10 +9,11 @@ $id = $_GET['id'];
 try {
     $db = new dataBase();
     $DBH = $db->connect();
-    $data = array('id' => $id, 'operator' => $session->getUser_id());
+    $data = array('id' => $id, 'conf' => date("Y-m-d H:i:s"), 'operator' =>$_SESSION['user']['name']);
 
     $STH = $DBH->prepare('UPDATE orders SET  
                             confirmed = 1,
+                            confirm_date = :conf,
                             operator = :operator
                           WHERE id = :id');
     $STH->execute($data);

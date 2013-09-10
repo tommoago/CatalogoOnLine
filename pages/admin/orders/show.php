@@ -26,11 +26,6 @@ try {
     $cus = $stmt->fetch();
     $order['customer'] = $cus['name'];
 
-    $stmt = $DBH->prepare('SELECT * FROM administrators WHERE id = :id');
-    $stmt->execute(array('id' => $order['operator']));
-    $op = $stmt->fetch();
-    $order['operator'] = $op['name'];
-
     $stmt2 = $DBH->prepare('SELECT * FROM products p, orders_has_products op 
                             WHERE op.orders_id = :id AND p.id = op.products_id');
     $stmt2->execute($data);

@@ -13,7 +13,7 @@ $template = $twig->loadTemplate('admin/products/list.phtml');
 
 $result = array();
 $offset = $_GET['offset'];
-$limit = 6;
+$limit = 4;
 $numPages = 0;
 
 try {

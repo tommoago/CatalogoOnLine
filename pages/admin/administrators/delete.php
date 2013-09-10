@@ -1,4 +1,5 @@
 <?php
+
 include '../../../classes/dataBase.php';
 include '../../../classes/Session.php';
 $session = new Session();
@@ -16,6 +17,14 @@ try {
     $customers = $stmt->fetchAll();
 
     if (empty($customers)) {
+        //sleziono per salvarlo nel dettaglio dell'ordine
+        $stmt2 = $DBH->prepare('SELECT * FROM administrators WHERE id = :id');
+        $stmt2->execute($data);
+        $admin = $stmt2->fetch();
+        
+        $stmt3 = $DBH->prepare('UPDATE orders SET operator = :op WHERE operator = :id');
+        $stmt3->execute(array('op' => $admin['name'], 'id' =>$admin['id']));
+
         //se non ho vincoli, elimino.
         $STH = $DBH->prepare('DELETE FROM administrators WHERE id = :id');
         $STH->execute($data);
@@ -23,7 +32,6 @@ try {
     } else {
         $message = 'Cannot delete because of depency with an associated customer';
     }
-
 
     header('location:list.php?message=' . $message);
 } catch (PDOException $e) {
