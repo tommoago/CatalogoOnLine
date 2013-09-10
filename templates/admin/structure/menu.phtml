@@ -5,6 +5,17 @@
     {% endif %}
     <h2>Categorie</h2>
     <ul id="list">
+        {% if pSession.user.role == 'jack' %}
+            <li class="color">
+                <a href="{{ pathM }}administrators/prepareInsert.php">Insert Admin</a>
+            </li>
+            <li>
+                <a href="{{ pathM }}administrators/list.php">List all administrators</a>
+            </li>
+            <li class="color">
+                <a href="{{ pathM }}company/list.php">Company Info</a>
+            </li> 
+        {% endif %}
         <li class="color">
             <a href="{{ pathM }}products/prepareInsert.php">Insert Product</a>
         </li>
@@ -18,12 +29,6 @@
             <a href="{{ pathM }}categories/list.php">List all categories</a>
         </li>
         <li class="color">
-            <a href="{{ pathM }}administrators/prepareInsert.php">Insert Admin</a>
-        </li>
-        <li>
-            <a href="{{ pathM }}administrators/list.php">List all administrators</a>
-        </li>
-        <li class="color">
             <a href="{{ pathM }}customers/prepareInsert.php">Insert Customer</a>
         </li>
         <li>
@@ -32,8 +37,6 @@
         <li class="color">
             <a href="{{ pathM }}orders/list.php">List all orders</a>
         </li>
-        <li>
-            <a href="{{ pathM }}company/list.php">Company Info</a>
-        </li>   
+          
     </ul>
 </div>

@@ -13,6 +13,13 @@ class Session {
         }
     }
 
+    public function check_role($role) {
+        if ($_SESSION['user']['role'] == $role) {
+            return true;
+        }
+        return false;
+    }
+
     public function is_logged_in() {
         return $this->logged_in;
     }
@@ -52,10 +59,31 @@ class Session {
             $relativeDir .= '../';
         }
         $relativeDir .= 'pages/';
-        
-        foreach ($splitted as $split){
-            if($split == 'admin' || $split == 'user')
+
+        foreach ($splitted as $split) {
+            if ($split == 'admin' || $split == 'user')
                 $relativeDir .= $split;
+        }
+        return $relativeDir;
+    }
+
+//    ulteriore dinamicizzazione(fallimentare, per ora)
+    private function getPath2() {
+        $relativeDir = '';
+        $splitted = split('/', $_SERVER['PHP_SELF']);
+        $bool = false;
+        foreach ($splitted as $split) {
+            if ($split == 'melarossa') {
+                $bool = true;
+            }
+            if ($bool) {
+                if ($split == 'admin' || $split == 'user') {
+                    $relativeDir .= 'pages/' . $split;
+                    break;
+                } else {
+                    $relativeDir .= '../';
+                }
+            }
         }
         return $relativeDir;
     }

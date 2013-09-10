@@ -3,6 +3,9 @@
 include '../../../classes/dataBase.php';
 include '../../../classes/Session.php';
 $session = new Session();
+if(!$session->check_role('jack')){
+   header('location:../index.php?message= Unauthorized access.'); 
+}
 
 $id = $_GET['id'];
 $message = '';
@@ -17,7 +20,7 @@ try {
     $customers = $stmt->fetchAll();
 
     if (empty($customers)) {
-        //sleziono per salvarlo nel dettaglio dell'ordine
+        //seleziono per salvarlo nel dettaglio dell'ordine
         $stmt2 = $DBH->prepare('SELECT * FROM administrators WHERE id = :id');
         $stmt2->execute($data);
         $admin = $stmt2->fetch();

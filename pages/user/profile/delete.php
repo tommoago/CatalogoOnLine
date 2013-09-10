@@ -5,7 +5,6 @@ include '../../../classes/Session.php';
 $session = new Session();
 
 $id = $_GET['id'];
-$message = '';
 $data = array('id' => $id);
 try {
     $db = new dataBase();
@@ -16,7 +15,6 @@ try {
     $STH->execute($data);
 
     $session->logout();
-//    header('location:list.php');
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }

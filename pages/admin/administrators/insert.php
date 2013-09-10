@@ -2,6 +2,9 @@
 include '../../../classes/dataBase.php';
 include '../../../classes/Session.php';
 $session = new Session();
+if(!$session->check_role('jack')){
+   header('location:../index.php?message= Unauthorized access.'); 
+}
 
 $name = $_POST['name'];
 $user = $_POST['user'];
@@ -15,7 +18,7 @@ try {
                                            value (:name, :user, :password, :role)');
     $STH->execute($data);
 
-    header('location:show.php?id=' . $DBH->lastInsertId());
+//    header('location:show.php?id=' . $DBH->lastInsertId());
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
