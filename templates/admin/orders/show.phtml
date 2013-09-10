@@ -19,12 +19,13 @@
             <td>{{ ord.operator }}</td>
             <td>{{ ord.customer }}</td>
         </tr>
-        {% for prod in products %}
+        <!--vedi commento su modifche file php-->
+<!--        {% for prod in products %}
         <tr>
             <td><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
             <td>{{ prod.quantity }}</td>
         </tr>
-        {% endfor %}
+        {% endfor %}-->
     </table>
     {% if ord.confirmed != 1%}
     <a href='confirm.php?id={{ ord.id }}'>Conferma ordine</a>

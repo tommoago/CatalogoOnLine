@@ -2,10 +2,12 @@
 - fare un giro completo su USER per vedere eventuali imperfezioni(usability, grafica).
 - per quanto riguarda IE provvederò io.
 
+-admin:
+    - controlla la sezione di inserimento imamgini, sotto 'company' e dimmi se c'è qua qualcosa che va/andrebeb cambiato.
+
 -creare layout front end
     - ci siamo quasi:
         - stilare i due menu laterali alla pagina
-        - stilare l'accordion
 	- creare visualizzazione prodotti per site. sia singoli che molteplici(quella admin è ovviamente troppo grezza, hai carta bianca).
         -dobbiamo pensare ad un layout per il carrello(anche se praticamente sarà una tabella essenzialmente, anche qui, carta bianca).
 

@@ -16,11 +16,13 @@
             <td>{{ ord.operator }}</td>
         </tr>
         {% for prod in products %}
+        <!--vedi commento su modifche file php-->
+<!--        {% for prod in products %}
         <tr>
             <td><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
             <td>{{ prod.quantity }}</td>
         </tr>
-        {% endfor %}
+        {% endfor %}-->
     </table>
     {% if ord.file != ''%}
         <a href='{{ ord.file }}'>pdf</a>

@@ -20,17 +20,6 @@ try {
     //tira fuori solo un risultato
     $admin = $stmt->fetch();
     
-    switch ($admin['role']) {
-    case 'admin':
-        $admin['selected_a']= 'selected';
-        break;
-    case 'operator':
-        $admin['selected_o']= 'selected';
-        break;
-    case 'jack':
-        $admin['selected_j']= 'selected';
-        break;
-}
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }

@@ -25,11 +25,12 @@ try {
     $stmt->execute(array('id' => $order['customers_id']));
     $cus = $stmt->fetch();
     $order['customer'] = $cus['name'];
-
-    $stmt2 = $DBH->prepare('SELECT * FROM products p, orders_has_products op 
-                            WHERE op.orders_id = :id AND p.id = op.products_id');
-    $stmt2->execute($data);
-    $products = $stmt2->fetchAll();
+    
+    //sezione che mostrerebbe il dettaglio, ma per come viene selto di implementare la base dati, è inutile.
+//    $stmt2 = $DBH->prepare('SELECT * FROM products p, orders_has_products op 
+//                            WHERE op.orders_id = :id AND p.id = op.products_id');
+//    $stmt2->execute($data);
+//    $products = $stmt2->fetchAll();
     
     $stmt4 = $DBH->prepare('SELECT * FROM invoices WHERE orders_id = :id');
     $stmt4->execute(array('id' => $order['id']));
@@ -39,5 +40,5 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('ord' => $order, 'products' => $products));
+$template->display(array('ord' => $order/*, 'products' => $products*/));
 ?>
