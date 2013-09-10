@@ -3,8 +3,11 @@
 <script type="text/javascript" src="../../../scripts/form.product.validation.js"></script>
 <script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
 <script type="text/javascript">
-    function calculate(lol){
-        console.log(lol);
+    function calculate(percentage){
+        $('#'+percentage.id).parent().contents(':not(input)').remove();
+        var per = percentage.value;
+        var multiplier = 1+(per/100);
+        $('#'+percentage.id).after($('#p_price').val()*multiplier);
     }
 </script>
 <div id='content'>
@@ -69,7 +72,7 @@
 				Wholesale Price:
 			</div>
 			<div class="panleft">
-				<input type="text" id="w_price" name="w_price"/>
+				<input type="text" id="w_price" onchange="calculate(this);" name="w_price"/>
 			</div>
 		</div>
 		<br>
@@ -78,7 +81,7 @@
 				Retail Price:
 			</div>
 			<div class="panleft">
-				<input type="text" id="r_price" onchange="calculate(this)" name="r_price"/>
+				<input type="text" id="r_price" onchange="calculate(this);" name="r_price"/>
 			</div>
 		</div>
 		<br>
@@ -87,7 +90,7 @@
 				Super Price:
 			</div>
 			<div class="panleft">
-				<input type="text" id="s_price" name="s_price"/>
+				<input type="text" id="s_price" onchange="calculate(this);" name="s_price"/>
 			</div>
 		</div>
 		<br>

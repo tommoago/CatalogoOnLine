@@ -1,4 +1,15 @@
 {% include 'admin/structure/header.phtml' %}
+<script type="text/javascript" src="../../../scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../../scripts/form.product.validation.js"></script>
+<script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
+<script type="text/javascript">
+    function calculate(percentage){
+        $('#'+percentage.id).parent().contents(':not(input)').remove();
+        var per = percentage.value;
+        var multiplier = 1+(per/100);
+        $('#'+percentage.id).after($('#p_price').val()*multiplier);
+    }
+</script>
 <div id='content'>
 
 	{% include 'admin/structure/menu.phtml' %}
@@ -65,7 +76,7 @@
 				Wholesale Price
 			</div>
 			<div class="panleft">
-				<input type="text" name="w_price" value="{{ prod.wholesale_price }}"/>
+				<input type="text" id="w_price" onchange="calculate(this);" name="w_price" value="{{ prod.wholesale_price }}"/>
 			</div>
 		</div>
 		<br>
@@ -74,7 +85,7 @@
 				Retail Price
 			</div>
 			<div class="panleft">
-				<input type="text" name="r_price" value="{{ prod.retail_price }}"/>
+				<input type="text" id="r_price" onchange="calculate(this);" name="r_price" value="{{ prod.retail_price }}"/>
 			</div>
 		</div>
 		<br>
@@ -83,7 +94,7 @@
 				Super Price
 			</div>
 			<div class="panleft">
-				<input type="text" name="s_price" value="{{ prod.super_price }}"/>
+				<input type="text" id="s_price" onchange="calculate(this);" name="s_price" value="{{ prod.super_price }}"/>
 			</div>
 		</div>
 		<br>
@@ -92,7 +103,7 @@
 				Purchase Price
 			</div>
 			<div class="panleft">
-				<input type="text" name="p_price" value="{{ prod.purchase_price }}"/>
+				<input type="text" id="p_price" name="p_price" value="{{ prod.purchase_price }}"/>
 			</div>
 		</div>
 		<br>
