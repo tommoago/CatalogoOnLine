@@ -15,7 +15,9 @@
 		<tr>
 			<td><a href='show.php?id={{ admin.id }}'>{{ admin.name }}</a></td>
 			<td>{{ admin.user }}</td>
-			<td class="delete"><a href='delete.php?id={{ admin.id }}'>x</a></td>
+                        {% if admin.role != 'jack' %}
+                            <td class="delete"><a href='delete.php?id={{ admin.id }}'>x</a></td>
+                        {% endif %}
 			<td class="edit"><a href='prepareUpdate.php?id={{ admin.id }}'>[&#133;]</a></td>
 		</tr>
 		{% endfor %}
