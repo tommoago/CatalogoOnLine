@@ -11,18 +11,15 @@ try {
     $DBH = $db->connect();
 
     $pathName = '';
+    print_r($_FILES['uploaded']['name']);
     if ($_FILES['uploaded']['name'] != '') {
         $img = new imgUploader();
         $img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);
         $pathName = $img->getPathName();
-    }
-
-
-    if ($pathName != '') {
+        
         $data2 = array('path' => $pathName, 'id' => $id);
-        $STH2 = $DBH->prepare('UPDATE  company_images SET
-                                       path = :path 
-                               WHERE company_info_id = :id');
+        $STH2 = $DBH->prepare('INSERT INTO company_images (path, company_info_id)
+                                             VALUE (:path, :id)');
 
         $STH2->execute($data2);
     }

@@ -1,14 +1,36 @@
 {% include 'admin/structure/header.phtml' %}
 <div id='content'>
+
     {% include 'admin/structure/menu.phtml' %}
-    {% if images|length > 0 %}
-    
-        {% for d in images %}
-        	<img src="../../{{ d.image }}">
+    <p>
+        {{ message }}
+    </p>
+    {% if data|length > 0 %}
+    <table class="tablelist" style='margin: 50px;'>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>P. IVA</th>
+            <th>Telephone</th>
+            <th>Fax</th>
+            <th>Address</th>
+
+        </tr>
+        {% for d in data %}
+        <tr>
+            <td><a href='show.php?id={{ d.id }}'>{{ d.name }}</a></td>
+            <td>{{ d.description }}</td>
+            <td>{{ d.piva }}</td>
+            <td>{{ d.telephone }}</td>
+            <td>{{ d.fax }}</td>
+            <td>{{ d.address }}</td>
+            <td><a href='prepareUpdate.php?id={{ d.id }}'>[&#133;]</a></td>
+            <td><a href='addImage.php?id={{ d.id }}'>add image</a></td>
+            <td><a href='viewImages.php?id={{ d.id }}'>view images</a></td>
+        </tr>
         {% endfor %}
     </table>
     {% endif %}
 </div>
 
 {% include 'admin/structure/footer.phtml' %}
-

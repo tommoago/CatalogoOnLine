@@ -17,7 +17,7 @@ try {
     $DBH = $db->connect();
     $stmt = $DBH->prepare('SELECT * FROM company_images WHERE company_info_id = :id');
     $stmt->execute(array('id' => $id));
-    $result = $stmt->fetch();
+    $result = $stmt->fetchAll();
     
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
