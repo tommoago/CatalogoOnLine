@@ -1,293 +1,293 @@
 * {
-	padding: 0px;
-	margin: 0px;
-	font-family: Arial, Helvetica, sans-serif;
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 img {
-	border: 0px;
+    border: 0px;
 }
 html {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 }
 body {
-	height: 100%;
-	background-color: #F3F1E9;
-	position: relative;
+    height: 100%;
+    background-color: #F3F1E9;
+    position: relative;
 }
 html > body {
-	min-height: 100%;
-	height: auto;
+    min-height: 100%;
+    height: auto;
 }
 h2{
     color: #54503f
 }
 #header {
-	height: 160px;
-	background-image: url(../images/header_bg.jpg);
-	background-position: top left;
-	background-repeat: repeat-x;
-    	margin-bottom: 40px;
-	border-bottom: 3px solid #d3cebb;
+    height: 160px;
+    background-image: url(../images/header_bg.jpg);
+    background-position: top left;
+    background-repeat: repeat-x;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #d3cebb;
 
 }
 #header_inside {
-	width: 1000px;
-	margin: 0 auto;
-	position: relative;
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
 }
 #headertitle {
-	width: 50%;
-	float: left;
-	padding-top: 60px;
-	padding-left: 50px;
-     font-family: Helvetica, Arial, sans-serif;
-     font-weight: 100;
-     font-size: 40px;
-      color: #0b3e01
+    width: 50%;
+    float: left;
+    padding-top: 60px;
+    padding-left: 50px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 40px;
+    color: #0b3e01
 }
 #redapple {
-	float: left;
-	background-image: url(../images/applelogo.svg);
-     background-size:160px auto;
-	height:160px;
-	width:160px;
+    float: left;
+    background-image: url(../images/applelogo.svg);
+    background-size:160px auto;
+    height:160px;
+    width:160px;
 }
 
 #topmenu {
-     float: right;
-     padding-top: 130px;
+    float: right;
+    padding-top: 130px;
 }
 #topmenu a{
-     color: #0b3e01;
-     text-decoration:none
+    color: #0b3e01;
+    text-decoration:none
 }
 #topmenu a:hover{
-     color: #041a00;
-     text-decoration:underline
+    color: #041a00;
+    text-decoration:underline
 }
 #topmenu_logout {
-     float: right;
-     padding-top: 130px;
+    float: right;
+    padding-top: 130px;
 }
 #topmenu_logout a{
-     color: #b70404;
-     text-decoration:none
+    color: #b70404;
+    text-decoration:none
 }
 #topmenu_logout a:hover{
-     color: #b70404;
-     text-decoration:underline
+    color: #b70404;
+    text-decoration:underline
 } 
 #menu {
-	position: absolute;
-	top: 156px;
-	left: 26px;
+    position: absolute;
+    top: 156px;
+    left: 26px;
 }
 #menu li {
-	display: inline;
+    display: inline;
 }
 #menu a {
-	margin: 5px 1px 0 0;
-	width: 110px;
-	text-align: center;
-	text-decoration: none;
-	padding: 8px 0 18px 0;
-	display: block;
-	float: left;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 15px;
-	color: #b70404;
-	background-position: top left;
-	background-repeat: no-repeat;
+    margin: 5px 1px 0 0;
+    width: 110px;
+    text-align: center;
+    text-decoration: none;
+    padding: 8px 0 18px 0;
+    display: block;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #b70404;
+    background-position: top left;
+    background-repeat: no-repeat;
 }
 #menu .but1_active {
     margin-top:2px;
-	background-color: #d40303;
-	text-decoration: none;
-	color: white;
+    background-color: #d40303;
+    text-decoration: none;
+    color: white;
     box-shadow:0px 2px 2px black;
 }
 #menu .but2_active {
     margin-top:2px;
-	background-color: #d40303;
-	text-decoration: none;
-	color: white;
+    background-color: #d40303;
+    text-decoration: none;
+    color: white;
     box-shadow:0px 2px 2px black;
 }
 #menu .but3_active {
     margin-top:2px;
-	background-color: #d40303;
-	text-decoration: none;
-	color: white;
+    background-color: #d40303;
+    text-decoration: none;
+    color: white;
     box-shadow:0px 2px 2px black;
 }
 #menu .but4_active {
     margin-top:2px;
-	background-color: #d40303;
-	text-decoration: none;
-	color: white;
+    background-color: #d40303;
+    text-decoration: none;
+    color: white;
     box-shadow:0px 2px 2px black;
 }
 #menu .but1:hover {
     margin-top:4px;
-	background-color: #ce6e6e;
-	text-decoration: none;
-	color: white;
+    background-color: #ce6e6e;
+    text-decoration: none;
+    color: white;
     height:13px
 }
 #menu .but2:hover {
     margin-top:4px;
-	background-color: #ce6e6e;
-	text-decoration: none;
-	color: white;
+    background-color: #ce6e6e;
+    text-decoration: none;
+    color: white;
     height:13px
 }
 #menu .but3:hover {
     margin-top:4px;
-	background-color: #ce6e6e;
-	text-decoration: none;
-	color: white;
+    background-color: #ce6e6e;
+    text-decoration: none;
+    color: white;
     height:13px
 }
 #menu .but4:hover {
     margin-top:4px;
-	background-color: #ce6e6e;
-	text-decoration: none;
-	color: white;
+    background-color: #ce6e6e;
+    text-decoration: none;
+    color: white;
     height:13px
 }
 #sidebar {
-	width: 175px;
-	float: left;
-	padding: 13px 32px 0 23px;
+    width: 175px;
+    float: left;
+    padding: 13px 32px 0 23px;
 }
 #list {
-	list-style-type: none;
-	margin: 11px 0 0 0;
-	line-height: 18px;
-	display: block;
+    list-style-type: none;
+    margin: 11px 0 0 0;
+    line-height: 18px;
+    display: block;
 }
 #list a {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #464646;
-	text-decoration: none
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #464646;
+    text-decoration: none
 }
 #list a:visited {
-	text-decoration: none
+    text-decoration: none
 }
 #list a:hover {
-	text-decoration: underline
+    text-decoration: underline
 }
 #list li {
-	width: 165px;
-	padding: 0 0 0 10px;
+    width: 165px;
+    padding: 0 0 0 10px;
 }
 .color {
-	background-color: #e1dcc8
+    background-color: #e1dcc8
 }
 .text{
     color: #54503f;
     margin-left: 270px
 }
 #footer {
-	width: 100%;
-	height: 142px;
-	background-image: url(../images/footer_bg.gif);
-	background-position: top left;
-	background-repeat: repeat-x;
-	position: absolute;
+    width: 100%;
+    height: 142px;
+    background-image: url(../images/footer_bg.gif);
+    background-position: top left;
+    background-repeat: repeat-x;
+    position: absolute;
 }
 #footer_inside {
-	width: 100%;
-	height: 142px;
-	margin: 0 auto;
-	background-image: url(../images/telephone.jpg);
-	background-position: top right;
-	background-repeat: no-repeat;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 11px;
+    width: 100%;
+    height: 142px;
+    margin: 0 auto;
+    background-image: url(../images/telephone.jpg);
+    background-position: top right;
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
 }
 .footer_menu {
-	list-style-type: none;
-	padding: 25px 0 0 42px;
+    list-style-type: none;
+    padding: 25px 0 0 42px;
 }
 .footer_menu li {
-	display: inline;
-	line-height: 17px;
-	float: left;
+    display: inline;
+    line-height: 17px;
+    float: left;
 }
 .footer_menu li a {
-	color: #0D0D0D;
-	text-decoration: none;
-	margin: 0 6px;
+    color: #0D0D0D;
+    text-decoration: none;
+    margin: 0 6px;
 }
 .footer_menu li a:visited {
-	text-decoration: none
+    text-decoration: none
 }
 .footer_menu li a:hover {
-	text-decoration: underline
+    text-decoration: underline
 }
 #footer_inside p {
-	padding: 10px 0 0 48px;
+    padding: 10px 0 0 48px;
 }
 #footer_inside p a {
-	color: #E9410E;
-	text-decoration: underline
+    color: #E9410E;
+    text-decoration: underline
 }
 #footer_inside p a:visited {
-	text-decoration: underline
+    text-decoration: underline
 }
 #footer_inside p a:hover {
-	text-decoration: none
+    text-decoration: none
 }
 #content {
-	width: auto;
-	display: block;
-	height: auto;
-     min-height: 370px;
-     overflow: auto
+    width: auto;
+    display: block;
+    height: auto;
+    min-height: 370px;
+    overflow: auto
 
 }
 .login {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 500px;
-	height: 300px;
-	margin-left: -75px;
-	margin-top: -68px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 300px;
+    margin-left: -75px;
+    margin-top: -68px;
 }
 .prod {
-	border-bottom: solid 1px;
-	border-top: solid 1px; ;
-	width: 80%;
-	float: left;
+    border-bottom: solid 1px;
+    border-top: solid 1px; ;
+    width: 80%;
+    float: left;
 }
 
 .panleft {
-	float: left;
-	width: 28%;
+    float: left;
+    width: 28%;
 }
 .totwidth {
-	width: 100%;
-	margin-bottom: 10px;
-	height: 1px;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 1px;
 }
 .tablelist tr {
 
 }
 .tablelist td {
-	border-right: dotted 1px;
-	border-bottom: solid 1px;
+    border-right: dotted 1px;
+    border-bottom: solid 1px;
 }
 .error {
-	color: red;
-	font: bold;
+    color: red;
+    font: bold;
 }
 input[type=submit] {
-	width: 75px;
-	height: 30px;
+    width: 75px;
+    height: 30px;
 }
 #accordion {
     width: 270px;
@@ -315,7 +315,7 @@ td {
     color: black;
     background: #e1dcc8;
     text-decoration: none;
-	word-wrap:break-word;
+    word-wrap:break-word;
     text-align: left;
 
 }
@@ -325,14 +325,14 @@ td a{
     color: black;
     background: #e1dcc8;
     text-decoration: none;
-          text-align: left;
+    text-align: left;
 
 }
 th {
     font-size:1em;
     padding:3px 0px 2px 0px;
     color: black;
-          text-align: left;
+    text-align: left;
 
 }
 .delete {
