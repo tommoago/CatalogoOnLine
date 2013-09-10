@@ -282,6 +282,7 @@ input[type=submit] {
     float: left;
     position: absolute;
     margin: 15px;
+    border: 1px solid #d3cebb;
 }
 .right-side {
     float: right;
