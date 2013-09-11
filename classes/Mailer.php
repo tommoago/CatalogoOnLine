@@ -8,10 +8,12 @@
 class Mailer {
 
     function send($to, $from, $subject, $body) {
-        $intestazione = "From: Mela Rossa <info@ozntone.com>\n";
+        if($from == '')
+            $from = 'info@ozntone.com';
+        $intestazione = "From: Mela Rossa <".$from.">\n";
         $intestazione .= "X-Priority: 3\r\n"; // 2 = urgente, 3 = normale, 4 = non urgente
 
-        $parametri = "-f info@ozntone.com";
+        $parametri = "-f ".$from;
 
         return mail($to, $subject, $body, $intestazione, $parametri);
     }

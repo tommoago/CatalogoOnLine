@@ -24,7 +24,7 @@ try {
                                     LIMIT 1');
     $STH->execute();
     $admin = $STH->fetch();
-    
+
     $data = array('name' => $name,
         'surname' => $surname,
         'address' => $address,
@@ -56,9 +56,19 @@ try {
                                                   :type,
                                                   :administrators_id)');
     $STH2->execute($data);
-    
+
+    $splitted = split('/', $_SERVER['HTTP_REFERER']);
+    $relativeDir = '';
+
+    for ($i = 0; $i < sizeof($splitted) - 1; $i++) {
+        $relativeDir .= $splitted[$i] . '/';
+    }
+
+    $link = $relativeDir . "activate.php?id=" . $DBH->lastInsertId();
     $mailer = new Mailer();
-    $mailer->send($email, "lmao", "Register confirmation", "This mail is automatically sent to confirm your sign up.");
+    $mailer->send($email, "", "Register confirmation", "This mail is automatically sent to confirm your sign up,
+                                                        please click the link below to activate your account:\n"
+            . $link);
     header('location:login.php?message=registration successful, check your mail for confirmation');
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
