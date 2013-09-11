@@ -25,6 +25,17 @@ try {
     $adm = $stmt2->fetch();
     $customer['operator'] = $adm['user'];
     
+    switch ($customer['price_range']) {
+            case '1':
+                $customer['price_range'] = 'wholesale';
+                break;
+            case '2':
+                $customer['price_range'] = 'retail';
+                break;
+            case '3':
+                $customer['price_range'] = 'super';
+                break;
+        }
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
