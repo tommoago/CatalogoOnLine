@@ -2,13 +2,11 @@
 
 class Session {
 
-    private $logged_in = false;
     private $user_id;
 
     function __construct() {
         session_start();
-        $this->check_login();
-        if (!$this->logged_in) {
+        if (!$this->check_login()) {
             header('location:' . $this->getPath() . '/login.php');
         }
     }
@@ -18,10 +16,6 @@ class Session {
             return true;
         }
         return false;
-    }
-
-    public function is_logged_in() {
-        return $this->logged_in;
     }
 
     public function login($user) {
@@ -39,12 +33,16 @@ class Session {
 
     private function check_login() {
         if (isset($_SESSION['user'])) {
-            $this->logged_in = true;
             $this->user_id = $_SESSION['user']['id'];
-        } else {
-            unset($this->user_id);
-            $this->logged_in = false;
+            if(isset($_SESSION['user']['role']) && stristr($_SERVER['PHP_SELF'],'admin')!= '')
+                return true;
+            else if(isset($_SESSION['user']['type']) && stristr($_SERVER['PHP_SELF'],'user')!= '')
+                return true;   
+            
+            return false;
         }
+        unset($this->user_id);
+        return false;
     }
 
     public function getUser_id() {

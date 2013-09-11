@@ -42,11 +42,11 @@ try {
     case 'user':
         $customer['selected_u']= 'selected';
         break;
-    case 'seller':
-        $customer['selected_s']= 'selected';
+    case 'merchant':
+        $customer['selected_m']= 'selected';
         break;
-    case 'other':
-        $customer['selected_o']= 'selected';
+    case 'stockist':
+        $customer['selected_s']= 'selected';
         break;
     }
 } catch (PDOException $e) {

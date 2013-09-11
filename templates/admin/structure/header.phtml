@@ -3,7 +3,7 @@
 <html>
     {% set path = '' %}
     {% set logInOut = 'admin' %}
-    {% if pSession.user.id != ''  %}
+    {% if pSession.user.id != '' and pSession.user.type != 'user' and pSession.user.type != 'merchant' and pSession.user.type != 'stockist' %}
         {% set logInOut = 'logout' %}
         {% if index == '' %}
             {% set path = '../' %}
