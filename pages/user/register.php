@@ -68,7 +68,8 @@ try {
     $mailer = new Mailer();
     $mailer->send($email, "", "Register confirmation", "This mail is automatically sent to confirm your sign up,
                                                         please click the link below to activate your account:\n"
-            . $link);
+                                                        . $link);
+                                                print_r($link);
     header('location:login.php?message=registration successful, check your mail for confirmation');
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();

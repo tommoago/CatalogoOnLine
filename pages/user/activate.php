@@ -1,8 +1,6 @@
 <?php
 
 include '../../../classes/dataBase.php';
-include '../../../classes/Session.php';
-$session = new Session();
 
 $id = $_GET['id'];
 
@@ -14,7 +12,7 @@ try {
 
     $STH = $DBH->prepare('UPDATE customers SET  active = :active WHERE id = :id');
     $STH->execute($data);
-    header('location:show.php?id=' . $id);
+    header('location:login.php');
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
