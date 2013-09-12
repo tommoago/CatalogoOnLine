@@ -1,0 +1,64 @@
+{% include 'admin/structure/header.phtml' %}
+<div id='content'>
+	{% include 'admin/structure/menu.phtml' %}
+	<form action="insert.php" method="post" style="padding-left: 270px;">
+		<div class="totwidth">
+			<div class="panleft">
+				Name
+			</div>
+			<div class="panleft">
+				<input type="text" name="name" />
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				Description
+			</div>
+			<div class="panleft">
+				<input type="text" name="description" />
+			</div>
+		</div>
+		<br>
+		<div class="totwidth">
+			<div class="panleft">
+				P. IVA
+			</div>
+			<div class="panleft">
+				<input type="text" name="piva" />
+			</div>
+		</div>
+		<br>
+                <div class="totwidth">
+			<div class="panleft">
+				Telephone
+			</div>
+			<div class="panleft">
+				<input type="text" name="telephone" />
+			</div>
+		</div>
+		<br>
+                <div class="totwidth">
+			<div class="panleft">
+				Fax
+			</div>
+			<div class="panleft">
+				<input type="text" name="fax" />
+			</div>
+		</div>
+		<br>
+                <div class="totwidth">
+			<div class="panleft">
+				Address
+			</div>
+			<div class="panleft">
+				<input type="text" name="address" />
+			</div>
+		</div>
+		<br>
+
+		<input type="submit" value="invio"/>
+
+	</form>
+</div>
+{% include 'admin/structure/footer.phtml' %}

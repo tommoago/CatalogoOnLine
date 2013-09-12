@@ -1,42 +1,48 @@
 <div id="sidebar">
     {% set pathM = '' %}
     {% if pSession.user.id != '' and index == '' %}
-        {% set pathM = '../' %}
+    {% set pathM = '../' %}
     {% endif %}
     <h2>Categorie</h2>
     <ul id="list">
         {% if pSession.user.role == 'jack' %}
-            <li class="color">
-                <a href="{{ pathM }}administrators/prepareInsert.php">Insert Admin</a>
-            </li>
-            <li>
-                <a href="{{ pathM }}administrators/list.php">List all administrators</a>
-            </li>
-            <li class="color">
-                <a href="{{ pathM }}company/list.php">Company Info</a>
-            </li> 
-        {% endif %}
         <li class="color">
+            <a href="{{ pathM }}administrators/prepareInsert.php">Insert Admin</a>
+        </li>
+        <li>
+            <a href="{{ pathM }}administrators/list.php">List all administrators</a>
+        </li>
+        <li class="color">
+            <a href="{{ pathM }}company/list.php">Company Info</a>
+        </li> 
+        {% endif %}
+        <li >
             <a href="{{ pathM }}products/prepareInsert.php">Insert Product</a>
         </li>
-        <li>
+        <li class="color">
             <a href="{{ pathM }}products/list.php?offset=0">List all products</a>
         </li>
-        <li class="color">
+        <li>
             <a href="{{ pathM }}categories/prepareInsert.php">Insert Category</a>
         </li>
-        <li>
+        <li class="color">
             <a href="{{ pathM }}categories/list.php">List all categories</a>
         </li>
+        <li>
+            <a href="{{ pathM }}categories/prepareInsert.php">Insert Category</a>
+        </li>
         <li class="color">
-            <a href="{{ pathM }}customers/prepareInsert.php">Insert Customer</a>
+            <a href="{{ pathM }}suppliers/list.php">List all suppliers</a>
         </li>
         <li>
-            <a href="{{ pathM }}customers/list.php">List all customers</a>
+            <a href="{{ pathM }}suppliers/prepareInsert.php">Insert supplier</a>
         </li>
         <li class="color">
+            <a href="{{ pathM }}customers/list.php">List all customers</a>
+        </li>
+        <li>
             <a href="{{ pathM }}orders/list.php">List all orders</a>
         </li>
-          
+
     </ul>
 </div>
