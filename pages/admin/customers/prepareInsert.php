@@ -15,7 +15,7 @@ $result = array();
 try {
     $db = new dataBase();
     $DBH = $db->connect();
-    $stmt = $DBH->prepare('SELECT * FROM administrators');
+    $stmt = $DBH->prepare('SELECT * FROM administrators WHERE role NOT IN ("jack")');
     $stmt->execute();
 
     $result = $stmt->fetchAll();

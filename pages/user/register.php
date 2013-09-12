@@ -20,6 +20,7 @@ try {
     $DBH = $db->connect();
     //selezione casuale dell'operatore associato
     $STH = $DBH->prepare('SELECT id FROM administrators
+                                    WHERE role NOT IN ("jack")
                                     ORDER BY RAND()
                                     LIMIT 1');
     $STH->execute();
@@ -34,6 +35,8 @@ try {
         'active' => $active,
         'password' => $passwd,
         'type' => $type,
+        //per default alla registrazione uno user ha il prezzo al dettaglio.
+        'price_range' => 2,
         'administrators_id' => $admin['id']);
     $STH2 = $DBH->prepare('INSERT INTO customers (name, 
                                                  surname,
@@ -44,6 +47,7 @@ try {
                                                  active,
                                                  password,
                                                  type,
+                                                 price_range,
                                                  administrators_id) 
                                            value (:name, 
                                                   :surname,
@@ -54,6 +58,7 @@ try {
                                                   :active,
                                                   :password,
                                                   :type,
+                                                  :price_range,
                                                   :administrators_id)');
     $STH2->execute($data);
 

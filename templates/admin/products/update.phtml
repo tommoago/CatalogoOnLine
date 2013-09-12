@@ -3,11 +3,18 @@
 <script type="text/javascript" src="../../../scripts/form.product.validation.js"></script>
 <script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
 <script type="text/javascript">
+    window.onload = function()
+                {
+        calculate($('#w_price'));
+        calculate($('#s_price'));
+        calculate($('#r_price'));
+   }
     function calculate(percentage){
         $('#'+percentage.id).parent().contents(':not(input)').remove();
         var per = percentage.value;
         var multiplier = 1+(per/100);
-        $('#'+percentage.id).after($('#p_price').val()*multiplier);
+        var rs = $('#p_price').val()*multiplier;
+        $('#'+percentage.id).after(parseFloat(rs).toFixed(3));
     }
 </script>
 <div id='content'>

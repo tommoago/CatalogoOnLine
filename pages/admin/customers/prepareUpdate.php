@@ -22,7 +22,7 @@ try {
     //tira fuori solo un risultato
     $customer = $stmt->fetch();
 
-    $stmt = $DBH->prepare('SELECT * FROM administrators');
+    $stmt = $DBH->prepare('SELECT * FROM administrators WHERE role NOT IN ("jack")');
     $stmt->execute();
     $result = $stmt->fetchAll();
 
