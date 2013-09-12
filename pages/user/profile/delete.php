@@ -10,8 +10,7 @@ try {
     $db = new dataBase();
     $DBH = $db->connect();
     
-    //utente può disattivare il suo profilo, ma non lo cancella
-    $STH = $DBH->prepare('UPDATE customers SET active = 0 WHERE id = :id');
+    $STH = $DBH->prepare('DELETE FROM customers WHERE id = :id');
     $STH->execute($data);
 
     $session->logout();

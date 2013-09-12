@@ -18,7 +18,7 @@ try {
                                            value (:name, :user, :password, :role)');
     $STH->execute($data);
 
-//    header('location:show.php?id=' . $DBH->lastInsertId());
+    header('location:show.php?id=' . $DBH->lastInsertId());
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
