@@ -18,6 +18,7 @@
                         divInn.setAttribute('id', 'accordion'+id);
                         div.appendChild(divInn);
                         $('#accordion').append(h3);
+//                        $('#accordion').append(a);
                         $('#accordion').append(div);
                         var h3Inn, divU, aInn;
                         for (var j = 0; j < data[i]['category'].length; j++) {
@@ -34,10 +35,16 @@
                             divInn.appendChild(divU);
                         }
                         
-                        $('#'+divInn.id).accordion();
+                        $('#'+divInn.id).accordion({ active: false, 
+                                                     collapsible: true,
+                                                     heightStyle: "fill",
+                                                     event: "mouseover"});
                     }
                 }
-                $('#accordion').accordion();
+                $('#accordion').accordion({ active: false, 
+                                            collapsible: true,
+                                            heightStyle: "fill",
+                                            event: "mouseover"});
                 
             }, "json");
 
