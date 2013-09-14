@@ -26,10 +26,11 @@ try {
     $op = $stmt2->fetch();
     $order['operator'] = $op['name'];
 
-    $stmt3 = $DBH->prepare('SELECT * FROM products p, orders_has_products op 
-                            WHERE op.orders_id = :id AND p.id = op.products_id');
-    $stmt3->execute($data);
-    $products = $stmt3->fetchAll();
+    //sezione che mostrerebbe il dettaglio, ma per come viene selto di implementare la base dati, è inutile.
+//    $stmt3 = $DBH->prepare('SELECT * FROM products p, orders_has_products op 
+//                            WHERE op.orders_id = :id AND p.id = op.products_id');
+//    $stmt3->execute($data);
+//    $products = $stmt3->fetchAll();
     
     $stmt4 = $DBH->prepare('SELECT * FROM invoices WHERE orders_id = :id');
     $stmt4->execute(array('id' => $order['id']));
@@ -41,5 +42,5 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('ord' => $order, 'products' => $products));
+$template->display(array('ord' => $order/*, 'products' => $products*/));
 ?>

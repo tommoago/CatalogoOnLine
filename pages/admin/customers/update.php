@@ -16,6 +16,7 @@ if (isset($_POST['active'])) {
 }
 $passwd = $_POST['password'];
 $type = $_POST['type'];
+$range = $_POST['price_range'];
 $admin_id = $_POST['adm_id'];
 
 try {
@@ -31,6 +32,7 @@ try {
                    'active' => $active,
                    'password' => $passwd,
                    'type' => $type,
+                   'price_range' => $range,
                    'administrators_id' => $admin_id,
                    'id' => $id);
 
@@ -44,6 +46,7 @@ try {
                             active = :active,
                             password = :password,
                             type = :type,
+                            price_range = :price_range,
                             administrators_id = :administrators_id
                           WHERE id = :id');
     $STH->execute($data);

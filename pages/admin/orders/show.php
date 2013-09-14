@@ -1,4 +1,5 @@
 <?php
+
 include '../../../classes/dataBase.php';
 require_once '../../../vendor/twig/twig/lib/Twig/Autoloader.php';
 include '../../../classes/Session.php';
@@ -21,16 +22,20 @@ try {
     $stmt->execute($data);
     $order = $stmt->fetch();
 
-    $stmt = $DBH->prepare('SELECT * FROM customers WHERE id = :id');
-    $stmt->execute(array('id' => $order['customers_id']));
-    $cus = $stmt->fetch();
-    $order['customer'] = $cus['name'];
+    if (is_numeric($order['customers_id'])) {
+        $stmt = $DBH->prepare('SELECT * FROM customers WHERE id = :id');
+        $stmt->execute(array('id' => $order['customers_id']));
+        $cus = $stmt->fetch();
+        $order['customer'] = $cus['name'];
+    } else {
+        $order['customer'] = $order['customers_id'];
+    }
+    //sezione che mostrerebbe il dettaglio, ma per come viene selto di implementare la base dati, è inutile.
+//    $stmt2 = $DBH->prepare('SELECT * FROM products p, orders_has_products op 
+//                            WHERE op.orders_id = :id AND p.id = op.products_id');
+//    $stmt2->execute($data);
+//    $products = $stmt2->fetchAll();
 
-    $stmt2 = $DBH->prepare('SELECT * FROM products p, orders_has_products op 
-                            WHERE op.orders_id = :id AND p.id = op.products_id');
-    $stmt2->execute($data);
-    $products = $stmt2->fetchAll();
-    
     $stmt4 = $DBH->prepare('SELECT * FROM invoices WHERE orders_id = :id');
     $stmt4->execute(array('id' => $order['id']));
     $inv = $stmt4->fetch();
@@ -39,5 +44,5 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('ord' => $order, 'products' => $products));
+$template->display(array('ord' => $order/* , 'products' => $products */));
 ?>

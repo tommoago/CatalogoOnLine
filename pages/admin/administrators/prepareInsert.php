@@ -2,6 +2,9 @@
 require_once '../../../vendor/twig/twig/lib/Twig/Autoloader.php';
 include '../../../classes/Session.php';
 $session = new Session();
+if(!$session->check_role('jack')){
+   header('location:../index.php?message= Unauthorized access.'); 
+}
 
 Twig_Autoloader::register();
 

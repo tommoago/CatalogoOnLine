@@ -1,36 +1,36 @@
 {% include 'admin/structure/header.phtml' %}
 <div id='content'>
 
-	{% include 'admin/structure/menu.phtml' %}
-	<p>
-		{{ message }}
-	</p>
-	{% if orders|length > 0 %}
-	<table class="tablelist" style='margin: 50px;'>
-		<tr>
-			<th>ID</th>
-			<th>Date</th>
-			<th>Confirmed</th>
-               <th>Confirm Date</th>
-			<th>Operator</th>
-			<th>Customer</th>
-		</tr>
-		{% for ord in orders %}
-		<tr>
-			<td><a href='show.php?id={{ ord.id }}'>{{ ord.id }}</a></td>
-			<td>{{ ord.data }}</td>
-			<td>{{ ord.confirmed }}</td>
-               <td>{{ ord.confirm_date }}</td>
-			<td>{{ ord.operator }}</td>
-			<td>{{ ord.customer }}</td>
-		</tr>
-		{% endfor %}
-	</table>
-	{%endif%}
-	{% if orders|length == 0 %}
-	<p>
-		no elements found
-	</p>
-	{% endif %}
+    {% include 'admin/structure/menu.phtml' %}
+    <p>
+        {{ message }}
+    </p>
+    {% if orders|length > 0 %}
+    <table class="tablelist" style='margin: 50px;'>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Confirmed</th>
+            <th>Confirm Date</th>
+            <th>Operator</th>
+            <th>Customer</th>
+        </tr>
+        {% for ord in orders %}
+        <tr>
+            <td><a href='show.php?id={{ ord.id }}'>{{ ord.id }}</a></td>
+            <td>{{ ord.data }}</td>
+            <td>{{ ord.confirmed }}</td>
+            <td>{{ ord.confirm_date }}</td>
+            <td>{{ ord.operator }}</td>
+            <td>{{ ord.customer }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {%endif%}
+    {% if orders|length == 0 %}
+    <p>
+        no elements found
+    </p>
+    {% endif %}
 </div>
 {% include 'admin/structure/footer.phtml' %}

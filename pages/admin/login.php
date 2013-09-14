@@ -1,9 +1,9 @@
 <?php
-
 session_start();
 require_once '../../vendor/twig/twig/lib/Twig/Autoloader.php';
 Twig_Autoloader::register();
-if (isset($_SESSION['user'])) {
+
+if (isset($_SESSION['user']['role'])) {
     header('location:index.php');
 }
 $loader = new Twig_Loader_Filesystem('../../templates');

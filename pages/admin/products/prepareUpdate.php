@@ -19,6 +19,10 @@ try {
     $stmt = $DBH->prepare('SELECT * FROM categories');
     $stmt->execute();
     $result = $stmt->fetchAll();
+    
+    $stmt = $DBH->prepare('SELECT * FROM suppliers');
+    $stmt->execute();
+    $result2 = $stmt->fetchAll();
 
     $stmt = $DBH->prepare('SELECT * FROM products WHERE id = :id');
     $stmt->execute(array('id' => $id));
@@ -39,13 +43,28 @@ try {
         $product['c_evidence'] ='checked';
     }
     
+    //riporta i prezzi in % rispetto al purchase_price
+    $product['wholesale_price'] = ($product['wholesale_price']/$product['purchase_price']-1)*100;
+    $product['retail_price'] = ($product['retail_price']/$product['purchase_price']-1)*100;
+    $product['super_price'] = ($product['super_price']/$product['purchase_price']-1)*100;
+    
     //marca la categoria appartenente 
     foreach($result as &$row) {
       $row['selected'] = '';
       if ($row['id'] == $product['categories_id']){
           $row['selected'] = 'selected';
       }
+    }
+    
+    //marca il fornitore appartenente 
+    foreach($result2 as &$row) {
+      $row['selected'] = '';
+      if ($row['id'] == $product['suppliers_id']){
+          $row['selected'] = 'selected';
+      }
     } 
+    
+    
     
     //mette immagine
     $stmt3 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
@@ -56,4 +75,4 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('prod' => $product, 'cats' => $result));
+$template->display(array('prod' => $product, 'cats' => $result, 'supps' => $result2));

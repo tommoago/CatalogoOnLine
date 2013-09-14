@@ -1,0 +1,58 @@
+{% include 'header.phtml' %}
+{% include 'menu.phtml' %}
+<div id='content'>
+
+    {% if prods|length > 0 %}
+    <table class="tablelist" style='margin: 50px;'>
+        <tr>
+            <th>Name</th>
+            <th>Descr</th>
+            <th>New</th>
+            <th>Offer</th>
+            <th>Evidence</th>
+            <th>Price</th>
+            <th>Cod</th>
+            <th>Barcode</th>
+            <th>Single Qty</th>
+            <th>Pack Qty</th>
+            <th>Cardboard Qty</th>
+            <th>Category</th>
+        </tr>
+        {% for prod in prods %}
+        <tr>
+            <td><a href='show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
+            <td>{{ prod.description }}</td>
+            <td>{{ prod.new }}</td>
+            <td>{{ prod.offer }}</td>
+            <td>{{ prod.evidence }}</td>
+            <td>{{ prod.price }}</td>
+            <td>{{ prod.cod }}</td>
+            <td>{{ prod.barcode }}</td>
+            <td>{{ prod.single_qty }}</td>
+            <td>{{ prod.pack_qty }}</td>
+            <td>{{ prod.cardboard_qty }}</td>
+            <td>{{ prod.category }}</td>
+            <td class="delete"><a href='delete.php?id={{ prod.id }}'>x</a></td>
+            <td class="edit"><a href='prepareUpdate.php?id={{ prod.id }}'>[&#133;]</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% if totPages > 1 %}
+    <a href="list.php?offset=0">First</a>
+    {% set last = 0 %}
+    {% for i in range(low=1, high=totPages, step=1) %}
+
+    <a href="list.php?offset={{ i - 1}}">{{ i }}</a>
+    {% set last = i -1 %}
+    {% endfor %}
+    <a href="list.php?offset={{ last }}">Last</a>
+    {%endif%}
+    {%endif%}
+    {% if prods|length == 0 %}
+    <p>
+        no elements found
+    </p>
+    {% endif %}
+</div>
+
+{% include 'footer.phtml' %}

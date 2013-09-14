@@ -96,8 +96,21 @@
 			<div class="panleft">
 				<select name="type">
 					<option value="user" {{ cus.selected_u }}>user</option>
-					<option value="seller"  {{ cus.selected_s }}>seller</option>
-					<option value="other"  {{ cus.selected_o }}>other</option>
+					<option value="merchant"  {{ cus.selected_m }}>merchant</option>
+					<option value="stockist"  {{ cus.selected_s }}>stockist</option>
+				</select>
+			</div>
+		</div>
+		<br>
+                <div class="totwidth">
+			<div class="panleft">
+				Price range:
+			</div>
+			<div class="panleft">
+				<select name="price_range">
+					<option value="1" {{ cus.selected_pw }}>wholesale</option>
+					<option value="2" {{ cus.selected_pr }}>retail</option>
+					<option value="3" {{ cus.selected_ps }}>super</option>
 				</select>
 			</div>
 		</div>

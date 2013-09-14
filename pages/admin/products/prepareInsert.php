@@ -17,11 +17,14 @@ try {
     $DBH = $db->connect();
     $stmt = $DBH->prepare('SELECT * FROM categories');
     $stmt->execute();
-
     $result = $stmt->fetchAll();
+    
+    $stmt = $DBH->prepare('SELECT * FROM suppliers');
+    $stmt->execute();
+    $result2 = $stmt->fetchAll();
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('cats' => $result));
+$template->display(array('cats' => $result, 'supps' => $result2));
 ?>

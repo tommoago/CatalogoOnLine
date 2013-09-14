@@ -24,9 +24,9 @@
             <td>{{ d.telephone }}</td>
             <td>{{ d.fax }}</td>
             <td>{{ d.address }}</td>
-            <td><a href='prepareUpdate.php?id={{ d.id }}'>[&#133;]</a></td>
-            <td><a href='addImage.php?id={{ d.id }}'>[&#133;]</a></td>
-            <td><a href='viewImages.php?id={{ d.id }}'>[&#133;]</a></td>
+            <td class="edit"><a href='prepareUpdate.php?id={{ d.id }}'>[&#133;]</a></td>
+            <td class="add_img"><a href='addImage.php?id={{ d.id }}'>+</a></td>
+            <td class="view_img"><a href='viewImages.php?id={{ d.id }}'>view images</a></td>
         </tr>
         {% endfor %}
     </table>
@@ -34,4 +34,3 @@
 </div>
 
 {% include 'admin/structure/footer.phtml' %}
-

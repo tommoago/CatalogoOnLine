@@ -1,4 +1,5 @@
 <?php
+
 include '../../../classes/dataBase.php';
 require_once '../../../vendor/twig/twig/lib/Twig/Autoloader.php';
 include '../../../classes/Session.php';
@@ -27,6 +28,17 @@ try {
         $stmt2->execute(array('id' => $row['administrators_id']));
         $adm = $stmt2->fetch();
         $row['operator'] = $adm['user'];
+        switch ($row['price_range']) {
+            case '1':
+                $row['price_range'] = 'wholesale';
+                break;
+            case '2':
+                $row['price_range'] = 'retail';
+                break;
+            case '3':
+                $row['price_range'] = 'super';
+                break;
+        }
     }
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();

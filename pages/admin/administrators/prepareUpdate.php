@@ -3,6 +3,9 @@ include '../../../classes/dataBase.php';
 require_once '../../../vendor/twig/twig/lib/Twig/Autoloader.php';
 include '../../../classes/Session.php';
 $session = new Session();
+if(!$session->check_role('jack')){
+   header('location:../index.php?message= Unauthorized access.'); 
+}
 
 Twig_Autoloader::register();
 
@@ -20,17 +23,6 @@ try {
     //tira fuori solo un risultato
     $admin = $stmt->fetch();
     
-    switch ($admin['role']) {
-    case 'admin':
-        $admin['selected_a']= 'selected';
-        break;
-    case 'operator':
-        $admin['selected_o']= 'selected';
-        break;
-    case 'jack':
-        $admin['selected_j']= 'selected';
-        break;
-}
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }

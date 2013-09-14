@@ -1,4 +1,5 @@
 <?php
+
 include '../../../classes/dataBase.php';
 require_once '../../../vendor/twig/twig/lib/Twig/Autoloader.php';
 include '../../../classes/Session.php';
@@ -21,14 +22,17 @@ try {
     $stmt = $DBH->prepare('SELECT * FROM orders');
     $stmt->execute();
     $result = $stmt->fetchAll();
-    
-    foreach ($result as &$row) {
-        $stmt = $DBH->prepare('SELECT * FROM customers WHERE id = :id');
-        $stmt->execute(array('id' => $row['customers_id']));
-        $cus = $stmt->fetch();
-        $row['customer'] = $cus['name'];
-    }
 
+    foreach ($result as &$row) {
+        if (is_numeric($row['customers_id'])) {
+            $stmt = $DBH->prepare('SELECT * FROM customers WHERE id = :id');
+            $stmt->execute(array('id' => $row['customers_id']));
+            $cus = $stmt->fetch();
+            $row['customer'] = $cus['name'];
+        } else {
+            $row['customer'] = $row['customers_id'];
+        }
+    }
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }

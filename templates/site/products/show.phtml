@@ -1,0 +1,23 @@
+{% include 'header.phtml' %}
+{% include 'menu.phtml' %}
+<div id='content'>
+    <img src="{{ prod.image }}">
+    <p class="show_prod">
+        Name: {{ prod.name }} <br>
+        Descr: {{ prod.description }} <br>
+        New: {{ prod.new }} <br>
+        Offer: {{ prod.offer }} <br>
+        Highlights: {{ prod.evidence }} <br>
+        Price: {{ prod.price }} <br>
+        Cod.: {{ prod.cod }} <br>
+        Barcode: {{ prod.barcode }} <br>
+        Single Qty.: {{ prod.single_qty }} <br>
+        Pack Qty.: {{ prod.pack_qty }} <br>
+        Cardboard Qty.:{{ prod.cardboard_qty }} <br>
+        Category: {{ prod.category }} <br>
+        Supplier: {{ prod.supplier }} <br>
+    </p>
+
+</div>
+
+{% include 'footer.phtml' %}
