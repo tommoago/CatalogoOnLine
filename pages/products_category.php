@@ -8,7 +8,7 @@ Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem('../templates');
 $twig = new Twig_Environment($loader/* , array('cache' => '../../../templates/cache') */);
-$template = $twig->loadTemplate('site/list.phtml');
+$template = $twig->loadTemplate('site/products/list.phtml');
 
 $result = array();
 $offset = 0;

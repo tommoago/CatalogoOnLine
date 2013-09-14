@@ -161,7 +161,18 @@
 			</div>
 		</div>
 		<br>
-
+                <div class="totwidth">
+			<div class="panleft">
+				Supplier:
+			</div>
+			<div class="panleft">
+				<select name="sup_id">
+					{% for sup in supps %}
+					<option value="{{ sup.id }}">{{ sup.name }}</option>
+					{% endfor %}
+				</select>
+			</div>
+		</div>
 		<input type="submit" value="invio"/>
 
 	</form>
