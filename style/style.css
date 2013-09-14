@@ -54,6 +54,7 @@ h2{
     overflow: auto;
     margin-top: 70px
 }
+
 #content img{
     width: auto;
     max-height: 200px;
@@ -252,18 +253,7 @@ h2{
 #footer_inside p a:hover {
     text-decoration: none
 }
-<<<<<<< HEAD
-#content {
-    margin-top: 70px;
-    width: auto;
-    display: block;
-    height: auto;
-    min-height: 370px;
-    overflow: auto
 
-}
-=======
->>>>>>> 01efeb9e426988e37ca50f205699c8f5bc049e72
 .login {
     position: absolute;
     top: 50%;
