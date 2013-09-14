@@ -242,6 +242,7 @@ h2{
     text-decoration: none
 }
 #content {
+    margin-top: 70px;
     width: auto;
     display: block;
     height: auto;
