@@ -211,6 +211,8 @@ h2{
     background-position: top left;
     background-repeat: repeat-x;
     position: absolute;
+    margin-top: 21px
+
 }
 #footer_inside {
     width: 100%;
@@ -296,7 +298,7 @@ input[type=submit] {
     width: 270px;
     float: left;
     position: absolute;
-    margin: 15px;
+    margin: 25px;
     border: 1px solid #d3cebb;
 }
 .menu-right {
@@ -304,7 +306,7 @@ input[type=submit] {
     width: 270px;
     height: 400px;
     border: 3px solid red;
-    margin-right: 15px;
+    margin: 25px;
 }
 .tablelist {
     border-collapse:collapse;
@@ -409,19 +411,39 @@ th {
     padding-right: 6px;
     float: left
 }
+#pager .pg_first img{
+    width: auto;
+    height: 17px
+}
 #pager .pg_prev {
     padding-right: 6px;
     float: left
+}
+#pager .pg_prev img{
+    width: auto;
+    height: 17px
 }
 #pager .pg_nr {
     padding-right: 6px;
     float: left
 }
+#pager .pg_nr img{
+    width: auto;
+    height: 17px
+}
 #pager .pg_next {
     padding-right: 6px;
     float: left
 }
+#pager .pg_next img{
+    width: auto;
+    height: 17px
+}
 #pager .pg_last {
     padding-right: 6px;
     float: left
+}
+#pager .pg_last img{
+    width: auto;
+    height: 17px
 }
