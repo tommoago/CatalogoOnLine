@@ -37,19 +37,31 @@ try {
 
     $pathName = '';
     if ($_FILES['uploaded']['name'] != '') {
-        //elimina immagine
-        $stmt3 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
-        $stmt3->execute(array('id' => $id));
-        $imm = $stmt3->fetchAll();
-        
-        if(!empty($imm)){
-            unlink('../../' . $imm['path']);
-        }
-
-        //inserisce immagine nuova
+        //upload nuova immagine
         $img = new imgUploader();
         $img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);
         $pathName = $img->getPathName();
+        
+        //cerco precedenti occurences
+        $stmt3 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
+        $stmt3->execute(array('id' => $id));
+        $imm = $stmt3->fetchAll();
+
+        $data2 = array('path' => $pathName, 'id' => $id);
+        if (!empty($imm)) {
+            unlink('../../' . $imm['path']);
+            
+            $STH2 = $DBH->prepare('UPDATE  product_images SET
+                                           path = :path 
+                                   WHERE products_id = :id');
+            $STH2->execute($data2);
+        }else{
+            //se non esiste la voce, la inserisco
+            $STH2 = $DBH->prepare('INSERT INTO product_images (path, products_id) 
+                                                    value (:path, :id)');
+            $STH2->execute($data2);
+        }
+        
     }
 
     $data = array('name' => $name,
@@ -87,15 +99,6 @@ try {
                             categories_id =  :cat_id
                           WHERE id = :id');
     $STH->execute($data);
-
-    //inserisceimmagine nel db
-    if ($pathName != '') {
-            $data2 = array('path' => $pathName, 'id' => $id);
-            $STH2 = $DBH->prepare('UPDATE  product_images SET
-                                       path = :path 
-                               WHERE products_id = :id');
-            $STH2->execute($data2);
-    }
 
     header('location:show.php?id=' . $id);
 } catch (PDOException $e) {

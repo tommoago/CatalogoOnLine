@@ -64,8 +64,6 @@ try {
       }
     } 
     
-    
-    
     //mette immagine
     $stmt3 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
     $stmt3->execute(array('id' => $id));
