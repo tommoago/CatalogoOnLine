@@ -314,13 +314,12 @@ input[type=submit] {
 td {
     font-size:1em;
     border:1px solid #ADA895;
-    padding:3px 0px 3px 3px;
+    padding:3px 2px 2px 2px;
     color: black;
     background: #e1dcc8;
     text-decoration: none;
     word-wrap:break-word;
     text-align: left;
-
 }
 td a{
     font-size:1em;
@@ -329,7 +328,6 @@ td a{
     background: #e1dcc8;
     text-decoration: none;
     text-align: left;
-
 }
 th {
     font-size:1em;
@@ -370,7 +368,6 @@ th {
     width: auto;
     height: 14px
 }
-
 #pager{
     margin-top: 10px
 }
