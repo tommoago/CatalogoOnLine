@@ -1,5 +1,6 @@
 {% include 'admin/structure/header.phtml' %}
 {% include 'admin/structure/menu.phtml' %}
+
 <div id='content'>
 	<p>
 		{{ message }}
@@ -14,8 +15,8 @@
 		<tr>
 			<td><a href='show.php?id={{ cat.id }}'>{{ cat.name }}</a></td>
 			<td>{{ cat.category }}</td>
-			<td class="delete"><a href='delete.php?id={{ cat.id }}'>x</a></td>
-			<td class="edit"><a href='prepareUpdate.php?id={{ cat.id }}'>[&#133;]</a></td>
+			<td class="delete"><a href='delete.php?id={{ cat.id }}'><img src="../../../images/icons/delete/delete-256.png" alt="Delete"></a></td>
+			<td class="edit"><a href='prepareUpdate.php?id={{ cat.id }}'><img src="../../../images/icons/edit/edit-256.png" alt="Edit"></a></td>
 		</tr>
 		{% endfor %}
 	</table>

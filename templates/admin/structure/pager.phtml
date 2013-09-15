@@ -8,7 +8,7 @@
         {% if lr > 1 %}
             <div class="pg_prev">
             	<a href="list.php?offset={{ lr }}">
-	        		<img src="../../../images/icons/Pager/previous/previous-256.png" alt="First">
+	        		<img src="../../../images/icons/Pager/previous/previous-256.png" alt="Previous">
             	</a>
             </div>
         {%endif%}
@@ -26,13 +26,13 @@
         {% if (totPages - 1 > 6) and ((mr) < (totPages - 1))%}
           <div class="pg_next">
           	<a href="list.php?offset={{ mr }}">
-	        		<img src="../../../images/icons/Pager/next/next-256.png" alt="First">
+	        		<img src="../../../images/icons/Pager/next/next-256.png" alt="Next">
 			</a>
 		</div>
 		{%endif%}
 		<div class="pg_last">
         		<a href="list.php?offset={{ totPages - 1 }}">
-        			<img src="../../../images/icons/Pager/last/last-256.png" alt="First">
+        			<img src="../../../images/icons/Pager/last/last-256.png" alt="Last">
 			</a>
 		</div>
 		{%endif%}

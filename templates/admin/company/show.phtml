@@ -1,7 +1,7 @@
 {% include 'admin/structure/header.phtml' %}
 {% include 'admin/structure/menu.phtml' %}
 <div id='content'>
-	<table class="tablelist" style='margin: 50px;'>
+	<table class="tablelist">
 		<tr>
 			<th>Name</th>
 			<th>Description</th>
@@ -18,7 +18,7 @@
                <td>{{ company.telephone }}</td>
                <td>{{ company.fax }}</td>
                <td>{{ company.address }}</td>
-			<td class="edit"><a href='prepareUpdate.php?id={{ company.id }}'>[&#133;]</a></td>
+			<td class="edit"><a href='prepareUpdate.php?id={{ company.id }}'><img src="../../../images/icons/edit/edit-256.png" alt="Edit"></a></td>
 		</tr>
 	</table>
 </div>

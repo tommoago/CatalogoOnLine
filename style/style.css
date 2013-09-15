@@ -295,7 +295,7 @@ input[type=submit] {
     height: 30px;
 }
 #accordion {
-    width: 270px;
+    width: 175px;
     float: left;
     position: absolute;
     margin: 25px;
@@ -356,6 +356,10 @@ th {
     font-family: Courier;
     text-align: center;
 }
+.delete img{
+    width: auto;
+    height: 14px
+}
 .edit {
     color: transparent;
     border: 0px solid black;
@@ -369,6 +373,10 @@ th {
     color: blue;
     background: transparent;
     text-align: center;
+}
+.edit img{
+    width: auto;
+    height: 14px
 }
 .view_img {
     color: transparent;
