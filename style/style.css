@@ -52,7 +52,8 @@ h2{
     height: auto;
     min-height: 370px;
     overflow: auto;
-    margin-top: 80px
+    margin-top: 80px;
+    margin-left: 225px
 }
 
 #content img{
