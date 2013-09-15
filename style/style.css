@@ -380,7 +380,7 @@ th {
     font-weight: bold;
     font-size: 14px
 }
-#pager .pg_first, .pg_prev, .pg_next, .pg_last {
+#pager .pg_first, .pg_prev, .pg_nr, .pg_next, .pg_last {
     padding-right: 6px;
     float: left
 }
