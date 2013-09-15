@@ -17,7 +17,18 @@ if (isset($_GET['message'])) {
 try {
     $db = new dataBase();
     $DBH = $db->connect();
-    $stmt = $DBH->prepare('SELECT * FROM suppliers');
+    
+    $stmt = $DBH->prepare('SELECT COUNT(*) FROM suppliers');
+    $stmt->execute();
+    $totProd = $stmt->fetch();
+    $count = $totProd[0];
+    $numPages += intval($count/$limit);
+    if($count%$limit != 0){
+        $numPages++;
+    }
+    if($offset != 0 ) $offset *= $limit;
+    
+    $stmt = $DBH->prepare('SELECT * FROM suppliers LIMIT ' . $offset . ', ' . $limit);
     $stmt->execute();
     $result = $stmt->fetchAll();
 
@@ -25,5 +36,9 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('suppliers' => $result));
+$lowRange = $offset/$limit-3;
+$maxRange = $offset/$limit;
+$maxRange < 3? $maxRange = 6 : $maxRange += 3;
+
+$template->display(array('suppliers' => $result, 'totPages' => $numPages, 'lr' => $lowRange, 'mr' => $maxRange));
 ?>
