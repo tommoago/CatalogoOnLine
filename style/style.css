@@ -392,6 +392,10 @@ th {
     background: transparent;
     text-align: center;
 }
+.view_img img{
+	width: auto;
+     height: 14px
+}
 .add_img {
     color: transparent;
     border: 0px solid black;
@@ -405,6 +409,10 @@ th {
     color: blue;
     background: transparent;
     text-align: center;
+}
+.add_img img{
+	width: auto;
+     height: 14px
 }
 #pager{
     margin-top: 10px
