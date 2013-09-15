@@ -14,6 +14,10 @@ $result = array();
 if (isset($_GET['message'])) {
     $message = $_GET['message'];
 }
+$offset = $_GET['offset'];
+$limit = 20;
+$numPages = 0;
+
 try {
     $db = new dataBase();
     $DBH = $db->connect();
