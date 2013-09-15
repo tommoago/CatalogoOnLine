@@ -385,3 +385,20 @@ th {
     width: auto;
     height: 17px
 }
+.show_img, .show_prod {
+	float: left;
+    margin-left: 100px
+}
+.show_prod li {
+     list-style: none;
+     line-height: 20px;
+     font-size: 12px;
+     text-transform: uppercase;
+}
+.show_prod ul {
+    	font-weight: bold;
+    	list-style: none;
+	display: inline;
+    	font-size: 17px;
+    	text-transform: none
+}

@@ -3,7 +3,7 @@
 <div id='content'>
 
     {% if prods|length > 0 %}
-    <table class="tablelist" style='margin: 50px;'>
+    <table class="tablelist">
         <tr>
             <th>Name</th>
             <th>Descr</th>
@@ -32,22 +32,14 @@
             <td>{{ prod.pack_qty }}</td>
             <td>{{ prod.cardboard_qty }}</td>
             <td>{{ prod.category }}</td>
-            <td class="delete"><a href='delete.php?id={{ prod.id }}'><img src="../../../images/icons/delete/delete-256.png" alt="Delete"></a></td>
-            <td class="edit"><a href='prepareUpdate.php?id={{ prod.id }}'><img src="../../../images/icons/edit/edit-256.png" alt="Edit"></a></td>
+            <td class="delete"><a href='delete.php?id={{ prod.id }}'><img src="../images/icons/delete/delete-256.png" alt="Delete"></a></td>
+            <td class="edit"><a href='prepareUpdate.php?id={{ prod.id }}'><img src="../images/icons/edit/edit-256.png" alt="Edit"></a></td>
         </tr>
         {% endfor %}
     </table>
-<!-- PAGER -->
-    {% if totPages > 1 %}
-    <a href="list.php?offset=0">First</a>
-    {% set last = 0 %}
-    {% for i in range(low=1, high=totPages, step=1) %}
+<!-- ATTENZIONE: Pager CON PATH IMMAGINI "../../../" ANZICHÉ "../" controlla i cambiamenti se sono giusti -->
+        {% include 'site/pager.phtml' %}
 
-    <a href="list.php?offset={{ i - 1}}">{{ i }}</a>
-    {% set last = i -1 %}
-    {% endfor %}
-    <a href="list.php?offset={{ last }}">Last</a>
-    {%endif%}
     {%endif%}
     {% if prods|length == 0 %}
     <p>
