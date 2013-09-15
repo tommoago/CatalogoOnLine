@@ -1,12 +1,16 @@
 <?php
+
 include '../../../classes/imgUploader.php';
 include '../../../classes/dataBase.php';
 include '../../../classes/Session.php';
 $session = new Session();
 
-$img = new imgUploader();
-$img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);
-$pathName = $img->getPathName();
+$pathName = '';
+if ($_FILES['uploaded']['name'] != '') {
+    $img = new imgUploader();
+    $img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);
+    $pathName = $img->getPathName();
+}
 
 $name = $_POST['name'];
 $description = $_POST['descr'];
@@ -42,9 +46,9 @@ try {
         'new' => $new,
         'offer' => $offer,
         'evidence' => $evidence,
-        'w_price' => $purchase_price*(1+($wholesale_price/100)),
-        'r_price' => $purchase_price*(1+($retail_price/100)),
-        's_price' => $purchase_price*(1+($super_price/100)),
+        'w_price' => $purchase_price * (1 + ($wholesale_price / 100)),
+        'r_price' => $purchase_price * (1 + ($retail_price / 100)),
+        's_price' => $purchase_price * (1 + ($super_price / 100)),
         'p_price' => $purchase_price,
         'cod' => $cod,
         'barcode' => $barcode,
@@ -63,13 +67,15 @@ try {
                                                :s_qty, :p_qty, :c_qty, :cat_id, :sup_id)');
     $STH->execute($data);
     $idProd = $DBH->lastInsertId();
-    
-    $data2 =array('path' => $pathName,
-                  'prod_id' => $idProd);
-    $STH2 = $DBH->prepare('INSERT INTO product_images (path, products_id) 
+
+    //inserisceimmagine nel db
+    if ($pathName != '') {
+        $data2 = array('path' => $pathName, 'prod_id' => $idProd);
+        $STH2 = $DBH->prepare('INSERT INTO product_images (path, products_id) 
                                                 value (:path, :prod_id)');
-    $STH2->execute($data2);
-    header('location:show.php?id='.$idProd);
+        $STH2->execute($data2);
+    }
+    header('location:show.php?id=' . $idProd);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }

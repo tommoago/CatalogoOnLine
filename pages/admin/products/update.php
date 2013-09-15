@@ -1,4 +1,5 @@
 <?php
+
 include '../../../classes/dataBase.php';
 include '../../../classes/imgUploader.php';
 include '../../../classes/Session.php';
@@ -39,11 +40,13 @@ try {
         //elimina immagine
         $stmt3 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
         $stmt3->execute(array('id' => $id));
-        $imm = $stmt3->fetch();
-
-        unlink('../../' . $imm['path']);
+        $imm = $stmt3->fetchAll();
         
-        //elimina immagine
+        if(!empty($imm)){
+            unlink('../../' . $imm['path']);
+        }
+
+        //inserisce immagine nuova
         $img = new imgUploader();
         $img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);
         $pathName = $img->getPathName();
@@ -54,9 +57,9 @@ try {
         'new' => $new,
         'offer' => $offer,
         'evidence' => $evidence,
-        'w_price' => $purchase_price*(1+($wholesale_price/100)),
-        'r_price' => $purchase_price*(1+($retail_price/100)),
-        's_price' => $purchase_price*(1+($super_price/100)),
+        'w_price' => $purchase_price * (1 + ($wholesale_price / 100)),
+        'r_price' => $purchase_price * (1 + ($retail_price / 100)),
+        's_price' => $purchase_price * (1 + ($super_price / 100)),
         'p_price' => $purchase_price,
         'cod' => $cod,
         'barcode' => $barcode,
@@ -85,13 +88,13 @@ try {
                           WHERE id = :id');
     $STH->execute($data);
 
+    //inserisceimmagine nel db
     if ($pathName != '') {
-        $data2 = array('path' => $pathName, 'id' => $id);
-        $STH2 = $DBH->prepare('UPDATE  product_images SET
+            $data2 = array('path' => $pathName, 'id' => $id);
+            $STH2 = $DBH->prepare('UPDATE  product_images SET
                                        path = :path 
                                WHERE products_id = :id');
-
-        $STH2->execute($data2);
+            $STH2->execute($data2);
     }
 
     header('location:show.php?id=' . $id);
