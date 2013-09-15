@@ -1,6 +1,10 @@
 <div id="pager">
     {% if totPages > 1 %}
-        <div class="pg_first"><a href="list.php?offset=0">First</a></div>
+        <div class="pg_first">
+		   <a href="list.php?offset=0">
+        		<img src="../images/icon/Pager/first/first-256.png" alt="First">
+	        </a>
+        </div>
         {% if lr > 1 %}
             <div class="pg_prev"><a href="list.php?offset={{ lr }}">Prev</a></div>
         {%endif%}
