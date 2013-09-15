@@ -15,12 +15,26 @@ $message = '';
 if (isset($_GET['message'])) {
     $message = $_GET['message'];
 }
+$offset = $_GET['offset'];
+$limit = 20;
+$numPages = 0;
+
 try {
     $db = new dataBase();
     $DBH = $db->connect();
-    $stmt = $DBH->prepare('SELECT * FROM categories');
+    
+    $stmt = $DBH->prepare('SELECT COUNT(*) FROM categories');
     $stmt->execute();
-
+    $totProd = $stmt->fetch();
+    $count = $totProd[0];
+    $numPages += intval($count/$limit);
+    if($count%$limit != 0){
+        $numPages++;
+    }
+    if($offset != 0 ) $offset *= $limit;
+    
+    $stmt = $DBH->prepare('SELECT * FROM categories LIMIT ' . $offset . ', ' . $limit);
+    $stmt->execute();
     $result = $stmt->fetchAll();
 
     foreach ($result as &$row) {
@@ -34,5 +48,9 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('cats' => $result, 'message' => $message));
+$lowRange = $offset/$limit-3;
+$maxRange = $offset/$limit;
+$maxRange < 3? $maxRange = 6 : $maxRange += 3;
+
+$template->display(array('cats' => $result, 'message' => $message, 'totPages' => $numPages, 'lr' => $lowRange, 'mr' => $maxRange));
 ?>
