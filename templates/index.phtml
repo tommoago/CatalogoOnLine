@@ -1,11 +1,11 @@
 {% include 'header.phtml' %}
+{% include 'menu.phtml' %}
 <script type="text/javascript">
     $(document).ready(function() {
         $('#mycarousel').jcarousel();
     });
 </script>
 <div id="content">
-    {% include 'menu.phtml' %}
     <div>
         <ul id="mycarousel" class="jcarousel-skin-tango" >
             <li><img src="http://static.flickr.com/66/199481236_dc98b5abb3_s.jpg" width="75" height="75" alt="" />
@@ -30,6 +30,6 @@
             </li>
         </ul>
     </div>
-	<div class="right-side"> Next Slider </div>
 </div>
+<div class="right-side"> Next Slider </div>
 {% include 'footer.phtml' %}
