@@ -26,6 +26,7 @@
         </tr>
         {% endfor %}
     </table>
+        {% include 'admin/structure/pager.phtml' %}
     {%endif%}
     {% if orders|length == 0 %}
     <p>

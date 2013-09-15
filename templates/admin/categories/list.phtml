@@ -20,6 +20,7 @@
 		</tr>
 		{% endfor %}
 	</table>
+            {% include 'admin/structure/pager.phtml' %}
 	{%endif%}
 	{% if cats|length == 0 %}
 	<p>

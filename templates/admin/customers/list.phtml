@@ -36,6 +36,7 @@
         </tr>
         {% endfor %}
     </table>
+        {% include 'admin/structure/pager.phtml' %}
     {%endif%}
     {% if customers|length == 0 %}
     <p>
