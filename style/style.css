@@ -52,7 +52,7 @@ h2{
     height: auto;
     min-height: 370px;
     overflow: auto;
-    margin-top: 70px
+    margin-top: 80px
 }
 
 #content img{
@@ -172,7 +172,7 @@ h2{
 #sidebar {
     width: 175px;
     float: left;
-    padding: 13px 32px 0 23px;
+    padding: 0px 25px 0px 25px;
 }
 #list {
     list-style-type: none;
@@ -303,7 +303,6 @@ input[type=submit] {
     margin-top: -102px
 }
 .tablelist {
-    margin: 50px;
     border-collapse:collapse;
 }
 td {
@@ -331,6 +330,10 @@ th {
     padding:3px 5px 2px 5px;
     color: black;
     text-align: center;
+    word-wrap:break-word;
+    font-size: 15px;
+    font-weight: 200;
+/*  letter-spacing: -1px; */
 }
 .delete {
     color: transparent;
@@ -388,4 +391,33 @@ th {
     color: blue;
     background: transparent;
     text-align: center;
+}
+#pager{
+    margin-top: 10px
+}
+#pager a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px
+}
+#pager .pg_first {
+    padding-right: 6px;
+    float: left
+}
+#pager .pg_prev {
+    padding-right: 6px;
+    float: left
+}
+#pager .pg_nr {
+    padding-right: 6px;
+    float: left
+}
+#pager .pg_next {
+    padding-right: 6px;
+    float: left
+}
+#pager .pg_last {
+    padding-right: 6px;
+    float: left
 }

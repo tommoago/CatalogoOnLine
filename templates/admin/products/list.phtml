@@ -3,7 +3,7 @@
 
     {% include 'admin/structure/menu.phtml' %}
     {% if prods|length > 0 %}
-    <table class="tablelist" style='margin: 50px;'>
+    <table class="tablelist">
         <tr>
             <th>Name</th>
             <th>Description</th>
@@ -45,21 +45,21 @@
     </table>
     <div id="pager">
         {% if totPages > 1 %}
-            <a href="list.php?offset=0">First</a>
+            <div class="pg_first"><a href="list.php?offset=0">First</a></div>
             {% if lr > 1 %}
-                <a href="list.php?offset={{ lr }}">Prev</a>
+            	<div class="pg_prev"><a href="list.php?offset={{ lr }}">Prev</a></div>
             {%endif%}
             
             {% for i in range(low = lr, high = mr, step=1) %}
                 {% if (i  <= totPages) and (i > 0) %}
-                    <a href="list.php?offset={{ i - 1}}">{{ i }}</a>
+                    <div class="pg_nr"><a href="list.php?offset={{ i - 1}}">{{ i }}</a></div>
                 {%endif%}
             {% endfor %}
             
             {% if (totPages - 1 > 6) and ((mr) < (totPages - 1))%}
-                <a href="list.php?offset={{ mr }}">Next</a>
+                <div class="pg_next"><a href="list.php?offset={{ mr }}">Next</a></div>
             {%endif%}
-             <a href="list.php?offset={{ totPages - 1 }}">Last</a>
+             <div class="pg_last"><a href="list.php?offset={{ totPages - 1 }}">Last</a></div>
         {%endif%}
     {%endif%}
     </div>
