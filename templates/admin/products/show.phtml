@@ -2,7 +2,9 @@
 <div id='content'>
 
 	{% include 'admin/structure/menu.phtml' %}
+        {% if prod.image != '' %}
 	<img src="../../{{ prod.image }}">
+        {% endif %}
 	<table class="tablelist" style='margin: 50px;'>
 		<tr>
 			<th>Name</th>
