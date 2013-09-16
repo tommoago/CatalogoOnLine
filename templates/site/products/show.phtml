@@ -1,24 +1,26 @@
 {% include 'header.phtml' %}
 {% include 'menu.phtml' %}
 <div id='content'>
-	<div class="show_img">
-		<img src="../../{{ prod.image }}">
-	</div>
-	<div class="show_prod">
-     	<li>Name:
-     		<ul>{{ prod.name }} </ul> 
-     	</li>
-		<li>Description: <ul>{{ prod.description }}</ul></li> 
-        	<li>New: <ul>{{ prod.new }}</ul></li> 
-        	<li>Offer: <ul>{{ prod.offer }} </ul></li> 
-        	<li>Price: <ul>{{ prod.price }} </ul></li> 
-        	<li>Cod.: <ul>{{ prod.cod }} </ul></li> 
-        	<li>Barcode: <ul>{{ prod.barcode }} </ul></li> 
-        	<li>Single Qty.: <ul>{{ prod.single_qty }} </ul></li> 
-        	<li>Pack Qty.: <ul>{{ prod.pack_qty }} </ul></li> 
-        	<li>Cardboard Qty.:<ul>{{ prod.cardboard_qty }} </ul></li> 
-        	<li>Category: <ul>{{ prod.category }} </ul></li> 
-        	<li>Supplier: <ul>{{ prod.supplier }} </ul></li> 
+    <div class="show_img">
+        <img src="../../{{ prod.image }}">
+    </div>
+    <div class="show_prod">
+        <li>Name:
+            <ul>{{ prod.name }} </ul> 
+        </li>
+        <li>Description: <ul>{{ prod.description }}</ul></li> 
+        <li>New: <ul>{{ prod.new }}</ul></li> 
+        <li>Offer: <ul>{{ prod.offer }} </ul></li> 
+        <li>Price: <ul>{{ prod.price }} </ul></li> 
+        <li>Cod.: <ul>{{ prod.cod }} </ul></li> 
+        <li>Barcode: <ul>{{ prod.barcode }} </ul></li> 
+        <li>Single Qty.: <ul>{{ prod.single_qty }} </ul></li> 
+        <li>Pack Qty.: <ul>{{ prod.pack_qty }} </ul></li> 
+        <li>Cardboard Qty.:<ul>{{ prod.cardboard_qty }} </ul></li> 
+        <li>Category: <ul>{{ prod.category }} </ul></li> 
+        <li>Supplier: <ul>{{ prod.supplier }} </ul></li> 
+        <a href='../cart/add.php?id={{ prod.id }}'><img src="../../../images/icons/Adds/add_list/add_list-256.png" alt="Edit">add to cart</a>
+
     </div>
 </div>
 

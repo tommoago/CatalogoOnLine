@@ -64,28 +64,6 @@ class Session {
         }
         return $relativeDir;
     }
-
-//    ulteriore dinamicizzazione(fallimentare, per ora)
-    private function getPath2() {
-        $relativeDir = '';
-        $splitted = split('/', $_SERVER['PHP_SELF']);
-        $bool = false;
-        foreach ($splitted as $split) {
-            if ($split == 'melarossa') {
-                $bool = true;
-            }
-            if ($bool) {
-                if ($split == 'admin' || $split == 'user') {
-                    $relativeDir .= 'pages/' . $split;
-                    break;
-                } else {
-                    $relativeDir .= '../';
-                }
-            }
-        }
-        return $relativeDir;
-    }
-
 }
 
 ?>

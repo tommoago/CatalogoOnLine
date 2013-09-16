@@ -3,7 +3,7 @@
 <div id='content'>
     
     {% if prods|length > 0 %}
-    <a href='removeFormCart.php?id={{ prod.id }}'><img src="../images/icons/Adds/delete/delete-256.png" alt="Delete"></a>
+    <a href='empty.php?id={{ prod.id }}'><img src="../images/icons/Adds/delete/delete-256.png" alt="Delete"> empty cart</a>
     <table class="tablelist">
         <tr>
             <th>Name</th>
@@ -21,16 +21,15 @@
             <td>{{ prod.cod }}</td>
             <td>{{ prod.category }}</td>
             <td>{{ prod.qty }}</td>
-            <td class="edit"><a href='removeFormCart.php?id={{ prod.id }}'><img src="../images/icons/Adds/add_list/add_list-256.png" alt="Remove"></a></td>
+            <td class="edit"><a href='remove.php?id={{ prod.id }}'><img src="../images/icons/Adds/add_list/add_list-256.png" alt="Remove"></a></td>
         </tr>
         {% endfor %}
+        <tr>{{ tot }}</tr>
     </table>
-        {% include 'site/pager.phtml' %}
-
     {%endif%}
     {% if prods|length == 0 %}
     <p>
-        no elements found
+        your cart is empty.
     </p>
     {% endif %}
 </div>
