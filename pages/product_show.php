@@ -30,12 +30,26 @@ try {
     $stmt3->execute(array('id' => $result['suppliers_id']));
     $sup = $stmt3->fetch();
     $result['supplier'] = $sup['name'];
-    
+
     $stmt4 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
     $stmt4->execute(array('id' => $result['id']));
     $imm = $stmt4->fetch();
     $result['image'] = $imm['path'];
-    
+
+    //mette il prezzo giusto
+    $result['price'] = $result['retail_price'];
+    if (isset($_SESSION['user']['price_range']))
+        switch ($_SESSION['user']['price_range']) {
+            case 1:
+                $result['price'] = $result['wholesale_price'];
+                break;
+            case 2:
+                $result['price'] = $result['retail_price'];
+                break;
+            case 3:
+                $result['price'] = $result['super_price'];
+                break;
+        }
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }

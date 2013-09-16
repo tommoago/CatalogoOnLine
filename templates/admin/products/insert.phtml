@@ -4,177 +4,177 @@
 <script type="text/javascript" src="../../../scripts/form.product.validation.js"></script>
 <script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
 <script type="text/javascript">
-    function calculate(percentage){
-        $('#'+percentage.id).parent().contents(':not(input)').remove();
+    function calculate(percentage) {
+        $('#' + percentage.id).parent().contents(':not(input)').remove();
         var per = percentage.value;
-        var multiplier = 1+(per/100);
-        $('#'+percentage.id).after($('#p_price').val()*multiplier);
+        var multiplier = 1 + (per / 100);
+        $('#' + percentage.id).after($('#p_price').val() * multiplier);
     }
 </script>
 <div id='content'>
-	<form action="insert.php" method="post" id="formproduct" enctype="multipart/form-data">
-		<div class="totwidth">
-			<div class="panleft">
-				Select a file to upload:
-			</div>
-			<div class="panleft">
-				<input type="file" name="uploaded" id="file">
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Name:
-			</div>
-			<div class="panleft">
-				<input type="text" id="name" name="name"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Description:
-			</div>
-			<div class="panleft">
-				<input type="text" id="descr" name="descr"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				New:
-			</div>
-			<div class="panleft">
-				<input type="checkbox" name="new" />
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Offer:
-			</div>
-			<div class="panleft">
-				<input type="checkbox" name="offer" />
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Evidence:
-			</div>
-			<div class="panleft">
-				<input type="checkbox" name="evidence" />
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Wholesale Price:
-			</div>
-			<div class="panleft">
-				<input type="text" id="w_price" onchange="calculate(this);" name="w_price"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Retail Price:
-			</div>
-			<div class="panleft">
-				<input type="text" id="r_price" onchange="calculate(this);" name="r_price"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Super Price:
-			</div>
-			<div class="panleft">
-				<input type="text" id="s_price" onchange="calculate(this);" name="s_price"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Purchase Price:
-			</div>
-			<div class="panleft">
-				<input type="text" id="p_price" name="p_price"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Cod:
-			</div>
-			<div class="panleft">
-				<input type="text" id="cod" name="cod"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Barcode:
-			</div>
-			<div class="panleft">
-				<input type="text" id="barcode" name="barcode"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Single Qty:
-			</div>
-			<div class="panleft">
-				<input type="text" id="s_qty" name="s_qty"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				pack Qty:
-			</div>
-			<div class="panleft">
-				<input type="text" id="p_qty" name="p_qty"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Cardboard Qty:
-			</div>
-			<div class="panleft">
-				<input type="text" id="c_qty" name="c_qty"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Category:
-			</div>
-			<div class="panleft">
-				<select name="cat_id">
-					{% for cat in cats %}
-					<option value="{{ cat.id }}">{{ cat.name }}</option>
-					{% endfor %}
-				</select>
-			</div>
-		</div>
-		<br>
-                <div class="totwidth">
-			<div class="panleft">
-				Supplier:
-			</div>
-			<div class="panleft">
-				<select name="sup_id">
-					{% for sup in supps %}
-					<option value="{{ sup.id }}">{{ sup.name }}</option>
-					{% endfor %}
-				</select>
-			</div>
-		</div>
-		<input type="submit" value="invio"/>
+    <form action="insert.php" method="post" id="formproduct" enctype="multipart/form-data">
+        <div class="totwidth">
+            <div class="panleft">
+                Select a file to upload:
+            </div>
+            <div class="panleft">
+                <input type="file" name="uploaded" id="file">
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Name:
+            </div>
+            <div class="panleft">
+                <input type="text" id="name" name="name"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Description:
+            </div>
+            <textarea id="textarea" name="descr" rows="4" cols="50">
+                       
+            </textarea>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                New:
+            </div>
+            <div class="panleft">
+                <input type="checkbox" name="new" />
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Offer:
+            </div>
+            <div class="panleft">
+                <input type="checkbox" name="offer" />
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Evidence:
+            </div>
+            <div class="panleft">
+                <input type="checkbox" name="evidence" />
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Wholesale Price:
+            </div>
+            <div class="panleft">
+                <input type="text" id="w_price" onchange="calculate(this);" name="w_price"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Retail Price:
+            </div>
+            <div class="panleft">
+                <input type="text" id="r_price" onchange="calculate(this);" name="r_price"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Super Price:
+            </div>
+            <div class="panleft">
+                <input type="text" id="s_price" onchange="calculate(this);" name="s_price"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Purchase Price:
+            </div>
+            <div class="panleft">
+                <input type="text" id="p_price" name="p_price"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Cod:
+            </div>
+            <div class="panleft">
+                <input type="text" id="cod" name="cod"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Barcode:
+            </div>
+            <div class="panleft">
+                <input type="text" id="barcode" name="barcode"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Single Qty:
+            </div>
+            <div class="panleft">
+                <input type="text" id="s_qty" name="s_qty"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                pack Qty:
+            </div>
+            <div class="panleft">
+                <input type="text" id="p_qty" name="p_qty"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Cardboard Qty:
+            </div>
+            <div class="panleft">
+                <input type="text" id="c_qty" name="c_qty"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Category:
+            </div>
+            <div class="panleft">
+                <select name="cat_id">
+                    {% for cat in cats %}
+                    <option value="{{ cat.id }}">{{ cat.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Supplier:
+            </div>
+            <div class="panleft">
+                <select name="sup_id">
+                    {% for sup in supps %}
+                    <option value="{{ sup.id }}">{{ sup.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <input type="submit" value="invio"/>
 
-	</form>
+    </form>
 </div>
 {% include 'admin/structure/footer.phtml' %}

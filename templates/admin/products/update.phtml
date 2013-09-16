@@ -5,185 +5,185 @@
 <script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
 <script type="text/javascript">
     window.onload = function()
-                {
+    {
         calculate($('#w_price'));
         calculate($('#s_price'));
         calculate($('#r_price'));
-   }
-    function calculate(percentage){
-        $('#'+percentage.id).parent().contents(':not(input)').remove();
+    }
+    function calculate(percentage) {
+        $('#' + percentage.id).parent().contents(':not(input)').remove();
         var per = percentage.value;
-        var multiplier = 1+(per/100);
-        var rs = $('#p_price').val()*multiplier;
-        $('#'+percentage.id).after(parseFloat(rs).toFixed(3));
+        var multiplier = 1 + (per / 100);
+        var rs = $('#p_price').val() * multiplier;
+        $('#' + percentage.id).after(parseFloat(rs).toFixed(3));
     }
 </script>
 <div id='content'>
-	<form action="update.php" method="post" style="padding-left: 270px;" enctype="multipart/form-data">
+    <form action="update.php" method="post" style="padding-left: 270px;" enctype="multipart/form-data">
 
-		<input type="hidden" name="id" value="{{ prod.id }}"/>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Select a file to upload (leave blank to not modify)
-			</div>
-			<div class="panleft">
-				<input type="file" name="uploaded" id="file">
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Name
-			</div>
-			<div class="panleft">
-				<input type="text" name="name" value="{{ prod.name }}"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Description
-			</div>
-			<div class="panleft">
-				<input type="text" name="descr" value="{{ prod.description }}"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				New
-			</div>
-			<div class="panleft">
-				<input type="checkbox" name="new" {{ prod.c_new }}/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Offer
-			</div>
-			<div class="panleft">
-				<input type="checkbox" name="offer" {{ prod.c_offer }}/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Evidence
-			</div>
-			<div class="panleft">
-				<input type="checkbox" name="evidence" {{ prod.c_evidence }}/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Wholesale Price
-			</div>
-			<div class="panleft">
-				<input type="text" id="w_price" onchange="calculate(this);" name="w_price" value="{{ prod.wholesale_price }}"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Retail Price
-			</div>
-			<div class="panleft">
-				<input type="text" id="r_price" onchange="calculate(this);" name="r_price" value="{{ prod.retail_price }}"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Super Price
-			</div>
-			<div class="panleft">
-				<input type="text" id="s_price" onchange="calculate(this);" name="s_price" value="{{ prod.super_price }}"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Purchase Price
-			</div>
-			<div class="panleft">
-				<input type="text" id="p_price" name="p_price" value="{{ prod.purchase_price }}"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Cod
-			</div>
-			<div class="panleft">
-				<input type="text" name="cod" value="{{ prod.cod }}"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Barcode
-			</div>
-			<div class="panleft">
-				<input type="text" name="barcode" value="{{ prod.barcode }}"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Single Qty
-			</div>
-			<div class="panleft">
-				<input type="text" name="s_qty" value="{{ prod.single_qty }}"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				pack Qty
-			</div>
-			<div class="panleft">
-				<input type="text" name="p_qty" value="{{ prod.pack_qty }}"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Cardboard Qty
-			</div>
-			<div class="panleft">
-				<input type="text" name="c_qty" value="{{ prod.cardboard_qty }}"/>
-			</div>
-		</div>
-		<br>
-		<div class="totwidth">
-			<div class="panleft">
-				Category:
-			</div>
-			<div class="panleft">
-				<select name="cat_id">
-					{% for cat in cats %}
-					<option value="{{ cat.id }}" {{ cat.selected }}>{{ cat.name }}</option>
-					{% endfor %}
-				</select>
-			</div>
-		</div>
-		<br>
-                <div class="totwidth">
-			<div class="panleft">
-				Suppliers:
-			</div>
-			<div class="panleft">
-				<select name="sup_id">
-					{% for sup in supps %}
-					<option value="{{ sup.id }}" {{ sup.selected }}>{{ sup.name }}</option>
-					{% endfor %}
-				</select>
-			</div>
-		</div>
-		<input type="submit" value="invio"/>
+        <input type="hidden" name="id" value="{{ prod.id }}"/>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Select a file to upload (leave blank to not modify)
+            </div>
+            <div class="panleft">
+                <input type="file" name="uploaded" id="file">
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Name
+            </div>
+            <div class="panleft">
+                <input type="text" name="name" value="{{ prod.name }}"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Description
+            </div>
+            <textarea id="textarea" name="descr" rows="4" cols="50">
+                       {{ prod.description }}
+            </textarea>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                New
+            </div>
+            <div class="panleft">
+                <input type="checkbox" name="new" {{ prod.c_new }}/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Offer
+            </div>
+            <div class="panleft">
+                <input type="checkbox" name="offer" {{ prod.c_offer }}/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Evidence
+            </div>
+            <div class="panleft">
+                <input type="checkbox" name="evidence" {{ prod.c_evidence }}/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Wholesale Price
+            </div>
+            <div class="panleft">
+                <input type="text" id="w_price" onchange="calculate(this);" name="w_price" value="{{ prod.wholesale_price }}"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Retail Price
+            </div>
+            <div class="panleft">
+                <input type="text" id="r_price" onchange="calculate(this);" name="r_price" value="{{ prod.retail_price }}"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Super Price
+            </div>
+            <div class="panleft">
+                <input type="text" id="s_price" onchange="calculate(this);" name="s_price" value="{{ prod.super_price }}"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Purchase Price
+            </div>
+            <div class="panleft">
+                <input type="text" id="p_price" name="p_price" value="{{ prod.purchase_price }}"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Cod
+            </div>
+            <div class="panleft">
+                <input type="text" name="cod" value="{{ prod.cod }}"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Barcode
+            </div>
+            <div class="panleft">
+                <input type="text" name="barcode" value="{{ prod.barcode }}"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Single Qty
+            </div>
+            <div class="panleft">
+                <input type="text" name="s_qty" value="{{ prod.single_qty }}"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                pack Qty
+            </div>
+            <div class="panleft">
+                <input type="text" name="p_qty" value="{{ prod.pack_qty }}"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Cardboard Qty
+            </div>
+            <div class="panleft">
+                <input type="text" name="c_qty" value="{{ prod.cardboard_qty }}"/>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Category:
+            </div>
+            <div class="panleft">
+                <select name="cat_id">
+                    {% for cat in cats %}
+                    <option value="{{ cat.id }}" {{ cat.selected }}>{{ cat.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="totwidth">
+            <div class="panleft">
+                Suppliers:
+            </div>
+            <div class="panleft">
+                <select name="sup_id">
+                    {% for sup in supps %}
+                    <option value="{{ sup.id }}" {{ sup.selected }}>{{ sup.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <input type="submit" value="invio"/>
 
-	</form>
-	{% include 'admin/structure/footer.phtml' %}
+    </form>
+    {% include 'admin/structure/footer.phtml' %}
