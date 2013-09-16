@@ -70,14 +70,14 @@ h2{
 
 #topmenu {
     float: right;
-    padding-top: 30px;
+    padding-top: 34px;
 }
 #topmenu li.tpm {
     list-style: none;
     float: left;
     padding-left: 4px;
     padding-right: 4px;
-    border-right: 1px solid #0b3e01;
+    border-right: 1px solid #d3cebb;
 }
 #topmenu li.cart_header {
     list-style: none;
@@ -138,6 +138,9 @@ h2{
     text-decoration: none;
     color: white;
     box-shadow:0px 2px 2px black;
+    border-radius: 0px 0px 4px 4px;
+    -moz-border-radius: 0px 0px 4px 4px;
+    -webkit-border-radius: 0px 0px 4px 4px;
 }
 #menu .but2_active {
     margin-top:2px;
@@ -435,10 +438,11 @@ th {
     margin-left: 100px
 }
 .show_img img {
-    border: 2px solid #ADA895;
+    margin:10px;
     border-radius: 3px;   
-     -moz-border-radius: 3px;   
-     -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;   
+    -webkit-border-radius: 3px;
+    box-shadow: 2px 3px 8px #726F62
 }
 .show_prod ul {
      list-style: none;
