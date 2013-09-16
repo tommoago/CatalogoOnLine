@@ -70,7 +70,25 @@ h2{
 
 #topmenu {
     float: right;
-    padding-top: 130px;
+    padding-top: 30px;
+}
+#topmenu li.tpm {
+    list-style: none;
+    float: left;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-right: 1px solid #0b3e01;
+}
+#topmenu li.cart_header {
+    list-style: none;
+    float: left;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+#topmenu li.tpm img, #topmenu li.cart_header img {
+    width: auto;
+    height: 17px;
+    margin-left: 4px;
 }
 #topmenu a{
     color: #0b3e01;
@@ -411,9 +429,16 @@ th {
     width: auto;
     height: 17px
 }
+
 .show_img, .show_prod {
 	float: left;
     margin-left: 100px
+}
+.show_img img {
+    border: 2px solid #ADA895;
+    border-radius: 3px;   
+     -moz-border-radius: 3px;   
+     -webkit-border-radius: 3px;
 }
 .show_prod ul {
      list-style: none;

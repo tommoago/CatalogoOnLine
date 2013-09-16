@@ -33,8 +33,20 @@
                         <a href="{{ path }}contact_us.php" class="but4">Contatti</a>
                     </li>
                 </ul>
-                <p id="topmenu">
-                    <a href="">Registrazione</a> | <a href="{{ path }}admin/login.php">Admin</a> | <a href="{{ path }}user/login.php">User</a> | <a href="{{ path }}site/cart/list.php">Carrello</a>
-                </p>
+                <div id="topmenu">
+                	<ul>
+                		<li class="tpm">
+                			<a href="">Registrazione<img src="../images/icons/system/login/login-256.png" alt="Login"></a> 
+                		</li>
+                		<li class="tpm">
+                			<a href="{{ path }}admin/login.php">Admin<img src="../images/icons/users/administrator/administrator-256.png" alt="Admin"></a>
+                		</li>
+                		<li class="tpm">
+                			<a href="{{ path }}user/login.php">User<img src="../images/icons/users/group/group-256.png" alt="User"></a>
+                		</li>
+                		<li class="cart_header">
+                			<a href="{{ path }}site/cart/list.php">Carrello<img src="../images/icons/cart/shopping_cart/shopping_cart-256.png" alt="Cart"></a>
+                		</li>
+                </div>
             </div>
         </div>

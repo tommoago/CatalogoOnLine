@@ -1,17 +1,17 @@
 {% include 'user/structure/header.phtml' %}
+	{% include 'user/structure/menu.phtml' %}
 <div id='content'>
 
-	{% include 'user/structure/menu.phtml' %}
 	<p>
 		{{ message }}
 	</p>
 	{% if orders|length > 0 %}
 	<table class="tablelist" style='margin: 50px;'>
 		<tr>
-			<td>ID</td>
-			<td>Date</td>
-			<td>Confirmed</td>
-			<td>Operator</td>
+			<th>ID</th>
+			<th>Date</th>
+			<th>Confirmed</th>
+			<th>Operator</th>
 		</tr>
 		{% for ord in orders %}
 		<tr>
