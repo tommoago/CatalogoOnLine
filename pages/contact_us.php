@@ -8,5 +8,9 @@ $loader = new Twig_Loader_Filesystem('../templates');
 $twig = new Twig_Environment($loader/* , array('cache' => '../../../templates/cache') */);
 $template = $twig->loadTemplate('site/contact_us.phtml');
 
-$template->display(array());
+$message = '';
+if(isset( $_GET['message']))
+ $message = $_GET['message'];
+
+$template->display(array('message' => $message));
 ?>
