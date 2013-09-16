@@ -23,8 +23,8 @@ try {
     $db = new dataBase();
     $DBH = $db->connect();
 
-    $stmt = $DBH->prepare('SELECT COUNT(*) FROM products');
-    $stmt->execute();
+    $stmt = $DBH->prepare('SELECT COUNT(*) FROM products WHERE categories_id = :id');
+    $stmt->execute(array('id' => $_GET['id_cat']));
     $totProd = $stmt->fetch();
     $count = $totProd[0];
     $numPages += intval($count / $limit);

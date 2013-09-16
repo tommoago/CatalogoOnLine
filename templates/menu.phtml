@@ -14,7 +14,7 @@
                         var divInn;
                         h3 = document.createElement('h3');
                         a = document.createElement('a');
-                        a.setAttribute('href', '{{ path }}site/products/products_category.php?id_cat=' + id);
+                        a.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id);
                         a.appendChild(document.createTextNode(data[i]['name']));
                         h3.appendChild(a);
                         div = document.createElement('div');
@@ -30,7 +30,7 @@
                             var idInn = cat['id'];
                             h3Inn = document.createElement('h3');
                             aInn = document.createElement('a');
-                            aInn.setAttribute('href', '{{ path }}site/products/products_category.php?id_cat=' + idInn);
+                            aInn.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + idInn);
                             aInn.appendChild(document.createTextNode(cat['name']));
                             h3Inn.appendChild(aInn);
                             divU = document.createElement('div');
