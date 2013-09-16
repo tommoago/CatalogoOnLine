@@ -349,7 +349,7 @@ th {
     border-bottom: 1px solid #ADA895;
 }
 
-.edit, .edit_admin, .view_img {
+.edit, .edit_admin, .view_img, .cart, .remove_cart {
     color: transparent;
     border: 0px solid black;
     border-top: 1px solid #ADA895;
@@ -359,14 +359,29 @@ th {
     text-align: center;
 }
 
-.delete a, .delete_admin a, .edit a, .edit_admin a, .view_img a, .add_img a{
+.delete a, .delete_admin a, .edit a, .edit_admin a, .view_img a, .add_img a, .cart a, .remove_cart a{
     color: black;
     background: transparent;
     text-align: center;
 }
-.delete img, .edit img, .delete_admin img, .edit_admin img, .view_img img, .add_img img{
+.delete img, .edit img, .delete_admin img, .edit_admin img, .view_img img, .add_img img, .cart img, .remove_cart img{
     width: auto;
     height: 14px
+}
+.empty_cart {
+    margin: 0px;
+}
+.empty_cart a{
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+    
+}
+.empty_cart img{
+	 width: auto;
+     height: 30px;
+     float: left;
+     margin-right: 16px
 }
 #pager{
     margin-top: 10px
