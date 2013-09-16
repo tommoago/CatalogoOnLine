@@ -5,21 +5,23 @@
         <img src="../../{{ prod.image }}">
     </div>
     <div class="show_prod">
-        <li>Name:
-            <ul>{{ prod.name }} </ul> 
-        </li>
-        <li>Description: <ul>{{ prod.description }}</ul></li> 
-        <li>New: <ul>{{ prod.new }}</ul></li> 
-        <li>Offer: <ul>{{ prod.offer }} </ul></li> 
-        <li>Price: <ul>{{ prod.price }} </ul></li> 
-        <li>Cod.: <ul>{{ prod.cod }} </ul></li> 
-        <li>Barcode: <ul>{{ prod.barcode }} </ul></li> 
-        <li>Single Qty.: <ul>{{ prod.single_qty }} </ul></li> 
-        <li>Pack Qty.: <ul>{{ prod.pack_qty }} </ul></li> 
-        <li>Cardboard Qty.:<ul>{{ prod.cardboard_qty }} </ul></li> 
-        <li>Category: <ul>{{ prod.category }} </ul></li> 
-        <li>Supplier: <ul>{{ prod.supplier }} </ul></li> 
-        <a href='../cart/add.php?id={{ prod.id }}'><img src="../../../images/icons/Adds/add_list/add_list-256.png" alt="Edit">add to cart</a>
+        <ul>Name:
+            <li>{{ prod.name }} </li> 
+        </ul>
+        <ul>Description: <li>{{ prod.description }}</li></ul> 
+        <ul>New: <li>{{ prod.new }}</li></ul> 
+        <ul>Offer: <li>{{ prod.offer }} </li></ul> 
+        <ul>Price: <li>{{ prod.price }} </li></ul> 
+        <ul>Cod.: <li>{{ prod.cod }} </li></ul> 
+        <ul>Barcode: <li>{{ prod.barcode }} </li></ul> 
+        <ul>Single Qty.: <li>{{ prod.single_qty }} </li></ul> 
+        <ul>Pack Qty.: <li>{{ prod.pack_qty }} </li></ul> 
+        <ul>Cardboard Qty.:<li>{{ prod.cardboard_qty }} </li></ul> 
+        <ul>Category: <li>{{ prod.category }} </li></ul> 
+        <ul>Supplier: <li>{{ prod.supplier }} </li></ul> 
+        <div class="add_cart">
+    	 		<a href='../cart/add.php?id={{ prod.id }}'><img src="../../../images/icons/cart/buy/buy-256.png" alt="Add to cart">Add to cart</a>
+  	   </div>
 
     </div>
 </div>
