@@ -27,7 +27,5 @@ try {
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
-//print_r($result);
 echo json_encode($result);
-//$template->display(array('cats' => $result));
 ?>

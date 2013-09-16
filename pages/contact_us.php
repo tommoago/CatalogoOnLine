@@ -12,5 +12,5 @@ $message = '';
 if(isset( $_GET['message']))
  $message = $_GET['message'];
 
-$template->display(array('message' => $message));
+$template->display(array('message' => $message, 'index' =>'yes'));
 ?>

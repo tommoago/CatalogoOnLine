@@ -1,5 +1,9 @@
+{% set path = '' %}
+{% if index == '' %}
+    {% set path = '../../' %}
+{% endif %}
 <script type="text/javascript">
-    $.post("menu.php",
+    $.post("{{ path }}menu.php",
             function(data) {
                 if (data.length == 0) {
                     $('#accordion').append("<p>No result found.</p>");
@@ -10,12 +14,12 @@
                         var divInn;
                         h3 = document.createElement('h3');
                         a = document.createElement('a');
-                        a.setAttribute('href', 'products_category.php?id_cat=' + id);
+                        a.setAttribute('href', '{{ path }}site/products/products_category.php?id_cat=' + id);
                         a.appendChild(document.createTextNode(data[i]['name']));
                         h3.appendChild(a);
                         div = document.createElement('div');
                         divInn = document.createElement('div');
-                        divInn.setAttribute('id', 'accordion'+id);
+                        divInn.setAttribute('id', 'accordion' + id);
                         div.appendChild(divInn);
                         $('#accordion').append(h3);
 //                        $('#accordion').append(a);
@@ -26,7 +30,7 @@
                             var idInn = cat['id'];
                             h3Inn = document.createElement('h3');
                             aInn = document.createElement('a');
-                            aInn.setAttribute('href', 'products_category.php?id_cat=' + idInn);
+                            aInn.setAttribute('href', '{{ path }}site/products/products_category.php?id_cat=' + idInn);
                             aInn.appendChild(document.createTextNode(cat['name']));
                             h3Inn.appendChild(aInn);
                             divU = document.createElement('div');
@@ -34,18 +38,18 @@
                             divInn.appendChild(h3Inn);
                             divInn.appendChild(divU);
                         }
-                        
-                        $('#'+divInn.id).accordion({ active: false, 
-                                                     collapsible: true,
-                                                     heightStyle: "fill",
-                                                     event: "mouseover"});
+
+                        $('#' + divInn.id).accordion({active: false,
+                                                    collapsible: true,
+                                                    heightStyle: "fill",
+                                                    event: "mouseover"});
                     }
                 }
-                $('#accordion').accordion({ active: false, 
-                                            collapsible: true,
-                                            heightStyle: "fill",
-                                            event: "mouseover"});
-                
+                $('#accordion').accordion({active: false,
+                                        collapsible: true,
+                                        heightStyle: "fill",
+                                        event: "mouseover"});
+
             }, "json");
 
 </script>

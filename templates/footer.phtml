@@ -1,11 +1,15 @@
 <div id="footer">
+    {% set path = '' %}
+    {% if index == '' %}
+        {% set path = '../../' %}
+    {% endif %}
     <div id="footer_inside">
         <ul class="footer_menu">
             <li>
-                <a href="index.php">Home Page</a>|
+                <a href="{{ path }}index.php">Home Page</a>|
             </li>
             <li>
-                <a href="where.php">Dove Siamo</a>
+                <a href="{{ path }}where.php">Dove Siamo</a>
             </li>
         </ul>
         <br />

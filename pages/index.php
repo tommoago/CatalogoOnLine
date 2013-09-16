@@ -19,5 +19,5 @@ $template = $twig->loadTemplate('index.phtml');
 //
 //print_r($link);
 
-$template->display(array());
+$template->display(array('index' =>'yes'));
 ?>

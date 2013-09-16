@@ -1,36 +1,27 @@
 {% include 'header.phtml' %}
 {% include 'menu.phtml' %}
 <div id='content'>
-
+    
     {% if prods|length > 0 %}
+    <a href='removeFormCart.php?id={{ prod.id }}'><img src="../images/icons/Adds/delete/delete-256.png" alt="Delete"></a>
     <table class="tablelist">
         <tr>
             <th>Name</th>
             <th>Descr</th>
-            <th>New</th>
-            <th>Offer</th>
             <th>Price</th>
             <th>Cod</th>
-            <th>Barcode</th>
-            <th>Single Qty</th>
-            <th>Pack Qty</th>
-            <th>Cardboard Qty</th>
             <th>Category</th>
+            <th>Qty</th>
         </tr>
         {% for prod in prods %}
         <tr>
-            <td><a href='site/products/product_show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
+            <td><a href='product_show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
             <td>{{ prod.description }}</td>
-            <td>{{ prod.new }}</td>
-            <td>{{ prod.offer }}</td>
             <td>{{ prod.price }}</td>
             <td>{{ prod.cod }}</td>
-            <td>{{ prod.barcode }}</td>
-            <td>{{ prod.single_qty }}</td>
-            <td>{{ prod.pack_qty }}</td>
-            <td>{{ prod.cardboard_qty }}</td>
             <td>{{ prod.category }}</td>
-            <td class="edit"><a href='../cart/addToCart.php?id={{ prod.id }}'><img src="../../../images/icons/Adds/add_list/add_list-256.png" alt="Edit"></a></td>
+            <td>{{ prod.qty }}</td>
+            <td class="edit"><a href='removeFormCart.php?id={{ prod.id }}'><img src="../images/icons/Adds/add_list/add_list-256.png" alt="Remove"></a></td>
         </tr>
         {% endfor %}
     </table>
