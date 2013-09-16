@@ -1,13 +1,13 @@
 <div id="pager">
     {% if totPages > 1 %}
         <div class="pg_first">
-		   <a href="list.php?offset=0">
+		   <a href="products_category.php?id_cat={{ id_cat }}&offset=0">
         		<img src="../images/icons/Pager/first/first-256.png" alt="First">
 	        </a>
         </div>
         {% if lr > 1 %}
             <div class="pg_prev">
-            	<a href="list.php?offset={{ lr }}">
+            	<a href="products_category.php?id_cat={{ id_cat }}&offset={{ lr }}">
 	        		<img src="../images/icons/Pager/previous/previous-256.png" alt="Previous">
             	</a>
             </div>
@@ -16,7 +16,7 @@
         {% for i in range(low = lr, high = mr, step=1) %}
             {% if (i  <= totPages) and (i > 0) %}
                 <div class="pg_nr">
-                	<a href="list.php?offset={{ i - 1}}">
+                	<a href="products_category.php?id_cat={{ id_cat }}&offset={{ i - 1}}">
                 		{{ i }}
                 	</a>
                 </div>
@@ -25,13 +25,13 @@
 
         {% if (totPages - 1 > 6) and ((mr) < (totPages - 1))%}
           <div class="pg_next">
-          	<a href="list.php?offset={{ mr }}">
+          	<a href="products_category.php?id_cat={{ id_cat }}&offset={{ mr }}">
 	        		<img src="../images/icons/Pager/next/next-256.png" alt="Next">
 			</a>
 		</div>
 		{%endif%}
 		<div class="pg_last">
-        		<a href="list.php?offset={{ totPages - 1 }}">
+        		<a href="products_category.php?id_cat={{ id_cat }}&offset={{ totPages - 1 }}">
         			<img src="../images/icons/Pager/last/last-256.png" alt="Last">
 			</a>
 		</div>

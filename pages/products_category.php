@@ -47,5 +47,9 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('prods' => $result, 'totPages' => $numPages));
+$lowRange = $offset/$limit-3;
+$maxRange = $offset/$limit;
+$maxRange < 3? $maxRange = 6 : $maxRange += 3;
+
+$template->display(array('prods' => $result, 'totPages' => $numPages, 'lr' => $lowRange, 'mr' => $maxRange, 'id_cat'=>$_GET['id_cat']));
 ?>
