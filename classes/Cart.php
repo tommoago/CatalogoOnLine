@@ -20,9 +20,10 @@ class Cart {
 
     public function addProduct($prod) {
         $bool = false;
+            
         foreach ($this->products as &$row)
             if ($row['id'] == $prod['id']){
-                $row['prod']['qty'] += $prod['qty'];
+                $row['qty'] += $prod['qty'];
                 $bool = true;
             }
             
@@ -34,7 +35,7 @@ class Cart {
 
     public function removeProduct($prod_id) {
         foreach ($this->products as $key => $row)
-            if ($row['prod']['id'] == $prod_id)
+            if ($row['id'] == $prod_id)
                 unset($this->products[$key]);
         
         $this->calculateTotal();

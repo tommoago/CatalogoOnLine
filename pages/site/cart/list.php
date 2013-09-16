@@ -1,7 +1,7 @@
 <?php
 
-session_start();
 include '../../../classes/Cart.php';
+session_start();
 include '../../../classes/dataBase.php';
 require_once '../../../vendor/twig/twig/lib/Twig/Autoloader.php';
 
@@ -10,7 +10,7 @@ $loader = new Twig_Loader_Filesystem('../../../templates');
 $twig = new Twig_Environment($loader/* , array('cache' => '../../../templates/cache') */);
 $template = $twig->loadTemplate('site/cart/list.phtml');
 
-isset($_SESSION['cart'])?  : $_SESSION['cart'] = new Cart();
+isset($_SESSION['cart'])? : $_SESSION['cart'] = new Cart();
 $cart = $_SESSION['cart'];
 
 $result = array();
@@ -20,6 +20,7 @@ try {
     $DBH = $db->connect();
 
     foreach ($cart->getProducts() as $row) {
+        print_r($row['qty']);
         $stmt = $DBH->prepare('SELECT * FROM products  WHERE id = :id');
         $stmt->execute(array('id' => $row['id']));
         $product = $stmt->fetch();
@@ -35,11 +36,16 @@ try {
                 case 2:
                     $row['price'] = $row['retail_price'];
                     break;
-                case 3:
+                case 3: 
                     $row['price'] = $row['super_price'];
                     break;
             }
-            
+
+        $stmt2 = $DBH->prepare('SELECT * FROM categories WHERE id = :id');
+        $stmt2->execute(array('id' => $product['categories_id']));
+        $cat = $stmt2->fetch();
+        $product['category'] = $cat['name'];
+
         $result[] = $product;
     }
 } catch (PDOException $e) {
