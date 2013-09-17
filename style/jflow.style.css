@@ -27,6 +27,11 @@
     color: #FFF;
     margin: 0;
 }
+/*mmmmmmm :(*/
+.slide img {
+    width: auto;
+    max-height: 400px !important;
+}
 
 .jFlowSlideContainer {
     overflow: hidden;
