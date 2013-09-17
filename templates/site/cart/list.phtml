@@ -23,15 +23,22 @@
             <td class="remove_cart"><a href='remove.php?id={{ prod.id }}'><img src="../../../images/icons/cart/return/return-256.png" alt="Remove"></a></td>
         </tr>
         {% endfor %}
-        <tr>Total: {{ tot }}</tr>
     </table>
-    <div class="empty_cart">
-    	  <a href='empty.php'><img src="../../../images/icons/delete/delete-256.png" alt="Delete">Empty cart</a>
-    </div>
+    <ul>
+    		<li class="total">
+    			<img src="../../../images/icons/cart/shopping_cart_filled/shopping_cart_filled-256.png" alt="Total">Total:  &#128;{{ tot }}
+    		</li>
+    		<li class="checkout">
+    		    	<a href='#'><img src="../../../images/icons/cart/checkout/checkout_green-256.png" alt="Checkout">Checkout</a>
+		</li>
+    		<li class="empty_cart">
+    	  		<a href='empty.php'><img src="../../../images/icons/cart/return/return_red-256.png" alt="Delete">Empty cart</a>
+    		</li>
+    	</ul>
     {%endif%}
     {% if prods|length == 0 %}
     <p>
-        your cart is empty.
+        Your cart is empty.
     </p>
     {% endif %}
 </div>
