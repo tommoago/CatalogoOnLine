@@ -18,11 +18,11 @@
             Testo:
         </div>
         <div >
-            <textarea id="textarea" name="question" rows="4" cols="50">
+            <textarea id="textarea" name="question" rows="4" cols="50" onfocus="if(this.value==this.defaultValue)this.value='';">
                        Insert your question here.
             </textarea>
         </div>
-        <input type="submit" value="invio"/>
+        <input type="submit" value="Send"/>
     </form>
-
+</div>
 {% include 'footer.phtml' %}
