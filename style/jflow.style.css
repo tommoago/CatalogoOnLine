@@ -2,8 +2,8 @@
     width: 690px;
     height: 340px;
     position: relative;
-    border-top: 5px solid #999;
-    border-bottom: 5px solid #999;
+    border-top: 5px solid #D3CEBB;
+    border-bottom: 5px solid #D3CEBB;
     margin: 0 auto;
 }
 
@@ -11,9 +11,8 @@
     background: url("../images/contentBg.png") repeat scroll 0 0 transparent;
     position: absolute;
     bottom: 0px;
-    right: -20px;
     padding: 15px;
-    width: 690px;
+    width: 700px;
 }
 
 .slide h3 {
@@ -27,10 +26,10 @@
     color: #FFF;
     margin: 0;
 }
-/*mmmmmmm :(*/
+/* Qui magari sarebbe da fare un Alert o qualcosa che consigli di caricare foto con risoluzione minima 700x340 (che possiamo decidere posteriormente)*/
 .slide img {
-    width: auto;
-    max-height: 400px !important;
+    min-width: 700px;
+    min-height: 340px;
 }
 
 .jFlowSlideContainer {
@@ -84,7 +83,7 @@
 #myController {
     position: absolute;
     top: 5px;
-    right: 5px;
+    left: 5px;
 }
 
 .jFlowControl {
