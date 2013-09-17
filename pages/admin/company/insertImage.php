@@ -14,7 +14,6 @@ try {
     $DBH = $db->connect();
 
     $pathName = '';
-    print_r($_FILES['uploaded']['name']);
     if ($_FILES['uploaded']['name'] != '') {
         $img = new imgUploader();
         $img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);

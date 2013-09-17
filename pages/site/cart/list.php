@@ -20,7 +20,6 @@ try {
     $DBH = $db->connect();
 
     foreach ($cart->getProducts() as $row) {
-        print_r($row['qty']);
         $stmt = $DBH->prepare('SELECT * FROM products  WHERE id = :id');
         $stmt->execute(array('id' => $row['id']));
         $product = $stmt->fetch();
@@ -51,7 +50,6 @@ try {
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
-
 
 $template->display(array('prods' => $result, 'tot' => $cart->getTot()));
 ?>

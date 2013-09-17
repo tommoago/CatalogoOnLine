@@ -3,7 +3,6 @@
 <div id='content'>
     
     {% if prods|length > 0 %}
-    
     <table class="tablelist">
         <tr>
             <th>Name</th>
@@ -24,7 +23,7 @@
             <td class="remove_cart"><a href='remove.php?id={{ prod.id }}'><img src="../../../images/icons/cart/return/return-256.png" alt="Remove"></a></td>
         </tr>
         {% endfor %}
-        <tr>{{ tot }}</tr>
+        <tr>Total: {{ tot }}</tr>
     </table>
     <div class="empty_cart">
     	  <a href='empty.php'><img src="../../../images/icons/delete/delete-256.png" alt="Delete">Empty cart</a>
