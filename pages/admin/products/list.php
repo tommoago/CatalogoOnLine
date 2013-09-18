@@ -35,7 +35,7 @@ try {
     $result = $stmt->fetchAll();
 
     foreach ($result as &$row) {
-        $row['description'] = substr($row['description'], 0, 80) .'....';
+        $row['description'] = substr($row['description'], 0, 80) .'...';
         
         $stmt = $DBH->prepare('SELECT * FROM categories WHERE id = :id');
         $stmt->execute(array('id' => $row['categories_id']));
