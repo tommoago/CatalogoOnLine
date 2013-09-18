@@ -15,7 +15,7 @@ $role = $_POST['role'];
 try {
     $db = new dataBase();
     $DBH = $db->connect();
-    $data = array('name' => $name, 'user' => $user, 'password' => $passwd, 'id' => $id);
+    $data = array('name' => $name, 'user' => $user, 'password' => md5($passwd), 'id' => $id);
 
     $STH = $DBH->prepare('UPDATE administrators SET  
                             name = :name, 

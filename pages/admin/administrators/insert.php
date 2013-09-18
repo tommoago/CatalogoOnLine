@@ -13,7 +13,7 @@ $passwd = $_POST['password'];
 try {
     $db = new dataBase();
     $DBH = $db->connect();
-    $data = array('name' => $name, 'user' => $user, 'password' => $passwd, 'role' =>'operator');
+    $data = array('name' => $name, 'user' => $user, 'password' => md5($passwd), 'role' =>'operator');
     $STH = $DBH->prepare('INSERT INTO administrators (name, user, password, role) 
                                            value (:name, :user, :password, :role)');
     $STH->execute($data);

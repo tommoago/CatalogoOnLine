@@ -29,7 +29,7 @@ try {
                   'telephone' => $telephone,
                   'cellphone' => $cellphone,
                   'active' => $active,
-                  'password' => $passwd,
+                  'password' => md5($passwd),
                   'type' => $type,
                   'price_range' => $range,
                   'administrators_id' => $admin_id);

@@ -22,7 +22,7 @@ try {
                    'email' => $email,
                    'telephone' => $telephone,
                    'cellphone' => $cellphone,
-                   'password' => $passwd,
+                   'password' => md5($passwd),
                    'id' => $id);
 
     $STH = $DBH->prepare('UPDATE customers SET  

@@ -33,7 +33,7 @@ try {
         'telephone' => $telephone,
         'cellphone' => $cellphone,
         'active' => $active,
-        'password' => $passwd,
+        'password' => md5($passwd),
         'type' => $type,
         //per default alla registrazione uno user ha il prezzo al dettaglio.
         'price_range' => 2,
