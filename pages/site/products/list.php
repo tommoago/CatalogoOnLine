@@ -4,7 +4,6 @@ session_start();
 include '../../../classes/dataBase.php';
 require_once '../../../vendor/twig/twig/lib/Twig/Autoloader.php';
 
-
 Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem('../../../templates');
@@ -45,6 +44,8 @@ try {
         $stmt->execute(array('id' => $row['categories_id']));
         $cat = $stmt->fetch();
         $row['category'] = $cat['name'];
+        
+        $row['description'] = substr($row['description'], 0, 150) .'....';
 
         //mette il prezzo giusto
         $row['price'] = $row['retail_price'];
