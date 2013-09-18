@@ -27,7 +27,7 @@
         {% endfor %}-->
     </table>
     {% if ord.confirmed != 1%}
-    <a href='confirm.php?id={{ ord.id }}'>Conferma ordine</a>
+        <a href='confirm.php?id={{ ord.id }}' onclick="return confirm('Are you sure to confirm this order?')">Conferma ordine</a>
     {% endif %}
     {% if ord.file != ''%}
         <a href='{{ ord.file }}'>pdf</a>

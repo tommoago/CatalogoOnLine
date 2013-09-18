@@ -1,8 +1,7 @@
 {% include 'admin/structure/header.phtml' %}
 {% include 'admin/structure/menu.phtml' %}
-<script type="text/javascript" src="../../../scripts/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="../../../scripts/form.product.validation.js"></script>
 <script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
+<script type="text/javascript" src="../../../scripts/validation/admin/form.product.validation.js"></script>
 <script type="text/javascript">
     window.onload = function()
     {
@@ -19,7 +18,7 @@
     }
 </script>
 <div id='content'>
-    <form action="update.php" method="post" style="padding-left: 270px;" enctype="multipart/form-data">
+    <form action="update.php" method="post" id="formproduct" enctype="multipart/form-data">
 
         <input type="hidden" name="id" value="{{ prod.id }}"/>
         <br>

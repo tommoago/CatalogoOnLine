@@ -1,7 +1,9 @@
 {% include 'admin/structure/header.phtml' %}
 {% include 'admin/structure/menu.phtml' %}
+<script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
+<script type="text/javascript" src="../../../scripts/validation/admin/form.administrators.validation.js"></script>
 <div id='content'>
-	<form action="update.php" method="post" style="padding-left: 270px;">
+	<form action="update.php" method="post" id="formadministrators">
 		<input type="hidden" name="id" value="{{ admin.id }}"/>
 		<div class="totwidth">
 			<div class="panleft">
