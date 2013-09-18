@@ -5,6 +5,8 @@ include '../../classes/Mailer.php';
 
 $name = $_POST['name'];
 $surname = $_POST['surname'];
+$cod_fis = $_POST['cod_fis'];
+$piva = $_POST['piva'];
 $address = $_POST['address'];
 $email = $_POST['email'];
 $telephone = $_POST['telephone'];
@@ -18,7 +20,7 @@ $type = $_POST['type'];
 try {
     $db = new dataBase();
     $DBH = $db->connect();
-    //selezione casuale dell'operatore associato
+    //selezione casuale dell'operatore associato (escluso jack);
     $STH = $DBH->prepare('SELECT id FROM administrators
                                     WHERE role NOT IN ("jack")
                                     ORDER BY RAND()
@@ -28,6 +30,8 @@ try {
 
     $data = array('name' => $name,
         'surname' => $surname,
+        'cod_fis' => $cod_fis,
+        'piva' => $piva,
         'address' => $address,
         'email' => $email,
         'telephone' => $telephone,
@@ -40,6 +44,8 @@ try {
         'administrators_id' => $admin['id']);
     $STH2 = $DBH->prepare('INSERT INTO customers (name, 
                                                  surname,
+                                                 cod_fis,
+                                                 piva,
                                                  address,
                                                  email,
                                                  telephone,

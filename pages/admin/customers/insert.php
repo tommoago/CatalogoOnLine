@@ -5,6 +5,8 @@ $session = new Session();
 
 $name = $_POST['name'];
 $surname = $_POST['surname'];
+$cod_fis = $_POST['cod_fis'];
+$piva = $_POST['piva'];
 $address = $_POST['address'];
 $email = $_POST['email'];
 $telephone = $_POST['telephone'];
@@ -24,6 +26,8 @@ try {
     $DBH = $db->connect();
     $data = array('name' => $name, 
                   'surname' => $surname,
+                  'cod_fis' => $cod_fis,
+                  'piva' => $piva,
                   'address' => $address,
                   'email' => $email,
                   'telephone' => $telephone,
@@ -35,6 +39,8 @@ try {
                   'administrators_id' => $admin_id);
     $STH = $DBH->prepare('INSERT INTO customers (name, 
                                                  surname,
+                                                 cod_fis,
+                                                 piva,
                                                  address,
                                                  email,
                                                  telephone,
@@ -46,6 +52,8 @@ try {
                                                  administrators_id) 
                                            value (:name, 
                                                   :surname,
+                                                  :cod_fis,
+                                                  :piva,
                                                   :address,
                                                   :email,
                                                   :telephone,

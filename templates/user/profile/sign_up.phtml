@@ -1,8 +1,21 @@
 {% include 'user/structure/header.phtml' %}
-<script type="text/javascript" src="../../../scripts/form.customers.validation.js"></script>
-<script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
+<script type="text/javascript" src="../../scripts/jquery.validate.js"></script>
+<script type="text/javascript" src="../../scripts/validation/user/form.user.validation.js"></script>
+<script type="text/javascript">
+function toggleCf(){
+    $('#cf_div').show();
+    $('#piva_div').hide();
+}
+function togglePiva(){
+    $('#cf_div').hide();
+    $('#piva_div').show();
+}
+</script>
 <div id='content'>
 	<form action="register.php" method="post" style="padding-left: 270px;" id="formcustomers" enctype="multipart/form-data">
+                Account type:<br>
+                <input type="radio" name="account_type" value="2" onclick="toggleCf()">Normal User<br>
+                <input type="radio" name="account_type" value="1" onclick="togglePiva()">Merchant<br>
 		<div class="totwidth">
 			<div class="panleft">
 				Name:
@@ -20,7 +33,25 @@
 				<input type="text" id="surname" name="surname"/>
 			</div>
 		</div>
+                <br>
+                <div class="totwidth" id="cf_div" style="display: none">
+			<div class="panleft">
+				Cod Fiscale:
+			</div>
+			<div class="panleft">
+				<input type="text" id="cod_fis" name="cod_fis"/>
+			</div>
+		</div>
 		<br>
+                <div class="totwidth" id="piva_div" style="display: none">
+			<div class="panleft">
+				P.IVA:
+			</div>
+			<div class="panleft">
+				<input type="text" id="piva" name="piva"/>
+			</div>
+		</div>
+                <br>
 		<div class="totwidth">
 			<div class="panleft">
 				Address:
