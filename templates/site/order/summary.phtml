@@ -1,0 +1,43 @@
+{% include 'header.phtml' %}
+<div id='content'>
+
+    {% if prods|length > 0 %}
+    <table class="tablelist">
+        <tr>
+            <th>Name</th>
+            <th>Descr.</th>
+            <th>&#128;</th>
+            <th>Cod.</th>
+            <th>Cat.</th>
+            <th>Q.ty</th>
+        </tr>
+        {% for prod in prods %}
+        <tr>
+            <td><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td> <!-- lasciare visualizzazione?? -->
+            <td>{{ prod.description }}</td>
+            <td>{{ prod.price }}</td>
+            <td>{{ prod.cod }}</td>
+            <td>{{ prod.category }}</td>
+            <td>{{ prod.qty }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% if confirmed == ''%}
+        <ul>
+            <li class="checkout">
+                <a href='confirm.php'><img src="../../../images/icons/cart/checkout/checkout_green-256.png" alt="Confirm">Confirm</a>
+            </li>
+            <li class="empty_cart">
+                <a href='../cart/empty.php'><img src="../../../images/icons/cart/return/return_red-256.png" alt="Cancel Order">Cancel Order</a>
+            </li>
+        </ul>
+    {% endif %}
+    {%endif%}
+    {% if prods|length == 0 %}
+    <p>
+        Your cart is empty.
+    </p>
+    {% endif %}
+</div>
+
+{% include 'footer.phtml' %}
