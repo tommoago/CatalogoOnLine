@@ -285,13 +285,13 @@ h2{
     width:70%;
 }
 .login {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     width: 500px;
     height: 300px;
     margin-left: -75px;
-    margin-top: -68px;
+    margin-top: 70px;
 }
 .prod {
     border-bottom: solid 1px;
@@ -308,6 +308,8 @@ h2{
     width: 100%;
     margin-bottom: 10px;
     height: 1px;
+    float: left;
+    padding-bottom: 20px;
 }
 .error {
     color: red;

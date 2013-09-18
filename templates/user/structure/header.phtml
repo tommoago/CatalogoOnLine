@@ -36,10 +36,10 @@
                         <a href="" class="but4">Contatti</a>
                     </li>
                 </ul>
-                <p id="topmenu">
+                <div id="topmenu_logout">
                     {% if logInOut == 'logout' %}
-                        <a href="{{ path }}{{ logInOut }}.php">{{ logInOut }}</a> 
+                        <a href="{{ path }}{{ logInOut }}.php">{{ logInOut }}<img src="{{ path }}../../images/icons/system/logout/logout-256.png" alt="Logout"></a> 
                     {% endif %}
-                </p>
+                </div>
             </div>
         </div>
