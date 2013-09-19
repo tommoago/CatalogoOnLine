@@ -3,22 +3,13 @@
 
 <script type="text/javascript" src="../scripts/jquery.validate.js"></script>
 <script type="text/javascript" src="../scripts/validation/site/form.contact.validation.js"></script>
-    {{ message }}
+    <div class="validation">{{ message }}</div>
     <form action="contact.php" method="post" id="formcontact">
-        <div >
-            Email:
-        </div>
-        <div >
-            <input type="text" id="email" name="email"/>
-        </div>
-        <br>
-        <div >
-            Testo:
-        </div>
-        <div >
-            <textarea class="question" id="question" name="question" rows="5" cols="60" onfocus="if(this.value==this.defaultValue)this.value='';">
-                       Insert your question here.
-            </textarea>
+        <div class="contact">
+        	<p>E-mail:</p>
+          <input type="text" id="email" name="email"/>
+          <p>Text:</p>
+            <textarea class="question" id="question" name="question" rows="5" cols="60" onfocus="if(this.value==this.defaultValue)this.value='';">Insert your question here.</textarea>
         </div>
         <input type="submit" value="Send"/>
     </form>

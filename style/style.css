@@ -505,13 +505,20 @@ th {
     text-transform: none
 }
 .question {
-    margin-bottom: 15px
+    margin-bottom: 15px;
+    color: #d3cebb;
+    padding: 3px
+
 }
 #qty_add {
     width: 25px;
     text-align: center
 }
-
+.contact p {
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 16px
+}
 #map-canvas{
     margin-top: 50px;
     height: 500px;
