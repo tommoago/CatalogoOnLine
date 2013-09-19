@@ -3,12 +3,25 @@
 <script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
 <script type="text/javascript" src="../../../scripts/validation/admin/form.product.validation.js"></script>
 <script type="text/javascript">
-    window.onload = function()
-    {
-        calculate($('#w_price'));
-        calculate($('#s_price'));
-        calculate($('#r_price'));
-    }
+    $(function () {
+        $('#w_price').parent().contents(':not(input)').remove();
+        var per = $('#w_price').val();
+        var multiplier = 1 + (per / 100);
+        var rw = $('#p_price').val() * multiplier;
+        $('#w_price').after(parseFloat(rw).toFixed(3));
+        
+        $('#r_price').parent().contents(':not(input)').remove();
+        var per = $('#r_price').val();
+        var multiplier = 1 + (per / 100);
+        var rr = $('#p_price').val() * multiplier;
+        $('#r_price').after(parseFloat(rr).toFixed(3));
+        
+        $('#s_price').parent().contents(':not(input)').remove();
+        var per = $('#s_price').val();
+        var multiplier = 1 + (per / 100);
+        var rss = $('#p_price').val() * multiplier;
+        $('#s_price').after(parseFloat(rss).toFixed(3));
+    });
     function calculate(percentage) {
         $('#' + percentage.id).parent().contents(':not(input)').remove();
         var per = percentage.value;
@@ -68,6 +81,14 @@
         </div>
         <div class="totwidth">
             <div class="panleft">
+                Purchase Price
+            </div>
+            <div class="panleft">
+                <input type="text" id="p_price" name="p_price" value="{{ prod.purchase_price }}"/>
+            </div>
+        </div>
+        <div class="totwidth">
+            <div class="panleft">
                 Wholesale Price
             </div>
             <div class="panleft">
@@ -88,14 +109,6 @@
             </div>
             <div class="panleft">
                 <input type="text" id="s_price" onchange="calculate(this);" name="s_price" value="{{ prod.super_price }}"/>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft">
-                Purchase Price
-            </div>
-            <div class="panleft">
-                <input type="text" id="p_price" name="p_price" value="{{ prod.purchase_price }}"/>
             </div>
         </div>
         <div class="totwidth">

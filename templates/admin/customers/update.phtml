@@ -7,19 +7,36 @@ $(function (){
     if($('#type').val() === 'user'){
         $('#cf_div').show();
         $('#piva_div').hide();
+        
+        $('#cod_fis').rules('add', {required: true});
+        $('#piva').rules('remove');
     }else{
         $('#cf_div').hide();
         $('#piva_div').show();
+        
+        $('#cod_fis').rules('remove');
+        $('#piva').rules('add', {required: true});
     }
 });
 function toggleDivs(){
     if($('#type').val() === 'user'){
         $('#cf_div').show();
         $('#piva_div').hide();
+        
+        resetRequirements();
+        $('#cod_fis').rules('add', {required: true});
     } else {
         $('#cf_div').hide();
         $('#piva_div').show();
+        
+        resetRequirements();
+        $('#piva').rules('add', {required: true});
     }
+}
+
+function resetRequirements(){
+    $('#cod_fis').rules('remove');
+    $('#piva').rules('remove');
 }
 </script>
 <div id='content'>

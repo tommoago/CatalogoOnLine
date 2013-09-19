@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	$("#formcustomers").validate({
+                ignore: ".ignore",
 		rules : {
 			name : "required",
 			surname : "required",
