@@ -318,8 +318,6 @@ h2{
 input[type=submit] {
     width: 75px;
     height: 30px;
-    margin-top: 20px;
-
 }
 #accordion {
     width: 175px;
@@ -505,4 +503,11 @@ th {
     display: inline;
     font-size: 17px;
     text-transform: none
+}
+.question {
+    margin-bottom: 15px
+}
+#qty_add {
+    width: 25px;
+    text-align: center
 }
