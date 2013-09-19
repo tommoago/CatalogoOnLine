@@ -19,6 +19,26 @@
 				<input type="text" name="surname" value="{{ usr.surname }}"/>
 			</div>
 		</div>
+                {% if usr.cod_fis != '' %}
+                <div class="totwidth" id="cf_div">
+			<div class="panleft">
+				Cod Fiscale:
+			</div>
+			<div class="panleft">
+				<input type="text" id="cod_fis" name="cod_fis" value="{{ usr.cod_fis }}"/>
+			</div>
+		</div>
+                {%endif%}
+                {% if usr.piva != '' %}
+                <div class="totwidth" id="piva_div">
+			<div class="panleft">
+				P.IVA:
+			</div>
+			<div class="panleft">
+				<input type="text" id="piva" name="piva" value="{{ usr.piva }}"/>
+			</div>
+		</div>
+                {%endif%}
 		<div class="totwidth">
 			<div class="panleft">
 				Address:

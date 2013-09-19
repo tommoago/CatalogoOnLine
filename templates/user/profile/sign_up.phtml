@@ -2,20 +2,27 @@
 <script type="text/javascript" src="../../scripts/jquery.validate.js"></script>
 <script type="text/javascript" src="../../scripts/validation/user/form.user.validation.js"></script>
 <script type="text/javascript">
-function toggleCf(){
-    $('#cf_div').show();
-    $('#piva_div').hide();
-}
-function togglePiva(){
-    $('#cf_div').hide();
-    $('#piva_div').show();
+$(function (){
+    if($('#type').val() === 'user'){
+        $('#cf_div').show();
+        $('#piva_div').hide();
+    }else{
+        $('#cf_div').hide();
+        $('#piva_div').show();
+    }
+});
+function toggleDivs(){
+    if($('#type').val() === 'user'){
+        $('#cf_div').show();
+        $('#piva_div').hide();
+    } else {
+        $('#cf_div').hide();
+        $('#piva_div').show();
+    }
 }
 </script>
 <div id='content'>
-	<form action="register.php" method="post" style="padding-left: 270px;" id="formcustomers" enctype="multipart/form-data">
-                Account type:<br>
-                <input type="radio" name="account_type" value="2" onclick="toggleCf()">Normal User<br>
-                <input type="radio" name="account_type" value="1" onclick="togglePiva()">Merchant<br>
+	<form action="register.php" method="post" id="formcustomers">
 		<div class="totwidth">
 			<div class="panleft">
 				Name:
@@ -101,10 +108,10 @@ function togglePiva(){
 				Type:
 			</div>
 			<div class="panleft">
-				<select name="type">
+				<select id="type" name="type" onchange="toggleDivs();">
 					<option value="user">user</option>
-					<option value="seller">seller</option>
-					<option value="other">other</option>
+					<option value="merchant">merchant</option>
+					<option value="stockist">stockist</option>
 				</select>
 			</div>
 		</div>

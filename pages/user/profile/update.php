@@ -6,6 +6,8 @@ $session = new Session();
 $id = $_POST['id'];
 $name = $_POST['name'];
 $surname = $_POST['surname'];
+$cod_fis = $_POST['cod_fis'];
+$piva = $_POST['piva'];
 $address = $_POST['address'];
 $email = $_POST['email'];
 $telephone = $_POST['telephone'];
@@ -18,6 +20,8 @@ try {
 
      $data = array('name' => $name, 
                    'surname' => $surname,
+                   'cod_fis' => $cod_fis,
+                   'piva' => $piva,
                    'address' => $address,
                    'email' => $email,
                    'telephone' => $telephone,
@@ -28,6 +32,8 @@ try {
     $STH = $DBH->prepare('UPDATE customers SET  
                             name = :name, 
                             surname = :surname,
+                            cod_fis = :cod_fis,
+                            piva = :piva,
                             address = :address,
                             email = :email,
                             telephone = :telephone,

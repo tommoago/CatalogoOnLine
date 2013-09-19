@@ -5,6 +5,12 @@
         <tr>
             <th>Name</th>
             <th>Surname</th>
+            {% if cus.cod_fis != '' %}
+            <th>Cod Fiscale</th>
+            {%endif%}
+            {% if cus.piva != '' %}
+            <th>P.IVA</th>
+            {%endif%}
             <th>Address</th>
             <th>Email</th>
             <th>Tel.</th>
@@ -17,6 +23,12 @@
         <tr>
             <td>{{ cus.name }}</td>
             <td>{{ cus.surname }}</td>
+            {% if cus.cod_fis != '' %}
+            <td>{{ cus.cod_fis }}</td>
+            {%endif%}
+            {% if cus.piva != '' %}
+            <td>{{ cus.piva }}</td>
+            {%endif%}
             <td>{{ cus.address }}</td>
             <td>{{ cus.email }}</td>
             <td>{{ cus.telephone }}</td>
