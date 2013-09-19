@@ -26,7 +26,7 @@
     <div id="sliderContainer">
         <div id="mySlides">
             {% for prod in prods %}
-            <div id="slide1" class="slide"><img src="{{ prod.image }}" alt="{{ prod.title }}"/>
+            <div id="slide1" class="slide"><img src="{{ prod.image }}" alt="{{ prod.tile }}"/>
 
                 <div class="slideContent">
                     <h3><a href='site/products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></h3>

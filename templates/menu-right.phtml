@@ -1,7 +1,76 @@
 {% set path = '' %}
 {% if index == '' %}
-    {% set path = '../../' %}
-{% endif %}
+{% set path = '../../' %}
+{% endif %}<script type="text/javascript">
+    $.post("{{ path }}menu-right.php",
+            function(data) {
+                if (data.length == 0) {
+                    $('#mySlides2').append("<p>No result found.</p>");
+                } else {
+                    var img, divInn, h3, a, p, div, span;
+                    for (var i = 0; i < data.length; i++) {
+                        img = document.createElement('img');
+                        img.setAttribute("src", data[i]["image"]);
+                        img.setAttribute("alt", data[i]["name"]);
+
+                        a = document.createElement('a');
+                        a.setAttribute('href', '{{ path }}site/products/show.php?id=' + data[i]["id"]);
+                        a.appendChild(document.createTextNode(data[i]['name']));
+
+                        h3 = document.createElement('h3');
+
+                        h3.appendChild(a);
+
+                        p = document.createElement('p');
+                        p.appendChild(document.createTextNode(data[i]['description']));
+
+                        divInn = document.createElement('div');
+                        divInn.setAttribute("class", "slideContent2");
+
+                        divInn.appendChild(h3);
+                        divInn.appendChild(p);
+
+                        div = document.createElement('div');
+                        div.setAttribute("id", "slide2" + i);
+                        div.setAttribute("class", "slide2");
+
+                        div.appendChild(img);
+                        div.appendChild(divInn);
+
+                        $('#mySlides2').append(div);
+
+                        span = document.createElement('span');
+                        span.setAttribute("class", "jFlowControl2");
+                        $('#myController2').append(span);
+                    }
+                }
+                $("#myController2").jFlow({
+                    controller: ".jFlowControl2", // must be class, use . sign
+                    slideWrapper: "#jFlowSlider2", // must be id, use # sign
+                    slides: "#mySlides2", // the div where all your sliding divs are nested in
+                    selectedWrapper: "jFlowSelected2", // just pure text, no sign
+                    effect: "flow", //this is the slide effect (rewind or flow)
+                    width: "270px", // this is the width for the content-slider
+                    height: "340px", // this is the height for the content-slider
+                    duration: 400, // time in milliseconds to transition one slide
+                    pause: 3000, //time between transitions
+                    prev: ".jFlowPrev2", // must be class, use . sign
+                    next: ".jFlowNext2", // must be class, use . sign
+                    auto: true
+                });
+            }, "json");
+
+</script>
+
 <div class="menu-right"> 
-	Next Slider
+    <div id="sliderContainer2">
+        <div id="mySlides2">
+
+        </div>
+        <div id="myController2">
+
+        </div>
+        <div class="jFlowPrev2"></div>
+        <div class="jFlowNext2"></div>
+    </div>
 </div>

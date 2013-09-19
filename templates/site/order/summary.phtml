@@ -22,7 +22,6 @@
         </tr>
         {% endfor %}
     </table>
-    {% if confirmed == ''%}
         <ul>
             <li class="checkout">
                 <a href='confirm.php'><img src="../../../images/icons/cart/checkout/checkout_green-256.png" alt="Confirm">Confirm</a>
@@ -31,7 +30,6 @@
                 <a href='../cart/empty.php'><img src="../../../images/icons/cart/return/return_red-256.png" alt="Cancel Order">Cancel Order</a>
             </li>
         </ul>
-    {% endif %}
     {%endif%}
     {% if prods|length == 0 %}
     <p>

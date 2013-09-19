@@ -2,20 +2,16 @@
 
 include '../../../classes/Cart.php';
 include '../../../classes/dataBase.php';
-require_once '../../../vendor/twig/twig/lib/Twig/Autoloader.php';
-include '../../../classes/Session.php';
 session_start();
 
+$message = '';
+print_r($_SESSION['user']);
 if(!isset($_SESSION['user']['type'])){
-    $message = 'you must have an account to complete your order!';
-    header('location:../../user/login.php?message='.$message);
+    $message = 'You must have an account to complete your order!';
+    header('location:../../user/login.php?order=yes&message='.$message);
+    exit();
 }
 
-Twig_Autoloader::register();
-
-$loader = new Twig_Loader_Filesystem('../../../templates');
-$twig = new Twig_Environment($loader/* , array('cache' => '../../../templates/cache') */);
-$template = $twig->loadTemplate('site/order/sumary.phtml');
 
 isset($_SESSION['cart'])? : $_SESSION['cart'] = new Cart();
 $cart = $_SESSION['cart'];
@@ -25,8 +21,8 @@ $data = array('data' => date("Y-m-d H:i:s"), 'confirmed' => 0, 'cus_id' => $_SES
 try {
     $db = new dataBase();
     $DBH = $db->connect();
-    $stmt = $DBH->prepare('INSERT INTO orders(data, confirmed, operator, customers_id)
-                                VALUES(:data, :confirmed, cus_id)');
+    $stmt = $DBH->prepare('INSERT INTO orders(data, confirmed, customers_id)
+                                VALUES(:data, :confirmed, :cus_id)');
     $stmt->execute($data);
 
     $ord_id = $DBH->lastInsertId();
@@ -36,10 +32,13 @@ try {
 
         $stmt2->execute(array('ord_id' => $ord_id, 'prod_id' => $row['id'], 'qty' => $row['qty'], 'sold_price' => $row['price'],));
     }
+    
+    $cart->emptyCart();
+    
     $message = 'Your order has been processed, you will be recontacted from an operator.';
+    header('location:../../user/orders/list.php?message='.$message);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('confirmed' => 'yes', 'message' => $message));
 ?>

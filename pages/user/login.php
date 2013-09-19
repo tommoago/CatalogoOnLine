@@ -10,9 +10,10 @@ $loader = new Twig_Loader_Filesystem('../../templates');
 $twig = new Twig_Environment($loader/*, array('cache' => '../../../templates/cache')*/);
 $template = $twig->loadTemplate('user/login/login.phtml');
 
-$message = '';
-if(isset( $_GET['message']))
- $message = $_GET['message'];
+isset($_GET['order'])? $order = $_GET['order']: $order = '';
 
-$template->display(array('message' => $message));
+isset($_GET['message'])? $message = $_GET['message']: $message = '';
+
+
+$template->display(array('message' => $message, 'order' => $order));
 ?>

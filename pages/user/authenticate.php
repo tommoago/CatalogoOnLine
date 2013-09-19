@@ -17,6 +17,10 @@ try {
     $result = $STH->fetch();
     if (!empty($result)) {
         $_SESSION['user'] = $result;
+        if($_POST['order'] != ''){
+            header('location:../site/order/summary.php');
+            exit;
+        }
         header('location:index.php');
     } else {
         $message = 'Invalid credentials';

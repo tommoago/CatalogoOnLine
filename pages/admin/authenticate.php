@@ -8,6 +8,7 @@ $user = $_POST['user'];
 $passwd = $_POST['password'];
 $message = '';
 
+
 try {
     $db = new dataBase();
     $DBH = $db->connect();
