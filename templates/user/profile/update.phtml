@@ -1,7 +1,9 @@
 {% include 'user/structure/header.phtml' %}
 {% include 'user/structure/menu.phtml' %}
+<script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
+<script type="text/javascript" src="../../../scripts/validation/user/form.user.validation.js"></script>
 <div id='content'>
-    <form action="update.php" method="post" style="padding-left: 270px;">
+    <form action="update.php" method="post" id="formuser">
         <input type="hidden" name="id" value="{{ usr.id }}"/>
         <div class="totwidth">
 			<div class="panleft">
@@ -76,7 +78,15 @@
 				Password:
 			</div>
 			<div class="panleft">
-				<input type="password" name="password"/>
+				<input id="password" type="password" name="password"/>
+			</div>
+		</div>
+                <div class="totwidth">
+			<div class="panleft">
+				Repeat Password:
+			</div>
+			<div class="panleft">
+				<input type="password" id="password2" name="password2"/>
 			</div>
 		</div>
 		<input type="submit" value="invio"/>

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("#formcustomers").validate({
+	$("#formuser").validate({
 		rules : {
 			name : "required",
 			surname : "required",
@@ -13,6 +13,10 @@ $(document).ready(function() {
 				required : true
 			},
 			password : "required",
+                        password2 : {
+                            required: true,
+                            equalTo: "#password"
+                        }
 		},
 		messages : {
 			name : " required",
@@ -21,6 +25,7 @@ $(document).ready(function() {
 			email : " email not valid",
 			telephone : " telephone not valid",
 			password : " required",
+                        password2 : " Passwords does not match."
 		}
 	});
 });

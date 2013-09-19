@@ -1,12 +1,10 @@
 {% include 'header.phtml' %}
 <div id='content'>
 
-<script type="text/javascript" src="../scripts/jquery-1.9.1.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../style/skin.css">
-<script type="text/javascript" src="../../../scripts/form.customers.validation.js"></script>
-<script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
+<script type="text/javascript" src="../scripts/jquery.validate.js"></script>
+<script type="text/javascript" src="../scripts/validation/site/form.contact.validation.js"></script>
     {{ message }}
-    <form action="contact.php" method="post" style="padding-left: 270px;" id="formcustomers" enctype="multipart/form-data">
+    <form action="contact.php" method="post" id="formcontact">
         <div >
             Email:
         </div>
@@ -18,7 +16,7 @@
             Testo:
         </div>
         <div >
-            <textarea id="textarea" name="question" rows="4" cols="50" onfocus="if(this.value==this.defaultValue)this.value='';">
+            <textarea id="question" name="question" rows="5" cols="60" onfocus="if(this.value==this.defaultValue)this.value='';">
                        Insert your question here.
             </textarea>
         </div>
