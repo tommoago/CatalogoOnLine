@@ -19,9 +19,7 @@
 </script>
 <div id='content'>
     <form action="update.php" method="post" id="formproduct" enctype="multipart/form-data">
-
         <input type="hidden" name="id" value="{{ prod.id }}"/>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 Image (blank to not modify)
@@ -30,7 +28,6 @@
                 <input type="file" name="uploaded" id="file">
             </div>
         </div>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 Name
@@ -39,14 +36,12 @@
                 <input type="text" name="name" value="{{ prod.name }}"/>
             </div>
         </div>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 Description
             </div>
             <textarea id="textarea" name="descr" rows="1" cols="50">{{ prod.description }}</textarea>
         </div>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 New
@@ -55,7 +50,6 @@
                 <input type="checkbox" name="new" {{ prod.c_new }}/>
             </div>
         </div>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 Offer
@@ -64,7 +58,6 @@
                 <input type="checkbox" name="offer" {{ prod.c_offer }}/>
             </div>
         </div>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 Evidence
@@ -73,7 +66,6 @@
                 <input type="checkbox" name="evidence" {{ prod.c_evidence }}/>
             </div>
         </div>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 Wholesale Price
@@ -82,7 +74,6 @@
                 <input type="text" id="w_price" onchange="calculate(this);" name="w_price" value="{{ prod.wholesale_price }}"/>
             </div>
         </div>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 Retail Price
@@ -91,7 +82,6 @@
                 <input type="text" id="r_price" onchange="calculate(this);" name="r_price" value="{{ prod.retail_price }}"/>
             </div>
         </div>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 Super Price
@@ -100,7 +90,6 @@
                 <input type="text" id="s_price" onchange="calculate(this);" name="s_price" value="{{ prod.super_price }}"/>
             </div>
         </div>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 Purchase Price
@@ -109,7 +98,6 @@
                 <input type="text" id="p_price" name="p_price" value="{{ prod.purchase_price }}"/>
             </div>
         </div>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 Cod
@@ -118,7 +106,6 @@
                 <input type="text" name="cod" value="{{ prod.cod }}"/>
             </div>
         </div>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 Barcode
@@ -127,7 +114,6 @@
                 <input type="text" name="barcode" value="{{ prod.barcode }}"/>
             </div>
         </div>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 Single Qty
@@ -136,7 +122,6 @@
                 <input type="text" name="s_qty" value="{{ prod.single_qty }}"/>
             </div>
         </div>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 pack Qty
@@ -145,7 +130,6 @@
                 <input type="text" name="p_qty" value="{{ prod.pack_qty }}"/>
             </div>
         </div>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 Cardboard Qty
@@ -154,7 +138,6 @@
                 <input type="text" name="c_qty" value="{{ prod.cardboard_qty }}"/>
             </div>
         </div>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 Category:
@@ -167,7 +150,6 @@
                 </select>
             </div>
         </div>
-        <br>
         <div class="totwidth">
             <div class="panleft">
                 Suppliers:
@@ -181,7 +163,6 @@
             </div>
         </div>
         <input type="submit" value="invio"/>
-
     </form>
 </div>
     {% include 'admin/structure/footer.phtml' %}

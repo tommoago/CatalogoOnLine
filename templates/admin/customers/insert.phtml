@@ -24,7 +24,6 @@ function toggleDivs(){
 </script>
 <div id='content'>
 	<form action="insert.php" method="post" id="formcustomers" enctype="multipart/form-data">
-            
 		<div class="totwidth">
 			<div class="panleft">
 				Name:
@@ -33,7 +32,6 @@ function toggleDivs(){
 				<input type="text" id="name" name="name"/>
 			</div>
 		</div>
-		<br>
 		<div class="totwidth">
 			<div class="panleft">
 				Surname:
@@ -42,7 +40,6 @@ function toggleDivs(){
 				<input type="text" id="surname" name="surname"/>
 			</div>
 		</div>
-		<br>
                 <div class="totwidth" id="cf_div" style="display: none">
 			<div class="panleft">
 				Cod Fiscale:
@@ -51,7 +48,6 @@ function toggleDivs(){
 				<input type="text" id="cod_fis" name="cod_fis"/>
 			</div>
 		</div>
-		<br>
                 <div class="totwidth" id="piva_div" style="display: none">
 			<div class="panleft">
 				P.IVA:
@@ -60,7 +56,6 @@ function toggleDivs(){
 				<input type="text" id="piva" name="piva"/>
 			</div>
 		</div>
-                <br>
 		<div class="totwidth">
 			<div class="panleft">
 				Address:
@@ -69,7 +64,6 @@ function toggleDivs(){
 				<input type="text" id="address" name="address"/>
 			</div>
 		</div>
-		<br>
 		<div class="totwidth">
 			<div class="panleft">
 				Email:
@@ -78,7 +72,6 @@ function toggleDivs(){
 				<input type="text" id="email" name="email"/>
 			</div>
 		</div>
-		<br>
 		<div class="totwidth">
 			<div class="panleft">
 				Telephone:
@@ -87,7 +80,6 @@ function toggleDivs(){
 				<input type="text" id="telephone" name="telephone"/>
 			</div>
 		</div>
-		<br>
 		<div class="totwidth">
 			<div class="panleft">
 				Cellphone:
@@ -96,7 +88,6 @@ function toggleDivs(){
 				<input type="text" id="cellphone" name="cellphone"/>
 			</div>
 		</div>
-		<br>
 		<div class="totwidth">
 			<div class="panleft">
 				Active:
@@ -105,7 +96,6 @@ function toggleDivs(){
 				<input type="checkbox" name="active" />
 			</div>
 		</div>
-		<br>
 		<div class="totwidth">
 			<div class="panleft">
 				Password:
@@ -114,8 +104,6 @@ function toggleDivs(){
 				<input type="password" id="password" name="password"/>
 			</div>
 		</div>
-		<br>
-		
 		<div class="totwidth">
 			<div class="panleft">
 				Operator:
@@ -128,8 +116,6 @@ function toggleDivs(){
 				</select>
 			</div>
 		</div>
-                <br>
-                
                 <div class="totwidth">
 			<div class="panleft">
 				Type:
@@ -142,8 +128,6 @@ function toggleDivs(){
 				</select>
 			</div>
 		</div>
-		<br>
-                
                 <div class="totwidth">
 			<div class="panleft">
 				Price range:
@@ -156,10 +140,7 @@ function toggleDivs(){
 				</select>
 			</div>
 		</div>
-		<br>
-
 		<input type="submit" value="invio"/>
-
 	</form>
 </div>
 {% include 'admin/structure/footer.phtml' %}
