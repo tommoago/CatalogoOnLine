@@ -11,6 +11,9 @@
         <ul>Description: <li>{{ prod.description }}</li></ul> 
         <ul>New: <li>{{ prod.new }}</li></ul> 
         <ul>Offer: <li>{{ prod.offer }} </li></ul> 
+        {% if prod.price == prod.super_price %}
+        <ul>Orginal Price: <li>{{ prod.retail_price }} </li></ul> 
+        {% endif %}
         <ul>Price: <li>{{ prod.price }} </li></ul> 
         <ul>Cod.: <li>{{ prod.cod }} </li></ul> 
         <ul>Barcode: <li>{{ prod.barcode }} </li></ul> 
