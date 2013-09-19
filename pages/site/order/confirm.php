@@ -4,7 +4,12 @@ include '../../../classes/Cart.php';
 include '../../../classes/dataBase.php';
 require_once '../../../vendor/twig/twig/lib/Twig/Autoloader.php';
 include '../../../classes/Session.php';
-$session = new Session();
+session_start();
+
+if(!isset($_SESSION['user']['type'])){
+    $message = 'you must have an account to complete your order!';
+    header('location:../../user/login.php?message='.$message);
+}
 
 Twig_Autoloader::register();
 
@@ -15,7 +20,7 @@ $template = $twig->loadTemplate('site/order/sumary.phtml');
 isset($_SESSION['cart'])? : $_SESSION['cart'] = new Cart();
 $cart = $_SESSION['cart'];
 
-$data = array('data' => date("Y-m-d H:i:s"), 'confirmed' => 0, 'cus_id' => $session->getUser_id());
+$data = array('data' => date("Y-m-d H:i:s"), 'confirmed' => 0, 'cus_id' => $_SESSION['user']['id']);
 
 try {
     $db = new dataBase();
@@ -26,9 +31,8 @@ try {
 
     $ord_id = $DBH->lastInsertId();
     foreach ($cart->getProducts() as $row) {
-        $stmt2 = $DBH->prepare('INSERT INTO orders_has_products (orders_id, products_id,
-                                                                quantity, sold_price)
-                                        VALUES(:ord_id, :prod_id, :qty, :sold_price)');
+        $stmt2 = $DBH->prepare('INSERT INTO orders_has_products (orders_id, products_id, quantity, sold_price)
+                                                        VALUES(:ord_id, :prod_id, :qty, :sold_price)');
 
         $stmt2->execute(array('ord_id' => $ord_id, 'prod_id' => $row['id'], 'qty' => $row['qty'], 'sold_price' => $row['price'],));
     }

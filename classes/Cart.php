@@ -20,16 +20,25 @@ class Cart {
 
     public function addProduct($prod) {
         $bool = false;
-            
+
         foreach ($this->products as &$row)
-            if ($row['id'] == $prod['id']){
+            if ($row['id'] == $prod['id']) {
                 $row['qty'] += $prod['qty'];
                 $bool = true;
             }
-            
-        if(!$bool)
-            $this->products[] =  $prod;
-        
+
+        if (!$bool)
+            $this->products[] = $prod;
+
+        $this->calculateTotal();
+    }
+
+    public function update($prod) {
+        foreach ($this->products as &$row)
+            if ($row['id'] == $prod['id']) {
+                $row['qty'] = $prod['qty'];
+            }
+
         $this->calculateTotal();
     }
 
@@ -37,17 +46,18 @@ class Cart {
         foreach ($this->products as $key => $row)
             if ($row['id'] == $prod_id)
                 unset($this->products[$key]);
-        
+
         $this->calculateTotal();
     }
-    
-    public function emptyCart(){
+
+    public function emptyCart() {
         $this->products = array();
     }
 
     private function calculateTotal() {
-            $this->tot = 0;
+        $this->tot = 0;
         foreach ($this->products as $row)
+            print_r ($row);
             $this->tot += $row['price'] * $row['qty'];
     }
 

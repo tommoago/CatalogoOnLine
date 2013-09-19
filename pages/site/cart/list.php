@@ -32,13 +32,10 @@ try {
         if (isset($_SESSION['user']['price_range']))
             switch ($_SESSION['user']['price_range']) {
                 case 1:
-                    $row['price'] = $row['wholesale_price'];
-                    break;
-                case 2:
-                    $row['price'] = $row['retail_price'];
+                    $product['price'] = $product['wholesale_price'];
                     break;
                 case 3: 
-                    $row['price'] = $row['super_price'];
+                    $product['price'] = $product['super_price'];
                     break;
             }
 

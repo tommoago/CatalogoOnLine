@@ -1,7 +1,7 @@
 {% include 'header.phtml' %}
 {% include 'menu.phtml' %}
 <div id='content'>
-    
+
     {% if prods|length > 0 %}
     <table class="tablelist">
         <tr>
@@ -19,22 +19,28 @@
             <td>{{ prod.price }}</td>
             <td>{{ prod.cod }}</td>
             <td>{{ prod.category }}</td>
-            <td>{{ prod.qty }}</td>
+            <td>
+                <form action="update.php" method="post">
+                    <input type="hidden" name="id" value="{{ prod.id }}"/>
+                    <input type="text" id="qty_add" name="qty_add" value="{{ prod.qty }}"/>
+                    <input type="submit"/>
+                </form>
+            </td>
             <td class="remove_cart"><a href='remove.php?id={{ prod.id }}'><img src="../../../images/icons/cart/return/return-256.png" alt="Remove"></a></td>
         </tr>
         {% endfor %}
     </table>
     <ul>
-    		<li class="total">
-    			<img src="../../../images/icons/cart/shopping_cart_filled/shopping_cart_filled-256.png" alt="Total">Total:  &#128;{{ tot }}
-    		</li>
-    		<li class="checkout">
-    		    	<a href='../order/summary.php'><img src="../../../images/icons/cart/checkout/checkout_green-256.png" alt="Checkout">Checkout</a>
-		</li>
-    		<li class="empty_cart">
-    	  		<a href='empty.php'><img src="../../../images/icons/cart/return/return_red-256.png" alt="Delete">Empty cart</a>
-    		</li>
-    	</ul>
+        <li class="total">
+            <img src="../../../images/icons/cart/shopping_cart_filled/shopping_cart_filled-256.png" alt="Total">Total:  &#128;{{ tot }}
+        </li>
+        <li class="checkout">
+            <a href='../order/summary.php'><img src="../../../images/icons/cart/checkout/checkout_green-256.png" alt="Checkout">Checkout</a>
+        </li>
+        <li class="empty_cart">
+            <a href='empty.php'><img src="../../../images/icons/cart/return/return_red-256.png" alt="Delete">Empty cart</a>
+        </li>
+    </ul>
     {%endif%}
     {% if prods|length == 0 %}
     <p>
