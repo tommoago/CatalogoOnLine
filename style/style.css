@@ -511,3 +511,9 @@ th {
     width: 25px;
     text-align: center
 }
+
+#map-canvas{
+    margin-top: 50px;
+    height: 500px;
+    color: black;
+}
