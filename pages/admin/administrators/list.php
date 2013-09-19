@@ -14,7 +14,7 @@ $twig = new Twig_Environment($loader/*, array('cache' => '../../../templates/cac
 $template = $twig->loadTemplate('admin/administrators/list.phtml');
 
 $result = array();
-$offset = $_GET['offset'];
+isset($_GET['offset'])? $offset = $_GET['offset']: $offset =0 ;
 $limit = 10;
 $numPages = 0;
 

@@ -12,7 +12,7 @@ $twig = new Twig_Environment($loader/* , array('cache' => '../../../templates/ca
 $template = $twig->loadTemplate('admin/products/list.phtml');
 
 $result = array();
-$offset = $_GET['offset'];
+isset($_GET['offset'])? $offset = $_GET['offset']: $offset =0 ;
 $limit = 20;
 $numPages = 0;
 

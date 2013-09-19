@@ -14,7 +14,7 @@ $result = array();
 if (isset($_GET['message'])) {
     $message = $_GET['message'];
 }
-$offset = $_GET['offset'];
+isset($_GET['offset'])? $offset = $_GET['offset']: $offset =0 ;
 $limit = 20;
 $numPages = 0;
 
