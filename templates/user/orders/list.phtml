@@ -6,7 +6,7 @@
 		{{ message }}
 	</p>
 	{% if orders|length > 0 %}
-	<table class="tablelist" style='margin: 50px;'>
+	<table class="tablelist">
 		<tr>
 			<th>ID</th>
 			<th>Date</th>
@@ -22,6 +22,7 @@
 		</tr>
 		{% endfor %}
 	</table>
+            {% include 'user/structure/pager.phtml' %}
 	{%endif%}
 	{% if orders|length == 0 %}
 	<p>
