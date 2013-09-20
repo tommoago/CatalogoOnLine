@@ -223,3 +223,6 @@ templates/cache
 
 #cartella immagini
 images/uploads
+
+#file di composer merda
+vendor/composer/ClassLoader.php
