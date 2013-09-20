@@ -2,6 +2,7 @@
 {% include 'admin/structure/menu.phtml' %}
 <script type="text/javascript" src="../../../scripts/jquery-1.9.1.min.js"></script>
 <div id='content'>
+    {{ message }}
 	<form action="insertImage.php" method="post" id="formproduct" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="{{ id }}"/>
 		<div class="totwidth">

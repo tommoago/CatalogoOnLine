@@ -39,7 +39,11 @@ try {
     if ($_FILES['uploaded']['name'] != '') {
         //upload nuova immagine
         $img = new imgUploader();
-        $img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);
+        $message = $img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);
+        if ($message != '') {
+            header('location:prepareInsert.php?message=' . $message);
+            exit;
+        }
         $pathName = $img->getPathName();
         
         //cerco precedenti occurences

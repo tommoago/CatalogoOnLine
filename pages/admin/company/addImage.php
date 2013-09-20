@@ -13,5 +13,5 @@ $loader = new Twig_Loader_Filesystem('../../../templates');
 $twig = new Twig_Environment($loader/* , array('cache' => '../../../templates/cache') */);
 $template = $twig->loadTemplate('admin/company/add_image.phtml');
 
-$template->display(array('id' => $_GET['id']));
+$template->display(array('id' => $_GET['id'], 'message' => isset($_GET['message'])? $_GET['message'] :''));
 ?>

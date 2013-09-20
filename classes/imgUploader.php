@@ -1,31 +1,34 @@
 <?php
 class imgUploader {
 
-    var $exts = array(".png", ".gif", ".png", ".jpg", ".jpeg"); //all the extensions that will be allowed to be uploaded 
-    var $maxSize = 200000000; //if you set to "0" (no quotes), there will be no limit 
-    var $uploadTarget = "../../../images/uploads/"; //make sure you have the '/' at the end ../images/uploads/
-    var $fileName = ""; //this will be automatically set. you do not need to worry about this 
-    var $tmpName = ""; //this will be automatically set. you do not need to worry about this 
-    var $pathName = "";
+    var $exts = array('.png', '.gif', '.png', '.jpg', '.jpeg'); //all the extensions that will be allowed to be uploaded 
+    var $maxSize = 200000000; //if you set to '0' (no quotes), there will be no limit 
+    var $uploadTarget = '../../../images/uploads/'; //make sure you have the '/' at the end ../images/uploads/
+    var $fileName = ''; //this will be automatically set. you do not need to worry about this 
+    var $tmpName = ''; //this will be automatically set. you do not need to worry about this 
+    var $pathName = '';
 
     public function startUpload($filename, $tmpName) {
+        $message = '';
         $this->fileName = $filename;
         $this->tmpName = $tmpName;
         if (!$this->isWritable()) {
-            die("Sorry, you must CHMOD your upload target to 777!");
+             $message = 'Sorry, you must CHMOD your upload target to 777!';
         }
         if (!$this->checkExt()) {
-            die("Sorry, you can not upload this filetype!");
+            $message = 'Sorry, you can not upload this filetype!';
         }
         if (!$this->checkSize()) {
-            die("Sorry, the file you have attempted to upload is too large!");
+            $message = 'Sorry, the file you have attempted to upload is too large!';
         }
         if ($this->fileExists()) {
-            die("Sorry, this file already exists on our servers!");
+            $message = 'Sorry, this file already exists on our servers!';
         }
         if (!$this->uploadIt()) {
-            echo "Sorry, your file could not be uploaded for some unknown reason!";
+            $message = 'Sorry, your file could not be uploaded for some unknown reason!';
         } 
+        
+        return $message;
     }
 
     public function uploadIt() {
@@ -39,7 +42,7 @@ class imgUploader {
     }
 
     public function getExt() {
-        return strtolower(substr($this->fileName, strpos($this->fileName, "."), strlen($this->fileName) - 1));
+        return strtolower(substr($this->fileName, strpos($this->fileName, '.'), strlen($this->fileName) - 1));
     }
 
     public function checkExt() {

@@ -73,4 +73,4 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('prod' => $product, 'cats' => $result, 'supps' => $result2));
+$template->display(array('prod' => $product, 'cats' => $result, 'supps' => $result2, 'message' => isset($_GET['message'])? $_GET['message'] :''));

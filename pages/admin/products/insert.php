@@ -8,7 +8,11 @@ $session = new Session();
 $pathName = '';
 if ($_FILES['uploaded']['name'] != '') {
     $img = new imgUploader();
-    $img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);
+    $message = $img->startUpload($_FILES['uploaded']['name'], $_FILES['uploaded']['tmp_name']);
+    if ($message != '') {
+        header('location:prepareInsert.php?message=' . $message);
+        exit;
+    }
     $pathName = $img->getPathName();
 }
 
