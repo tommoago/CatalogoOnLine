@@ -225,4 +225,4 @@ templates/cache
 images/uploads
 
 #file di composer merda
-vendor/composer/ClassLoader.php
+vendor/composer/
