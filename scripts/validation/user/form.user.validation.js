@@ -16,7 +16,9 @@ $(document).ready(function() {
                         password2 : {
                             required: true,
                             equalTo: "#password"
-                        }
+                        },
+                        agree: "required"
+                        
 		},
 		messages : {
 			name : " required",
@@ -25,7 +27,8 @@ $(document).ready(function() {
 			email : " email not valid",
 			telephone : " telephone not valid",
 			password : " required",
-                        password2 : " Passwords does not match."
+                        password2 : " Passwords does not match.",
+                        agree :"You must accept the term and conditions."
 		}
 	});
 });

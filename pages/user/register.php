@@ -57,6 +57,8 @@ try {
                                                  administrators_id) 
                                            value (:name, 
                                                   :surname,
+                                                  :cod_fis,
+                                                  :piva,
                                                   :address,
                                                   :email,
                                                   :telephone,
