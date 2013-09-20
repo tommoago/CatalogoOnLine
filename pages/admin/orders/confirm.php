@@ -1,15 +1,20 @@
 <?php
-include '../../../classes/dataBase.php';
+
 include '../../../classes/Session.php';
-include '../../../classes/Mailer.php';
+include '../../../classes/PrintOrder.php';
+include_once '../../../classes/dataBase.php';
+require_once '../../../vendor/phpmailer/phpmailer/class.phpmailer.php';
 $session = new Session();
-$mailer = new Mailer();
+//$mailer = new Mailer();
+//    $mailer->send($customer['email'], "lmao", "Order " . $order['id'] . " confirmation", "This mail is automatically sent to confirm your order with id: " . $order['id']);
+//$mail = new PHPMailer();
 $id = $_GET['id'];
+$pdf = new PrintOrder($id);
 
 try {
     $db = new dataBase();
     $DBH = $db->connect();
-    $data = array('id' => $id, 'conf' => date("Y-m-d H:i:s"), 'operator' =>$_SESSION['user']['name']);
+    $data = array('id' => $id, 'conf' => date("Y-m-d H:i:s"), 'operator' => $_SESSION['user']['name']);
 
     $STH = $DBH->prepare('UPDATE orders SET  
                             confirmed = 1,
@@ -17,19 +22,36 @@ try {
                             operator = :operator
                           WHERE id = :id');
     $STH->execute($data);
-    
-    $STH = $DBH->prepare('SELECT * FROM orders WHERE id = :id');
-    $STH->execute(array('id' => $id));
-    $order = $STH->fetch();
-    
-    $STH = $DBH->prepare('SELECT * FROM customers WHERE id = :id');
-    $STH->execute(array('id' => $order['customers_id']));
-    $customer = $STH->fetch();
-    
-    $mailer->send($customer['email'], "lmao", "Order ". $order['id'] ." confirmation", "This mail is automatically sent to confirm your order with id: ". $order['id']);
-
-    header('location:show.php?id=' . $id);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
+    //crea pdf
+    $path = $pdf->createPDF('invoices');
+    $pdf->savePDF($path);
+    $customer = $pdf->getCustomer();
+    $order = $pdf->getOrder();
+
+    //manda mail
+//    $mail->AddReplyTo("info@ozntone.com", "First Last");
+//
+//    $mail->SetFrom('info@ozntone.com', 'First Last');
+//
+//    $address = $customer['email'];
+//    $mail->AddAddress($address, "John Doe");
+//
+//    $mail->Subject = "Order " . $order['id'] . " confirmation";
+//
+////    $mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
+//
+//    $mail->MsgHTML("This mail is automatically sent to confirm your order with id: " . $order['id']);
+//
+//    $mail->AddAttachment($path);      // attachment
+//
+//    if (!$mail->Send()) {
+//        echo "Mailer Error: " . $mail->ErrorInfo;
+//    } else {
+//        echo "Message sent!";
+//    }
+
+    header('location:show.php?id=' . $id);
 ?>

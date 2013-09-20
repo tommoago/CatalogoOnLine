@@ -29,7 +29,7 @@ try {
         $imm = $stmt4->fetch();
         $row['image'] = $imm['path'];
         
-        $row['description'] = substr($row['description'], 0, 150) .'....';
+        $row['description'] = substr($row['description'], 0, 150) .'...';
 
         //mette il prezzo giusto vediamo se farlo comparire nelle slide
         $row['price'] = $row['retail_price'];

@@ -57,7 +57,6 @@ class Cart {
     private function calculateTotal() {
         $this->tot = 0;
         foreach ($this->products as $row)
-            print_r ($row);
             $this->tot += $row['price'] * $row['qty'];
     }
 

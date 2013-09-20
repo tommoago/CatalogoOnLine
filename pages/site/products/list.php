@@ -42,7 +42,7 @@ try {
         $cat = $stmt->fetch();
         $row['category'] = $cat['name'];
         
-        $row['description'] = substr($row['description'], 0, 150) .'....';
+        $row['description'] = substr($row['description'], 0, 150) .'...';
 
         //mette il prezzo giusto
         $row['price'] = $row['retail_price'];

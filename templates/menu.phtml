@@ -39,15 +39,16 @@
                             divInn.appendChild(divU);
                         }
 
-                        $('#' + divInn.id).accordion({active: false,
+                        $('#' + divInn.id).accordion({ 
+                                                    active: false,
                                                     collapsible: true,
-                                                    heightStyle: "fill",
+                                                    heightStyle: "content",
                                                     event: "mouseover"});
                     }
                 }
-                $('#accordion').accordion({active: false,
+                $('#accordion').accordion({animate: 700, active: false,
                                         collapsible: true,
-                                        heightStyle: "fill",
+                                        heightStyle: "content",
                                         event: "mouseover"});
 
             }, "json");

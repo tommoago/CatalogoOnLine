@@ -25,7 +25,7 @@ try {
         $product = $stmt->fetch();
         $product['qty'] = $row['qty'];
 
-        $product['description'] = substr($product['description'], 0, 150) .'....';
+        $product['description'] = substr($product['description'], 0, 150) .'...';
         
         //mette il prezzo giusto
         $product['price'] = $product['retail_price'];
