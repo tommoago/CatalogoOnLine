@@ -35,128 +35,128 @@
     <form action="update.php" method="post" id="formproduct" enctype="multipart/form-data">
         <input type="hidden" name="id" value="{{ prod.id }}"/>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Image (blank to not modify)
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="file" name="uploaded" id="file">
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Name
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" name="name" value="{{ prod.name }}"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Description
             </div>
             <textarea id="textarea" name="descr" rows="1" cols="50">{{ prod.description }}</textarea>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 New
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="checkbox" name="new" {{ prod.c_new }}/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Offer
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="checkbox" name="offer" {{ prod.c_offer }}/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Highlight
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="checkbox" name="evidence" {{ prod.c_evidence }}/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Purchase Price
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" id="p_price" name="p_price" value="{{ prod.purchase_price }}"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Wholesale Price
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" id="w_price" onchange="calculate(this);" name="w_price" value="{{ prod.wholesale_price }}"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Retail Price
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" id="r_price" onchange="calculate(this);" name="r_price" value="{{ prod.retail_price }}"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Super Price
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" id="s_price" onchange="calculate(this);" name="s_price" value="{{ prod.super_price }}"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Cod
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" name="cod" value="{{ prod.cod }}"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Barcode
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" name="barcode" value="{{ prod.barcode }}"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
-                Single Qty
+            <div class="panleft1">
+                Single Q.ty
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" name="s_qty" value="{{ prod.single_qty }}"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
-                pack Qty
+            <div class="panleft1">
+                Pack Q.ty
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" name="p_qty" value="{{ prod.pack_qty }}"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
-                Cardboard Qty
+            <div class="panleft1">
+                Cardboard Q.ty
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" name="c_qty" value="{{ prod.cardboard_qty }}"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Category:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <select name="cat_id">
                     {% for cat in cats %}
                     <option value="{{ cat.id }}" {{ cat.selected }}>{{ cat.name }}</option>
@@ -165,10 +165,10 @@
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Suppliers:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <select name="sup_id">
                     {% for sup in supps %}
                     <option value="{{ sup.id }}" {{ sup.selected }}>{{ sup.name }}</option>

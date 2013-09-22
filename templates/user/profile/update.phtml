@@ -6,86 +6,86 @@
     <form action="update.php" method="post" id="formuser">
         <input type="hidden" name="id" value="{{ usr.id }}"/>
         <div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Name:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" name="name" value="{{ usr.name }}"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Surname:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" name="surname" value="{{ usr.surname }}"/>
 			</div>
 		</div>
                 {% if usr.cod_fis != '' %}
                 <div class="totwidth" id="cf_div">
-			<div class="panleft">
-				Cod Fiscale:
+			<div class="panleft1">
+				Cod. Fiscale:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" id="cod_fis" name="cod_fis" value="{{ usr.cod_fis }}"/>
 			</div>
 		</div>
                 {%endif%}
                 {% if usr.piva != '' %}
                 <div class="totwidth" id="piva_div">
-			<div class="panleft">
+			<div class="panleft1">
 				P.IVA:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" id="piva" name="piva" value="{{ usr.piva }}"/>
 			</div>
 		</div>
                 {%endif%}
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Address:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" name="address" value="{{ usr.address }}"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
-				Email:
+			<div class="panleft1">
+				E-mail:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" name="email" value="{{ usr.email }}"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Telephone:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" name="telephone" value="{{ usr.telephone }}"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Cellphone:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" name="cellphone" value="{{ usr.cellphone }}"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Password:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input id="password" type="password" name="password"/>
 			</div>
 		</div>
                 <div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Repeat Password:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="password" id="password2" name="password2"/>
 			</div>
 		</div>

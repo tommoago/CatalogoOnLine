@@ -43,90 +43,90 @@ function resetRequirements(){
     <form action="update.php" method="post" id="formcustomers">
         <input type="hidden" name="id" value="{{ cus.id }}"/>
         <div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Name:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" name="name" value="{{ cus.name }}"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Surname:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" name="surname" value="{{ cus.surname }}"/>
 			</div>
 		</div>
                 <div class="totwidth" id="cf_div" style="display: none">
-			<div class="panleft">
-				Cod Fiscale:
+			<div class="panleft1">
+				Cod. Fiscale:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" id="cod_fis" name="cod_fis" value="{{ cus.cod_fis }}"/>
 			</div>
 		</div>
                 <div class="totwidth" id="piva_div" style="display: none">
-			<div class="panleft">
+			<div class="panleft1">
 				P.IVA:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" id="piva" name="piva" value="{{ cus.piva }}"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Address:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" name="address" value="{{ cus.address }}"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
-				Email:
+			<div class="panleft1">
+				E-mail:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" name="email" value="{{ cus.email }}"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Telephone:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" name="telephone" value="{{ cus.telephone }}"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Cellphone:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" name="cellphone" value="{{ cus.cellphone }}"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Active:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="checkbox" name="active" {{ cus.c_active }}/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Password:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="password" name="password"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Operator:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<select name="adm_id">
 					{% for adm in admins %}
 					<option value="{{ adm.id }}" {{ adm.selected }}>{{ adm.name }}</option>
@@ -135,10 +135,10 @@ function resetRequirements(){
 			</div>
 		</div>
                 <div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Type:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<select id="type" name="type" onchange="toggleDivs();">
 					<option value="user" {{ cus.selected_u }}>user</option>
 					<option value="merchant"  {{ cus.selected_m }}>merchant</option>
@@ -147,10 +147,10 @@ function resetRequirements(){
 			</div>
 		</div>
                 <div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Price range:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<select name="price_range">
 					<option value="1" {{ cus.selected_pw }}>wholesale</option>
 					<option value="2" {{ cus.selected_pr }}>retail</option>

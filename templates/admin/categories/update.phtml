@@ -6,19 +6,19 @@
 	<form action="update.php" method="post" id="formcategories">
 		<input type="hidden" name="id" value="{{ cat.id }}"/>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Name
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" name="name" value="{{ cat.name }}"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Category
 			</div>
 
-			<div class="panleft">
+			<div class="panleft2">
 				<select name="cat_id">
 					{% for category in cats %}
 					<option value="{{ category.id }}" {{ category.selected }}>{{ category.name }}</option>

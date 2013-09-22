@@ -6,18 +6,18 @@
 
 	<form action="insert.php" method="post" id="formcategories">
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Name:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" id="name" name="name"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Category:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<select name="cat_id">
 					{% for cat in cats %}
 					<option value="{{ cat.id }}">{{ cat.name }}</option>

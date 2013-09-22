@@ -42,90 +42,90 @@ function resetRequirements(){
 <div id='content'>
 	<form action="insert.php" method="post" id="formcustomers" enctype="multipart/form-data">
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Name:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" id="name" name="name"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Surname:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" id="surname" name="surname"/>
 			</div>
 		</div>
                 <div class="totwidth" id="cf_div" style="display: none">
-			<div class="panleft">
-				Cod Fiscale:
+			<div class="panleft1">
+				Cod. Fiscale:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" id="cod_fis" name="cod_fis"/>
 			</div>
 		</div>
                 <div class="totwidth" id="piva_div" style="display: none">
-			<div class="panleft">
+			<div class="panleft1">
 				P.IVA:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" id="piva" name="piva"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Address:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" id="address" name="address"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
-				Email:
+			<div class="panleft1">
+				E-mail:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" id="email" name="email"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Telephone:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" id="telephone" name="telephone"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Cellphone:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="text" id="cellphone" name="cellphone"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Active:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="checkbox" name="active" />
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Password:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<input type="password" id="password" name="password"/>
 			</div>
 		</div>
 		<div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Operator:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<select name="adm_id">
 					{% for adm in admins %}
 					<option value="{{ adm.id }}">{{ adm.name }}</option>
@@ -134,10 +134,10 @@ function resetRequirements(){
 			</div>
 		</div>
                 <div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Type:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
                             <select id="type" name="type" onchange="toggleDivs();">
 					<option value="user">user</option>
 					<option value="merchant">merchant</option>
@@ -146,10 +146,10 @@ function resetRequirements(){
 			</div>
 		</div>
                 <div class="totwidth">
-			<div class="panleft">
+			<div class="panleft1">
 				Price range:
 			</div>
-			<div class="panleft">
+			<div class="panleft2">
 				<select name="price_range">
 					<option value="1">wholesale</option>
 					<option value="2">retail</option>
