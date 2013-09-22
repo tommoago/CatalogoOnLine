@@ -1,0 +1,103 @@
+#sliderContainer2 {
+    width: 270px;
+    height: 340px;
+    position: relative;
+    border-top: 5px solid #D3CEBB;
+    border-bottom: 5px solid #D3CEBB;
+    margin: 0 auto;
+}
+
+.slideContent2 {
+    background: url("../images/contentBg.png") repeat scroll 0 0 transparent;
+    position: absolute;
+    bottom: 0px;
+    padding: 15px;
+    width: 270px;
+}
+
+.slide2 h3 {
+    font: 700 26px/1em 'Open Sans', sans-serif;
+    color: #FFF;
+    margin: 0 0 10px 0;
+}
+
+.slide2 p {
+    font-size: 14px;
+    color: #FFF;
+    margin: 0;
+}
+/* Qui magari sarebbe da fare un Alert o qualcosa che consigli di caricare foto con risoluzione minima 700x340 (che possiamo decidere posteriormente)*/
+.slide2 img {
+    min-width: 270px;
+    min-height: 400px;
+}
+
+.jFlowSlideContainer2 {
+    overflow: hidden;
+}
+
+.jFlowSlideContainer2 a {
+    color: #F90;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.jFlowSlideContainer2 a:hover {
+    text-decoration: none;
+}
+
+.jFlowSlideContainer2 a:focus {
+    position: relative;
+    top: 1px;
+}
+
+.jFlowNext2 {
+    background: url("../images/arrows.png") no-repeat scroll 0 -35px transparent;
+    height: 130px;
+    position: absolute;
+    top: 75px;
+    right: -50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.jFlowPrev2 {
+    background: url("../images/arrows.png") no-repeat scroll -84px -35px transparent;
+    height: 130px;
+    position: absolute;
+    top: 75px;
+    left: -50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.jFlowPrev2:hover {
+    background-position: -84px -235px;
+}
+
+.jFlowNext2:hover {
+    background-position: 0px -235px;
+}
+
+/* controller pagination */
+#myController2 {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.jFlowControl2 {
+    background: url("../images/bullet.png") no-repeat scroll 0px 0px transparent;
+    float: left;
+    width: 15px;
+    height: 15px;
+}
+
+.jFlowControl2:hover {
+    background-position: -32px 0px;
+    cursor: pointer;
+}
+
+.jFlowSelected2,.jFlowSelected2:hover {
+    background-position: -15px 0px;
+}

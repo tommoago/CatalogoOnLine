@@ -323,14 +323,14 @@ input[type=submit] {
     width: 175px;
     float: left;
     position: absolute;
-    margin: 25px;
+    margin: 40px 25px 25px 25px;
     border: 1px solid #d3cebb;
 }
 .menu-right {
     float: right;
     width: 270px;
     height: 400px;
-    margin: 25px;
+    margin: 40px 25px 25px 25px;
 }
 .tablelist {
     border-collapse:collapse;
