@@ -495,30 +495,7 @@ th {
     height: 17px
 }
 
-.show_img, .show_prod {
-/*     float: left; */
-    margin-left: 100px
-}
-.show_img img {
-    margin:10px;
-    border-radius: 3px;   
-    -moz-border-radius: 3px;   
-    -webkit-border-radius: 3px;
-    box-shadow: 2px 3px 8px #726F62
-}
-.show_prod ul {
-    list-style: none;
-    line-height: 20px;
-    font-size: 12px;
-    text-transform: uppercase;
-}
-.show_prod li {
-    font-weight: bold;
-    list-style: none;
-    display: inline;
-    font-size: 17px;
-    text-transform: none
-}
+
 .question {
     margin-bottom: 15px;
     color: #d3cebb;
@@ -552,6 +529,11 @@ th {
 	-moz-box-shadow: inset 1px 1px 5px #ccc;
 	-webkit-box-shadow: inset 1px 1px 5px #ccc;
 }
+.admin_show {
+    height: 350px;
+    width: auto;
+    margin-bottom: 20px
+}
 .sum_product{
     float:right;
     height: auto;
@@ -578,6 +560,7 @@ th {
 .show_product h4{
     font-size: 14px;
     color: #aaa;
+    
     font-weight: 100;
     font-family: Courier;
     margin: 3px;
@@ -602,4 +585,14 @@ th {
     float: left;
     margin-right: 16px;
     margin-top: -6px
+}
+.show_img, .show_prod {
+    margin: 20px
+}
+.show_img img {
+    margin:10px;
+    border-radius: 3px;   
+    -moz-border-radius: 3px;   
+    -webkit-border-radius: 3px;
+    box-shadow: 2px 3px 8px #726F62
 }

@@ -2,9 +2,7 @@
 {% include 'menu.phtml' %}
 <div id='content'>
     <div class="show_product">
-        <h1>{{ prod.name }}</h1>
-        <div class="show_img"><img class="show_img" src="../../{{ prod.image }}"></div>
-        <div class="sum_product">
+    <div class="sum_product">
         	  {% if prod.new == 1 %}
                 <img class="new" src="../../../images/icons/new/new-512.png">  
             {% endif %}
@@ -14,7 +12,7 @@
             {% endif %}
             
             
-            <p>
+            <p style="margin: 5px">
             Cod.:  {{ prod.cod }}<br>    
             Single Q.ty:  {{ prod.single_qty }}   <br> 
             Pack Q.ty:  {{ prod.pack_qty }} <br>   
@@ -34,8 +32,14 @@
                 <a href='../cart/add.php?id={{ prod.id }}'><img src="../../../images/icons/cart/buy/buy-256.png" alt="Add to cart">Add to cart</a>
             </div>
         </div>
+        <div class="detail_product">
+        <h1>{{ prod.name }}</h1>
+        <div class="show_img"><img class="show_img" src="../../{{ prod.image }}"></div>
         <h2>{{ prod.description }}</h2>
-    </div>
+        </div>
+        
+        
+     </div>
 </div>
 
 {% include 'footer.phtml' %}
