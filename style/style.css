@@ -300,9 +300,13 @@ h2{
     float: left;
 }
 
-.panleft {
+.panleft1 {
     float: left;
-    width: 28%;
+    width: 20%;
+}
+.panleft2 {
+    float: left;
+    width: 60%;
 }
 .totwidth {
     width: 100%;
@@ -313,7 +317,7 @@ h2{
 }
 .error {
     color: red;
-    font: bold;
+    font-size: 14px;
 }
 input[type=submit] {
     width: 75px;
