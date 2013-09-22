@@ -496,7 +496,7 @@ th {
 }
 
 .show_img, .show_prod {
-    float: left;
+/*     float: left; */
     margin-left: 100px
 }
 .show_img img {
@@ -574,4 +574,32 @@ th {
     font-size: 30px;
     color: orange;
     font-weight: 600
+}
+.show_product h4{
+    font-size: 14px;
+    color: #aaa;
+    font-weight: 100;
+    font-family: Courier;
+    margin: 3px;
+    text-align: center
+}
+.show_product h5 {
+    font-size: 20px;
+    color: black;
+    font-weight: 100;
+    margin: 6px 20px 6px 20px;
+    float: left;
+    text-decoration:line-through
+}
+.show_product .new{
+    width: 40px;
+    height: auto;
+    float: right
+}
+.show_product .add_cart img{
+    width: auto;
+    height: 30px;
+    float: left;
+    margin-right: 16px;
+    margin-top: -6px
 }
