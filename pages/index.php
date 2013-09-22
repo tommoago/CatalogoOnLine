@@ -16,6 +16,7 @@ $template = $twig->loadTemplate('index.phtml');
 $result = array();
 
 try {
+
     $db = new dataBase();
     $DBH = $db->connect();
 

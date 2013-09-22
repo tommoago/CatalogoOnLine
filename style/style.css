@@ -551,5 +551,22 @@ th {
 	box-shadow: inset 1px 1px 5px #ccc;
 	-moz-box-shadow: inset 1px 1px 5px #ccc;
 	-webkit-box-shadow: inset 1px 1px 5px #ccc;
-
+}
+.show_product h1{
+    font-size: 26px;
+    color: #54503F
+}
+.show_product h2{
+    font-size: 15px;
+    color: black;
+    width: 50%;
+    float:left;
+    font-weight: 100
+}
+.sum_product{
+    float:right;
+    height: auto;
+    width: 250px;
+    border: 2px solid #54503F;
+    margin: 10px 
 }
