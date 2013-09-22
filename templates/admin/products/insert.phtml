@@ -34,128 +34,128 @@ $(function () {
     {{ message }}
     <form action="insert.php" method="post" id="formproduct" enctype="multipart/form-data">
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Image:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="file" name="uploaded" id="file">
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Name:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" id="name" name="name"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Description:
             </div>
             <textarea id="textarea" name="descr" rows="1" cols="50"></textarea>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 New:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="checkbox" name="new" />
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Offer:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="checkbox" name="offer" />
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Evidence:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="checkbox" name="evidence" />
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Purchase Price:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" id="p_price" name="p_price"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Wholesale Price:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" id="w_price" onchange="calculate(this);" name="w_price"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Retail Price:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" id="r_price" onchange="calculate(this);" name="r_price"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Super Price:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" id="s_price" onchange="calculate(this);" name="s_price"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Cod:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" id="cod" name="cod"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Barcode:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" id="barcode" name="barcode"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
-                Single Qty:
+            <div class="panleft1">
+                Single Q.ty:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" id="s_qty" name="s_qty"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
-                pack Qty:
+            <div class="panleft1">
+                Pack Q.ty:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" id="p_qty" name="p_qty"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
-                Cardboard Qty:
+            <div class="panleft1">
+                Cardboard Q.ty:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <input type="text" id="c_qty" name="c_qty"/>
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Category:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <select name="cat_id">
                     {% for cat in cats %}
                     <option value="{{ cat.id }}">{{ cat.name }}</option>
@@ -164,10 +164,10 @@ $(function () {
             </div>
         </div>
         <div class="totwidth">
-            <div class="panleft">
+            <div class="panleft1">
                 Supplier:
             </div>
-            <div class="panleft">
+            <div class="panleft2">
                 <select name="sup_id">
                     {% for sup in supps %}
                     <option value="{{ sup.id }}">{{ sup.name }}</option>
