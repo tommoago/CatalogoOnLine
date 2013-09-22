@@ -12,18 +12,18 @@ class dataBase {
     function connect() {
         
         $conf = array(
-            'host' => 'sql.ozntone.com',
-            'dbname' => 'ozntonec41438',
-            'user' => 'ozntonec41438',
-            'pass' => 'oznt50584');
+               'host' => 'localhost',
+               'dbname' => 'melarossa',
+               'user' => 'root',
+               'pass' => 'root');
         
-        if($_SERVER['HTTP_HOST'] == 'localhost'){
+     /*if($_SERVER['HTTP_HOST'] == 'localhost'){
             $conf = array(
                 'host' => 'localhost',
                 'dbname' => 'melarossa',
                 'user' => 'root',
                 'pass' => 'root');
-        }
+        }*/
 
         try {
             $DBH = new PDO('mysql:host='.$conf['host'].';dbname='.$conf['dbname'], $conf['user'], $conf['pass']);
