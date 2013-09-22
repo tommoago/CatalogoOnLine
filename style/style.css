@@ -445,7 +445,7 @@ th {
     list-style: none
 }
 .add_cart {
-    margin-top: 25px;
+    margin: 25px;
     background-color: #d3cebb;
     padding: 10px;
     border: 1px solid #8B887B;
@@ -552,6 +552,13 @@ th {
 	-moz-box-shadow: inset 1px 1px 5px #ccc;
 	-webkit-box-shadow: inset 1px 1px 5px #ccc;
 }
+.sum_product{
+    float:right;
+    height: auto;
+    width: 250px;
+    border: 2px solid #54503F;
+    margin: 10px 
+}
 .show_product h1{
     font-size: 26px;
     color: #54503F
@@ -563,10 +570,8 @@ th {
     float:left;
     font-weight: 100
 }
-.sum_product{
-    float:right;
-    height: auto;
-    width: 250px;
-    border: 2px solid #54503F;
-    margin: 10px 
+.show_product h3{
+    font-size: 30px;
+    color: orange;
+    font-weight: 600
 }

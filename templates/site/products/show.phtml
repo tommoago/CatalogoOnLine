@@ -6,19 +6,20 @@
         <img src="../../{{ prod.image }}">
      	
      	<div class="sum_product">
-     	<ul>New: <li>{{ prod.new }}</li></ul> 
-        <ul>Offer: <li>{{ prod.offer }} </li></ul> 
+     	 New:  {{ prod.new }}   
+         Offer:  {{ prod.offer }}    
         {% if prod.price == prod.super_price and prod.price != prod.retail_price %}
-        <ul>Orginal Price: <li>{{ prod.retail_price }} </li></ul> 
+         Orginal Price:  {{ prod.retail_price }}    
         {% endif %}
-        <ul>Price: <li>{{ prod.price }} </li></ul> 
-        <ul>Cod.: <li>{{ prod.cod }} </li></ul> 
-        <ul>Barcode: <li>{{ prod.barcode }} </li></ul> 
-        <ul>Single Qty.: <li>{{ prod.single_qty }} </li></ul> 
-        <ul>Pack Qty.: <li>{{ prod.pack_qty }} </li></ul> 
-        <ul>Cardboard Qty.:<li>{{ prod.cardboard_qty }} </li></ul> 
-        <ul>Category: <li>{{ prod.category }} </li></ul> 
-        <ul>Supplier: <li>{{ prod.supplier }} </li></ul> 
+         Cod.:  {{ prod.cod }}    
+         Barcode:  {{ prod.barcode }}    
+         Single Qty.:  {{ prod.single_qty }}    
+         Pack Qty.:  {{ prod.pack_qty }}    
+         Cardboard Qty.: {{ prod.cardboard_qty }}    
+         Category:  {{ prod.category }}    
+         Supplier:  {{ prod.supplier }}
+          <h3>&#128; {{ prod.price }}</h3>    
+
         <div class="add_cart">
     	 		<a href='../cart/add.php?id={{ prod.id }}'><img src="../../../images/icons/cart/buy/buy-256.png" alt="Add to cart">Add to cart</a>
   	   </div>
