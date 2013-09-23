@@ -1,7 +1,7 @@
 <?php
 class imgUploader {
 
-    var $exts = array('.png', '.gif', '.png', '.jpg', '.jpeg'); //all the extensions that will be allowed to be uploaded 
+    var $exts = array('png', 'gif', 'png', 'jpg', 'jpeg'); //all the extensions that will be allowed to be uploaded 
     var $maxSize = 200000000; //if you set to '0' (no quotes), there will be no limit 
     var $uploadTarget = '../../../images/uploads/'; //make sure you have the '/' at the end ../images/uploads/
     var $fileName = ''; //this will be automatically set. you do not need to worry about this 
@@ -41,12 +41,8 @@ class imgUploader {
         return ( ( filesize($this->tmpName) > $this->maxSize ) ? false : true );
     }
 
-    public function getExt() {
-        return strtolower(substr($this->fileName, strpos($this->fileName, '.'), strlen($this->fileName) - 1));
-    }
-
     public function checkExt() {
-        return ( in_array($this->getExt(), $this->exts) ? true : false );
+        return (in_array(strtolower(pathinfo($this->fileName, PATHINFO_EXTENSION)), $this->exts) ? true : false );
     }
 
     public function isWritable() {
@@ -60,6 +56,7 @@ class imgUploader {
     public function getPathName() {
         return $this->pathName;
     }
+
 }
 
 ?>
