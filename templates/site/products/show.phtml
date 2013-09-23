@@ -2,29 +2,29 @@
 {% include 'menu.phtml' %}
 <div id='content'>
     <div class="show_product">
-    <div class="sum_product">
-        	  {% if prod.new == 1 %}
-                <img class="new" src="../../../images/icons/new/new-512.png">  
+        <div class="sum_product">
+            {% if prod.new == 1 %}
+            <img class="new" src="../../../images/icons/new/new-512.png">  
             {% endif %}
             <h4>{{ prod.barcode }}</h4>
             {% if prod.offer == 1 %}
-                <img class="new" src="../../../images/icons/sale/sale-512.png">  
+            <img class="new" src="../../../images/icons/sale/sale-512.png">  
             {% endif %}
-            
-            
+
+
             <p style="margin: 5px">
-            Cod.:  {{ prod.cod }}<br>    
-            Single Q.ty:  {{ prod.single_qty }}   <br> 
-            Pack Q.ty:  {{ prod.pack_qty }} <br>   
-            Cardboard Q.ty: {{ prod.cardboard_qty }}  <br>  
-            Category:  {{ prod.category }}   <br> 
-            Supplier:  {{ prod.supplier }}<br>
+                Cod.:  {{ prod.cod }}<br>    
+                Single Q.ty:  {{ prod.single_qty }}   <br> 
+                Pack Q.ty:  {{ prod.pack_qty }} <br>   
+                Cardboard Q.ty: {{ prod.cardboard_qty }}  <br>  
+                Category:  {{ prod.category }}   <br> 
+                Supplier:  {{ prod.supplier }}<br>
             </p>
             <br>
             <h5>
-            {% if prod.price == prod.super_price and prod.price != prod.retail_price %}
-          	&#128; {{ prod.retail_price }}    
-            {% endif %}
+                {% if prod.price == prod.super_price and prod.price != prod.retail_price %}
+                &#128; {{ prod.retail_price }}    
+                {% endif %}
             </h5>
             <h3> &#128; {{ prod.price }} </h3>    
 
@@ -33,13 +33,13 @@
             </div>
         </div>
         <div class="detail_product">
-        <h1>{{ prod.name }}</h1>
-        <div class="show_img"><img class="show_img" src="../../{{ prod.image }}"></div>
-        <h2>{{ prod.description }}</h2>
+            <h1>{{ prod.name }}</h1>
+            <div class="show_img"><img class="show_img" src="../../{{ prod.image }}"></div>
+            <h2>{{ prod.description }}</h2>
         </div>
-        
-        
-     </div>
+
+
+    </div>
 </div>
 
 {% include 'footer.phtml' %}
