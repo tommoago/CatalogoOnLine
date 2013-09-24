@@ -5,9 +5,7 @@ include '../../../classes/PrintOrder.php';
 include_once '../../../classes/dataBase.php';
 require_once '../../../vendor/phpmailer/phpmailer/class.phpmailer.php';
 $session = new Session();
-//$mailer = new Mailer();
-//    $mailer->send($customer['email'], "lmao", "Order " . $order['id'] . " confirmation", "This mail is automatically sent to confirm your order with id: " . $order['id']);
-//$mail = new PHPMailer();
+$mail = new PHPMailer();
 $id = $_GET['id'];
 $pdf = new PrintOrder($id);
 
@@ -32,26 +30,26 @@ try {
     $order = $pdf->getOrder();
 
     //manda mail
-//    $mail->AddReplyTo("info@ozntone.com", "First Last");
-//
-//    $mail->SetFrom('info@ozntone.com', 'First Last');
-//
-//    $address = $customer['email'];
-//    $mail->AddAddress($address, "John Doe");
-//
-//    $mail->Subject = "Order " . $order['id'] . " confirmation";
-//
-////    $mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
-//
-//    $mail->MsgHTML("This mail is automatically sent to confirm your order with id: " . $order['id']);
-//
-//    $mail->AddAttachment($path);      // attachment
-//
-//    if (!$mail->Send()) {
-//        echo "Mailer Error: " . $mail->ErrorInfo;
-//    } else {
-//        echo "Message sent!";
-//    }
+    $mail->AddReplyTo("info@ozntone.com", "First Last");
+
+    $mail->SetFrom('info@ozntone.com', 'First Last');
+
+    $address = $customer['email'];
+    $mail->AddAddress($address, "John Doe");
+
+    $mail->Subject = "Order " . $order['id'] . " confirmation";
+
+//    $mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
+
+    $mail->MsgHTML("This mail is automatically sent to confirm your order with id: " . $order['id']);
+
+    $mail->AddAttachment($path);      // attachment
+
+    if (!$mail->Send()) {
+        print_r("Mailer Error: " . $mail->ErrorInfo);
+    } else {
+        print_r("Message sent!");
+    }
 
     header('location:show.php?id=' . $id);
 ?>

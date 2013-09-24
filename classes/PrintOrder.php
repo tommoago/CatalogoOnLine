@@ -175,7 +175,7 @@ class PrintOrder {
         $fileName = $fileType . '-order' . $this->order_id . '-date' . $sDate . '.pdf';
         $filePath = '../../../files/' . $fileType . '/' . $fileName;
         chmod('../../../files/' . $fileType, 0777);
-        $pdf->Output($filePath, 'I');
+        $pdf->Output($filePath, 'F');
         return $filePath;
     }
 
@@ -185,7 +185,6 @@ class PrintOrder {
             $stmt6 = $this->DBH->prepare('INSERT INTO invoices (path, orders_id) 
                                            value (:path, :id)');
             $stmt6->execute($save);
-            header('location:show.php?id=' . $this->order_id);
         } catch (PDOException $e) {
             echo 'ERROR: ' . $e->getMessage();
         }
