@@ -5,6 +5,8 @@
     border-top: 5px solid #D3CEBB;
     border-bottom: 5px solid #D3CEBB;
     margin: 0 auto;
+    background: #ADA895
+
 }
 
 .slideContent2 {
@@ -28,8 +30,8 @@
 }
 /* Qui magari sarebbe da fare un Alert o qualcosa che consigli di caricare foto con risoluzione minima 700x340 (che possiamo decidere posteriormente)*/
 .slide2 img {
-    min-width: 270px;
-    min-height: 400px;
+    max-width: 270px;
+/*     min-height: 400px; */
 }
 
 .jFlowSlideContainer2 {

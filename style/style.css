@@ -338,9 +338,13 @@ input[type=submit] {
 }
 .tablelist {
     border-collapse:collapse;
+    margin-right: 25px
+
 }
 td {
     font-size:1em;	
+    border-top:1px solid #ADA895;
+    border-left:1px solid #ADA895;
     border-right:1px solid #ADA895;
     border-bottom:1px solid #ADA895;
     padding:3px 2px 2px 2px;
@@ -498,7 +502,7 @@ th {
 
 .question {
     margin-bottom: 15px;
-    color: #d3cebb;
+    color: #aaa;
     padding: 3px
 
 }
@@ -595,4 +599,15 @@ th {
     -moz-border-radius: 3px;   
     -webkit-border-radius: 3px;
     box-shadow: 2px 3px 8px #726F62
+}
+.invio {
+	margin-top: 15px;
+    background-color: #d3cebb;
+    border: 1px solid #8B887B;
+    border-radius: 3px;   
+    -moz-border-radius: 3px;   
+    -webkit-border-radius: 3px;
+    color: black;
+    font-weight: bold;
+    font-size: 14px
 }
