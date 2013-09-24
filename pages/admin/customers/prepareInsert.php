@@ -23,5 +23,5 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('admins' => $result));
+$template->display(array('admins' => $result, 'message' => isset($_GET['message'])? $_GET['message']: ''));
 ?>

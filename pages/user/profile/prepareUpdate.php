@@ -36,5 +36,5 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('usr' => $user));
+$template->display(array('usr' => $user, 'message' => isset($_GET['message'])? $_GET['message']: ''));
 ?>

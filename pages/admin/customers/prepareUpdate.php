@@ -66,5 +66,5 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('cus' => $customer, 'admins' => $result));
+$template->display(array('cus' => $customer, 'admins' => $result, 'message' => isset($_GET['message'])? $_GET['message']: ''));
 ?>

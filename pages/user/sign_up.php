@@ -8,13 +8,13 @@ $loader = new Twig_Loader_Filesystem('../../templates');
 $twig = new Twig_Environment($loader/* , array('cache' => '.../../templates/cache',) */);
 $template = $twig->loadTemplate('user/profile/sign_up.phtml');
 
-$var = "Privacy
+$var = 'Privacy
 
             TRATTAMENTO DEI DATI PERSONALI
 
             (Privacy policy ai sensi dell’art. 13 del d.lgs. 196/2003)
 
-            La informiamo che i dati che fornirà al gestore del presente sito al momento della compilazione del 'form contatti' (detto anche form mail) del sito stesso, saranno trattati nel rispetto delle disposizioni di cui al d.lgs. 196/2003, Codice in materia di protezione dei dati personali.
+            La informiamo che i dati che fornirà al gestore del presente sito al momento della compilazione del \'form contatti\' (detto anche form mail) del sito stesso, saranno trattati nel rispetto delle disposizioni di cui al d.lgs. 196/2003, Codice in materia di protezione dei dati personali.
 
             Il form contatti messo a disposizione sul sito ha il solo scopo di consentire ai visitatori del sito di contattare, qualora lo desiderino, il gestore del sito stesso, inviando tramite il suddetto form una email al gestore.
 
@@ -88,9 +88,7 @@ $var = "Privacy
 
             6. DURATA DEL TRATTAMENTO
 
-            Il trattamento avrà una durata non superiore a quella necessaria alle finalità per le quali i dati sono stati raccolti.";
+            Il trattamento avrà una durata non superiore a quella necessaria alle finalità per le quali i dati sono stati raccolti.';
 
-$var2 =  utf8_decode($var);
-
-$template->display(array("var" => $var));
+$template->display(array('var' => $var, 'message' => isset($_GET['message'])? $_GET['message']: ''));
 ?>

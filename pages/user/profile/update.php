@@ -6,8 +6,8 @@ $session = new Session();
 $id = $_POST['id'];
 $name = $_POST['name'];
 $surname = $_POST['surname'];
-$cod_fis = $_POST['cod_fis'];
-$piva = $_POST['piva'];
+$cod_fis = isset($_POST['cod_fis'])? $_POST['cod_fis']: '';
+$piva = isset($_POST['piva'])? $_POST['piva']: '';
 $address = $_POST['address'];
 $email = $_POST['email'];
 $telephone = $_POST['telephone'];
@@ -43,6 +43,13 @@ try {
     $STH->execute($data);
     header('location:show.php?id=' . $id);
 } catch (PDOException $e) {
-    echo 'ERROR: ' . $e->getMessage();
+    if($e->getCode() == '23000'){
+        $message = 'Email already present';
+        header('location:prepareUpdate.php?id=' . $id . '&message=' . $message);
+        exit;
+    }else{
+        header('location:prepareUpdate.php?id=' . $id . '&message=' . $e->getMessage());
+        exit;
+    }
 }
 ?>

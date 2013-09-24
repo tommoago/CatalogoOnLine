@@ -67,6 +67,13 @@ try {
 
     header('location:show.php?id=' . $DBH->lastInsertId());
 } catch (PDOException $e) {
-    echo 'ERROR: ' . $e->getMessage();
+    if($e->getCode() == '23000'){
+        $message = 'Email already present';
+        header('location:prepareInsert.php?message=' . $message);
+        exit;
+    }else{
+        header('location:prepareInsert.php?message=' . $e->getMessage());
+        exit;
+    }
 }
 ?>

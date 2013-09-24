@@ -15,12 +15,12 @@ $active = 0;
 $passwd = $_POST['password'];
 $type = $_POST['type'];
 
-
+$message = '';
 
 try {
     $db = new dataBase();
     $DBH = $db->connect();
-    //selezione casuale dell'operatore associato (escluso jack);
+//selezione casuale dell'operatore associato (escluso jack);
     $STH = $DBH->prepare('SELECT id FROM administrators
                                     WHERE role NOT IN ("jack")
                                     ORDER BY RAND()
@@ -43,47 +43,53 @@ try {
         'price_range' => 2,
         'administrators_id' => $admin['id']);
     $STH2 = $DBH->prepare('INSERT INTO customers (name, 
-                                                 surname,
-                                                 cod_fis,
-                                                 piva,
-                                                 address,
-                                                 email,
-                                                 telephone,
-                                                 cellphone,
-                                                 active,
-                                                 password,
-                                                 type,
-                                                 price_range,
-                                                 administrators_id) 
-                                           value (:name, 
-                                                  :surname,
-                                                  :cod_fis,
-                                                  :piva,
-                                                  :address,
-                                                  :email,
-                                                  :telephone,
-                                                  :cellphone,
-                                                  :active,
-                                                  :password,
-                                                  :type,
-                                                  :price_range,
-                                                  :administrators_id)');
+                                                surname,
+                                                cod_fis,
+                                                piva,
+                                                address,
+                                                email,
+                                                telephone,
+                                                cellphone,
+                                                active,
+                                                password,
+                                                type,
+                                                price_range,
+                                                administrators_id) 
+                                          value (:name, 
+                                                 :surname,
+                                                 :cod_fis,
+                                                 :piva,
+                                                 :address,
+                                                 :email,
+                                                 :telephone,
+                                                 :cellphone,
+                                                 :active,
+                                                 :password,
+                                                 :type,
+                                                 :price_range,
+                                                 :administrators_id)');
     $STH2->execute($data);
 
     $splitted = split('/', $_SERVER['HTTP_REFERER']);
     $relativeDir = '';
 
-    for ($i = 0; $i < sizeof($splitted) - 1; $i++) {
+    for ($i = 0; $i < sizeof($splitted) - 1; $i++)
         $relativeDir .= $splitted[$i] . '/';
-    }
 
     $link = $relativeDir . "activate.php?id=" . $DBH->lastInsertId();
     $mailer = new Mailer();
     $mailer->send($email, "", "Register confirmation", "This mail is automatically sent to confirm your sign up,
-                                                        please click the link below to activate your account:\n"
-                                                        . $link);
-    header('location:login.php?message=registration successful, check your mail for confirmation');
+                                                        please click the link below to activate your account:\n" . $link);
+    $message = 'registration successful, check your mail for confirmation';
+    header('location:login.php?message=' . $message);
 } catch (PDOException $e) {
-    echo 'ERROR: ' . $e->getMessage();
+    if($e->getCode() == '23000'){
+        $message = 'Email already present';
+        header('location:sign_up.php?message=' . $message);
+        exit;
+    }else{
+        header('location:sign_up.php?message=' . $e->getMessage());
+        exit;
+    }
 }
 ?>
