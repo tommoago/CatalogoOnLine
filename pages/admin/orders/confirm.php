@@ -48,8 +48,6 @@ try {
     if (!$mail->Send()) {
         print_r("Mailer Error: " . $mail->ErrorInfo);
     } else {
-        print_r("Message sent!");
+        header('location:show.php?id=' . $id);
     }
-
-    header('location:show.php?id=' . $id);
 ?>
