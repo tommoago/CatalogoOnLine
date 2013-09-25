@@ -1,8 +1,6 @@
 <?php
-
 include '../../../classes/Cart.php';
-session_start();
-include '../../../classes/dataBase.php';
+include '../../../conf/config.php';
 
 isset($_SESSION['cart'])?  : $_SESSION['cart'] = new Cart();
 $cart = $_SESSION['cart'];

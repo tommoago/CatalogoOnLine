@@ -1,8 +1,6 @@
 <?php
-
-session_start();
+include '../../conf/config.php';
 include '../../classes/Session.php';
-include '../../classes/dataBase.php';
 
 $email = $_POST['email'];
 $passwd = $_POST['password'];

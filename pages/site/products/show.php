@@ -1,13 +1,7 @@
 <?php
+include '../../../conf/config.php';
+include '../../../conf/twig.php';
 
-session_start();
-include '../../../classes/dataBase.php';
-require_once '../../../vendor/twig/twig/lib/Twig/Autoloader.php';
-
-Twig_Autoloader::register();
-
-$loader = new Twig_Loader_Filesystem('../../../templates');
-$twig = new Twig_Environment($loader/* , array('cache' => '../../../templates/cache') */);
 $template = $twig->loadTemplate('site/products/show.phtml');
 
 $result = array();

@@ -1,6 +1,5 @@
 <?php
-
-include '../../classes/dataBase.php';
+include '../../conf/config.php';
 include '../../classes/Mailer.php';
 
 $name = $_POST['name'];

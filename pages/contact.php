@@ -1,5 +1,5 @@
 <?php
-
+include '../conf/config.php';
 include '../classes/Mailer.php';
 
 $email = $_POST['email'];

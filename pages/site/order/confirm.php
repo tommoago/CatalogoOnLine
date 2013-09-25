@@ -1,8 +1,6 @@
 <?php
-
 include '../../../classes/Cart.php';
-include '../../../classes/dataBase.php';
-session_start();
+include '../../../conf/config.php';
 
 $message = '';
 print_r($_SESSION['user']);

@@ -1,8 +1,7 @@
 <?php
-
+include '../../../conf/config.php';
 include '../../../classes/Session.php';
 include '../../../classes/PrintOrder.php';
-include_once '../../../classes/dataBase.php';
 require_once '../../../vendor/phpmailer/phpmailer/class.phpmailer.php';
 $session = new Session();
 $mail = new PHPMailer();

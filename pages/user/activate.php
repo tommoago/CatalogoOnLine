@@ -1,6 +1,5 @@
 <?php
-
-include '../../classes/dataBase.php';
+include '../../conf/config.php';
 
 $id = $_GET['id'];
 
