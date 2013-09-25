@@ -1,48 +1,27 @@
 {% include 'header.phtml' %}
 {% include 'menu.phtml' %}
 {% include 'menu-right.phtml' %}
-<link rel="stylesheet" type="text/css" href="../style/jflow.style.css"/>
-<script type="text/javascript" src="../scripts/jflow.plus.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../style/jquery.bxslider.css"/>
+<script type="text/javascript" src="../scripts/jquery.bxslider.min.js"></script>
 
 <script type="text/javascript">
     $(function() {
-        $("#myController").jFlow({
-            controller: ".jFlowControl", // must be class, use . sign
-            slideWrapper: "#jFlowSlider", // must be id, use # sign
-            slides: "#mySlides", // the div where all your sliding divs are nested in
-            selectedWrapper: "jFlowSelected", // just pure text, no sign
-            effect: "flow", //this is the slide effect (rewind or flow)
-            width: "690px", // this is the width for the content-slider
-            height: "340px", // this is the height for the content-slider
-            duration: 400, // time in milliseconds to transition one slide
-            pause: 3000, //time between transitions
-            prev: ".jFlowPrev", // must be class, use . sign
-            next: ".jFlowNext", // must be class, use . sign
-            auto: true
+        $('#slider1').bxSlider({
+            mode: 'fade',
+            auto: true,
+            autoControls: true,
+            pause: 2000,
+            captions: true
         });
     });
 </script>
 <div id="content">
     <div id="sliderContainer">
-        <div id="mySlides">
+        <ul id="slider1">
             {% for prod in prods %}
-            <div id="slide1" class="slide"><img src="{{ prod.image }}" alt="{{ prod.tile }}"/>
-
-                <div class="slideContent">
-                    <h3><a href='site/products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></h3>
-
-                    <p>{{ prod.description }}</p>
-                </div>
-            </div>
+            <li><img src="{{ prod.image }}" alt="{{ prod.tile }}" title="{{ prod.tile }}"/></li>
             {% endfor %}
-        </div>
-        <div id="myController">
-            {% for prod in prods %}
-                <span class="jFlowControl"></span>
-            {% endfor %}
-        </div>
-        <div class="jFlowPrev"></div>
-        <div class="jFlowNext"></div>
+        </ul>
     </div>
 </div>
 {% include 'footer.phtml' %}
