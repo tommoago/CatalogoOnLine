@@ -1,6 +1,7 @@
 {
     "require": {
         "twig/twig": "1.*",
+        "twig/extensions": "*",
     
         "phpmailer/phpmailer": "5.*"
     }

@@ -1,6 +1,5 @@
 <?php
-
-include '../../../classes/dataBase.php';
+include '../../../conf/config.php';
 include '../../../classes/imgUploader.php';
 include '../../../classes/Session.php';
 $session = new Session();

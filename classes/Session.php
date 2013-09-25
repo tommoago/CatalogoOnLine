@@ -5,7 +5,7 @@ class Session {
     private $user_id;
 
     function __construct() {
-        session_start();
+        if(!isset($_SESSION)) session_start();
         if (!$this->check_login()) {
             header('location:' . $this->getPath() . '/login.php');
         }
