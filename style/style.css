@@ -92,7 +92,8 @@ h2{
 }
 #topmenu a, #topmenu_logout a{
     color: #0b3e01;
-    text-decoration:none
+    text-decoration:none;
+    text-transform: capitalize
 }
 #topmenu a:hover, #topmenu_logout a:hover{
     color: black;
@@ -125,6 +126,7 @@ h2{
     width: 110px;
     text-align: center;
     text-decoration: none;
+    text-transform: capitalize;
     padding: 8px 0 18px 0;
     display: block;
     float: left;
@@ -365,7 +367,7 @@ th {
     border-right:1px solid #E5E2D3;
     font-size:1em;
     padding:3px 5px 2px 5px;
-    color: black;
+    color: #54503F;
     text-align: center;
     word-wrap:break-word;
     font-size: 13px;
@@ -435,6 +437,17 @@ th {
     float: left;
     list-style: none
 }
+.checkout:active{
+    background-color: #91B68C;
+    border-bottom: 0px solid #8B887B;
+    border-top: 2px solid #8B887B;
+    border-left: 0px solid #8B887B;
+    border-right: 1px solid #8B887B;
+}
+.checkout a, .confirm a{
+    color: #0A5506;
+    text-decoration: none;
+}
 .empty_cart{
     margin-top: 25px;
     background-color: #DDA9A9;
@@ -448,6 +461,17 @@ th {
     float: left;
     list-style: none
 }
+.empty_cart:active{
+    background-color: #CC9B9B;
+    border-bottom: 0px solid #8B887B;
+    border-top: 2px solid #8B887B;
+    border-left: 0px solid #8B887B;
+    border-right: 1px solid #8B887B;
+}
+.empty_cart a{
+    color: #770202;
+    text-decoration: none;
+}
 .add_cart {
     margin: 25px;
     background-color: #d3cebb;
@@ -457,29 +481,36 @@ th {
     -moz-border-radius: 3px;   
     -webkit-border-radius: 3px;
 }
-.empty_cart a{
-    color: #770202;
-    text-decoration: none;
-
+.add_cart:active{
+    background-color: #B4B0A0;
+    border-bottom: 0px solid #8B887B;
+    border-top: 2px solid #8B887B;
+    border-left: 1px solid #8B887B;
+    border-right: 1px solid #8B887B;
 }
 .add_cart a{
     color: black;
     text-decoration: none;
     font-weight: bold;
-
 }
-.checkout a, .confirm a{
-    color: #0A5506;
-    text-decoration: none;
 
-}
 .total img, .empty_cart img, .add_cart img, .checkout img, .confirm img{
     width: auto;
     height: 30px;
     float: left;
     margin-right: 16px;
     margin-top: -6px
-
+}
+.back {
+   display: block;
+   clear: left;
+   margin: 85px 0px 0px 0px;
+   width: 45px;
+}
+.back img {
+    height: auto;
+    width: 18px;
+    padding: 2px
 }
 #pager{
     margin-top: 10px
@@ -600,13 +631,28 @@ th {
     -webkit-border-radius: 3px;
     box-shadow: 2px 3px 8px #726F62
 }
-.invio {
+ .invio {
 	margin-top: 15px;
     background-color: #d3cebb;
     border: 1px solid #8B887B;
-    border-radius: 3px;   
-    -moz-border-radius: 3px;   
-    -webkit-border-radius: 3px;
+    border-radius: 5px;   
+    -moz-border-radius: 5px;   
+    -webkit-border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    font-size: 14px
+}
+.invio:active {
+	margin-top: 15px;
+    background-color: #B4B0A0;
+    border-bottom: 0px solid #8B887B;
+    border-top: 2px solid #8B887B;
+    border-left: 1px solid #8B887B;
+    border-right: 1px solid #8B887B;
+    
+    border-radius: 5px;   
+    -moz-border-radius: 5px;   
+    -webkit-border-radius: 5px;
     color: black;
     font-weight: bold;
     font-size: 14px

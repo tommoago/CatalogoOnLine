@@ -29,11 +29,14 @@
 /** THEME
 ===================================*/
 
-.bx-wrapper .bx-viewport {
+.bx-wrapper {
 	border: solid #ADA895 5px;
-	left: -5px;
 	background: #d3cebb;
 }
+.bx-viewport {
+	background: #d3cebb;
+}
+
 
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
