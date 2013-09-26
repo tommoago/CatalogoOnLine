@@ -44,6 +44,7 @@ try {
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
-
-$template->display(array('prods' => $result, 'tot' => $cart->getTot()));
+$splitted = split('/', $_SERVER['HTTP_REFERER']);
+$back = $splitted[sizeof($splitted)-1] == 'index.php'? '':$_SERVER['HTTP_REFERER'];
+$template->display(array('prods' => $result, 'tot' => $cart->getTot(), 'back'=> $back));
 ?>

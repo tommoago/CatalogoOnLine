@@ -41,10 +41,11 @@
             <a href='empty.php'><img src="../../../images/icons/cart/return/return_red-256.png" alt="Delete">Empty cart</a>
         </li>
     </ul>
+    {% if back != '' %}
     <div class="back">
-            <a href='#'><img src="../../../images/icons/list/list-256.png" alt="Back"><img src="../../../images/icons/arrows/left/left-256.png" alt="Back"></a>
+            <a href='{{ back }}'><img src="../../../images/icons/list/list-256.png" alt="Back"><img src="../../../images/icons/arrows/left/left-256.png" alt="Back"></a>
     </div>
-
+    {%endif%}
     {%endif%}
     {% if prods|length == 0 %}
     <p>
