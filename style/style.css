@@ -651,7 +651,7 @@ th {
     -webkit-border-radius: 3px;
     box-shadow: 2px 3px 8px #726F62
 }
- .invio {
+.invio {
 	margin-top: 15px;
     background-color: #d3cebb;
     border: 1px solid #8B887B;
@@ -663,17 +663,56 @@ th {
     font-size: 14px
 }
 .invio:active {
-	margin-top: 15px;
     background-color: #B4B0A0;
     border-bottom: 0px solid #8B887B;
     border-top: 2px solid #8B887B;
     border-left: 1px solid #8B887B;
     border-right: 1px solid #8B887B;
-    
-    border-radius: 5px;   
-    -moz-border-radius: 5px;   
-    -webkit-border-radius: 5px;
+}
+.sign-in {
+	margin-top: 15px;
+    background-color: #d3cebb;
+    border: 1px solid #8B887B;
+    border-radius: 5px 0px 0px 5px;   
+    -moz-border-radius: 5px 0px 0px 5px;   
+    -webkit-border-radius: 5px 0px 0px 5px;
     color: black;
     font-weight: bold;
-    font-size: 14px
+    font-size: 14px;
+    float: left
+}
+.sign-in:active {
+    background-color: #B4B0A0;
+    border-bottom: 0px solid #8B887B;
+    border-top: 2px solid #8B887B;
+    border-left: 1px solid #8B887B;
+    border-right: 1px solid #8B887B;
+}
+.sign-up {
+	margin-top: 15px;
+    background-color: #d3cebb;
+    border-bottom: 1px solid #8B887B;
+    border-top: 1px solid #8B887B;
+    border-left: 0px solid #8B887B;
+    border-right: 1px solid #8B887B;
+    border-radius: 0px 5px 5px 0px;   
+    -moz-border-radius: 0px 5px 5px 0px;   
+    -webkit-border-radius: 0px 5px 5px 0px;
+    color: black;
+    font-weight: 100;
+    font-size: 14px;
+    float: left
+}
+.sign-up:active {
+    background-color: #B4B0A0;
+    border-bottom: 0px solid #8B887B;
+    border-top: 2px solid #8B887B;
+    border-left: 0px solid #8B887B;
+    border-right: 1px solid #8B887B;
+}
+.sign {
+	margin-top: 10px;	
+	margin-bottom: 10px;
+     display: block
+
 }

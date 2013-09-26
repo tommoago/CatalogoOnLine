@@ -3,17 +3,15 @@
 <div class="login">
     <p>{{ message }}</p>
     <form method="post" action="authenticate.php">
-        <input type="hidden" name="order" value="{{ order }}"/>
-        <p>E-mail:</p>
+        <input class="sign" type="hidden" name="order" value="{{ order }}"/>
+        <p class="sign">E-mail:</p>
         <input type="text" name="email"/>
-        <br>
-        <p>Password:</p>
-        <input type="password" name="password"/>
-        <br>
-        <input class="invio" type="submit" value="Invio" />
-
+        <p class="sign">Password:</p>
+        <input class="sign" type="password" name="password"/>
+     <input class="sign-in" type="submit" value="Sign-in" />
+	<input class="sign-up" type="submit" value="or Sign-up" onclick="location.href='sign_up.php';"/>
     </form>
-    <input class="invio" type="submit" value="Sign-up" onclick="location.href='sign_up.php';"/>
+    
 <!-- 
     <a href="sign_up.php">Sign up</a>
  -->
