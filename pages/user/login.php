@@ -1,6 +1,6 @@
 <?php
 include '../../conf/config.php';
-include '../../../conf/twig.php';
+include '../../conf/twig.php';
 
 if (isset($_SESSION['user']['type'])) {
     header('location:index.php');

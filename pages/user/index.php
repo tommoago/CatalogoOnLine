@@ -1,4 +1,5 @@
 <?php
+include '../../conf/config.php';
 include '../../conf/twig.php';
 include '../../classes/Session.php';
 $session = new Session();
