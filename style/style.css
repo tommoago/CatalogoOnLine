@@ -586,13 +586,15 @@ th {
     width: 250px;
     background: #fff;
     border: 1px solid #ADA895;
+    border-right: 0px solid #ADA895;
     border-radius: 5px;   
     -moz-border-radius: 5px;   
-    -webkit-border-radius: 5px;
-    margin: 10px;
-    box-shadow: 0px 1px 5px #aaa;
-	-moz-box-shadow: 0px 1px 5px #aaa;
-	-webkit-box-shadow: 0px 1px 5px #aaa;
+    -webkit-border-radius: 5px 0px 0px 5px;
+    margin-right: 0px;
+    margin-top: 50px;
+    box-shadow: 1px 2px 8px #726F62;
+	-moz-box-shadow: 1px 2px 8px #726F62;
+	-webkit-box-shadow: 1px 2px 8px #726F62;
 }
 .show_product h1{
     font-size: 26px;
