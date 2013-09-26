@@ -3,7 +3,7 @@ include '../../../conf/config.php';
 include '../../../classes/Session.php';
 $session = new Session();
 if(!$session->check_role('jack')){
-   header('location:../index.php?message= Unauthorized access.'); 
+   header('location:../index.php?message='. gettext('unauth')); 
 }
 
 $id = $_GET['id'];
@@ -30,9 +30,9 @@ try {
         //se non ho vincoli, elimino.
         $STH = $DBH->prepare('DELETE FROM administrators WHERE id = :id');
         $STH->execute($data);
-        $message = 'Delete successful';
+        $message = gettext('del.succ');
     } else {
-        $message = 'Cannot delete because of depency with an associated customer';
+        $message = gettext('adm.del.dep');
     }
 
     header('location:list.php?message=' . $message);

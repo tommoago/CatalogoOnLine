@@ -7,11 +7,9 @@ $session = new Session();
 $template = $twig->loadTemplate('admin/categories/list.phtml');
 
 $result = array();
-$message = '';
-if (isset($_GET['message'])) {
-    $message = $_GET['message'];
-}
-isset($_GET['offset'])? $offset = $_GET['offset']: $offset =0 ;
+$message = isset($_GET['message'])? $_GET['message']: '';
+
+$offset = isset($_GET['offset'])? $_GET['offset']: 0;
 $limit = 20;
 $numPages = 0;
 
@@ -43,10 +41,10 @@ try {
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
-
-$lowRange = $offset/$limit-3;
-$maxRange = $offset/$limit;
-$maxRange < 3? $maxRange = 6 : $maxRange += 3;
+//enhancement formula pager
+$div = $offset/$limit;
+$lowRange = $div-3;
+$maxRange = $div < 3? 6 : $div+3;
 
 $template->display(array('cats' => $result, 'message' => $message, 'totPages' => $numPages, 'lr' => $lowRange, 'mr' => $maxRange));
 ?>

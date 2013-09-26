@@ -7,7 +7,7 @@ $session = new Session();
 $template = $twig->loadTemplate('admin/products/list.phtml');
 
 $result = array();
-isset($_GET['offset'])? $offset = $_GET['offset']: $offset =0 ;
+$offset = isset($_GET['offset'])? $_GET['offset']: 0;
 $limit = 20;
 $numPages = 0;
 
@@ -41,9 +41,9 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$lowRange = $offset/$limit-3;
-$maxRange = $offset/$limit;
-$maxRange < 3? $maxRange = 6 : $maxRange += 3;
+$div = $offset/$limit;
+$lowRange = $div-3;
+$maxRange = $div < 3? 6 : $div+3;
 
 $template->display(array('prods' => $result, 'totPages' => $numPages, 'lr' => $lowRange, 'mr' => $maxRange));
 ?>

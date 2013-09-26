@@ -68,7 +68,7 @@ try {
     header('location:show.php?id=' . $DBH->lastInsertId());
 } catch (PDOException $e) {
     if($e->getCode() == '23000'){
-        $message = 'Email already present';
+        $message = gettext('duplicate.mail');
         header('location:prepareInsert.php?message=' . $message);
         exit;
     }else{

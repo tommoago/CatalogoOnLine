@@ -1,18 +1,101 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ooo\n"
-"POT-Creation-Date: 2013-09-22 16:35+0100\n"
-"PO-Revision-Date: 2013-09-22 16:48+0100\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language-Team: oo <oo@oo.iu>\n"
+"Language-Team: me <lol@lol.lol>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
-"X-Poedit-Basepath: C:\\Users\\Giacomo\\Documents\\NetBeansProjects\\i18n\n"
-"X-Poedit-SearchPath-0: .\n"
 
-#: index.php:21
-msgid "A string to"
-msgstr "una st"
+#: header
+msgid "who"
+msgstr "Who"
+
+msgid "where"
+msgstr "Where"
+
+msgid "contacts"
+msgstr "Contacts"
+
+#: menu admin
+msgid "ins"
+msgstr "Insert"
+
+msgid "list"
+msgstr "List"
+
+msgid "info"
+msgstr "Information"
+
+#: entities names
+msgid "prod"
+msgstr "Product"
+
+msgid "prods"
+msgstr "Products"
+
+msgid "adm"
+msgstr "Administrator"
+
+msgid "adms"
+msgstr "Administrators"
+
+msgid "cat"
+msgstr "Category"
+
+msgid "cats"
+msgstr "Categories"
+
+msgid "sup"
+msgstr "Supplier"
+
+msgid "sups"
+msgstr "Suppliers"
+
+msgid "cust"
+msgstr "Customer"
+
+msgid "custs"
+msgstr "Customers"
+
+msgid "ord"
+msgstr "Order"
+
+msgid "ords"
+msgstr "Orders"
+
+msgid "comp"
+msgstr "Company"
+
+#: admin index
+msgid "welcome"
+msgstr "Welcome"
+
+msgid "welcome_2"
+msgstr "from here, you can start to control your website."
+
+#: copia da qui per ITA! admin access
+msgid "unauth"
+msgstr "Unauthorized access."
+
+msgid "invalid.cred"
+msgstr "Invalid credentials."
+
+#: generic
+msgid "del.succ"
+msgstr "Delete successful."
+
+msgid "duplicate.mail"
+msgstr "Email already present."
+
+msgid "del.dep.prod"
+msgstr "Cannot delete because of depency with associate products."
+
+msgid "adm.del.dep"
+msgstr "Cannot delete because of depency with an associated customer."
+
+msgid "cat.del.dep.cat"
+msgstr "Cannot delete because of depency with another category."

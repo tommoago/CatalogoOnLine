@@ -4,7 +4,7 @@ include '../../../classes/imgUploader.php';
 include '../../../classes/Session.php';
 $session = new Session();
 if (!$session->check_role('jack')) {
-    header('location:../index.php?message= Unauthorized access.');
+    header('location:../index.php?message='. gettext('unauth'));
 }
 
 $id = $_POST['id'];

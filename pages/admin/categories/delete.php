@@ -24,12 +24,12 @@ try {
             //se non ho vincoli, elimino.
             $STH = $DBH->prepare('DELETE FROM categories WHERE id = :id');
             $STH->execute($data);
-            $message = 'Delete successful';
+            $message = gettext('del.succ');
         } else {
-            $message = 'Cannot delete because of depency with associate products';
+            $message = gettext('del.dep.prod');
         }
     } else {
-        $message = 'Cannot delete because of depency with another category';
+        $message = gettext('cat.del.dep.cat');
     }
 
     header('location:list.php?message=' . $message);

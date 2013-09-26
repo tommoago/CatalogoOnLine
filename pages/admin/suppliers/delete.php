@@ -3,9 +3,8 @@ include '../../../conf/config.php';
 include '../../../classes/Session.php';
 $session = new Session();
 
-$id = $_GET['id'];
 $message = '';
-$data = array('id' => $id);
+$data = array('id' => $_GET['id']);
 try {
     $db = new dataBase();
     $DBH = $db->connect();
@@ -18,11 +17,10 @@ try {
         //se non ho vincoli, elimino.
         $STH = $DBH->prepare('DELETE FROM suppliers WHERE id = :id');
         $STH->execute($data);
-        $message = 'Delete successful';
+        $message = gettext('del.succ');
     } else {
-        $message = 'Cannot delete because of depency with associate products';
+        $message = gettext('del.dep.prod');
     }
-
 
     header('location:list.php?message=' . $message);
 } catch (PDOException $e) {

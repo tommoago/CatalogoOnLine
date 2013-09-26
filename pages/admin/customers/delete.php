@@ -4,7 +4,6 @@ include '../../../classes/Session.php';
 $session = new Session();
 
 $id = $_GET['id'];
-$message = '';
 $data = array('id' => $id);
 try {
     $db = new dataBase();
@@ -41,7 +40,7 @@ try {
     }
     $STH = $DBH->prepare('DELETE FROM customers WHERE id = :id');
     $STH->execute($data);
-    $message = 'Delete successful';
+    $message = gettext('del.succ');
 
     header('location:list.php?message=' . $message);
 } catch (PDOException $e) {
