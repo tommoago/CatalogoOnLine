@@ -4,14 +4,17 @@
     <p>{{ message }}</p>
     <form method="post" action="authenticate.php">
         <input type="hidden" name="order" value="{{ order }}"/>
-        <p>Email</p>
+        <p>E-mail:</p>
         <input type="text" name="email"/>
         <br>
-        <p>Password</p>
+        <p>Password:</p>
         <input type="password" name="password"/>
         <br>
-        <input type="submit" value="invio" />
+        <input class="invio" type="submit" value="Invio" />
 
     </form>
+    <input class="invio" type="submit" value="Sign-up" onclick="location.href='sign_up.php';"/>
+<!-- 
     <a href="sign_up.php">Sign up</a>
+ -->
 </div>
