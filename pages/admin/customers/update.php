@@ -59,7 +59,7 @@ try {
     header('location:show.php?id=' . $id);
 } catch (PDOException $e) {
     if($e->getCode() == '23000'){
-        $message = 'Email already present';
+        $message = gettext('duplicate.mail');
         header('location:prepareUpdate.php?id=' . $id . '&message=' . $message);
         exit;
     }else{

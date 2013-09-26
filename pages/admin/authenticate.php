@@ -4,8 +4,6 @@ include '../../classes/Session.php';
 
 $user = $_POST['user'];
 $passwd = $_POST['password'];
-$message = '';
-
 
 try {
     $db = new dataBase();
@@ -18,8 +16,7 @@ try {
         $_SESSION['user'] = $result;
         header('location:index.php');
     } else {
-        $message = 'Invalid credentials';
-        header('location:login.php?message=' . $message);
+        header('location:login.php?message=' . gettext('invalid.cred'));
     }
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
