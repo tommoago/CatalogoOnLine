@@ -4,9 +4,9 @@
     <p>{{ message }}</p>
     <form method="post" action="authenticate.php">
         <input class="sign" type="hidden" name="order" value="{{ order }}"/>
-        <p class="sign">E-mail:</p>
+        <p class="sign">{% trans "mail" %}:</p>
         <input class="sign_text" type="text" name="email"/>
-        <p class="sign">Password:</p>
+        <p class="sign">{% trans "pwd" %}:</p>
         <input class="sign_text" type="password" name="password"/>
      <input class="sign-in" type="submit" value="Sign-in" />
 	<input class="sign-up" type="submit" value="or Sign-up" onclick="location.href='sign_up.php';"/>

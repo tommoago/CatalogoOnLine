@@ -77,6 +77,9 @@ msgstr "Welcome"
 msgid "welcome_2"
 msgstr "from here, you can start to control your website."
 
+msgid "welcome_2_usr"
+msgstr "from here, you can start to control your profile."
+
 #: copia da qui per ITA! admin access
 msgid "unauth"
 msgstr "Unauthorized access."
@@ -248,5 +251,29 @@ msgstr "Add to cart"
 msgid "text"
 msgstr "Text"
 
-msgid "question"
-msgstr "Insert your question here."
+msgid "merc"
+msgstr "Merchant"
+
+msgid "stock"
+msgstr "Stockist"
+
+msgid "agr"
+msgstr "I agree"
+
+msgid "rep"
+msgstr "Repeat"
+
+msgid "signup"
+msgstr "Sign Up"
+
+msgid "cart"
+msgstr "Cart"
+
+msgid "pro"
+msgstr "Profile"
+
+msgid "sho"
+msgstr "Show"
+
+msgid "upd"
+msgstr "Update"

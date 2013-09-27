@@ -6,13 +6,13 @@
     <h2>Categorie</h2>
     <ul id="list">
         <li class="color">
-            <a href="{{ pathM }}profile/show.php?id={{ pSession.user.id }}">Show profile</a>
+            <a href="{{ pathM }}profile/show.php?id={{ pSession.user.id }}">{% trans "sho" %} {% trans "pro" %}</a>
         </li>
         <li>
-            <a href="{{ pathM }}profile/prepareUpdate.php?id={{ pSession.user.id }}">Update profile</a>
+            <a href="{{ pathM }}profile/prepareUpdate.php?id={{ pSession.user.id }}">{% trans "upd" %} {% trans "pro" %}</a>
         </li>
         <li class="color">
-            <a href="{{ pathM }}orders/list.php">Show orders</a>
+            <a href="{{ pathM }}orders/list.php">{% trans "sho" %} {% trans "ords" %}</a>
         </li>
     </ul>
 </div>

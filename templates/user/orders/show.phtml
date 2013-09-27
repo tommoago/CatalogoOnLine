@@ -4,10 +4,10 @@
 
     <table border='1' style='margin: 50px;'>
         <tr>
-            <th>ID</th>
-            <th>Date</th>
-            <th>Confirmed</th>
-            <th>Operator</th>
+            <th>{% trans "id" %}</th>
+            <th>{% trans "date" %}</th>
+            <th>{% trans "confed" %}</th>
+            <th>{% trans "op" %}</th>
         </tr>
         <tr>
             <td><a href='show.php?id={{ ord.id }}'>{{ ord.id }}</a></td>
@@ -15,9 +15,8 @@
             <td>{{ ord.confirmed }}</td>
             <td>{{ ord.operator }}</td>
         </tr>
-        {% for prod in products %}
         <!--vedi commento su modifche file php-->
-<!--        {% for prod in products %}
+        <!-- {% for prod in products %}
         <tr>
             <td><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
             <td>{{ prod.quantity }}</td>

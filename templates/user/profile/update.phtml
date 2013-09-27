@@ -8,7 +8,7 @@
         <input type="hidden" name="id" value="{{ usr.id }}"/>
         <div class="totwidth">
 			<div class="panleft1">
-				Name:
+				{% trans "name" %}:
 			</div>
 			<div class="panleft2">
 				<input type="text" name="name" value="{{ usr.name }}"/>
@@ -16,7 +16,7 @@
 		</div>
 		<div class="totwidth">
 			<div class="panleft1">
-				Surname:
+				{% trans "sur" %}:
 			</div>
 			<div class="panleft2">
 				<input type="text" name="surname" value="{{ usr.surname }}"/>
@@ -25,7 +25,7 @@
                 {% if usr.cod_fis != '' %}
                 <div class="totwidth" id="cf_div">
 			<div class="panleft1">
-				Cod. Fiscale:
+				{% trans "codf" %}:
 			</div>
 			<div class="panleft2">
 				<input type="text" id="cod_fis" name="cod_fis" value="{{ usr.cod_fis }}"/>
@@ -35,7 +35,7 @@
                 {% if usr.piva != '' %}
                 <div class="totwidth" id="piva_div">
 			<div class="panleft1">
-				P.IVA:
+				{% trans "piva" %}:
 			</div>
 			<div class="panleft2">
 				<input type="text" id="piva" name="piva" value="{{ usr.piva }}"/>
@@ -44,7 +44,7 @@
                 {%endif%}
 		<div class="totwidth">
 			<div class="panleft1">
-				Address:
+				{% trans "adr" %}:
 			</div>
 			<div class="panleft2">
 				<input type="text" name="address" value="{{ usr.address }}"/>
@@ -52,7 +52,7 @@
 		</div>
 		<div class="totwidth">
 			<div class="panleft1">
-				E-mail:
+				{% trans "mail" %}:
 			</div>
 			<div class="panleft2">
 				<input type="text" name="email" value="{{ usr.email }}"/>
@@ -60,7 +60,7 @@
 		</div>
 		<div class="totwidth">
 			<div class="panleft1">
-				Telephone:
+				{% trans "tel" %}:
 			</div>
 			<div class="panleft2">
 				<input type="text" name="telephone" value="{{ usr.telephone }}"/>
@@ -68,7 +68,7 @@
 		</div>
 		<div class="totwidth">
 			<div class="panleft1">
-				Cellphone:
+				{% trans "cel" %}:
 			</div>
 			<div class="panleft2">
 				<input type="text" name="cellphone" value="{{ usr.cellphone }}"/>
@@ -76,7 +76,7 @@
 		</div>
 		<div class="totwidth">
 			<div class="panleft1">
-				Password:
+				{% trans "pwd" %}:
 			</div>
 			<div class="panleft2">
 				<input id="password" type="password" name="password"/>
@@ -84,7 +84,7 @@
 		</div>
                 <div class="totwidth">
 			<div class="panleft1">
-				Repeat Password:
+				{% trans "rep" %} {% trans "pwd" %}:
 			</div>
 			<div class="panleft2">
 				<input type="password" id="password2" name="password2"/>

@@ -2,7 +2,7 @@
 {% include 'user/structure/menu.phtml' %}
 <div id='content'>
 
-        <p>Welcome <b>{{ pSession.user.name }}</b> from here, you can start to control your profile!</p>
+        <p>{% trans "welcome" %} <b>{{ pSession.user.name }}</b> {% trans "welcome_2_usr" %}</p>
 </div>
 
 {% include 'user/structure/footer.phtml' %}

@@ -43,7 +43,7 @@
     <form action="register.php" method="post" id="formuser">
         <div class="totwidth">
             <div class="panleft1">
-                Name:
+                {% trans "name" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="name" name="name"/>
@@ -51,7 +51,7 @@
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Surname:
+                {% trans "sur" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="surname" name="surname"/>
@@ -59,7 +59,7 @@
         </div>
         <div class="totwidth" id="cf_div" style="display: none">
             <div class="panleft1">
-                Cod Fiscale:
+                {% trans "codf" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="cod_fis" name="cod_fis"/>
@@ -67,7 +67,7 @@
         </div>
         <div class="totwidth" id="piva_div" style="display: none">
             <div class="panleft1">
-                P.IVA:
+                {% trans "piva" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="piva" name="piva"/>
@@ -75,7 +75,7 @@
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Address:
+                {% trans "adr" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="address" name="address"/>
@@ -83,7 +83,7 @@
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Email:
+                {% trans "mail" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="email" name="email"/>
@@ -91,7 +91,7 @@
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Telephone:
+                {% trans "tel" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="telephone" name="telephone"/>
@@ -99,7 +99,7 @@
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Cellphone:
+                {% trans "cel" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="cellphone" name="cellphone"/>
@@ -107,7 +107,7 @@
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Password:
+                {% trans "pwd" %}:
             </div>
             <div class="panleft2">
                 <input type="password" id="password" name="password"/>
@@ -115,7 +115,7 @@
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Repeat Password:
+                {% trans "rep" %} {% trans "pwd" %}:
             </div>
             <div class="panleft2">
                 <input type="password" id="password2" name="password2"/>
@@ -123,17 +123,17 @@
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Type:
+                {% trans "type" %}:
             </div>
             <div class="panleft2">
                 <select id="type" name="type" onchange="toggleDivs();">
-                    <option value="user">user</option>
-                    <option value="merchant">merchant</option>
-                    <option value="stockist">stockist</option>
+                    <option value="user">{% trans "usr" %}</option>
+                    <option value="merchant">{% trans "merc" %}</option>
+                    <option value="stockist">{% trans "stock" %}</option>
                 </select>
             </div>
         </div>
-        I agree <input  type="radio" name="agree" value="agree">
+        {% trans "agr" %} <input  type="radio" name="agree" value="agree">
 
         <div class="privacy">
             {{ var }}
