@@ -75,10 +75,10 @@ msgid "welcome"
 msgstr "Welcome"
 
 msgid "welcome_2"
-msgstr "from here, you can start to control your website."
+msgstr "you can now start to control your website from here."
 
 msgid "welcome_2_usr"
-msgstr "from here, you can start to control your profile."
+msgstr "you can now start to control your profile from here."
 
 #: copia da qui per ITA! admin access
 msgid "unauth"
@@ -89,13 +89,13 @@ msgstr "Invalid credentials."
 
 #: generic
 msgid "del.succ"
-msgstr "Delete successful."
+msgstr "Successful deletion."
 
 msgid "duplicate.mail"
-msgstr "Email already present."
+msgstr "This e-mail already exist."
 
 msgid "del.dep.prod"
-msgstr "Cannot delete because of depency with associate products."
+msgstr "Cannot delete because of dependency with associate products."
 
 msgid "conf"
 msgstr "confirm."
@@ -112,7 +112,7 @@ msgstr "Cannot delete because of depency with another category."
 
 #: order
 msgid "ord.mail.body"
-msgstr "This mail is automatically sent to confirm your order with id:"
+msgstr "This mail is automatically sent to confirm your order with ID:"
 
 #: forms generic
 msgid "name"
@@ -137,13 +137,13 @@ msgid "descr"
 msgstr "Description"
 
 msgid "piva"
-msgstr "P. IVA"
+msgstr "P.IVA"
 
 msgid "tel"
 msgstr "Telephone"
 
 msgid "cel"
-msgstr "Cellphone"
+msgstr "Cellular"
 
 msgid "fax"
 msgstr "Fax"
@@ -152,7 +152,7 @@ msgid "adr"
 msgstr "Address"
 
 msgid "codf"
-msgstr "Cod. Fiscale"
+msgstr "Tax code"
 
 msgid "act"
 msgstr "Active"
@@ -212,7 +212,7 @@ msgid "super"
 msgstr "Super"
 
 msgid "cod"
-msgstr "Cod"
+msgstr "Code"
 
 msgid "sng"
 msgstr "Single"
@@ -258,7 +258,7 @@ msgid "stock"
 msgstr "Stockist"
 
 msgid "agr"
-msgstr "I agree"
+msgstr "I agree."
 
 msgid "rep"
 msgstr "Repeat"
