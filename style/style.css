@@ -29,10 +29,23 @@ h2{
     background-repeat: repeat-x;
     margin-bottom: 40px;
     border-bottom: 3px solid #d3cebb;
-
+}
+#header_adm {
+    height: 60px;
+    background-image: url(../images/header_bg.jpg);
+    background-position: top left;
+    background-size: 1px 100px;
+    background-repeat: repeat-x;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #d3cebb;
 }
 #header_inside {
     width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+#header_inside_adm {
+    width: 100%;
     margin: 0 auto;
     position: relative;
 }
@@ -44,6 +57,16 @@ h2{
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 100;
     font-size: 40px;
+    color: #0b3e01
+}
+#headertitle_adm {
+    width: 50%;
+    float: left;
+    padding-top: 14px;
+    padding-left: 20px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 25px;
     color: #0b3e01
 }
 #content {
@@ -67,6 +90,14 @@ h2{
     height:160px;
     width:160px;
 }
+#redapple_adm {
+    float: left;
+    background-image: url(../images/applelogo.svg);
+    background-size:60px auto;
+    height:60px;
+    width:60px;
+    margin-left: 10px
+}
 
 #topmenu {
     float: right;
@@ -85,23 +116,28 @@ h2{
     padding-left: 4px;
     padding-right: 4px;
 }
-#topmenu li.tpm img, #topmenu li.cart_header img, #topmenu_logout img {
+#topmenu li.tpm img, #topmenu li.cart_header img, #topmenu_logout img, #topmenu_logout_adm img {
     width: auto;
     height: 17px;
     margin-left: 4px;
 }
-#topmenu a, #topmenu_logout a{
+#topmenu a, #topmenu_logout a, #topmenu_logout_adm a{
     color: #0b3e01;
     text-decoration:none;
     text-transform: capitalize
 }
-#topmenu a:hover, #topmenu_logout a:hover{
+#topmenu a:hover, #topmenu_logout a:hover, #topmenu_logout_adm a:hover{
     color: black;
     text-decoration:none
 }
 #topmenu_logout {
     float: right;
     padding-top: 130px;
+}
+#topmenu_logout_adm {
+    float: right;
+    margin-top: 38px;
+    margin-right: 25px
 }
 /* 
 #topmenu_logout a{
@@ -115,14 +151,20 @@ h2{
 */
 #menu {
     position: absolute;
-    top: 156px;
+    top: 160px;
     left: 26px;
 }
-#menu li {
+#menu_adm {
+    position: absolute;
+    top: 60px;
+    left: 222px;
+}
+
+#menu li, #menu_adm li {
     display: inline;
 }
 #menu a {
-    margin: 5px 1px 0 0;
+    margin: 0px 1px 0 0;
     width: 110px;
     text-align: center;
     text-decoration: none;
@@ -136,8 +178,22 @@ h2{
     background-position: top left;
     background-repeat: no-repeat;
 }
+#menu_adm a {
+    margin: 0px 1px 0 0;
+    width: 110px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 3px 0 6px 0;
+    display: block;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #b70404;
+    background-position: top left;
+    background-repeat: no-repeat;
+}
 #menu .but1_active {
-    margin-top:4px;
     background-color: #d40303;
     text-decoration: none;
     color: white;
@@ -146,55 +202,48 @@ h2{
     -moz-border-radius: 0px 0px 4px 4px;
     -webkit-border-radius: 0px 0px 4px 4px;
 }
-#menu .but2_active {
-    margin-top:2px;
+#menu_adm .but1_active {
+    background-color: #d40303;
+    text-decoration: none;
+    color: white;
+    box-shadow: 1px 1px 8px #726F62;
+    border-radius: 0px 0px 4px 4px;
+    -moz-border-radius: 0px 0px 4px 4px;
+    -webkit-border-radius: 0px 0px 4px 4px;
+}
+#menu .but2_active,#menu .but3_active, #menu .but4_active  {
     background-color: #d40303;
     text-decoration: none;
     color: white;
     box-shadow:0px 2px 2px black;
 }
-#menu .but3_active {
-    margin-top:2px;
+#menu_adm .but2_active, #menu_adm .but3_active, #menu_adm .but4_active  {
     background-color: #d40303;
     text-decoration: none;
     color: white;
     box-shadow:0px 2px 2px black;
 }
-#menu .but4_active {
-    margin-top:2px;
-    background-color: #d40303;
-    text-decoration: none;
-    color: white;
-    box-shadow:0px 2px 2px black;
-}
-#menu .but1:hover {
-    margin-top:4px;
+
+#menu .but1:hover, #menu_adm .but1:hover {
     background-color: #ce6e6e;
     text-decoration: none;
     color: white;
     height:13px
 }
-#menu .but2:hover {
-    margin-top:4px;
+#menu .but2:hover, #menu .but3:hover, #menu .but4:hover {
     background-color: #ce6e6e;
     text-decoration: none;
     color: white;
     height:13px
 }
-#menu .but3:hover {
-    margin-top:4px;
+
+#menu_adm .but2:hover, #menu_adm .but3:hover, #menu_adm .but4:hover {
     background-color: #ce6e6e;
     text-decoration: none;
     color: white;
     height:13px
 }
-#menu .but4:hover {
-    margin-top:4px;
-    background-color: #ce6e6e;
-    text-decoration: none;
-    color: white;
-    height:13px
-}
+
 #sidebar {
     width: 175px;
     float: left;
@@ -374,6 +423,9 @@ th {
     font-weight: 100;
     text-transform: uppercase
         /*  letter-spacing: -1px; */
+}
+.td_qty {
+	min-width: 110px
 }
 .delete, .delete_admin, .add_img {
     color: transparent;
@@ -700,7 +752,7 @@ th {
     -webkit-border-radius: 0px 5px 5px 0px;
     color: black;
     font-weight: 100;
-    font-size: 14px;
+    font-size: 13px;
     float: left
 }
 .sign-up:active {
@@ -713,6 +765,17 @@ th {
 .sign {
 	margin-top: 10px;	
 	margin-bottom: 10px;
-     display: block
+     display: block;
+     width: 145px;
+     font-size: 14px
 
+}
+.sign_text {
+    margin-top: 10px;	
+	margin-bottom: 10px;
+     display: block;
+     width: 145px;
+     font-size: 13px
+
+    
 }

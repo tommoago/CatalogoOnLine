@@ -19,7 +19,7 @@
             <td>{{ prod.price }}</td>
             <td>{{ prod.cod }}</td>
             <td>{{ prod.category }}</td>
-            <td>
+            <td class="td_qty">
                 <form action="update.php" method="post">
                     <input type="hidden" name="id" value="{{ prod.id }}"/>
                     <input type="text" id="qty_add" name="qty_add" value="{{ prod.qty }}"/>
