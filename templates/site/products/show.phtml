@@ -13,12 +13,12 @@
 
 
             <p style="margin: 5px">
-                Cod.:  {{ prod.cod }}<br>    
-                Single Q.ty:  {{ prod.single_qty }}   <br> 
-                Pack Q.ty:  {{ prod.pack_qty }} <br>   
-                Cardboard Q.ty: {{ prod.cardboard_qty }}  <br>  
-                Category:  {{ prod.category }}   <br> 
-                Supplier:  {{ prod.supplier }}<br>
+                {% trans "cod" %}:  {{ prod.cod }}<br>    
+                {% trans "sng" %} {% trans "qty" %}:  {{ prod.single_qty }}   <br> 
+                {% trans "pck" %} {% trans "qty" %}:  {{ prod.pack_qty }} <br>   
+                {% trans "cdb" %} {% trans "qty" %}: {{ prod.cardboard_qty }}  <br>  
+                {% trans "cat" %}:  {{ prod.category }}   <br> 
+                {% trans "sup" %}:  {{ prod.supplier }}<br>
             </p>
             <br>
             <h5>
@@ -29,7 +29,7 @@
             <h3> &#128; {{ prod.price }} </h3>    
 
             <div class="add_cart">
-                <a href='../cart/add.php?id={{ prod.id }}'><img src="../../../images/icons/cart/buy/buy-256.png" alt="Add to cart">Add to cart</a>
+                <a href='../cart/add.php?id={{ prod.id }}'><img src="../../../images/icons/cart/buy/buy-256.png" alt="Add to cart">{% trans "add.cart" %}</a>
             </div>
         </div>
         <div class="detail_product">

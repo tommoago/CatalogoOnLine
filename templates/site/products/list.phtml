@@ -5,17 +5,17 @@
     {% if prods|length > 0 %}
     <table class="tablelist">
         <tr>
-            <th>Name</th>
-            <th>Descr.</th>
-            <th>New</th>
-            <th>Offer</th>
+            <th>{% trans "name" %}</th>
+            <th>{% trans "descr" %}</th>
+            <th>{% trans "new" %}</th>
+            <th>{% trans "ofr" %}</th>
             <th>&#128;</th>
-            <th>Cod.</th>
-            <th>Barcode</th>
-            <th>Single Q.ty</th>
-            <th>Pack Q.ty</th>
-            <th>Cardboard Q.ty</th>
-            <th>Cat.</th>
+            <th>{% trans "cod" %}</th>
+            <th>{% trans "bcod" %}</th>
+            <th>{% trans "sng" %} {% trans "qty" %}</th>
+            <th>{% trans "pck" %} {% trans "qty" %}</th>
+            <th>{% trans "cdb" %} {% trans "qty" %}</th>
+            <th>{% trans "cat" %}</th>
         </tr>
         {% for prod in prods %}
         <tr>
@@ -49,7 +49,7 @@
     {%endif%}
     {% if prods|length == 0 %}
     <p>
-        no elements found
+        {% trans "nores" %}
     </p>
     {% endif %}
 </div>

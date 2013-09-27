@@ -5,12 +5,12 @@
     {% if prods|length > 0 %}
     <table class="tablelist">
         <tr>
-            <th>Name</th>
-            <th>Descr.</th>
+            <th>{% trans "name" %}</th>
+            <th>{% trans "descr" %}</th>
             <th>&#128;</th>
-            <th>Cod.</th>
-            <th>Cat.</th>
-            <th>Q.ty</th>
+            <th>{% trans "cod" %}</th>
+            <th>{% trans "cat" %}</th>
+            <th>{% trans "qty" %}</th>
         </tr>
         {% for prod in prods %}
         <tr>
@@ -32,13 +32,13 @@
     </table>
     <ul>
         <li class="total">
-            <img src="../../../images/icons/cart/shopping_cart_filled/shopping_cart_filled-256.png" alt="Total">Total:  <b>&#128;{{ tot }}</b>
+            <img src="../../../images/icons/cart/shopping_cart_filled/shopping_cart_filled-256.png" alt="Total">{% trans "tot" %}:  <b>&#128;{{ tot }}</b>
         </li>
         <li class="checkout">
-            <a href='../order/summary.php'><img src="../../../images/icons/cart/checkout/checkout_green-256.png" alt="Checkout">Checkout</a>
+            <a href='../order/summary.php'><img src="../../../images/icons/cart/checkout/checkout_green-256.png" alt="Checkout"></a>
         </li>
         <li class="empty_cart">
-            <a href='empty.php'><img src="../../../images/icons/cart/return/return_red-256.png" alt="Delete">Empty cart</a>
+            <a href='empty.php'><img src="../../../images/icons/cart/return/return_red-256.png" alt="Delete">{% trans "empty.cart" %}</a>
         </li>
     </ul>
     {% if back != '' %}
@@ -49,7 +49,7 @@
     {%endif%}
     {% if prods|length == 0 %}
     <p>
-        Your cart is empty.
+        {% trans "empcart" %}
     </p>
     {% endif %}
 </div>

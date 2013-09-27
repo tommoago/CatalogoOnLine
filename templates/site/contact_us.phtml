@@ -6,10 +6,10 @@
     <div class="validation">{{ message }}</div>
     <form action="contact.php" method="post" id="formcontact">
         <div class="contact">
-        	<p>E-mail:</p>
+        	<p>{% trans "mail" %}</p>
           <input type="text" id="email" name="email"/>
-          <p>Text:</p>
-            <textarea class="question" id="question" name="question" rows="5" cols="60" onfocus="if(this.value==this.defaultValue)this.value='';">Insert your question here.</textarea>
+          <p>{% trans "text" %}:</p>
+            <textarea class="question" id="question" name="question" rows="5" cols="60" onfocus="if(this.value==this.defaultValue)this.value='';">{% trans "question" %}</textarea>
         </div>
         <input class="invio" type="submit" value="Send"/>
     </form>

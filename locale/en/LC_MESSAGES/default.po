@@ -222,3 +222,31 @@ msgstr "Cardboard"
 
 msgid "nomod"
 msgstr "(blank to not modify)"
+
+#: cart
+msgid "empcart"
+msgstr "Your cart is empty."
+
+msgid "empty.cart"
+msgstr "Empty cart"
+
+msgid "checkout"
+msgstr "Checkout"
+
+msgid "tot"
+msgstr "Total"
+
+msgid "canc"
+msgstr "Cancel"
+
+msgid "usr.emp.cart"
+msgstr "Your cart is empty."
+
+msgid "add.cart"
+msgstr "Add to cart"
+
+msgid "text"
+msgstr "Text"
+
+msgid "question"
+msgstr "Insert your question here."
