@@ -16,11 +16,11 @@
         <script type="text/javascript" src="../../../scripts/jquery-1.9.1.min.js"></script>
     </head>
     <body>
-        <div id="header">
-            <div id="header_inside">
-                <div id="redapple"></div>
-                <h1 id="headertitle">Mela Rossa Cash & Carry</h1>
-                <ul id="menu">
+        <div id="header_adm">
+            <div id="header_inside_adm">
+                <div id="redapple_adm"></div>
+                <h1 id="headertitle_adm">Mela Rossa Cash & Carry</h1>
+                <ul id="menu_adm">
                     <li>
                         <a href="{{ path }}../../index.php" class="but1_active">Home Page</a>
                     </li>
@@ -34,7 +34,7 @@
                         <a href="" class="but4">{% trans "contacts" %}</a>
                     </li>
                 </ul>
-                <div id="topmenu_logout">
+                <div id="topmenu_logout_adm">
                     {% if logInOut == 'logout' %}
                         <a href="{{ path }}{{ logInOut }}.php">{{ logInOut }}<img src="{{ path }}../../images/icons/system/logout/logout-256.png" alt="Logout"></a> 
                     {% endif %}
