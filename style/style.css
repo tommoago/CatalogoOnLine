@@ -50,10 +50,10 @@ h2{
     position: relative;
 }
 #headertitle {
-    width: 50%;
+    width: auto;
     float: left;
     padding-top: 60px;
-    padding-left: 50px;
+    padding-left: 20px;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 100;
     font-size: 40px;
@@ -101,7 +101,7 @@ h2{
 
 #topmenu {
     float: right;
-    padding-top: 34px;
+    padding-top: 139px;
 }
 #topmenu li.tpm {
     list-style: none;
