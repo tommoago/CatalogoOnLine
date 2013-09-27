@@ -6,7 +6,7 @@
     <div id="footer_inside">
         <ul class="footer_menu">
             <li>
-                <a href="{{ pathF }}index.php">Home Page Admin Panel</a>|
+                <a href="{{ pathF }}index.php">Home page <b>Admin</b> panel</a>|
             </li>
             {% if pSession.user.id != ''%}
             <li>
@@ -14,13 +14,13 @@
             </li>
             {% endif %}
             <li>
-                <a href="{{ pathF }}../change_language.php?lang=it">ITA</a>
+                <a href="{{ pathF }}../change_language.php?lang=it"><img src="{{ path }}../../images/flags/italy.png" alt="ITA"></a>
             </li>
             <li>
-                <a href="{{ pathF }}../change_language.php?lang=en">ENG</a>
+                <a href="{{ pathF }}../change_language.php?lang=en"><img src="{{ path }}../../images/flags/uk.png" alt="ENG"></a>
             </li>
             <li>
-                <a href="{{ pathF }}../change_language.php?lang=zh">CHI</a>
+                <a href="{{ pathF }}../change_language.php?lang=zh"><img src="{{ path }}../../images/flags/china.png" alt="CHI"></a>
             </li>
         </ul>
         <br />

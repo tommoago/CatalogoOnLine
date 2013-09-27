@@ -306,6 +306,9 @@ h2{
     line-height: 17px;
     float: left;
 }
+.footer_menu li img{
+    margin-top: 3px
+}
 .footer_menu li a {
     color: #0D0D0D;
     text-decoration: none;
@@ -355,6 +358,7 @@ h2{
     float: left;
     width: 20%;
 }
+
 .panleft2 {
     float: left;
     width: 60%;
