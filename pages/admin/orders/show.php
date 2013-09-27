@@ -39,5 +39,5 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('ord' => $order/* , 'products' => $products */));
+$template->display(array('ord' => $order, 'message' =>isset($_GET['message'])? $_GET['message']: ''/* , 'products' => $products */));
 ?>

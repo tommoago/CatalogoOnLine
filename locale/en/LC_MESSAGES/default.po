@@ -94,8 +94,131 @@ msgstr "Email already present."
 msgid "del.dep.prod"
 msgstr "Cannot delete because of depency with associate products."
 
+msgid "conf"
+msgstr "confirm."
+
+msgid "nores"
+msgstr "No elements found."
+
+#: admin
 msgid "adm.del.dep"
 msgstr "Cannot delete because of depency with an associated customer."
 
 msgid "cat.del.dep.cat"
 msgstr "Cannot delete because of depency with another category."
+
+#: order
+msgid "ord.mail.body"
+msgstr "This mail is automatically sent to confirm your order with id:"
+
+#: forms generic
+msgid "name"
+msgstr "Name"
+
+msgid "sur"
+msgstr "Surname"
+
+msgid "usr"
+msgstr "Username"
+
+msgid "pwd"
+msgstr "Password"
+
+msgid "mail"
+msgstr "E-mail"
+
+msgid "upload"
+msgstr "Select a file to upload"
+
+msgid "descr"
+msgstr "Description"
+
+msgid "piva"
+msgstr "P. IVA"
+
+msgid "tel"
+msgstr "Telephone"
+
+msgid "cel"
+msgstr "Cellphone"
+
+msgid "fax"
+msgstr "Fax"
+
+msgid "adr"
+msgstr "Address"
+
+msgid "codf"
+msgstr "Cod. Fiscale"
+
+msgid "act"
+msgstr "Active"
+
+msgid "op"
+msgstr "Operator"
+
+msgid "type"
+msgstr "Type"
+
+msgid "pr"
+msgstr "Price"
+
+msgid "rg"
+msgstr "Range"
+
+msgid "id"
+msgstr "ID"
+
+msgid "date"
+msgstr "Date"
+
+msgid "confed"
+msgstr "Confirmed"
+
+msgid "confirm"
+msgstr "Confirm"
+
+msgid "conford"
+msgstr "Are you sure to confirm this order?"
+
+msgid "img"
+msgstr "Image"
+
+msgid "qty"
+msgstr "Q.ty"
+
+msgid "new"
+msgstr "New"
+
+msgid "ofr"
+msgstr "Offer"
+
+msgid "hlg"
+msgstr "Highlight"
+
+msgid "pur"
+msgstr "Purchase"
+
+msgid "wh"
+msgstr "Wholesale"
+
+msgid "ret"
+msgstr "Retail"
+
+msgid "super"
+msgstr "Super"
+
+msgid "cod"
+msgstr "Cod"
+
+msgid "sng"
+msgstr "Single"
+
+msgid "pck"
+msgstr "Pack"
+
+msgid "cdb"
+msgstr "Cardboard"
+
+msgid "nomod"
+msgstr "(blank to not modify)"

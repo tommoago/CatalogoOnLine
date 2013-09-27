@@ -35,7 +35,7 @@ $(function () {
     <form action="insert.php" method="post" id="formproduct" enctype="multipart/form-data">
         <div class="totwidth">
             <div class="panleft1">
-                Image:
+                {% trans "img" %}:
             </div>
             <div class="panleft2">
                 <input type="file" name="uploaded" id="file">
@@ -43,7 +43,7 @@ $(function () {
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Name:
+                {% trans "name" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="name" name="name"/>
@@ -51,13 +51,13 @@ $(function () {
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Description:
+                {% trans "descr" %}:
             </div>
             <textarea id="textarea" name="descr" rows="1" cols="50"></textarea>
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                New:
+                {% trans "new" %}:
             </div>
             <div class="panleft2">
                 <input type="checkbox" name="new" />
@@ -65,7 +65,7 @@ $(function () {
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Offer:
+                {% trans "ofr" %}:
             </div>
             <div class="panleft2">
                 <input type="checkbox" name="offer" />
@@ -73,7 +73,7 @@ $(function () {
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Evidence:
+                {% trans "hlg" %}:
             </div>
             <div class="panleft2">
                 <input type="checkbox" name="evidence" />
@@ -81,7 +81,7 @@ $(function () {
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Purchase Price:
+                {% trans "pur" %} {% trans "pr" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="p_price" name="p_price"/>
@@ -89,7 +89,7 @@ $(function () {
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Wholesale Price:
+                {% trans "wh" %} {% trans "pr" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="w_price" onchange="calculate(this);" name="w_price"/>
@@ -97,7 +97,7 @@ $(function () {
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Retail Price:
+                {% trans "ret" %} {% trans "pr" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="r_price" onchange="calculate(this);" name="r_price"/>
@@ -105,7 +105,7 @@ $(function () {
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Super Price:
+                {% trans "super" %} {% trans "pr" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="s_price" onchange="calculate(this);" name="s_price"/>
@@ -113,7 +113,7 @@ $(function () {
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Cod:
+                {% trans "cod" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="cod" name="cod"/>
@@ -121,7 +121,7 @@ $(function () {
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Barcode:
+                {% trans "bcod" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="barcode" name="barcode"/>
@@ -129,7 +129,7 @@ $(function () {
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Single Q.ty:
+                {% trans "sng" %} {% trans "qty" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="s_qty" name="s_qty"/>
@@ -137,7 +137,7 @@ $(function () {
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Pack Q.ty:
+                {% trans "pck" %} {% trans "qty" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="p_qty" name="p_qty"/>
@@ -145,7 +145,7 @@ $(function () {
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Cardboard Q.ty:
+                {% trans "cdb" %} {% trans "qty" %}:
             </div>
             <div class="panleft2">
                 <input type="text" id="c_qty" name="c_qty"/>
@@ -153,7 +153,7 @@ $(function () {
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Category:
+               {% trans "cat" %}:
             </div>
             <div class="panleft2">
                 <select name="cat_id">
@@ -165,7 +165,7 @@ $(function () {
         </div>
         <div class="totwidth">
             <div class="panleft1">
-                Supplier:
+                {% trans "sup" %}:
             </div>
             <div class="panleft2">
                 <select name="sup_id">

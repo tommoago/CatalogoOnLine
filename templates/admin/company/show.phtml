@@ -1,25 +1,25 @@
 {% include 'admin/structure/header.phtml' %}
 {% include 'admin/structure/menu.phtml' %}
 <div id='content'>
-	<table class="tablelist">
-		<tr>
-			<th>Name</th>
-			<th>Description</th>
-			<th>P. IVA</th>
-               <th>Telephone</th>
-               <th>Fax</th>
-               <th>Address</th>
-                        
-		</tr>
-		<tr>
-			<td>{{ company.name }}</td>
-			<td>{{ company.description }}</td>
-			<td>{{ company.piva }}</td>
-               <td>{{ company.telephone }}</td>
-               <td>{{ company.fax }}</td>
-               <td>{{ company.address }}</td>
-			<td class="edit"><a href='prepareUpdate.php?id={{ company.id }}'><img src="../../../images/icons/edit/edit-256.png" alt="Edit"></a></td>
-		</tr>
-	</table>
+    <table class="tablelist">
+        <tr>
+            <th>{% trans "name" %}</th>
+            <th>{% trans "descr" %}</th>
+            <th>{% trans "piva" %}</th>
+            <th>{% trans "tel" %}</th>
+            <th>{% trans "fax" %}</th>
+            <th>{% trans "adr" %}</th>
+
+        </tr>
+        <tr>
+            <td>{{ company.name }}</td>
+            <td>{{ company.description }}</td>
+            <td>{{ company.piva }}</td>
+            <td>{{ company.telephone }}</td>
+            <td>{{ company.fax }}</td>
+            <td>{{ company.address }}</td>
+            <td class="edit"><a href='prepareUpdate.php?id={{ company.id }}'><img src="../../../images/icons/edit/edit-256.png" alt="Edit"></a></td>
+        </tr>
+    </table>
 </div>
 {% include 'admin/structure/footer.phtml' %}

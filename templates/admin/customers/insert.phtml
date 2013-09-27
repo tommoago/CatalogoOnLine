@@ -44,7 +44,7 @@ function resetRequirements(){
 	<form action="insert.php" method="post" id="formcustomers" enctype="multipart/form-data">
 		<div class="totwidth">
 			<div class="panleft1">
-				Name:
+				{% trans "name" %}:
 			</div>
 			<div class="panleft2">
 				<input type="text" id="name" name="name"/>
@@ -52,7 +52,7 @@ function resetRequirements(){
 		</div>
 		<div class="totwidth">
 			<div class="panleft1">
-				Surname:
+				{% trans "sur" %}:
 			</div>
 			<div class="panleft2">
 				<input type="text" id="surname" name="surname"/>
@@ -60,7 +60,7 @@ function resetRequirements(){
 		</div>
                 <div class="totwidth" id="cf_div" style="display: none">
 			<div class="panleft1">
-				Cod. Fiscale:
+				{% trans "codf" %}:
 			</div>
 			<div class="panleft2">
 				<input type="text" id="cod_fis" name="cod_fis"/>
@@ -68,7 +68,7 @@ function resetRequirements(){
 		</div>
                 <div class="totwidth" id="piva_div" style="display: none">
 			<div class="panleft1">
-				P.IVA:
+				{% trans "piva" %}:
 			</div>
 			<div class="panleft2">
 				<input type="text" id="piva" name="piva"/>
@@ -76,7 +76,7 @@ function resetRequirements(){
 		</div>
 		<div class="totwidth">
 			<div class="panleft1">
-				Address:
+				{% trans "adr" %}:
 			</div>
 			<div class="panleft2">
 				<input type="text" id="address" name="address"/>
@@ -84,7 +84,7 @@ function resetRequirements(){
 		</div>
 		<div class="totwidth">
 			<div class="panleft1">
-				E-mail:
+				{% trans "mail" %}:
 			</div>
 			<div class="panleft2">
 				<input type="text" id="email" name="email"/>
@@ -92,7 +92,7 @@ function resetRequirements(){
 		</div>
 		<div class="totwidth">
 			<div class="panleft1">
-				Telephone:
+				{% trans "tel" %}:
 			</div>
 			<div class="panleft2">
 				<input type="text" id="telephone" name="telephone"/>
@@ -100,7 +100,7 @@ function resetRequirements(){
 		</div>
 		<div class="totwidth">
 			<div class="panleft1">
-				Cellphone:
+				{% trans "cel" %}:
 			</div>
 			<div class="panleft2">
 				<input type="text" id="cellphone" name="cellphone"/>
@@ -108,7 +108,7 @@ function resetRequirements(){
 		</div>
 		<div class="totwidth">
 			<div class="panleft1">
-				Active:
+				{% trans "act" %}:
 			</div>
 			<div class="panleft2">
 				<input type="checkbox" name="active" />
@@ -116,7 +116,7 @@ function resetRequirements(){
 		</div>
 		<div class="totwidth">
 			<div class="panleft1">
-				Password:
+				{% trans "pwd" %}:
 			</div>
 			<div class="panleft2">
 				<input type="password" id="password" name="password"/>
@@ -124,7 +124,7 @@ function resetRequirements(){
 		</div>
 		<div class="totwidth">
 			<div class="panleft1">
-				Operator:
+				{% trans "op" %}:
 			</div>
 			<div class="panleft2">
 				<select name="adm_id">
@@ -136,7 +136,7 @@ function resetRequirements(){
 		</div>
                 <div class="totwidth">
 			<div class="panleft1">
-				Type:
+				{% trans "type" %}:
 			</div>
 			<div class="panleft2">
                             <select id="type" name="type" onchange="toggleDivs();">
@@ -148,7 +148,7 @@ function resetRequirements(){
 		</div>
                 <div class="totwidth">
 			<div class="panleft1">
-				Price range:
+				{% trans "pr" %} {% trans "rg" %}:
 			</div>
 			<div class="panleft2">
 				<select name="price_range">

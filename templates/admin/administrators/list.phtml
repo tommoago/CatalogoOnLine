@@ -8,8 +8,8 @@
 	{% if admins|length > 0 %}
 	<table class="tablelist">
 		<tr>
-			<th>Name</th>
-			<th>User</th>
+			<th>{% trans "name" %}</th>
+			<th>{% trans "usr" %}</th>
 		</tr>
 		{% for admin in admins %}
 		<tr>
@@ -26,7 +26,7 @@
 	{% endif %}
 	{% if admins|length == 0 %}
 	<p>
-		no elements found
+		{% trans "nores" %}
 	</p>
 	{% endif %}
 </div>

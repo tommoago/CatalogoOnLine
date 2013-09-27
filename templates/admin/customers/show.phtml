@@ -3,22 +3,22 @@
 <div id='content'>
     <table class="tablelist">
         <tr>
-            <th>Name</th>
-            <th>Surname</th>
+            <th>{% trans "name" %}</th>
+            <th>{% trans "sur" %}</th>
             {% if cus.cod_fis != '' %}
-            <th>Cod Fiscale</th>
+            <th>{% trans "codf" %}</th>
             {%endif%}
             {% if cus.piva != '' %}
-            <th>P.IVA</th>
+            <th>{% trans "piva" %}</th>
             {%endif%}
-            <th>Address</th>
-            <th>Email</th>
-            <th>Tel.</th>
-            <th>Cell.</th>
-            <th>Active</th>
-            <th>Operator</th>
-            <th>Type</th>
-            <th>&#128; Range</th>
+            <th>{% trans "adr" %}</th>
+            <th>{% trans "mai" %}</th>
+            <th>{% trans "tel" %}</th>
+            <th>{% trans "cel" %}</th>
+            <th>{% trans "act" %}</th>
+            <th>{% trans "op" %}</th>
+            <th>{% trans "type" %}</th>
+            <th>&#128; {% trans "rg" %}</th>
         </tr>
         <tr>
             <td>{{ cus.name }}</td>

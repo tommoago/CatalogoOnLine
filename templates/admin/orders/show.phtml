@@ -1,14 +1,15 @@
 {% include 'admin/structure/header.phtml' %}
 {% include 'admin/structure/menu.phtml' %}
 <div id='content'>
+    {{ message }}
     <table border='1'>
         <tr>
-            <th>ID</th>
-            <th>Date</th>
-            <th>Confirmed</th>
-            <th>Confirm Date</th>
-            <th>Operator</th>
-            <th>Customer</th>
+            <th>{% trans "id" %}</th>
+            <th>{% trans "date" %}</th>
+            <th>{% trans "confed" %}</th>
+            <th>{% trans "confirm" %} {% trans "date" %}</th>
+            <th>{% trans "op" %}Operator</th>
+            <th>{% trans "cust" %}Customer</th>
         </tr>
         <tr>
             <td><a href='show.php?id={{ ord.id }}'>{{ ord.id }}</a></td>
@@ -27,7 +28,7 @@
         {% endfor %}-->
     </table>
     {% if ord.confirmed != 1%}
-        <a href='confirm.php?id={{ ord.id }}' onclick="return confirm('Are you sure to confirm this order?')">Conferma ordine</a>
+        <a href='confirm.php?id={{ ord.id }}' onclick="return confirm('{% trans "conford" %}');">{% trans "confrm" %} {% trans "ord" %}</a>
     {% endif %}
     {% if ord.file != ''%}
         <a href='{{ ord.file }}'>pdf</a>

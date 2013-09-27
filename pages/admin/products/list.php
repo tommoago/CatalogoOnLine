@@ -36,6 +36,11 @@ try {
         $stmt->execute(array('id' => $row['categories_id']));
         $cat = $stmt->fetch();
         $row['category'] = $cat['name'];
+        
+        $stmt2 = $DBH->prepare('SELECT * FROM suppliers WHERE id = :id');
+        $stmt2->execute(array('id' => $row['suppliers_id']));
+        $sup = $stmt2->fetch();
+        $row['supplier'] = $sup['name'];
     }
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();

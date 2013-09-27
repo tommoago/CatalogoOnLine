@@ -7,12 +7,12 @@
     {% if orders|length > 0 %}
     <table class="tablelist">
         <tr>
-            <th>ID</th>
-            <th>Date</th>
-            <th>Confirmed</th>
-            <th>Confirm Date</th>
-            <th>Operator</th>
-            <th>Customer</th>
+            <th>{% trans "id" %}</th>
+            <th>{% trans "date" %}</th>
+            <th>{% trans "confed" %}</th>
+            <th>{% trans "confrm" %} {% trans "date" %}</th>
+            <th>{% trans "op" %}Operator</th>
+            <th>{% trans "cust" %}Customer</th>
         </tr>
         {% for ord in orders %}
         <tr>
@@ -29,7 +29,7 @@
     {%endif%}
     {% if orders|length == 0 %}
     <p>
-        no elements found
+        {% trans "nores" %}
     </p>
     {% endif %}
 </div>

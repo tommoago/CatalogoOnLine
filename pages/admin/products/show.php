@@ -26,6 +26,11 @@ try {
     $imm = $stmt3->fetch();
     $product['image'] = $imm['path'];
     
+    $stmt4 = $DBH->prepare('SELECT * FROM suppliers WHERE id = :id');
+    $stmt4->execute(array('id' => $product['suppliers_id']));
+    $sup = $stmt4->fetch();
+    $product['supplier'] = $sup['name'];
+    
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
