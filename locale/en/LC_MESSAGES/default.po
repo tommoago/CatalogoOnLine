@@ -248,6 +248,9 @@ msgstr "Your cart is empty."
 msgid "add.cart"
 msgstr "Add to cart"
 
+msgid "print"
+msgstr "Print order"
+
 msgid "text"
 msgstr "Text"
 
