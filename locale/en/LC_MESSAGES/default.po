@@ -251,6 +251,9 @@ msgstr "Add to cart"
 msgid "print"
 msgstr "Print order"
 
+msgid "pdf"
+msgstr "PDF"
+
 msgid "text"
 msgstr "Text"
 
