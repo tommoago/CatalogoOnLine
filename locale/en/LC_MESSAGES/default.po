@@ -277,3 +277,6 @@ msgstr "Show"
 
 msgid "upd"
 msgstr "Update"
+
+msgid "by"
+msgstr "By"

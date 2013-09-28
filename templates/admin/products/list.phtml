@@ -5,7 +5,7 @@
     <table class="tablelist">
         <tr>
             <th>{% trans "name" %}</th>
-            <th>{% trans "descr" %}</th>
+<!--             <th>{% trans "descr" %}</th> -->
             <th>{% trans "new" %}</th>
             <th>{% trans "ofr" %}</th>
             <th>{% trans "hlg" %}</th>
@@ -24,7 +24,7 @@
         {% for prod in prods %}
         <tr>
             <td><a href='show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
-            <td>{{ prod.description }}</td>
+<!--             <td>{{ prod.description }}</td> -->
             <td>{{ prod.new }}</td>
             <td>{{ prod.offer }}</td>
             <td>{{ prod.evidence }}</td>

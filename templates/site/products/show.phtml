@@ -12,14 +12,23 @@
             {% endif %}
 
 
-            <p style="margin: 5px">
-                {% trans "cod" %}:  {{ prod.cod }}<br>    
-                {% trans "sng" %} {% trans "qty" %}:  {{ prod.single_qty }}   <br> 
-                {% trans "pck" %} {% trans "qty" %}:  {{ prod.pack_qty }} <br>   
-                {% trans "cdb" %} {% trans "qty" %}: {{ prod.cardboard_qty }}  <br>  
-                {% trans "cat" %}:  {{ prod.category }}   <br> 
-                {% trans "sup" %}:  {{ prod.supplier }}<br>
-            </p>
+            <ul>
+                <li class="main_li">
+                	{% trans "cod" %}:  #<b>{{ prod.cod }}</b>
+                </li>  
+                <li class="main_li">
+                	{% trans "qty" %}:
+                		<li class="under_li">
+                			{% trans "sng" %}: <b>{{ prod.single_qty }}</b>
+                		</li>
+                		<li class="under_li">
+                		     {% trans "pck" %}:  <b>{{ prod.pack_qty }}</b>
+                		</li>
+                		<li class="under_li">
+                			{% trans "cdb" %}: <b>{{ prod.cardboard_qty }}</b>
+                		</li>
+                </li>
+            </ul>
             <br>
             <h5>
                 {% if prod.price == prod.super_price and prod.price != prod.retail_price %}
@@ -34,6 +43,8 @@
         </div>
         <div class="detail_product">
             <h1>{{ prod.name }}</h1>
+            <h6>{% trans "by" %} <i><b>{{ prod.supplier }}</b></i></h6>
+            <h7>{% trans "cat" %}:  <b>{{ prod.category }}</b></h7>
             <div class="show_img"><img class="show_img" src="../../{{ prod.image }}"></div>
             <h2>{{ prod.description }}</h2>
         </div>
