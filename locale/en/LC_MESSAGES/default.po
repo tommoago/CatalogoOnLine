@@ -124,7 +124,7 @@ msgstr "Surname"
 msgid "usr"
 msgstr "Username"
 
-msgid "psw"
+msgid "pwd"
 msgstr "Password"
 
 msgid "mail"
