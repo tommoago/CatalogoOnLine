@@ -21,18 +21,22 @@
         <tr>
             <td><a href='show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
             <td>{{ prod.description }}</td>
-            {% if prod.new == 1 %}
-                <td>Yes</td>
-            {% endif %}
-            {% if prod.new == 0 %}
-                <td></td>
-            {% endif %}
-            {% if prod.offer == 1 %}
-                <td>Yes</td>
-            {% endif %}
-            {% if prod.offer == 0 %}
-                <td>x</td>
-            {% endif %}
+            <td>
+<!--             {{ prod.new }} -->
+            	{% if prod.new == 1 %}
+           	<p style="color:#008000;text-align:center">&#x2713;</p>  
+        	     {% endif %}
+       	     {% if prod.new == 0 %}
+      	    	<p style="color:#D40303;text-align:center">&#x2717;</p>  
+            	{% endif %}</td>
+            <td>
+<!--             {{ prod.offer }} -->
+           	{% if prod.offer == 1 %}
+           	<p style="color:#008000;text-align:center">&#x2713;</p>  
+        	     {% endif %}
+       	     {% if prod.offer == 0 %}
+      	    	<p style="color:#D40303;text-align:center">&#x2717;</p>  
+            	{% endif %}</td>
             <td>{{ prod.price }}</td>
             <td>{{ prod.cod }}</td>
             <td>{{ prod.barcode }}</td>

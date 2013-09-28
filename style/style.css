@@ -132,7 +132,7 @@ h2{
 }
 #topmenu_logout {
     float: right;
-    padding-top: 130px;
+    padding-top: 139px;
 }
 #topmenu_logout_adm {
     float: right;
@@ -720,7 +720,8 @@ th {
     color: black;
     width: 50%;
     float:left;
-    font-weight: 100
+    font-weight: 100;
+    margin-top: 10px
 }
 .show_product h3{
     font-size: 30px;
@@ -779,6 +780,10 @@ th {
     -moz-border-radius: 3px;   
     -webkit-border-radius: 3px;
     box-shadow: 2px 3px 8px #726F62
+}
+.new_t{
+    width: 10px;
+    height: auto;
 }
 .invio {
 	margin-top: 15px;

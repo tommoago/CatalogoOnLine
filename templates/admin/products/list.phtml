@@ -25,9 +25,30 @@
         <tr>
             <td><a href='show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
 <!--             <td>{{ prod.description }}</td> -->
-            <td>{{ prod.new }}</td>
-            <td>{{ prod.offer }}</td>
-            <td>{{ prod.evidence }}</td>
+            <td>
+<!--             {{ prod.new }} -->
+            	{% if prod.new == 1 %}
+           	<p style="color:#008000">&#x2713;</p>  
+        	     {% endif %}
+       	     {% if prod.new == 0 %}
+      	    	<p style="color:#D40303">&#x2717;</p>  
+            	{% endif %}</td>
+            <td>
+<!--             {{ prod.offer }} -->
+           	{% if prod.offer == 1 %}
+           	<p style="color:#008000">&#x2713;</p>  
+        	     {% endif %}
+       	     {% if prod.offer == 0 %}
+      	    	<p style="color:#D40303">&#x2717;</p>  
+            	{% endif %}</td>
+            <td>
+<!--             {{ prod.evidence }} -->
+            	{% if prod.evidence == 1 %}
+           	<p style="color:#008000">&#x2713;</p>  
+        	     {% endif %}
+       	     {% if prod.evidence == 0 %}
+      	    	<p style="color:#D40303">&#x2717;</p>  
+            	{% endif %}</td>
             <td>{{ prod.wholesalfe_price }}</td>
             <td>{{ prod.retaoil_price }}</td>
             <td>{{ prod.super_price }}</td>
