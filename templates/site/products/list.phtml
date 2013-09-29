@@ -10,6 +10,12 @@
 				<h1>{{ prod.name }}</h1>
 				<h2>{{ prod.price }}</h2>
 			</a>
+			{% if prod.new == 1 %}
+			<p class="new_badge">{% trans "new" %}<p>
+            	{% endif %}
+            	{% if prod.offer == 1 %}
+			<p class="offer_badge">{% trans "ofr" %}<p>
+            	{% endif %}
 <!-- 			<img src="../../{{ prod.image }}"> -->
 			</div>
 		</li>

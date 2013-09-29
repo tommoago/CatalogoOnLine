@@ -821,22 +821,64 @@ th {
 .list_products li{
     width: 150px;
     display: inline-block;
-    border: 1px solid black;
+    border: 2px solid #ADA895;
+    background: #D3CEBB;
     height: 200px;
     float: left;
-    margin: 2px;
+    margin: 8px;
     z-index: 100;
     background-size: auto 200px;
     background-repeat:no-repeat;
     background-position:center; 
+    	overflow: hidden;
+    	    border-radius: 5px;   
+    -moz-border-radius: 5px;   
+    -webkit-border-radius: 5px;
+}
+.list_products_inner p.new_badge {
+	color: white;
+	background: rgba(255, 0, 0, 0.75);
+    padding-right: 15px;    
+    padding-left: 30px;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -moz-transform: rotate(40deg);
+  -webkit-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  -o-transform: rotate(40deg);
+  filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476);
+  position: relative;
+  right: -76px;
+  top:-173px;
+    border-bottom: 1px dotted #8E6E2F;
+  border-top: 1px dotted #8E6E2F;
+  font-weight: 100
+}
+.list_products_inner p.offer_badge {
+	color: white;
+	background: rgba(0, 128, 0, 0.76);
+    padding-right: 15px;    
+    padding-left: 60px;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -moz-transform: rotate(40deg);
+  -webkit-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  -o-transform: rotate(40deg);
+  filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476);
+  position: relative;
+  right: -40px;
+  top:-200px;
+    border-bottom: 1px dotted #8E6E2F;
+  border-top: 1px dotted #8E6E2F;
+  font-weight: 100
 }
 .list_products_inner{
-	margin-top: 140px;
-	background:rgba(255, 255, 255, 0.75);
+	margin-top: 158px;
+	background:rgba(243, 241, 233, 0.75);
 }
 .list_products img{
     max-height: 200px;
-	z-index:1
+	z-index:1;
+	overflow: hidden
 }
 .list_products a{
     color: red;
@@ -845,16 +887,21 @@ th {
     font-weight: bold;
 }
 .list_products h1{
-    color: red;
-    font-size: 25px;
+    color: #54503F;
+    font-size: 17px;
     text-decoration: none;
     font-weight: bold;
     z-index:1000;
     text-align:center;
+    padding:2px;
+    overflow:hidden; 
+	white-space:nowrap; 
+	text-overflow:ellipsis; 
+	width:150px; 
 }
 .list_products h2{
-    color: blue;
-    font-size: 20px;
+    color: #D40303;
+    font-size: 16px;
     text-decoration: none;
     font-weight: bold;
     z-index:1000;
