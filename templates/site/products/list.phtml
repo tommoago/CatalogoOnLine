@@ -1,19 +1,22 @@
 {% include 'header.phtml' %}
 {% include 'menu.phtml' %}
 <div id='content'>
-	<ul class="list_products">
+	<div class="list_products">
+	<ul>
 	     {% for prod in prods %}
-		<li>
+		<li style="background-image:url('../../{{ prod.image }}')">
+			<div class="list_products_inner">
 			<a href='show.php?id={{ prod.id }}'>
-				<img src="{{ prod.image }}">
 				<h1>{{ prod.name }}</h1>
 				<h2>{{ prod.price }}</h2>
 			</a>
+<!-- 			<img src="../../{{ prod.image }}"> -->
+			</div>
 		</li>
 	     {% endfor %}
 
 	</ul>
-
+	</div>
 
 <!-- 
     {% if prods|length > 0 %}
