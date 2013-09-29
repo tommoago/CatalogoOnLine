@@ -480,7 +480,7 @@ th {
 .delete img, .edit img, .delete_admin img, .edit_admin img, .view_img img, .add_img img, .cart img, .remove_cart img{
     width: auto;
     height: 14px;
-    padding-right:5px
+    padding-right:4px
 
 }
 
@@ -495,14 +495,30 @@ th {
     float: left;
     list-style: none
 }
-.total:active{
+.total a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold
+}
+.print {
+    margin-top: 25px;
+    background-color: #d3cebb;
+    padding: 10px 10px 5px 10px;
+    border: 1px solid #8B887B;
+    border-radius: 3px 0px 0px 3px;   
+    -moz-border-radius: 3px 0px 0px 3px;   
+    -webkit-border-radius: 3px 0px 0px 3px;   
+    float: left;
+    list-style: none
+}
+.print:active{
     background-color: #B4B0A0;
     border-bottom: 0px solid #8B887B;
     border-top: 2px solid #8B887B;
     border-left: 1px solid #8B887B;
     border-right: 1px solid #8B887B;
 }
-.total a {
+.print a {
     color: #000;
     text-decoration: none;
     font-weight: bold
@@ -625,7 +641,7 @@ th {
     font-weight: bold;
 }
 
-.total img, .pdf img, .empty_cart img, .add_cart img, .checkout img, .confirm img{
+.total img, .pdf img, .empty_cart img, .add_cart img, .checkout img, .confirm img, .print img{
     width: auto;
     height: 30px;
     float: left;
