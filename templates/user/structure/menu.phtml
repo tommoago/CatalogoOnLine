@@ -5,13 +5,13 @@
     {% endif %}
     <h2>Categorie</h2>
     <ul id="list">
-        <li class="color">
+        <li class="colour">
             <a href="{{ pathM }}profile/show.php?id={{ pSession.user.id }}">{% trans "sho" %} {% trans "pro" %}</a>
         </li>
         <li>
             <a href="{{ pathM }}profile/prepareUpdate.php?id={{ pSession.user.id }}">{% trans "upd" %} {% trans "pro" %}</a>
         </li>
-        <li class="color">
+        <li class="colour">
             <a href="{{ pathM }}orders/list.php">{% trans "sho" %} {% trans "ords" %}</a>
         </li>
     </ul>
