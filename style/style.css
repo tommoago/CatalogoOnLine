@@ -818,6 +818,35 @@ th {
     -webkit-border-radius: 3px;
     box-shadow: 2px 3px 8px #726F62
 }
+ul.list_products li{
+    width: 150px;
+    display: inline-block;
+    border: 1px solid black;
+    height: 200px;
+    float: left;
+    margin: 2px
+}
+ul.list_products img{
+    float: none
+}
+ul.list_products a{
+    color: red;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+ul.list_products h1{
+    color: red;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+ul.list_products h2{
+    color: blue;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
 .new_t{
     width: 10px;
     height: auto;

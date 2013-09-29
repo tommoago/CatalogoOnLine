@@ -1,7 +1,21 @@
 {% include 'header.phtml' %}
 {% include 'menu.phtml' %}
 <div id='content'>
+	<ul class="list_products">
+	     {% for prod in prods %}
+		<li>
+			<a href='show.php?id={{ prod.id }}'>
+				<img src="{{ prod.image }}">
+				<h1>{{ prod.name }}</h1>
+				<h2>{{ prod.price }}</h2>
+			</a>
+		</li>
+	     {% endfor %}
 
+	</ul>
+
+
+<!-- 
     {% if prods|length > 0 %}
     <table class="tablelist">
         <tr>
@@ -22,7 +36,7 @@
             <td><a href='show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
             <td>{{ prod.description }}</td>
             <td>
-<!--             {{ prod.new }} -->
+<!~~             {{ prod.new }} ~~>
             	{% if prod.new == 1 %}
            	<p style="color:#008000;text-align:center">&#x2713;</p>  
         	     {% endif %}
@@ -30,7 +44,7 @@
       	    	<p style="color:#D40303;text-align:center">&#x2717;</p>  
             	{% endif %}</td>
             <td>
-<!--             {{ prod.offer }} -->
+<!~~             {{ prod.offer }} ~~>
            	{% if prod.offer == 1 %}
            	<p style="color:#008000;text-align:center">&#x2713;</p>  
         	     {% endif %}
@@ -55,7 +69,8 @@
     <p>
         {% trans "nores" %}
     </p>
-    {% endif %}
+    {% endif %} -->
 </div>
+
 
 {% include 'footer.phtml' %}
