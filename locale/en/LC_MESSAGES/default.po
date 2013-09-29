@@ -286,3 +286,19 @@ msgstr "Update"
 
 msgid "by"
 msgstr "By"
+
+# classe imgUploader
+msgid "fperm"
+msgstr "Sorry, you must CHMOD your upload target to 777"
+
+msgid "ftype"
+msgstr "Sorry, you can not upload this filetype"
+
+msgid "fbig"
+msgstr "Sorry, the file you have attempted to upload is too large"
+
+msgid "fpresent"
+msgstr "Sorry, this file already exists on our servers"
+
+msgid "fboh"
+msgstr "Sorry, your file could not be uploaded for some unknown reason"

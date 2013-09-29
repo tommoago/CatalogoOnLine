@@ -27,7 +27,7 @@ class dataBase {
 
         try {
             $DBH = new PDO('mysql:host='.$conf['host'].';dbname='.$conf['dbname'], $conf['user'], $conf['pass']);
-//            per loggale errori
+            //per loggale errori
             $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $DBH;
         } catch (PDOException $e) {

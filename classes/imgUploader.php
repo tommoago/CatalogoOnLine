@@ -13,19 +13,19 @@ class imgUploader {
         $this->fileName = $filename;
         $this->tmpName = $tmpName;
         if (!$this->isWritable()) {
-             $message = 'Sorry, you must CHMOD your upload target to 777!';
+            $message = gettext('fperm');
         }
         if (!$this->checkExt()) {
-            $message = 'Sorry, you can not upload this filetype!';
+            $message = gettext('ftype');
         }
         if (!$this->checkSize()) {
-            $message = 'Sorry, the file you have attempted to upload is too large!';
+            $message = gettext('fbig');
         }
         if ($this->fileExists()) {
-            $message = 'Sorry, this file already exists on our servers!';
+            $message = gettext('fpresent');
         }
         if (!$this->uploadIt()) {
-            $message = 'Sorry, your file could not be uploaded for some unknown reason!';
+            $message = gettext('fboh');
         } 
         
         return $message;

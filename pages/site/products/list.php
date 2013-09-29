@@ -1,11 +1,12 @@
 <?php
+
 include '../../../conf/config.php';
 include '../../../conf/twig.php';
 
 $template = $twig->loadTemplate('site/products/list.phtml');
 
 $result = array();
-isset($_GET['offset'])? $offset = $_GET['offset']: $offset =0 ;
+isset($_GET['offset']) ? $offset = $_GET['offset'] : $offset = 0;
 $limit = 20;
 $numPages = 0;
 
@@ -35,8 +36,13 @@ try {
         $stmt->execute(array('id' => $row['categories_id']));
         $cat = $stmt->fetch();
         $row['category'] = $cat['name'];
-        
-        $row['description'] = substr($row['description'], 0, 150) .'...';
+
+        $row['description'] = substr($row['description'], 0, 150) . '...';
+
+        $stmt4 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
+        $stmt4->execute(array('id' => $row['id']));
+        $imm = $stmt4->fetch();
+        $row['image'] = $imm['path'];
 
         //mette il prezzo giusto
         $row['price'] = $row['retail_price'];
