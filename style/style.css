@@ -264,15 +264,36 @@ h2{
 #list a:visited {
     text-decoration: none
 }
-#list a:hover {
-    text-decoration: underline
-}
+
 #list li {
     width: 165px;
     padding: 0 0 0 10px;
 }
-.color {
-    background-color: #e1dcc8
+.colour{
+    background-color: #e1dcc8;
+    text-decoration: none;
+    cursor:s-resize
+}
+.colour:hover{
+    background-color: #e1dcc8;
+}
+.colour img{
+    height: 12px;
+    width: auto;
+    margin-top: 4px;
+    margin-right: 4px;
+    margin-left: -6px;
+    float: left
+}
+.un_colour {
+    background-color: #F3F1E9;
+    list-style: disc;
+    list-style-position:inside;
+    color: #54503F
+}
+
+.un_colour:hover {
+    background-color: #EEE9D7;
 }
 .text{
     color: #54503f;
