@@ -399,6 +399,10 @@ input[type=submit] {
     width: 75px;
     height: 30px;
 }
+input[type=button] {
+    width: 75px;
+    height: 30px;
+}
 #accordion {
     width: 175px;
     float: left;
