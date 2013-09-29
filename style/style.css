@@ -454,7 +454,7 @@ th {
         /*  letter-spacing: -1px; */
 }
 .td_qty {
-	min-width: 110px
+    min-width: 110px
 }
 .delete, .delete_admin, .add_img {
     color: transparent;
@@ -574,7 +574,7 @@ th {
     font-weight: bold
 
 }
- */
+*/
 .checkout {
     margin-top: 25px;
     background-color: #ACCCA8;
@@ -653,10 +653,10 @@ th {
     margin-top: -6px
 }
 .back {
-   display: block;
-   clear: left;
-   margin: 85px 0px 0px 0px;
-   width: 45px;
+    display: block;
+    clear: left;
+    margin: 85px 0px 0px 0px;
+    width: 45px;
 }
 .back img {
     height: auto;
@@ -703,17 +703,17 @@ th {
     color: black;
 }
 .privacy {
-	overflow: scroll;
-	width: 400px;
-	height: 75px;
-     font-size: 10px;
-     margin: 10px 0px 10px 0px;;
-     padding: 3px;
-     border: 1px solid #aaa;
-     background: #fff;
-	box-shadow: inset 1px 1px 5px #ccc;
-	-moz-box-shadow: inset 1px 1px 5px #ccc;
-	-webkit-box-shadow: inset 1px 1px 5px #ccc;
+    overflow: scroll;
+    width: 400px;
+    height: 75px;
+    font-size: 10px;
+    margin: 10px 0px 10px 0px;;
+    padding: 3px;
+    border: 1px solid #aaa;
+    background: #fff;
+    box-shadow: inset 1px 1px 5px #ccc;
+    -moz-box-shadow: inset 1px 1px 5px #ccc;
+    -webkit-box-shadow: inset 1px 1px 5px #ccc;
 }
 
 .sum_product{
@@ -729,8 +729,8 @@ th {
     margin-right: 0px;
     margin-top: 50px;
     box-shadow: 1px 2px 8px #726F62;
-	-moz-box-shadow: 1px 2px 8px #726F62;
-	-webkit-box-shadow: 1px 2px 8px #726F62;
+    -moz-box-shadow: 1px 2px 8px #726F62;
+    -webkit-box-shadow: 1px 2px 8px #726F62;
 }
 .sum_product .main_li{
     margin-left: 10px;
@@ -848,55 +848,55 @@ th {
     background-size: auto 200px;
     background-repeat:no-repeat;
     background-position:center; 
-    	overflow: hidden;
-    	    border-radius: 5px;   
+    overflow: hidden;
+    border-radius: 5px;   
     -moz-border-radius: 5px;   
     -webkit-border-radius: 5px;
 }
 .list_products_inner p.new_badge {
-	color: white;
-	background: rgba(255, 0, 0, 0.75);
+    color: white;
+    background: rgba(255, 0, 0, 0.75);
     padding-right: 15px;    
     padding-left: 30px;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-  -moz-transform: rotate(40deg);
-  -webkit-transform: rotate(40deg);
-  -ms-transform: rotate(40deg);
-  -o-transform: rotate(40deg);
-  filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476);
-  position: relative;
-  right: -76px;
-  top:-173px;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    -moz-transform: rotate(40deg);
+    -webkit-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476);
+    position: relative;
+    right: -76px;
+    top:-173px;
     border-bottom: 1px dotted #8E6E2F;
-  border-top: 1px dotted #8E6E2F;
-  font-weight: 100
+    border-top: 1px dotted #8E6E2F;
+    font-weight: 100
 }
 .list_products_inner p.offer_badge {
-	color: white;
-	background: rgba(0, 128, 0, 0.76);
+    color: white;
+    background: rgba(0, 128, 0, 0.76);
     padding-right: 15px;    
     padding-left: 60px;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-  -moz-transform: rotate(40deg);
-  -webkit-transform: rotate(40deg);
-  -ms-transform: rotate(40deg);
-  -o-transform: rotate(40deg);
-  filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476);
-  position: relative;
-  right: -40px;
-  top:-200px;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    -moz-transform: rotate(40deg);
+    -webkit-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476);
+    position: relative;
+    right: -40px;
+    top:-200px;
     border-bottom: 1px dotted #8E6E2F;
-  border-top: 1px dotted #8E6E2F;
-  font-weight: 100
+    border-top: 1px dotted #8E6E2F;
+    font-weight: 100
 }
 .list_products_inner{
-	margin-top: 158px;
-	background:rgba(243, 241, 233, 0.75);
+    margin-top: 158px;
+    background:rgba(243, 241, 233, 0.75);
 }
 .list_products img{
     max-height: 200px;
-	z-index:1;
-	overflow: hidden
+    z-index:1;
+    overflow: hidden
 }
 .list_products a{
     color: red;
@@ -913,9 +913,9 @@ th {
     text-align:center;
     padding:2px;
     overflow:hidden; 
-	white-space:nowrap; 
-	text-overflow:ellipsis; 
-	width:150px; 
+    white-space:nowrap; 
+    text-overflow:ellipsis; 
+    width:150px; 
 }
 .list_products h2{
     color: #D40303;
@@ -930,7 +930,7 @@ th {
     height: auto;
 }
 .invio {
-	margin-top: 15px;
+    margin-top: 15px;
     background-color: #d3cebb;
     border: 1px solid #8B887B;
     border-radius: 5px;   
@@ -948,7 +948,7 @@ th {
     border-right: 1px solid #8B887B;
 }
 .sign-in {
-	margin-top: 15px;
+    margin-top: 15px;
     background-color: #d3cebb;
     border: 1px solid #8B887B;
     border-radius: 5px 0px 0px 5px;   
@@ -967,7 +967,7 @@ th {
     border-right: 1px solid #8B887B;
 }
 .sign-up {
-	margin-top: 15px;
+    margin-top: 15px;
     background-color: #d3cebb;
     border-bottom: 1px solid #8B887B;
     border-top: 1px solid #8B887B;
@@ -989,19 +989,19 @@ th {
     border-right: 1px solid #8B887B;
 }
 .sign {
-	margin-top: 10px;	
-	margin-bottom: 10px;
-     display: block;
-     width: 145px;
-     font-size: 14px
+    margin-top: 10px;	
+    margin-bottom: 10px;
+    display: block;
+    width: 145px;
+    font-size: 14px
 
 }
 .sign_text {
     margin-top: 10px;	
-	margin-bottom: 10px;
-     display: block;
-     width: 145px;
-     font-size: 13px
+    margin-bottom: 10px;
+    display: block;
+    width: 145px;
+    font-size: 13px
 
-    
+
 }

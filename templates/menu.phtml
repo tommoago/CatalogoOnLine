@@ -1,57 +1,87 @@
 {% set path = '' %}
 {% if index == '' %}
-    {% set path = '../../' %}
+{% set path = '../../' %}
 {% endif %}
+<script type="text/javascript" src="{{ path }}../scripts/jquery.navgoco.js"></script>
+<link rel="stylesheet" href="{{ path }}../style/jquery.navgoco.css" type="text/css" media="screen" />
 <script type="text/javascript">
+//    link per cats '{{ path }}site/products/list.php?id_cat=' + id
     $.post("{{ path }}menu.php",
             function(data) {
-                if (data.length == 0) {
-                    $('#accordion').append("<p>No result found.</p>");
+                if (data.length === 0) {
+                    $('#demo2').append("<p>No result found.</p>");
                 } else {
-                    var h3, div, a;
+                    var ul, li, a;
                     for (var i = 0; i < data.length; i++) {
                         var id = data[i]['id'];
-                        var divInn;
-                        h3 = document.createElement('h3');
                         a = document.createElement('a');
-                        a.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id);
+                        li = document.createElement('li');
+                        a.setAttribute('href', '#');
                         a.appendChild(document.createTextNode(data[i]['name']));
-                        h3.appendChild(a);
-                        div = document.createElement('div');
-                        divInn = document.createElement('div');
-                        divInn.setAttribute('id', 'accordion' + id);
-                        div.appendChild(divInn);
-                        $('#accordion').append(h3);
-//                        $('#accordion').append(a);
-                        $('#accordion').append(div);
-                        var h3Inn, divU, aInn;
+
+                        li.appendChild(a);
+                        $('#demo2').append(li);
+                        var liInn, aInn;
+                        ul = document.createElement('ul');
                         for (var j = 0; j < data[i]['category'].length; j++) {
                             var cat = data[i]['category'][j];
                             var idInn = cat['id'];
-                            h3Inn = document.createElement('h3');
+
                             aInn = document.createElement('a');
-                            aInn.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + idInn);
+                            liInn = document.createElement('li');
+                            aInn.setAttribute('href', '#');
                             aInn.appendChild(document.createTextNode(cat['name']));
-                            h3Inn.appendChild(aInn);
-                            divU = document.createElement('div');
-                            div.appendChild(divInn);
-                            divInn.appendChild(h3Inn);
-                            divInn.appendChild(divU);
+
+                            liInn.appendChild(aInn);
+
+                            ul.appendChild(liInn);
                         }
-
-                        $('#' + divInn.id).accordion({ 
-                                                    active: false,
-                                                    collapsible: true,
-                                                    heightStyle: "content",
-                                                    event: "mouseover"});
+                        li.appendChild(ul);
                     }
+                    $("#demo2").navgoco({accordion: true});
                 }
-                $('#accordion').accordion({animate: 700, active: false,
-                                        collapsible: true,
-                                        heightStyle: "content",
-                                        event: "mouseover"});
-
             }, "json");
 
+//    $(document).ready(function() {
+//        $("#demo2").navgoco({accordion: true});
+//    });
 </script>
+<ul id="demo2" class="nav">
+    <li><a href="#">News and Events</a>
+        <ul>
+            <li><a href="#">Hot News</a></li>
+            <li><a href="#">RSS Feeds</a></li>
+        </ul>
+    </li>
+    <li><a href="#">About</a>
+        <ul>
+            <li><a href="#">Environment</a></li>
+            <li><a href="#">Contact Us</a>
+                <ul>
+                    <li><a href="#">Support and Service</a></li>
+                    <li><a href="#">Website Feedback</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Working with Peach</a>
+                <ul>
+                    <li><a href="#">Procurement</a></li>
+                    <li><a href="#">Supplier Responsibility</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#">Where to Buy</a>
+        <ul>
+            <li><a href="#">Where can I buy Peach products?</a></li>
+            <li><a href="#">Peach Online Store</a></li>
+            <li><a href="#">Peach Store for Business</a></li>
+            <li><a href="#">Peach Store for Education</a></li>
+            <li><a href="#">Peach Online Store Country Selector</a></li>
+            <li><a href="#">Peach Retail</a></li>
+            <li><a href="#">Find a Reseller</a></li>
+            <li><a href="#">Peach Financial Services</a></li>
+            <li><a href="#">Peach Rebates</a></li>
+        </ul>
+    </li>
+</ul>
 <div id='accordion'></div>
