@@ -1,13 +1,16 @@
 {% include 'admin/structure/header.phtml' %}
 {% include 'admin/structure/menu.phtml' %}
 <div id='content'>
-     <h1 class="show_adm">{{ prod.name }}</h1>
-        {% if prod.image != '' %}
-	<img class="admin_show" src="../../{{ prod.image }}">
-        {% endif %}
+     <div class="show_adm">
+	     <h1 class="show_adm">{{ prod.name }}</h1>
+     	{% if prod.image != '' %}
+			<img src="../../{{ prod.image }}">
+	     {% endif %}
+	     <p><b>{% trans "descr" %}:</b></p>
+	     <p>{{ prod.description }}</p>
+     </div>
 	<table class="tablelist">
 		<tr>
-			<th>{% trans "descr" %}</th>
 			<th>{% trans "new" %}</th>
 			<th>{% trans "ofr" %}</th>
 			<th>{% trans "hlg" %}</th>
@@ -24,7 +27,6 @@
                         <th>{% trans "sup" %}</th>
 		</tr>
 		<tr>
-			<td>{{ prod.description }}</td>
 			<td>
 <!--             {{ prod.new }} -->
             	{% if prod.new == 1 %}

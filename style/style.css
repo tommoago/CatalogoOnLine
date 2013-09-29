@@ -711,11 +711,7 @@ th {
 	-moz-box-shadow: inset 1px 1px 5px #ccc;
 	-webkit-box-shadow: inset 1px 1px 5px #ccc;
 }
-.admin_show {
-    height: 350px;
-    width: auto;
-    margin-bottom: 20px
-}
+
 .sum_product{
     float:right;
     height: auto;
@@ -744,9 +740,25 @@ th {
     list-style: disc;
     font-size:14px
 }
-.show_adm {
+.show_adm p {
+    font-size: 15px;
+    color: black;
+    margin-bottom: 10px 
+}
+.show_adm h1 {
     font-size: 26px;
-    color: #54503F
+    color: #54503F;
+    margin-bottom: 10px 
+}
+.show_adm img {
+    height: 350px;
+    width: auto;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    float: left;
+    border-radius: 3px;   
+    -moz-border-radius: 3px;   
+    -webkit-border-radius: 3px;
 }
 .show_product h1{
     font-size: 26px;
