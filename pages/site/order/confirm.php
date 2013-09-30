@@ -5,7 +5,7 @@ include '../../../conf/config.php';
 $message = '';
 print_r($_SESSION['user']);
 if(!isset($_SESSION['user']['type'])){
-    $message = 'You must have an account to complete your order!';
+    $message = gettext('ord.must.usr');
     header('location:../../user/login.php?order=yes&message='.$message);
     exit();
 }
@@ -33,7 +33,7 @@ try {
     
     $cart->emptyCart();
     
-    $message = 'Your order has been processed, you will be recontacted from an operator.';
+    $message = gettext('ord.conf.usr');
     header('location:../../user/orders/list.php?message='.$message);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();

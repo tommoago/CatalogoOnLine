@@ -3,7 +3,7 @@ include '../../../conf/config.php';
 include '../../../classes/Session.php';
 $session = new Session();
 if(!$session->check_role('jack')){
-   header('location:../index.php?message= Unauthorized access.'. gettext('unauth')); 
+   header('location:../index.php?message='. gettext('unauth')); 
 }
 
 $name = $_POST['name'];

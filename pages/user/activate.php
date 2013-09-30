@@ -11,7 +11,7 @@ try {
 
     $STH = $DBH->prepare('UPDATE customers SET  active = :active WHERE id = :id');
     $STH->execute($data);
-    header('location:login.php?message=activation successful');
+    header('location:login.php?message='.gettext('act.succ'));
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }

@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Description of Mailer
- *
- * @author ozntone
- */
 class Mailer {
 
     function send($to, $from, $subject, $body) {

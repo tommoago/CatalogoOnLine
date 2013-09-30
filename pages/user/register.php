@@ -75,15 +75,14 @@ try {
     for ($i = 0; $i < sizeof($splitted) - 1; $i++)
         $relativeDir .= $splitted[$i] . '/';
 
-    $link = $relativeDir . "activate.php?id=" . $DBH->lastInsertId();
+    $link = $relativeDir . 'activate.php?id=' . $DBH->lastInsertId();
     $mailer = new Mailer();
-    $mailer->send($email, "", "Register confirmation", "This mail is automatically sent to confirm your sign up,
-                                                        please click the link below to activate your account:\n" . $link);
-    $message = 'registration successful, check your mail for confirmation';
+    $mailer->send($email, '', gettext('reg.conf'), gettext('succ.reg').'\n' . $link);
+    $message = gettext('succ.reg');
     header('location:login.php?message=' . $message);
 } catch (PDOException $e) {
     if($e->getCode() == '23000'){
-        $message = 'Email already present';
+        $message = gettext('duplicate.mail');
         header('location:sign_up.php?message=' . $message);
         exit;
     }else{

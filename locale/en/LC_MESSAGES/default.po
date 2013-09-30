@@ -91,6 +91,9 @@ msgstr "Invalid credentials."
 msgid "del.succ"
 msgstr "Successful deletion."
 
+msgid "act.succ"
+msgstr "Successful activation."
+
 msgid "duplicate.mail"
 msgstr "This e-mail already exist."
 
@@ -113,6 +116,13 @@ msgstr "Cannot delete because of depency with another category."
 #: order
 msgid "ord.mail.body"
 msgstr "This mail is automatically sent to confirm your order with ID:"
+
+msgid "ord.conf.usr"
+msgstr ""
+"Your order has been processed, you will be recontacted from an operator."
+
+msgid "ord.must.usr"
+msgstr "You must have an account to complete your order!"
 
 #: forms generic
 msgid "name"
@@ -272,6 +282,9 @@ msgstr "Repeat"
 msgid "signup"
 msgstr "Sign Up"
 
+msgid "signin"
+msgstr "Sign in"
+
 msgid "cart"
 msgstr "Cart"
 
@@ -302,3 +315,34 @@ msgstr "Sorry, this file already exists on our servers"
 
 msgid "fboh"
 msgstr "Sorry, your file could not be uploaded for some unknown reason"
+
+msgid "itm"
+msgstr "item"
+
+msgid "qst"
+msgstr "Insert your question here."
+
+msgid "msg.sent"
+msgstr "Message sent. You will be contacted as sooon as possible."
+
+msgid "msg.conf"
+msgstr ""
+"This mail is automatically sent to confirm your sign up, please click the "
+"link below to activate your account:"
+
+msgid "succ.reg"
+msgstr "Registration successful, check your mail for confirmation."
+
+msgid "reg.conf"
+msgstr "Register confirmation"
+
+msgid "sbj"
+msgstr "Subject"
+
+msgid "submit"
+msgstr "Submit"
+
+msgid "send"
+msgstr "Send"
+
+

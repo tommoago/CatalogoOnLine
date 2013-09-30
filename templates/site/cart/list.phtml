@@ -23,7 +23,7 @@
                 <form action="update.php" method="post">
                     <input type="hidden" name="id" value="{{ prod.id }}"/>
                     <input type="text" id="qty_add" name="qty_add" value="{{ prod.qty }}"/>
-                    <input type="submit"/>
+                    <input type="submit" value='{% trans "submit" %}'/>
                 </form>
             </td>
             <td class="remove_cart"><a href='remove.php?id={{ prod.id }}'><img src="../../../images/icons/cart/return/return-256.png" alt="Remove"></a></td>

@@ -21,7 +21,7 @@ try {
         }
         header('location:index.php');
     } else {
-        $message = 'Invalid credentials';
+        $message = gettext('invalid.cred');;
         header('location:login.php?message=' . $message);
     }
 } catch (PDOException $e) {

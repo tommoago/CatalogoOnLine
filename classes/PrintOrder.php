@@ -102,10 +102,10 @@ class PrintOrder {
         $pdf->Cell('100%', 6, $company['name'], 0);
         $pdf->SetY(15 + $this->row_height);
         $pdf->SetX(150);
-        $pdf->Cell('100%', 6, 'Tel.: ' . $company['telephone'], 0);
+        $pdf->Cell('100%', 6, gettext('tel').': ' . $company['telephone'], 0);
         $pdf->SetY(15 + ($this->row_height * 2));
         $pdf->SetX(150);
-        $pdf->Cell('100%', 6, 'P.IVA: ' . $company['piva'], 0);
+        $pdf->Cell('100%', 6, gettext('piva').': '  . $company['piva'], 0);
         $pdf->SetY(15 + ($this->row_height * 3));
         $pdf->SetX(150);
         $pdf->Cell('100%', 6, $company['address'], 0);
@@ -117,11 +117,11 @@ class PrintOrder {
         $pdf->SetY(46 + $this->row_height);
         $pdf->SetX(10);
         if ($this->customer['piva'] != '') {
-            $pdf->Cell('100%', 6, 'P. IVA.: ' . $this->customer['piva'], 0);
+            $pdf->Cell('100%', 6, gettext('piva').': ' . $this->customer['piva'], 0);
             $pdf->SetY(46 + $this->row_height * 2);
             $pdf->SetX(10);
         } else {
-            $pdf->Cell('100%', 6, 'Cod. Fiscale: ' . $this->customer['cod_fis'], 0);
+            $pdf->Cell('100%', 6, gettext('codf').': ' . $this->customer['cod_fis'], 0);
             $pdf->SetY(46 + $this->row_height * 3);
             $pdf->SetX(10);
         }
@@ -133,9 +133,9 @@ class PrintOrder {
 
         $pdf->SetY(70);
         $pdf->SetX(10);
-        $pdf->Cell('15%', 6, 'Quantita', 1, 0, 'C');
-        $pdf->Cell('65%', 6, 'Articolo', 1, 0, 'C');
-        $pdf->Cell('20%', 6, 'Prezzo', 1, 0, 'C');
+        $pdf->Cell('15%', 6, gettext('qty'), 1, 0, 'C');
+        $pdf->Cell('65%', 6, gettext('itm'), 1, 0, 'C');
+        $pdf->Cell('20%', 6, gettext('pr'), 1, 0, 'C');
 
         $pdf->SetFont('Arial', 'I', 10);
 
@@ -165,7 +165,7 @@ class PrintOrder {
         $pdf->SetY($i * 6 + 76);
         $pdf->SetX(90);
         $pdf->SetFont('Arial', 'B', 11);
-        $pdf->Cell('25%', 6, 'Totale Ordine: ', 0, 0, 'C');
+        $pdf->Cell('25%', 6, gettext('tot').' '.gettext('ord').': ', 0, 0, 'C');
         $pdf->Cell('25%', 6, $tot, 1, 0, 'C');
 
         //Convert the date.

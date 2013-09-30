@@ -1,17 +1,26 @@
 {% include 'header.phtml' %}
 <div id='content'>
 
-<script type="text/javascript" src="../scripts/jquery.validate.js"></script>
-<script type="text/javascript" src="../scripts/validation/site/form.contact.validation.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.validate.js"></script>
+    <script type="text/javascript" src="../scripts/validation/site/form.contact.validation.js"></script>
     <div class="validation">{{ message }}</div>
     <form action="contact.php" method="post" id="formcontact">
         <div class="contact">
-        	<p>{% trans "mail" %}</p>
-          <input type="text" id="email" name="email"/>
-          <p>{% trans "text" %}:</p>
-            <textarea class="question" id="question" name="question" rows="5" cols="60" onfocus="if(this.value==this.defaultValue)this.value='';">{% trans "question" %}</textarea>
+            <p>{% trans "mail" %}</p>
+            <input type="text" id="email" name="email"/>
+            <p>{% trans "sbj" %}</p>
+            <input type="text" id="sbj" name="sub"/>
+            <p>{% trans "text" %}:</p>
+            <textarea class="question" id="question" name="question" rows="5" cols="60" >{% trans "qst" %}</textarea>
+            <script type="text/javascript">
+                $("#question").focus(function() {
+                    var texta = document.getElementById('question');
+                    if (texta.value === texta.defaultValue)
+                        texta.value = '';
+                });
+            </script>
         </div>
-        <input class="invio" type="submit" value="Send"/>
+        <input class="invio" type="submit" value='{% trans "send" %}'/>
     </form>
 </div>
 {% include 'footer.phtml' %}
