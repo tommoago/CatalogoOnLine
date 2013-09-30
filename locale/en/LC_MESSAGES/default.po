@@ -350,5 +350,3 @@ msgstr "Submit"
 
 msgid "send"
 msgstr "Send"
-
-
