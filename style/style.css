@@ -851,8 +851,8 @@ th {
 .list_products_inner p.new_badge {
     color: white;
     background: rgba(255, 0, 0, 0.75);
-    padding-right: 15px;    
-    padding-left: 30px;
+    padding-right: 50px;    
+    padding-left: 50px;
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     -moz-transform: rotate(40deg);
     -webkit-transform: rotate(40deg);
@@ -860,17 +860,17 @@ th {
     -o-transform: rotate(40deg);
     filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476);
     position: relative;
-    right: -76px;
-    top:-173px;
-    border-bottom: 1px dotted #8E6E2F;
-    border-top: 1px dotted #8E6E2F;
-    font-weight: 100
+    right: -62px;
+    top:-185px;
+    font-weight: 100;
+    font-size: 14px;
+    box-shadow: 1px 2px 5px #3c3c3c
 }
 .list_products_inner p.offer_badge {
     color: white;
     background: rgba(0, 128, 0, 0.76);
     padding-right: 15px;    
-    padding-left: 60px;
+    padding-left: 58px;
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     -moz-transform: rotate(40deg);
     -webkit-transform: rotate(40deg);
@@ -878,11 +878,11 @@ th {
     -o-transform: rotate(40deg);
     filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476);
     position: relative;
-    right: -40px;
-    top:-200px;
-    border-bottom: 1px dotted #8E6E2F;
-    border-top: 1px dotted #8E6E2F;
-    font-weight: 100
+    right: -43px;
+    top:-196px;
+    font-weight: 100;
+    font-size: 14px;
+    box-shadow: 1px 2px 5px #3c3c3c
 }
 .list_products_inner{
     margin-top: 158px;
