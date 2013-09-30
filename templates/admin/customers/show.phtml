@@ -37,8 +37,8 @@
             <td>{{ cus.operator }}</td>
             <td>{{ cus.type }}</td>
             <td>{{ cus.price_range }}</td>
-            <td class="delete"><a href='delete.php?id={{ cus.id }}'><img src="../../../images/icons/delete/delete-256.png" alt="Delete"></a></td>
-            <td class="edit"><a href='prepareUpdate.php?id={{ cus.id }}'><img src="../../../images/icons/edit/edit-256.png" alt="Edit"></a></td>
+            <td class="delete"><a href='delete.php?id={{ cus.id }}'><img src="../../../images/icons/delete/delete-256.png" alt='{% trans "del" %}'></a></td>
+            <td class="edit"><a href='prepareUpdate.php?id={{ cus.id }}'><img src="../../../images/icons/edit/edit-256.png" alt='{% trans "edit" %}'></a></td>
         </tr>
     </table>
 </div>

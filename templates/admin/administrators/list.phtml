@@ -16,9 +16,9 @@
 			<td><a href='show.php?id={{ admin.id }}'>{{ admin.name }}</a></td>
 			<td>{{ admin.user }}</td>
                         {% if admin.role != 'jack' %}
-          	<td class="delete_admin"><a href='delete.php?id={{ admin.id }}'><img src="../../../images/icons/users/remove_user/remove_user-256.png" alt="Delete"></a></td>
+          	<td class="delete_admin"><a href='delete.php?id={{ admin.id }}'><img src="../../../images/icons/users/remove_user/remove_user-256.png" alt='{% trans "del" %}'></a></td>
                         {% endif %}
-			<td class="edit_admin"><a href='prepareUpdate.php?id={{ admin.id }}'><img src="../../../images/icons/users/edit_user/edit_user-256.png" alt="Edit"></a></td>
+			<td class="edit_admin"><a href='prepareUpdate.php?id={{ admin.id }}'><img src="../../../images/icons/users/edit_user/edit_user-256.png" alt='{% trans "edit" %}'></a></td>
 		</tr>
 		{% endfor %}
 	</table>

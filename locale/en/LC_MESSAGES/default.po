@@ -88,6 +88,12 @@ msgid "invalid.cred"
 msgstr "Invalid credentials."
 
 #: generic
+msgid "del"
+msgstr "Delete"
+
+msgid "edit"
+msgstr "Edit"
+
 msgid "del.succ"
 msgstr "Successful deletion."
 
