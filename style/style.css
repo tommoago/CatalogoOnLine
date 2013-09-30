@@ -395,11 +395,7 @@ h2{
     color: red;
     font-size: 14px;
 }
-input[type=submit] {
-    width: 75px;
-    height: 30px;
-}
-input[type=button] {
+input[type=submit], input[type=button] {
     width: 75px;
     height: 30px;
 }
@@ -408,7 +404,6 @@ input[type=button] {
     float: left;
     position: absolute;
     margin: 40px 25px 25px 25px;
-    border: 1px solid #d3cebb;
 }
 .menu-right {
     float: right;

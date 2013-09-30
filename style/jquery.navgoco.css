@@ -1,35 +1,29 @@
 .nav, .nav ul, .nav li {
     list-style: none;
 }
-
 .nav ul {
     padding: 0;
     margin: 0 0 0 18px;
 }
-
 .nav {
     padding: 4px;
     margin: 0px;
 }
-
 .nav > li {
     margin: 4px 0;
-}
-
-.nav > li li {
+}.nav > li li {
     margin: 2px 0;
-}
-
-.nav a {
-    color: #333;
+}.nav a {
+    color: #000;
     display: block;
     outline: none;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
     text-decoration: none;
-}
+    background: white
 
+}
 .nav a .caret {
     float: right;
     width: 0;
@@ -43,39 +37,32 @@
     margin-top: 8px;
     margin-left: 2px;
 }
-
 .nav a:hover .caret {
     border-top-color: #fff;
 }
-
 .nav li.open > a > .caret {
     border-top: none;
     border-bottom: 4px solid #000;
     border-right: 4px solid transparent;
     border-left: 4px solid transparent;
 }
-
 .nav li.open > a:hover > .caret {
     border-bottom-color: #fff;
 }
-
 .nav a:hover, .nav li.active > a {
-    background-color: #5D5D5D;
+    background-color: #ADA895;
     color: #f5f5f5;
 }
-
 .nav > li.active > a  {
-    background-color: #4D90FE;
+    background-color: #ADA895;
 }
-
 .nav li a {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 18px;
     padding: 2px 10px;
 }
-
 .nav > li > a {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 20px;
     padding: 4px 10px;
 }

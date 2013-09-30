@@ -8,17 +8,17 @@
             <th>{% trans "descr" %}</th>
             <th>&#128;</th>
             <th>{% trans "cod" %}</th>
-            <th>{% trans "cat" %}</th>
+<!--             <th>{% trans "cat" %}</th> -->
             <th>{% trans "qty" %}</th>
         </tr>
         {% for prod in prods %}
         <tr>
             <td><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td> <!-- lasciare visualizzazione?? -->
             <td>{{ prod.description }}</td>
-            <td>{{ prod.price }}</td>
-            <td>{{ prod.cod }}</td>
-            <td>{{ prod.category }}</td>
-            <td>{{ prod.qty }}</td>
+            <td><b>{{ prod.price }}</b></td>
+            <td><i>{{ prod.cod }}</i></td>
+<!--             <td>{{ prod.category }}</td> -->
+            <td style="text-align:center">{{ prod.qty }}</td>
         </tr>
         {% endfor %}
     </table>
