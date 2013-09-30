@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: \n"
 "Language-Team: me <lol@lol.lol>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
 
@@ -229,6 +229,9 @@ msgstr "Super"
 
 msgid "cod"
 msgstr "Code"
+
+msgid "bcod"
+msgstr "Barcode"
 
 msgid "sng"
 msgstr "Single"
