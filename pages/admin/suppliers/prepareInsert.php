@@ -1,5 +1,6 @@
 <?php
-require_once '../../../vendor/twig/twig/lib/Twig/Autoloader.php';
+include '../../../conf/config.php';
+include '../../../conf/twig.php';
 include '../../../classes/Session.php';
 $session = new Session();
 
