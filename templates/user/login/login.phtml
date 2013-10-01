@@ -1,7 +1,7 @@
 {% include 'user/structure/header.phtml' %}
 
 <div class="login">
-    <p>{{ message }}</p>
+    <p class="invalid">{{ message }}</p>
     <form method="post" action="authenticate.php">
         <input class="sign" type="hidden" name="order" value="{{ order }}"/>
         <p class="sign">{% trans "mail" %}:</p>

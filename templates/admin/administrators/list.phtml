@@ -2,9 +2,8 @@
 {% include 'admin/structure/menu.phtml' %}
 
 <div id='content'>
-	<p>
-		{{ message }}
-	</p>
+	<p class="detail_adm">{% trans "adms" %}' {% trans "list" %}</p>
+	<p>{{ message }}</p>
 	{% if admins|length > 0 %}
 	<table class="tablelist">
 		<tr>

@@ -70,6 +70,9 @@ msgstr "Orders"
 msgid "comp"
 msgstr "Company"
 
+msgid "comps"
+msgstr "Companies"
+
 #: admin index
 msgid "welcome"
 msgstr "Welcome"

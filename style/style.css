@@ -354,7 +354,7 @@ h2{
 #footer_inside p a:hover {
     text-decoration: none
 }
-#formcustomers, #formproduct, #formcategories, #formadministrators, #formsuppliers {
+#formcustomers, #formproduct, #formcategories, #formadministrators, #formsuppliers, #formcompany  {
     margin-left:auto;
     margin-right:auto;
     width:70%;
@@ -445,8 +445,8 @@ th {
     word-wrap:break-word;
     font-size: 13px;
     font-weight: 100;
-    text-transform: uppercase
-        /*  letter-spacing: -1px; */
+    text-transform: uppercase;
+    letter-spacing: -1px;
 }
 .td_qty {
     min-width: 110px
@@ -864,7 +864,7 @@ th {
     top:-185px;
     font-weight: 100;
     font-size: 14px;
-    box-shadow: 1px 2px 5px #3c3c3c
+    box-shadow: 1px 1px 6px #000
 }
 .list_products_inner p.offer_badge {
     color: white;
@@ -882,7 +882,7 @@ th {
     top:-196px;
     font-weight: 100;
     font-size: 14px;
-    box-shadow: 1px 2px 5px #3c3c3c
+    box-shadow: 1px 1px 6px #000
 }
 .list_products_inner{
     margin-top: 158px;
@@ -987,9 +987,8 @@ th {
     margin-top: 10px;	
     margin-bottom: 10px;
     display: block;
-    width: 145px;
+    width: 165px;
     font-size: 14px
-
 }
 .sign_text {
     margin-top: 10px;	
@@ -997,6 +996,13 @@ th {
     display: block;
     width: 145px;
     font-size: 13px
-
-
+}
+.invalid{
+    color: red
+}
+.detail_adm {
+	font-size: 20px;
+	margin-bottom: 20px;
+    color: #54503F;
+    font-weight: bold
 }

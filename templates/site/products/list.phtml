@@ -8,7 +8,7 @@
 			<div class="list_products_inner">
 			<a href='show.php?id={{ prod.id }}'>
 				<h1>{{ prod.name }}</h1>
-				<h2>{{ prod.price }}</h2>
+				<h2>&#128; {{ prod.price }}</h2>
 			</a>
 			{% if prod.new == 1 %}
 			<p class="new_badge">{% trans "new" %}<p>
@@ -23,63 +23,5 @@
 
 	</ul>
 	</div>
-
-<!-- 
-    {% if prods|length > 0 %}
-    <table class="tablelist">
-        <tr>
-            <th>{% trans "name" %}</th>
-            <th>{% trans "descr" %}</th>
-            <th>{% trans "new" %}</th>
-            <th>{% trans "ofr" %}</th>
-            <th>&#128;</th>
-            <th>{% trans "cod" %}</th>
-            <th>{% trans "bcod" %}</th>
-            <th>{% trans "sng" %} {% trans "qty" %}</th>
-            <th>{% trans "pck" %} {% trans "qty" %}</th>
-            <th>{% trans "cdb" %} {% trans "qty" %}</th>
-            <th>{% trans "cat" %}</th>
-        </tr>
-        {% for prod in prods %}
-        <tr>
-            <td><a href='show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
-            <td>{{ prod.description }}</td>
-            <td>
-<!~~             {{ prod.new }} ~~>
-            	{% if prod.new == 1 %}
-           	<p style="color:#008000;text-align:center">&#x2713;</p>  
-        	     {% endif %}
-       	     {% if prod.new == 0 %}
-      	    	<p style="color:#D40303;text-align:center">&#x2717;</p>  
-            	{% endif %}</td>
-            <td>
-<!~~             {{ prod.offer }} ~~>
-           	{% if prod.offer == 1 %}
-           	<p style="color:#008000;text-align:center">&#x2713;</p>  
-        	     {% endif %}
-       	     {% if prod.offer == 0 %}
-      	    	<p style="color:#D40303;text-align:center">&#x2717;</p>  
-            	{% endif %}</td>
-            <td>{{ prod.price }}</td>
-            <td>{{ prod.cod }}</td>
-            <td>{{ prod.barcode }}</td>
-            <td>{{ prod.single_qty }}</td>
-            <td>{{ prod.pack_qty }}</td>
-            <td>{{ prod.cardboard_qty }}</td>
-            <td>{{ prod.category }}</td>
-            <td class="cart"><a href='../cart/add.php?id={{ prod.id }}'><img src="../../../images/icons/cart/buy/buy-256.png" alt="Add to cart"></a></td>
-        </tr>
-        {% endfor %}
-    </table>
-        {% include 'site/pager.phtml' %}
-
-    {%endif%}
-    {% if prods|length == 0 %}
-    <p>
-        {% trans "nores" %}
-    </p>
-    {% endif %} -->
 </div>
-
-
 {% include 'footer.phtml' %}

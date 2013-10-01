@@ -1,11 +1,9 @@
 {% include 'admin/structure/header.phtml' %}
 <div class="login">
-	<p>
-		{{ message }}
-	</p>
+	<p class="invalid">{{ message }}</p>
 	<form method="post" action="authenticate.php">
 		<p class="sign">
-			{% trans "usr" %}:
+			{% trans "usr" %} {% trans "adm" %}:
 		</p>
 		<input class="sign_text" type="text" name="user"/>
 		<p class="sign">
