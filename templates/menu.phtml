@@ -16,7 +16,7 @@
                         var id = data[i]['id'];
                         a = document.createElement('a');
                         li = document.createElement('li');
-                        a.setAttribute('href', '#');
+                        a.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id);
                         a.appendChild(document.createTextNode(data[i]['name']));
 
                         li.appendChild(a);
@@ -29,7 +29,7 @@
 
                             aInn = document.createElement('a');
                             liInn = document.createElement('li');
-                            aInn.setAttribute('href', '#');
+                            aInn.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + idInn);
                             aInn.appendChild(document.createTextNode(cat['name']));
 
                             liInn.appendChild(aInn);
@@ -38,7 +38,7 @@
                         }
                         li.appendChild(ul);
                     }
-                    $("#demo2").navgoco({accordion: true});
+                    $("#demo2").navgoco();
                 }
             }, "json");
 
@@ -48,41 +48,5 @@
 </script>
 <div id='accordion'>
 <ul id="demo2" class="nav">
-    <li><a href="#">News and Events</a>
-        <ul>
-            <li><a href="#">Hot News</a></li>
-            <li><a href="#">RSS Feeds</a></li>
-        </ul>
-    </li>
-    <li><a href="#">About</a>
-        <ul>
-            <li><a href="#">Environment</a></li>
-            <li><a href="#">Contact Us</a>
-                <ul>
-                    <li><a href="#">Support and Service</a></li>
-                    <li><a href="#">Website Feedback</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Working with Peach</a>
-                <ul>
-                    <li><a href="#">Procurement</a></li>
-                    <li><a href="#">Supplier Responsibility</a></li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-    <li><a href="#">Where to Buy</a>
-        <ul>
-            <li><a href="#">Where can I buy Peach products?</a></li>
-            <li><a href="#">Peach Online Store</a></li>
-            <li><a href="#">Peach Store for Business</a></li>
-            <li><a href="#">Peach Store for Education</a></li>
-            <li><a href="#">Peach Online Store Country Selector</a></li>
-            <li><a href="#">Peach Retail</a></li>
-            <li><a href="#">Find a Reseller</a></li>
-            <li><a href="#">Peach Financial Services</a></li>
-            <li><a href="#">Peach Rebates</a></li>
-        </ul>
-    </li>
 </ul>
 </div>
