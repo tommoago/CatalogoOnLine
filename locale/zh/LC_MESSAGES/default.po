@@ -1,0 +1,81 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: melarossa\n"
+"POT-Creation-Date: 2013-09-26 11:35+0100\n"
+"PO-Revision-Date: 2013-09-30 16:22+0100\n"
+"Last-Translator: \n"
+"Language-Team: me <lol@lol.lol>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: C:\\DEV\\WP\\php\\melarossa\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: header
+msgid "who"
+msgstr "关于我们"
+
+msgid "where"
+msgstr "Dove Siamo"
+
+msgid "contacts"
+msgstr "Contatti"
+
+#: menu admin
+msgid "ins"
+msgstr "Inserisci"
+
+msgid "list"
+msgstr "Visualizza"
+
+msgid "info"
+msgstr "Informazioni"
+
+#: entities names
+msgid "prod"
+msgstr "Prodotto"
+
+msgid "prods"
+msgstr "Prodotti"
+
+msgid "adm"
+msgstr "Amministratore"
+
+msgid "adms"
+msgstr "Amministratori"
+
+msgid "cat"
+msgstr "Categoria"
+
+msgid "cats"
+msgstr "Categorie"
+
+msgid "sup"
+msgstr "Fornitore"
+
+msgid "sups"
+msgstr "Fornitori"
+
+msgid "cust"
+msgstr "Cliente"
+
+msgid "custs"
+msgstr "Clienti"
+
+msgid "ord"
+msgstr "Ordine"
+
+msgid "ords"
+msgstr "Ordini"
+
+msgid "comp"
+msgstr "Azienda"
+
+#: admin index
+msgid "welcome"
+msgstr "Benvenuto"
+
+msgid "welcome_2"
+msgstr "da qui, puoi controllare il tuo sito."
