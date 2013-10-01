@@ -1,8 +1,9 @@
 {% include 'admin/structure/header.phtml' %}
 {% include 'admin/structure/menu.phtml' %}
 <div id='content'>
-    {{ message }}
-    <table border='1'>
+	<p class="detail_adm">{% trans "ord" %}</p>
+    <p>{{ message }}</p>
+    <table class="tablelist">
         <tr>
             <th>{% trans "id" %}</th>
             <th>{% trans "date" %}</th>

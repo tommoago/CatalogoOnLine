@@ -354,7 +354,7 @@ h2{
 #footer_inside p a:hover {
     text-decoration: none
 }
-#formcustomers, #formproduct, #formcategories, #formadministrators, #formsuppliers, #formcompany  {
+#formcustomers, #formproduct, #formcategories, #formadministrators, #formsuppliers, #formcompany, #formuser  {
     margin-left:auto;
     margin-right:auto;
     width:70%;

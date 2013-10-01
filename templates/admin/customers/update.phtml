@@ -40,7 +40,8 @@ function resetRequirements(){
 }
 </script>
 <div id='content'>
-    {{ message }}
+	<p class="detail_adm">{% trans "upd" %} {% trans "cust" %}</p>
+    <p>{{ message }}</p>
     <form action="update.php" method="post" id="formcustomers">
         <input type="hidden" name="id" value="{{ cus.id }}"/>
         <div class="totwidth">

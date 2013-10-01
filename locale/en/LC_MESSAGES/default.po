@@ -197,6 +197,8 @@ msgstr "Date"
 msgid "confed"
 msgstr "Confirmed"
 
+msgid "your"
+msgstr "Your"
 msgid "confirm"
 msgstr "Confirm"
 
@@ -300,7 +302,7 @@ msgstr "Sign in"
 msgid "cart"
 msgstr "Cart"
 
-msgid "pro"
+msgid "prof"
 msgstr "Profile"
 
 msgid "sho"

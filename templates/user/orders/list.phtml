@@ -1,10 +1,8 @@
 {% include 'user/structure/header.phtml' %}
 	{% include 'user/structure/menu.phtml' %}
 <div id='content'>
-
-	<p>
-		{{ message }}
-	</p>
+	<p class="detail_adm">{% trans "ords" %} {% trans "list" %}</p>
+	<p>{{ message }}</p>
 	{% if orders|length > 0 %}
 	<table class="tablelist">
 		<tr>

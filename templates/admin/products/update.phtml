@@ -31,7 +31,8 @@
     }
 </script>
 <div id='content'>
-        {{ message }}
+	<p class="detail_adm">{% trans "upd" %} {% trans "prod" %}</p>
+    <p>{{ message }}</p>    
     <form action="update.php" method="post" id="formproduct" enctype="multipart/form-data">
         <input type="hidden" name="id" value="{{ prod.id }}"/>
         <div class="totwidth">
