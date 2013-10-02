@@ -3,6 +3,8 @@
 session_start();
 // I18N support information here
 $language =  isset($_SESSION['lang'])? $_SESSION['lang']: 'en';
+$_SESSION['lang'] = $language;
+
 putenv('LANG='.$language); 
 setlocale(LC_ALL, $language);
 

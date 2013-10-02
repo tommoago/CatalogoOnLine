@@ -10,10 +10,12 @@ try {
     $DBH = $db->connect();
 
         $stmt = $DBH->prepare('SELECT * FROM products  WHERE id = :id');
-        $stmt->execute(array('id' => $_GET['id']));
+        $stmt->execute(array('id' => $_POST['id']));
         $product = $stmt->fetch();
-        $product['qty'] = isset($_GET['qty'])? $_GET['qty']: 1;
-
+        $product['qty'] = 1;
+        if(isset($_POST['qty_add']) && $_POST['qty_add'] != '' && $_POST['qty_add'] != 0)
+            $product['qty'] = $_POST['qty_add'];
+            
         //mette il prezzo giusto
         $product['price'] = $product['retail_price'];
         if (isset($_SESSION['user']['price_range']))

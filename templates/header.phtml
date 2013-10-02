@@ -35,10 +35,12 @@
                     </li>
                 </ul>
                 <div id="topmenu">
-                	<ul>
+                	<ul>    
+                            {% if not(pSession.user.id != '' and  pSession.user.role != 'jack' and  pSession.user.role != 'operator')%}
                 		<li class="tpm">
                 			<a href="{{ path }}user/sign_up.php">{% trans "signup" %}<img src="{{ path }}../images/icons/system/login/login-256.png" alt="Login"></a> 
                 		</li>
+                            {% endif %}
                 		<li class="tpm">
                 			<a href="{{ path }}admin/login.php">{% trans "adm" %}<img src="{{ path }}../images/icons/users/administrator/administrator-256.png" alt="Admin"></a>
                 		</li>

@@ -1,7 +1,7 @@
 {% include 'user/structure/header.phtml' %}
-    {% include 'user/structure/menu.phtml' %}
+{% include 'user/structure/menu.phtml' %}
 <div id='content'>
-	<p class="detail_adm">{% trans "ord" %}</p>
+    <p class="detail_adm">{% trans "ord" %}</p>
     <table class="tablelist">
         <tr>
             <th>{% trans "id" %}</th>
@@ -24,7 +24,12 @@
         {% endfor %}-->
     </table>
     {% if ord.file != ''%}
-        <a href='{{ ord.file }}'>pdf</a>
+    <li class="print">
+        <a href='{{ ord.file }}'><img src="../../../images/icons/printer/printer-256.png" alt="Print">{% trans "print" %}</a>
+    </li>
+    <li class="pdf">
+        <a href='{{ ord.file }}'><img src="../../../images/icons/pdf/pdf-256.png" alt="PDF">{% trans "pdf" %}</a>
+    </li>
     {% endif %}
 </div>
 {% include 'user/structure/footer.phtml' %}

@@ -4,7 +4,6 @@ include '../../conf/config.php';
 include '../../conf/twig.php';
 
 $template = $twig->loadTemplate('user/profile/sign_up.phtml');
-
 if ($_SESSION['lang'] == 'it') {
     $var = 'Privacy
             TRATTAMENTO DEI DATI PERSONALI
