@@ -11,8 +11,8 @@
             mode: 'fade',
             autoControls: true,
             pause: 5000,
-            adaptiveHeight: true,
-            captions: true
+            captions: true,
+            adaptiveHeight: true
         });
     });
 </script>
@@ -20,7 +20,7 @@
     <div id="sliderContainer">
         <ul id="slider1">
             {% for prod in prods %}
-            <li><img src="{{ prod.image }}" alt="{{ prod.tile }}" title="{{ prod.tile }}"/></li>
+            <li><img src="{{ prod.image }}" alt="{{ prod.name }}" title="{{ prod.name }} {{ prod.price }}"/></li>
             {% endfor %}
         </ul>
     </div>

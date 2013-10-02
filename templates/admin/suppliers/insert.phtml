@@ -13,7 +13,6 @@
 				<input type="text" name="name" />
 			</div>
 		</div>
-		<br>
 		<div class="totwidth">
 			<div class="panleft1">
 				{% trans "descr" %}:
@@ -22,7 +21,6 @@
 				<input type="text" name="description" />
 			</div>
 		</div>
-		<br>
 		<div class="totwidth">
 			<div class="panleft1">
 				{% trans "piva" %}:
@@ -31,7 +29,14 @@
 				<input type="text" name="piva" />
 			</div>
 		</div>
-		<br>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "mail" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" id="email" name="email"/>
+			</div>
+		</div>
                 <div class="totwidth">
 			<div class="panleft1">
 				{% trans "tel" %}:
@@ -40,7 +45,6 @@
 				<input type="text" name="telephone" />
 			</div>
 		</div>
-		<br>
                 <div class="totwidth">
 			<div class="panleft1">
 				{% trans "fax" %}:
@@ -49,7 +53,6 @@
 				<input type="text" name="fax" />
 			</div>
 		</div>
-		<br>
                 <div class="totwidth">
 			<div class="panleft1">
 				{% trans "adr" %}:
@@ -58,8 +61,6 @@
 				<input type="text" name="address" />
 			</div>
 		</div>
-		<br>
-
 		<input class="invio" type="submit" value='{% trans "submit" %}'/>
 
 	</form>

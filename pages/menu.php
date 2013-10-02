@@ -1,4 +1,5 @@
 <?php
+
 include '../conf/config.php';
 include '../conf/twig.php';
 $template = $twig->loadTemplate('menu.phtml');
@@ -15,9 +16,14 @@ try {
     foreach ($result as &$row) {
         $stmt = $DBH->prepare('SELECT * FROM categories WHERE categories_id = :id');
         $stmt->execute(array('id' => $row['id']));
-        $stmt->execute();
         $row['category'] = '';
         $row['category'] = $stmt->fetchAll();
+        foreach ($row['category'] as &$row2) {
+            $stmt2 = $DBH->prepare('SELECT * FROM categories WHERE categories_id = :id');
+            $stmt2->execute(array('id' => $row2['id']));
+            $row2['category'] = '';
+            $row2['category'] = $stmt2->fetchAll();
+        }
     }
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();

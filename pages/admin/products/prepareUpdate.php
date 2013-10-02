@@ -16,14 +16,14 @@ try {
     $stmt->execute();
     $result = $stmt->fetchAll();
     
-    $stmt = $DBH->prepare('SELECT * FROM suppliers');
-    $stmt->execute();
-    $result2 = $stmt->fetchAll();
+    $stmt2 = $DBH->prepare('SELECT * FROM suppliers');
+    $stmt2->execute();
+    $result2 = $stmt2->fetchAll();
 
-    $stmt = $DBH->prepare('SELECT * FROM products WHERE id = :id');
-    $stmt->execute(array('id' => $id));
+    $stmt3 = $DBH->prepare('SELECT * FROM products WHERE id = :id');
+    $stmt3->execute(array('id' => $id));
     //tira fuori solo un risultato
-    $product = $stmt->fetch();
+    $product = $stmt3->fetch();
     
     //aggiunta prop per le checkbox
     $product['c_new'] ='';
@@ -61,9 +61,9 @@ try {
     } 
     
     //mette immagine
-    $stmt3 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
-    $stmt3->execute(array('id' => $id));
-    $imm = $stmt3->fetch();
+    $stmt4 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
+    $stmt4->execute(array('id' => $id));
+    $imm = $stmt4->fetch();
     $product['image'] = $imm['path'];
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();

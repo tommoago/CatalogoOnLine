@@ -1,70 +1,70 @@
 {% include 'admin/structure/header.phtml' %}
 {% include 'admin/structure/menu.phtml' %}
 <div id='content'>
-     <div class="show_adm">
-	     <h1 class="show_adm">{{ prod.name }}</h1>
-     	{% if prod.image != '' %}
-			<img src="../../{{ prod.image }}">
-	     {% endif %}
-	     <p><b>{% trans "descr" %}:</b></p>
-	     <p>{{ prod.description }}</p>
-     </div>
-	<table class="tablelist">
-		<tr>
-			<th>{% trans "new" %}</th>
-			<th>{% trans "ofr" %}</th>
-			<th>{% trans "hlg" %}</th>
-			<th>{% trans "wh" %} &#128;</th>
-			<th>{% trans "ret" %} &#128;</th>
-			<th>{% trans "super" %} &#128;</th>
-			<th>{% trans "pur" %} &#128;</th>
-			<th>{% trans "cod" %}</th>
-			<th>{% trans "bcod" %}</th>
-			<th>{% trans "sng" %} {% trans "qty" %}</th>
-			<th>{% trans "pck" %} {% trans "qty" %}</th>
-			<th>{% trans "cdb" %} {% trans "qty" %}</th>
-			<th>{% trans "cat" %}</th>
-                        <th>{% trans "sup" %}</th>
-		</tr>
-		<tr>
-			<td>
-<!--             {{ prod.new }} -->
-            	{% if prod.new == 1 %}
-           	<p style="color:#008000;text-align:center">&#x2713;</p>  
-        	     {% endif %}
-       	     {% if prod.new == 0 %}
-      	    	<p style="color:#D40303;text-align:center">&#x2717;</p>  
-            	{% endif %}</td>
+    <div class="show_adm">
+        <h1 class="show_adm">{{ prod.name }}</h1>
+        {% if prod.image != '' %}
+        <img src="../../{{ prod.image }}">
+        {% endif %}
+        <p><b>{% trans "descr" %}:</b></p>
+        <p>{{ prod.description }}</p>
+    </div>
+    <table class="tablelist">
+        <tr>
+            <th>{% trans "new" %}</th>
+            <th>{% trans "ofr" %}</th>
+            <th>{% trans "hlg" %}</th>
+            <th>{% trans "wh" %} &#128;</th>
+            <th>{% trans "ret" %} &#128;</th>
+            <th>{% trans "super" %} &#128;</th>
+            <th>{% trans "pur" %} &#128;</th>
+            <th>{% trans "cod" %}</th>
+            <th>{% trans "bcod" %}</th>
+            <th>{% trans "sng" %} {% trans "qty" %}</th>
+            <th>{% trans "pck" %} {% trans "qty" %}</th>
+            <th>{% trans "cdb" %} {% trans "qty" %}</th>
+            <th>{% trans "cat" %}</th>
+            <th>{% trans "sup" %}</th>
+        </tr>
+        <tr>
             <td>
-<!--             {{ prod.offer }} -->
-           	{% if prod.offer == 1 %}
-           	<p style="color:#008000;text-align:center">&#x2713;</p>  
-        	     {% endif %}
-       	     {% if prod.offer == 0 %}
-      	    	<p style="color:#D40303;text-align:center">&#x2717;</p>  
-            	{% endif %}</td>
+                <!--             {{ prod.new }} -->
+                {% if prod.new == 1 %}
+                <p style="color:#008000;text-align:center">&#x2713;</p>  
+                {% endif %}
+                {% if prod.new == 0 %}
+                <p style="color:#D40303;text-align:center">&#x2717;</p>  
+                {% endif %}</td>
             <td>
-<!--             {{ prod.evidence }} -->
-            	{% if prod.evidence == 1 %}
-           	<p style="color:#008000;text-align:center">&#x2713;</p>  
-        	     {% endif %}
-       	     {% if prod.evidence == 0 %}
-      	    	<p style="color:#D40303;text-align:center">&#x2717;</p>  
-            	{% endif %}</td>
-			<td>{{ prod.wholesale_price }}</td>
-			<td>{{ prod.retail_price }}</td>
-			<td>{{ prod.super_price }}</td>
-			<td>{{ prod.purchase_price }}</td>
-			<td>{{ prod.cod }}</td>
-			<td>{{ prod.barcode }}</td>
-			<td>{{ prod.single_qty }}</td>
-			<td>{{ prod.pack_qty }}</td>
-			<td>{{ prod.cardboard_qty }}</td>
-			<td>{{ prod.category }}</td>
-                        <td>{{ prod.supplier }}</td>
-			<td class="delete"><a href='delete.php?id={{ prod.id }}'><img src="../../../images/icons/delete/delete-256.png" alt='{% trans "del" %}'></a></td>
-			<td class="edit"><a href='prepareUpdate.php?id={{ prod.id }}'><img src="../../../images/icons/edit/edit-256.png" alt='{% trans "edit" %}'></a></td>
-		</tr>
-	</table>
+                <!--             {{ prod.offer }} -->
+                {% if prod.offer == 1 %}
+                <p style="color:#008000;text-align:center">&#x2713;</p>  
+                {% endif %}
+                {% if prod.offer == 0 %}
+                <p style="color:#D40303;text-align:center">&#x2717;</p>  
+                {% endif %}</td>
+            <td>
+                <!--             {{ prod.evidence }} -->
+                {% if prod.evidence == 1 %}
+                <p style="color:#008000;text-align:center">&#x2713;</p>  
+                {% endif %}
+                {% if prod.evidence == 0 %}
+                <p style="color:#D40303;text-align:center">&#x2717;</p>  
+                {% endif %}</td>
+            <td>{{ prod.wholesale_price }}</td>
+            <td>{{ prod.retail_price }}</td>
+            <td>{{ prod.super_price }}</td>
+            <td>{{ prod.purchase_price }}</td>
+            <td>{{ prod.cod }}</td>
+            <td>{{ prod.barcode }}</td>
+            <td>{{ prod.single_qty }}</td>
+            <td>{{ prod.pack_qty }}</td>
+            <td>{{ prod.cardboard_qty }}</td>
+            <td>{{ prod.category }}</td>
+            <td>{{ prod.supplier }}</td>
+            <td class="delete"><a href='delete.php?id={{ prod.id }}'><img src="../../../images/icons/delete/delete-256.png" alt='{% trans "del" %}'></a></td>
+            <td class="edit"><a href='prepareUpdate.php?id={{ prod.id }}'><img src="../../../images/icons/edit/edit-256.png" alt='{% trans "edit" %}'></a></td>
+        </tr>
+    </table>
 </div>
 {% include 'admin/structure/footer.phtml' %}

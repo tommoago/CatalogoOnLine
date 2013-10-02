@@ -7,6 +7,7 @@ $id = $_POST['id'];
 $name = $_POST['name'];
 $description= $_POST['description'];
 $piva = $_POST['piva'];
+$email = $_POST['email'];
 $telephone = $_POST['telephone'];
 $fax = $_POST['fax'];
 $address = $_POST['address'];
@@ -17,6 +18,7 @@ try {
     $data = array('name' => $name, 
                   'description' => $description, 
                   'piva' => $piva, 
+                  'email' => $email, 
                   'telephone' =>$telephone, 
                   'fax' =>$fax,
                   'address' =>$address,
@@ -26,6 +28,7 @@ try {
                             name = :name, 
                             description = :description, 
                             piva = :piva, 
+                            email = :email,
                             telephone = :telephone, 
                             fax = :fax,
                             address = :address

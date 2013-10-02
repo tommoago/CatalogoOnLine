@@ -14,7 +14,6 @@
 				<input type="text" name="name" value="{{ supplier.name }}"/>
 			</div>
 		</div>
-		<br>
 		<div class="totwidth">
 			<div class="panleft1">
 				{% trans "descr" %}:
@@ -23,7 +22,6 @@
 				<input type="text" name="description" value="{{ supplier.description }}"/>
 			</div>
 		</div>
-		<br>
 		<div class="totwidth">
 			<div class="panleft1">
 				{% trans "piva" %}:
@@ -32,7 +30,14 @@
 				<input type="text" name="piva" value="{{ supplier.piva }}"/>
 			</div>
 		</div>
-		<br>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "mail" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" name="email" value="{{ supplier.email }}"/>
+			</div>
+		</div>
                 <div class="totwidth">
 			<div class="panleft1">
 				{% trans "tel" %}:
@@ -41,7 +46,6 @@
 				<input type="text" name="telephone" value="{{ supplier.telephone }}"/>
 			</div>
 		</div>
-		<br>
                 <div class="totwidth">
 			<div class="panleft1">
 				{% trans "fax" %}:
@@ -50,7 +54,6 @@
 				<input type="text" name="fax" value="{{ supplier.fax }}"/>
 			</div>
 		</div>
-		<br>
                 <div class="totwidth">
 			<div class="panleft1">
 				{% trans "adr" %}:
@@ -59,8 +62,6 @@
 				<input type="text" name="address" value="{{ supplier.address }}"/>
 			</div>
 		</div>
-		<br>
-
 		<input class="invio" type="submit" value='{% trans "submit" %}'/>
 
 	</form>

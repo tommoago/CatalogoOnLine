@@ -13,7 +13,7 @@
                         img = document.createElement('img');
                         img.setAttribute("src", data[i]["image"]);
                         img.setAttribute("alt", data[i]["name"]);
-                        img.setAttribute("title", data[i]["name"]);
+                        img.setAttribute("title", data[i]["name"]+" "+data[i]["price"]);
 
                         ul = document.createElement('ul');
                         ul.appendChild(img);
