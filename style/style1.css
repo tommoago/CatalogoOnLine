@@ -12,7 +12,7 @@ html {
 }
 body {
     height: 100%;
-    background-color: #E29CC0;
+    background-color: #F3F1E9;
     position: relative;
 }
 html > body {
@@ -24,15 +24,20 @@ h2{
 }
 #header {
     height: 160px;
-    background: #C40000;
+    background-image: url(../images/header_bg.jpg);
+    background-position: top left;
+    background-repeat: repeat-x;
     margin-bottom: 40px;
-    border-bottom: 3px solid #830000;
+    border-bottom: 3px solid #d3cebb;
 }
 #header_adm {
     height: 60px;
-    background: #C40000;
+    background-image: url(../images/header_bg.jpg);
+    background-position: top left;
+    background-size: 1px 100px;
+    background-repeat: repeat-x;
     margin-bottom: 40px;
-    border-bottom: 3px solid #830000;
+    border-bottom: 3px solid #d3cebb;
 }
 #header_inside {
     width: 1040px;
@@ -52,7 +57,7 @@ h2{
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 100;
     font-size: 40px;
-    color: #303030
+    color: #0b3e01
 }
 #headertitle_adm {
     width: 50%;
@@ -62,7 +67,7 @@ h2{
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 100;
     font-size: 25px;
-    color: #303030
+    color: #0b3e01
 }
 #content {
     width: auto;
@@ -103,7 +108,7 @@ h2{
     float: left;
     padding-left: 4px;
     padding-right: 4px;
-    border-right: 1px solid #830000;
+    border-right: 1px solid #d3cebb;
 }
 #topmenu li.cart_header {
     list-style: none;
@@ -117,7 +122,7 @@ h2{
     margin-left: 4px;
 }
 #topmenu a, #topmenu_logout a, #topmenu_logout_adm a{
-    color: #303030;
+    color: #0b3e01;
     text-decoration:none;
     text-transform: capitalize
 }
@@ -147,8 +152,7 @@ h2{
 #menu {
     position: absolute;
     top: 160px;
-    background: #830000;
-    width: 100%
+    left: 224px;
 }
 #menu_adm {
     position: absolute;
@@ -160,18 +164,19 @@ h2{
     display: inline;
 }
 #menu a {
-    margin: 0px 0px 0 0;
+    margin: 0px 1px 0 0;
     width: 110px;
     text-align: center;
     text-decoration: none;
     text-transform: capitalize;
-    padding: 12px 0 15px 0;
+    padding: 8px 0 18px 0;
     display: block;
     float: left;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
-    color: white;
-    border-right: 1px solid #C40000;
+    color: #b70404;
+    background-position: top left;
+    background-repeat: no-repeat;
 }
 #menu_adm a {
     margin: 0px 1px 0 0;
@@ -189,43 +194,54 @@ h2{
     background-repeat: no-repeat;
 }
 #menu .but1_active {
+    background-color: #d40303;
+    text-decoration: none;
     color: white;
-    border-left: 1px solid #C40000;
-    border-right: 1px solid #C40000;
-    margin-left: 200px
-
+    box-shadow: 1px 1px 8px #726F62;
+    border-radius: 0px 0px 4px 4px;
+    -moz-border-radius: 0px 0px 4px 4px;
+    -webkit-border-radius: 0px 0px 4px 4px;
 }
 #menu_adm .but1_active {
-    background-color: #C40000;
+    background-color: #d40303;
     text-decoration: none;
     color: white;
+    box-shadow: 1px 1px 8px #726F62;
+    border-radius: 0px 0px 4px 4px;
+    -moz-border-radius: 0px 0px 4px 4px;
+    -webkit-border-radius: 0px 0px 4px 4px;
 }
 #menu .but2_active,#menu .but3_active, #menu .but4_active  {
-    background-color: #C40000;
+    background-color: #d40303;
     text-decoration: none;
     color: white;
+    box-shadow:0px 2px 2px black;
 }
 #menu_adm .but2_active, #menu_adm .but3_active, #menu_adm .but4_active  {
-    background-color: #C40000;
+    background-color: #d40303;
     text-decoration: none;
-    color: white;;
+    color: white;
+    box-shadow:0px 2px 2px black;
 }
 
-#menu .but1_active:hover, #menu_adm .but1_active:hover, #menu .but1:hover, #menu_adm .but1:hover {
-    background-color: #C40000;
+#menu .but1:hover, #menu_adm .but1:hover {
+    background-color: #ce6e6e;
     text-decoration: none;
     color: white;
+    height:13px
 }
 #menu .but2:hover, #menu .but3:hover, #menu .but4:hover {
-    background-color: #C40000;
+    background-color: #ce6e6e;
     text-decoration: none;
     color: white;
+    height:13px
 }
 
 #menu_adm .but2:hover, #menu_adm .but3:hover, #menu_adm .but4:hover {
-    background-color: #C40000;
+    background-color: #ce6e6e;
     text-decoration: none;
     color: white;
+    height:13px
 }
 
 #sidebar {
@@ -384,27 +400,16 @@ input[type=submit], input[type=button] {
     height: 30px;
 }
 #accordion {
-    width: 200px;
-    height: 100%;
+    width: 175px;
     float: left;
     position: absolute;
-    background: #C40000;
-    margin-top: 1px;
-}
-#demo2{
-      margin: 40px 5px 25px 5px;
+    margin: 40px 25px 25px 25px;
 }
 .menu-right {
     float: right;
     width: 270px;
-    height: 800px;
-    background: #C40000
-}
-#sliderContainer2{
-    margin: 40px 7px 0px 7px;
-}
-#sliderContainer {
-    margin: 0px 45px 0px 5px;
+    height: 400px;
+    margin: 40px 25px 25px 25px;
 }
 .tablelist {
     border-collapse:collapse;
