@@ -10,13 +10,15 @@ $offset = isset($_GET['offset']) ? $_GET['offset'] : 0;
 $limit = 20;
 $numPages = 0;
 
+$col = $_GET['tag'] == 'new'? $_GET['tag'] : 'offer';
 try {
     $db = new dataBase();
     $DBH = $db->connect();
-
-    $stmt = $DBH->prepare('SELECT COUNT(*) FROM products WHERE categories_id = :id');
-    $stmt->execute(array('id' => $_GET['id_cat']));
+    
+    $stmt = $DBH->prepare('SELECT COUNT(*) FROM products WHERE '.$col.'= 1');
+    $stmt->execute(array());
     $totProd = $stmt->fetch();
+    
     $count = $totProd[0];
     $numPages += intval($count / $limit);
     if ($count % $limit != 0) {
@@ -25,16 +27,15 @@ try {
     if ($offset != 0)
         $offset *= $limit;
 
-    $stmt = $DBH->prepare('SELECT * FROM products  WHERE categories_id = :id LIMIT '
-            . $offset . ', ' . $limit);
-    $stmt->execute(array('id' => $_GET['id_cat']));
-    $result = $stmt->fetchAll();
+    $stmt2 = $DBH->prepare('SELECT * FROM products  WHERE '.$col.' = 1 LIMIT '. $offset . ', ' . $limit);
+    $stmt2->execute(array());
+    $result = $stmt2->fetchAll();
 
     foreach ($result as &$row) {
         //categoria associata
-        $stmt = $DBH->prepare('SELECT * FROM categories WHERE id = :id');
-        $stmt->execute(array('id' => $row['categories_id']));
-        $cat = $stmt->fetch();
+        $stmt3 = $DBH->prepare('SELECT * FROM categories WHERE id = :id');
+        $stmt3->execute(array('id' => $row['categories_id']));
+        $cat = $stmt3->fetch();
         $row['category'] = $cat['name'];
 
         $row['description'] = substr($row['description'], 0, 150) . '...';
@@ -67,5 +68,5 @@ $lowRange = $offset / $limit - 3;
 $maxRange = $offset / $limit;
 $maxRange < 3 ? $maxRange = 6 : $maxRange += 3;
 
-$template->display(array('prods' => $result, 'totPages' => $numPages, 'lr' => $lowRange, 'mr' => $maxRange, 'id_cat' => $_GET['id_cat']));
+$template->display(array('prods' => $result, 'totPages' => $numPages, 'lr' => $lowRange, 'mr' => $maxRange));
 ?>

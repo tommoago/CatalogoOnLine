@@ -1,27 +1,26 @@
 {% include 'header.phtml' %}
 {% include 'menu.phtml' %}
 <div id='content'>
-	<div class="list_products">
-	<ul>
-	     {% for prod in prods %}
-		<li style="background-image:url('../../{{ prod.image }}')">
-			<div class="list_products_inner">
-			<a href='show.php?id={{ prod.id }}'>
-				<h1>{{ prod.name }}</h1>
-				<h2>&#128; {{ prod.price }}</h2>
-			</a>
-			{% if prod.new == 1 %}
-			<p class="new_badge">{% trans "new" %}<p>
-            	{% endif %}
-            	{% if prod.offer == 1 %}
-			<p class="offer_badge">{% trans "ofr" %}<p>
-            	{% endif %}
-<!-- 			<img src="../../{{ prod.image }}"> -->
-			</div>
-		</li>
-	     {% endfor %}
-
-	</ul>
-	</div>
+    <div class="list_products">
+        <ul>
+            {% for prod in prods %}
+            <li style="background-image:url('../../{{ prod.image }}')">
+                <div class="list_products_inner">
+                    <a href='show.php?id={{ prod.id }}'>
+                        <h1>{{ prod.name }}</h1>
+                        <h2>&#128; {{ prod.price }}</h2>
+                    </a>
+                    {% if prod.new == 1 %}
+                        <p class="new_badge">{% trans "new" %}<p>
+                    {% endif %}
+                    {% if prod.offer == 1 %}
+                        <p class="offer_badge">{% trans "ofr" %}<p>
+                    {% endif %}
+        <!-- 			<img src="../../{{ prod.image }}"> -->
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
 {% include 'footer.phtml' %}
