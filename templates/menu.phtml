@@ -8,53 +8,50 @@
 //    link per cats '{{ path }}site/products/list.php?id_cat=' + id
     $.post("{{ path }}menu.php",
             function(data) {
-                if (data.length === 0) {
-                    $('#demo2').append("<p>No result found.</p>");
-                } else {
-                    var ul, li, a;
-                    for (var i = 0; i < data.length; i++) {
-                        var id = data[i]['id'];
-                        a = document.createElement('a');
-                        li = document.createElement('li');
-                        a.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id);
-                        a.appendChild(document.createTextNode(data[i]['name']));
+                var ul, li, a;
+                for (var i = 0; i < data.length; i++) {
+                    var id = data[i]['id'];
+                    a = document.createElement('a');
+                    li = document.createElement('li');
+                    a.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id);
+                    a.appendChild(document.createTextNode(data[i]['name']));
 
-                        li.appendChild(a);
-                        $('#demo2').append(li);
-                        var li2, a2;
-                        ul = document.createElement('ul');
-                        for (var j = 0; j < data[i]['category'].length; j++) {
-                            var cat2 = data[i]['category'][j];
-                            var id2 = cat2['id'];
+                    li.appendChild(a);
+                    $('#demo2').append(li);
+                    var li2, a2;
+                    ul = document.createElement('ul');
+                    for (var j = 0; j < data[i]['category'].length; j++) {
+                        var cat2 = data[i]['category'][j];
+                        var id2 = cat2['id'];
 
-                            a2 = document.createElement('a');
-                            li2 = document.createElement('li');
-                            a2.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id2);
-                            a2.appendChild(document.createTextNode(cat2['name']));
+                        a2 = document.createElement('a');
+                        li2 = document.createElement('li');
+                        a2.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id2);
+                        a2.appendChild(document.createTextNode(cat2['name']));
 
-                            li2.appendChild(a2);
+                        li2.appendChild(a2);
+                        
+                        var li3, a3;
+                        var ul2 = document.createElement('ul');
+                        for (var k = 0; k < cat2['category'].length; k++) {
+                            var cat3 = cat2['category'][k];
+                            var id3 = cat3['id'];
 
-                            var li3, a3;
-                            var ul2 = document.createElement('ul');
-                            for (var k = 0; k < cat2['category'].length; k++) {
-                                var cat3 = cat2['category'][k];
-                                var id3 = cat3['id'];
+                            a3 = document.createElement('a');
+                            li3 = document.createElement('li');
+                            a3.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id3);
+                            a3.appendChild(document.createTextNode(cat3['name']));
 
-                                a3 = document.createElement('a');
-                                li3 = document.createElement('li');
-                                a3.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id3);
-                                a3.appendChild(document.createTextNode(cat3['name']));
+                            li3.appendChild(a3);
+                            ul2.appendChild(li3);
 
-                                li3.appendChild(a3);
-                                ul2.appendChild(li3);
-
-                            }
-                            li2.appendChild(ul2);
                         }
-                        li.appendChild(ul);
+                        li2.appendChild(ul2);
+                        ul.appendChild(li2);
                     }
-                    $("#demo2").navgoco();
+                    li.appendChild(ul);
                 }
+                $("#demo2").navgoco();
             }, "json");
 
 //    $(document).ready(function() {

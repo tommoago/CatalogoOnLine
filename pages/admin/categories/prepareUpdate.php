@@ -18,7 +18,6 @@ try {
 
     $stmt = $DBH->prepare('SELECT * FROM categories WHERE id = :id');
     $stmt->execute(array('id' => $id));
-    //tira fuori solo un risultato
     $category = $stmt->fetch();
     
     //marca la categoria appartenente ed esclude se stessa
@@ -33,6 +32,10 @@ try {
       }
       $i++;
     } 
+    //aggiungo cat vuota
+    if($category['categories_id']== '')
+        array_unshift($result, array('name' => 'none'));
+    
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
