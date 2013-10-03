@@ -14,7 +14,7 @@ try {
     $db = new dataBase();
     $DBH = $db->connect();
 
-    foreach ($cart->getProducts() as $row) {
+    foreach ($cart->getCurrentProducts() as $row) {
         $stmt = $DBH->prepare('SELECT * FROM products  WHERE id = :id');
         $stmt->execute(array('id' => $row['id']));
         $product = $stmt->fetch();
@@ -44,7 +44,7 @@ try {
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
-$splitted = split('/', $_SERVER['HTTP_REFERER']);
+$splitted = explode('/', $_SERVER['HTTP_REFERER']);
 $back = $splitted[sizeof($splitted)-1] == 'index.php'? '':$_SERVER['HTTP_REFERER'];
 $template->display(array('prods' => $result, 'tot' => $cart->getTot(), 'back'=> $back));
 ?>

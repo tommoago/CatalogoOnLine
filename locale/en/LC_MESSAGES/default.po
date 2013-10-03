@@ -130,6 +130,9 @@ msgid "ord.conf.usr"
 msgstr ""
 "Your order has been processed, you will be recontacted from an operator."
 
+msgid "ord.up.usr"
+msgstr "Your order has been updated, you will be recontacted from an operator."
+
 msgid "ord.must.usr"
 msgstr "You must have an account to complete your order!"
 
@@ -199,6 +202,7 @@ msgstr "Confirmed"
 
 msgid "your"
 msgstr "Your"
+
 msgid "confirm"
 msgstr "Confirm"
 
@@ -358,3 +362,6 @@ msgstr "Submit"
 
 msgid "send"
 msgstr "Send"
+
+msgid "del.profile"
+msgstr "Are you sure to delete your account?"

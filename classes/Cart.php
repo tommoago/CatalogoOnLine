@@ -13,6 +13,13 @@ class Cart {
     public function getProducts() {
         return $this->products;
     }
+    
+    public function getCurrentProducts() {
+        foreach ($this->products as $key => $row)
+            if (array_key_exists('old', $row))
+                unset($this->products[$key]);
+        return $this->products;
+    }
 
     public function getTot() {
         return $this->tot;
@@ -24,6 +31,8 @@ class Cart {
         foreach ($this->products as &$row)
             if ($row['id'] == $prod['id']) {
                 $row['qty'] += $prod['qty'];
+                if (array_key_exists('old', $prod))
+                        $row['old'] = $prod['old'];
                 $bool = true;
             }
 
@@ -57,7 +66,8 @@ class Cart {
     private function calculateTotal() {
         $this->tot = 0;
         foreach ($this->products as $row)
-            $this->tot += $row['price'] * $row['qty'];
+            if (!array_key_exists('old', $row))
+                $this->tot += $row['price'] * $row['qty'];
     }
 
 }

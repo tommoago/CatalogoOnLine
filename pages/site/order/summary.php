@@ -1,18 +1,37 @@
 <?php
+
 include '../../../classes/Cart.php';
 include '../../../conf/config.php';
 include '../../../conf/twig.php';
+
 $template = $twig->loadTemplate('site/order/summary.phtml');
 
 isset($_SESSION['cart'])? : $_SESSION['cart'] = new Cart();
 $cart = $_SESSION['cart'];
 
 $result = array();
+$ordProds  = array();
 
 try {
     $db = new dataBase();
     $DBH = $db->connect();
-
+    //controllo se l'ultimo ordine non è stato confermato, in tal caso provvedo ad aggiungere in coda i dati del presente carrello
+    if(isset($_SESSION['user']['oldOrd'])) {
+        $stmt3 = $DBH->prepare('SELECT * FROM orders  WHERE customers_id = :id AND  confirmed = 0 AND data= (SELECT MAX(orders.data) FROM orders)');
+        $stmt3->execute(array('id' => $_SESSION['user']['id']));
+        $oldOrd = $stmt3->fetch();
+        
+        $stmt4 = $DBH->prepare('SELECT * FROM orders_has_products  WHERE orders_id = :id');
+        $stmt4->execute(array('id' => $oldOrd['id']));
+        $ordProds = $stmt4->fetchAll();
+        foreach ($ordProds as &$ordP){ 
+            $ordP['qty'] = $ordP['quantity'];
+            $ordP['id'] = $ordP['products_id'];
+            $ordP['price'] = $ordP['sold_price'];
+            $ordP['old'] = 'yes';
+            $cart->addProduct($ordP);
+        }
+    }
     foreach ($cart->getProducts() as $row) {
         $stmt = $DBH->prepare('SELECT * FROM products  WHERE id = :id');
         $stmt->execute(array('id' => $row['id']));
@@ -26,7 +45,7 @@ try {
                 case 1:
                     $product['price'] = $product['wholesale_price'];
                     break;
-                case 3: 
+                case 3:
                     $product['price'] = $product['super_price'];
                     break;
             }
