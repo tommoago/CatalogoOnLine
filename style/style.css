@@ -174,7 +174,7 @@ h2{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     color: white;
-    border-right: 1px solid #C40000;
+    border-right: 1px solid rgb(253, 143, 2);
 }
 #menu_adm a {
     margin: 0px 1px 0 0;
@@ -193,8 +193,8 @@ h2{
 }
 #menu .but1_active {
     color: white;
-    border-left: 1px solid #C40000;
-    border-right: 1px solid #C40000;
+    border-left: 1px solid rgb(253, 143, 2);
+    border-right: 1px solid rgb(253, 143, 2);
     margin-left: 200px
 
 }

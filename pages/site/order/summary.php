@@ -57,9 +57,14 @@ try {
 
         $result[] = $product;
     }
+    
+    $stmt5 = $DBH->prepare('SELECT addresses.* FROM addresses, customers_has_addresses cha 
+                                               WHERE cha.customers_id = :id AND cha.addresses_id = addresses.id');
+    $stmt5->execute(array('id' => $_SESSION['user']['id']));
+    $addresses = $stmt5->fetchAll();
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('prods' => $result, 'tot' => $cart->getTot()));
+$template->display(array('prods' => $result, 'tot' => $cart->getTot(), 'addrs' => $addresses));
 ?>

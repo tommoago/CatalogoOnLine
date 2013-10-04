@@ -7,7 +7,6 @@
             <th>{% trans "descr" %}</th>
             <th>&#128;</th>
             <th>{% trans "cod" %}</th>
-<!--             <th>{% trans "cat" %}</th> -->
             <th>{% trans "qty" %}</th>
         </tr>
         {% for prod in prods %}
@@ -16,20 +15,38 @@
             <td>{{ prod.description }}</td>
             <td><b>{{ prod.price }}</b></td>
             <td><i>{{ prod.cod }}</i></td>
-<!--             <td>{{ prod.category }}</td> -->
             <td style="text-align:center">{{ prod.qty }}</td>
         </tr>
         {% endfor %}
     </table>
-        <ul>
-        	
+    <ul>
+        {% if addrs != '' %}
+        <li class="checkout">
+            <a href='#'><img src="../../../images/icons/cart/checkout/checkout_green-256.png" alt="Confirm">{% trans "confirm" %}</a>
+            <form action="confirm.php" method="post">
+                {% trans "adr" %}
+                <select name="a_id">
+                    {% for addr in addrs %}
+                    <option value="{{ addr.id }}">{{ addr.street }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value='{% trans "confirm" %}'/>
+            </form>
+            <form>
+            </form>
+
+        </li>
+        {% endif %}
+        {% if addrs == '' %}
             <li class="checkout">
                 <a href='confirm.php'><img src="../../../images/icons/cart/checkout/checkout_green-256.png" alt="Confirm">{% trans "confirm" %}</a>
             </li>
-            <li class="empty_cart">
-                <a href='../cart/empty.php'><img src="../../../images/icons/cart/return/return_red-256.png" alt="Cancel Order">{% trans "canc" %} {% trans "ord" %}</a>
-            </li>
-        </ul>
+        {% endif %}
+
+        <li class="empty_cart">
+            <a href='../cart/empty.php'><img src="../../../images/icons/cart/return/return_red-256.png" alt="Cancel Order">{% trans "canc" %} {% trans "ord" %}</a>
+        </li>
+    </ul>
     {%endif%}
     {% if prods|length == 0 %}
     <p>

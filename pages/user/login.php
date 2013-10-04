@@ -8,9 +8,9 @@ if (isset($_SESSION['user']['type'])) {
 
 $template = $twig->loadTemplate('user/login/login.phtml');
 
-isset($_GET['order'])? $order = $_GET['order']: $order = '';
+$order = isset($_GET['order'])?  $_GET['order']: '';
 
-isset($_GET['message'])? $message = $_GET['message']: $message = '';
+$message = isset($_GET['message'])? $_GET['message']: '';
 
 
 $template->display(array('message' => $message, 'order' => $order));

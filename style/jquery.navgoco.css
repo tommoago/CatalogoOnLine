@@ -49,7 +49,7 @@
     border-bottom-color: #fff;
 }
 .nav a:hover, .nav li.active > a {
-    background-color: #830000;
+    background-color: rgb(15, 185, 179);
     color: white;
 }
 .nav > li.active > a  {
