@@ -8,28 +8,39 @@
 //    link per cats '{{ path }}site/products/list.php?id_cat=' + id
     $.post("{{ path }}menu.php",
             function(data) {
-                var ul, li, a;
+                var ul, li, a, falseLink;
                 for (var i = 0; i < data.length; i++) {
                     var id = data[i]['id'];
                     a = document.createElement('a');
+                    falseLink = document.createElement('a');
+
                     li = document.createElement('li');
+                    falseLink.setAttribute('href', '#');
+                    falseLink.appendChild(document.createTextNode(''));
                     a.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id);
                     a.appendChild(document.createTextNode(data[i]['name']));
-
+                    
                     li.appendChild(a);
+                    li.appendChild(falseLink);
                     $('#demo2').append(li);
-                    var li2, a2;
+                    
+                    var li2, a2, falseLink2;
                     ul = document.createElement('ul');
                     for (var j = 0; j < data[i]['category'].length; j++) {
                         var cat2 = data[i]['category'][j];
                         var id2 = cat2['id'];
 
                         a2 = document.createElement('a');
+                        falseLink2 = document.createElement('a');
+                        
                         li2 = document.createElement('li');
+                        falseLink2.setAttribute('href', '#');
+                        falseLink2.appendChild(document.createTextNode(''));
                         a2.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id2);
                         a2.appendChild(document.createTextNode(cat2['name']));
-
+                        
                         li2.appendChild(a2);
+                        li2.appendChild(falseLink2);
                         
                         var li3, a3;
                         var ul2 = document.createElement('ul');
@@ -54,9 +65,6 @@
                 $("#demo2").navgoco();
             }, "json");
 
-//    $(document).ready(function() {
-//        $("#demo2").navgoco({accordion: true});
-//    });
 </script>
 <div id='accordion'>
     <ul id="demo2" class="nav">
