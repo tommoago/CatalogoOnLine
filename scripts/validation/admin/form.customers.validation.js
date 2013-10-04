@@ -12,7 +12,7 @@ $(document).ready(function() {
 				digits : true,
 				required : true
 			},
-			password : "required",
+			password : "required"
 		},
 		messages : {
 			name : " required",
@@ -20,7 +20,7 @@ $(document).ready(function() {
 			address : " required",
 			email : " email not valid",
 			telephone : " telephone not valid",
-			password : " required",
+			password : " required"
 		}
 	});
 });

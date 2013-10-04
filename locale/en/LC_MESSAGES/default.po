@@ -365,3 +365,21 @@ msgstr "Send"
 
 msgid "del.profile"
 msgstr "Are you sure to delete your account?"
+
+msgid "street"
+msgstr "Street"
+
+msgid "city"
+msgstr "City"
+
+msgid "prov"
+msgstr "Province"
+
+msgid "zip"
+msgstr "ZIP code"
+
+msgid "country"
+msgstr "Country"
+
+msgid "adrs"
+msgstr "Addresses"

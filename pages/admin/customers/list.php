@@ -27,9 +27,9 @@ try {
     }
     if($offset != 0 ) $offset *= $limit;
     
-    $stmt = $DBH->prepare('SELECT * FROM customers LIMIT ' . $offset . ', ' . $limit);
-    $stmt->execute();
-    $result = $stmt->fetchAll();
+    $stmt2 = $DBH->prepare('SELECT * FROM customers LIMIT ' . $offset . ', ' . $limit);
+    $stmt2->execute();
+    $result = $stmt2->fetchAll();
 
     foreach ($result as &$row) {
         $stmt2 = $DBH->prepare('SELECT * FROM administrators WHERE id = :id');
