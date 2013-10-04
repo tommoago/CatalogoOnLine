@@ -9,8 +9,12 @@ try {
     $db = new dataBase();
     $DBH = $db->connect();
     
-    $STH = $DBH->prepare('DELETE FROM customers WHERE id = :id');
+    //elimino anche la traccia degli indirizzi associati
+    $STH = $DBH->prepare('DELETE FROM customers_has_addresses WHERE customers_id = :id');
     $STH->execute($data);
+    
+    $STH2 = $DBH->prepare('DELETE FROM customers WHERE id = :id');
+    $STH2->execute($data);
 
     $session->logout();
 } catch (PDOException $e) {

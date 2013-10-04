@@ -1,0 +1,56 @@
+{% include 'user/structure/header.phtml' %}
+{% include 'user/structure/menu.phtml' %}
+<script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
+<script type="text/javascript" src="../../../scripts/validation/admin/form.addresses.validation.js"></script>
+
+</script>
+<div id='content'>
+	<p class="detail_adm">{% trans "ins" %} {% trans "cust" %}</p>
+	<p>{{ message }}</p>
+	<form action="insert_address.php" method="post" id="formaddresses">
+                <input type="hidden" name="cus_id" value="{{ cus_id }}"/>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "street" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" id="street" name="street"/>
+			</div>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "city" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" id="city" name="city"/>
+			</div>
+		</div>
+               
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "prov" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" id="prov" name="prov"/>
+			</div>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "zip" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" id="zip" name="zip"/>
+			</div>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "country" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" id="country" name="country"/>
+			</div>
+		</div>
+		<input class="invio" type="submit" value='{% trans "submit" %}'/>
+	</form>
+</div>
+{% include 'user/structure/footer.phtml' %}
