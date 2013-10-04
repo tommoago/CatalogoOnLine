@@ -312,18 +312,29 @@ h2{
     list-style-type: none;
     padding: 25px 0 0 42px;
 }
+.footer_menu {
+    list-style-type: none;
+    padding: 0px 0 0 0px;
+}
 .footer_menu li {
     display: inline;
     line-height: 17px;
     float: left;
+    background: white;
+    width: auto;
+}
+.footer_menu:first-child li {
+    padding-left: 11px
 }
 .footer_menu img{
-    margin-top: 3px
+    margin-top: 3px;
+    margin-bottom: 4px
+
 }
 .footer_menu li a {
-    color: #fff;
+    color: #000;
     text-decoration: none;
-    margin: 0 6px;
+    margin: 0px  6px;
 }
 .footer_menu li a:visited {
     text-decoration: none
