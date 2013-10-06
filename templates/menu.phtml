@@ -4,7 +4,9 @@
 {% endif %}
 <script type="text/javascript" src="{{ path }}../scripts/jquery.navgoco.js"></script>
 <link rel="stylesheet" href="{{ path }}../style/jquery.navgoco.css" type="text/css" media="screen" />
-<script type="text/javascript">
+<link rel='stylesheet' type='text/css' href='accordion.css' />
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+<!--<script type="text/javascript">
 //    link per cats '{{ path }}site/products/list.php?id_cat=' + id
     $.post("{{ path }}menu.php",
             function(data) {
@@ -66,9 +68,34 @@
             }, "json");
 
 </script>
+-->
 <div id='accordion'>
-    <ul id="demo2" class="nav">
+<div id='cssmenu'>
+<ul>
+   <li class='active'><a href='index.html'><span>Home</span></a></li>
+   <li class='has-sub'><a href='#'><span>Products</span></a>
+      <ul>
+         <li class='has-sub'><a href='#'><span>Product 1</span></a>
+            <ul>
+               <li><a href='#'><span>Sub Item</span></a></li>
+               <li class='last'><a href='#'><span>Sub Item</span></a></li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'><span>Product 2</span></a>
+            <ul>
+               <li><a href='#'><span>Sub Item</span></a></li>
+               <li class='last'><a href='#'><span>Sub Item</span></a></li>
+            </ul>
+         </li>
+      </ul>
+   </li>
+   <li><a href='#'><span>About</span></a></li>
+   <li class='last'><a href='#'><span>Contact</span></a></li>
+</ul>
+</div>
+<!-- <ul id="demo2" class="nav">
         <li><a href="{{ path }}site/products/list_tag.php?tag=new">{% trans "new" %}</a></li>
         <li><a href="{{ path }}site/products/list_tag.php?tag=offer">{% trans "ofr" %}</a></li>
-    </ul>
+     </ul>
+ -->
 </div>
