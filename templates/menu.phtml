@@ -2,100 +2,83 @@
 {% if index == '' %}
 {% set path = '../../' %}
 {% endif %}
-<script type="text/javascript" src="{{ path }}../scripts/jquery.navgoco.js"></script>
-<link rel="stylesheet" href="{{ path }}../style/jquery.navgoco.css" type="text/css" media="screen" />
 <link rel='stylesheet' type='text/css' href='{{ path }}../style/accordion.css' />
-<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
-<!--<script type="text/javascript">
+<script type="text/javascript">
 //    link per cats '{{ path }}site/products/list.php?id_cat=' + id
     $.post("{{ path }}menu.php",
             function(data) {
-                var ul, li, a, falseLink;
+                var li, a;
                 for (var i = 0; i < data.length; i++) {
                     var id = data[i]['id'];
-                    a = document.createElement('a');
-                    falseLink = document.createElement('a');
 
-                    li = document.createElement('li');
-                    falseLink.setAttribute('href', '#');
-                    falseLink.appendChild(document.createTextNode(''));
+                    a = document.createElement('a');
                     a.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id);
                     a.appendChild(document.createTextNode(data[i]['name']));
-                    
+
+                    li = document.createElement('li');
                     li.appendChild(a);
-                    li.appendChild(falseLink);
-                    $('#demo2').append(li);
-                    
-                    var li2, a2, falseLink2;
+
+                    var ul, li2, a2;
                     ul = document.createElement('ul');
                     for (var j = 0; j < data[i]['category'].length; j++) {
                         var cat2 = data[i]['category'][j];
                         var id2 = cat2['id'];
 
                         a2 = document.createElement('a');
-                        falseLink2 = document.createElement('a');
-                        
-                        li2 = document.createElement('li');
-                        falseLink2.setAttribute('href', '#');
-                        falseLink2.appendChild(document.createTextNode(''));
                         a2.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id2);
                         a2.appendChild(document.createTextNode(cat2['name']));
-                        
+
+                        li2 = document.createElement('li');
                         li2.appendChild(a2);
-                        li2.appendChild(falseLink2);
                         
-                        var li3, a3;
-                        var ul2 = document.createElement('ul');
+                        ul.appendChild(li2);
+
+                        var ul2, li3, a3;
+                        ul2 = document.createElement('ul');
                         for (var k = 0; k < cat2['category'].length; k++) {
                             var cat3 = cat2['category'][k];
                             var id3 = cat3['id'];
 
                             a3 = document.createElement('a');
-                            li3 = document.createElement('li');
                             a3.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id3);
                             a3.appendChild(document.createTextNode(cat3['name']));
 
+                            li3 = document.createElement('li');
                             li3.appendChild(a3);
-                            ul2.appendChild(li3);
 
+                            ul2.appendChild(li3);
                         }
                         li2.appendChild(ul2);
-                        ul.appendChild(li2);
                     }
                     li.appendChild(ul);
+                    $('#menujs').append(li);
                 }
-                $("#demo2").navgoco();
             }, "json");
 
 </script>
--->
 <div id='accordion'>
-<div id='cssmenu'>
-<ul>
-   <li class='active'><a href='index.html'><span>Home</span></a></li>
-   <li class='has-sub'><a href='#'><span>Products</span></a>
-      <ul>
-         <li class='has-sub'><a href='#'><span>Product 1</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Item</span></a></li>
-               <li class='last'><a href='#'><span>Sub Item</span></a></li>
-            </ul>
-         </li>
-         <li class='has-sub'><a href='#'><span>Product 2</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Item</span></a></li>
-               <li class='last'><a href='#'><span>Sub Item</span></a></li>
-            </ul>
-         </li>
-      </ul>
-   </li>
-   <li><a href='#'><span>About</span></a></li>
-   <li class='last'><a href='#'><span>Contact</span></a></li>
-</ul>
-</div>
-<!-- <ul id="demo2" class="nav">
-        <li><a href="{{ path }}site/products/list_tag.php?tag=new">{% trans "new" %}</a></li>
-        <li><a href="{{ path }}site/products/list_tag.php?tag=offer">{% trans "ofr" %}</a></li>
-     </ul>
- -->
-</div>
+    <div id='cssmenu'>
+        <ul id="menujs">
+            <li><a href="{{ path }}site/products/list_tag.php?tag=new">{% trans "new" %}</a></li>
+            <li><a href="{{ path }}site/products/list_tag.php?tag=offer">{% trans "ofr" %}</a></li>
+<!--            <li class='has-sub'><a href='#'><span>Products</span></a>
+                <ul>
+                    <li class='has-sub'><a href='#'><span>Product 1</span></a>
+                        <ul>
+                            <li><a href='#'><span>Sub Item</span></a></li>
+                            <li class='last'><a href='#'><span>Sub Item</span></a></li>
+                        </ul>
+                    </li>
+                    <li class='has-sub'><a href='#'><span>Product 2</span></a>
+                        <ul>
+                            <li><a href='#'><span>Sub Item</span></a></li>
+                            <li class='last'><a href='#'><span>Sub Item</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href='#'><span>About</span></a></li>
+            <li class='last'><a href='#'><span>Contact</span></a></li>-->
+        </ul>
+    </div>
+ </div>
