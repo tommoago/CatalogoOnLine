@@ -55,8 +55,7 @@
 /* Custom CSS Styles */
 #cssmenu {
   font-size: 18px;
-  width: 190px;
-  margin: 5px;
+  width: auto;
 }
 #cssmenu ul a,
 #cssmenu ul a:link,
