@@ -3,13 +3,21 @@
 <div id='content'>
     <div class="show_product">
         <div class="sum_product">
-            {% if prod.new == 1 %}
+				{% if prod.new == 1 %}
+                        <p class="new_badge">{% trans "new" %}<p>
+                    {% endif %}
+                    {% if prod.offer == 1 %}
+                        <p class="offer_badge">{% trans "ofr" %}<p>
+                    {% endif %}        
+        
+<!--		  {% if prod.new == 1 %}
             <img class="new" src="../../../images/icons/new/new-512.png">  
             {% endif %}
-            <h4>{{ prod.barcode }}</h4>
             {% if prod.offer == 1 %}
-            <img class="new" src="../../../images/icons/sale/sale-512.png">  
+            <img class="sale" src="../../../images/icons/sale/sale-512.png">  
             {% endif %}
+ -->
+            <h4>{{ prod.barcode }}</h4>
 
 
             <ul>
