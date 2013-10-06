@@ -47,29 +47,31 @@
 }
 #cssmenu ul li {
   float: none;
+
 }
 #cssmenu ul ul li {
   font-weight: normal;
 }
 /* Custom CSS Styles */
 #cssmenu {
-  font-family: 'Lato', sans-serif;
   font-size: 18px;
-  width: 200px;
+  width: 190px;
+  margin: 5px;
 }
 #cssmenu ul a,
 #cssmenu ul a:link,
 #cssmenu ul a:visited {
   display: block;
-  color: #848889;
+  color: #000;
   text-decoration: none;
   font-weight: 300;
 }
 #cssmenu > ul {
   float: none;
+
 }
 #cssmenu ul {
-  background: #fff;
+  background: transparent;
 }
 #cssmenu > ul > li {
   border-left: 3px solid #d7d8da;
@@ -78,13 +80,13 @@
   padding: 10px 20px;
 }
 #cssmenu > ul > li:hover {
-  border-left: 3px solid #a80000;
+  border-left: 3px solid #0FB9B3 ;
 }
 #cssmenu ul li:hover > a {
-  color: #a80000;
+  color: #0FB9B3;
 }
 #cssmenu > ul > li:hover {
-  background: #f6f6f6;
+  background: #eee;
 }
 /* Sub Menu */
 #cssmenu ul ul a:link,
@@ -95,18 +97,17 @@
 #cssmenu ul ul {
   width: 180px;
   background: none;
-  border-left: 20px solid transparent;
+  border-left: 15px solid transparent;
 }
 #cssmenu ul ul a {
   padding: 8px 0;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #E00000;
 }
 #cssmenu ul ul li {
   padding: 0 20px;
   background: #fff;
 }
 #cssmenu ul ul li:last-child {
-  border-bottom: 3px solid #d7d8da;
   padding-bottom: 10px;
 }
 #cssmenu ul ul li:first-child {
