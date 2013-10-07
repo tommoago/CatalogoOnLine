@@ -19,7 +19,8 @@ try {
         $stmt->execute(array('id' => $row['id']));
         $product = $stmt->fetch();
         $product['qty'] = $row['qty'];
-
+        
+        if(strlen($row['description']) > 150)
         $product['description'] = substr($product['description'], 0, 150) .'...';
         
         //mette il prezzo giusto

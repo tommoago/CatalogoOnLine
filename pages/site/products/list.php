@@ -41,7 +41,8 @@ try {
         $stmt4->execute(array('id' => $row['categories_id']));
         $cat = $stmt4->fetch();
         $row['category'] = $cat['name'];
-
+        
+        if(strlen($row['description']) > 150)       
         $row['description'] = substr($row['description'], 0, 150) . '...';
 
         $stmt5 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');

@@ -24,6 +24,7 @@ try {
         $imm = $stmt4->fetch();
         $row['image'] = $imm['path'];
         
+        if(strlen($row['description']) > 150)
         $row['description'] = substr($row['description'], 0, 150) .'...';
 
         //mette il prezzo giusto vediamo se farlo comparire nelle slide

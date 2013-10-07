@@ -30,6 +30,7 @@ try {
     $result = $stmt->fetchAll();
 
     foreach ($result as &$row) {
+        if(strlen($row['description']) > 150)
         $row['description'] = substr($row['description'], 0, 80) .'...';
         
         $stmt = $DBH->prepare('SELECT * FROM categories WHERE id = :id');

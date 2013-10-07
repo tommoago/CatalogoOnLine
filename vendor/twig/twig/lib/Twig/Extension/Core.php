@@ -308,8 +308,19 @@ class Twig_Extension_Core extends Twig_Extension
     }
     
     public function getGlobals() {
+        try {
+            $db = new dataBase();
+            $DBH = $db->connect();
+            $stmt = $DBH->prepare('SELECT * FROM company_info');
+            $stmt->execute(array());
+            $company = $stmt->fetch();
+
+        } catch (PDOException $e) {
+            echo 'ERROR: ' . $e->getMessage();
+        }
         return array(
-            'pSession'   => $_SESSION,
+            'pSession' => $_SESSION,
+            'company' => $company
         ) ;
     }
 }

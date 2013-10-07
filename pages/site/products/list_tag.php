@@ -38,6 +38,7 @@ try {
         $cat = $stmt3->fetch();
         $row['category'] = $cat['name'];
 
+        if(strlen($row['description']) > 150)
         $row['description'] = substr($row['description'], 0, 150) . '...';
 
         $stmt4 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');

@@ -19,23 +19,9 @@
         <div id="header_adm">
             <div id="header_inside_adm">
                 <div id="redapple_adm"></div>
-                <h1 id="headertitle_adm"><a href="{{ path }}../../index.php">Mela Rossa Cash & Carry</a></h1>
+                <h1 id="headertitle_adm"><a href="{{ path }}../../index.php">{{ company.name }}</a></h1>
             </div>
-<!-- 	  <ul id="menu_adm">
-                    <li>
-                        <a href="{{ path }}../../index.php" class="but1">Home Page</a>
-                    </li>
-                    <li>
-                        <a href="" class="but">{% trans "who" %}</a>
-                    </li>
-                    <li>
-                        <a href="{{ path }}../../pages/where.php" class="but">{% trans "where" %}</a>
-                    </li>
-                    <li>
-                        <a href="" class="but">{% trans "contacts" %}</a>
-                    </li>
-                </ul>  
--->
+
                 <div id="topmenu_logout_adm">
                     {% if logInOut == 'logout' %}
                         <a href="{{ path }}{{ logInOut }}.php">{{ logInOut }}<img src="{{ path }}../../images/icons/system/logout/logout-256.png" alt="Logout"></a> 
