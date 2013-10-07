@@ -2,6 +2,11 @@
 {% include 'menu.phtml' %}
 <div id='content'>
     <div class="list_products">
+
+        {% for cat in oCats %}
+        <a href="list.php?id_cat={{ cat.id }}">{{ cat.name }}</a>
+        {% endfor %}
+
         <ul>
             {% for prod in prods %}
             <li style="background-image:url('../../{{ prod.image }}')">
@@ -11,12 +16,11 @@
                         <h2>&#128; {{ prod.price }}</h2>
                     </a>
                     {% if prod.new == 1 %}
-                        <p class="new_badge">{% trans "new" %}<p>
-                    {% endif %}
-                    {% if prod.offer == 1 %}
-                        <p class="offer_badge">{% trans "ofr" %}<p>
-                    {% endif %}
-        <!-- 			<img src="../../{{ prod.image }}"> -->
+                    <p class="new_badge">{% trans "new" %}<p>
+                        {% endif %}
+                        {% if prod.offer == 1 %}
+                    <p class="offer_badge">{% trans "ofr" %}<p>
+                        {% endif %}
                 </div>
             </li>
             {% endfor %}

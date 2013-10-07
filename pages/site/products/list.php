@@ -13,10 +13,15 @@ $numPages = 0;
 try {
     $db = new dataBase();
     $DBH = $db->connect();
-
-    $stmt = $DBH->prepare('SELECT COUNT(*) FROM products WHERE categories_id = :id');
+    
+    //seleziono eventuali sottocategoria a quella attuale
+    $stmt = $DBH->prepare('SELECT * FROM categories WHERE categories_id = :id');
     $stmt->execute(array('id' => $_GET['id_cat']));
-    $totProd = $stmt->fetch();
+    $otherCats = $stmt->fetchAll();
+
+    $stmt2 = $DBH->prepare('SELECT COUNT(*) FROM products WHERE categories_id = :id');
+    $stmt2->execute(array('id' => $_GET['id_cat']));
+    $totProd = $stmt2->fetch();
     $count = $totProd[0];
     $numPages += intval($count / $limit);
     if ($count % $limit != 0) {
@@ -25,23 +30,23 @@ try {
     if ($offset != 0)
         $offset *= $limit;
 
-    $stmt = $DBH->prepare('SELECT * FROM products  WHERE categories_id = :id LIMIT '
+    $stmt3 = $DBH->prepare('SELECT * FROM products  WHERE categories_id = :id LIMIT '
             . $offset . ', ' . $limit);
-    $stmt->execute(array('id' => $_GET['id_cat']));
-    $result = $stmt->fetchAll();
+    $stmt3->execute(array('id' => $_GET['id_cat']));
+    $result = $stmt3->fetchAll();
 
     foreach ($result as &$row) {
         //categoria associata
-        $stmt = $DBH->prepare('SELECT * FROM categories WHERE id = :id');
-        $stmt->execute(array('id' => $row['categories_id']));
-        $cat = $stmt->fetch();
+        $stmt4 = $DBH->prepare('SELECT * FROM categories WHERE id = :id');
+        $stmt4->execute(array('id' => $row['categories_id']));
+        $cat = $stmt4->fetch();
         $row['category'] = $cat['name'];
 
         $row['description'] = substr($row['description'], 0, 150) . '...';
 
-        $stmt4 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
-        $stmt4->execute(array('id' => $row['id']));
-        $imm = $stmt4->fetch();
+        $stmt5 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
+        $stmt5->execute(array('id' => $row['id']));
+        $imm = $stmt5->fetch();
         $row['image'] = $imm['path'];
 
         //mette il prezzo giusto
@@ -63,9 +68,9 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$lowRange = $offset / $limit - 3;
-$maxRange = $offset / $limit;
-$maxRange < 3 ? $maxRange = 6 : $maxRange += 3;
+$div = $offset/$limit;
+$lowRange = $div-3;
+$maxRange = $div < 3? 6 : $div+3;
 
-$template->display(array('prods' => $result, 'totPages' => $numPages, 'lr' => $lowRange, 'mr' => $maxRange, 'id_cat' => $_GET['id_cat']));
+$template->display(array('prods' => $result, 'totPages' => $numPages, 'lr' => $lowRange, 'mr' => $maxRange, 'id_cat' => $_GET['id_cat'], 'oCats' => $otherCats));
 ?>
