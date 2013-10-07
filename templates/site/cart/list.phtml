@@ -26,19 +26,19 @@
                     <input type="submit" value='{% trans "submit" %}'/>
                 </form>
             </td>
-            <td class="remove_cart"><a href='remove.php?id={{ prod.id }}'><img src="../../../images/icons/cart/return/return-256.png" alt="Remove"></a></td>
+            <td class="remove_cart"><a href='remove.php?id={{ prod.id }}'><img src="../../../images/icons/cart/return/return-256.png"></a></td>
         </tr>
         {% endfor %}
     </table>
     <ul>
         <li class="total">
-            <img src="../../../images/icons/cart/shopping_cart_filled/shopping_cart_filled-256.png" alt="Total">{% trans "tot" %}:  <b>&#128;{{ tot }}</b>
+            <img src="../../../images/icons/cart/shopping_cart_filled/shopping_cart_filled-256.png" >{% trans "tot" %}:  <b>&#128;{{ tot }}</b>
         </li>
         <li class="checkout">
-            <a href='../order/summary.php'><img src="../../../images/icons/cart/checkout/checkout_green-256.png" alt="Checkout">{% trans "checkout" %}</a>
+            <a href='../order/summary.php'><img src="../../../images/icons/cart/checkout/checkout_green-256.png">{% trans "checkout" %}</a>
         </li>
         <li class="empty_cart">
-            <a href='empty.php'><img src="../../../images/icons/cart/return/return_red-256.png" alt='{% trans "del" %}'>{% trans "empty.cart" %}</a>
+            <a href='empty.php'><img src="../../../images/icons/cart/return/return_red-256.png">{% trans "empty.cart" %}</a>
         </li>
     </ul>
     {% if back != '' %}

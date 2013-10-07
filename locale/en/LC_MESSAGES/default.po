@@ -212,6 +212,9 @@ msgstr "Are you sure to confirm this order?"
 msgid "img"
 msgstr "Image"
 
+msgid "imgs"
+msgstr "Images"
+
 msgid "qty"
 msgstr "Q.ty"
 
@@ -383,3 +386,9 @@ msgstr "Country"
 
 msgid "adrs"
 msgstr "Addresses"
+
+msgid "view"
+msgstr "View"
+
+msgid "add"
+msgstr "Add"

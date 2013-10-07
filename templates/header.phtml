@@ -38,17 +38,17 @@
                 	<ul>    
                             {% if not(pSession.user.id != '' and  pSession.user.role != 'jack' and  pSession.user.role != 'operator')%}
                 		<li class="tpm">
-                			<a href="{{ path }}user/sign_up.php">{% trans "signup" %}<img src="{{ path }}../images/icons/system/login/login-256.png" alt="Login"></a> 
+                			<a href="{{ path }}user/sign_up.php">{% trans "signup" %}<img src="{{ path }}../images/icons/system/login/login-256.png" alt='{% trans "signup" %}'></a> 
                 		</li>
                             {% endif %}
                 		<li class="tpm">
-                			<a href="{{ path }}admin/login.php">{% trans "adm" %}<img src="{{ path }}../images/icons/users/administrator/administrator-256.png" alt="Admin"></a>
+                			<a href="{{ path }}admin/login.php">{% trans "adm" %}<img src="{{ path }}../images/icons/users/administrator/administrator-256.png" alt='{% trans "adm" %}'></a>
                 		</li>
                 		<li class="tpm">
-                			<a href="{{ path }}user/login.php">{% trans "user" %}<img src="{{ path }}../images/icons/users/group/group-256.png" alt="User"></a>
+                			<a href="{{ path }}user/login.php">{% trans "user" %}<img src="{{ path }}../images/icons/users/group/group-256.png" alt='{% trans "user" %}'></a>
                 		</li>
                 		<li class="cart_header">
-                			<a href="{{ path }}site/cart/list.php">{% trans "cart" %}<img src="{{ path }}../images/icons/cart/shopping_cart/shopping_cart-256.png" alt="Cart"></a>
+                			<a href="{{ path }}site/cart/list.php">{% trans "cart" %}<img src="{{ path }}../images/icons/cart/shopping_cart/shopping_cart-256.png" alt='{% trans "cart" %}'></a>
                 		</li>
                 </div>
         </div>

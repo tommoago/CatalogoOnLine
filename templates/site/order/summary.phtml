@@ -22,7 +22,7 @@
     <ul>
         {% if addrs != '' %}
         <li class="checkout">
-            <a href='#'><img src="../../../images/icons/cart/checkout/checkout_green-256.png" alt="Confirm">{% trans "confirm" %}</a>
+            <a href='#'><img src="../../../images/icons/cart/checkout/checkout_green-256.png" alt='{% trans "confirm" %}'>{% trans "confirm" %}</a>
             <form action="confirm.php" method="post">
                 {% trans "adr" %}
                 <select name="a_id">
@@ -39,12 +39,12 @@
         {% endif %}
         {% if addrs == '' %}
             <li class="checkout">
-                <a href='confirm.php'><img src="../../../images/icons/cart/checkout/checkout_green-256.png" alt="Confirm">{% trans "confirm" %}</a>
+                <a href='confirm.php'><img src="../../../images/icons/cart/checkout/checkout_green-256.png" alt='{% trans "confirm" %}'>{% trans "confirm" %}</a>
             </li>
         {% endif %}
 
         <li class="empty_cart">
-            <a href='../cart/empty.php'><img src="../../../images/icons/cart/return/return_red-256.png" alt="Cancel Order">{% trans "canc" %} {% trans "ord" %}</a>
+            <a href='../cart/empty.php'><img src="../../../images/icons/cart/return/return_red-256.png" alt='{% trans "canc" %} {% trans "ord" %}'>{% trans "canc" %} {% trans "ord" %}</a>
         </li>
     </ul>
     {%endif%}

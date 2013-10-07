@@ -25,10 +25,10 @@
     </table>
     {% if ord.file != ''%}
     <li class="print">
-        <a href='{{ ord.file }}'><img src="../../../images/icons/printer/printer-256.png" alt="Print">{% trans "print" %}</a>
+        <a href='{{ ord.file }}'><img src="../../../images/icons/printer/printer-256.png" alt='{% trans "print" %}'>{% trans "print" %}</a>
     </li>
     <li class="pdf">
-        <a href='{{ ord.file }}'><img src="../../../images/icons/pdf/pdf-256.png" alt="PDF">{% trans "pdf" %}</a>
+        <a href='{{ ord.file }}'><img src="../../../images/icons/pdf/pdf-256.png" alt='{% trans "pdf" %}'>{% trans "pdf" %}</a>
     </li>
     {% endif %}
 </div>
