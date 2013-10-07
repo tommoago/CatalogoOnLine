@@ -7,10 +7,10 @@
 		<input type="hidden" name="id" value="{{ company.id }}"/>
 		<div class="totwidth">
 			<div class="panleft1">
-				{% trans "adr" %}:
+				{% trans "name" %}:
 			</div>
 			<div class="panleft2">
-				<input type="text" name="name" value="{{ company.name }}"/>
+				<input type="text" name="name" value="{{ company.name }}"/> <span style="font-size: 13px"> This will appear as the Header main title</span>
 			</div>
 		</div>
 		<div class="totwidth">
@@ -18,7 +18,7 @@
 				{% trans "descr" %}:
 			</div>
 			<div class="panleft2">
-				<input type="text" name="description" value="{{ company.description }}"/>
+				<input type="text" name="description" value="{{ company.description }}"/> <span style="font-size: 13px"> This will appear as the Header sub-title</span>
 			</div>
 		</div>
 		<div class="totwidth">

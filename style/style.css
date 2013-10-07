@@ -491,7 +491,7 @@ th {
 .delete, .delete_admin, .add_img {
     color: transparent;
     border: 0px solid black;
-    background: transparent;
+    background: white;
     text-align: center;
     border: 0px solid black;
     border-top: 1px solid #ADA895;
@@ -504,7 +504,7 @@ th {
     border-top: 1px solid #ADA895;
     border-bottom: 1px solid #ADA895;
     border-right: 1px solid #ADA895;
-    background: transparent;
+    background: white;
     text-align: center;
 }
 
