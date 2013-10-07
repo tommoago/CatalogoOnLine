@@ -404,7 +404,7 @@ h2{
     font-size: 14px;
 }
 input[type=submit], input[type=button] {
-    width: 75px;
+    width: 60px;
     height: 30px;
 }
 #accordion {
@@ -437,13 +437,13 @@ input[type=submit], input[type=button] {
 }
 td {
     font-size:1em;	
-    border-top:1px solid #ADA895;
-    border-left:1px solid #ADA895;
-    border-right:1px solid #ADA895;
-    border-bottom:1px solid #ADA895;
+    border-top:1px solid #aaa;
+    border-left:1px solid #aaa;
+    border-right:1px solid #aaa;
+    border-bottom:1px solid #aaa;
     padding:3px 2px 2px 2px;
     color: black;
-    background: #E5E2D3;
+    background: #ddd;
     text-decoration: none;
     word-wrap:break-word;
     text-align: left;
@@ -456,10 +456,10 @@ td a{
     text-align: left;
 }
 th {
-    border-right:1px solid #E5E2D3;
+    border-right:1px solid #aaa;
     font-size:1em;
     padding:3px 5px 2px 5px;
-    color: #54503F;
+    color: #575757;
     text-align: center;
     word-wrap:break-word;
     font-size: 13px;
@@ -504,14 +504,16 @@ th {
 
 .total {
     margin-top: 25px;
-    background-color: #d3cebb;
+    background-color: #ccc;
     padding: 10px 10px 5px 10px;
-    border: 1px solid #8B887B;
+    border: 1px solid #929292;
     border-radius: 3px 0px 0px 3px;   
     -moz-border-radius: 3px 0px 0px 3px;   
     -webkit-border-radius: 3px 0px 0px 3px;   
     float: left;
-    list-style: none
+    list-style: none;
+    height: 24px
+
 }
 .total a {
     color: #000;
@@ -520,91 +522,145 @@ th {
 }
 .print {
     margin-top: 25px;
-    background-color: #d3cebb;
+    background-color: #ccc;
     padding: 10px 10px 5px 10px;
-    border: 1px solid #8B887B;
+    border-top: 1px solid #929292;
+    border-bottom: 1px solid #929292;
+    border-left: 1px solid #929292;
     border-radius: 3px 0px 0px 3px;   
     -moz-border-radius: 3px 0px 0px 3px;   
-    -webkit-border-radius: 3px 0px 0px 3px;   
+    -webkit-border-radius: 3px 0px 0px 3px;  
     float: left;
-    list-style: none
+    list-style: none;
+    height: 24px
 }
 .print:active{
-    background-color: #B4B0A0;
-    border-bottom: 0px solid #8B887B;
-    border-top: 2px solid #8B887B;
-    border-left: 1px solid #8B887B;
-    border-right: 1px solid #8B887B;
+    background-color: #929292;
+    border-bottom: 0px solid #6F6E6E;
+    border-top: 2px solid #6F6E6E;
+    border-left: 1px solid #6F6E6E;
 }
 .print a {
     color: #000;
     text-decoration: none;
     font-weight: bold
 }
-.pdf {
+.pdf_first {
     margin-top: 25px;
-    background-color: #d3cebb;
+    background-color: #ccc;
     padding: 10px 10px 5px 10px;
-    border-top: 1px solid #8B887B;
-    border-bottom: 1px solid #8B887B;
-    border-right: 1px solid #8B887B;
-    float: left;
-    list-style: none
-}
-.pdf:active{
-    background-color: #B4B0A0;
-    border-bottom: 0px solid #8B887B;
-    border-top: 2px solid #8B887B;
-    border-right: 1px solid #8B887B;
-}
-.pdf a {
-    color: #000;
-    text-decoration: none;
-    font-weight: bold
-}
-
-/* 
-.confirm {
-    margin-top: 25px;
-    background-color: #ACCCA8;
-    padding: 10px 10px 5px 10px;
-    border: 1px solid #8B887B; 
+    border: 1px solid #929292;
     border-radius: 3px 0px 0px 3px;   
     -moz-border-radius: 3px 0px 0px 3px;   
     -webkit-border-radius: 3px 0px 0px 3px;
     float: left;
-    list-style: none
+    list-style: none;
+    height: 24px
+}
+.pdf_first:active{
+    background-color: #929292;
+    border-bottom: 0px solid #6F6E6E;
+    border-top: 2px solid #6F6E6E;
+    border-right: 1px solid #6F6E6E;
+    border-left: 1px solid #6F6E6E;
+}
+.pdf_first a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold
+}
+.pdf_last {
+    margin-top: 25px;
+    background-color: #ccc;
+    padding: 10px 10px 5px 10px;
+    border: 1px solid #929292;
+    border-radius: 0px 3px 3px 0px;   
+    -moz-border-radius: 0px 3px 3px 0px;   
+    -webkit-border-radius: 0px 3px 3px 0px;
+    float: left;
+    list-style: none;
+    height: 24px
+}
+.pdf_last:active{
+    background-color: #929292;
+    border-bottom: 0px solid #6F6E6E;
+    border-top: 2px solid #6F6E6E;
+    border-right: 1px solid #6F6E6E;
+    border-left: 1px solid #6F6E6E;
+}
+.pdf_last a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold
+}
+.confirm {
+    margin-top: 25px;
+    background-color: #ACCCA8;
+    padding: 10px 10px 5px 10px;
+    border: 1px solid #929292; 
+    border-radius: 3px 0px 0px 3px;   
+    -moz-border-radius: 3px 0px 0px 3px;   
+    -webkit-border-radius: 3px 0px 0px 3px;
+    float: left;
+    list-style: none;
+    height: 24px
 }
 .confirm:active{
     background-color: #91B68C;
-    border-bottom: 0px solid #8B887B;
-    border-top: 2px solid #8B887B;
-    border-left: 1px solid #8B887B;
-    border-right: 1px solid #8B887B;
+    border-bottom: 0px solid #929292;
+    border-top: 2px solid #929292;
+    border-left: 1px solid #929292;
+    border-right: 1px solid #929292;
 }
 .confirm a{
     color: #0A5506;
     text-decoration: none;
     font-weight: bold
-
 }
-*/
+.confirm_adm {
+    margin-top: 25px;
+    background-color: #ACCCA8;
+    padding: 10px 10px 5px 10px;
+    border-top: 1px solid #929292; 
+    border-left: 1px solid #929292; 
+    border-bottom: 1px solid #929292; 
+    border-radius: 3px 0px 0px 3px;   
+    -moz-border-radius: 3px 0px 0px 3px;   
+    -webkit-border-radius: 3px 0px 0px 3px;
+    float: left;
+    list-style: none;
+    height: 24px
+}
+.confirm_adm:active{
+    background-color: #91B68C;
+    border-bottom: 0px solid #929292;
+    border-top: 2px solid #929292;
+    border-left: 1px solid #929292;
+    border-right: 1px solid #929292;
+}
+.confirm_adm a{
+    color: #0A5506;
+    text-decoration: none;
+    font-weight: bold
+}
+
 .checkout {
     margin-top: 25px;
     background-color: #ACCCA8;
     padding: 10px 10px 5px 10px;
-    border-top: 1px solid #8B887B;
-    border-right: 1px solid #8B887B;
-    border-bottom: 1px solid #8B887B;   
+    border-top: 1px solid #929292;
+    border-right: 1px solid #929292;
+    border-bottom: 1px solid #929292;   
     float: left;
-    list-style: none
+    list-style: none;
+    height: 24px
 }
 .checkout:active{
     background-color: #91B68C;
-    border-bottom: 0px solid #8B887B;
-    border-top: 2px solid #8B887B;
-    border-left: 0px solid #8B887B;
-    border-right: 1px solid #8B887B;
+    border-bottom: 0px solid #6F6E6E;
+    border-top: 2px solid #6F6E6E;
+    border-left: 0px solid #6F6E6E;
+    border-right: 1px solid #6F6E6E;
 }
 .checkout a {
     color: #0A5506;
@@ -615,21 +671,22 @@ th {
     margin-top: 25px;
     background-color: #DDA9A9;
     padding: 10px 10px 5px 10px;
-    border-top: 1px solid #8B887B;
-    border-right: 1px solid #8B887B;
-    border-bottom: 1px solid #8B887B;
+    border-top: 1px solid #929292;
+    border-right: 1px solid #929292;
+    border-bottom: 1px solid #929292;
     border-radius: 0px 3px 3px 0px;   
     -moz-border-radius: 0px 3px 3px 0px;   
     -webkit-border-radius: 0px 3px 3px 0px; 
     float: left;
-    list-style: none
+    list-style: none;
+    height: 24px
 }
 .empty_cart:active{
     background-color: #CC9B9B;
-    border-bottom: 0px solid #8B887B;
-    border-top: 2px solid #8B887B;
-    border-left: 0px solid #8B887B;
-    border-right: 1px solid #8B887B;
+    border-bottom: 0px solid #929292;
+    border-top: 2px solid #929292;
+    border-left: 0px solid #929292;
+    border-right: 1px solid #929292;
 }
 .empty_cart a{
     color: #770202;
@@ -647,19 +704,21 @@ th {
     -webkit-border-radius: 3px;
 }
 .add_cart:active{
-    background-color: #B4B0A0;
-    border-bottom: 0px solid #8B887B;
-    border-top: 2px solid #8B887B;
-    border-left: 1px solid #8B887B;
-    border-right: 1px solid #8B887B;
+    background-color: #929292;
+    border-bottom: 0px solid #6F6E6E;
+    border-top: 2px solid #6F6E6E;
+    border-left: 1px solid #6F6E6E;
+    border-right: 1px solid #6F6E6E;
 }
 .add_cart a{
     color: black;
     text-decoration: none;
     font-weight: bold;
 }
-
-.total img, .pdf img, .empty_cart img, .add_cart img, .checkout img, .confirm img, .print img{
+.add_cart p{   
+    font-size: 12px;
+}
+.total img, .pdf img, .pdf_first img, .pdf_last img, .empty_cart img, .add_cart img, .checkout img, .confirm img, .print img{
     width: auto;
     height: 30px;
     float: left;
@@ -837,7 +896,7 @@ th {
 }
 .sum_product p.new_badge{
     color: white;
-    background: rgba(0, 128, 0, 0.76);
+    background: green;
     padding-right: 15px;    
     padding-left: 58px;
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
@@ -855,7 +914,7 @@ th {
 }
 .sum_product p.offer_badge{
     color: white;
-    background: rgba(255, 0, 0, 0.75);
+    background: red;
     padding-right: 50px;    
     padding-left: 50px;
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
@@ -1007,7 +1066,7 @@ th {
 .sign-in {
     margin-top: 15px;
     background-color: #d3cebb;
-    border: 1px solid #8B887B;
+    border: 1px solid #929292;
     border-radius: 5px 0px 0px 5px;   
     -moz-border-radius: 5px 0px 0px 5px;   
     -webkit-border-radius: 5px 0px 0px 5px;
@@ -1018,18 +1077,18 @@ th {
 }
 .sign-in:active {
     background-color: #B4B0A0;
-    border-bottom: 0px solid #8B887B;
-    border-top: 2px solid #8B887B;
-    border-left: 1px solid #8B887B;
-    border-right: 1px solid #8B887B;
+    border-bottom: 0px solid #929292;
+    border-top: 2px solid #929292;
+    border-left: 1px solid #929292;
+    border-right: 1px solid #929292;
 }
 .sign-up {
     margin-top: 15px;
     background-color: #d3cebb;
-    border-bottom: 1px solid #8B887B;
-    border-top: 1px solid #8B887B;
-    border-left: 0px solid #8B887B;
-    border-right: 1px solid #8B887B;
+    border-bottom: 1px solid #929292;
+    border-top: 1px solid #929292;
+    border-left: 0px solid #929292;
+    border-right: 1px solid #929292;
     border-radius: 0px 5px 5px 0px;   
     -moz-border-radius: 0px 5px 5px 0px;   
     -webkit-border-radius: 0px 5px 5px 0px;
@@ -1040,10 +1099,10 @@ th {
 }
 .sign-up:active {
     background-color: #B4B0A0;
-    border-bottom: 0px solid #8B887B;
-    border-top: 2px solid #8B887B;
-    border-left: 0px solid #8B887B;
-    border-right: 1px solid #8B887B;
+    border-bottom: 0px solid #929292;
+    border-top: 2px solid #929292;
+    border-left: 0px solid #929292;
+    border-right: 1px solid #929292;
 }
 .sign {
     margin-top: 10px;	

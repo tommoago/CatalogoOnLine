@@ -49,8 +49,8 @@
                 <a href='#'><img src="../../../images/icons/cart/buy/buy-256.png" alt='{% trans "add.cart" %}'>{% trans "add.cart" %}</a>
                 <form action="../cart/add.php" method="post">
                     <input type="hidden" name="id" value="{{ prod.id }}"/>
-                    <input type="text" id="qty_add" name="qty_add" value="1"/>
-                    <input type="submit" value='{% trans "submit" %}'/>
+                    <span>{% trans "qty" %}: <input type="text" id="qty_add" name="qty_add" value="1"/>
+                    <input type="submit" value='{% trans "submit" %}'/></span>
                 </form>
             </div>
         </div>
