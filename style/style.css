@@ -43,35 +43,53 @@ h2{
     margin: 0 auto;
     position: relative;
 }
-#headertitle {
+.headertitle {
     width: auto;
-    float: left;
     padding-top: 60px;
     padding-left: 20px;
+}
+
+.headertitle h1 a{
+    text-decoration: none;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 100;
+    color: #000;
     font-size: 40px;
-    color: #303030
 }
-#headertitle a{
+.headertitle h2 a{
     text-decoration: none;
-    color: #303030;
+    font-family: Helvetica, Arial, sans-serif;
     font-weight: 100;
+    color: #000;
+    font-size: 20px;
+    padding-left:10px
+
 }
-#headertitle_adm {
-    width: 50%;
+.headertitle_adm {
+    width: auto;
     float: left;
-    padding-top: 14px;
+    padding-top: 6px;
     padding-left: 20px;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 100;
     font-size: 25px;
     color: #303030
 }
-#headertitle_adm a{
+.headertitle_adm h1 a{
     text-decoration: none;
-    color: #303030;
+    font-family: Helvetica, Arial, sans-serif;
     font-weight: 100;
+    color: #000;
+    font-size: 25px;
+}
+.headertitle_adm h2 a{
+    text-decoration: none;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    color: #000;
+    font-size: 15px;
+    padding-left:6px
+
 }
 #content {
     width: auto;
@@ -105,7 +123,7 @@ h2{
 
 #topmenu {
     float: right;
-    padding-top: 139px;
+    padding-top: 10px;
     margin-right: 20px
 
 }
@@ -114,7 +132,7 @@ h2{
     float: left;
     padding-left: 4px;
     padding-right: 4px;
-    border-right: 1px solid #830000;
+    border-right: 1px solid #0FB9B3;
 }
 #topmenu li.cart_header {
     list-style: none;
@@ -138,7 +156,7 @@ h2{
 }
 #topmenu_logout {
     float: right;
-    padding-top: 139px;
+    padding-top: 10px;
 }
 #topmenu_logout_adm {
     float: right;
@@ -234,7 +252,7 @@ h2{
 #sidebar {
     width: 175px;
     float: left;
-    padding: 0px 25px 0px 25px;
+    padding: 10px 25px 0px 25px;
 }
 #list {
     list-style-type: none;
@@ -1065,7 +1083,7 @@ th {
 }
 .sign-in {
     margin-top: 15px;
-    background-color: #d3cebb;
+    background-color: #ccc;
     border: 1px solid #929292;
     border-radius: 5px 0px 0px 5px;   
     -moz-border-radius: 5px 0px 0px 5px;   
@@ -1076,15 +1094,15 @@ th {
     float: left
 }
 .sign-in:active {
-    background-color: #B4B0A0;
-    border-bottom: 0px solid #929292;
-    border-top: 2px solid #929292;
-    border-left: 1px solid #929292;
-    border-right: 1px solid #929292;
+    background-color: #929292;
+    border-bottom: 0px solid #6F6E6E;
+    border-top: 2px solid #6F6E6E;
+    border-left: 1px solid #6F6E6E;
+    border-right: 1px solid #6F6E6E;
 }
 .sign-up {
     margin-top: 15px;
-    background-color: #d3cebb;
+    background-color: #ccc;
     border-bottom: 1px solid #929292;
     border-top: 1px solid #929292;
     border-left: 0px solid #929292;
@@ -1098,11 +1116,11 @@ th {
     float: left
 }
 .sign-up:active {
-    background-color: #B4B0A0;
-    border-bottom: 0px solid #929292;
-    border-top: 2px solid #929292;
-    border-left: 0px solid #929292;
-    border-right: 1px solid #929292;
+    background-color: #929292;
+    border-bottom: 0px solid #6F6E6E;
+    border-top: 2px solid #6F6E6E;
+    border-left: 0px solid #6F6E6E;
+    border-right: 1px solid #6F6E6E;
 }
 .sign {
     margin-top: 10px;	

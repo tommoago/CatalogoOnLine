@@ -19,8 +19,10 @@
         <div id="header_adm">
             <div id="header_inside_adm">
                 <div id="redapple_adm"></div>
-                <h1 id="headertitle_adm"><a href="{{ path }}../../index.php">{{ company.name }}</a></h1>
-            </div>
+			 <div class="headertitle_adm">
+             	 	<h1><a href="{{ path }}../../index.php">{{ company.name }}</a></h1>
+            	 	<h2><a href="{{ path }}../../index.php">{{ company.description }}</a></h2>
+                </div>            </div>
 
                 <div id="topmenu_logout_adm">
                     {% if logInOut == 'logout' %}
