@@ -1,5 +1,4 @@
 <?php
-
 include '../../conf/config.php';
 include '../../conf/twig.php';
 
@@ -50,5 +49,5 @@ if ($_SESSION['lang'] == 'it') {
     $var = 'English Privacy';
 }
 
-$template->display(array('var' => $var, 'message' => isset($_GET['message']) ? $_GET['message'] : ''));
+$template->display(array('var' => $var, 'message' => isset($_GET['message']) ? $_GET['message'] : '', 'index' => 'yes'));
 ?>
