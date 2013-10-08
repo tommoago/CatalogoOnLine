@@ -157,6 +157,7 @@ h2{
 #topmenu_logout {
     float: right;
     padding-top: 10px;
+    margin-right: 25px
 }
 #topmenu_logout_adm {
     float: right;
