@@ -36,7 +36,7 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
     //crea pdf
-    $path = $pdf->createPDF('invoices');
+    $path = $pdf->createPDF();
     $pdf->savePDF($path);
     $customer = $pdf->getCustomer();
     $order = $pdf->getOrder();
@@ -51,7 +51,7 @@ try {
     $mail->AddAttachment($path);      // attachment
 
     if (!$mail->Send()) {
-       header('location:show.php?message=' . $mail->ErrorInfo);
+       header('location:show.php?id=' . $id .'&message=' . $mail->ErrorInfo);
     } else {
         header('location:show.php?id=' . $id);
     }

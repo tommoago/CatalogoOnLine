@@ -68,9 +68,14 @@
 			</li>
 		 
 	   </li>
-	   {% if pSession.user.role == 'jack' %}
+        {% if pSession.user.role == 'jack' %}
         <li  class="colour">
             <img src="{{ pathM }}../../images/icons/info/info-128.png" alt='{% trans "info" %}'><a href="{{ pathM }}company/list.php"><i>{% trans "comp" %} {% trans "info" %}</i></a>
+        </li> 
+        {% endif %}
+        {% if pSession.user.role == 'jack' %}
+        <li  class="colour">
+            <img src="{{ pathM }}../../images/icons/info/info-128.png" alt='{% trans "blank_invoice" %}'><a href="{{ pathM }}print_invoice_template.php"><i>{% trans "blank_invoice" %}</i></a>
         </li> 
         {% endif %}
      </ul>

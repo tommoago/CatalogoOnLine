@@ -1,11 +1,10 @@
 <?php
-include("../vendor/mpdf/mpdf.php");
 
-$html ='<!DOCTYPE html>
+$head = '<!DOCTYPE html>
 <html>
     <head>
-        <title>Print Invoice</title>
-        <style>
+        <title>Print Invoice</title>';
+$css = '<style>
             *{
                 margin:0;
                 padding:0;
@@ -128,9 +127,9 @@ $html ='<!DOCTYPE html>
                 border-right: 1px solid #ccc;
                 border-bottom: 1px solid #ccc;
             }
-        </style>
-    </head>
-    <body>
+        </style>';
+$head_close = '</head>';
+$html_template = '<body>
         <div id="wrapper">
 
             <p style="text-align:center; font-weight:bold; padding-top:5mm;">INVOICE</p>
@@ -242,14 +241,4 @@ $html ='<!DOCTYPE html>
 
     </body>
 </html>';
- 
-$mpdf=new mPDF('c','A4','','' , 0 , 0 , 0 , 0 , 0 , 0); 
- 
-$mpdf->SetDisplayMode('fullpage');
- 
-$mpdf->list_indent_first_level = 0;  // 1 or 0 - whether to indent the first level of a list
- 
-$mpdf->WriteHTML($html);
-         
-$mpdf->Output();
 ?>

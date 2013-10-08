@@ -9,8 +9,8 @@
             <th>{% trans "date" %}</th>
             <th>{% trans "confed" %}</th>
             <th>{% trans "confirm" %} {% trans "date" %}</th>
-            <th>{% trans "op" %}Operator</th>
-            <th>{% trans "cust" %}Customer</th>
+            <th>{% trans "op" %}</th>
+            <th>{% trans "cust" %}</th>
         </tr>
         <tr>
             <td><a href='show.php?id={{ ord.id }}'>{{ ord.id }}</a></td>
@@ -29,22 +29,19 @@
                 {% endfor %}-->
     </table>
     <ul>
-    {% if ord.confirmed != 1%}
-    <li class="confirm_adm">
-    		<a href='confirm.php?id={{ ord.id }}' onclick="return confirm('{% trans "conford" %}');">{% trans "confirm" %} {% trans "ord" %}</a>
-    </li>
-    {% endif %}
-    {% if ord.file != ''%}
-<!-- <li class="pdf_first">
-        <a href='{{ ord.file }}'><img src="../../../images/icons/pdf/pdf-256.png" alt='{% trans "pdf" %}'>{% trans "sho" %} {% trans "pdf" %}</a>
-    </li> -->
-    <li class="print">
-        <a href='{{ ord.file }}'><img src="../../../images/icons/printer/printer-256.png" alt='{% trans "print" %}'>{% trans "print" %}</a>
-    </li>
-    {% endif %}
-    <li class="pdf_last">
-		<a href='../../../classes/print_new.php'><img src="../../../images/icons/pdf/pdf-256.png" alt='{% trans "pdf" %}'>{% trans "pdf" %}</a>
-    </li>
+        {% if ord.confirmed != 1%}
+        <li class="confirm_adm">
+            <a href='confirm.php?id={{ ord.id }}' onclick="return confirm('{% trans "conford" %}');">{% trans "confirm" %} {% trans "ord" %}</a>
+        </li>
+        {% endif %}
+        {% if ord.invoice != ''%}
+        <li class="pdf_first">
+            <a href='{{ ord.pdf }}'><img src="../../../images/icons/pdf/pdf-256.png" alt='{% trans "pdf" %}'>{% trans "sho" %} {% trans "pdf" %}</a>
+        </li> 
+        <li class="print">
+            <a href='{{ ord.invoice }}'><img src="../../../images/icons/printer/printer-256.png" alt='{% trans "print" %}'>{% trans "print" %}</a>
+        </li>
+        {% endif %}
     </ul>
 </div>
 {% include 'admin/structure/footer.phtml' %}
