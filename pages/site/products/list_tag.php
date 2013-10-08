@@ -7,7 +7,7 @@ $template = $twig->loadTemplate('site/products/list.phtml');
 
 $result = array();
 $offset = isset($_GET['offset']) ? $_GET['offset'] : 0;
-$limit = 20;
+$limit = 50;
 $numPages = 0;
 
 $col = $_GET['tag'] == 'new'? $_GET['tag'] : 'offer';
@@ -65,9 +65,9 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$lowRange = $offset / $limit - 3;
-$maxRange = $offset / $limit;
-$maxRange < 3 ? $maxRange = 6 : $maxRange += 3;
+$div = $offset/$limit;
+$lowRange = $div-3;
+$maxRange = $div < 3? 6 : $div+3;
 
 $template->display(array('prods' => $result, 'totPages' => $numPages, 'lr' => $lowRange, 'mr' => $maxRange));
 ?>
