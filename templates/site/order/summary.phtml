@@ -21,7 +21,7 @@
     </table>
     <ul>
         {% if addrs != '' %}
-        <li class="checkout">
+        <li class="confirm">
             <a href='#'><img src="../../../images/icons/cart/checkout/checkout_green-256.png" alt='{% trans "confirm" %}'>{% trans "confirm" %}</a>
             <form action="confirm.php" method="post">
                 {% trans "adr" %}
@@ -32,8 +32,7 @@
                 </select>
                 <input type="submit" value='{% trans "confirm" %}'/>
             </form>
-            <form>
-            </form>
+
 
         </li>
         {% endif %}

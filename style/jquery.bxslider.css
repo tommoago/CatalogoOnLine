@@ -21,9 +21,15 @@
 	*zoom: 1;
 }
 
-.bx-wrapper img {
+#sliderContainer2 .bx-wrapper img {
 	max-width: 100%;
 	display: block;
+
+}
+#sliderContainer .bx-wrapper img {
+	max-width: 100%;
+	display: block;
+	height: 500px;
 }
 
 /** THEME
@@ -31,10 +37,10 @@
 
 .bx-wrapper {
 	border: solid #aaa 5px;
-	background: #d3cebb;
+	background: #CCC;
 }
 .bx-viewport {
-	background: #d3cebb;
+	background: #CCC;
 }
 
 

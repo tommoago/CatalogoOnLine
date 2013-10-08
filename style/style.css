@@ -314,7 +314,7 @@ h2{
     background-position: top left;
     background-repeat: repeat-x; */
     position: absolute;
-    margin-top: 21px
+    margin-top: 40px
 
 }
 #footer_inside {
@@ -430,7 +430,7 @@ input[type=submit], input[type=button] {
     height: 95%;
     float: left;
     position: absolute;
-    background: #FF5F5F;
+    background: transparent;
     margin-top: 4px;
 }
 #demo2{
@@ -754,6 +754,9 @@ th {
     width: 18px;
     padding: 2px
 }
+.pre_pager{
+    clear: left;
+}
 #pager{
     margin-top: 10px
 }
@@ -763,16 +766,14 @@ th {
     font-weight: bold;
     font-size: 14px
 }
-#pager .pg_first, .pg_prev, .pg_nr, .pg_next, .pg_last {
+#pager .pg_first, #pager .pg_prev, #pager .pg_nr, #pager .pg_next, #pager .pg_last {
     padding-right: 6px;
     float: left
 }
-#pager .pg_first img, .pg_prev img, .pg_next img, .pg_last img{
+#pager .pg_first img, #pager .pg_prev img, #pager .pg_next img, #pager .pg_last img{
     width: auto;
     height: 17px
 }
-
-
 .question {
     margin-bottom: 15px;
     color: #aaa;

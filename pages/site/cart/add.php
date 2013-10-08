@@ -37,7 +37,7 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$cart->addProduct(array('id' => $product['id'], 'price' => $product['price'], 'qty' => $product['qty']));
+$cart->addProduct(array('id' => $product['id'],'description' => $product['description'], 'price' => $product['price'], 'qty' => $product['qty']));
 
 header('location:list.php');
 ?>
