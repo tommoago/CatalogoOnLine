@@ -27,9 +27,9 @@
 
 }
 #sliderContainer .bx-wrapper img {
-	max-width: 100%;
+	min-width: 100%;
 	display: block;
-	height: 500px;
+	max-height: 500px;
 }
 
 /** THEME

@@ -12,7 +12,7 @@
 		</tr>
 		{% for admin in admins %}
 		<tr>
-			<td><a href='show.php?id={{ admin.id }}'>{{ admin.name }}</a></td>
+			<td class="first_id"><a href='show.php?id={{ admin.id }}'>{{ admin.name }}</a></td>
 			<td>{{ admin.user }}</td>
                         {% if admin.role != 'jack' %}
           	<td class="delete_admin"><a href='delete.php?id={{ admin.id }}'><img src="../../../images/icons/users/remove_user/remove_user-256.png" alt='{% trans "del" %}'></a></td>

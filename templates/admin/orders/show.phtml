@@ -13,9 +13,14 @@
             <th>{% trans "cust" %}</th>
         </tr>
         <tr>
-            <td><a href='show.php?id={{ ord.id }}'>{{ ord.id }}</a></td>
+            <td class="first_id"><a href='show.php?id={{ ord.id }}'>{{ ord.id }}</a></td>
             <td>{{ ord.data }}</td>
-            <td>{{ ord.confirmed }}</td>
+            <td>{% if ord.confirmed == 1 %}
+                <p style="color:#008000;text-align:center">&#x2713;</p>  
+                {% endif %}
+                {% if ord.confirmed == 0 %}
+                <p style="color:#D40303;text-align:center">&#x2717;</p>  
+                {% endif %}</td>
             <td>{{ ord.confirm_date }}</td>
             <td>{{ ord.operator }}</td>
             <td>{{ ord.customer }}</td>

@@ -422,8 +422,8 @@ h2{
     font-size: 14px;
 }
 input[type=submit], input[type=button] {
-    width: 60px;
-    height: 30px;
+    width: 70px;
+    height: 25px;
 }
 #accordion {
     width: 200px;
@@ -450,8 +450,8 @@ input[type=submit], input[type=button] {
 }
 .tablelist {
     border-collapse:collapse;
-    margin-right: 25px
-
+    margin-right: 25px;
+    clear: left
 }
 td {
     font-size:1em;	
@@ -474,7 +474,7 @@ td a{
     text-align: left;
 }
 th {
-    border-right:1px solid #aaa;
+/*  border-right:1px solid #aaa; */
     font-size:1em;
     padding:3px 5px 2px 5px;
     color: #575757;
@@ -487,6 +487,12 @@ th {
 }
 .td_qty {
     min-width: 110px
+}
+.first_id {
+	text-align:center;
+}
+.first_id:hover a{
+	text-decoration: underline;
 }
 .delete, .delete_admin, .add_img {
     color: transparent;
@@ -558,7 +564,26 @@ th {
     border-top: 2px solid #6F6E6E;
     border-left: 1px solid #6F6E6E;
 }
-.print a {
+.print_usr {
+    margin-top: 25px;
+    background-color: #ccc;
+    padding: 10px 10px 5px 10px;
+    border: 1px solid #929292;
+    border-radius: 3px;   
+    -moz-border-radius: 3px;   
+    -webkit-border-radius: 3px;  
+    float: left;
+    list-style: none;
+    height: 24px
+}
+.print_usr:active{
+    background-color: #929292;
+    border-bottom: 0px solid #6F6E6E;
+    border-top: 2px solid #6F6E6E;
+    border-right: 1px solid #6F6E6E;
+    border-left: 1px solid #6F6E6E;
+}
+.print a, .print_usr a {
     color: #000;
     text-decoration: none;
     font-weight: bold
@@ -736,7 +761,7 @@ th {
 .add_cart p{   
     font-size: 12px;
 }
-.total img, .pdf img, .pdf_first img, .pdf_last img, .empty_cart img, .add_cart img, .checkout img, .confirm img, .print img{
+.total img, .pdf img, .pdf_first img, .pdf_last img, .empty_cart img, .add_cart img, .checkout img, .confirm img, .print img, .print_usr img{
     width: auto;
     height: 30px;
     float: left;
@@ -1145,4 +1170,17 @@ th {
 	margin-bottom: 20px;
     color: #575757;
     font-weight: bold
+}
+.detail_add {
+	font-size: 20px;
+	margin-bottom: 10px;
+	margin-top: 20px;
+    color: #575757;
+    font-weight: bold;
+    float: left
+}
+.add_add img {
+	height: 27px;
+	width: auto;
+	margin: 18px 
 }

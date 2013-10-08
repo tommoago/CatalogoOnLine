@@ -24,10 +24,9 @@
         </tr>
         {% for prod in prods %}
         <tr>
-            <td><a href='show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
+            <td class="first_id"><a href='show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
 <!--             <td>{{ prod.description }}</td> -->
             <td>
-                <!--             {{ prod.new }} -->
                 {% if prod.new == 1 %}
                 <p style="color:#008000;text-align:center">&#x2713;</p>  
                 {% endif %}
@@ -35,7 +34,6 @@
                 <p style="color:#D40303;text-align:center">&#x2717;</p>  
                 {% endif %}</td>
             <td>
-                <!--             {{ prod.offer }} -->
                 {% if prod.offer == 1 %}
                 <p style="color:#008000;text-align:center">&#x2713;</p>  
                 {% endif %}
@@ -43,7 +41,6 @@
                 <p style="color:#D40303;text-align:center">&#x2717;</p>  
                 {% endif %}</td>
             <td>
-                <!--             {{ prod.evidence }} -->
                 {% if prod.evidence == 1 %}
                 <p style="color:#008000;text-align:center">&#x2713;</p>  
                 {% endif %}

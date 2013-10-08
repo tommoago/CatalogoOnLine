@@ -14,7 +14,7 @@
         </tr>
         {% for prod in prods %}
         <tr>
-            <td><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
+            <td class="first_id"><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
             <td>{{ prod.description }}</td>
             <td>{{ prod.price }}</td>
             <td>{{ prod.cod }}</td>

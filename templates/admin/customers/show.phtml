@@ -42,9 +42,13 @@
             <td class="edit"><a href='prepareUpdate.php?id={{ cus.id }}'><img src="../../../images/icons/edit/edit-256.png" alt='{% trans "edit" %}'></a></td>
         </tr>
     </table>
-    <table class="tablelist">
-        <p class="detail_adm">{% trans "adrs" %}</p>
-        <a href='prepareInsert_address.php?cus_id={{ cus.id }}'>{% trans "ins" %} {% trans "new" %} {% trans "adr" %}</a>
+        <p class="detail_add">{% trans "adrs" %}</p>
+        <div class="add_add">
+		  <a href='prepareInsert_address.php?cus_id={{ cus.id }}'><img alt='{% trans "ins" %} {% trans "new" %} {% trans "adr" %}' src="../../../images/icons/Adds/add_list/add_list-256.png"></a>
+	   </div>
+        <table class="tablelist">
+<!-- È meglio spostarlo qui in alto il {% for addr in addrs %} ? Così non compaiono gli header della tabella -->
+        {% for addr in addrs %}
         <tr>
             <th>{% trans "street" %}</th>
             <th>{% trans "city" %}</th>
@@ -52,7 +56,6 @@
             <th>{% trans "zip" %}</th>
             <th>{% trans "country" %}</th>
         </tr>
-        {% for addr in addrs %}
         <tr>
             <td>{{ addr.street }}</td>
             <td>{{ addr.city }}</td>
