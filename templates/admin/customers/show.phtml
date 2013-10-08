@@ -47,8 +47,6 @@
 		  <a href='prepareInsert_address.php?cus_id={{ cus.id }}'><img alt='{% trans "ins" %} {% trans "new" %} {% trans "adr" %}' src="../../../images/icons/Adds/add_list/add_list-256.png"></a>
 	   </div>
         <table class="tablelist">
-<!-- È meglio spostarlo qui in alto il {% for addr in addrs %} ? Così non compaiono gli header della tabella -->
-        {% for addr in addrs %}
         <tr>
             <th>{% trans "street" %}</th>
             <th>{% trans "city" %}</th>
@@ -56,6 +54,7 @@
             <th>{% trans "zip" %}</th>
             <th>{% trans "country" %}</th>
         </tr>
+        {% for addr in addrs %}
         <tr>
             <td>{{ addr.street }}</td>
             <td>{{ addr.city }}</td>

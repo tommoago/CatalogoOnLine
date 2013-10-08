@@ -380,7 +380,7 @@ h2{
 #footer_inside p a:hover {
     text-decoration: none
 }
-#formcustomers, #formproduct, #formcategories, #formadministrators, #formsuppliers, #formcompany, #formuser  {
+#formcustomers, #formproduct, #formcategories, #formadministrators, #formsuppliers, #formcompany, #formuser, #formaddresses  {
     margin-left:auto;
     margin-right:auto;
     width:70%;
@@ -767,6 +767,11 @@ th {
     float: left;
     margin-right: 16px;
     margin-top: -6px
+}
+.sel_qty {
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-bottom: -20px;
 }
 .back {
     display: block;

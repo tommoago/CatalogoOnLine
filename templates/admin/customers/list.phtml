@@ -29,7 +29,12 @@
             <td>{{ cus.email }}</td>
             <td>{{ cus.telephone }}</td>
             <td>{{ cus.cellphone }}</td>
-            <td>{{ cus.active }}</td>
+            <td>{% if cus.active == 1 %}
+                <p style="color:#008000;text-align:center">&#x2713;</p>  
+                {% endif %}
+                {% if cus.active == 0 %}
+                <p style="color:#D40303;text-align:center">&#x2717;</p>  
+                {% endif %}</td>
             <td>{{ cus.operator }}</td>
             <td>{{ cus.type }}</td>
             <td>{{ cus.price_range }}</td>

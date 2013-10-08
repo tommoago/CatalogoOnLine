@@ -45,12 +45,12 @@
             </h5>
             <h3> &#128; {{ prod.price }} </h3>    
 
+          <div class="sel_qty"><span>{% trans "sel" %} {% trans "qty" %}: <input type="text" id="qty_add" name="qty_add" value="1"/></span></div>
             <div class="add_cart">
                 <a href='#'><img src="../../../images/icons/cart/buy/buy-256.png" alt='{% trans "add.cart" %}'>{% trans "add.cart" %}</a>
                 <form action="../cart/add.php" method="post">
                     <input type="hidden" name="id" value="{{ prod.id }}"/>
-                    <span>{% trans "qty" %}: <input type="text" id="qty_add" name="qty_add" value="1"/>
-                    <input type="submit" value='{% trans "submit" %}'/></span>
+                    <input type="submit" value='{% trans "submit" %}'/> <!-- brutto questo submit!! -->
                 </form>
             </div>
         </div>

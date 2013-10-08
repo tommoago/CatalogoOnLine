@@ -321,6 +321,9 @@ msgstr "Update"
 msgid "by"
 msgstr "By"
 
+msgid "sel"
+msgstr "Select"
+
 # classe imgUploader
 msgid "fperm"
 msgstr "Sorry, you must CHMOD your upload target to 777"
