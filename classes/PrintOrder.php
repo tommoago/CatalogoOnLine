@@ -1,10 +1,7 @@
 <?php
 
-include 'fpdf.php';
 include 'dataBase.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/melarossa/vendor/mpdf/mpdf.php';
-
-define('FPDF_FONTPATH', '../../../files/font/');
 
 class PrintOrder {
 
