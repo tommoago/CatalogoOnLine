@@ -161,6 +161,9 @@ msgstr "Description"
 msgid "piva"
 msgstr "P.IVA"
 
+msgid "vat"
+msgstr "VAT"
+
 msgid "tel"
 msgstr "Telephone"
 
