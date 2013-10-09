@@ -13,6 +13,12 @@ $piva = $_POST['piva'];
 $telephone = $_POST['telephone'];
 $fax = $_POST['fax'];
 $address = $_POST['address'];
+$city = $_POST['city'];
+$province = $_POST['province'];
+$country = $_POST['country'];
+$zip = $_POST['zip'];
+$email = $_POST['email'];
+$website = $_POST['website'];
 
 try {
     $db = new dataBase();
@@ -23,6 +29,12 @@ try {
                   'telephone' =>$telephone, 
                   'fax' =>$fax,
                   'address' =>$address,
+                  'city' =>$city,
+                  'province' =>$province,
+                  'country' =>$country,
+                  'zip' =>$zip,
+                  'email' =>$email,
+                  'website' =>$website,
                   'id' => $id);
 
     $STH = $DBH->prepare('UPDATE company_info SET  
@@ -31,7 +43,13 @@ try {
                             piva = :piva, 
                             telephone = :telephone, 
                             fax = :fax,
-                            address = :address
+                            address = :address,
+                            city = :city,
+                            province = :province,
+                            country = :country,
+                            zip = :zip,
+                            email = :email,
+                            website = :website
                           WHERE id = :id');
     $STH->execute($data);
     header('location:show.php?id=' . $id);

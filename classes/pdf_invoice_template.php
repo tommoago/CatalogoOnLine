@@ -19,7 +19,10 @@ $css = '<style>
                 margin:0;
                 padding:0;
             }
-         
+         	  img {
+         	  	height: 30px;
+         	  	width: auto
+         	  }
             p{
                 margin:0;
                 padding:0;
@@ -35,23 +38,27 @@ $css = '<style>
                 width:210mm;
                 page-break-after:always;
             }
- 
             table{
-                border-left: 1px solid #ccc;
+                border: 1px solid #ccc;
                 border-top: 1px solid #ccc;
-             
                 border-spacing:0;
                 border-collapse: collapse; 
-             
+               
             }
          
             table td{
                 border-right: 1px solid #ccc;
                 border-bottom: 1px solid #ccc;
-                padding: 2mm;
+                font-size: 10px;
+                padding: 2px
             }
-         
-            table.heading{
+		  
+            p {
+                font-size: 15px;
+                font-family: Courier;
+                margin-left: 10px
+            }
+            table.t1{
                 height:50mm;
             }
          
@@ -65,6 +72,7 @@ $css = '<style>
                 font-size:9pt;
                 color:#000;
                 font-weight:normal;
+                padding: 5px
             }
          
             hr{
@@ -132,113 +140,107 @@ $head_close = '</head>';
 $html_template = '<body>
         <div id="wrapper">
 
-            <p style="text-align:center; font-weight:bold; padding-top:5mm;">INVOICE</p>
+            <p style="text-align:center; font-weight:bold; padding-top:5mm;padding-bottom:5mm;">INVOICE</p>
             <br />
-            <table class="heading" style="width:100%;">
-                <tr>
-                    <td style="width:80mm;">
-                        <h1 class="heading">ABC Corp</h1>
-                        <h2 class="heading">
-                            123 Happy Street<br />
-                            CoolCity - Pincode<br />
-                            Region , Country<br />
-
-                            Website : www.website.com<br />
-                            E-mail : info@website.com<br />
-                            Phone : +1 - 123456789
-                        </h2>
-                    </td>
-                    <td rowspan="2" valign="top" align="right" style="padding:3mm;">
-                        <table>
-                            <tr><td>Invoice No : </td><td>11-12-17</td></tr>
-                            <tr><td>Dated : </td><td>01-Aug-2011</td></tr>
-                            <tr><td>Currency : </td><td>USD</td></tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <b>Buyer</b> :<br />
-                        Client Name<br />
-                        Client Address
-                        <br />
-                        City - Pincode , Country<br />
-                    </td>
-                </tr>
-            </table>
-
-
-            <div id="content">
-
-                <div id="invoice_body">
-                    <table>
-                        <tr style="background:#eee;">
-                            <td style="width:8%;"><b>Sl. No.</b></td>
-                            <td><b>Product</b></td>
-                            <td style="width:15%;"><b>Quantity</b></td>
-                            <td style="width:15%;"><b>Rate</b></td>
-                            <td style="width:15%;"><b>Total</b></td>
-                        </tr>
-                    </table>
-
-                    <table>
-                        <tr>
-                            <td style="width:8%;">1</td>
-                            <td style="text-align:left; padding-left:10px;">Software Development<br />Description : Upgradation of telecrm</td>
-                            <td class="mono" style="width:15%;">1</td><td style="width:15%;" class="mono">157.00</td>
-                            <td style="width:15%;" class="mono">157.00</td>
-                        </tr>         
-                        <tr>
-                            <td colspan="3"></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="3"></td>
-                            <td>Total :</td>
-                            <td class="mono">157.00</td>
-                        </tr>
-                    </table>
-                </div>
-                <div id="invoice_total">
-                    Total Amount :
-                    <table>
-                        <tr>
-                            <td style="text-align:left; padding-left:10px;">One  Hundred And Fifty Seven  only</td>
-                            <td style="width:15%;">USD</td>
-                            <td style="width:15%;" class="mono">157.00</td>
-                        </tr>
-                    </table>
-                </div>
-                <br />
-                <hr />
-                <br />
-
-                <table style="width:100%; height:35mm;">
+                <table class="t1" style="width:100%;">
                     <tr>
-                        <td style="width:65%;" valign="top">
-                            Payment Information :<br />
-                            Please make cheque payments payable to : <br />
-                            <b>ABC Corp</b>
-                            <br /><br />
-                            The Invoice is payable within 7 days of issue.<br /><br />
+                        <td style="width:90mm;text-align:center" >
+                            <h1 class="heading">Mela Rossa</h1>
+                            <h2 class="heading">
+                                Via Uruguay, 2<br />
+                                35100 Padova (PD)<br />
+                                Italia<br />
+                                www.website.com<br />
+                                info@website.com<br />
+                                +39 123456789
+                            </h2>
                         </td>
-                        <td>
-                            <div id="box">
-                                E &amp; O.E.<br />
-                                For ABC Corp<br /><br /><br /><br />
-                                Authorised Signatory
-                            </div>
+                        <td>Invoice n&#186;<p>1234567890</p></td>
+                        <td>Date:<p>31.02.14</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="width:90mm">Recipient:
+                            <p>  <br>
+                                <br>
+                                <br>
+                                
+                            </p>
                         </td>
                     </tr>
+                    <tr>
+                        <td colspan="2" rowspan="3">Description:<p></p></td>
+                    </tr>
+                    <tr>
+                        <td>Buyer:<p></p></td>
+                        <td>Cod.:<p></p></td>
+                    </tr>
+                    <tr>
+                        <td>P.IVA:<p></p></td>
+                        <td>Cod.Fiscale:<p></p></td>
+                    </tr>
+                    <tr>
+                        <td>Causale trasporto:<p></p></td>
+                        <td>Trasporto:<p></p></td>
+                        <td>Banca d appoggio:<p></p></td>
+                        <td>Valuta:<p></p></td>
+                    </tr>
                 </table>
-            </div>
 
-            <br />
+                <div id="content">
+                    <div id="invoice_body">
 
-        </div>
+                        <table>
+                            <tr style="background:#eee;">
+                                <th>N&#186;</th>
+                                <th>img</th>
+                                <th>Product description</th>
+                                <th>Q.ty</th>
+                                <th>Price</th>
+                                <th>Discount</th>
+                                <th>Discounted price</th>
+                                <th>IVA</th>
+                                <th>Tot.</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <!-- 
+                                    </tr>
+                                        <tr>
+                                        <td colspan="3" style="text-align:right">Tot. Q.ty:</td>
+                                        <td></td>
+                                        <td colspan="4" style="text-align:right">TOT.</td>
+                                        <td></td>
+                                    </tr>
+                                -->
+                        </table>
+                        <div id="invoice_total">
 
-    </body>
-</html>';
+                            <table>
+                                <tr>
+                                    <td style="width:40%;text-align:left; padding-left:10px;"> Total Items:</td>
+                                    <td style="width:10%;font-family:Courier"></td>
+                                    <td style="width:35%;text-align:left; padding-left:10px;"> Total amount:</td>
+                                    <td style="width:5%;font-family:Courier">EUR</td>
+                                    <td style="width:10%;font-family:Courier" class="mono"></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <br />
+
+                </div>
+                
+
+                </body>
+                </html>';
 ?>

@@ -141,6 +141,12 @@ CREATE TABLE `company_info` (
   `telephone` varchar(45) DEFAULT NULL,
   `fax` varchar(45) DEFAULT NULL,
   `address` varchar(45) DEFAULT NULL,
+  `city` varchar(45) DEFAULT NULL,
+  `province` varchar(45) DEFAULT NULL,
+  `country` varchar(45) DEFAULT NULL,
+  `zip` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `website` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -151,7 +157,7 @@ CREATE TABLE `company_info` (
 
 LOCK TABLES `company_info` WRITE;
 /*!40000 ALTER TABLE `company_info` DISABLE KEYS */;
-INSERT INTO `company_info` VALUES (1,'Mela Rossa','Cash n Carry','12345678901','049731934','049752846','via Uruguay 1');
+INSERT INTO `company_info` VALUES (1,'Mela Rossa','Cash n Carry','12345678901','049731934','049752846','via Uruguay 1','Padova','PD','italy','35129','mela@melarossa.it','www.melarossa.it');
 /*!40000 ALTER TABLE `company_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -417,4 +423,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-10-09 12:15:59
+-- Dump completed on 2013-10-09 13:54:53

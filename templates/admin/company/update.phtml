@@ -53,6 +53,54 @@
 				<input type="text" name="address" value="{{ company.address }}"/>
 			</div>
 		</div>
+                <div class="totwidth">
+			<div class="panleft1">
+				{% trans "city" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" name="city" value="{{ company.city }}"/>
+			</div>
+		</div>
+                <div class="totwidth">
+			<div class="panleft1">
+				{% trans "prov" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" name="province" value="{{ company.province }}"/>
+			</div>
+		</div>
+                <div class="totwidth">
+			<div class="panleft1">
+				{% trans "country" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" name="country" value="{{ company.country }}"/>
+			</div>
+		</div>
+                <div class="totwidth">
+			<div class="panleft1">
+				{% trans "zip" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" name="zip" value="{{ company.zip }}"/>
+			</div>
+		</div>
+                <div class="totwidth">
+			<div class="panleft1">
+				{% trans "mail" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" name="email" value="{{ company.email }}"/>
+			</div>
+		</div>
+                <div class="totwidth">
+			<div class="panleft1">
+				{% trans "site" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" name="website" value="{{ company.website }}"/>
+			</div>
+		</div>
 		<input class="invio" type="submit" value='{% trans "submit" %}'/>
 
 	</form>

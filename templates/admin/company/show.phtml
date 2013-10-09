@@ -10,6 +10,12 @@
             <th>{% trans "tel" %}</th>
             <th>{% trans "fax" %}</th>
             <th>{% trans "adr" %}</th>
+            <th>{% trans "city" %}</th>
+            <th>{% trans "prov" %}</th>
+            <th>{% trans "country" %}</th>
+            <th>{% trans "zip" %}</th>
+            <th>{% trans "mail" %}</th>
+            <th>{% trans "site" %}</th>
 
         </tr>
         <tr>
@@ -19,6 +25,12 @@
             <td>{{ company.telephone }}</td>
             <td>{{ company.fax }}</td>
             <td>{{ company.address }}</td>
+            <td>{{ company.city }}</td>
+            <td>{{ company.province }}</td>
+            <td>{{ company.country }}</td>
+            <td>{{ company.zip }}</td>
+            <td>{{ company.email }}</td>
+            <td>{{ company.website }}</td>
             <td class="edit"><a href='prepareUpdate.php?id={{ company.id }}'><img src="../../../images/icons/edit/edit-256.png" alt='{% trans "edit" %}'></a></td>
         </tr>
     </table>

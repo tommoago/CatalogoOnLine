@@ -343,6 +343,9 @@ msgstr "Sorry, your file could not be uploaded for some unknown reason"
 msgid "itm"
 msgstr "item"
 
+msgid "itms"
+msgstr "items"
+
 msgid "qst"
 msgstr "Insert your question here."
 
@@ -401,3 +404,9 @@ msgstr "Print blank invoice"
 
 msgid "inv"
 msgstr "Invoice"
+
+msgid "amt"
+msgstr "Amount"
+
+msgid "site"
+msgstr "Website"
