@@ -489,9 +489,6 @@ th {
 .td_qty {
     min-width: 110px
 }
-.first_id {
-	text-align:center;
-}
 .first_id:hover a{
 	text-decoration: underline;
 }
