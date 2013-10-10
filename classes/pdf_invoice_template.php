@@ -22,6 +22,9 @@ $css = '<style>
                 height: 30px;
                 width: auto
             }
+            th {
+			border-right: 1px solid #ccc;
+            }
             p{
                 margin:0;
                 padding:0;
@@ -36,18 +39,15 @@ $css = '<style>
                 height:297mm;
                 width:210mm;
                 page-break-after:always;
-            }
+            }    
             table{
                 border-spacing:0;
                 border-collapse: collapse; 
-
             }
 
             table td{
-                border-bottom: 1px solid #ccc;
                 font-size: 10px;
                 padding: 0px
-                border-right: 1px solid #ccc;
             }
             table .t2{
                 border-spacing:0;
@@ -56,9 +56,7 @@ $css = '<style>
             }
 
             table .t2 td{
-                border-top: 1px solid #ccc;
-                border-left: 1px solid #ccc;
-                border-bottom: 0px solid #ccc;
+                border: 1px solid #ccc;
                 font-size: 10px;
                 padding: 2px
             }
@@ -69,17 +67,28 @@ $css = '<style>
             }
 
             table .t3 td{
-                border-top: 1px solid #ccc;
+                border-top: 1px solid #ccc;  
                 border-right: 1px solid #ccc;
                 border-left: 1px solid #ccc;
-                border-bottom: 0px solid #ccc;
+                border-bottom: 1px solid #ccc;
                 font-size: 10px;
                 padding: 2px;
                 vertical-align: top;
                 text-align:left
             }
-            th {
-			border-right: 1px solid #ccc;
+            table .t4{
+                border-spacing:0;
+                border-collapse: collapse; 
+
+            }
+
+            table .t4 td{
+                border-right: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+                font-size: 10px;
+                padding: 2px;
+                vertical-align: top;
+                text-align:left
             }
             p {
                 font-size: 15px;
@@ -224,8 +233,8 @@ $html_template = '<body>
                     	</td>
                     	<td>
                     		<table>
-                    			  <tr class="t3">
-                     			  	 <td style="width:90mm;height:33.5mm">Description:<p>LOL</p></td>
+                    			  <tr class="t4">
+                     			  	 <td style="width:90mm;height:35mm">Description:<p>LOL</p></td>
                      			  </tr>
                  			</table>
                     	</td>

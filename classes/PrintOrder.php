@@ -211,8 +211,8 @@ class PrintOrder {
                  		</td>
                  		<td>
                     		<table>
-                    			  <tr class="t3">
-                     			  	 <td style="width:90mm;height:33.5mm">' . gettext('descr') . ':<p>LOL</p></td>
+                    			  <tr class="t4">
+                     			  	 <td style="width:90mm;height:35mm">' . gettext('descr') . ':<p>LOL</p></td>
                      			  </tr>
                  			</table>
                     	</td>
