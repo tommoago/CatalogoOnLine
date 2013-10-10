@@ -10,7 +10,9 @@
 		<tr>
 			<td>{{ admin.name }}</td>
 			<td>{{ admin.user }}</td>
+                        {% if admin.role != 'jack' %}
 			<td class="delete"><a href='delete.php?id={{ admin.id }}'><img src="../../../images/icons/delete/delete-256.png" alt='{% trans "del" %}'></a></td>
+                        {% endif %}
 			<td class="edit"><a href='prepareUpdate.php?id={{ admin.id }}'><img src="../../../images/icons/edit/edit-256.png" alt='{% trans "edit" %}'></a></td>
 		</tr>
 	</table>

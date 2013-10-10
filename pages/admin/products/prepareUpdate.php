@@ -40,9 +40,9 @@ try {
     }
     
     //riporta i prezzi in % rispetto al purchase_price
-    $product['wholesale_price'] = ($product['wholesale_price']/$product['purchase_price']-1)*100;
-    $product['retail_price'] = ($product['retail_price']/$product['purchase_price']-1)*100;
-    $product['super_price'] = ($product['super_price']/$product['purchase_price']-1)*100;
+    $product['wholesale_price'] = round(($product['wholesale_price']/$product['purchase_price']-1)*100,2);
+    $product['retail_price'] = round(($product['retail_price']/$product['purchase_price']-1)*100,2);
+    $product['super_price'] = round(($product['super_price']/$product['purchase_price']-1)*100,2);
     
     //marca la categoria appartenente 
     foreach($result as &$row) {

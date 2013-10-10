@@ -237,6 +237,7 @@ class PrintOrder {
         $totOrd = 0;
         foreach ($products as $prod) {
             $discount = (($prod['retail_price'] - $prod['sold_price']) / $prod['retail_price']) * 100;
+            $qty = $prod['quantity'] * $prod['sold_price'];
             
             $html.= '<tr>
                         <td>' . $prod['cod'] . '</td>';
@@ -248,21 +249,12 @@ class PrintOrder {
                           <td>' . round($discount, 2) . '</td>
                           <td>' . $prod['sold_price'] . '</td>
                           <td>' . $prod['vat'] . '</td>
-                          <td>' . $prod['quantity'] * $prod['sold_price'] . '</td>';
+                          <td>' . round($qty, 2) . '</td>';
                 
             $totQty += $prod['quantity'];
-            $totOrd += $prod['quantity'] * $prod['sold_price'];
+            $totOrd += $qty;
         }
-        $html.= '<!-- 
-                                    </tr>
-                                        <tr>
-                                        <td colspan="3" style="text-align:right">' . gettext('tot') . ' ' . gettext('qty') . ':</td>
-                                        <td>' . $totQty . '</td>
-                                        <td colspan="4" style="text-align:right">' . gettext('tot') . '</td>
-                                        <td>' . $totOrd . '</td>
-                                    </tr>
-                                -->
-                </table>
+        $html.= '</table>
             <div id="invoice_total">
                 <table>
                     <tr>

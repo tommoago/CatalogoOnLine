@@ -256,15 +256,6 @@ $html_template = '<body>
                                 <td>prezzo scontato</td>
                                 <td>iva</td>
                                 <td>importo</td>
-                                <!-- 
-                                    </tr>
-                                        <tr>
-                                        <td colspan="3" style="text-align:right">Tot. Q.ty:</td>
-                                        <td>-SUM-</td>
-                                        <td colspan="4" style="text-align:right">TOT.</td>
-                                        <td>-SUM-</td>
-                                    </tr>
-                                -->
                         </table>
                         <div id="invoice_total">
 

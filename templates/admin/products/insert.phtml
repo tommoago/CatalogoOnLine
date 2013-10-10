@@ -8,26 +8,31 @@ $(function () {
         var per = $('#w_price').val();
         var multiplier = 1 + (per / 100);
         var rw = $('#p_price').val() * multiplier;
-        $('#w_price').after(parseFloat(rw).toFixed(3));
+        $('#w_price').after(parseFloat(rw).toFixed(2));
         
         $('#r_price').parent().contents(':not(input)').remove();
         var per = $('#r_price').val();
         var multiplier = 1 + (per / 100);
         var rr = $('#p_price').val() * multiplier;
-        $('#r_price').after(parseFloat(rr).toFixed(3));
+        $('#r_price').after(parseFloat(rr).toFixed(2));
         
         $('#s_price').parent().contents(':not(input)').remove();
         var per = $('#s_price').val();
         var multiplier = 1 + (per / 100);
         var rss = $('#p_price').val() * multiplier;
-        $('#s_price').after(parseFloat(rss).toFixed(3));
+        $('#s_price').after(parseFloat(rss).toFixed(2));
     });
     function calculate(percentage) {
         $('#' + percentage.id).parent().contents(':not(input)').remove();
         var per = percentage.value;
         var multiplier = 1 + (per / 100);
         var rs = $('#p_price').val() * multiplier;
-        $('#' + percentage.id).after(parseFloat(rs).toFixed(3));
+        $('#' + percentage.id).after(parseFloat(rs).toFixed(2));
+    }
+    function refreshAll(){
+        calculate(document.getElementById('w_price'));
+        calculate(document.getElementById('r_price'));
+        calculate(document.getElementById('s_price'));
     }
 </script>
 <div id='content'>
@@ -85,7 +90,7 @@ $(function () {
                 {% trans "pur" %} {% trans "pr" %}:
             </div>
             <div class="panleft2">
-                <input type="text" id="p_price" name="p_price"/>
+                <input type="text" id="p_price" onchange="refreshAll();" name="p_price"/>
             </div>
         </div>
         <div class="totwidth">

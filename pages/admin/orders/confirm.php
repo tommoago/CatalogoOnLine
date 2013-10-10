@@ -27,7 +27,7 @@ try {
     $data = array('id' => $id, 'conf' => date('Y-m-d H:i:s'), 'operator' => $_SESSION['user']['name']);
 
     $STH = $DBH->prepare('UPDATE orders SET  
-                            confirmed = 1,
+                            confirmed = 0,
                             confirm_date = :conf,
                             operator = :operator
                           WHERE id = :id');

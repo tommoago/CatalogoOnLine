@@ -34,8 +34,8 @@ try {
     $stmt4 = $DBH->prepare('SELECT * FROM invoices WHERE orders_id = :id');
     $stmt4->execute(array('id' => $order['id']));
     $inv = $stmt4->fetch();
-    $order['invoice'] = $inv['path'];
-    $order['pdf'] = str_replace('invoices', 'orders', $inv['path']);
+    $order['pdf'] = $inv['path'];
+    $order['invoice'] = str_replace('orders', 'invoices', $inv['path']);
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
