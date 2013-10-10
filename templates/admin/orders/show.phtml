@@ -36,7 +36,7 @@
     <ul>
         {% if ord.confirmed != 1%}
         <li class="confirm_order">
-            <a href='confirm.php?id={{ ord.id }}' onclick="return confirm('{% trans "conford" %}');"><img src="../../../images/icons/checkmark/checkmark-256.png" alt='{% trans "pdf" %}'>{% trans "confirm" %} {% trans "ord" %}</a>
+            <a href='confirm.php?id={{ ord.id }}' onclick="return confirm('{% trans "conford" %}');"><img src="../../../images/icons/system/checkmark/checkmark-256.png" alt='{% trans "pdf" %}'>{% trans "confirm" %} {% trans "ord" %}</a>
         </li>
         {% endif %}
         {% if ord.invoice != ''%}
