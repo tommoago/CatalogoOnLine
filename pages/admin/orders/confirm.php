@@ -41,7 +41,7 @@ try {
     $customer = $pdf->getCustomer();
     $order = $pdf->getOrder();
 
-    //manda mail
+    //manda mail con il pdf, non la fattura
     $mail->AddReplyTo('info@ozntone.com', 'Mela Rossa Cash n Carry');
     $mail->SetFrom('info@ozntone.com', 'Mela Rossa Cash n Carry');
     $address = $customer['email'];

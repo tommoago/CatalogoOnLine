@@ -34,7 +34,7 @@ class PrintOrder {
                 $stmtImg = $this->DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
                 $stmtImg->execute(array('id' => $row['id']));
                 $imm = $stmtImg->fetch();
-                
+
                 $row['image'] = $imm['path'];
             }
         } catch (PDOException $e) {
@@ -88,23 +88,71 @@ class PrintOrder {
     }
 
     public function createPDF() {
+        //Convert the date.
+        $oDate = new DateTime($this->order['data']);
+        $sDate = $oDate->format("d-m-y");
+
+        //create new PDF invoice
+        $mpdf = new mPDF('c', 'A4', '', '', 0, 0, 0, 0, 0, 0);
+        $mpdf->SetDisplayMode('fullpage');
+        $mpdf->list_indent_first_level = 0;  // 1 or 0 - whether to indent the first level of a list
+        $mpdf->WriteHTML($this->processBody('inv'));
+
+        $inv = 'invoices';
+        $fileName = $inv . '-order' . $this->order_id . '-date' . $sDate . '.pdf';
+        $filePath = '../../../files/' . $inv . '/' . $fileName;
+        chmod('../../../files/' . $inv, 0777);
+        $mpdf->Output($filePath, 'F');
+
+        //create new PDF order
+        $mpdfO = new mPDF('c', 'A4', '', '', 0, 0, 0, 0, 0, 0);
+        $mpdfO->SetDisplayMode('fullpage');
+        $mpdfO->list_indent_first_level = 0;  // 1 or 0 - whether to indent the first level of a list
+        $mpdfO->WriteHTML($this->processBody('ord'));
+
+        //Create files
+        $ords = 'orders';
+        $fileName = $ords . '-order' . $this->order_id . '-date' . $sDate . '.pdf';
+        $filePath = '../../../files/' . $ords . '/' . $fileName;
+        chmod('../../../files/' . $ords, 0777);
+        $mpdfO->Output($filePath, 'F');
+        return $filePath;
+    }
+
+    public function savePDF($filePath) {
+        $save = array('path' => $filePath, 'id' => $this->order_id);
+        try {
+            $stmt6 = $this->DBH->prepare('INSERT INTO invoices (path, orders_id) 
+                                           value (:path, :id)');
+            $stmt6->execute($save);
+        } catch (PDOException $e) {
+            echo 'ERROR: ' . $e->getMessage();
+        }
+    }
+
+    public function printTemplate() {
         require_once 'pdf_invoice_template.php';
+
+        $mpdf = new mPDF('c', 'A4', '', '', 0, 0, 0, 0, 0, 0);
+        $mpdf->SetDisplayMode('fullpage');
+        $mpdf->list_indent_first_level = 0;  // 1 or 0 - whether to indent the first level of a list
+        $mpdf->WriteHTML($head . $css . $head_close . $html_template);
+        $mpdf->Output();
+    }
+
+    private function processBody($type) {
+        require 'pdf_invoice_template.php';
         $html = $head . $css . $head_close;
         $products = $this->queryProducts();
         $company = $this->queryCompany();
         $address = $this->queryAddress();
         $this->queryCustomer();
-
-        //create new PDF
-        $mpdf = new mPDF('c', 'A4', '', '', 0, 0, 0, 0, 0, 0);
-        $mpdf->SetDisplayMode('fullpage');
-        $mpdf->list_indent_first_level = 0;  // 1 or 0 - whether to indent the first level of a list
-        //data template injecting
         $invDate = new DateTime();
+
         $html .= '<body>
         <div id="wrapper">
 
-            <p style="text-align:center; font-weight:bold; padding-top:5mm;padding-bottom:5mm;">' . gettext('inv') . '</p>
+            <p style="text-align:center; font-weight:bold; padding-top:5mm;padding-bottom:5mm;">' . gettext($type) . '</p>
             <br />
             
                 <table>
@@ -155,9 +203,10 @@ class PrintOrder {
                     <div id="invoice_body">
                         <table>
                             <tr style="background:#eee;">
-                                <th>N&#186;</th>
-                                <th>' . gettext('img') . '</th>
-                                <th>' . gettext('prod') . ' ' . gettext('descr') . '</th>
+                                <th>N&#186;</th>';
+        if ($type == 'ord')
+            $html .= '<th>' . gettext('img') . '</th>';
+        $html .= '<th>' . gettext('prod') . ' ' . gettext('descr') . '</th>
                                 <th>' . gettext('qty') . '</th>
                                 <th>' . gettext('pr') . '</th>
                                 <th>Discount</th>
@@ -168,19 +217,20 @@ class PrintOrder {
         $totQty = 0;
         $totOrd = 0;
         foreach ($products as $prod) {
-            $discount = (($prod['retail_price']-$prod['sold_price'])/$prod['retail_price'])*100;
+            $discount = (($prod['retail_price'] - $prod['sold_price']) / $prod['retail_price']) * 100;
             $html.= '<tr>
-                                <td>' . $prod['cod'] . '</td>
-                                <td><img src="../../' . $prod['image'] . '"></td>
-                                <td>' . $prod['description'] . '</td>
+                                <td>' . $prod['cod'] . '</td>';
+            if ($type == 'ord')
+                $html .= '<td><img src="../../' . $prod['image'] . '"></td>';
+            $html .= '<td>' . $prod['description'] . '</td>
                                 <td>' . $prod['quantity'] . '</td>
                                 <td>' . $prod['retail_price'] . '</td>
                                 <td>' . round($discount, 2) . '</td>
                                 <td>' . $prod['sold_price'] . '</td>
                                 <td>' . $prod[''] . 'iva</td>
-                                <td>' . $prod['quantity']*$prod['sold_price'] . '</td>';
+                                <td>' . $prod['quantity'] * $prod['sold_price'] . '</td>';
             $totQty += $prod['quantity'];
-            $totOrd += $prod['quantity']*$prod['sold_price'];
+            $totOrd += $prod['quantity'] * $prod['sold_price'];
         }
         $html.= '<!-- 
                                     </tr>
@@ -213,47 +263,7 @@ class PrintOrder {
 
                 </body>
                 </html>';
-
-        $mpdf->WriteHTML($html);
-
-        //Convert the date.
-        $oDate = new DateTime($this->order['data']);
-        $sDate = $oDate->format("d-m-y");
-        //Create files
-        $ords = 'orders';
-        $fileName = $ords . '-order' . $this->order_id . '-date' . $sDate . '.pdf';
-        $filePath = '../../../files/' . $ords . '/' . $fileName;
-        chmod('../../../files/' . $ords, 0777);
-        $mpdf->Output($filePath, 'F');
-
-        $inv = 'invoices';
-        $fileName = $inv . '-order' . $this->order_id . '-date' . $sDate . '.pdf';
-        $filePath = '../../../files/' . $inv . '/' . $fileName;
-        chmod('../../../files/' . $inv, 0777);
-        $mpdf->Output($filePath, 'F');
-
-        return $filePath;
-    }
-
-    public function savePDF($filePath) {
-        $save = array('path' => $filePath, 'id' => $this->order_id);
-        try {
-            $stmt6 = $this->DBH->prepare('INSERT INTO invoices (path, orders_id) 
-                                           value (:path, :id)');
-            $stmt6->execute($save);
-        } catch (PDOException $e) {
-            echo 'ERROR: ' . $e->getMessage();
-        }
-    }
-
-    public function printTemplate() {
-        require_once 'pdf_invoice_template.php';
-
-        $mpdf = new mPDF('c', 'A4', '', '', 0, 0, 0, 0, 0, 0);
-        $mpdf->SetDisplayMode('fullpage');
-        $mpdf->list_indent_first_level = 0;  // 1 or 0 - whether to indent the first level of a list
-        $mpdf->WriteHTML($head . $css . $head_close . $html_template);
-        $mpdf->Output();
+        return $html;
     }
 
     public function getOrder_id() {
