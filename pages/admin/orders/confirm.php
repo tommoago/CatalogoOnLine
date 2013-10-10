@@ -27,7 +27,7 @@ try {
     $data = array('id' => $id, 'conf' => date('Y-m-d H:i:s'), 'operator' => $_SESSION['user']['name']);
 
     $STH = $DBH->prepare('UPDATE orders SET  
-                            confirmed = 0,
+                            confirmed = 1,
                             confirm_date = :conf,
                             operator = :operator
                           WHERE id = :id');
@@ -41,7 +41,7 @@ try {
     $customer = $pdf->getCustomer();
     $order = $pdf->getOrder();
 
-    //manda mail con il pdf, non la fattura
+    //manda mail con il pdf, non la fattura TO DO : aggiunge nome ditta!
     $mail->AddReplyTo('info@ozntone.com', 'Mela Rossa Cash n Carry');
     $mail->SetFrom('info@ozntone.com', 'Mela Rossa Cash n Carry');
     $address = $customer['email'];
