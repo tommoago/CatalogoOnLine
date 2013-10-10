@@ -35,16 +35,16 @@
     </table>
     <ul>
         {% if ord.confirmed != 1%}
-        <li class="confirm_adm">
-            <a href='confirm.php?id={{ ord.id }}' onclick="return confirm('{% trans "conford" %}');">{% trans "confirm" %} {% trans "ord" %}</a>
+        <li class="confirm_order">
+            <a href='confirm.php?id={{ ord.id }}' onclick="return confirm('{% trans "conford" %}');"><img src="../../../images/icons/checkmark/checkmark-256.png" alt='{% trans "pdf" %}'>{% trans "confirm" %} {% trans "ord" %}</a>
         </li>
         {% endif %}
         {% if ord.invoice != ''%}
-        <li class="pdf_first">
+        <li class="pdf_invoice">
             <a href='{{ ord.pdf }}'><img src="../../../images/icons/pdf/pdf-256.png" alt='{% trans "pdf" %}'>{% trans "sho" %} {% trans "pdf" %}</a>
         </li> 
-        <li class="print">
-            <a href='{{ ord.invoice }}'><img src="../../../images/icons/printer/printer-256.png" alt='{% trans "print" %}'>{% trans "print" %}</a>
+        <li class="create_invoice">
+            <a href='{{ ord.invoice }}'><img src="../../../images/icons/accounting/purchase_order/purchase_order-256.png" alt='{% trans "print" %}'>{% trans "crt" %} {% trans "inv" %}</a>
         </li>
         {% endif %}
     </ul>

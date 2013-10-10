@@ -408,6 +408,9 @@ msgstr "Print blank invoice"
 msgid "inv"
 msgstr "Invoice"
 
+msgid "crt"
+msgstr "Create"
+
 msgid "amt"
 msgstr "Amount"
 

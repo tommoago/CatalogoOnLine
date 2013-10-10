@@ -586,50 +586,27 @@ th {
     text-decoration: none;
     font-weight: bold
 }
-.pdf_first {
+.create_invoice, .pdf_invoice {
     margin-top: 25px;
+    margin-right: 10px;
     background-color: #ccc;
     padding: 10px 10px 5px 10px;
     border: 1px solid #929292;
-    border-radius: 3px 0px 0px 3px;   
-    -moz-border-radius: 3px 0px 0px 3px;   
-    -webkit-border-radius: 3px 0px 0px 3px;
+    border-radius: 3px;   
+    -moz-border-radius: 3px;   
+    -webkit-border-radius: 3px;  
     float: left;
     list-style: none;
     height: 24px
 }
-.pdf_first:active{
+.create_invoice:active, .pdf_invoice:active{
     background-color: #929292;
     border-bottom: 0px solid #6F6E6E;
     border-top: 2px solid #6F6E6E;
     border-right: 1px solid #6F6E6E;
     border-left: 1px solid #6F6E6E;
 }
-.pdf_first a {
-    color: #000;
-    text-decoration: none;
-    font-weight: bold
-}
-.pdf_last {
-    margin-top: 25px;
-    background-color: #ccc;
-    padding: 10px 10px 5px 10px;
-    border: 1px solid #929292;
-    border-radius: 0px 3px 3px 0px;   
-    -moz-border-radius: 0px 3px 3px 0px;   
-    -webkit-border-radius: 0px 3px 3px 0px;
-    float: left;
-    list-style: none;
-    height: 24px
-}
-.pdf_last:active{
-    background-color: #929292;
-    border-bottom: 0px solid #6F6E6E;
-    border-top: 2px solid #6F6E6E;
-    border-right: 1px solid #6F6E6E;
-    border-left: 1px solid #6F6E6E;
-}
-.pdf_last a {
+.create_invoice a, .pdf_invoice a{
     color: #000;
     text-decoration: none;
     font-weight: bold
@@ -658,29 +635,28 @@ th {
     text-decoration: none;
     font-weight: bold
 }
-.confirm_adm {
+.confirm_order {
     margin-top: 25px;
-    background-color: #ACCCA8;
+    margin-right: 10px;
+    background-color: #ccc;
     padding: 10px 10px 5px 10px;
-    border-top: 1px solid #929292; 
-    border-left: 1px solid #929292; 
-    border-bottom: 1px solid #929292; 
-    border-radius: 3px 0px 0px 3px;   
-    -moz-border-radius: 3px 0px 0px 3px;   
-    -webkit-border-radius: 3px 0px 0px 3px;
+    border: 1px solid #929292; 
+    border-radius: 3px;   
+    -moz-border-radius: 3px;   
+    -webkit-border-radius: 3px;
     float: left;
     list-style: none;
     height: 24px
 }
-.confirm_adm:active{
-    background-color: #91B68C;
-    border-bottom: 0px solid #929292;
-    border-top: 2px solid #929292;
-    border-left: 1px solid #929292;
-    border-right: 1px solid #929292;
+.confirm_order:active{
+    background-color: #929292;
+    border-bottom: 0px solid #6F6E6E;
+    border-top: 2px solid #6F6E6E;
+    border-left: 1px solid #6F6E6E;
+    border-right: 1px solid #6F6E6E;
 }
-.confirm_adm a{
-    color: #0A5506;
+.confirm_order a{
+    color: #000;
     text-decoration: none;
     font-weight: bold
 }
@@ -759,7 +735,7 @@ th {
 .add_cart p{   
     font-size: 12px;
 }
-.total img, .pdf img, .pdf_first img, .pdf_last img, .empty_cart img, .add_cart img, .checkout img, .confirm img, .print img, .print_usr img{
+.total img, .pdf img, .pdf_last img, .empty_cart img, .add_cart img, .checkout img, .confirm img, .print img, .print_usr img, .create_invoice img, .pdf_invoice img, .confirm_order img{
     width: auto;
     height: 30px;
     float: left;
