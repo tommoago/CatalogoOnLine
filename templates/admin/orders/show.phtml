@@ -25,14 +25,21 @@
             <td>{{ ord.operator }}</td>
             <td>{{ ord.customer }}</td>
         </tr>
-        <!--vedi commento su modifche file php-->
-        <!--        {% for prod in products %}
-                <tr>
-                    <td><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
-                    <td>{{ prod.quantity }}</td>
-                </tr>
-                {% endfor %}-->
     </table>
+        <p class="detail_add">{% trans "prods" %}</p>
+        <table class="tablelist">
+            <tr>
+                <th>{% trans "name" %}</th>
+                <th>{% trans "qty" %}</th>
+            </tr>
+            {% for prod in products %}
+            <tr>
+                <td><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
+                <td>{{ prod.quantity }}</td>
+                <td class="delete"><a href='delete_product.php?o_id={{ ord.id }}&p_id={{ prod.id }}'><img src="../../../images/icons/delete/delete-256.png" alt='{% trans "del" %}'></a></td>
+            </tr>
+            {% endfor %}
+        </table>
     <ul>
         {% if ord.confirmed != 1%}
         <li class="confirm_order">
