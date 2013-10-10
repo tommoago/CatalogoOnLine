@@ -170,38 +170,55 @@ class PrintOrder {
                                 ' . $company['telephone'] . '
                             </h2>
                         </td>
-                        <td>' . gettext('inv') . ' n&#186;<p>1234567890</p></td>
-                        <td>' . gettext('date') . ':<p>' . $invDate->format("d-m-y") . '</p></td>
-                    </tr>
+                        <td>
+                        	<table class="t3">   
+                        		<tr>
+                        			<td style="width:65mm">' . gettext('inv') . ' n&#186;<p>1234567890</p></td>
+                        			<td style="width:25mm">' . gettext('date') . ':<p>' . $invDate->format("d-m-y") . '</p></td>
+                    		</tr>
+                    	</table>
+                    	<table class="t3">
+                    		<tr>
+                      		  <td style="width:90mm;height:25mm">Recipient:
+                            		<p>  ' . $this->customer['name'] . '<br>
+                           		     ' . $address['street'] . '<br>
+                          		     ' . $address['zip'] . ' ' . $address['city'] . ' ' . $address['province'] . '<br>
+                                		' . $address['country'] . '
+                            		</p></td>
+                   			 </tr>
+                   		</table>
+                   	</tr>
                     <tr>
-                        <td colspan="2" style="width:90mm">Recipient:
-                            <p>  ' . $this->customer['name'] . '<br>
-                                ' . $address['street'] . '<br>
-                                ' . $address['zip'] . ' ' . $address['city'] . ' ' . $address['province'] . '<br>
-                                ' . $address['country'] . '
-                            </p>
-                        </td>
+                    	<td>
+                    		<table class="t2">
+                    			<tr>
+                    				<td style="width:45mm">' . gettext('cust') . ':<p>LOL</p></td>
+                    			  	<td style="width:45mm">' . gettext('code') . ':</p></td>
+                     			 </tr>
+                     			 <tr>
+                         			<td style="width:45mm">' . gettext('piva') . ':<p>LOL</p></td>
+                         			<td style="width:45mm">' . gettext('codf') . ':<p>LOL</p></td>
+                    			 </tr>
+                    			 <tr>
+                    			   	  <td style="width:45mm">Causale trasporto:<p>LOL</p></td>
+                         			  <td style="width:45mm">Trasporto:<p>LOL</p></td>
+                         		 </tr>
+                         		 <tr>
+                         		   	   <td style="width:45mm">Banca d&#146;appoggio:<p>LOL</p></td>
+                         		   	   <td style="width:45mm">Valuta:<p>LOL</p></td>
+                         		  </tr>
+                 			</table>
+                 		</td>
+                 		<td>
+                    		<table>
+                    			  <tr class="t3">
+                     			  	 <td style="width:90mm;height:33.5mm">' . gettext('descr') . ':<p>LOL</p></td>
+                     			  </tr>
+                 			</table>
+                    	</td>
                     </tr>
-                    <tr>
-                        <td colspan="2" rowspan="3">' . gettext('descr') . ':<p>LOL</p></td>
-                    </tr>
-                    <tr>
-                        <td>' . gettext('cust') . ':<p>LOL</p></td>
-                        <td>' . gettext('code') . ':<p>LOL</p></td>
-                    </tr>
-                    <tr>
-                        <td>' . gettext('piva') . ':<p>' . $this->customer['piva'] . '</p></td>
-                        <td>' . gettext('codf') . ':<p>' . $this->customer['cod_fis'] . '</p></td>
-                    </tr>
-                    <tr>
-                        <td>Causale trasporto:<p>LOL</p></td>
-                        <td>Trasporto:<p>LOL</p></td>
-                        <td>Banca d appoggio:<p>LOL</p></td>
-                        <td>Valuta:<p>LOL</p></td>
-                    </tr>
-                </table>
-
-                <div id="content">
+			 </table>
+                <div id="content_pdf">
                     <div id="invoice_body">
                         <table>
                             <tr style="background:#eee;">

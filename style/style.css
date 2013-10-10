@@ -428,10 +428,10 @@ input[type=submit], input[type=button] {
 }
 #accordion {
     width: 200px;
-    height: 95%;
+    min-height: 500px;
     float: left;
     position: absolute;
-    background: transparent;
+    background: #E00000;
     margin-top: 4px;
 }
 #demo2{
@@ -440,8 +440,8 @@ input[type=submit], input[type=button] {
 .menu-right {
     float: right;
     width: 270px;
-    height: 750px;
-/*  background-image: url(../images/backbody.jpg); */
+    min-height: 500px;
+    background: #E00000;
 }
 #sliderContainer2{
     margin: 40px 7px 0px 7px;
