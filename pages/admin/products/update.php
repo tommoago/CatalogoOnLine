@@ -28,6 +28,7 @@ $barcode = $_POST['barcode'];
 $single_qty = $_POST['s_qty'];
 $pack_qty = $_POST['p_qty'];
 $cardboard_qty = $_POST['c_qty'];
+$vat = $_POST['vat'];
 $categories_id = $_POST['cat_id'];
 $suppliers_id = $_POST['sup_id'];
 
@@ -82,6 +83,7 @@ try {
         's_qty' => $single_qty,
         'p_qty' => $pack_qty,
         'c_qty' => $cardboard_qty,
+        'vat' => $vat,
         'cat_id' => $categories_id,
         'sup_id' => $suppliers_id,
         'id' => $id);
@@ -101,6 +103,7 @@ try {
                             single_qty = :s_qty,
                             pack_qty = :p_qty, 
                             cardboard_qty = :c_qty, 
+                            vat = :vat,
                             categories_id =  :cat_id,
                             suppliers_id =  :sup_id
                           WHERE id = :id');

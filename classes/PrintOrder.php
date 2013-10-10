@@ -152,8 +152,10 @@ class PrintOrder {
         $html .= '<body>
         <div id="wrapper">
 
-            <p style="text-align:center; font-weight:bold; padding-top:5mm;padding-bottom:5mm;">' . gettext($type) . '</p>
-            <br />
+            <p style="text-align:center; font-weight:bold; padding-top:5mm;padding-bottom:5mm;">' . gettext($type) . ' ';
+        if ($type == 'ord')
+            $html .= $this->order_id . '</p>';
+        $html .= ' <br />
             
                 <table>
                     <tr>
@@ -218,17 +220,19 @@ class PrintOrder {
         $totOrd = 0;
         foreach ($products as $prod) {
             $discount = (($prod['retail_price'] - $prod['sold_price']) / $prod['retail_price']) * 100;
+            
             $html.= '<tr>
-                                <td>' . $prod['cod'] . '</td>';
+                        <td>' . $prod['cod'] . '</td>';
             if ($type == 'ord')
                 $html .= '<td><img src="../../' . $prod['image'] . '"></td>';
-            $html .= '<td>' . $prod['description'] . '</td>
-                                <td>' . $prod['quantity'] . '</td>
-                                <td>' . $prod['retail_price'] . '</td>
-                                <td>' . round($discount, 2) . '</td>
-                                <td>' . $prod['sold_price'] . '</td>
-                                <td>' . $prod[''] . 'iva</td>
-                                <td>' . $prod['quantity'] * $prod['sold_price'] . '</td>';
+                $html .= '<td>' . $prod['description'] . '</td>
+                          <td>' . $prod['quantity'] . '</td>
+                          <td>' . $prod['retail_price'] . '</td>
+                          <td>' . round($discount, 2) . '</td>
+                          <td>' . $prod['sold_price'] . '</td>
+                          <td>' . $prod['vat'] . '</td>
+                          <td>' . $prod['quantity'] * $prod['sold_price'] . '</td>';
+                
             $totQty += $prod['quantity'];
             $totOrd += $prod['quantity'] * $prod['sold_price'];
         }
@@ -241,28 +245,23 @@ class PrintOrder {
                                         <td>' . $totOrd . '</td>
                                     </tr>
                                 -->
-                        </table>
-                        <div id="invoice_total">
-
-                            <table>
-                                <tr>
-                                    <td style="width:40%;text-align:left; padding-left:10px;"> ' . gettext('tot') . ' ' . gettext('itms') . ':</td>
-                                    <td style="width:10%;font-family:Courier">' . $totQty . '</td>
-                                    <td style="width:35%;text-align:left; padding-left:10px;"> ' . gettext('tot') . ' ' . gettext('amt') . ':</td>
-                                    <td style="width:5%;font-family:Courier">EUR</td>
-                                    <td style="width:10%;font-family:Courier" class="mono">' . $totOrd . '</td>
-                                </tr>
-                            </table>
-                        </div>
-
-                    </div>
-
-                    <br />
-
-                </div>
-
-                </body>
-                </html>';
+                </table>
+            <div id="invoice_total">
+                <table>
+                    <tr>
+                        <td style="width:40%;text-align:left; padding-left:10px;"> ' . gettext('tot') . ' ' . gettext('itms') . ':</td>
+                        <td style="width:10%;font-family:Courier">' . $totQty . '</td>
+                        <td style="width:35%;text-align:left; padding-left:10px;"> ' . gettext('tot') . ' ' . gettext('amt') . ':</td>
+                        <td style="width:5%;font-family:Courier">EUR</td>
+                        <td style="width:10%;font-family:Courier" class="mono">' . $totOrd . '</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <br />
+    </div>
+</body>
+</html>';
         return $html;
     }
 

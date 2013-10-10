@@ -6,7 +6,6 @@
     <table class="tablelist">
         <tr>
             <th>{% trans "name" %}</th>
-<!--             <th>{% trans "descr" %}</th> -->
             <th>{% trans "new" %}</th>
             <th>{% trans "ofr" %}</th>
             <th>{% trans "hlg" %}</th>
@@ -19,13 +18,13 @@
             <th>{% trans "sng" %} {% trans "qty" %}</th>
             <th>{% trans "pck" %} {% trans "qty" %}</th>
             <th>{% trans "cdb" %} {% trans "qty" %}</th>
+            <th>{% trans "vat" %}</th>
             <th>{% trans "cat" %}</th>
             <th>{% trans "sup" %}</th>
         </tr>
         {% for prod in prods %}
         <tr>
             <td class="first_id"><a href='show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
-<!--             <td>{{ prod.description }}</td> -->
             <td>
                 {% if prod.new == 1 %}
                 <p style="color:#008000;text-align:center">&#x2713;</p>  
@@ -56,6 +55,7 @@
             <td>{{ prod.single_qty }}</td>
             <td>{{ prod.pack_qty }}</td>
             <td>{{ prod.cardboard_qty }}</td>
+            <td>{{ prod.vat }}</td>
             <td>{{ prod.category }}</td>
             <td>{{ prod.supplier }}</td>
             <td class="delete"><a href='delete.php?id={{ prod.id }}'><img src="../../../images/icons/delete/delete-256.png" alt='{% trans "del" %}'></a></td>

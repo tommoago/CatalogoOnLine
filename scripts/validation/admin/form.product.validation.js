@@ -36,6 +36,10 @@ $(document).ready(function() {
 				digits : true,
 				required : true
 			},
+			vat : {
+				digits : true,
+				required : true
+			}
 		},
 		messages : {
 			name : " required ",
@@ -49,6 +53,7 @@ $(document).ready(function() {
 			s_qty : " required",
 			p_qty : " required",
 			c_qty : " required",
+                        vat : " required"
 		}
 	});
 });
