@@ -36,7 +36,7 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
     //crea pdf
-    $path = $pdf->createPDF();
+    $path = $pdf->createPDF('order');
     $pdf->savePDF($path);
     $customer = $pdf->getCustomer();
     $order = $pdf->getOrder();

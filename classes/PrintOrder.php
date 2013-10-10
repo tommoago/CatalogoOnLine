@@ -87,35 +87,28 @@ class PrintOrder {
         return $adr;
     }
 
-    public function createPDF() {
+    public function createPDF($type) {
         //Convert the date.
         $oDate = new DateTime($this->order['data']);
         $sDate = $oDate->format("d-m-y");
 
-        //create new PDF invoice
+        //create new PDF 
         $mpdf = new mPDF('c', 'A4', '', '', 0, 0, 0, 0, 0, 0);
         $mpdf->SetDisplayMode('fullpage');
         $mpdf->list_indent_first_level = 0;  // 1 or 0 - whether to indent the first level of a list
-        $mpdf->WriteHTML($this->processBody('inv'));
-
-        $inv = 'invoices';
-        $fileName = $inv . '-order' . $this->order_id . '-date' . $sDate . '.pdf';
-        $filePath = '../../../files/' . $inv . '/' . $fileName;
-        chmod('../../../files/' . $inv, 0777);
-        $mpdf->Output($filePath, 'F');
-
-        //create new PDF order
-        $mpdfO = new mPDF('c', 'A4', '', '', 0, 0, 0, 0, 0, 0);
-        $mpdfO->SetDisplayMode('fullpage');
-        $mpdfO->list_indent_first_level = 0;  // 1 or 0 - whether to indent the first level of a list
-        $mpdfO->WriteHTML($this->processBody('ord'));
-
+        if($type == 'order'){
+            $mpdf->WriteHTML($this->processBody('ord'));
+            $path = 'orders';
+        }else{
+            $mpdf->WriteHTML($this->processBody('inv'));
+            $path = 'invoices';
+        }
+        
         //Create files
-        $ords = 'orders';
-        $fileName = $ords . '-order' . $this->order_id . '-date' . $sDate . '.pdf';
-        $filePath = '../../../files/' . $ords . '/' . $fileName;
-        chmod('../../../files/' . $ords, 0777);
-        $mpdfO->Output($filePath, 'F');
+        $fileName = $path . '-' . $type . $this->order_id . '-date' . $sDate . '.pdf';
+        $filePath = '../../../files/' . $path . '/' . $fileName;
+        chmod('../../../files/' . $path, 0777);
+        $mpdf->Output($filePath, 'F');
         return $filePath;
     }
 
@@ -129,17 +122,7 @@ class PrintOrder {
             echo 'ERROR: ' . $e->getMessage();
         }
     }
-
-    public function printTemplate() {
-        require_once 'pdf_invoice_template.php';
-
-        $mpdf = new mPDF('c', 'A4', '', '', 0, 0, 0, 0, 0, 0);
-        $mpdf->SetDisplayMode('fullpage');
-        $mpdf->list_indent_first_level = 0;  // 1 or 0 - whether to indent the first level of a list
-        $mpdf->WriteHTML($head . $css . $head_close . $html_template);
-        $mpdf->Output();
-    }
-
+    
     private function processBody($type) {
         require 'pdf_invoice_template.php';
         $html = $head . $css . $head_close;
