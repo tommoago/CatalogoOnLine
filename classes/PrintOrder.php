@@ -163,24 +163,24 @@ class PrintOrder {
                     	<table class="t3">
                     		<tr>
                       		  <td style="width:90mm;height:25mm">Recipient:
-                            		<p>  ' . $this->customer['name'] . '<br>
-                           		     ' . $address['street'] . '<br>
-                          		     ' . $address['zip'] . ' ' . $address['city'] . ' ' . $address['province'] . '<br>
-                                		' . $address['country'] . '
-                            		</p></td>
-                   			 </tr>
-                   		</table>
-                   	</tr>
+                            		<p>' . $this->customer['name'] . '<br>
+                           		   ' . $address['street'] . '<br>
+                          		   ' . $address['zip'] . ' ' . $address['city'] . ' ' . $address['province'] . '<br>
+                                           ' . $address['country'] . '</p>
+                                   </td>
+                                </tr>
+                        </table>
+                    </tr>
                     <tr>
                     	<td>
                     		<table class="t2">
                     			<tr>
-                    				<td style="width:45mm">' . gettext('cust') . ':<p>LOL</p></td>
+                    				<td style="width:45mm">' . gettext('cust') . ':<p>' . $this->customer['id'] . '</p></td>
                     			  	<td style="width:45mm">' . gettext('code') . ':</p></td>
                      			 </tr>
                      			 <tr>
-                         			<td style="width:45mm">' . gettext('piva') . ':<p>LOL</p></td>
-                         			<td style="width:45mm">' . gettext('codf') . ':<p>LOL</p></td>
+                         			<td style="width:45mm">' . gettext('piva') . ':<p>' . $this->customer['piva'] . '</p></td>
+                         			<td style="width:45mm">' . gettext('codf') . ':<p>' . $this->customer['cod_fis'] . '</p></td>
                     			 </tr>
                     			 <tr>
                     			   	  <td style="width:45mm">Causale trasporto:<p>LOL</p></td>
