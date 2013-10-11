@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: melarossa\n"
 "POT-Creation-Date: 2013-09-26 11:35+0100\n"
-"PO-Revision-Date: 2013-10-11 13:04+0100\n"
+"PO-Revision-Date: 2013-10-11 13:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: me <lol@lol.lol>\n"
 "MIME-Version: 1.0\n"
@@ -143,8 +143,7 @@ msgstr ""
 "Il suo ordine è stato aggiornato, verrà ricontattato da un nostro operatore."
 
 msgid "ord.must.usr"
-msgstr ""
-"È necessario essere in possesso di un account per completare l'ordinex!"
+msgstr "È necessario essere in possesso di un account per completare l'ordinex"
 
 #: forms generic
 msgid "name"
@@ -200,7 +199,7 @@ msgstr "Tipo"
 
 msgid "pr"
 msgstr "Prezzo"
-#!!!!!
+
 msgid "rg"
 msgstr "Range"
 
@@ -339,19 +338,20 @@ msgstr "Seleziona"
 
 # classe imgUploader
 msgid "fperm"
-msgstr "Sorry, you must CHMOD your upload target to 777"
+msgstr "È necessario cambiare i permessi della cartella in 777"
 
 msgid "ftype"
-msgstr "Sorry, you can not upload this filetype"
+msgstr "Non puoi caricare questo tipo di file"
 
 msgid "fbig"
-msgstr "Sorry, the file you have attempted to upload is too large"
+msgstr "File troppo grande"
 
 msgid "fpresent"
-msgstr "Sorry, this file already exists on our servers"
+msgstr "File già esistente"
 
 msgid "fboh"
-msgstr "Sorry, your file could not be uploaded for some unknown reason"
+msgstr ""
+"Siamo spiacenti, ma il file non può essere caricato per ragioni sconosciute"
 
 msgid "itm"
 msgstr "oggetto"
@@ -360,72 +360,69 @@ msgid "itms"
 msgstr "oggetti"
 
 msgid "qst"
-msgstr "Insert your question here."
+msgstr "Scriva la sua domanda qui."
 
 msgid "msg.sent"
-msgstr "Message sent. You will be contacted as sooon as possible."
+msgstr "Messaggio spedito. Sarà ricontattato il prima possibile."
 
 msgid "msg.conf"
 msgstr ""
-"This mail is automatically sent to confirm your sign up, please click the "
-"link below to activate your account:"
+"Questa mail viene automaticamnete inviata per confermare la sua "
+"registrazione, clicchi il link sottostante per attivare il suo account:"
 
 msgid "succ.reg"
-msgstr "Registration successful, check your mail for confirmation."
+msgstr "Registrazione avvenuta, controlli la sua mail per la conferma."
 
 msgid "reg.conf"
-msgstr "Register confirmation"
+msgstr "Conferma registrazione"
 
 msgid "sbj"
-msgstr "Subject"
+msgstr "Soggetto"
 
 msgid "submit"
-msgstr "Submit"
+msgstr "Invio"
 
 msgid "send"
-msgstr "Send"
+msgstr "Invia"
 
 msgid "del.profile"
-msgstr "Are you sure to delete your account?"
+msgstr "Sicuro di voler eliminare il suo account?"
 
 msgid "street"
-msgstr "Street"
+msgstr "Via"
 
 msgid "city"
-msgstr "City"
+msgstr "Città"
 
 msgid "prov"
-msgstr "Province"
+msgstr "Provincia"
 
 msgid "zip"
-msgstr "ZIP code"
+msgstr "CAP"
 
 msgid "country"
-msgstr "Country"
+msgstr "Stato"
 
 msgid "adrs"
-msgstr "Addresses"
+msgstr "Indirizzi"
 
 msgid "view"
-msgstr "View"
+msgstr "Visualizza"
 
 msgid "add"
-msgstr "Add"
-
-msgid "blank_invoice"
-msgstr "Print blank invoice"
+msgstr "Aggiungi"
 
 msgid "inv"
-msgstr "Invoice"
+msgstr "Fattura"
 
 msgid "crt"
-msgstr "Create"
+msgstr "Crea"
 
 msgid "amt"
-msgstr "Amount"
+msgstr "Totale"
 
 msgid "site"
-msgstr "Website"
+msgstr "Sito"
 
 msgid "num"
-msgstr "Number"
+msgstr "Numero"

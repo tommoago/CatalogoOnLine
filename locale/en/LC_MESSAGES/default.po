@@ -402,9 +402,6 @@ msgstr "View"
 msgid "add"
 msgstr "Add"
 
-msgid "blank_invoice"
-msgstr "Print blank invoice"
-
 msgid "inv"
 msgstr "Invoice"
 
