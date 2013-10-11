@@ -20,7 +20,7 @@
     <div id="sliderContainer">
         <ul id="slider1">
             {% for prod in prods %}
-            <li><a href="site/products/show.php?id={{ prod.id }}"><img src="{{ prod.image }}" alt="{{ prod.name }}" title="{{ prod.name }} €{{ prod.price }}"/></a><</li>
+            <li><a href="site/products/show.php?id={{ prod.id }}"><img src="{{ prod.image }}" alt="{{ prod.name }}" title="{{ prod.name }} €{{ prod.price }}"/></a></li>
             {% endfor %}
         </ul>
     </div>
