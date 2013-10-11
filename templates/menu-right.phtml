@@ -8,17 +8,21 @@
                 if (data.length == 0) {
                     $('#slider2').append("<p>No result found.</p>");
                 } else {
-                    var img, ul;
+                    var a, li, img, ul;
                     for (var i = 0; i < data.length; i++) {
                         img = document.createElement('img');
                         img.setAttribute("src", data[i]["image"]);
                         img.setAttribute("alt", data[i]["name"]);
                         img.setAttribute("title", data[i]["name"]+" "+data[i]["price"]);
-
-                        ul = document.createElement('ul');
-                        ul.appendChild(img);
                         
-                        $('#slider2').append(ul);
+                        a = document.createElement('a');
+                        a.setAttribute('href', 'site/products/show.php?id=' + data[i]['id']);
+                        a.appendChild(img);
+                        
+                        li = document.createElement('li');
+                        li.appendChild(a);
+                        
+                        $('#slider2').append(li);
                     }
                 }
                  $('#slider2').bxSlider({
