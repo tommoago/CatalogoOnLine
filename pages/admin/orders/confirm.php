@@ -12,7 +12,6 @@ $domain = 'default';
 bindtextdomain($domain, $_SERVER["DOCUMENT_ROOT"] .'/melarossa/locale'); 
 textdomain($domain);
 
-
 include '../../../classes/Session.php';
 include '../../../classes/PrintOrder.php';
 require_once '../../../vendor/phpmailer/phpmailer/class.phpmailer.php';
@@ -36,8 +35,8 @@ try {
     echo 'ERROR: ' . $e->getMessage();
 }
     //crea pdf
-    $path = $pdf->createPDF('order');
-    $pdf->savePDF($path);
+    $path = $pdf->createPDF('order_details');
+    $pdf->savePDF($path, 'order_details');
     $customer = $pdf->getCustomer();
     $order = $pdf->getOrder();
 

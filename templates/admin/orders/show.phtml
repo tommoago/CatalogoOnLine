@@ -46,12 +46,19 @@
             <a href='confirm.php?id={{ ord.id }}' onclick="return confirm('{% trans "conford" %}');"><img src="../../../images/icons/system/checkmark/checkmark-256.png" alt='{% trans "pdf" %}'>{% trans "confirm" %} {% trans "ord" %}</a>
         </li>
         {% endif %}
-        {% if ord.invoice != ''%}
+        {% if ord.pdf != ''%}
         <li class="pdf_invoice">
             <a href='{{ ord.pdf }}'><img src="../../../images/icons/pdf/pdf-256.png" alt='{% trans "pdf" %}'>{% trans "sho" %} {% trans "pdf" %}</a>
         </li> 
+        {% endif %}
+        {% if ord.invoice == ''%}
         <li class="create_invoice">
-            <a href='{{ ord.invoice }}'><img src="../../../images/icons/accounting/purchase_order/purchase_order-256.png" alt='{% trans "print" %}'>{% trans "crt" %} {% trans "inv" %}</a>
+            <a href='prepare_create_invoice.php?id={{ ord.id }}'><img src="../../../images/icons/accounting/purchase_order/purchase_order-256.png" alt='{% trans "crt" %}'>{% trans "crt" %} {% trans "inv" %}</a>
+        </li>
+        {% endif %}
+        {% if ord.invoice != ''%}
+        <li class="create_invoice">
+            <a href='{{ ord.invoice }}'><img src="../../../images/icons/accounting/purchase_order/purchase_order-256.png" alt='{% trans "sho" %}'>{% trans "sho" %} {% trans "inv" %}</a>
         </li>
         {% endif %}
     </ul>

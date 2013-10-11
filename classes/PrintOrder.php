@@ -12,6 +12,8 @@ class PrintOrder {
     private $order_id;
     private $order;
     private $customer;
+    private $inv_number;
+    private $inv_date;
 
     function __construct($id) {
         $this->db = new dataBase();
@@ -19,6 +21,7 @@ class PrintOrder {
 
         $this->order_id = $id;
         $this->queryOrder();
+        $this->inv_date = date('d-m-y');
     }
 
     public function queryProducts() {
@@ -88,20 +91,20 @@ class PrintOrder {
     }
 
     public function createPDF($type) {
-        //Convert the date.
-        $oDate = new DateTime($this->order['data']);
-        $sDate = $oDate->format("d-m-y");
-
         //create new PDF 
         $mpdf = new mPDF('c', 'A4', '', '', 0, 0, 0, 0, 0, 0);
         $mpdf->SetDisplayMode('fullpage');
         $mpdf->list_indent_first_level = 0;  // 1 or 0 - whether to indent the first level of a list
-        if($type == 'order'){
+        if($type == 'order_details'){
             $mpdf->WriteHTML($this->processBody('ord'));
             $path = 'orders';
+            $oDate = new DateTime($this->order['data']);
+            //format date
+            $sDate = $oDate->format("d-m-y");
         }else{
             $mpdf->WriteHTML($this->processBody('inv'));
             $path = 'invoices';
+            $sDate = $this->inv_date;
         }
         
         //Create files
@@ -112,10 +115,10 @@ class PrintOrder {
         return $filePath;
     }
 
-    public function savePDF($filePath) {
+    public function savePDF($filePath, $fileType) {
         $save = array('path' => $filePath, 'id' => $this->order_id);
         try {
-            $stmt6 = $this->DBH->prepare('INSERT INTO invoices (path, orders_id) 
+            $stmt6 = $this->DBH->prepare('INSERT INTO '.$fileType.' (path, orders_id) 
                                            value (:path, :id)');
             $stmt6->execute($save);
         } catch (PDOException $e) {
@@ -130,16 +133,12 @@ class PrintOrder {
         $company = $this->queryCompany();
         $address = $this->queryAddress();
         $this->queryCustomer();
-        $invDate = new DateTime();
+        $today = new DateTime();
 
         $html .= '<body>
         <div id="wrapper">
 
-            <p style="text-align:center; font-weight:bold; padding-top:5mm;padding-bottom:5mm;">' . gettext($type) . ' ';
-        if ($type == 'ord')
-            $html .= $this->order_id . '</p>';
-        $html .= ' <br />
-            
+            <p style="text-align:center; font-weight:bold; padding-top:5mm;padding-bottom:5mm;">' . gettext($type) . '</p><br />
                 <table>
                     <tr>
                         <td style="width:90mm;text-align:center" >
@@ -155,15 +154,16 @@ class PrintOrder {
                         </td>
                         <td>
                         	<table class="t3">   
-                        		<tr>
-                        			<td style="width:65mm">' . gettext('inv') . ' n&#186;<p>1234567890</p></td>
-                        			<td style="width:25mm">' . gettext('date') . ':<p>' . $invDate->format("d-m-y") . '</p></td>
+                        		<tr>';
+                                                if ($type == 'ord') $html .= '<td style="width:65mm">' . gettext('ord') . ' n&#186;<p>' . $this->order_id . '</p></td>';
+                                                else $html .= '<td style="width:65mm">' . gettext('inv') . ' n&#186;<p>' . $this->inv_number . '</p></td>';
+                        			$html .= '<td style="width:25mm">' . gettext('date') . ':<p>' . $today->format("d-m-y") . '</p></td>
                     		</tr>
                     	</table>
                     	<table class="t3">
                     		<tr>
                       		  <td style="width:90mm;height:25mm">Recipient:
-                            		<p>' . $this->customer['name'] . '<br>
+                            		<p>' . $this->customer['name'] . ' ' . $this->customer['surname'] . '<br>
                            		   ' . $address['street'] . '<br>
                           		   ' . $address['zip'] . ' ' . $address['city'] . ' ' . $address['province'] . '<br>
                                            ' . $address['country'] . '</p>
@@ -175,8 +175,8 @@ class PrintOrder {
                     	<td>
                     		<table class="t2">
                     			<tr>
-                    				<td style="width:45mm">' . gettext('cust') . ':<p>' . $this->customer['id'] . '</p></td>
-                    			  	<td style="width:45mm">' . gettext('code') . ':</p></td>
+                    				<td style="width:45mm">' . gettext('cust') . ':<p>' . $this->customer['surname'] . '</p></td>
+                    			  	<td style="width:45mm">' . gettext('code') . ':<p>' . $this->customer['id'] . '</p></td>
                      			 </tr>
                      			 <tr>
                          			<td style="width:45mm">' . gettext('piva') . ':<p>' . $this->customer['piva'] . '</p></td>
@@ -271,6 +271,14 @@ class PrintOrder {
 
     public function getCustomer() {
         return $this->customer;
+    }
+    
+    public function setInv_number($inv_number) {
+        $this->inv_number = $inv_number;
+    }
+
+    public function setInv_date($inv_date) {
+        $this->inv_date = $inv_date;
     }
 
 }

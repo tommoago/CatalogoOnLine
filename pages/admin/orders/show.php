@@ -25,17 +25,21 @@ try {
     } else {
         $order['customer'] = $order['customers_id'];
     }
-    //sezione che mostrerebbe il dettaglio, ma per come viene scelto di implementare la base dati, è inutile.
+    //sezione che mostrerebbe il dettaglio, ma per come viene implementata la base dati, è inutile.
     $stmt2 = $DBH->prepare('SELECT * FROM products p, orders_has_products op 
                             WHERE op.orders_id = :id AND p.id = op.products_id');
     $stmt2->execute($data);
     $products = $stmt2->fetchAll();
 
-    $stmt4 = $DBH->prepare('SELECT * FROM invoices WHERE orders_id = :id');
+    $stmt4 = $DBH->prepare('SELECT * FROM order_details WHERE orders_id = :id');
     $stmt4->execute(array('id' => $order['id']));
-    $inv = $stmt4->fetch();
-    $order['pdf'] = $inv['path'];
-    $order['invoice'] = str_replace('orders', 'invoices', $inv['path']);
+    $ord_d = $stmt4->fetch();
+    $order['pdf'] = $ord_d['path'];
+    
+    $stmt5 = $DBH->prepare('SELECT * FROM invoices WHERE orders_id = :id');
+    $stmt5->execute(array('id' => $order['id']));
+    $inv = $stmt5->fetch();
+    $order['invoice'] = $inv['path'];
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }

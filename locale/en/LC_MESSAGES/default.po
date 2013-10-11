@@ -416,3 +416,6 @@ msgstr "Amount"
 
 msgid "site"
 msgstr "Website"
+
+msgid "num"
+msgstr "Number"
