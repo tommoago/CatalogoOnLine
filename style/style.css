@@ -24,7 +24,7 @@ h2{
 }
 #header {
     height: 160px;
-    background: #E00000;
+    background: #F00;
     margin-bottom: 40px;
 }
 #header_adm {
@@ -310,7 +310,7 @@ h2{
 #footer {
     width: 100%;
     height: 142px;
-    background: #e00000;
+    background: #0FB9B3;
 /*  background-image: url(../images/footer_bg.gif);
     background-position: top left;
     background-repeat: repeat-x; */
@@ -431,7 +431,7 @@ input[type=submit], input[type=button] {
     min-height: 500px;
     float: left;
     position: absolute;
-    background: #E00000;
+    background: #FF8F00;
     margin-top: 4px;
 }
 #demo2{
@@ -441,7 +441,7 @@ input[type=submit], input[type=button] {
     float: right;
     width: 270px;
     min-height: 500px;
-    background: #E00000;
+    background: #FF8F00;
 }
 #sliderContainer2{
     margin: 40px 7px 0px 7px;
