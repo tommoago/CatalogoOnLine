@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: melarossa\n"
 "POT-Creation-Date: 2013-09-26 11:35+0100\n"
-"PO-Revision-Date: 2013-09-26 18:37+0100\n"
+"PO-Revision-Date: 2013-10-11 13:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: me <lol@lol.lol>\n"
 "MIME-Version: 1.0\n"
@@ -73,9 +73,359 @@ msgstr "Ordini"
 msgid "comp"
 msgstr "Azienda"
 
+msgid "comps"
+msgstr "Aziende"
+
 #: admin index
 msgid "welcome"
 msgstr "Benvenuto"
 
 msgid "welcome_2"
 msgstr "da qui, puoi controllare il tuo sito."
+
+msgid "welcome_2_usr"
+msgstr "da qui, puoi accedere ai tuoi dati personali."
+
+msgid "unauth"
+msgstr "Accesso non autorizzato."
+
+msgid "invalid.cred"
+msgstr "Credenziali non valide."
+
+#: generic
+msgid "del"
+msgstr "Cancella"
+
+msgid "edit"
+msgstr "Modifica"
+
+msgid "del.succ"
+msgstr "Cancellazione avvenuta."
+
+msgid "act.succ"
+msgstr "Attivazione avvenuta con successo."
+
+msgid "duplicate.mail"
+msgstr "Questa mail è già presente."
+
+msgid "del.dep.prod"
+msgstr ""
+"Impossibile eliminare per via di una dipendenza con un prodotto associato."
+
+msgid "conf"
+msgstr "conferma."
+
+msgid "nores"
+msgstr "Nessun elemento trovato."
+
+#: admin
+msgid "adm.del.dep"
+msgstr ""
+"Impossibile eliminare per via di una dipendenza con un cliente associato."
+
+msgid "cat.del.dep.cat"
+msgstr ""
+"Impossibile eliminare per via di una dipendenza con una categoria associata."
+
+#: order
+msgid "ord.mail.body"
+msgstr ""
+"Questa mail viene automanticamente inviata per confermare il suo ordine con "
+"ID:"
+
+msgid "ord.conf.usr"
+msgstr ""
+"Il suo ordine è stato preso in carico, verrà ricontattato da un nostro "
+"operatore"
+
+msgid "ord.up.usr"
+msgstr ""
+"Il suo ordine è stato aggiornato, verrà ricontattato da un nostro operatore."
+
+msgid "ord.must.usr"
+msgstr ""
+"È necessario essere in possesso di un account per completare l'ordinex!"
+
+#: forms generic
+msgid "name"
+msgstr "Nome"
+
+msgid "sur"
+msgstr "Cognome"
+
+msgid "usr"
+msgstr "Username"
+
+msgid "psw"
+msgstr "Password"
+
+msgid "mail"
+msgstr "E-mail"
+
+msgid "upload"
+msgstr "Selezionare un file"
+
+msgid "descr"
+msgstr "Descrizione"
+
+msgid "piva"
+msgstr "P.IVA"
+
+msgid "vat"
+msgstr "IVA"
+
+msgid "tel"
+msgstr "Telefono"
+
+msgid "cel"
+msgstr "Cellulare"
+
+msgid "fax"
+msgstr "Fax"
+
+msgid "adr"
+msgstr "Indirizzo"
+
+msgid "codf"
+msgstr "Cod. Fiscale"
+
+msgid "act"
+msgstr "Attivo"
+
+msgid "op"
+msgstr "Operatore"
+
+msgid "type"
+msgstr "Tipo"
+
+msgid "pr"
+msgstr "Prezzo"
+#!!!!!
+msgid "rg"
+msgstr "Range"
+
+msgid "id"
+msgstr "ID"
+
+msgid "date"
+msgstr "Data"
+
+msgid "confed"
+msgstr "Confermato"
+
+msgid "your"
+msgstr "Il Suo"
+
+msgid "confirm"
+msgstr "Conferma"
+
+msgid "conford"
+msgstr "Sicuro di voler confermare questo ordine?"
+
+msgid "img"
+msgstr "Immagine"
+
+msgid "imgs"
+msgstr "Immagini"
+
+msgid "qty"
+msgstr "Q.tà"
+
+msgid "new"
+msgstr "Nuovo"
+
+msgid "ofr"
+msgstr "Offerta"
+
+msgid "hlg"
+msgstr "Evidenza"
+
+msgid "pur"
+msgstr "Acquisto"
+
+msgid "wh"
+msgstr "Ingrosso"
+
+msgid "ret"
+msgstr "Dettaglio"
+
+msgid "super"
+msgstr "Super"
+
+msgid "cod"
+msgstr "Codice"
+
+msgid "bcod"
+msgstr "Cod. A Barre"
+
+msgid "sng"
+msgstr "Singolo"
+
+msgid "pck"
+msgstr "Pacchetto"
+
+msgid "cdb"
+msgstr "Scatola"
+
+msgid "nomod"
+msgstr "(Vuoto per non modificare)"
+
+#: cart
+msgid "empcart"
+msgstr "Il suo carrello è vuoto."
+
+msgid "empty.cart"
+msgstr "Svuota carrello"
+
+msgid "checkout"
+msgstr "Acquista"
+
+msgid "tot"
+msgstr "Totale"
+
+msgid "canc"
+msgstr "Anulla"
+
+msgid "usr.emp.cart"
+msgstr "Il suo carrello è vuoto."
+
+msgid "add.cart"
+msgstr "Aggiungi al carrello"
+
+msgid "print"
+msgstr "Stampa ordine"
+
+msgid "pdf"
+msgstr "PDF"
+
+msgid "text"
+msgstr "Testo"
+
+msgid "merc"
+msgstr "Commerciante"
+
+msgid "stock"
+msgstr "Stockista"
+
+msgid "agr"
+msgstr "Accetto."
+
+msgid "rep"
+msgstr "Ripeti"
+
+msgid "signup"
+msgstr "Iscriviti"
+
+msgid "signin"
+msgstr "Accedi"
+
+msgid "cart"
+msgstr "Carrello"
+
+msgid "prof"
+msgstr "Profilo"
+
+msgid "sho"
+msgstr "Mostra"
+
+msgid "upd"
+msgstr "Modifica"
+
+msgid "by"
+msgstr "By"
+
+msgid "sel"
+msgstr "Seleziona"
+
+# classe imgUploader
+msgid "fperm"
+msgstr "Sorry, you must CHMOD your upload target to 777"
+
+msgid "ftype"
+msgstr "Sorry, you can not upload this filetype"
+
+msgid "fbig"
+msgstr "Sorry, the file you have attempted to upload is too large"
+
+msgid "fpresent"
+msgstr "Sorry, this file already exists on our servers"
+
+msgid "fboh"
+msgstr "Sorry, your file could not be uploaded for some unknown reason"
+
+msgid "itm"
+msgstr "oggetto"
+
+msgid "itms"
+msgstr "oggetti"
+
+msgid "qst"
+msgstr "Insert your question here."
+
+msgid "msg.sent"
+msgstr "Message sent. You will be contacted as sooon as possible."
+
+msgid "msg.conf"
+msgstr ""
+"This mail is automatically sent to confirm your sign up, please click the "
+"link below to activate your account:"
+
+msgid "succ.reg"
+msgstr "Registration successful, check your mail for confirmation."
+
+msgid "reg.conf"
+msgstr "Register confirmation"
+
+msgid "sbj"
+msgstr "Subject"
+
+msgid "submit"
+msgstr "Submit"
+
+msgid "send"
+msgstr "Send"
+
+msgid "del.profile"
+msgstr "Are you sure to delete your account?"
+
+msgid "street"
+msgstr "Street"
+
+msgid "city"
+msgstr "City"
+
+msgid "prov"
+msgstr "Province"
+
+msgid "zip"
+msgstr "ZIP code"
+
+msgid "country"
+msgstr "Country"
+
+msgid "adrs"
+msgstr "Addresses"
+
+msgid "view"
+msgstr "View"
+
+msgid "add"
+msgstr "Add"
+
+msgid "blank_invoice"
+msgstr "Print blank invoice"
+
+msgid "inv"
+msgstr "Invoice"
+
+msgid "crt"
+msgstr "Create"
+
+msgid "amt"
+msgstr "Amount"
+
+msgid "site"
+msgstr "Website"
+
+msgid "num"
+msgstr "Number"

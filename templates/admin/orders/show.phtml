@@ -60,6 +60,9 @@
         <li class="create_invoice">
             <a href='{{ ord.invoice }}'><img src="../../../images/icons/accounting/purchase_order/purchase_order-256.png" alt='{% trans "sho" %}'>{% trans "sho" %} {% trans "inv" %}</a>
         </li>
+        <li class="create_invoice">
+            <a href='prepare_create_invoice.php?id={{ ord.id }}'><img src="../../../images/icons/accounting/purchase_order/purchase_order-256.png" alt='{% trans "crt" %}'>{% trans "upd" %} {% trans "inv" %}</a>
+        </li>
         {% endif %}
     </ul>
 </div>

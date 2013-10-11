@@ -1,4 +1,5 @@
 <?php
+
 //faccio questo per via di un conflitto con la clase printorder
 //php merda
 session_start();
@@ -16,8 +17,22 @@ include '../../../classes/Session.php';
 include '../../../classes/PrintOrder.php';
 $session = new Session();
 
-$id = $_GET['id'];
-$inv_number = $_GET['inv_number'];
+$id = $_POST['id'];
+$inv_number = $_POST['inv_number'];
+
+try {
+    $db = new dataBase();
+    $DBH = $db->connect();
+
+    $stmt5 = $DBH->prepare('SELECT * FROM invoices WHERE orders_id = :id');
+    $stmt5->execute(array('id' => $id));
+    $inv = $stmt5->fetch();
+    if (!empty($inv))
+        unlink('../../' . $inv['path']);
+} catch (PDOException $e) {
+    echo 'ERROR: ' . $e->getMessage();
+}
+
 $pdf = new PrintOrder($id);
 
 $pdf->setInv_number($inv_number);
@@ -26,5 +41,6 @@ $pdf->setInv_number($inv_number);
 $path = $pdf->createPDF('invoices');
 $pdf->savePDF($path, 'invoices');
 
-//header('location:show.php?id=' . $id);
+
+header('location:show.php?id=' . $id);
 ?>
