@@ -73,7 +73,7 @@
   background: #FF8F00;
 }
 #cssmenu > ul > li {
-  border-left: 3px solid #aaa;
+  border-left: 3px solid #fff;
 }
 #cssmenu > ul > li > a {
   padding: 10px 20px;
@@ -85,7 +85,7 @@
   color: #0FB9B3;
 }
 #cssmenu > ul > li:hover {
-  background: #eee;
+  background: #fff;
 }
 /* Sub Menu */
 #cssmenu ul ul a:link,
@@ -104,7 +104,7 @@
 }
 #cssmenu ul ul li {
   padding: 0 20px;
-  background: #fff;
+  background: #ccc;
 }
 #cssmenu ul ul li:last-child {
   padding-bottom: 10px;
@@ -124,7 +124,7 @@
   left: -20px;
   top: 13px;
   border-left: 10px solid transparent;
-  border-right: 10px solid #fff;
+  border-right: 10px solid #ccc;
   border-bottom: 10px solid transparent;
   border-top: 10px solid transparent;
 }

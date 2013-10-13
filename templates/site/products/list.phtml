@@ -2,11 +2,11 @@
 {% include 'menu.phtml' %}
 <div id='content'>
     <div class="list_products">
-
+	    <div class="list_products_nav">
         {% for cat in oCats %}
-        <a href="list.php?id_cat={{ cat.id }}">{{ cat.name }}</a>
+        <a href="list.php?id_cat={{ cat.id }}">{{ cat.name }}</a>&nbsp;|
         {% endfor %}
-
+		</div>
         <ul>
             {% for prod in prods %}
             <li style="background-image:url('../../{{ prod.image }}')">

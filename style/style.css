@@ -291,6 +291,17 @@ h2{
 #list .colour a{
     color: white
 }
+.list_products_nav a{
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    text-decoration: none
+}
+.list_products_nav a:hover {
+	color: #BD0000;
+	text-decoration: underline
+}
 .colour img{
     height: 12px;
     width: auto;
