@@ -416,3 +416,6 @@ msgstr "Website"
 
 msgid "num"
 msgstr "Number"
+
+msgid "rot"
+msgstr "To see the table fully rotate the device"

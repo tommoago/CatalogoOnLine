@@ -1,5 +1,5 @@
 <?php
-
+include_once $_SERVER["DOCUMENT_ROOT"] .'/melarossa/classes/dataBase.php';
 if (!defined('ENT_SUBSTITUTE')) {
     define('ENT_SUBSTITUTE', 8);
 }
