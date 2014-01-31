@@ -1,77 +1,69 @@
 {% include 'header.phtml' %}
 {% include 'menu.phtml' %}
 <div id='content'>
-	<div class="show_product">
-		<div class="sum_product">
-			{% if prod.new == 1 %}
-			<p class="new_badge">
-				{% trans "new" %}
-			<p>
-				{% endif %}
-				{% if prod.offer == 1 %}
-			<p class="offer_badge">
-				{% trans "ofr" %}
-			<p>
-				{% endif %}
+    <div class="show_product">
+        <div class="sum_product">
+				{% if prod.new == 1 %}
+                        <p class="new_badge">{% trans "new" %}<p>
+                    {% endif %}
+                    {% if prod.offer == 1 %}
+                        <p class="offer_badge">{% trans "ofr" %}<p>
+                    {% endif %}        
+        
+<!--		  {% if prod.new == 1 %}
+            <img class="new" src="../../../images/icons/new/new-512.png">  
+            {% endif %}
+            {% if prod.offer == 1 %}
+            <img class="sale" src="../../../images/icons/sale/sale-512.png">  
+            {% endif %}
+ -->
+            <h4>{{ prod.barcode }}</h4>
 
-				<!--		  {% if prod.new == 1 %}
-				<img class="new" src="../../../images/icons/new/new-512.png">
-				{% endif %}
-				{% if prod.offer == 1 %}
-				<img class="sale" src="../../../images/icons/sale/sale-512.png">
-				{% endif %}
-				-->
-				<h4>{{ prod.barcode }}</h4>
 
-				<ul>
-					<li class="main_li">
-						{% trans "cod" %}:  #<b>{{ prod.cod }}</b>
-					</li>
-					<li class="main_li">
-						{% trans "qty" %}:
-					<li class="under_li">
-						{% trans "sng" %}: <b>{{ prod.single_qty }}</b>
-					</li>
-					<li class="under_li">
-						{% trans "pck" %}: <b>{{ prod.pack_qty }}</b>
-					</li>
-					<li class="under_li">
-						{% trans "cdb" %}: <b>{{ prod.cardboard_qty }}</b>
-					</li>
-					</li>
-				</ul>
-				<br>
-				<h5> {% if prod.price == prod.super_price and prod.price != prod.retail_price %}
-				&#128; {{ prod.retail_price }}
-				{% endif %} </h5>
-				<h3> &#128; {{ prod.price }} </h3>
+            <ul>
+                <li class="main_li">
+                	{% trans "cod" %}:  #<b>{{ prod.cod }}</b>
+                </li>  
+                <li class="main_li">
+                	{% trans "qty" %}:
+                		<li class="under_li">
+                			{% trans "sng" %}: <b>{{ prod.single_qty }}</b>
+                		</li>
+                		<li class="under_li">
+                		     {% trans "pck" %}:  <b>{{ prod.pack_qty }}</b>
+                		</li>
+                		<li class="under_li">
+                			{% trans "cdb" %}: <b>{{ prod.cardboard_qty }}</b>
+                		</li>
+                </li>
+            </ul>
+            <br>
+            <h5>
+                {% if prod.price == prod.super_price and prod.price != prod.retail_price %}
+                &#128; {{ prod.retail_price }}    
+                {% endif %}
+            </h5>
+            <h3> &#128; {{ prod.price }} </h3>    
 
-				<div class="sel_qty">
-					<span>{% trans "sel" %} {% trans "qty" %}:
-						<input type="text" id="qty_add" name="qty_add" value="1"/>
-					</span>
-				</div>
-				<form action="../cart/add.php" method="post">
-					<input type="hidden" name="id" value="{{ prod.id }}"/>
-					<button type="submit" value='{% trans "submit" %}' class="add_cart">
-						<img src="../../../images/icons/cart/buy/buy-256.png" alt='{% trans "add.cart" %}'>
-						{% trans "add.cart" %}
-					</button>
-				</form>
-		</div>
-		<div class="detail_product">
-			<h1>{{ prod.name }}</h1>
-			<h6>{% trans "by" %} <i><b>{{ prod.supplier }}</b></i></h6>
-			<div class="show_img"><img class="show_img" src="../../{{ prod.image }}">
-			</div>
-			<h7>
-				{% trans "cat" %}: <b>{{ prod.category }}</b>
-			</h7>
-			<br>
-			<h2>{{ prod.description }}</h2>
-		</div>
+          <div class="sel_qty"><span>{% trans "sel" %} {% trans "qty" %}: <input type="text" id="qty_add" name="qty_add" value="1"/></span></div>
+            <div class="add_cart">
+                <a href='#'><img src="../../../images/icons/cart/buy/buy-256.png" alt='{% trans "add.cart" %}'>{% trans "add.cart" %}</a>
+                <form action="../cart/add.php" method="post">
+                    <input type="hidden" name="id" value="{{ prod.id }}"/>
+                    <input type="submit" value='{% trans "submit" %}'/> <!-- brutto questo submit!! -->
+                </form>
+            </div>
+        </div>
+        <div class="detail_product">
+            <h1>{{ prod.name }}</h1>
+            <h6>{% trans "by" %} <i><b>{{ prod.supplier }}</b></i></h6>
+            <div class="show_img"><img class="show_img" src="../../{{ prod.image }}"></div>
+            <h7>{% trans "cat" %}:  <b>{{ prod.category }}</b></h7><br>
+            <h2>{{ prod.description }}</h2>
+        </div>
 
-	</div>
+
+    </div>
 </div>
 
 {% include 'footer.phtml' %}
