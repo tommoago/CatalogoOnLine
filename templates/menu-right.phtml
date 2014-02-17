@@ -1,44 +1,24 @@
-{% set path = '' %}
-{% if index == '' %}
-{% set path = '../../' %}
-{% endif %}
-<script type="text/javascript">
-    $.post("{{ path }}menu-right.php",
-            function(data) {
-                if (data.length == 0) {
-                    $('#slider2').append("<p>No result found.</p>");
-                } else {
-                    var a, li, img, ul;
-                    for (var i = 0; i < data.length; i++) {
-                        img = document.createElement('img');
-                        img.setAttribute("src", data[i]["image"]);
-                        img.setAttribute("alt", data[i]["name"]);
-                        img.setAttribute("title", data[i]["name"]+" "+data[i]["price"]);
-                        
-                        a = document.createElement('a');
-                        a.setAttribute('href', 'site/products/show.php?id=' + data[i]['id']);
-                        a.appendChild(img);
-                        
-                        li = document.createElement('li');
-                        li.appendChild(a);
-                        
-                        $('#slider2').append(li);
-                    }
-                }
-                 $('#slider2').bxSlider({
-                        mode: 'vertical',
-                        auto: true,
-                        autoControls: true,
-                        pause: 5000,
-                        captions: true
-                    });
-            }, "json");
+<div data-role="panel" id="mypanel" data-position="right" data-display="push">
 
-</script>
-<div class="menu-right"> 
-    <div id="sliderContainer2">
-        <ul id="slider2">
-            
-        </ul>
-    </div>
+	<ul data-role="listview">
+		<li data-icon="delete" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-iconpos="right" data-theme="a" >
+			<a href="#" data-rel="close" class="ui-link-inherit">Close menu</a>
+		</li>
+		{% if not(pSession.user.id != '' and  pSession.user.role != 'jack' and  pSession.user.role != 'operator')%}
+		<li data-icon="custom" id="signup" data-theme="a">
+			<a href="{{ path }}user/sign_up.php">{% trans "signup" %}</a>
+		</li>
+		{% endif %}
+		<li data-icon="custom" id="administrator" data-theme="a">
+			<a href="{{ path }}admin/login.php">{% trans "adm" %}</a>
+		</li>
+		<li data-icon="custom" id="user" data-theme="a">
+			<a href="{{ path }}user/login.php">{% trans "user" %}</a>
+		</li>
+		{% if(pSession.user.id != '' and  pSession.user.role != 'jack' and  pSession.user.role != 'operator')%}
+		<li data-icon="custom" id="cart" data-theme="a">
+			<a href="{{ path }}site/cart/list.php">{% trans "cart" %}</a>
+		</li>
+		{% endif %}
+	</ul>
 </div>

@@ -8,7 +8,7 @@ isset($_SESSION['cart'])?  : $_SESSION['cart'] = new Cart();
 $template = $twig->loadTemplate('site/who.phtml');
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     $stmt = $DBH->prepare('SELECT * FROM company_images');
     $stmt->execute();

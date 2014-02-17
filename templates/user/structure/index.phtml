@@ -1,8 +1,14 @@
 {% include 'user/structure/header.phtml' %}
-{% include 'user/structure/menu.phtml' %}
+
 <div id='content'>
 
-        <p>{% trans "welcome" %} <b>{{ pSession.user.name }}</b>, {% trans "welcome_2_usr" %}</p>
+	<p>
+		{% trans "welcome" %} <b>{{ pSession.user.name }}</b>, {% trans "welcome_2_usr" %}
+	</p>
+
+	<a data-role="button" data-theme="a" href="catalog/list.php">{% trans "list" %} {% trans "catls" %}</a>
+	<a data-role="button" data-theme="a" href="administer/index.php">{% trans "gest" %} {% trans "catls" %}</a>
+	
 </div>
 
 {% include 'user/structure/footer.phtml' %}

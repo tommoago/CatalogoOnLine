@@ -2,6 +2,8 @@
 
 include '../../../conf/config.php';
 include '../../../conf/twig.php';
+include '../../../classes/Session.php';
+$session = new Session();
 
 $template = $twig->loadTemplate('site/products/list.phtml');
 
@@ -11,7 +13,7 @@ $limit = 50;
 $numPages = 0;
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     
     //seleziono eventuali sottocategoria a quella attuale

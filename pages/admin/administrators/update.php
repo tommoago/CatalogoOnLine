@@ -13,7 +13,7 @@ $passwd = $_POST['password'];
 $role = $_POST['role'];
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     $data = array('name' => $name, 'user' => $user, 'password' => md5($passwd), 'id' => $id);
 

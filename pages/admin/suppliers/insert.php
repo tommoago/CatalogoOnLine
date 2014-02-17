@@ -12,7 +12,7 @@ $fax = $_POST['fax'];
 $address = $_POST['address'];
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     $data = array('name' => $name, 
                   'description' => $description, 

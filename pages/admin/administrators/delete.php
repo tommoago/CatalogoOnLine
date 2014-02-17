@@ -10,7 +10,7 @@ $id = $_GET['id'];
 $message = '';
 $data = array('id' => $id);
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
 
     //cerco customers associati

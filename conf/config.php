@@ -10,9 +10,9 @@ setlocale(LC_ALL, $language);
 
 // Set the text domain as 'default'
 $domain = 'default';
-bindtextdomain($domain, $_SERVER["DOCUMENT_ROOT"] .'/melarossa/locale'); 
+bindtextdomain($domain, $_SERVER["DOCUMENT_ROOT"] .'/CatalogoOnLine/locale'); 
 textdomain($domain);
 
-include $_SERVER["DOCUMENT_ROOT"] .'/melarossa/classes/dataBase.php';
+include $_SERVER["DOCUMENT_ROOT"] .'/CatalogoOnLine/classes/data_Base.php';
 
 ?>

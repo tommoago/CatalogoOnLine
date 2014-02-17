@@ -6,7 +6,7 @@ $session = new Session();
 $message = '';
 $data = array('id' => $_GET['id']);
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
 
     //cerco prodotti associati

@@ -1,12 +1,12 @@
 <?php
-include '../../../classes/dataBase.php';
+include '../../../classes/data_Base.php';
 include '../../../classes/Session.php';
 $session = new Session();
 
 $id = $_GET['id'];
 $data = array('id' => $id);
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     
     //elimino anche la traccia degli indirizzi associati

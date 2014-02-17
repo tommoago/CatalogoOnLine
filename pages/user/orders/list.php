@@ -16,7 +16,7 @@ $limit = 30;
 $numPages = 0;
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     
     $stmt = $DBH->prepare('SELECT COUNT(*) FROM orders');

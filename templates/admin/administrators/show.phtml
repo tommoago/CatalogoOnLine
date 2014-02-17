@@ -1,20 +1,24 @@
 {% include 'admin/structure/header.phtml' %}
-{% include 'admin/structure/menu.phtml' %}
+
 <div id='content'>
-	<p class="detail_adm">{% trans "adm" %}</p>
-	<table class="tablelist">
-		<tr>
+	<p class="detail_adm">
+		{% trans "adm" %}
+	</p>
+	<table data-role="table" data-mode="columntoggle">
+		<thead>
 			<th>{% trans "name" %}</th>
 			<th>{% trans "usr" %}</th>
-		</tr>
-		<tr>
-			<td>{{ admin.name }}</td>
-			<td>{{ admin.user }}</td>
-                        {% if admin.role != 'jack' %}
-			<td class="delete"><a href='delete.php?id={{ admin.id }}'><img src="../../../images/icons/delete/delete-256.png" alt='{% trans "del" %}'></a></td>
-                        {% endif %}
-			<td class="edit"><a href='prepareUpdate.php?id={{ admin.id }}'><img src="../../../images/icons/edit/edit-256.png" alt='{% trans "edit" %}'></a></td>
-		</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{ admin.name }}</td>
+				<td>{{ admin.user }}</td>
+				{% if admin.role != 'jack' %}
+				<td class="delete"><a href='delete.php?id={{ admin.id }}'><img width="20%" src="../../../images/icons/delete/delete-256.png" alt='{% trans "del" %}'></a></td>
+				{% endif %}
+				<td class="edit"><a href='prepareUpdate.php?id={{ admin.id }}'><img width="20%" src="../../../images/icons/edit/edit-256.png" alt='{% trans "edit" %}'></a></td>
+			</tr>
+		</tbody>
 	</table>
-</div>
+</div>{% include 'admin/structure/menu.phtml' %}
 {% include 'admin/structure/footer.phtml' %}

@@ -7,7 +7,7 @@ $o_id = $_GET['o_id'];
 $p_id = $_GET['p_id'];
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     
     $STH = $DBH->prepare('DELETE FROM orders_has_products

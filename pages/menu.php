@@ -6,7 +6,7 @@ $template = $twig->loadTemplate('menu.phtml');
 
 $result = array();
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     $stmt = $DBH->prepare('SELECT * FROM categories WHERE categories_id IS NULL');
     $stmt->execute();

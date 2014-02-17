@@ -15,7 +15,7 @@ $cellphone = $_POST['cellphone'];
 $passwd = $_POST['password'];
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
 
      $data = array('name' => $name, 

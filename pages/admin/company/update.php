@@ -21,7 +21,7 @@ $email = $_POST['email'];
 $website = $_POST['website'];
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     $data = array('name' => $name, 
                   'description' => $description, 

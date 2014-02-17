@@ -1,31 +1,26 @@
 {% include 'user/structure/header.phtml' %}
-	{% include 'user/structure/menu.phtml' %}
+
 <div id='content'>
-	<p class="detail_adm">{% trans "ords" %} {% trans "list" %}</p>
-	<p>{{ message }}</p>
+	<p class="detail_adm">
+		{% trans "ords" %} {% trans "list" %}
+	</p>
+	<p>
+		{{ message }}
+	</p>
 	{% if orders|length > 0 %}
 	<table class="tablelist">
 		<tr>
 			<th>{% trans "id" %}</th>
 			<th>{% trans "date" %}</th>
-			<th>{% trans "confed" %}</th>
-			<th>{% trans "op" %}</th>
 		</tr>
 		{% for ord in orders %}
 		<tr>
 			<td class="first_id"><a href='show.php?id={{ ord.id }}'>{{ ord.id }}</a></td>
 			<td>{{ ord.data }}</td>
-			<td>{% if ord.confirmed == 1 %}
-                <p style="color:#008000;text-align:center">&#x2713;</p>  
-                {% endif %}
-                {% if ord.confirmed == 0 %}
-                <p style="color:#D40303;text-align:center">&#x2717;</p>  
-                {% endif %}</td>
-                <td>{{ ord.operator }}</td>
 		</tr>
 		{% endfor %}
 	</table>
-            {% include 'user/structure/pager.phtml' %}
+	{% include 'user/structure/pager.phtml' %}
 	{%endif%}
 	{% if orders|length == 0 %}
 	<p>

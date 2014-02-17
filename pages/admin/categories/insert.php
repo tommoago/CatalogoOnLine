@@ -7,7 +7,7 @@ $name = $_POST['name'];
 $categories_id = $_POST['cat_id'];
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     $data = array('name' => $name);
     if($categories_id != ''){

@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `melarossa` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `melarossa`;
+CREATE DATABASE  IF NOT EXISTS `catalogoonline` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `catalogoonline`;
 -- MySQL dump 10.13  Distrib 5.6.11, for Win32 (x86)
 --
 -- Host: localhost    Database: melarossa

@@ -1,0 +1,24 @@
+{% include 'user/structure/header.phtml' %}
+
+<div id='content'>
+	<p class="detail_adm">
+		{% trans "cats" %} {% trans "list" %}
+	</p>
+	<p>
+		{{ message }}
+	</p>
+	{% if cats|length > 0 %}
+
+	{% for cat in cats %}
+
+	<a data-role="button" data-icon="arrow-r" href='../products/list.php?category_id={{ cat.id }}'>{{ cat.name }}</a>
+
+	{% endfor %}
+	{%endif%}
+	{% if cats|length == 0 %}
+	<p>
+		{% trans "nores" %}
+	</p>
+	{% endif %}
+</div>
+{% include 'user/structure/footer.phtml' %}

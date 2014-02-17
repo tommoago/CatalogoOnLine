@@ -1,32 +1,38 @@
 {% include 'header.phtml' %}
 {% include 'menu.phtml' %}
+{% include 'menu-right.phtml' %}
 <div id='content'>
-    <div class="list_products">
-	    <div class="list_products_nav">
-        {% for cat in oCats %}
-        <a href="list.php?id_cat={{ cat.id }}">{{ cat.name }}</a>&nbsp;|
-        {% endfor %}
+	<div class="list_products">
+		<div class="list_products_nav">
+			{% for cat in oCats %}
+			<a href="list.php?id_cat={{ cat.id }}">{{ cat.name }}</a>&nbsp;|
+			{% endfor %}
 		</div>
-        <ul>
-            {% for prod in prods %}
-            <li style="background-image:url('../../{{ prod.image }}')">
-                <div class="list_products_inner">
-                    <a href='show.php?id={{ prod.id }}'>
-                        <h1>{{ prod.name }}</h1>
-                        <h2>&#128; {{ prod.price }}</h2>
-                    </a>
-                    {% if prod.new == 1 %}
-                    <p class="new_badge">{% trans "new" %}<p>
-                        {% endif %}
-                        {% if prod.offer == 1 %}
-                    <p class="offer_badge">{% trans "ofr" %}<p>
-                        {% endif %}
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
-        <div class="pre_pager"></div>
-        {% include 'site/pager.phtml' %}
-    </div>
+		<ul data-role="listview">
+			{% for prod in prods %}
+			<li>
+				<a href='show.php?id={{ prod.id }}'>
+				<div class="list_products_inner">
+
+					<h1>{{ prod.name }}</h1>
+					<h2>&#128; {{ prod.price }}</h2>
+
+					{% if prod.new == 1 %}
+					<p class="new_badge">
+						{% trans "new" %}
+					<p>
+						{% endif %}
+						{% if prod.offer == 1 %}
+					<p class="offer_badge">
+						{% trans "ofr" %}
+					<p>
+						{% endif %}
+				</div> <img src="../../{{ prod.image }}"/> </a>
+			</li>
+			{% endfor %}
+		</ul>
+		<div class="pre_pager"></div>
+		{% include 'site/pager.phtml' %}
+	</div>
 </div>
 {% include 'footer.phtml' %}

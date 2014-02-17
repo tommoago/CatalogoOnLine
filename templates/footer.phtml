@@ -1,30 +1,23 @@
-<div id="footer">
-    {% set path = '' %}
-    {% if index == '' %}
-        {% set path = '../../' %}
-    {% endif %}
-    <div id="footer_inside">
-        <div id="footer_inside_menu">
-        <ul class="footer_menu">
-            <li>
-                <a href="{{ path }}index.php">Home Page</a>|
-            </li>
-            <li>
-                <a href="{{ path }}change_language.php?lang=it"><img src="{{ path }}../images/flags/italy.png" alt="ITA"></a>
-            </li>
-            <li>
-                <a href="{{ path }}change_language.php?lang=en"><img src="{{ path }}../images/flags/uk.png" alt="ENG"></a>
-            </li>
-            <li>
-                <a href="{{ path }}change_language.php?lang=zh"><img src="{{ path }}../images/flags/china.png" alt="CHI"></a>
-            </li>
-        </ul>
-        </div>
-        <br />
-        <br />
-        <p>
-            Copyright &copy;. All rights reserved. Created by <a href="http://www.ozntone.com">OzNToNe</a>. Designed by <a href="http://www.cescoscap.it">CescoScap</a>.
-        </p>
+{% set path = '' %}
+{% if index == '' %}
+{% set path = '../../' %}
+{% endif %}
 
-    </div>
+<div data-role="footer" id="footer" data-position="fixed">
+	<div id="footer_inside">
+		<ul style="list-style: none;">
+			<li data-role="button" data-mini="true" data-inline="true">
+				<a href="{{ path }}change_language.php?lang=it"><img src="{{ path }}../images/flags/italy.png" alt="ITA"></a>
+			</li>
+			<li data-role="button" data-mini="true" data-inline="true">
+				<a href="{{ path }}change_language.php?lang=en"><img src="{{ path }}../images/flags/uk.png" alt="ENG"></a>
+			</li>
+			<li data-role="button" data-mini="true" data-inline="true">
+				<a href="{{ path }}change_language.php?lang=zh"><img src="{{ path }}../images/flags/china.png" alt="CHI"></a>
+			</li>
+		</ul>
+	</div>
 </div>
+</div>
+</body>
+</html>

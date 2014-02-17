@@ -2,6 +2,8 @@
 
 include '../../../conf/config.php';
 include '../../../conf/twig.php';
+include '../../../classes/Session.php';
+$session = new Session();
 
 $template = $twig->loadTemplate('site/products/list.phtml');
 
@@ -12,7 +14,7 @@ $numPages = 0;
 
 $col = $_GET['tag'] == 'new'? $_GET['tag'] : 'offer';
 try {
-    $db = new dataBase();
+    $db = new data_base();
     $DBH = $db->connect();
     
     $stmt = $DBH->prepare('SELECT COUNT(*) FROM products WHERE '.$col.'= 1');

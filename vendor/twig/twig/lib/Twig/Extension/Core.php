@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER["DOCUMENT_ROOT"] .'/melarossa/classes/dataBase.php';
+include_once $_SERVER["DOCUMENT_ROOT"] .'/CatalogoOnLine/classes/data_Base.php';
 if (!defined('ENT_SUBSTITUTE')) {
     define('ENT_SUBSTITUTE', 8);
 }
@@ -309,7 +309,7 @@ class Twig_Extension_Core extends Twig_Extension
     
     public function getGlobals() {
         try {
-            $db = new dataBase();
+            $db = new data_Base();
             $DBH = $db->connect();
             $stmt = $DBH->prepare('SELECT * FROM company_info');
             $stmt->execute(array());

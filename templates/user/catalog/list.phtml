@@ -1,0 +1,19 @@
+{% include 'user/structure/header.phtml' %}
+
+<div id='content'>
+	<p class="detail_adm">
+		{% trans "list" %}
+	</p>
+	<p>
+		{{ message }}
+	</p>
+	{% if catalog|length > 0 %}
+	{% for catl in catalog %}
+
+	<a data-role="button" data-icon="arrow-r" data-icon-pos="right" href='../categories/list.php?id_catl={{ catl.id }}'>{{ catl.name }}</a>
+
+	{% endfor %}
+	{% include 'user/structure/pager.phtml' %}
+	{%endif%}
+</div>
+{% include 'user/structure/footer.phtml' %}

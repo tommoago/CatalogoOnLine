@@ -11,7 +11,7 @@ $user = $_POST['user'];
 $passwd = $_POST['password'];
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     $data = array('name' => $name, 'user' => $user, 'password' => md5($passwd), 'role' =>'operator');
     $STH = $DBH->prepare('INSERT INTO administrators (name, user, password, role) 

@@ -1,196 +1,208 @@
 {% include 'admin/structure/header.phtml' %}
-{% include 'admin/structure/menu.phtml' %}
+
 <script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
 <script type="text/javascript" src="../../../scripts/validation/admin/form.product.validation.js"></script>
 <script type="text/javascript">
-    $(function () {
-        $('#w_price').parent().contents(':not(input)').remove();
-        var per = $('#w_price').val();
-        var multiplier = 1 + (per / 100);
-        var rw = $('#p_price').val() * multiplier;
-        $('#w_price').after(parseFloat(rw).toFixed(2));
-        
-        $('#r_price').parent().contents(':not(input)').remove();
-        var per = $('#r_price').val();
-        var multiplier = 1 + (per / 100);
-        var rr = $('#p_price').val() * multiplier;
-        $('#r_price').after(parseFloat(rr).toFixed(2));
-        
-        $('#s_price').parent().contents(':not(input)').remove();
-        var per = $('#s_price').val();
-        var multiplier = 1 + (per / 100);
-        var rss = $('#p_price').val() * multiplier;
-        $('#s_price').after(parseFloat(rss).toFixed(2));
-    });
-    function calculate(percentage) {
-        $('#' + percentage.id).parent().contents(':not(input)').remove();
-        var per = percentage.value;
-        var multiplier = 1 + (per / 100);
-        var rs = $('#p_price').val() * multiplier;
-        $('#' + percentage.id).after(parseFloat(rs).toFixed(2));
-    }
-    function refreshAll(){
-        calculate(document.getElementById('w_price'));
-        calculate(document.getElementById('r_price'));
-        calculate(document.getElementById('s_price'));
-    }
+	$(function() {
+		$('#w_price').parent().contents(':not(input)').remove();
+		var per = $('#w_price').val();
+		var multiplier = 1 + (per / 100);
+		var rw = $('#p_price').val() * multiplier;
+		$('#w_price').after(parseFloat(rw).toFixed(2));
+
+		$('#r_price').parent().contents(':not(input)').remove();
+		var per = $('#r_price').val();
+		var multiplier = 1 + (per / 100);
+		var rr = $('#p_price').val() * multiplier;
+		$('#r_price').after(parseFloat(rr).toFixed(2));
+
+		$('#s_price').parent().contents(':not(input)').remove();
+		var per = $('#s_price').val();
+		var multiplier = 1 + (per / 100);
+		var rss = $('#p_price').val() * multiplier;
+		$('#s_price').after(parseFloat(rss).toFixed(2));
+	});
+	function calculate(percentage) {
+		$('#' + percentage.id).parent().contents(':not(input)').remove();
+		var per = percentage.value;
+		var multiplier = 1 + (per / 100);
+		var rs = $('#p_price').val() * multiplier;
+		$('#' + percentage.id).after(parseFloat(rs).toFixed(2));
+	}
+
+	function refreshAll() {
+		calculate(document.getElementById('w_price'));
+		calculate(document.getElementById('r_price'));
+		calculate(document.getElementById('s_price'));
+	}
 </script>
 <div id='content'>
-	<p class="detail_adm">{% trans "upd" %} {% trans "prod" %}</p>
-    <p>{{ message }}</p>    
-    <form action="update.php" method="post" id="formproduct" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="{{ prod.id }}"/>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "img" %}:
-            </div>
-            <div class="panleft2">
-                <input type="file" name="uploaded" id="file"> <span>{% trans "nomod" %}<span>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "name" %}:
-            </div>
-            <div class="panleft2">
-                <input type="text" name="name" value="{{ prod.name }}"/>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "descr" %}:
-            </div>
-            <textarea id="textarea" name="descr" rows="2" cols="50">{{ prod.description }}</textarea><br>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "new" %}:
-            </div>
-            <div class="panleft2">
-                <input type="checkbox" name="new" {{ prod.c_new }}/>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "ofr" %}:
-            </div>
-            <div class="panleft2">
-                <input type="checkbox" name="offer" {{ prod.c_offer }}/>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "hlg" %}:
-            </div>
-            <div class="panleft2">
-                <input type="checkbox" name="evidence" {{ prod.c_evidence }}/>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "pur" %} {% trans "pr" %}:
-            </div>
-            <div class="panleft2">
-                <input type="text" id="p_price" onchange="refreshAll();" name="p_price" value="{{ prod.purchase_price }}"/>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "wh" %} {% trans "pr" %}:
-            </div>
-            <div class="panleft2">
-                <input type="text" id="w_price" onchange="calculate(this);" name="w_price" value="{{ prod.wholesale_price }}"/>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "ret" %} {% trans "pr" %}:
-            </div>
-            <div class="panleft2">
-                <input type="text" id="r_price" onchange="calculate(this);" name="r_price" value="{{ prod.retail_price }}"/>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "super" %} {% trans "pr" %}:
-            </div>
-            <div class="panleft2">
-                <input type="text" id="s_price" onchange="calculate(this);" name="s_price" value="{{ prod.super_price }}"/>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "cod" %}:
-            </div>
-            <div class="panleft2">
-                <input type="text" name="cod" value="{{ prod.cod }}"/>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "bcod" %}:
-            </div>
-            <div class="panleft2">
-                <input type="text" name="barcode" value="{{ prod.barcode }}"/>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "sng" %} {% trans "qty" %}:
-            </div>
-            <div class="panleft2">
-                <input type="text" name="s_qty" value="{{ prod.single_qty }}"/>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "pck" %} {% trans "qty" %}:
-            </div>
-            <div class="panleft2">
-                <input type="text" name="p_qty" value="{{ prod.pack_qty }}"/>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "cdb" %} {% trans "qty" %}:
-            </div>
-            <div class="panleft2">
-                <input type="text" name="c_qty" value="{{ prod.cardboard_qty }}"/>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "vat" %}:
-            </div>
-            <div class="panleft2">
-                <input type="text" name="vat" value="{{ prod.vat }}"/>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "cat" %}:
-            </div>
-            <div class="panleft2">
-                <select name="cat_id">
-                    {% for cat in cats %}
-                    <option value="{{ cat.id }}" {{ cat.selected }}>{{ cat.name }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-        </div>
-        <div class="totwidth">
-            <div class="panleft1">
-                {% trans "sup" %}:
-            </div>
-            <div class="panleft2">
-                <select name="sup_id">
-                    {% for sup in supps %}
-                    <option value="{{ sup.id }}" {{ sup.selected }}>{{ sup.name }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-        </div>
-        <input class="invio" type="submit" value='{% trans "submit" %}'/>
-    </form>
-</div>
-    {% include 'admin/structure/footer.phtml' %}
+	<p class="detail_adm">
+		{% trans "upd" %} {% trans "prod" %}
+	</p>
+	<p>
+		{{ message }}
+	</p>
+	<form action="update.php" method="post" id="formproduct" enctype="multipart/form-data">
+		<input type="hidden" name="id" value="{{ prod.id }}"/>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "img" %}:
+			</div>
+			<div class="panleft2">
+				<input type="file" name="uploaded" id="file">
+				<span>{% trans "nomod" %}<span>
+			</div>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "name" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" name="name" value="{{ prod.name }}"/>
+			</div>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "descr" %}:
+			</div>
+			<textarea id="textarea" name="descr" rows="2" cols="50">{{ prod.description }}</textarea>
+<br>		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "new" %}:
+			</div>
+			</br>
+			<div class="panleft2">
+				<input type="checkbox" name="new" {{ prod.c_new }}/>
+			</div>
+			</br>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "ofr" %}:
+			</div>
+			</br>
+			<div class="panleft2">
+				<input type="checkbox" name="offer" {{ prod.c_offer }}/>
+			</div>
+			</br>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "hlg" %}:
+			</div>
+			</br>
+			<div class="panleft2">
+				<input type="checkbox" name="evidence" {{ prod.c_evidence }}/>
+			</div>
+			</br>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "pur" %} {% trans "pr" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" id="p_price" onchange="refreshAll();" name="p_price" value="{{ prod.purchase_price }}"/>
+			</div>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "wh" %} {% trans "pr" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" id="w_price" onchange="calculate(this);" name="w_price" value="{{ prod.wholesale_price }}"/>
+			</div>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "ret" %} {% trans "pr" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" id="r_price" onchange="calculate(this);" name="r_price" value="{{ prod.retail_price }}"/>
+			</div>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "super" %} {% trans "pr" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" id="s_price" onchange="calculate(this);" name="s_price" value="{{ prod.super_price }}"/>
+			</div>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "cod" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" name="cod" value="{{ prod.cod }}"/>
+			</div>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "bcod" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" name="barcode" value="{{ prod.barcode }}"/>
+			</div>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "sng" %} {% trans "qty" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" name="s_qty" value="{{ prod.single_qty }}"/>
+			</div>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "pck" %} {% trans "qty" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" name="p_qty" value="{{ prod.pack_qty }}"/>
+			</div>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "cdb" %} {% trans "qty" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" name="c_qty" value="{{ prod.cardboard_qty }}"/>
+			</div>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "vat" %}:
+			</div>
+			<div class="panleft2">
+				<input type="text" name="vat" value="{{ prod.vat }}"/>
+			</div>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "cat" %}:
+			</div>
+			<div class="panleft2">
+				<select name="cat_id">
+					{% for cat in cats %}
+					<option value="{{ cat.id }}" {{ cat.selected }}>{{ cat.name }}</option>
+					{% endfor %}
+				</select>
+			</div>
+		</div>
+		<div class="totwidth">
+			<div class="panleft1">
+				{% trans "sup" %}:
+			</div>
+			<div class="panleft2">
+				<select name="sup_id">
+					{% for sup in supps %}
+					<option value="{{ sup.id }}" {{ sup.selected }}>{{ sup.name }}</option>
+					{% endfor %}
+				</select>
+			</div>
+		</div>
+		<input class="invio" type="submit" value='{% trans "submit" %}'/>
+	</form>
+</div>{% include 'admin/structure/menu.phtml' %}
+{% include 'admin/structure/footer.phtml' %}

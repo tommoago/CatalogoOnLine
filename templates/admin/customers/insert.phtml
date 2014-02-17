@@ -1,5 +1,5 @@
 {% include 'admin/structure/header.phtml' %}
-{% include 'admin/structure/menu.phtml' %}
+
 <script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
 <script type="text/javascript" src="../../../scripts/validation/admin/form.customers.validation.js"></script>
 <script type="text/javascript">
@@ -161,5 +161,5 @@ function resetRequirements(){
 		</div>
 		<input class="invio" type="submit" value='{% trans "submit" %}'/>
 	</form>
-</div>
+</div>{% include 'admin/structure/menu.phtml' %}
 {% include 'admin/structure/footer.phtml' %}

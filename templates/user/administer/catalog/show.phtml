@@ -1,0 +1,11 @@
+{% include 'user/administer/structure/header.phtml' %}
+
+<div id='content'>
+	<p>
+		Nome catalogo: {{ cat.name }}
+	</p>
+	<a data-role="button" href='prepareUpdate.php?id={{ cat.id }}'><img src="../../../../images/icons/edit/edit-256.png" width="10%" alt='{% trans "edit" %}'></a>
+	<a data-role="button" href='delete.php?id={{ cat.id }}'><img src="../../../../images/icons/delete/delete-256.png" width="10%" alt='{% trans "del" %}'></a>
+
+</div>
+{% include 'user/administer/structure/footer.phtml' %}

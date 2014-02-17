@@ -10,7 +10,7 @@ $id = $_GET['id'];
 $result = array();
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     $stmt = $DBH->prepare('SELECT * FROM categories');
     $stmt->execute();

@@ -1,9 +1,9 @@
-{% include 'admin/structure/header.phtml' %}
-{% include 'admin/structure/menu.phtml' %}
-<script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
+{% include 'admin/structure/header.phtml' %} <script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
 <script type="text/javascript" src="../../../scripts/validation/admin/form.suppliers.validation.js"></script>
 <div id='content'>
-	<p class="detail_adm">{% trans "upd" %} {% trans "sup" %}</p>
+	<p class="detail_adm">
+		{% trans "upd" %} {% trans "sup" %}
+	</p>
 	<form action="update.php" method="post" id="formsuppliers">
 		<input type="hidden" name="id" value="{{ supplier.id }}"/>
 		<div class="totwidth">
@@ -38,7 +38,7 @@
 				<input type="text" name="email" value="{{ supplier.email }}"/>
 			</div>
 		</div>
-                <div class="totwidth">
+		<div class="totwidth">
 			<div class="panleft1">
 				{% trans "tel" %}:
 			</div>
@@ -46,7 +46,7 @@
 				<input type="text" name="telephone" value="{{ supplier.telephone }}"/>
 			</div>
 		</div>
-                <div class="totwidth">
+		<div class="totwidth">
 			<div class="panleft1">
 				{% trans "fax" %}:
 			</div>
@@ -54,7 +54,7 @@
 				<input type="text" name="fax" value="{{ supplier.fax }}"/>
 			</div>
 		</div>
-                <div class="totwidth">
+		<div class="totwidth">
 			<div class="panleft1">
 				{% trans "adr" %}:
 			</div>
@@ -65,5 +65,5 @@
 		<input class="invio" type="submit" value='{% trans "submit" %}'/>
 
 	</form>
-</div>
+</div>{% include 'admin/structure/menu.phtml' %}
 {% include 'admin/structure/footer.phtml' %}

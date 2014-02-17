@@ -6,7 +6,7 @@ $session = new Session();
 $id = $_GET['id'];
 $data = array('id' => $id);
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
 
     //cerco ordini associati

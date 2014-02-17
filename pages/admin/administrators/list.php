@@ -19,7 +19,7 @@ if (isset($_GET['message'])) {
     $message = $_GET['message'];
 }
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     
     $stmt = $DBH->prepare('SELECT COUNT(*) FROM administrators');

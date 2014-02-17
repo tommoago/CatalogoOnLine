@@ -1,0 +1,19 @@
+{% include 'user/structure/header.phtml' %}
+
+<div id='content'>
+
+	<p>
+		{% trans "welcome" %} <b>{{ pSession.user.name }}</b>, {% trans "welcome_2_usr" %}
+	</p>
+
+	<a data-role="button" data-theme="a" href="catalog/list.php">{% trans "list" %} {% trans "catls" %}</a>
+	<a data-role="button" data-theme="a" href="catalog/prepareInsert.php">{% trans "ins" %} {% trans "catl" %}</a>
+	</br>
+	<a data-role="button" data-theme="a" href="catalog/prepareRequest.php">{% trans "req.ins" %} {% trans "cat" %}</a>
+	</br>
+	<a data-role="button" data-theme="a" href="product/list.php">{% trans "list" %} {% trans "prods" %}</a>
+	<a data-role="button" data-theme="a" href="product/prepareInsert.php">{% trans "ins" %} {% trans "prod" %}</a>
+
+</div>
+
+{% include 'user/structure/footer.phtml' %}

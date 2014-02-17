@@ -10,7 +10,7 @@ setlocale(LC_ALL, $language);
 
 // Set the text domain as 'default'
 $domain = 'default';
-bindtextdomain($domain, $_SERVER["DOCUMENT_ROOT"] . '/melarossa/locale');
+bindtextdomain($domain, $_SERVER["DOCUMENT_ROOT"] . '/catalogoonline/locale');
 textdomain($domain);
 
 include '../../../classes/Session.php';
@@ -21,7 +21,7 @@ $id = $_POST['id'];
 $inv_number = $_POST['inv_number'];
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
 
     $stmt5 = $DBH->prepare('SELECT * FROM invoices WHERE orders_id = :id');

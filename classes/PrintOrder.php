@@ -1,7 +1,7 @@
 <?php
 
-include 'dataBase.php';
-include $_SERVER['DOCUMENT_ROOT'] . '/melarossa/vendor/mpdf/mpdf.php';
+include 'data_Base.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/catalogoonline/vendor/mpdf/mpdf.php';
 
 class PrintOrder {
 
@@ -16,7 +16,7 @@ class PrintOrder {
     private $inv_date;
 
     function __construct($id) {
-        $this->db = new dataBase();
+        $this->db = new data_Base();
         $this->DBH = $this->db->connect();
 
         $this->order_id = $id;

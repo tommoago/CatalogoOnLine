@@ -1,35 +1,3 @@
-<div id="footer">
-    {% set pathF = '' %}
-    {% if pSession.user.id != '' and index == '' %}
-        {% set pathF = '../' %}
-    {% endif %}
-    <div id="footer_inside">
-        <div id="footer_inside_menu">
-        <ul class="footer_menu">
-            <li>
-                <a href="{{ pathF }}index.php">Home page <b>User</b> panel</a>|
-            </li>
-            {% if pSession.user.id != ''%}
-            <li>
-                <a style="color:red" href="{{ pathF }}logout.php">Logout</a>
-            </li>
-            {% endif %}
-            <li>
-                <a href="{{ pathF }}../change_language.php?lang=it"><img src="{{ pathF }}../../images/flags/italy.png" alt="ITA"></a>
-            </li>
-            <li>
-                <a href="{{ pathF }}../change_language.php?lang=en"><img src="{{ pathF }}../../images/flags/uk.png" alt="ENG"></a>
-            </li>
-            <li>
-                <a href="{{ pathF }}../change_language.php?lang=zh"><img src="{{ pathF }}../../images/flags/china.png" alt="CHI"></a>
-            </li>
-        </ul>
-        </div>
-        <br />
-        <br />
-        <p>
-            Copyright &copy;. All rights reserved. Created by <a href="http://www.ozntone.com">OzNToNe</a>. Designed by <a href="http://www.cescoscap.it">CescoScap</a>.
-        </p>
-
-    </div>
 </div>
+</body>
+</html>

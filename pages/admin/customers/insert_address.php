@@ -13,7 +13,7 @@ $c_id = $_POST['cus_id'];
 
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     $data = array('street' => $street,
         'city' => $city,

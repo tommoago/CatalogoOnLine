@@ -9,7 +9,7 @@ $template = $twig->loadTemplate('admin/customers/update.phtml');
 $id = $_GET['id'];
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
 
     $stmt = $DBH->prepare('SELECT * FROM customers WHERE id = :id');

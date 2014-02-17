@@ -9,7 +9,7 @@ setlocale(LC_ALL, $language);
 
 // Set the text domain as 'default'
 $domain = 'default';
-bindtextdomain($domain, $_SERVER["DOCUMENT_ROOT"] .'/melarossa/locale'); 
+bindtextdomain($domain, $_SERVER["DOCUMENT_ROOT"] .'/catalogoonline/locale'); 
 textdomain($domain);
 
 include '../../../classes/Session.php';
@@ -21,7 +21,7 @@ $id = $_GET['id'];
 $pdf = new PrintOrder($id);
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     $data = array('id' => $id, 'conf' => date('Y-m-d H:i:s'), 'operator' => $_SESSION['user']['name']);
 

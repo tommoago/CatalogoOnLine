@@ -8,7 +8,7 @@ $c_id = $_GET['cus_id'];
 
 $data = array('id' => $id);
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     
     $STH = $DBH->prepare('DELETE FROM customers_has_addresses

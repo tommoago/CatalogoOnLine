@@ -9,7 +9,7 @@ $template = $twig->loadTemplate('admin/suppliers/update.phtml');
 $id = $_GET['id'];
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     $stmt = $DBH->prepare('SELECT * FROM suppliers WHERE id = :id');
     $stmt->execute(array('id' => $id));

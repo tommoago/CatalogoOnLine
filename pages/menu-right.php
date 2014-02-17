@@ -6,7 +6,7 @@ $template = $twig->loadTemplate('index.phtml');
 $result = array();
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
 
     $stmt = $DBH->prepare('SELECT * FROM products  WHERE new = 1');

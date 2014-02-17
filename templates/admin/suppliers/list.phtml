@@ -1,41 +1,40 @@
 {% include 'admin/structure/header.phtml' %}
-{% include 'admin/structure/menu.phtml' %}
+
 <div id='content'>
-	<p class="detail_adm">{% trans "sups" %} {% trans "list" %}</p>
-    <p>{{ message }}</p>
-    {% if suppliers|length > 0 %}
-    <table class="tablelist">
-        <tr>
-            <th>{% trans "name" %}</th>
-            <th>{% trans "descr" %}</th>
-            <th>{% trans "piva" %}</th>
-            <th>{% trans "mail" %}</th>
-            <th>{% trans "tel" %}</th>
-            <th>{% trans "fax" %}</th>
-            <th>{% trans "adr" %}</th>
+	<p class="detail_adm">
+		{% trans "sups" %} {% trans "list" %}
+	</p>
+	<p>
+		{{ message }}
+	</p>
+	{% if suppliers|length > 0 %}
+	<table data-role="table"  data-mode="columntoggle">
+		<thead>
+			<th>{% trans "name" %}</th>
+			<th>{% trans "descr" %}</th>
 
-        </tr>
-        {% for d in suppliers %}
-        <tr>
-            <td class="first_id"><a href='show.php?id={{ d.id }}'>{{ d.name }}</a></td>
-            <td>{{ d.description }}</td>
-            <td>{{ d.piva }}</td>
-            <td>{{ d.email }}</td>
-            <td>{{ d.telephone }}</td>
-            <td>{{ d.fax }}</td>
-            <td>{{ d.address }}</td>
-            <td class="delete"><a href='delete.php?id={{ d.id }}'><img src="../../../images/icons/delete/delete-256.png" alt='{% trans "del" %}'></a></td>
-            <td class="edit"><a href='prepareUpdate.php?id={{ d.id }}'><img src="../../../images/icons/edit/edit-256.png" alt='{% trans "edit" %}'></a></td>
-        </tr>
-        {% endfor %}
-    </table>
-        {% include 'admin/structure/pager.phtml' %}
-    {% endif %}
-    {% if suppliers|length == 0 %}
-    <p>
-        {% trans "nores" %}
-    </p>
-    {% endif %}
+			<th>{% trans "tel" %}</th>
+
+		</thead>
+		<tbody>
+			{% for d in suppliers %}
+			<tr>
+				<td class="first_id"><a href='show.php?id={{ d.id }}'>{{ d.name }}</a></td>
+				<td>{{ d.description }}</td>
+
+				<td>{{ d.telephone }}</td>
+
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{% include 'admin/structure/pager.phtml' %}
+	{% endif %}
+	{% if suppliers|length == 0 %}
+	<p>
+		{% trans "nores" %}
+	</p>
+	{% endif %}
 </div>
-
+{% include 'admin/structure/menu.phtml' %}
 {% include 'admin/structure/footer.phtml' %}

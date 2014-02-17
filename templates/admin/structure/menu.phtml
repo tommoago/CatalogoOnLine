@@ -4,10 +4,9 @@
     {% set pathM = '../' %}
     {% endif %}
     <h2>Categorie</h2>
-    <ul id="list">
+    <ul data-role="listview">
         {% if pSession.user.role == 'jack' %}
-        <li class="colour">
-            <a>{% trans "adms" %}</a>
+        <h3>{% trans "adms" %}</h3>
         <li class="un_colour">
             <a href="{{ pathM }}administrators/prepareInsert.php">{% trans "ins" %}</a>
         </li>				
@@ -16,8 +15,8 @@
         </li>
         </li>
         {% endif %}
-        <li class="colour">
-            <a>{% trans "prods" %}</a>
+        
+            <h3>{% trans "prods" %}</h3>
 
         <li class="un_colour">
             <a href="{{ pathM }}products/prepareInsert.php">{% trans "ins" %}</a>
@@ -25,51 +24,43 @@
         <li class="un_colour">
             <a href="{{ pathM }}products/list.php">{% trans "list" %}</a>
         </li>
-
-        </li>
-        <li class="colour">
-            <a>{% trans "cats" %}</a>
+        
+            <h3>{% trans "cats" %}</h3>
 
         <li class="un_colour">
             <a href="{{ pathM }}categories/prepareInsert.php">{% trans "ins" %}</a>
         </li>				
         <li class="un_colour">
             <a href="{{ pathM }}categories/list.php">{% trans "list" %}</a>
-        </li>
 
         </li>
-        <li class="colour">
-            <a>{% trans "sups" %}</a>
+        
+            <h3>{% trans "sups" %}</h3>
 
         <li class="un_colour">
             <a href="{{ pathM }}suppliers/prepareInsert.php">{% trans "ins" %}</a>
         </li>				
         <li class="un_colour">
             <a href="{{ pathM }}suppliers/list.php">{% trans "list" %}</a>
-        </li>
+      
 
         </li>
-        <li class="colour">
-            <a>{% trans "custs" %}</a>
+        
+            <h3>{% trans "custs" %}</h3>
 
         <li class="un_colour">
             <a href="{{ pathM }}customers/prepareInsert.php">{% trans "ins" %}</a>
         </li>				
         <li class="un_colour">
             <a href="{{ pathM }}customers/list.php">{% trans "list" %}</a>
-        </li>
+       
 
         </li>
-        <li class="colour">
-            <a>{% trans "ords" %}</a>
+        
+            <h3>{% trans "ords" %}</h3>
 
         <li class="un_colour">
             <a href="{{ pathM }}orders/list.php">{% trans "list" %}</a>
         </li>
-        {% if pSession.user.role == 'jack' %}
-        <li  class="colour">
-            <img src="{{ pathM }}../../images/icons/info/info-128.png" alt='{% trans "info" %}'><a href="{{ pathM }}company/list.php"><i>{% trans "comp" %} {% trans "info" %}</i></a>
-        </li> 
-        {% endif %}
     </ul>
 </div>

@@ -6,7 +6,7 @@ $user = $_POST['user'];
 $passwd = $_POST['password'];
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     $data = array('user' => $user, 'password' => md5($passwd));
     $STH = $DBH->prepare('SELECT * FROM administrators WHERE user = :user AND password = :password');

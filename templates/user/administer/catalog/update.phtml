@@ -1,0 +1,14 @@
+{% include 'user/administer/structure/header.phtml' %}
+<div id='content'>
+	<form action="update.php" method="post" id="formproduct" enctype="multipart/form-data">
+
+		<input type="hidden" name="id" value="{{ cat.id }}"/>
+
+		{% trans "name" %}:
+		<input type="text" name="name" value="{{ cat.name }}"/>
+		
+		<input class="invio" type="submit" value='{% trans "submit" %}'/>
+	</form>
+
+</div>
+{% include 'user/administer/structure/footer.phtml' %}

@@ -10,7 +10,7 @@ if (!$session->check_role('jack')) {
 $id = $_POST['id'];
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
 
     $pathName = '';

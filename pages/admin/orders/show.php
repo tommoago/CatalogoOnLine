@@ -11,7 +11,7 @@ $result = array();
 $data = array('id' => $id);
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     $stmt = $DBH->prepare('SELECT * FROM orders WHERE id = :id');
     $stmt->execute($data);

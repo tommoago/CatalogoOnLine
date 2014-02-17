@@ -1,57 +1,59 @@
 {% include 'header.phtml' %}
 {% include 'menu.phtml' %}
+{% include 'menu-right.phtml' %}
 <div id='content'>
-	<p class="detail_adm">{% trans "cart" %} {% trans "list" %}</p>
-    {% if prods|length > 0 %}
-    <table class="tablelist">
-        <tr>
-            <th>{% trans "name" %}</th>
-            <th>{% trans "descr" %}</th>
-            <th>&#128;</th>
-            <th>{% trans "cod" %}</th>
-            <th>{% trans "cat" %}</th>
-            <th>{% trans "qty" %}</th>
-        </tr>
-        {% for prod in prods %}
-        <tr>
-            <td class="first_id"><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
-            <td>{{ prod.description }}</td>
-            <td>{{ prod.price }}</td>
-            <td>{{ prod.cod }}</td>
-            <td>{{ prod.category }}</td>
-            <td class="td_qty">
-                <form action="update.php" method="post">
-                    <input type="hidden" name="id" value="{{ prod.id }}"/>
-                    <input type="text" id="qty_add" name="qty_add" value="{{ prod.qty }}"/>
-                    <input type="submit" value='{% trans "submit" %}'/>
-                </form>
-            </td>
-            <td class="remove_cart"><a href='remove.php?id={{ prod.id }}'><img src="../../../images/icons/cart/return/return-256.png"></a></td>
-        </tr>
-        {% endfor %}
-    </table>
-    <ul class="listnone">
-        <li class="total">
-            <img src="../../../images/icons/cart/shopping_cart_filled/shopping_cart_filled-256.png" >{% trans "tot" %}:  <b>&#128;{{ tot }}</b>
-        </li>
-        <li class="checkout">
-            <a href='../order/summary.php'><img src="../../../images/icons/cart/checkout/checkout_green-256.png">{% trans "checkout" %}</a>
-        </li>
-        <li class="empty_cart">
-            <a href='empty.php'><img src="../../../images/icons/cart/return/return_red-256.png">{% trans "empty.cart" %}</a>
-        </li>
-    </ul>
-    {% if back != '' %}
-    <div class="back">
-            <a href='{{ back }}'><img src="../../../images/icons/list/list-256.png" alt="Back"><img src="../../../images/icons/arrows/left/left-256.png" alt="Back"></a>
-    </div>
-    {%endif%}
-    {%endif%}
-    {% if prods|length == 0 %}
-    <p>
-        {% trans "empcart" %}
-    </p>
-    {% endif %}
+	<p class="detail_adm">
+		{% trans "cart" %} {% trans "list" %}
+	</p>
+	{% if prods|length > 0 %}
+	<table data-role="table" data-mode="columntoggle">
+		<thead>
+			<th>{% trans "name" %}</th>
+			<th>{% trans "descr" %}</th>
+			<th>&#128;</th>
+			<th>{% trans "cod" %}</th>
+			<th>{% trans "cat" %}</th>
+			<th>{% trans "qty" %}</th>
+		</thead>
+		<tbody>
+			{% for prod in prods %}
+			<tr>
+				<td class="first_id"><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
+				<td>{{ prod.description }}</td>
+				<td>{{ prod.price }}</td>
+				<td>{{ prod.cod }}</td>
+				<td>{{ prod.category }}</td>
+				<td class="td_qty">
+				<form action="update.php" method="post">
+					<input type="hidden" name="id" value="{{ prod.id }}"/>
+					<input type="text" id="qty_add" name="qty_add" value="{{ prod.qty }}"/>
+					<input type="submit" value='{% trans "submit" %}'/>
+				</form></td>
+				<td class="remove_cart"><a data-role="button" href='remove.php?id={{ prod.id }}'><img height="30px" src="../../../images/icons/cart/return/return-256.png"></a></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<h3> {% trans "tot" %}: &#128;{{ tot }}</h3>
+	<ul data-role="listview">
+		<li class="checkout">
+			<a href='../order/summary.php'><img src="../../../images/icons/cart/checkout/checkout_green-256.png">{% trans "checkout" %}</a>
+		</li>
+		<li class="empty_cart">
+			<a href='empty.php'><img src="../../../images/icons/cart/return/return_red-256.png">{% trans "empty.cart" %}</a>
+		</li>
+	</ul>
+	{% if back != '' %}
+	<div data-role="button" >
+		<a href='{{ back }}'><img src="../../../images/icons/list/list-256.png" height="20px" alt="Back"><img src="../../../images/icons/arrows/left/left-256.png" height="20px" alt="Back"></a>
+	</div>
+	{%endif%}
+	{%endif%}
+	{% if prods|length == 0 %}
+	<p>
+		{% trans "empcart" %}
+	</p>
+	{% endif %}
 </div>
 
 {% include 'footer.phtml' %}

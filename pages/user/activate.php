@@ -4,7 +4,7 @@ include '../../conf/config.php';
 $id = $_GET['id'];
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
 
     $data = array('active' => 1, 'id' => $id);

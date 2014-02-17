@@ -12,7 +12,7 @@ $template = $twig->loadTemplate('admin/company/view_images.phtml');
 $id = $_GET['id'];
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     $stmt = $DBH->prepare('SELECT * FROM company_images WHERE company_info_id = :id');
     $stmt->execute(array('id' => $id));

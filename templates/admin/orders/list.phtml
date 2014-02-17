@@ -1,5 +1,5 @@
 {% include 'admin/structure/header.phtml' %}
-{% include 'admin/structure/menu.phtml' %}
+
 <div id='content'>
 	<p class="detail_adm">{% trans "ords" %} {% trans "list" %}</p>
     <p>{{ message }}</p>
@@ -36,5 +36,5 @@
         {% trans "nores" %}
     </p>
     {% endif %}
-</div>
+</div>{% include 'admin/structure/menu.phtml' %}
 {% include 'admin/structure/footer.phtml' %}

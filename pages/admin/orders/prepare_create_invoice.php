@@ -10,7 +10,7 @@ $id = $_GET['id'];
 $result = array();
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     
     $stmt5 = $DBH->prepare('SELECT MAX(number) AS max FROM invoices WHERE orders_id = :id');

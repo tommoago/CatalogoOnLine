@@ -9,7 +9,7 @@ $template = $twig->loadTemplate('admin/customers/insert.phtml');
 $result = array();
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     $stmt = $DBH->prepare('SELECT * FROM administrators WHERE role NOT IN ("jack")');
     $stmt->execute();

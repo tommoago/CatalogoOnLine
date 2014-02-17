@@ -11,7 +11,7 @@ $cart = $_SESSION['cart'];
 $result = array();
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
 
     foreach ($cart->getCurrentProducts() as $row) {

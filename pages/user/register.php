@@ -17,7 +17,7 @@ $type = $_POST['type'];
 $message = '';
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
 //selezione casuale dell'operatore associato (escluso jack);
     $STH = $DBH->prepare('SELECT id FROM administrators

@@ -22,7 +22,7 @@ $admin_id = $_POST['adm_id'];
 
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
     $data = array('name' => $name, 
                   'surname' => $surname,

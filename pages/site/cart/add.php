@@ -6,7 +6,7 @@ isset($_SESSION['cart'])?  : $_SESSION['cart'] = new Cart();
 $cart = $_SESSION['cart'];
 
 try {
-    $db = new dataBase();
+    $db = new data_Base();
     $DBH = $db->connect();
 
         $stmt = $DBH->prepare('SELECT * FROM products  WHERE id = :id');

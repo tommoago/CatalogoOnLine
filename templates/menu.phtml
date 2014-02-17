@@ -2,65 +2,42 @@
 {% if index == '' %}
 {% set path = '../../' %}
 {% endif %}
-<link rel='stylesheet' type='text/css' href='{{ path }}../style/accordion.css' />
+<!--<link rel='stylesheet' type='text/css' href='{{ path }}../style/accordion.css' />-->
+
+<div data-role="panel" id="categoriespanel" data-position="left" data-display="push">
+
+	<div id="menujs" onload="categoryload()" >
+		<div data-role="collapsible" data-collapsed="true" data-theme="a" id="collapsetest" style="padding: 0; margin: 0;">
+			<h3>Offerte/Novità</h3>
+			<a data-role="button" data-icon="arrow-r" data-iconpos="right" href="{{ path }}site/products/list_tag.php?tag=new">{% trans "new" %}</a>
+			<a data-role="button" data-icon="arrow-r" data-iconpos="right" href="{{ path }}site/products/list_tag.php?tag=offer">{% trans "ofr" %}</a>
+		</div>
+		<ul data-role="lisview" id="listcat">
+
+		</ul>
+	</div>
+</div>
+
 <script type="text/javascript">
-//    link per cats '{{ path }}site/products/list.php?id_cat=' + id
-    $.post("{{ path }}menu.php",
-            function(data) {
-                var li, a;
-                for (var i = 0; i < data.length; i++) {
-                    var id = data[i]['id'];
+	//    link per cats '{{ path }}site/products/list.php?id_cat=' + id
+	$(document.getElementById('menujs')).ready(function() {
 
-                    a = document.createElement('a');
-                    a.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id);
-                    a.appendChild(document.createTextNode(data[i]['name']));
+		$.post("{{ path }}menu.php", function(data) {
+			$('#listcat').empty();
+			for (var i = 0; i < data.length; i++) {
 
-                    li = document.createElement('li');
-                    li.appendChild(a);
+				$('#listcat').append('<li><a href="{{ path }}/catalogoonline/pages/site/products/list.php?id_cat=' + data[i]['id'] + '">' + data[i]['name'] + '</a></li>');
+				for (var j = 0; j < data[i]['category'].length; j++) {
+					$('#listcat').append('<li><a href="{{ path }}/catalogoonline/pages/site/products/list.php?id_cat=' + data[i]['category'][j]['id'] + '">' + data[i]['category'][j]['name'] + '</a></li>');
+					for (var k = 0; k < data[i]['category'][j]['category'].length; k++) {
+						$('#listcat').append('<li><a href="{{ path }}/catalogoonline/pages/site/products/list.php?id_cat=' + data[i]['category'][j]['category'][k]['id'] + '">' + data[i]['category'][j]['category'][k]['name'] + '</a></li>');
+						$('#listcat').listview().listview('refresh');
+					}
+				}
+			}
 
-                    var ul, li2, a2;
-                    ul = document.createElement('ul');
-                    for (var j = 0; j < data[i]['category'].length; j++) {
-                        var cat2 = data[i]['category'][j];
-                        var id2 = cat2['id'];
-
-                        a2 = document.createElement('a');
-                        a2.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id2);
-                        a2.appendChild(document.createTextNode(cat2['name']));
-
-                        li2 = document.createElement('li');
-                        li2.appendChild(a2);
-                        
-                        ul.appendChild(li2);
-
-                        var ul2, li3, a3;
-                        ul2 = document.createElement('ul');
-                        for (var k = 0; k < cat2['category'].length; k++) {
-                            var cat3 = cat2['category'][k];
-                            var id3 = cat3['id'];
-
-                            a3 = document.createElement('a');
-                            a3.setAttribute('href', '{{ path }}site/products/list.php?id_cat=' + id3);
-                            a3.appendChild(document.createTextNode(cat3['name']));
-
-                            li3 = document.createElement('li');
-                            li3.appendChild(a3);
-
-                            ul2.appendChild(li3);
-                        }
-                        li2.appendChild(ul2);
-                    }
-                    li.appendChild(ul);
-                    $('#menujs').append(li);
-                }
-            }, "json");
+		}, "json");
+		document.cookie = "precurl=" + document.URL;
+	});
 
 </script>
-<div id='accordion'>
-    <div id='cssmenu'>
-        <ul id="menujs">
-            <li><a href="{{ path }}site/products/list_tag.php?tag=new">{% trans "new" %}</a></li>
-            <li><a href="{{ path }}site/products/list_tag.php?tag=offer">{% trans "ofr" %}</a></li>
-        </ul>
-    </div>
- </div>
