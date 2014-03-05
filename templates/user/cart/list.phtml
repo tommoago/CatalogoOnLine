@@ -42,11 +42,6 @@
 			<a href='empty.php'><img src="../../../images/icons/cart/return/return_red-256.png">{% trans "empty.cart" %}</a>
 		</li>
 	</ul>
-	{% if back != '' %}
-	<div data-role="button" >
-		<a href='{{ back }}'><img src="../../../images/icons/list/list-256.png" height="20px" alt="Back"><img src="../../../images/icons/arrows/left/left-256.png" height="20px" alt="Back"></a>
-	</div>
-	{%endif%}
 	{%endif%}
 	{% if prods|length == 0 %}
 	<p>

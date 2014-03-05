@@ -60,17 +60,13 @@ try {
 		$result[] = $product;
 	}
 
-	$stmt5 = $DBH -> prepare('SELECT addresses.* FROM addresses, customers_has_addresses cha 
-                                               WHERE cha.customers_id = :id AND cha.addresses_id = addresses.id');
-	if (isset($_SESSION['user']['id'])) {
-		$stmt5 -> execute(array('id' => $_SESSION['user']['id']));
-		$addresses = $stmt5 -> fetchAll();
-	}
+	$stmt3 = $DBH -> prepare('SELECT * FROM clients WHERE customers_id = :id');
+	$stmt3 -> execute(array('id' => $session->getUser_id()));
+	$clients = $stmt3 -> fetchAll();
+print_r($clients);
 } catch (PDOException $e) {
 	echo 'ERROR: ' . $e -> getMessage();
 }
-if (isset($addresses)) {
-	$template -> display(array('prods' => $result, 'tot' => $cart -> getTot(), 'addrs' => $addresses));
-} else {$template -> display(array('prods' => $result, 'tot' => $cart -> getTot()));
-}
+
+$template -> display(array('prods' => $result, 'tot' => $cart -> getTot(), 'clients' => $clients));
 ?>

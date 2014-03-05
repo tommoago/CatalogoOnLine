@@ -1,38 +1,81 @@
 {% include 'admin/structure/header.phtml' %}
+<script>
+    $(document).ready(function () {
+        $('#back').attr('hidden', true);
 
+    })
+</script>
 <div id='content'>
-	<p class="detail_adm">
-		{% trans "prods" %} {% trans "list" %}
-	</p>
-	{% if prods|length > 0 %}
-	<table data-role="table" data-mode="columntoggle">
-		<thead>
-			<th>{% trans "name" %}</th>
-			<th>{% trans "cod" %}</th>
-			<th>{% trans "bcod" %}</th>
+    <p class="detail_adm">
+        {% trans "prods" %} {% trans "list" %}
+    </p>
+    {% if prods|length > 0 %}
+    <table data-role="table" data-mode="columntoggle">
+        <thead>
+        <th>{% trans "name" %}</th>
+        <th>{% trans "cod" %}</th>
+        <th>{% trans "bcod" %}</th>
 
-			<th>{% trans "cat" %}</th>
-		</thead>
-		<tbody>
-			{% for prod in prods %}
-			<tr>
-				<td class="first_id"><a href='show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
+        <th>{% trans "cat" %}</th>
+        </thead>
+        <tbody>
+        {% for prod in prods %}
+        <tr>
+            <td class="first_id"><a href='show.php?id={{ prod.id }}'>{{ prod.name }}</a></td>
 
-				<td>{{ prod.cod }}</td>
-				<td>{{ prod.barcode }}</td>
+            <td>{{ prod.cod }}</td>
+            <td>{{ prod.barcode }}</td>
 
-				<td>{{ prod.category }}</td>
-			</tr>
-			{% endfor %}
-		</tbody>
-	</table>
-	{% include 'admin/structure/pager.phtml' %}
-	{%endif%}
-	{% if prods|length == 0 %}
-	<p>
-		{% trans "nores" %}
-	</p>
-	{% endif %}
+            <td>{{ prod.category }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div id="pager">
+        {% if totPages > 1 %}
+        <div class="pg_first" style="float: left; padding-left: 20px;">
+            <a href="list.php?catl={{ catl }}&catego={{ catego }}">
+                <img src="../../../images/icons/Pager/first/first-256.png" height="10%" alt="First">
+            </a>
+        </div>
+        {% if lr > 1 %}
+        <div class="pg_prev">
+            <a href="list.php?offset={{ lr }}&catl={{ catl }}&catego={{ catego }}" style="float: left; padding-left: 20px;">
+                <img src="../../../images/icons/Pager/previous/previous-256.png" height="10%" alt="Previous">
+            </a>
+        </div>
+        {%endif%}
+
+        {% for i in range(low = lr, high = mr, step=1) %}
+        {% if (i <= totPages) and (i > 0) %}
+        <div class="pg_nr" style="float: left; padding-left: 20px;">
+            <a href="list.php?offset={{ i - 1}}&catl={{ catl }}&catego={{ catego }}">
+                {{ i }}
+            </a>
+        </div>
+        {%endif%}
+        {% endfor %}
+
+        {% if (totPages - 1 > 6) and ((mr) < (totPages - 1))%}
+        <div class="pg_next" style="float: left; padding-left: 20px;">
+            <a href="list.php?offset={{ mr }}&catl={{ catl }}&catego={{ catego }}">
+                <img src="../../../images/icons/Pager/next/next-256.png" height="10%" alt="Next">
+            </a>
+        </div>
+        {%endif%}
+        <div class="pg_last" style="float: left; padding-left: 20px;">
+            <a href="list.php?offset={{ totPages - 1 }}&catl={{ catl }}&catego={{ catego }}">
+                <img src="../../../images/icons/Pager/last/last-256.png" height="10%" alt="Last">
+            </a>
+        </div>
+        {%endif%}
+    </div>
+    {%endif%}
+    {% if prods|length == 0 %}
+    <p>
+        {% trans "nores" %}
+    </p>
+    {% endif %}
 </div>
-{% include 'admin/structure/menu.phtml' %}
+
 {% include 'admin/structure/footer.phtml' %}

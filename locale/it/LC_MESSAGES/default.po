@@ -429,3 +429,16 @@ msgstr "Numero"
 
 msgid "rot"
 msgstr "Per vedere completamente la tabella ruotare il dispositivo"
+
+msgid "catl"
+msgstr "Catalogo"
+
+msgid "catls"
+msgstr "Cataloghi"
+
+msgid "gest"
+msgstr "Gestisci"
+
+msgid "req.ins"
+msgstr "Rischiedi Inserimento"
+

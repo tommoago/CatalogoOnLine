@@ -1,6 +1,4 @@
-{% include 'header.phtml' %}
-{% include 'menu.phtml' %}
-{% include 'menu-right.phtml' %}
+{% include 'user/structure/header.phtml' %}
 <div id='content'>
 
 	{% if prod.new == 1 %}
@@ -23,7 +21,6 @@
 		-->
 
 		<h1>{{ prod.name }}</h1>
-		<h6>{% trans "by" %} <i><b>{{ prod.supplier }}</b></i></h6>
 
 		<h7>
 			{% trans "cat" %}: <b>{{ prod.category }}</b>
@@ -71,4 +68,4 @@
 
 </div>
 
-{% include 'footer.phtml' %}
+{% include 'user/structure/footer.phtml' %}

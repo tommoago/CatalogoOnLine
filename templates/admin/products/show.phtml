@@ -4,7 +4,7 @@
 	<div class="show_adm">
 		<h1 class="show_adm">{{ prod.name }}</h1>
 		{% if prod.image != '' %}
-		<img src="../../{{ prod.image }}" width="100%">
+		<img src="../../../{{ prod.image }}" width="100%">
 		{% endif %}
 		<p>
 			<b>{% trans "descr" %}:</b>
@@ -109,15 +109,13 @@
 		<p>
 			<b>{% trans "cat" %} : {{ prod.category }}</b>
 		</p>
-		<!--prod sup-->
+		<!--prod catl-->
 		<p>
-			<b>{% trans "sup" %} : {{ prod.supplier }}</b>
+			<b>{% trans "catl" %} : {{ prod.catalog }}</b>
 		</p>
-
 		<a data-role="button" href='delete.php?id={{ prod.id }}'><img src="../../../images/icons/delete/delete-256.png" width="10%" alt='{% trans "del" %}'></a>
 		<a data-role="button" href='prepareUpdate.php?id={{ prod.id }}'><img src="../../../images/icons/edit/edit-256.png" width="10%" alt='{% trans "edit" %}'></a>
 	</div>
 
 </div>
-{% include 'admin/structure/menu.phtml' %}
 {% include 'admin/structure/footer.phtml' %}

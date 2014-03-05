@@ -7,59 +7,43 @@ $session = new Session();
 $template = $twig->loadTemplate('admin/customers/update.phtml');
 
 $id = $_GET['id'];
+$result = array();
 
 try {
     $db = new data_Base();
     $DBH = $db->connect();
 
-    $stmt = $DBH->prepare('SELECT * FROM customers WHERE id = :id');
-    $stmt->execute(array('id' => $id));
-    //tira fuori solo un risultato
-    $customer = $stmt->fetch();
+    $stmt = $DBH->prepare('SELECT * FROM clients WHERE id = :id');
+    $stmt->execute(array('id' => $_GET['id']));
+    $cust = $stmt->fetch();
 
-    $stmt = $DBH->prepare('SELECT * FROM administrators WHERE role NOT IN ("jack")');
-    $stmt->execute();
-    $result = $stmt->fetchAll();
+    $stmt2 = $DBH->prepare('SELECT * FROM comuni WHERE id = :id');
+    $stmt2->execute(array('id' => $cust['comuni_id']));
+    $com = $stmt2->fetch();
 
-    $customer['c_active'] = '';
-    if ($customer['active'] == 1) {
-        $customer['c_active'] = 'checked';
-    }
+    $stmt2 = $DBH->prepare('SELECT * FROM comuni');
+    $stmt2->execute();
+    $coms = $stmt2->fetchAll();
 
-    //marca l'operatore appartenente 
-    foreach ($result as &$row) {
-        $row['selected'] = '';
-        if ($row['id'] == $customer['administrators_id']) {
-            $row['selected'] = 'selected';
-        }
-    }
+    $stmt3 = $DBH->prepare('SELECT * FROM province WHERE id = :id');
+    $stmt3->execute(array('id' => $com['id_provincia']));
+    $prov = $stmt3->fetch();
 
-    switch ($customer['type']) {
-        case 'user':
-            $customer['selected_u'] = 'selected';
-            break;
-        case 'merchant':
-            $customer['selected_m'] = 'selected';
-            break;
-        case 'stockist':
-            $customer['selected_s'] = 'selected';
-            break;
-    }
-    
-    switch ($customer['price_range']) {
-        case '1':
-            $customer['selected_pw'] = 'selected';
-            break;
-        case '2':
-            $customer['selected_pr'] = 'selected';
-            break;
-        case '3':
-            $customer['selected_ps'] = 'selected';
-            break;
-    }
+    $stmt3 = $DBH->prepare('SELECT * FROM province');
+    $stmt3->execute();
+    $provs = $stmt3->fetchAll();
+
+    $stmt4 = $DBH->prepare('SELECT * FROM regioni WHERE id = :id');
+    $stmt4->execute(array('id' => $prov['id_regione']));
+    $reg = $stmt4->fetch();
+
+    $stmt4 = $DBH->prepare('SELECT * FROM regioni');
+    $stmt4->execute();
+    $regs = $stmt4->fetchAll();
+
+
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('cus' => $customer, 'admins' => $result, 'message' => isset($_GET['message'])? $_GET['message']: ''));
-?>
+$template->display(array('cust' => $cust, 'message' => isset($_GET['message']) ? $_GET['message'] : '', 'reg' => $reg, 'prov' => $prov, 'com' => $com, 'regs' => $regs, 'provs' => $provs, 'coms' => $coms));

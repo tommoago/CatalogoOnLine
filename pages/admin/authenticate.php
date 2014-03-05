@@ -9,7 +9,7 @@ try {
     $db = new data_Base();
     $DBH = $db->connect();
     $data = array('user' => $user, 'password' => md5($passwd));
-    $STH = $DBH->prepare('SELECT * FROM administrators WHERE user = :user AND password = :password');
+    $STH = $DBH->prepare('SELECT * FROM customers WHERE mail = :user AND password = :password AND admin = 1');
     $STH->execute($data);
     $result = $STH->fetch();
     if (!empty($result)) {

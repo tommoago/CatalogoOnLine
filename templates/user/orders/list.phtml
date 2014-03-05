@@ -12,11 +12,13 @@
 		<tr>
 			<th>{% trans "id" %}</th>
 			<th>{% trans "date" %}</th>
+			<th>{% trans "cust" %}</th>
 		</tr>
 		{% for ord in orders %}
 		<tr>
 			<td class="first_id"><a href='show.php?id={{ ord.id }}'>{{ ord.id }}</a></td>
 			<td>{{ ord.data }}</td>
+			<td>{{ ord.client }}</td>
 		</tr>
 		{% endfor %}
 	</table>

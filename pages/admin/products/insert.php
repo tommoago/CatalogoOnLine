@@ -40,7 +40,7 @@ $pack_qty = $_POST['p_qty'];
 $cardboard_qty = $_POST['c_qty'];
 $vat = $_POST['vat'];
 $categories_id = $_POST['cat_id'];
-$suppliers_id = $_POST['sup_id'];
+$catalog_id = $_POST['catl_id'];
 
 try {
     $db = new data_Base();
@@ -61,15 +61,15 @@ try {
         'c_qty' => $cardboard_qty,
         'vat' => $vat,
         'cat_id' => $categories_id,
-        'sup_id' => $suppliers_id);
+        'catl_id' => $catalog_id);
 
     $STH = $DBH->prepare('INSERT INTO products (name, description, new, offer, evidence, 
                                                 wholesale_price, retail_price, super_price,
                                                 purchase_price, cod, barcode, single_qty,
-                                                pack_qty, cardboard_qty, vat, categories_id, suppliers_id) 
+                                                pack_qty, cardboard_qty, vat, categories_id, catalog_id) 
                                         value (:name, :descr, :new, :offer, :evidence, :w_price,
                                                :r_price, :s_price, :p_price, :cod, :barcode,
-                                               :s_qty, :p_qty, :c_qty, :vat, :cat_id, :sup_id)');
+                                               :s_qty, :p_qty, :c_qty, :vat, :cat_id, :catl_id)');
     $STH->execute($data);
     $idProd = $DBH->lastInsertId();
 

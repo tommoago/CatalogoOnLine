@@ -11,19 +11,19 @@ class data_Base {
 
     function connect() {
         
-        /*$conf = array(
+        $conf = array(
             'host' => 'sql.ozntone.com',
-            'dbname' => 'ozntonec41438',
-            'user' => 'ozntonec41438',
-            'pass' => 'oznt50584');
+            'dbname' => 'ozntonec90256',
+            'user' => 'ozntonec90256',
+            'pass' => 'oznt93536');
         
-        if($_SERVER['HTTP_HOST'] == 'localhost'){*/
+        if($_SERVER['HTTP_HOST'] == 'localhost'){
             $conf = array(
                 'host' => 'localhost',
                 'dbname' => 'catalogoonline',
                 'user' => 'root',
                 'pass' => 'root');
-      //  }
+        }
 
         try {
             $DBH = new PDO('mysql:host='.$conf['host'].';dbname='.$conf['dbname'], $conf['user'], $conf['pass']);

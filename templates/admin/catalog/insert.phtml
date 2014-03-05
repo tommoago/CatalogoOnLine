@@ -1,0 +1,14 @@
+{% include 'admin/structure/header.phtml' %}
+<div id='content'>
+	<p class="detail_adm">
+		{% trans "ins" %} {% trans "catl" %}
+	</p>
+	<p>
+		{{ message }}
+	</p>
+	<form action="insert.php" method="post" id="formproduct" enctype="multipart/form-data">
+		<input type="text" name="name" />
+		<input class="invio" type="submit" value='{% trans "submit" %}'/>
+	</form>
+</div>
+{% include 'admin/structure/footer.phtml' %}

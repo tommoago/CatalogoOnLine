@@ -20,5 +20,5 @@ try {
 	echo 'ERROR: ' . $e -> getMessage();
 }
 
-$template -> display(array('cats' => $result, 'message' => $message));
+$template -> display(array('cats' => $result, 'message' => $message, 'catl_id' => $_GET['id_catl']));
 ?>

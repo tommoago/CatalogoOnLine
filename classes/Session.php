@@ -8,12 +8,12 @@ class Session {
 		if (!isset($_SESSION))
 			session_start();
 		if (!$this -> check_login()) {
-			header('location:' . $this -> getPath() . '/login.php');
+			header('location:' . $this -> getPath() . '/../login.php');
 		}
 	}
 
 	public function check_role($role) {
-		if ($_SESSION['user']['role'] == $role) {
+		if ($_SESSION['user']['admin'] == $role) {
 			return true;
 		}
 		return false;
@@ -35,7 +35,7 @@ class Session {
 	private function check_login() {
 		if (isset($_SESSION['user'])) {
 			$this -> user_id = $_SESSION['user']['id'];
-			if (isset($_SESSION['user']['role']) && stristr($_SERVER['PHP_SELF'], 'admin') != '')
+			if ($_SESSION['user']['admin'] && stristr($_SERVER['PHP_SELF'], 'admin') != '')
 				return true;
 			else if (isset($_SESSION['user']['type']) && stristr($_SERVER['PHP_SELF'], 'user') != '')
 				return true;

@@ -15,11 +15,11 @@ try {
     $stmt = $DBH->prepare('SELECT * FROM categories');
     $stmt->execute();
     $result = $stmt->fetchAll();
+	
+	$stmt4 = $DBH->prepare('SELECT * FROM catalog ');
+    $stmt4->execute();
+    $catl = $stmt4->fetchAll();
     
-    $stmt2 = $DBH->prepare('SELECT * FROM suppliers');
-    $stmt2->execute();
-    $result2 = $stmt2->fetchAll();
-
     $stmt3 = $DBH->prepare('SELECT * FROM products WHERE id = :id');
     $stmt3->execute(array('id' => $id));
     //tira fuori solo un risultato
@@ -51,22 +51,23 @@ try {
           $row['selected'] = 'selected';
       }
     }
-    
-    //marca il fornitore appartenente 
-    foreach($result2 as &$row) {
+	
+	foreach($catl as &$row) {
       $row['selected'] = '';
-      if ($row['id'] == $product['suppliers_id']){
+      if ($row['id'] == $product['catalog_id']){
           $row['selected'] = 'selected';
       }
-    } 
+    }
     
     //mette immagine
     $stmt4 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
     $stmt4->execute(array('id' => $id));
     $imm = $stmt4->fetch();
     $product['image'] = $imm['path'];
+	
+	
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('prod' => $product, 'cats' => $result, 'supps' => $result2, 'message' => isset($_GET['message'])? $_GET['message'] :''));
+$template->display(array('prod' => $product, 'cats' => $result, 'catls' => $catl, 'message' => isset($_GET['message'])? $_GET['message'] :''));

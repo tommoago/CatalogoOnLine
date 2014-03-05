@@ -4,50 +4,19 @@ include '../../../classes/Session.php';
 $session = new Session();
 
 $id = $_GET['id'];
+$message = '';
 $data = array('id' => $id);
 try {
-    $db = new data_Base();
-    $DBH = $db->connect();
+	$db = new data_Base();
+	$DBH = $db -> connect();
 
-    //cerco ordini associati
-    $stmt = $DBH->prepare('SELECT * FROM orders WHERE customers_id = :id');
-    $stmt->execute($data);
-    $orders = $stmt->fetchAll();
+	$STH = $DBH -> prepare('DELETE FROM clients WHERE id = :id');
+	$STH -> execute($data);
 
-// vecchia implementazione, con vincoli di eliminazione, tenere.
-//    if (empty($orders)) {
-//        //se non ho vincoli, elimino.
-//        $STH = $DBH->prepare('DELETE FROM customers WHERE id = :id');
-//        $STH->execute($data);
-//        $message = 'Delete successful';
-//    } else {
-//        $STH = $DBH->prepare('UPDATE customers SET active = 0 WHERE id = :id');
-//        $STH->execute($data);
-//        $message = 'Cannot delete because of depency with 1 or more orders, the account has been disactivated';
-//    }
-    if (!empty($orders)) {
-        //se il customer ha fatto degli ordini devo inserire il suo nome nel campo prima di cancellarlo.
-        $stmt = $DBH->prepare('SELECT * FROM customers WHERE id = :id');
-        $stmt->execute($data);
-        $customer = $stmt->fetch();
-        
-        foreach ($orders as $ord) {
-            $STH = $DBH->prepare('UPDATE orders SET  
-                                    customers_id = :name
-                                  WHERE id = :id');
-            $STH->execute(array('name' => $customer['name'], 'id' => $ord['id']));
-        }
-    }
-    //elimino anche la traccia degli indirizzi associati
-    $STH = $DBH->prepare('DELETE FROM customers_has_addresses WHERE customers_id = :id');
-    $STH->execute($data);
-    
-    $STH2 = $DBH->prepare('DELETE FROM customers WHERE id = :id');
-    $STH2->execute($data);
-    $message = gettext('del.succ');
-
-    header('location:list.php?message=' . $message);
+	header('location:list.php?message=' . $message);
 } catch (PDOException $e) {
-    echo 'ERROR: ' . $e->getMessage();
+	echo 'ERROR: ' . $e -> getMessage();
 }
+
+header('location:list.php?message=' . $message);
 ?>

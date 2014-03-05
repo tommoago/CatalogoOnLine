@@ -1,8 +1,26 @@
 {% include 'admin/structure/header.phtml' %}
-{% include 'admin/structure/menu.phtml' %}
+
 <div id='content'>
-        <p>{{ message }}</p>
-        <p>{% trans "welcome" %} <b>{{ adm.name }}</b>, {% trans "welcome_2" %}</p>
+
+	<p>
+		{% trans "welcome" %} <b>{{ pSession.user.name }}</b>, {% trans "welcome_2_usr" %}
+	</p>
+
+	<a data-role="button" data-theme="a" href="catalog/list.php">{% trans "list" %} {% trans "catls" %}</a>
+	<a data-role="button" data-theme="a" href="catalog/prepareInsert.php">{% trans "ins" %} {% trans "catl" %}</a>
+	</br>
+    <a data-role="button" data-theme="a" href="categories/list.php">{% trans "list" %} {% trans "cats" %}</a>
+    <a data-role="button" data-theme="a" href="categories/prepareInsert.php">{% trans "ins" %} {% trans "cat" %}</a>
+	</br>
+	<a data-role="button" data-theme="a" href="products/catalog.php">{% trans "list" %} {% trans "prods" %}</a>
+	<a data-role="button" data-theme="a" href="products/prepareInsert.php">{% trans "ins" %} {% trans "prod" %}</a>
+	</br>
+	<a data-role="button" data-theme="a" href="customers/list.php">{% trans "list" %} {% trans "custs" %}</a>
+	<a data-role="button" data-theme="a" href="customers/prepareInsert.php">{% trans "ins" %} {% trans "cust" %}</a>
+    </br>
+    <a data-role="button" data-theme="a" href="users/list.php">{% trans "list" %} {% trans "users" %}</a>
+    <a data-role="button" data-theme="a" href="users/prepareInsert.php">{% trans "ins" %} {% trans "user" %}</a>
+
 </div>
 
 {% include 'admin/structure/footer.phtml' %}

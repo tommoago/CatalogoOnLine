@@ -419,3 +419,15 @@ msgstr "Number"
 
 msgid "rot"
 msgstr "To see the table fully rotate the device"
+
+msgid "catl"
+msgstr "Catalog"
+
+msgid "catls"
+msgstr "Catalogs"
+
+msgid "gest"
+msgstr "Manage"
+
+msgid "req.ins"
+msgstr "Request Inclusion"

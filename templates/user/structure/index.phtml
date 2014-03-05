@@ -2,13 +2,21 @@
 
 <div id='content'>
 
-	<p>
-		{% trans "welcome" %} <b>{{ pSession.user.name }}</b>, {% trans "welcome_2_usr" %}
-	</p>
+    <p>
+        {% trans "welcome" %} <b>{{ pSession.user.name }}</b>, {% trans "welcome_2_usr" %}
+    </p>
 
-	<a data-role="button" data-theme="a" href="catalog/list.php">{% trans "list" %} {% trans "catls" %}</a>
-	<a data-role="button" data-theme="a" href="administer/index.php">{% trans "gest" %} {% trans "catls" %}</a>
-	
+    <a data-role="button" data-theme="a" href="actions/index.php">{% trans "next.no.client" %}</a>
+    <a data-role="button" data-theme="a" href="actions/addClient.php">{% trans "new.client" %}</a>
+    </br>
+    <ul data-role="listview" data-filter="true">
+        {% for client in clients %}
+        <li>
+            <a href="actions/index.php?client_id={{ client.id }}">{{ client.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
 </div>
 
 {% include 'user/structure/footer.phtml' %}

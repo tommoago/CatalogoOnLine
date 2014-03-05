@@ -11,7 +11,7 @@
 
 	{% for cat in cats %}
 
-	<a data-role="button" data-icon="arrow-r" href='../products/list.php?category_id={{ cat.id }}'>{{ cat.name }}</a>
+	<a data-role="button" data-icon="arrow-r" href='../products/list.php?category_id={{ cat.id }}&catalog_id={{ catl_id }}'>{{ cat.name }}</a>
 
 	{% endfor %}
 	{%endif%}

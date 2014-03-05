@@ -1,39 +1,39 @@
 <div id="pager">
     {% if totPages > 1 %}
-        <div class="pg_first">
-		   <a href="list.php">
-        		<img src="../../../images/icons/Pager/first/first-256.png" alt="First">
-	        </a>
-        </div>
-        {% if lr > 1 %}
-            <div class="pg_prev">
-            	<a href="list.php?offset={{ lr }}">
-	        		<img src="../../../images/icons/Pager/previous/previous-256.png" alt="Previous">
-            	</a>
-            </div>
-        {%endif%}
+    <div class="pg_first" style="float: left; padding-left: 20px;">
+        <a href="list.php">
+            <img src="../../../images/icons/Pager/first/first-256.png" height="10%" alt="First">
+        </a>
+    </div>
+    {% if lr > 1 %}
+    <div class="pg_prev">
+        <a href="list.php?offset={{ lr }}" style="float: left; padding-left: 20px;">
+            <img src="../../../images/icons/Pager/previous/previous-256.png " height="10%" alt="Previous">
+        </a>
+    </div>
+    {%endif%}
 
-        {% for i in range(low = lr, high = mr, step=1) %}
-            {% if (i  <= totPages) and (i > 0) %}
-                <div class="pg_nr">
-                	<a href="list.php?offset={{ i - 1}}">
-                		{{ i }}
-                	</a>
-                </div>
-            {%endif%}
-        {% endfor %}
+    {% for i in range(low = lr, high = mr, step=1) %}
+    {% if (i <= totPages) and (i > 0) %}
+    <div class="pg_nr" style="float: left; padding-left: 20px;">
+        <a href="list.php?offset={{ i - 1}}" >
+            {{ i }}
+        </a>
+    </div>
+    {%endif%}
+    {% endfor %}
 
-        {% if (totPages - 1 > 6) and ((mr) < (totPages - 1))%}
-          <div class="pg_next">
-          	<a href="list.php?offset={{ mr }}">
-	        		<img src="../../../images/icons/Pager/next/next-256.png" alt="Next">
-			</a>
-		</div>
-		{%endif%}
-		<div class="pg_last">
-        		<a href="list.php?offset={{ totPages - 1 }}">
-        			<img src="../../../images/icons/Pager/last/last-256.png" alt="Last">
-			</a>
-		</div>
-		{%endif%}
+    {% if (totPages - 1 > 6) and ((mr) < (totPages - 1))%}
+    <div class="pg_next" style="float: left; padding-left: 20px;">
+        <a href="list.php?offset={{ mr }}">
+            <img src="../../../images/icons/Pager/next/next-256.png" height="10%" alt="Next">
+        </a>
+    </div>
+    {%endif%}
+    <div class="pg_last" style="float: left; padding-left: 20px;">
+        <a href="list.php?offset={{ totPages - 1 }}">
+            <img src="../../../images/icons/Pager/last/last-256.png" height="10%" alt="Last">
+        </a>
+    </div>
+    {%endif%}
 </div>

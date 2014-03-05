@@ -23,7 +23,9 @@
 		$('#s_price').after(parseFloat(rss).toFixed(2));
 	});
 	function calculate(percentage) {
-		$('#' + percentage.id).parent().contents(':not(input)').remove();
+		$('#' + percentage.id).parent().contents().filter(function() {
+      return this.nodeType === 3;
+    }).remove();
 		var per = percentage.value;
 		var multiplier = 1 + (per / 100);
 		var rs = $('#p_price').val() * multiplier;
@@ -186,17 +188,17 @@
 		</div>
 		<div class="totwidth">
 			<div class="panleft1">
-				{% trans "sup" %}:
+				{% trans "catl" %}:
 			</div>
 			<div class="panleft2">
-				<select name="sup_id">
-					{% for sup in supps %}
-					<option value="{{ sup.id }}">{{ sup.name }}</option>
+				<select name="catl_id">
+					{% for catl in catls %}
+					<option value="{{ catl.id }}">{{ catl.name }}</option>
 					{% endfor %}
 				</select>
 			</div>
 		</div>
 		<input class="invio" type="submit" value='{% trans "submit" %}'/>
 	</form>
-</div>{% include 'admin/structure/menu.phtml' %}
+</div>
 {% include 'admin/structure/footer.phtml' %}

@@ -6,18 +6,11 @@ $session = new Session();
 
 $template = $twig->loadTemplate('admin/customers/insert.phtml');
 
-$result = array();
+$db = new data_Base();
+$DBH = $db->connect();
+$stmt = $DBH->prepare('SELECT * FROM regioni ORDER BY nome');
+$stmt->execute();
+$regs = $stmt->fetchAll();
 
-try {
-    $db = new data_Base();
-    $DBH = $db->connect();
-    $stmt = $DBH->prepare('SELECT * FROM administrators WHERE role NOT IN ("jack")');
-    $stmt->execute();
-
-    $result = $stmt->fetchAll();
-} catch (PDOException $e) {
-    echo 'ERROR: ' . $e->getMessage();
-}
-
-$template->display(array('admins' => $result, 'message' => isset($_GET['message'])? $_GET['message']: ''));
+$template->display(array('message' => isset($_GET['message']) ? $_GET['message'] : '', 'regios' => $regs));
 ?>

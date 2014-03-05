@@ -29,15 +29,15 @@ try {
     }
     if($offset != 0 ) $offset *= $limit;
     
-    $stmt = $DBH->prepare('SELECT * FROM orders WHERE customers_id = :id LIMIT ' . $offset . ', ' . $limit);
+    $stmt = $DBH->prepare('SELECT orders.* FROM orders, clients WHERE clients.customers_id = :id AND clients.id=orders.clients_id LIMIT ' . $offset . ', ' . $limit);
     $stmt->execute(array('id' => $session->getUser_id()));
     $result = $stmt->fetchAll();
     
     foreach ($result as &$row) {
-        $stmt = $DBH->prepare('SELECT * FROM administrators WHERE id = :id');
-        $stmt->execute(array('id' => $row['operator']));
-        $op = $stmt->fetch();
-        $row['operator'] = $op['name'];
+        $stmt = $DBH->prepare('SELECT * FROM clients WHERE id = :id');
+        $stmt->execute(array('id' => $row['clients_id']));
+        $cl = $stmt->fetch();
+        $row['client'] = $cl['name'];
     }
 
 } catch (PDOException $e) {

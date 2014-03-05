@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER["DOCUMENT_ROOT"] .'/CatalogoOnLine/classes/data_Base.php';
+include_once $_SERVER["DOCUMENT_ROOT"] .'/catalogoonline/classes/data_Base.php';
 if (!defined('ENT_SUBSTITUTE')) {
     define('ENT_SUBSTITUTE', 8);
 }

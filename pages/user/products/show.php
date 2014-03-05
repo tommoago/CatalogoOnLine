@@ -4,7 +4,7 @@ include '../../../conf/twig.php';
 include '../../../classes/Session.php';
 $session = new Session();
 
-$template = $twig->loadTemplate('site/products/show.phtml');
+$template = $twig->loadTemplate('user/products/show.phtml');
 
 $result = array();
 
@@ -22,15 +22,12 @@ try {
     $cat = $stmt2->fetch();
     $result['category'] = $cat['name'];
 
-    $stmt3 = $DBH->prepare('SELECT * FROM suppliers WHERE id = :id');
-    $stmt3->execute(array('id' => $result['suppliers_id']));
-    $sup = $stmt3->fetch();
-    $result['supplier'] = $sup['name'];
-
     $stmt4 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
     $stmt4->execute(array('id' => $result['id']));
     $imm = $stmt4->fetch();
     $result['image'] = $imm['path'];
+	
+	
 
     //mette il prezzo giusto
     $result['price'] = $result['retail_price'];

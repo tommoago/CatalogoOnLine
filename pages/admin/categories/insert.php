@@ -1,25 +1,24 @@
 <?php
 include '../../../conf/config.php';
+include '../../../classes/imgUploader.php';
 include '../../../classes/Session.php';
 $session = new Session();
 
 $name = $_POST['name'];
-$categories_id = $_POST['cat_id'];
 
 try {
-    $db = new data_Base();
-    $DBH = $db->connect();
-    $data = array('name' => $name);
-    if($categories_id != ''){
-        $data['cat_id'] = $categories_id;
-        $STH = $DBH->prepare('INSERT INTO categories (name, categories_id) value (:name, :cat_id)');
-    }else{
-        $STH = $DBH->prepare('INSERT INTO categories (name) value (:name)');
-    }
-    $STH->execute($data);
-    
-    header('location:show.php?id='.$DBH->lastInsertId());
+	$db = new data_Base();
+	$DBH = $db -> connect();
+	$data = array('name' => $name);
+
+	$STH = $DBH -> prepare('INSERT INTO categories (name) value (:name)');
+
+	//customers_id = :id
+	$STH -> execute($data);
+	$idProd = $DBH -> lastInsertId();
+
+	header('location:show.php?id=' . $idProd);
 } catch (PDOException $e) {
-    echo 'ERROR: ' . $e->getMessage();
+	echo 'ERROR: ' . $e -> getMessage();
 }
 ?>

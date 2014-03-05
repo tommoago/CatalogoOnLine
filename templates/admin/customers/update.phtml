@@ -1,167 +1,98 @@
 {% include 'admin/structure/header.phtml' %}
-
-<script type="text/javascript" src="../../../scripts/jquery.validate.js"></script>
-<script type="text/javascript" src="../../../scripts/validation/admin/form.customers.validation.js"></script>
-<script type="text/javascript">
-$(function (){
-    if($('#type').val() === 'user'){
-        $('#cf_div').show();
-        $('#piva_div').hide();
-        
-        $('#cod_fis').rules('add', {required: true});
-        $('#piva').rules('remove');
-    }else{
-        $('#cf_div').hide();
-        $('#piva_div').show();
-        
-        $('#cod_fis').rules('remove');
-        $('#piva').rules('add', {required: true});
-    }
-});
-function toggleDivs(){
-    if($('#type').val() === 'user'){
-        $('#cf_div').show();
-        $('#piva_div').hide();
-        
-        resetRequirements();
-        $('#cod_fis').rules('add', {required: true});
-    } else {
-        $('#cf_div').hide();
-        $('#piva_div').show();
-        
-        resetRequirements();
-        $('#piva').rules('add', {required: true});
-    }
-}
-
-function resetRequirements(){
-    $('#cod_fis').rules('remove');
-    $('#piva').rules('remove');
-}
+<script>
+    $(document).ready(function () {
+        $('#regio').change(function () {
+            $('#div2').empty();
+            $('#div3').empty();
+            $.get("getProv.php?id=" + $('#regio').val(), function (datas) {
+                $('#div2').append('{% trans 'prov' %}<select name="prov" id="prov"></select>');
+                $('#prov').append('<option selected="" disabled="" hidden="" value="">{% trans 'provs' %}</option>');
+                $.each(datas, function (i, data) {
+                    $('#prov').append('<option value=' + data.id + '>' + data.nome + '</option>');
+                });
+                $('#page').trigger('create');
+                $('#prov').change(function () {
+                    $('#div3').empty();
+                    $.get("getCom.php?id=" + $('#prov').val(), function (datas) {
+                        $('#div3').append('{% trans 'com' %}<select name="com" id="com"></select>');
+                        $('#com').append('<option selected="" disabled="" hidden="" value="">{% trans 'coms' %}</option>');
+                        $.each(datas, function (i, data) {
+                            $('#com').append('<option value=' + data.id + '>' + data.nome + '</option>');
+                        });
+                        $('#page').trigger('create');
+                        $('#com').change(function () {
+                            $('#div3').append('<input class="invio" type="submit" value="{% trans "submit" %}"/>');
+                            $('#page').trigger('create');
+                        });
+                    }, "json");
+                });
+            }, "json");
+        });
+    })
 </script>
+
 <div id='content'>
-	<p class="detail_adm">{% trans "upd" %} {% trans "cust" %}</p>
-    <p>{{ message }}</p>
-    <form action="update.php" method="post" id="formcustomers">
-        <input type="hidden" name="id" value="{{ cus.id }}"/>
-        <div class="totwidth">
-			<div class="panleft1">
-				{% trans "name" %}:
-			</div>
-			<div class="panleft2">
-				<input type="text" name="name" value="{{ cus.name }}"/>
-			</div>
-		</div>
-		<div class="totwidth">
-			<div class="panleft1">
-				{% trans "sur" %}:
-			</div>
-			<div class="panleft2">
-				<input type="text" name="surname" value="{{ cus.surname }}"/>
-			</div>
-		</div>
-                <div class="totwidth" id="cf_div" style="display: none">
-			<div class="panleft1">
-				{% trans "codf" %}:
-			</div>
-			<div class="panleft2">
-				<input type="text" id="cod_fis" name="cod_fis" value="{{ cus.cod_fis }}"/>
-			</div>
-		</div>
-                <div class="totwidth" id="piva_div" style="display: none">
-			<div class="panleft1">
-				{% trans "piva" %}:
-			</div>
-			<div class="panleft2">
-				<input type="text" id="piva" name="piva" value="{{ cus.piva }}"/>
-			</div>
-		</div>
-		<div class="totwidth">
-			<div class="panleft1">
-				{% trans "adr" %}:
-			</div>
-			<div class="panleft2">
-				<input type="text" name="address" value="{{ cus.address }}"/>
-			</div>
-		</div>
-		<div class="totwidth">
-			<div class="panleft1">
-				{% trans "mail" %}:
-			</div>
-			<div class="panleft2">
-				<input type="text" name="email" value="{{ cus.email }}"/>
-			</div>
-		</div>
-		<div class="totwidth">
-			<div class="panleft1">
-				{% trans "tel" %}:
-			</div>
-			<div class="panleft2">
-				<input type="text" name="telephone" value="{{ cus.telephone }}"/>
-			</div>
-		</div>
-		<div class="totwidth">
-			<div class="panleft1">
-				{% trans "cel" %}:
-			</div>
-			<div class="panleft2">
-				<input type="text" name="cellphone" value="{{ cus.cellphone }}"/>
-			</div>
-		</div>
-		<div class="totwidth">
-			<div class="panleft1">
-				{% trans "act" %}:
-			</div>
-			<div class="panleft2">
-				<input type="checkbox" name="active" {{ cus.c_active }}/>
-			</div>
-		</div>
-		<div class="totwidth">
-			<div class="panleft1">
-				{% trans "psw" %}:
-			</div>
-			<div class="panleft2">
-				<input type="password" name="password"/>
-			</div>
-		</div>
-		<div class="totwidth">
-			<div class="panleft1">
-				{% trans "op" %}:
-			</div>
-			<div class="panleft2">
-				<select name="adm_id">
-					{% for adm in admins %}
-					<option value="{{ adm.id }}" {{ adm.selected }}>{{ adm.name }}</option>
-					{% endfor %}
-				</select>
-			</div>
-		</div>
-                <div class="totwidth">
-			<div class="panleft1">
-				{% trans "type" %}:
-			</div>
-			<div class="panleft2">
-				<select id="type" name="type" onchange="toggleDivs();">
-					<option value="user" {{ cus.selected_u }}>user</option>
-					<option value="merchant"  {{ cus.selected_m }}>merchant</option>
-					<option value="stockist"  {{ cus.selected_s }}>stockist</option>
-				</select>
-			</div>
-		</div>
-                <div class="totwidth">
-			<div class="panleft1">
-				{% trans "pr" %} {% trans "rg" %}:
-			</div>
-			<div class="panleft2">
-				<select name="price_range">
-					<option value="1" {{ cus.selected_pw }}>wholesale</option>
-					<option value="2" {{ cus.selected_pr }}>retail</option>
-					<option value="3" {{ cus.selected_ps }}>super</option>
-				</select>
-			</div>
-		</div>
-		<input class="invio" type="submit" value='{% trans "submit" %}'/>
+    <form action="update.php" method="post" id="formproduct" enctype="multipart/form-data">
+
+        <input type="hidden" name="id" value="{{ cust.id }}"/>
+
+        {% trans "name" %}
+        <input type="text" name="name" value="{{cust.name}}"/>
+        {% trans "mail" %}
+        <input type="text" name="mail"  value="{{cust.mail}}"/>
+        {% trans "adr" %}
+        <input type="text" name="address"  value="{{cust.address}}"/>
+        {% trans "zcod" %}
+        <input type="text" name="zcod"  value="{{cust.zipcode}}"/>
+        {% trans "piva" %}
+        <input type="text" name="piva"  value="{{cust.piva}}"/>
+        {% trans "codf" %}
+        <input type="text" name="codfis"  value="{{cust.cod_fis}}"/>
+
+
+        <div id="div1">
+            {% trans 'regio' %}
+            <select name="regio" id="regio">
+                {% for regss in regs %}
+                {% if regss.id==reg.id %}
+                <option selected value="{{ regss.id }}">{{ regss.nome }}</option>
+                {% endif %}
+                {% if regss.id!=reg.id %}
+                <option value="{{ regss.id }}">{{ regss.nome }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        <div id="div2">
+            {% trans 'prov' %}
+            <select name="prov" id="prov">
+                {% for provss in provs %}
+                {% if provss.id==prov.id %}
+                <option selected value="{{ provss.id }}">{{ provss.nome }}</option>
+                {% endif %}
+                {% if provss.id!=prov.id %}
+                <option value="{{ provss.id }}">{{ provss.nome }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        <div id="div3">
+            {% trans 'com' %}
+            <select name="com" id="com">
+                {% for comss in coms %}
+                {% if comss.id==com.id %}
+                <option selected value="{{ comss.id }}">{{ comss.nome }}</option>
+                {% endif %}
+                {% if comss.id!=com.id %}
+                <option value="{{ comss.id }}">{{ comss.nome }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+            <input class="invio" type="submit" value='{% trans "submit" %}'/>
+        </div>
+
 
     </form>
-</div>{% include 'admin/structure/menu.phtml' %}
-    {% include 'admin/structure/footer.phtml' %}
+
+</div>
+{% include 'admin/structure/footer.phtml' %}

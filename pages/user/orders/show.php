@@ -17,10 +17,10 @@ try {
 	$stmt -> execute($data);
 	$order = $stmt -> fetch();
 
-	$stmt2 = $DBH -> prepare('SELECT * FROM administrators WHERE id = :id');
-	$stmt2 -> execute(array('id' => $order['operator']));
-	$op = $stmt2 -> fetch();
-	$order['operator'] = $op['name'];
+	$stmt2 = $DBH -> prepare('SELECT * FROM clients WHERE id = :id');
+	$stmt2 -> execute(array('id' => $order['clients_id']));
+	$cl = $stmt2 -> fetch();
+	$order['client'] = $cl['name'];
 
 	//sezione che mostrerebbe il dettaglio, ma per come viene selto di implementare la base dati, è inutile.
 	$stmt3 = $DBH -> prepare('SELECT * FROM products p, orders_has_products op 

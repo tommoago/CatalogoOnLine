@@ -14,13 +14,13 @@ try {
     $stmt = $DBH->prepare('SELECT * FROM categories');
     $stmt->execute();
     $result = $stmt->fetchAll();
-    
-    $stmt = $DBH->prepare('SELECT * FROM suppliers');
+	
+	$stmt = $DBH->prepare('SELECT * FROM catalog');
     $stmt->execute();
     $result2 = $stmt->fetchAll();
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
 
-$template->display(array('cats' => $result, 'supps' => $result2, 'message' => isset($_GET['message'])? $_GET['message'] :''));
+$template->display(array('cats' => $result,'catls' => $result2, 'message' => isset($_GET['message'])? $_GET['message'] :''));
 ?>

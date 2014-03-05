@@ -16,14 +16,14 @@ isset($_SESSION['cart']) ? : $_SESSION['cart'] = new Cart();
 $cart = $_SESSION['cart'];
 
 $a_id = $_POST['a_id'];
-$data = array('data' => date("Y-m-d H:i:s"), 'cus_id' => $_SESSION['user']['id'], 'a_id' => $a_id);
+$data = array('data' => date("Y-m-d H:i:s"), 'client_id' => $_POST['clients'], 'a_id' => $a_id);
 
 try {
 	$db = new data_Base();
 	$DBH = $db -> connect();
 
-	$stmt = $DBH -> prepare('INSERT INTO orders(data, customers_id, addresses_id)
-                                VALUES(:data, :cus_id, :a_id)');
+	$stmt = $DBH -> prepare('INSERT INTO orders(data, clients_id, addresses_id)
+                                VALUES(:data, :client_id, :a_id)');
 	$stmt -> execute($data);
 
 	$ord_id = $DBH -> lastInsertId();

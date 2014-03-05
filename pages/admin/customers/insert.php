@@ -1,79 +1,27 @@
 <?php
 include '../../../conf/config.php';
+include '../../../classes/imgUploader.php';
 include '../../../classes/Session.php';
 $session = new Session();
-
 $name = $_POST['name'];
-$surname = $_POST['surname'];
-$cod_fis = $_POST['cod_fis'];
+$mail = $_POST['mail'];
+$adr = $_POST['address'];
+$zcod = $_POST['zcod'];
 $piva = $_POST['piva'];
-$address = $_POST['address'];
-$email = $_POST['email'];
-$telephone = $_POST['telephone'];
-$cellphone = $_POST['cellphone'];
-$active = 0;
-if (isset($_POST['active'])) {
-    $active = 1;
-}
-$passwd = $_POST['password'];
-$type = $_POST['type'];
-$range = $_POST['price_range'];
-$admin_id = $_POST['adm_id'];
-
+$codfis = $_POST['codfis'];
+$com = $_POST['com'];
 
 try {
     $db = new data_Base();
     $DBH = $db->connect();
-    $data = array('name' => $name, 
-                  'surname' => $surname,
-                  'cod_fis' => $cod_fis,
-                  'piva' => $piva,
-                  'address' => $address,
-                  'email' => $email,
-                  'telephone' => $telephone,
-                  'cellphone' => $cellphone,
-                  'active' => $active,
-                  'password' => md5($passwd),
-                  'type' => $type,
-                  'price_range' => $range,
-                  'administrators_id' => $admin_id);
-    $STH = $DBH->prepare('INSERT INTO customers (name, 
-                                                 surname,
-                                                 cod_fis,
-                                                 piva,
-                                                 address,
-                                                 email,
-                                                 telephone,
-                                                 cellphone,
-                                                 active,
-                                                 password,
-                                                 type,
-                                                 price_range,
-                                                 administrators_id) 
-                                           value (:name, 
-                                                  :surname,
-                                                  :cod_fis,
-                                                  :piva,
-                                                  :address,
-                                                  :email,
-                                                  :telephone,
-                                                  :cellphone,
-                                                  :active,
-                                                  :password,
-                                                  :type,
-                                                  :price_range,
-                                                  :administrators_id)');
-    $STH->execute($data);
+    $data = array('name' => $name, 'mail' => $mail, 'address' => $adr, 'zcod' => $zcod, 'piva' => $piva, 'codfis' => $codfis, 'com' => $com);
 
-    header('location:show.php?id=' . $DBH->lastInsertId());
+    $STH = $DBH->prepare('INSERT INTO clients (name, address, mail, zipcode, cod_fis, piva, comuni_id) value (:name, :address, :mail, :zcod, :codfis, :piva, :com)');
+    $STH->execute($data);
+    $idProd = $DBH->lastInsertId();
+
+    header('location:show.php?id=' . $idProd);
 } catch (PDOException $e) {
-    if($e->getCode() == '23000'){
-        $message = gettext('duplicate.mail');
-        header('location:prepareInsert.php?message=' . $message);
-        exit;
-    }else{
-        header('location:prepareInsert.php?message=' . $e->getMessage());
-        exit;
-    }
+    echo 'ERROR: ' . $e->getMessage();
 }
 ?>

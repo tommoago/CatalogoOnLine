@@ -19,8 +19,8 @@ try {
     $db = new data_Base();
     $DBH = $db->connect();
     
-    $stmt = $DBH->prepare('SELECT COUNT(*) FROM catalog WHERE customers_id = :id');
-    $stmt->execute(array('id' => $session->getUser_id()));
+    $stmt = $DBH->prepare('SELECT COUNT(*) FROM catalog');
+    $stmt->execute();
     $totProd = $stmt->fetch();
     $count = $totProd[0];
     $numPages += intval($count/$limit);
@@ -29,16 +29,9 @@ try {
     }
     if($offset != 0 ) $offset *= $limit;
     
-    $stmt = $DBH->prepare('SELECT * FROM catalog WHERE customers_id = :id LIMIT ' . $offset . ', ' . $limit);
-    $stmt->execute(array('id' => $session->getUser_id()));
+    $stmt = $DBH->prepare('SELECT * FROM catalog LIMIT ' . $offset . ', ' . $limit);
+    $stmt->execute();
     $result = $stmt->fetchAll();
-    
-    /*foreach ($result as &$row) {
-        $stmt = $DBH->prepare('SELECT * FROM administrators WHERE id = :id');
-        $stmt->execute(array('id' => $row['operator']));
-        $op = $stmt->fetch();
-        $row['operator'] = $op['name'];
-    }*/
 
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();

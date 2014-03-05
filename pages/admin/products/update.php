@@ -30,13 +30,13 @@ $pack_qty = $_POST['p_qty'];
 $cardboard_qty = $_POST['c_qty'];
 $vat = $_POST['vat'];
 $categories_id = $_POST['cat_id'];
-$suppliers_id = $_POST['sup_id'];
+$catalog_id = $_POST['catl_id'];
 
 try {
     $db = new data_Base();
     $DBH = $db->connect();
 
-    $pathName = '';
+    $pathName = '../';
     if ($_FILES['uploaded']['name'] != '') {
         //upload nuova immagine
         $img = new imgUploader();
@@ -85,7 +85,7 @@ try {
         'c_qty' => $cardboard_qty,
         'vat' => $vat,
         'cat_id' => $categories_id,
-        'sup_id' => $suppliers_id,
+        'catl_id' => $catalog_id,
         'id' => $id);
 
     $STH = $DBH->prepare('UPDATE products SET  
@@ -105,7 +105,7 @@ try {
                             cardboard_qty = :c_qty, 
                             vat = :vat,
                             categories_id =  :cat_id,
-                            suppliers_id =  :sup_id
+                            catalog_id =  :catl_id
                           WHERE id = :id');
     $STH->execute($data);
 

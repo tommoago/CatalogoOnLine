@@ -1,57 +1,52 @@
-{% include 'header.phtml' %}
-{% include 'menu.phtml' %}
-{% include 'menu-right.phtml' %}
+{% include 'user/structure/header.phtml' %}
+
+<script>
+	$(document).ready(function() {
+		$('#clients').change(function() {
+			$('#conf').append('<li>' + '<button data-role="button" type="submit" value="{% trans "confirm" %}" class="confirm" >' + '<img src="../../../images/icons/cart/checkout/checkout_green-256.png" height="50px" alt="{% trans "confirm" %}">{% trans "confirm" %}' + '</button>' + '</li>');
+			$('#page').trigger('create');
+		});
+
+	})
+</script>
 <div id='content'>
 	{% if prods|length > 0 %}
-	<table class="tablelist">
-		<tr>
-			<th>{% trans "name" %}</th>
-			<th>{% trans "descr" %}</th>
-			<th>&#128;</th>
-			<th>{% trans "cod" %}</th>
-			<th>{% trans "qty" %}</th>
-		</tr>
-		{% for prod in prods %}
-		<tr>
-			<td><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td><!-- lasciare visualizzazione?? -->
-			<td>{{ prod.description }}</td>
-			<td><b>{{ prod.price }}</b></td>
-			<td><i>{{ prod.cod }}</i></td>
-			<td style="text-align:center">{{ prod.qty }}</td>
-		</tr>
-		{% endfor %}
-	</table>
-	<ul style="list-style: none; padding-left: 0px;">
-		<form action="confirm.php" method="post">
-			{% if addrs|length == 0 %}
-			<li>
-				<button data-role="button" type="submit" value="{% trans "confirm" %}" class="confirm" >
-					<img src="../../../images/icons/cart/checkout/checkout_green-256.png" height="50px" alt='{% trans "confirm" %}'>{% trans "confirm" %}
-				</button>
-			</li>
-			{% endif %}
-			{% if addrs|length !=0 %}
-			<li>
-				{% trans "adr" %}
-				<select name="a_id">
-					{% for addr in addrs %}
-					<option value="{{ addr.id }}">{{ addr.street }}</option>
-					{% endfor %}
-				</select>
-			</li>
-			<li>
-				<button data-role="button" type="submit" value="{% trans "confirm" %}" class="confirm" >
-					<img src="../../../images/icons/cart/checkout/checkout_green-256.png" height="50px" alt='{% trans "confirm" %}'>{% trans "confirm" %}
-				</button>
-			</li>
+	<form action="confirm.php" method="post">
+		<table class="tablelist">
+			<tr>
+				<th>{% trans "name" %}</th>
+				<th>{% trans "descr" %}</th>
+				<th>&#128;</th>
+				<th>{% trans "cod" %}</th>
+				<th>{% trans "qty" %}</th>
+			</tr>
+			{% for prod in prods %}
+			<tr>
+				<td><a href='../products/show.php?id={{ prod.id }}'>{{ prod.name }}</a></td><!-- lasciare visualizzazione?? -->
+				<td>{{ prod.description }}</td>
+				<td><b>{{ prod.price }}</b></td>
+				<td><i>{{ prod.cod }}</i></td>
+				<td style="text-align:center">{{ prod.qty }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		<h3>{% trans 'sel' %} {% trans 'cust' %}</h3>
+		<select id="clients" name="clients">
+			<option selected disabled hidden value=''>{% trans 'custs' %}</option>
+			{% for client in clients %}
+			<option value={{client.id}}>{{client.name}}</option>
+			{% endfor %}
 
-			{% endif %}
+		</select>
+
+		<ul style="list-style: none; padding-left: 0px;" id="conf">
 
 			<li >
 				<a data-role="button" href='../cart/empty.php'><img height="50px" src="../../../images/icons/cart/return/return_red-256.png" alt='{% trans "canc" %} {% trans "ord" %}'>{% trans "canc" %} {% trans "ord" %}</a>
 			</li>
-		</form>
-	</ul>
+
+		</ul>
+	</form>
 	{%endif%}
 	{% if prods|length == 0 %}
 	<p>
@@ -60,4 +55,4 @@
 	{% endif %}
 </div>
 
-{% include 'footer.phtml' %}
+{% include 'user/structure/footer.phtml' %}

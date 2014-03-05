@@ -1,0 +1,36 @@
+{% include 'admin/structure/header.phtml' %}
+
+<div id='content'>
+    <p class="detail_adm">
+        {% trans "ins" %} {% trans "cust" %}
+    </p>
+    <p>
+        {{ message }}
+    </p>
+    <form action="insert.php" method="post" id="formproduct" enctype="multipart/form-data">
+        {% trans "name" %}
+        <input type="text" name="name"/>
+        {% trans "sur" %}
+        <input type="text" name="surname"/>
+        {% trans "mail" %}
+        <input type="text" name="mail"/>
+        {% trans "psw" %}
+        <input type="password" name="password"/>
+        {% trans "adr" %}
+        <input type="text" name="address"/>
+        {% trans "tel" %}
+        <input type="text" name="telephone"/>
+        {% trans "cel" %}
+        <input type="text" name="cellphone"/>
+        {% trans "admin" %}
+        <input type="checkbox" name="admin" />
+        {% trans "codf" %}
+        <input type="text" name="codfis"/>
+
+
+        <input class="invio" type="submit" value="{% trans "submit" %}"/>
+
+
+    </form>
+</div>
+{% include 'admin/structure/footer.phtml' %}

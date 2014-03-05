@@ -25,11 +25,11 @@ try {
     $stmt3->execute(array('id' => $id));
     $imm = $stmt3->fetch();
     $product['image'] = $imm['path'];
-    
-    $stmt4 = $DBH->prepare('SELECT * FROM suppliers WHERE id = :id');
-    $stmt4->execute(array('id' => $product['suppliers_id']));
-    $sup = $stmt4->fetch();
-    $product['supplier'] = $sup['name'];
+	
+	$stmt4 = $DBH->prepare('SELECT * FROM catalog WHERE id = :id');
+    $stmt4->execute(array('id' => $product['catalog_id']));
+    $cat = $stmt4->fetch();
+    $product['catalog'] = $cat['name'];
     
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();

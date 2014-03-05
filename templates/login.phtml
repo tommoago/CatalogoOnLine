@@ -1,0 +1,14 @@
+{% include 'header.phtml' %}
+
+<div class="login">
+    <p class="invalid">{{ message }}</p>
+    <form method="post" action="authenticate.php">
+        <input class="sign" type="hidden" name="order" value="{{ order }}"/>
+        <p class="sign">{% trans "mail" %}:</p>
+        <input class="sign_text" type="text" name="email"/>
+        <p class="sign">{% trans "psw" %}:</p>
+        <input class="sign_text" type="password" name="password"/>
+     <input class="sign-in" type="submit" value='{% trans "signin" %}' />
+    </form>
+</div>
+{% include 'footer.phtml' %}
