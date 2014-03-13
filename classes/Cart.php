@@ -67,7 +67,7 @@ class Cart {
         $this->tot = 0;
         foreach ($this->products as $row)
             if (!array_key_exists('old', $row))
-                $this->tot += $row['price'] * $row['qty'];
+                $this->tot += $row['discount_price'] * $row['qty'];
     }
 
 }

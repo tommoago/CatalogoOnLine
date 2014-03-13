@@ -19,9 +19,9 @@ class data_Base {
         
         if($_SERVER['HTTP_HOST'] == 'localhost'){
             $conf = array(
-                'host' => 'localhost',
+                'host' => '192.168.1.107:3306',
                 'dbname' => 'catalogoonline',
-                'user' => 'root',
+                'user' => 'Oz',
                 'pass' => 'root');
         }
 

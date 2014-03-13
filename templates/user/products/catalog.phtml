@@ -1,0 +1,36 @@
+{% include 'admin/structure/header.phtml' %}
+{% include 'user/products/productBar.phtml' %}
+<script>
+	$(document).ready(function() {
+		$('#catl_id').change(function() {
+            $('#div2').empty();
+			$.get("categories.php?id=" + $('#catl_id').val(), function(datas) {
+				$('#div2').append('<select name="cat_id" id="cat_id"></select>');
+				$('#cat_id').append('<option selected="" disabled="" hidden="" value="">{% trans 'cats' %}</option>');
+				$.each(datas, function(i, data) {
+					$('#cat_id').append('<option value=' + data.id + '>' + data.name + '</option>');
+				});		
+				$('#page').trigger('create');				
+				$('#cat_id').change(function() {
+					$('form').append('<input class="invio" type="submit" value="{% trans "submit" %}"/>');
+					$('#page').trigger('create');
+				});
+			}, "json");
+		});
+	})
+</script>
+<div id='content'>
+	<form action="../products/list.php" method="POST">
+		<div id="div1">
+			<h3>{% trans 'sel' %} {% trans 'catl' %}</h3>
+			<select name="catl_id" id="catl_id">
+				<option selected disabled hidden value=''>{% trans 'catls' %}</option>
+				{% for catl in catls %}
+				<option value="{{ catl.id }}">{{ catl.name }}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<div id="div2"></div>
+	</form>
+</div>
+{% include 'admin/structure/footer.phtml' %}

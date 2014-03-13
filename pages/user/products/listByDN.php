@@ -5,24 +5,21 @@ include '../../../conf/twig.php';
 include '../../../classes/Session.php';
 $session = new Session();
 
-$template = $twig->loadTemplate('user/products/list.phtml');
+$template = $twig->loadTemplate('user/products/listByDN.phtml');
 
 $result = array();
 $offset = isset($_GET['offset']) ? $_GET['offset'] : 0;
 $limit = 30;
 $numPages = 0;
-$catego = isset($_POST['cat_id']) ? $_POST['cat_id'] : $_GET['catego'];
-$catl = isset($_POST['catl_id']) ? $_POST['catl_id'] : $_GET['catl'];
-
-//$stmt2 = $DBH -> prepare('SELECT COUNT(*) FROM products WHERE categories_id = :id AND catalog_id = :id_catl');
-//$stmt2 -> execute(array('id' => $_GET['category_id'], 'id_catl' => $catl_id));
+$name = isset($_POST['name']) ? $_POST['name'] : $_GET['name'];
+$descr = isset($_POST['descr']) ? $_POST['descr'] : $_GET['descr'];
 
 try {
     $db = new data_Base();
     $DBH = $db->connect();
 
-    $stmt = $DBH->prepare('SELECT COUNT(*) FROM products WHERE categories_id = :id AND catalog_id = :id_catl');
-    $stmt->execute(array('id' => $catego, 'id_catl' => $catl));
+    $stmt = $DBH->prepare('SELECT COUNT(*) FROM products WHERE name LIKE "%' . $name . '%" AND description LIKE "%' . $descr . '%"');
+    $stmt->execute();
     $totProd = $stmt->fetch();
     $count = $totProd[0];
     $numPages += intval($count / $limit);
@@ -32,8 +29,8 @@ try {
     if ($offset != 0)
         $offset *= $limit;
 
-    $stmt = $DBH->prepare('SELECT * FROM products WHERE categories_id = :id AND catalog_id = :id_catl LIMIT ' . $offset . ', ' . $limit);
-    $stmt->execute(array('id' => $catego, 'id_catl' => $catl));
+    $stmt = $DBH->prepare('SELECT * FROM products WHERE name LIKE "%' . $name . '%" AND description LIKE "%' . $descr . '%" LIMIT ' . $offset . ', ' . $limit);
+    $stmt->execute();
     $result = $stmt->fetchAll();
 
     foreach ($result as &$row) {
@@ -58,5 +55,6 @@ $div = $offset / $limit;
 $lowRange = $div - 3;
 $maxRange = $div < 3 ? 6 : $div + 3;
 
-$template->display(array('prods' => $result, 'totPages' => $numPages, 'lr' => $lowRange, 'mr' => $maxRange, 'catego' => $catego, 'catl' => $catl));
+
+$template->display(array('prods' => $result, 'totPages' => $numPages, 'lr' => $lowRange, 'mr' => $maxRange, 'name' => $name, 'descr' => $descr));
 ?>

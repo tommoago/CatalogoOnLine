@@ -1,70 +1,75 @@
 {% include 'user/structure/header.phtml' %}
 <div id='content'>
 
-	{% if prod.new == 1 %}
-	<p >
-		{% trans "new" %}
-	<p>
-		{% endif %}
-		{% if prod.offer == 1 %}
-	<p class="offer_badge">
-		{% trans "ofr" %}
-	<p>
-		{% endif %}
+    {% if prod.new == 1 %}
+    <p>
+        {% trans "new" %}
 
-		<!--		  {% if prod.new == 1 %}
-		<img class="new" src="../../../images/icons/new/new-512.png">
-		{% endif %}
-		{% if prod.offer == 1 %}
-		<img class="sale" src="../../../images/icons/sale/sale-512.png">
-		{% endif %}
-		-->
+    <p>
+        {% endif %}
+        {% if prod.offer == 1 %}
 
-		<h1>{{ prod.name }}</h1>
+    <p class="offer_badge">
+        {% trans "ofr" %}
 
-		<h7>
-			{% trans "cat" %}: <b>{{ prod.category }}</b>
-		</h7>
-		<img src="../../{{ prod.image }}" width="100%">
-		<h4>{{ prod.barcode }}</h4>
+    <p>
+        {% endif %}
 
-		<ul>
-			<li >
-				{% trans "cod" %}:  #<b>{{ prod.cod }}</b>
-			</li>
-			<li >
-				{% trans "qty" %}:
-			<li >
-				{% trans "sng" %}: <b>{{ prod.single_qty }}</b>
-			</li>
-			<li >
-				{% trans "pck" %}: <b>{{ prod.pack_qty }}</b>
-			</li>
-			<li >
-				{% trans "cdb" %}: <b>{{ prod.cardboard_qty }}</b>
-			</li>
-			</li>
-		</ul>
-		<br>
-		<h5> {% if prod.price == prod.super_price and prod.price != prod.retail_price %}
-		&#128; {{ prod.retail_price }}
-		{% endif %} </h5>
-		<h3> &#128; {{ prod.price }} </h3>
+        <!--		  {% if prod.new == 1 %}
+        <img class="new" src="../../../images/icons/new/new-512.png">
+        {% endif %}
+        {% if prod.offer == 1 %}
+        <img class="sale" src="../../../images/icons/sale/sale-512.png">
+        {% endif %}
+        -->
 
-		<div >
+    <h1>{{ prod.name }}</h1>
+
+    <h7>
+        {% trans "catl" %}: <b>{{ prod.catalog }}</b> {% trans "cat" %}: <b>{{ prod.category }}</b>
+    </h7>
+    <img src="../../{{ prod.image }}" width="100%">
+    <h4>{{ prod.barcode }}</h4>
+
+    <ul>
+        <li>
+            {% trans "cod" %}: #<b>{{ prod.cod }}</b>
+        </li>
+        <li>
+            {% trans "sng" %}: <b>{{ prod.single_qty }}</b>
+        </li>
+        <li>
+            {% trans "pck" %}: <b>{{ prod.pack_qty }}</b>
+        </li>
+        <li>
+            {% trans "cdb" %}: <b>{{ prod.cardboard_qty }}</b>
+        </li>
+        </li>
+    </ul>
+    <br>
+    <h5> {% if prod.price == prod.super_price and prod.price != prod.retail_price %}
+        &#128; {{ prod.retail_price }}
+        {% endif %} </h5>
+
+    <h3> &#128; {{ prod.price }} </h3>
+
+    <div>
 			<span>{% trans "sel" %} {% trans "qty" %}:
 				<input type="text" id="qty_add" name="qty_add" value="1"/>
 			</span>
-		</div>
-		<form action="../cart/add.php" method="post">
-			<input type="hidden" name="id" value="{{ prod.id }}"/>
-			<button type="submit" id="addcart" value='{% trans "submit" %}' data-icon="custom">
-				{% trans "add.cart" %}
-			</button>
-		</form>
+    </div>
+    <form action="../cart/add.php" method="post">
+        <label for="discount">{% trans 'discount' %}:</label>
+        <input type="range" name="discount" id="discount" value="0" min="0" max="100"/>
+        <input type="hidden" name="id" value="{{ prod.id }}"/>
+        <button type="submit" id="addcart" value='{% trans "submit" %}' data-icon="custom">
+            {% trans "add.cart" %}
+        </button>
+    </form>
 
-		<br>
-		<h2>{{ prod.description }}</h2>
+    <br>
+
+    <h2>{{ prod.description }}</h2>
 
 </div>
 

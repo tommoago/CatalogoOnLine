@@ -9,11 +9,8 @@
 			<a href="{{ path }}user/sign_up.php">{% trans "signup" %}</a>
 		</li>
 		{% endif %}
-		<li data-icon="custom" id="administrator" data-theme="a">
-			<a href="{{ path }}admin/login.php">{% trans "adm" %}</a>
-		</li>
 		<li data-icon="custom" id="user" data-theme="a">
-			<a href="{{ path }}user/login.php">{% trans "user" %}</a>
+			<a href="{{ path }}login.php">{% trans "signin" %}</a>
 		</li>
 		{% if(pSession.user.id != '' and  pSession.user.role != 'jack' and  pSession.user.role != 'operator')%}
 		<li data-icon="custom" id="cart" data-theme="a">

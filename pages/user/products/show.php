@@ -22,12 +22,16 @@ try {
     $cat = $stmt2->fetch();
     $result['category'] = $cat['name'];
 
+    $stmt3 = $DBH->prepare('SELECT * FROM catalog WHERE id = :id');
+    $stmt3->execute(array('id' => $result['catalog_id']));
+    $catl = $stmt3->fetch();
+    $result['catalog'] = $catl['name'];
+
     $stmt4 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
     $stmt4->execute(array('id' => $result['id']));
     $imm = $stmt4->fetch();
     $result['image'] = $imm['path'];
-	
-	
+
 
     //mette il prezzo giusto
     $result['price'] = $result['retail_price'];

@@ -39,13 +39,13 @@
         <div id="pager">
             {% if totPages > 1 %}
             <div class="pg_first" style="float: left; padding-left: 20px;">
-                <a href="list.php?catl={{ catl }}&catego={{ catego }}">
+                <a href="listByDN.php?name={{ name }}&descr={{ descr }}">
                     <img src="../../../images/icons/Pager/first/first-256.png" height="50px" alt="First">
                 </a>
             </div>
             {% if lr > 1 %}
             <div class="pg_prev">
-                <a href="list.php?offset={{ lr }}&catl={{ catl }}&catego={{ catego }}"
+                <a href="listByDN.php?offset={{ lr }}&name={{ name }}&descr={{ descr }}"
                    style="float: left; padding-left: 20px;">
                     <img src="../../../images/icons/Pager/previous/previous-256.png" height="50px" alt="Previous">
                 </a>
@@ -55,7 +55,7 @@
             {% for i in range(low = lr, high = mr, step=1) %}
             {% if (i <= totPages) and (i > 0) %}
             <div class="pg_nr" style="float: left; padding-left: 20px;">
-                <a href="list.php?offset={{ i - 1}}&catl={{ catl }}&catego={{ catego }}">
+                <a href="listByDN.php?offset={{ i - 1}}&name={{ name }}&descr={{ descr }}">
                     {{ i }}
                 </a>
             </div>
@@ -64,13 +64,13 @@
 
             {% if (totPages - 1 > 6) and ((mr) < (totPages - 1))%}
             <div class="pg_next" style="float: left; padding-left: 20px;">
-                <a href="list.php?offset={{ mr }}&catl={{ catl }}&catego={{ catego }}">
+                <a href="listByDN.php?offset={{ mr }}&name={{ name }}&descr={{ descr }}">
                     <img src="../../../images/icons/Pager/next/next-256.png" height="50px" alt="Next">
                 </a>
             </div>
             {%endif%}
             <div class="pg_last" style="float: left; padding-left: 20px;">
-                <a href="list.php?offset={{ totPages - 1 }}&catl={{ catl }}&catego={{ catego }}">
+                <a href="listByDN.php?offset={{ totPages - 1 }}&name={{ name }}&descr={{ descr }}">
                     <img src="../../../images/icons/Pager/last/last-256.png" height="50px" alt="Last">
                 </a>
             </div>

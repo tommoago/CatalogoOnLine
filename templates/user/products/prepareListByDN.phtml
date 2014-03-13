@@ -1,0 +1,12 @@
+{% include 'user/structure/header.phtml' %}
+{% include 'user/products/productBar.phtml' %}
+<div id='content'>
+    <form action="listByDN.php" method="POST">
+        <h3>{% trans 'ins' %} {% trans 'name' %}</h3>
+        <input type="text" name="name"></input>
+        <h3>{% trans 'ins' %} {% trans 'descr' %}</h3>
+        <input type="text" name="descr"></input>
+        <input type="submit" value="{% trans 'submit' %}">
+    </form>
+</div>
+{% include 'user/structure/footer.phtml' %}
