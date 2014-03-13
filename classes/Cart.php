@@ -4,6 +4,7 @@ class Cart {
 
     private $products;
     private $tot;
+    public $id;
 
     function __construct() {
         $this->tot = 0;
