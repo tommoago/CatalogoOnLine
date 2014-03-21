@@ -48,5 +48,18 @@ if (isset($_SESSION['client']) && !isset($cart->ide)) {
     }
 }
 
-$template->display(array('message' => $message));
+if (isset($_SESSION['client']))
+    $cli = 'ok';
+
+
+$stmt3 = $DBH->prepare('SELECT * FROM orders  WHERE customers_id = :id AND quotation = 1 AND clients_id = :clients_id');
+$stmt3->execute(array('id' => $_SESSION['user']['id'], 'clients_id' => $_SESSION['client']));
+$oldOrds = $stmt3->fetchAll();
+if (count($oldOrds) > 0)
+    $cli = 'ok';
+else
+    $cli = '';
+
+
+$template->display(array('message' => $message, 'cli' => $cli));
 ?>

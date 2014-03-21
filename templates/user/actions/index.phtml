@@ -29,11 +29,11 @@
     <a href="../products/catalog.php" data-role="button" data-icon="add" data-theme="a">{% trans "new" %} {% trans "ord"
         %}</a>
     {% endif %}
-
+    {% if cli=='ok' %}
     <a href="../quotation/list.php" data-role="button" data-icon="check" data-theme="a">{% trans "confirm" %} {% trans
         "prevs"
         %}</a>
-
+    {% endif %}
 </div>
 
 {% include 'user/structure/footer.phtml' %}

@@ -49,6 +49,10 @@ try {
         $stmt2->execute(array('id' => $row['catalog_id']));
         $sup = $stmt2->fetch();
         $row['catalog'] = $sup['name'];
+        $stmt2 = $DBH->prepare('SELECT * FROM product_images WHERE products_id = :id');
+        $stmt2->execute(array('id' => $row['id']));
+        $sup = $stmt2->fetch();
+        $row['image'] = $sup['path'];
     }
 } catch (PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();

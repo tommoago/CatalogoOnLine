@@ -41,7 +41,7 @@ try {
         $product['qty'] = $row['qty'];
 
         //mette il prezzo giusto
-        $product['price'] = $product['retail_price'];
+        $product['price'] = $row['discount_price'];
         /* if (isset($_SESSION['user']['price_range']))
              switch ($_SESSION['user']['price_range']) {
                  case 1 :

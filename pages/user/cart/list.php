@@ -26,16 +26,8 @@ try {
 			$product['description'] = substr($product['description'], 0, 150) . '...';
 
 		//mette il prezzo giusto
-		$product['price'] = $product['retail_price'];
-		if (isset($_SESSION['user']['price_range']))
-			switch ($_SESSION['user']['price_range']) {
-				case 1 :
-					$product['price'] = $product['wholesale_price'];
-					break;
-				case 3 :
-					$product['price'] = $product['super_price'];
-					break;
-			}
+		$product['price'] = $row['discount_price'];
+
 
 		$stmt2 = $DBH -> prepare('SELECT * FROM categories WHERE id = :id');
 		$stmt2 -> execute(array('id' => $product['categories_id']));
