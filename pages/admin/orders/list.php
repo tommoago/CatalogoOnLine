@@ -4,7 +4,7 @@ include '../../../conf/twig.php';
 include '../../../classes/Session.php';
 $session = new Session();
 
-$template = $twig->loadTemplate('user/orders/list.phtml');
+$template = $twig->loadTemplate('admin/orders/list.phtml');
 
 $result = array();
 $message = '';
@@ -19,8 +19,8 @@ try {
     $db = new data_Base();
     $DBH = $db->connect();
 
-    $stmt = $DBH->prepare('SELECT COUNT(*) FROM orders WHERE customers_id = :id AND confirmed = 1');
-    $stmt->execute(array('id' => $_SESSION['user']['id']));
+    $stmt = $DBH->prepare('SELECT COUNT(*) FROM orders WHERE confirmed = 1');
+    $stmt->execute();
     $totProd = $stmt->fetch();
     $count = $totProd[0];
     $numPages += intval($count / $limit);
@@ -29,8 +29,8 @@ try {
     }
     if ($offset != 0) $offset *= $limit;
 
-    $stmt2 = $DBH->prepare('SELECT * FROM orders WHERE customers_id = :id AND confirmed = 1 LIMIT ' . $offset . ', ' . $limit);
-    $stmt2->execute(array('id' => $_SESSION['user']['id']));
+    $stmt2 = $DBH->prepare('SELECT * FROM orders WHERE confirmed = 1 LIMIT ' . $offset . ', ' . $limit);
+    $stmt2->execute();
     $result = $stmt2->fetchAll();
 
     foreach ($result as &$row) {

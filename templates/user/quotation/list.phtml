@@ -23,15 +23,10 @@
             {% if ord.quotation=='1' %}
             <td>{% trans 'prev' %}</td>
             {% endif %}
-            {% if ord.quotation=='0' %}
-            <td></td>
-            {% endif %}
 
-            <td class="delete"><a data-role="button" href='delete.php?id={{ ord.id }}'><img
-                        src="../../../images/icons/delete/delete-256.png" width="20%" alt='{% trans "del" %}'></a></td>
-
-            <td class="delete"><a data-role="button" href='edit.php?id={{ ord.id }}'><img
-                        src="../../../images/icons/edit/edit-256.png" width="20%" alt='{% trans "del" %}'></a></td>
+            <td class="delete"><a data-role="button" href='confirm.php?id={{ ord.id }}'><img
+                        src="../../../images/icons/system/checkmark/checkmark-256.png" width="20%"
+                        alt='{% trans "del" %}'></a></td>
 
         </tr>
         {% endfor %}

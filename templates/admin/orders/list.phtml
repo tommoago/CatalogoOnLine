@@ -1,4 +1,4 @@
-{% include 'user/structure/header.phtml' %}
+{% include 'admin/structure/header.phtml' %}
 
 <div id='content'>
     <p class="detail_adm">
@@ -26,17 +26,14 @@
             {% if ord.quotation=='0' %}
             <td></td>
             {% endif %}
-
+            <td>
             <td class="delete"><a data-role="button" href='delete.php?id={{ ord.id }}'><img
                         src="../../../images/icons/delete/delete-256.png" width="20%" alt='{% trans "del" %}'></a></td>
-
-            <td class="delete"><a data-role="button" href='edit.php?id={{ ord.id }}'><img
-                        src="../../../images/icons/edit/edit-256.png" width="20%" alt='{% trans "del" %}'></a></td>
-
+            </td>
         </tr>
         {% endfor %}
     </table>
-    {% include 'user/structure/pager.phtml' %}
+    {% include 'admin/structure/pager.phtml' %}
     {%endif%}
     {% if orders|length == 0 %}
     <p>
@@ -44,4 +41,4 @@
     </p>
     {% endif %}
 </div>
-{% include 'user/structure/footer.phtml' %}
+{% include 'admin/structure/footer.phtml' %}

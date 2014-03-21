@@ -36,7 +36,7 @@
         <input type="hidden" name="client_id" value='{{client.id}}'/>
         {% endif %}
         <h4>{% trans 'prev'%}:</h4>
-        <input type="checkbox" name='quotation'>
+        <input type="checkbox" {% if prev == '1' %} checked {% endif %} name='quotation'>
         </br>
         {% if clients!='' %}
         <h3>{% trans 'sel' %} {% trans 'cust' %}</h3>

@@ -4,7 +4,7 @@ include '../../../conf/twig.php';
 include '../../../classes/Session.php';
 $session = new Session();
 
-$template = $twig->loadTemplate('user/orders/list.phtml');
+$template = $twig->loadTemplate('user/quotation/list.phtml');
 
 $result = array();
 $message = '';
@@ -19,7 +19,7 @@ try {
     $db = new data_Base();
     $DBH = $db->connect();
 
-    $stmt = $DBH->prepare('SELECT COUNT(*) FROM orders WHERE customers_id = :id AND confirmed = 1');
+    $stmt = $DBH->prepare('SELECT COUNT(*) FROM orders WHERE customers_id = :id AND quotation = 1');
     $stmt->execute(array('id' => $_SESSION['user']['id']));
     $totProd = $stmt->fetch();
     $count = $totProd[0];
@@ -29,7 +29,7 @@ try {
     }
     if ($offset != 0) $offset *= $limit;
 
-    $stmt2 = $DBH->prepare('SELECT * FROM orders WHERE customers_id = :id AND confirmed = 1 LIMIT ' . $offset . ', ' . $limit);
+    $stmt2 = $DBH->prepare('SELECT * FROM orders WHERE customers_id = :id AND quotation = 1 LIMIT ' . $offset . ', ' . $limit);
     $stmt2->execute(array('id' => $_SESSION['user']['id']));
     $result = $stmt2->fetchAll();
 

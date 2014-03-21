@@ -43,9 +43,10 @@ $cart->addProduct(array('id' => $product['id'], 'description' => $product['descr
 
 if (isset($_SESSION['client'])) {
     try {
-        $data = array('data' => date("Y-m-d H:i:s"), 'client_id' => $_SESSION['client'],
-            'customers_id' => $_SESSION['user']['id'], 'confirmed' => 0, 'quotation' => 0, 'ide' => null);
+
         if (!isset($cart->id)) {
+            $data = array('data' => date("Y-m-d H:i:s"), 'client_id' => $_SESSION['client'],
+                'customers_id' => $_SESSION['user']['id'], 'confirmed' => 0, 'quotation' => 0, 'ide' => isset($cart->ide) ? $cart->ide : null);
             $stmt = $DBH->prepare('INSERT INTO orders(data, clients_id, customers_id, confirmed, quotation, ide)
                                 VALUES(:data, :client_id, :customers_id, :confirmed, :quotation, :ide)');
             $stmt->execute($data);
@@ -63,11 +64,11 @@ if (isset($_SESSION['client'])) {
 
         //$cart->emptyCart();
 
-        //header('location:../../user/orders/list.php?message=' . $message);
+        header('location:../../user/orders/list.php?message=' . $message);
     } catch (PDOException $e) {
         echo 'ERROR: ' . $e->getMessage();
     }
 }
 
-//header('location:list.php');
+header('location:list.php');
 ?>
