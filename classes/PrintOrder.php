@@ -3,7 +3,8 @@
 include 'data_Base.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/catalogoonline/vendor/mpdf/mpdf.php';
 
-class PrintOrder {
+class PrintOrder
+{
 
     //db
     private $db;
@@ -15,7 +16,8 @@ class PrintOrder {
     private $inv_number;
     private $inv_date;
 
-    function __construct($id) {
+    function __construct($id)
+    {
         $this->db = new data_Base();
         $this->DBH = $this->db->connect();
 
@@ -24,7 +26,8 @@ class PrintOrder {
         $this->inv_date = date('d-m-y');
     }
 
-    public function queryProducts() {
+    public function queryProducts()
+    {
         try {
             $stmt = $this->DBH->prepare('SELECT * FROM products p, orders_has_products op 
                                           WHERE op.orders_id = :id AND p.id = op.products_id');
@@ -46,7 +49,8 @@ class PrintOrder {
         return $products;
     }
 
-    public function queryCompany() {
+    public function queryCompany()
+    {
         try {
             $stmt2 = $this->DBH->prepare('SELECT * FROM company_info');
             $stmt2->execute();
@@ -57,10 +61,11 @@ class PrintOrder {
         return $company;
     }
 
-    public function queryCustomer() {
+    public function queryCustomer()
+    {
         try {
-            $stmt3 = $this->DBH->prepare('SELECT * FROM customers WHERE id = :id');
-            $stmt3->execute(array('id' => $this->order['customers_id']));
+            $stmt3 = $this->DBH->prepare('SELECT * FROM clients WHERE id = :id');
+            $stmt3->execute(array('id' => $this->order['clients_id']));
             $customer = $stmt3->fetch();
         } catch (PDOException $e) {
             echo 'ERROR: ' . $e->getMessage();
@@ -68,7 +73,8 @@ class PrintOrder {
         $this->customer = $customer;
     }
 
-    public function queryOrder() {
+    public function queryOrder()
+    {
         try {
             $stmt4 = $this->DBH->prepare('SELECT * FROM orders WHERE id = :id');
             $stmt4->execute(array('id' => $this->order_id));
@@ -79,10 +85,13 @@ class PrintOrder {
         $this->order = $ord;
     }
 
-    public function queryAddress() {
+    public function queryAddress()
+    {
         try {
-            $stmt5 = $this->DBH->prepare('SELECT * FROM addresses WHERE id = :id');
-            $stmt5->execute(array('id' => $this->order['addresses_id']));
+            $stmt5 = $this->DBH->prepare('SELECT clients.address, clients.zipcode, comuni.nome, province.nome
+            FROM orders, clients, comuni, province
+            WHERE orders.id = :id AND oredrs.clients_id = clients.id AND clients.comuni_id = comuni.id AND comuni.id_provincia = province.id');
+            $stmt5->execute(array('id' => $this->order_id));
             $adr = $stmt5->fetch();
         } catch (PDOException $e) {
             echo 'ERROR: ' . $e->getMessage();
@@ -90,23 +99,24 @@ class PrintOrder {
         return $adr;
     }
 
-    public function createPDF($type) {
+    public function createPDF($type)
+    {
         //create new PDF 
         $mpdf = new mPDF('c', 'A4', '', '', 0, 0, 0, 0, 0, 0);
         $mpdf->SetDisplayMode('fullpage');
-        $mpdf->list_indent_first_level = 0;  // 1 or 0 - whether to indent the first level of a list
-        if($type == 'order_details'){
+        $mpdf->list_indent_first_level = 0; // 1 or 0 - whether to indent the first level of a list
+        if ($type == 'order_details') {
             $mpdf->WriteHTML($this->processBody('ord'));
             $path = 'orders';
             $oDate = new DateTime($this->order['data']);
             //format date
             $sDate = $oDate->format("d-m-y");
-        }else{
+        } else {
             $mpdf->WriteHTML($this->processBody('inv'));
             $path = 'invoices';
             $sDate = $this->inv_date;
         }
-        
+
         //Create files
         $fileName = $path . '-' . $type . $this->order_id . '-date' . $sDate . '.pdf';
         $filePath = '../../../files/' . $path . '/' . $fileName;
@@ -115,18 +125,20 @@ class PrintOrder {
         return $filePath;
     }
 
-    public function savePDF($filePath, $fileType) {
+    public function savePDF($filePath, $fileType)
+    {
         $save = array('path' => $filePath, 'id' => $this->order_id);
         try {
-            $stmt6 = $this->DBH->prepare('INSERT INTO '.$fileType.' (path, orders_id) 
+            $stmt6 = $this->DBH->prepare('INSERT INTO ' . $fileType . ' (path, orders_id)
                                            value (:path, :id)');
             $stmt6->execute($save);
         } catch (PDOException $e) {
             echo 'ERROR: ' . $e->getMessage();
         }
     }
-    
-    private function processBody($type) {
+
+    private function processBody($type)
+    {
         require 'pdf_invoice_template.php';
         $html = $head . $css . $head_close;
         $products = $this->queryProducts();
@@ -155,18 +167,17 @@ class PrintOrder {
                         <td>
                         	<table class="t3">   
                         		<tr>';
-                                                if ($type == 'ord') $html .= '<td style="width:65mm">' . gettext('ord') . ' n&#186;<p>' . $this->order_id . '</p></td>';
-                                                else $html .= '<td style="width:65mm">' . gettext('inv') . ' n&#186;<p>' . $this->inv_number . '</p></td>';
-                        			$html .= '<td style="width:25mm">' . gettext('date') . ':<p>' . $today->format("d-m-y") . '</p></td>
+        if ($type == 'ord') $html .= '<td style="width:65mm">' . gettext('ord') . ' n&#186;<p>' . $this->order_id . '</p></td>';
+        else $html .= '<td style="width:65mm">' . gettext('inv') . ' n&#186;<p>' . $this->inv_number . '</p></td>';
+        $html .= '<td style="width:25mm">' . gettext('date') . ':<p>' . $today->format("d-m-y") . '</p></td>
                     		</tr>
                     	</table>
                     	<table class="t3">
                     		<tr>
                       		  <td style="width:90mm;height:25mm">Recipient:
-                            		<p>' . $this->customer['name'] . ' ' . $this->customer['surname'] . '<br>
-                           		   ' . $address['street'] . '<br>
-                          		   ' . $address['zip'] . ' ' . $address['city'] . ' ' . $address['province'] . '<br>
-                                           ' . $address['country'] . '</p>
+                            		<p>' . $this->customer['name'] . '<br>
+                           		   ' . $address['address'] . '<br>
+                          		   ' . $address['zipcode'] . ' ' . $address[3] . ' ' . $address[2] . '<br></p>
                                    </td>
                                 </tr>
                         </table>
@@ -175,8 +186,7 @@ class PrintOrder {
                     	<td>
                     		<table class="t2">
                     			<tr>
-                    				<td style="width:45mm">' . gettext('cust') . ':<p>' . $this->customer['surname'] . '</p></td>
-                    			  	<td style="width:45mm">' . gettext('code') . ':<p>' . $this->customer['id'] . '</p></td>
+                    				<td style="width:45mm">' . gettext('cust') . ':<p>' . $this->customer['name'] . '</p></td>
                      			 </tr>
                      			 <tr>
                          			<td style="width:45mm">' . gettext('piva') . ':<p>' . $this->customer['piva'] . '</p></td>
@@ -219,25 +229,24 @@ class PrintOrder {
         $totQty = 0;
         $totOrd = 0;
         foreach ($products as $prod) {
-            $discount = (($prod['retail_price'] - $prod['sold_price']) / $prod['retail_price']) * 100;
-            $qty = $prod['quantity'] * $prod['sold_price'];
-            
-            $html.= '<tr>
+            $discount = $prod['discount'];
+            $qty = $prod['quantity'] * (($prod['retail_price'] / 100) * (100 - $prod['discount']));
+
+            $html .= '<tr>
                         <td>' . $prod['cod'] . '</td>';
             if ($type == 'ord')
                 $html .= '<td><img src="../../' . $prod['image'] . '"></td>';
-                $html .= '<td>' . $prod['description'] . '</td>
+            $html .= '<td>' . $prod['description'] . '</td>
                           <td>' . $prod['quantity'] . '</td>
                           <td>' . $prod['retail_price'] . '</td>
                           <td>' . round($discount, 2) . '</td>
-                          <td>' . $prod['sold_price'] . '</td>
                           <td>' . $prod['vat'] . '</td>
                           <td>' . round($qty, 2) . '</td>';
-                
+
             $totQty += $prod['quantity'];
             $totOrd += $qty;
         }
-        $html.= '</table>
+        $html .= '</table>
             <div id="invoice_total">
                 <table>
                     <tr>
@@ -257,27 +266,33 @@ class PrintOrder {
         return $html;
     }
 
-    public function getOrder_id() {
+    public function getOrder_id()
+    {
         return $this->order_id;
     }
 
-    public function setOrder_id($order_id) {
+    public function setOrder_id($order_id)
+    {
         $this->order_id = $order_id;
     }
 
-    public function getOrder() {
+    public function getOrder()
+    {
         return $this->order;
     }
 
-    public function getCustomer() {
+    public function getCustomer()
+    {
         return $this->customer;
     }
-    
-    public function setInv_number($inv_number) {
+
+    public function setInv_number($inv_number)
+    {
         $this->inv_number = $inv_number;
     }
 
-    public function setInv_date($inv_date) {
+    public function setInv_date($inv_date)
+    {
         $this->inv_date = $inv_date;
     }
 

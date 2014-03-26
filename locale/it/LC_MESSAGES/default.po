@@ -2,15 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: melarossa\n"
 "POT-Creation-Date: 2013-09-26 11:35+0100\n"
-"PO-Revision-Date: 2014-01-31 10:54+0100\n"
+"PO-Revision-Date: 2014-03-24 12:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: me <lol@lol.lol>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
 "X-Poedit-Basepath: C:\\DEV\\WP\\php\\melarossa\n"
+"Language: it\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: header
@@ -442,3 +443,50 @@ msgstr "Gestisci"
 msgid "req.ins"
 msgstr "Rischiedi Inserimento"
 
+msgid "provs"
+msgstr "Province"
+
+msgid "regio"
+msgstr "Regione"
+
+msgid "regios"
+msgstr "Regioni"
+
+msgid "com"
+msgstr "Comune"
+
+msgid "coms"
+msgstr "Comuni"
+
+msgid "zcod"
+msgstr "Codice postale"
+
+msgid "user"
+msgstr "Utente"
+
+msgid "users"
+msgstr "Utenti"
+
+msgid "next.no.client"
+msgstr "Continua senza cliente"
+
+msgid "new.client"
+msgstr "Nuovo cliente"
+
+msgid "prev"
+msgstr "Preventivo"
+
+msgid "prevs"
+msgstr "Preventivi"
+
+msgid "search"
+msgstr "Cerca"
+
+msgid "discount"
+msgstr "Sconto"
+
+msgid "old.ord"
+msgstr "C'e' un carrello in sospeso"
+
+msgid "search.from.complete.list"
+msgstr "Cerca dalla lista completa dei prodotti"

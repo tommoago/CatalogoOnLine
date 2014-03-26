@@ -14,6 +14,7 @@ $stmt->execute(array('o_id' => $cart->id));
 $stmt2 = $DBH->prepare('DELETE FROM orders WHERE id = :o_id');
 $stmt2->execute(array('o_id' => $cart->id));
 $cart->emptyCart();
+$_SESSION['client'] = null;
 
-header('location:list.php');
+header('location:../index.php');
 ?>

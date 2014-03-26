@@ -1,12 +1,13 @@
 <?php
 include '../../conf/config.php';
+include '../../classes/Cart.php';
 include '../../conf/twig.php';
 include '../../classes/Session.php';
 $session = new Session();
 
-if(isset($_SESSION['client'])){
-    header('location: actions/index.php');
 
+if (isset($_SESSION['client'])) {
+    header('location: actions/index.php');
 };
 
 $template = $twig->loadTemplate('user/structure/index.phtml');

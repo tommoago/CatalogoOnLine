@@ -73,6 +73,7 @@ class Cart
     public function emptyCart()
     {
         $this->products = array();
+        $this->tot = null;
         $this->id = null;
         $this->ide = null;
         $this->prev = null;

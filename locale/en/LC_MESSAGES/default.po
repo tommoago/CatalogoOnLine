@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: catalogoonline\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
@@ -8,7 +8,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.4\n"
+"Language: en\n"
+"X-Poedit-Basepath: C:/SoftwareDevelopment/server/htdocs/CatalogoOnLine\n"
 
 #: header
 msgid "who"
@@ -431,3 +433,51 @@ msgstr "Manage"
 
 msgid "req.ins"
 msgstr "Request Inclusion"
+
+msgid "provs"
+msgstr "Provinces"
+
+msgid "regio"
+msgstr "Region"
+
+msgid "regios"
+msgstr "Regions"
+
+msgid "com"
+msgstr "City"
+
+msgid "coms"
+msgstr "Cities"
+
+msgid "zcod"
+msgstr "Zip code"
+
+msgid "user"
+msgstr "User"
+
+msgid "users"
+msgstr "Users"
+
+msgid "next.no.client"
+msgstr "Continue without customer"
+
+msgid "new.client"
+msgstr "New customer"
+
+msgid "prev"
+msgstr "Quotation"
+
+msgid "prevs"
+msgstr "Quotations"
+
+msgid "search"
+msgstr "Search"
+
+msgid "discount"
+msgstr "Discount"
+
+msgid "old.ord"
+msgstr "There's an outstanding cart"
+
+msgid "search.from.complete.list"
+msgstr "Search from the complete list of products"

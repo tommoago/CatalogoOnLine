@@ -26,7 +26,6 @@ if ($cart->ide) {
 } else {
     $ide = ((int)$lastide['MAX(ide)'] + 1);
 }
-print_r($ide);
 isset($_SESSION['cart']) ? : $_SESSION['cart'] = new Cart();
 $cart = $_SESSION['cart'];
 if (isset($_POST['quotation'])) {
@@ -77,11 +76,43 @@ if (!isset($cart->id)) {
 
 
 }
-print_r($data);
+//PARTE NUOVA
+
+
+//faccio questo per via di un conflitto con la clase printorder
+session_start();
+// I18N support information here
+$language =  isset($_SESSION['lang'])? $_SESSION['lang']: 'it';
+putenv('LANG='.$language);
+setlocale(LC_ALL, $language);
+
+// Set the text domain as 'default'
+$domain = 'default';
+bindtextdomain($domain, $_SERVER["DOCUMENT_ROOT"] .'/catalogoonline/locale');
+textdomain($domain);
+include '../../../classes/PrintOrder.php';
+require_once '../../../vendor/phpmailer/phpmailer/class.phpmailer.php';
+$session = new Session();
+$mail = new PHPMailer();
+$pdf = new PrintOrder($ord_id);
+
+//crea pdf
+$path = $pdf->createPDF('order_details');
+$pdf->savePDF($path, 'order_details');
+$customer = $pdf->getCustomer();
+$order = $pdf->getOrder();
+
+//manda mail con il pdf, non la fattura TO DO : aggiunge nome ditta!
+$mail->AddReplyTo('azienda.catalogo@gmail.com', 'prova CatalogoOnLine');
+$mail->SetFrom('azienda.catalogo@gmail.com', 'prova CatalogoOnLine');
+$address = $customer['email'];
+$mail->AddAddress($address, $customer['name']);
+$mail->Subject = gettext('ord').' '.$order['id'].' '.gettext('conf');
+$mail->MsgHTML(gettext('ord.mail.body').' '.$order['id']);
+$mail->AddAttachment($path);      // attachment
+$mail->Send();
+
 $_SESSION['client'] = null;
-
-
-
 
 
 ?>
