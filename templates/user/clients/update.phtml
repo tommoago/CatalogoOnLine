@@ -1,0 +1,98 @@
+{% include 'admin/structure/header.phtml' %}
+<script>
+    $(document).ready(function () {
+        $('#regio').change(function () {
+            $('#div2').empty();
+            $('#div3').empty();
+            $.get("getProv.php?id=" + $('#regio').val(), function (datas) {
+                $('#div2').append('{% trans 'prov' %}<select name="prov" id="prov"></select>');
+                $('#prov').append('<option selected="" disabled="" hidden="" value="">{% trans 'provs' %}</option>');
+                $.each(datas, function (i, data) {
+                    $('#prov').append('<option value=' + data.id + '>' + data.nome + '</option>');
+                });
+                $('#page').trigger('create');
+                $('#prov').change(function () {
+                    $('#div3').empty();
+                    $.get("getCom.php?id=" + $('#prov').val(), function (datas) {
+                        $('#div3').append('{% trans 'com' %}<select name="com" id="com"></select>');
+                        $('#com').append('<option selected="" disabled="" hidden="" value="">{% trans 'coms' %}</option>');
+                        $.each(datas, function (i, data) {
+                            $('#com').append('<option value=' + data.id + '>' + data.nome + '</option>');
+                        });
+                        $('#page').trigger('create');
+                        $('#com').change(function () {
+                            $('#div3').append('<input class="invio" type="submit" value="{% trans "submit" %}"/>');
+                            $('#page').trigger('create');
+                        });
+                    }, "json");
+                });
+            }, "json");
+        });
+    })
+</script>
+
+<div id='content'>
+    <form action="update.php" method="post" id="formproduct" enctype="multipart/form-data">
+
+        <input type="hidden" name="id" value="{{ cust.id }}"/>
+
+        {% trans "name" %}
+        <input type="text" name="name" value="{{cust.name}}"/>
+        {% trans "mail" %}
+        <input type="text" name="mail"  value="{{cust.mail}}"/>
+        {% trans "adr" %}
+        <input type="text" name="address"  value="{{cust.address}}"/>
+        {% trans "zcod" %}
+        <input type="text" name="zcod"  value="{{cust.zipcode}}"/>
+        {% trans "piva" %}
+        <input type="text" name="piva"  value="{{cust.piva}}"/>
+        {% trans "codf" %}
+        <input type="text" name="codfis"  value="{{cust.cod_fis}}"/>
+
+
+        <div id="div1">
+            {% trans 'regio' %}
+            <select name="regio" id="regio">
+                {% for regss in regs %}
+                {% if regss.id==reg.id %}
+                <option selected value="{{ regss.id }}">{{ regss.nome }}</option>
+                {% endif %}
+                {% if regss.id!=reg.id %}
+                <option value="{{ regss.id }}">{{ regss.nome }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        <div id="div2">
+            {% trans 'prov' %}
+            <select name="prov" id="prov">
+                {% for provss in provs %}
+                {% if provss.id==prov.id %}
+                <option selected value="{{ provss.id }}">{{ provss.nome }}</option>
+                {% endif %}
+                {% if provss.id!=prov.id %}
+                <option value="{{ provss.id }}">{{ provss.nome }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        <div id="div3">
+            {% trans 'com' %}
+            <select name="com" id="com">
+                {% for comss in coms %}
+                {% if comss.id==com.id %}
+                <option selected value="{{ comss.id }}">{{ comss.nome }}</option>
+                {% endif %}
+                {% if comss.id!=com.id %}
+                <option value="{{ comss.id }}">{{ comss.nome }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+            <input class="invio" type="submit" value='{% trans "submit" %}'/>
+        </div>
+
+
+    </form>
+
+</div>
+{% include 'admin/structure/footer.phtml' %}

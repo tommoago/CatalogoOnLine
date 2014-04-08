@@ -15,6 +15,7 @@ try {
     $stmt->execute(array('id' => $_POST['id']));
     $product = $stmt->fetch();
     $product['qty'] = 1;
+    print_r ($_POST['qty_add']);
     if (isset($_POST['qty_add']) && $_POST['qty_add'] != '' && $_POST['qty_add'] != 0)
         $product['qty'] = $_POST['qty_add'];
 
@@ -57,7 +58,7 @@ if (isset($_SESSION['client'])) {
         foreach ($cart->getProducts() as $row) {
             $stmt2 = $DBH->prepare('INSERT INTO orders_has_products (orders_id, products_id, quantity, discount)
                                                         VALUES(:ord_id, :prod_id, :qty, :discount)
-                                                        ON DUPLICATE KEY UPDATE quantity = quantity + :qty, discount = :discount ');
+                                                        ON DUPLICATE KEY UPDATE quantity = :qty, discount = :discount ');
             $stmt2->execute(array('ord_id' => $cart->id, 'prod_id' => $row['id'], 'qty' => $row['qty'], 'discount' => $row['discount']));
         }
         $message = gettext('ord.conf.usr');

@@ -51,11 +51,19 @@
                 <a href="{{ pathM }}orders/list.php">{% trans "sho" %} {% trans "ords" %}</a>
             </li>
 
-            {% if(pSession.user.id != '' and pSession.user.role != 'jack' and pSession.user.role != 'operator')%}
+            <li data-theme="a">
+                <a href="{{ pathM }}quotation/list.php">{% trans "sho" %} {% trans "prevs" %}</a>
+            </li>
+
+            <li data-theme="a">
+                <a href="{{ pathM }}clients/list.php">{% trans "sho" %} {% trans "custs" %}</a>
+            </li>
+
+            <!--{% if(pSession.user.id != '' and pSession.user.role != 'jack' and pSession.user.role != 'operator')%}
             <li data-icon="custom" id="cart" data-theme="a">
                 <a href="{{ path }}cart/list.php">{% trans "cart" %}</a>
             </li>
-            {% endif %}
+            {% endif %}-->
 
         </ul>
     </div>

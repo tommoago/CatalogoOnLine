@@ -128,9 +128,16 @@ msgstr "Cannot delete because of depency with another category."
 msgid "ord.mail.body"
 msgstr "This mail is automatically sent to confirm your order with ID:"
 
+msgid "ord.mail.body.prev"
+msgstr "This mail is automatically sent to confirm your quotation with ID:"
+
 msgid "ord.conf.usr"
 msgstr ""
 "Your order has been processed, you will be recontacted from an operator."
+
+msgid "prev.conf.usr"
+msgstr ""
+"Your quotation has been processed, you will recive a mail with the quotation."
 
 msgid "ord.up.usr"
 msgstr "Your order has been updated, you will be recontacted from an operator."
@@ -481,3 +488,9 @@ msgstr "There's an outstanding cart"
 
 msgid "search.from.complete.list"
 msgstr "Search from the complete list of products"
+
+msgid "change.client"
+msgstr "Change Customer"
+
+msgid "continue"
+msgstr "Continue"

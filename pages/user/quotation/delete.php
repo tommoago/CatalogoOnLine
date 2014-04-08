@@ -12,8 +12,6 @@ try {
     $DBH = $db->connect();
     $pdf = new PrintOrder($id);
     $pdf->deletePDF();
-    print_r($id);
-    print_r($pdf->getPath());
     if (file_exists($pdf->getPath())) {
         unlink($pdf->getPath());
     }

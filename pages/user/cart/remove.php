@@ -14,9 +14,7 @@ $cart->removeProduct($_GET['id']);
 $stmt = $DBH->prepare('SELECT * FROM orders_has_products WHERE orders_id = :cart_id');
 $stmt->execute(array('cart_id' => $cart->id));
 if (!$stmt->fetchAll()) {
-    $stmt = $DBH->prepare('DELETE FROM orders WHERE id = :cart_id');
-    $stmt->execute(array('cart_id' => $cart->id));
-    $cart->emptyCart();
+    header('location:empty.php');
 }
 
 

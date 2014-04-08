@@ -2,7 +2,7 @@
 
 <div id='content'>
     <p class="detail_adm">
-        {% trans "prevs" %} {% trans "list" %}
+        {% trans "ords" %} {% trans "list" %}
     </p>
 
     <p>
@@ -23,10 +23,9 @@
             {% if ord.quotation=='1' %}
             <td>{% trans 'prev' %}</td>
             {% endif %}
-</tr><tr>
-            <td class="delete"><a data-role="button" href='confirm.php?id={{ ord.id }}'><img
-                        src="../../../images/icons/system/checkmark/checkmark-256.png" width="20%"
-                        alt='{% trans "del" %}'></a></td>
+            {% if ord.quotation=='0' %}
+            <td></td>
+            {% endif %}
 
             <td class="delete"><a data-role="button" href='delete.php?id={{ ord.id }}'><img
                         src="../../../images/icons/delete/delete-256.png" width="20%" alt='{% trans "del" %}'></a></td>

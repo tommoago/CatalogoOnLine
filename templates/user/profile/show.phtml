@@ -47,7 +47,8 @@
     <a data-role="button" href='delete.php?id={{ cus.id }}' onclick="return confirm('{% trans " del.profile" %}')"><img
         src="../../../images/icons/delete/delete-256.png" height="50px" alt='{% trans "del" %}'></a>
     <!-- commentato perchè non vuole modifica utenti, ma noi lo teniamo -->
-    <!-- <td class="edit"><a href='prepareUpdate.php?id={{ cus.id }}'><img src="../../../images/icons/edit/edit-256.png" alt='{% trans "edit" %}'></a></td> -->
+    <a data-role="button" href='prepareUpdate.php?id={{ cus.id }}'><img src="../../../images/icons/edit/edit-256.png"
+                                                                        height="50px" alt='{% trans "edit" %}'></a>
 
 
 </div>

@@ -1,0 +1,35 @@
+{% include 'user/structure/header.phtml' %}
+
+<div id='content'>
+	<p>
+		{% trans 'name' %}: {{ cust.name }}
+	</p>
+	<p>
+		{% trans 'adr' %}: {{ cust.address }}
+	</p>
+	<p>
+		{% trans 'mail' %}: {{ cust.mail }}
+	</p>
+    <p>
+        {% trans 'zcod' %}: {{ cust.zipcode }}
+    </p>
+    <p>
+        {% trans 'codf' %}: {{ cust.cod_fis }}
+    </p>
+    <p>
+        {% trans 'piva' %}: {{ cust.piva }}
+    </p>
+    <p>
+        {% trans 'regio' %}: {{ reg.nome }}
+    </p>
+    <p>
+        {% trans 'prov' %}: {{ prov.nome }}
+    </p>
+    <p>
+        {% trans 'com' %}: {{ com.nome }}
+    </p>
+	<a data-role="button" href='prepareUpdate.php?id={{ cust.id }}'><img src="../../../images/icons/edit/edit-256.png" width="10%" alt='{% trans "edit" %}'></a>
+	<a data-role="button" href='delete.php?id={{ cust.id }}'><img src="../../../images/icons/delete/delete-256.png" width="10%" alt='{% trans "del" %}'></a>
+
+</div>
+{% include 'user/structure/footer.phtml' %}

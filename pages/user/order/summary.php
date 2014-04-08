@@ -17,40 +17,15 @@ $ordProds = array();
 try {
     $db = new data_base();
     $DBH = $db->connect();
-    /* //controllo se l'ultimo ordine non è stato confermato, in tal caso provvedo ad aggiungere in coda i dati del presente carrello
-     if (isset($_SESSION['user']['oldOrd'])) {
-         $stmt3 = $DBH->prepare('SELECT * FROM orders  WHERE customers_id = :id AND  confirmed = 0 AND clients_id = :clients_id');
-         $stmt3->execute(array('id' => $_SESSION['user']['id'], 'clients_id' => $_SESSION['client_id']));
-         $oldOrd = $stmt3->fetch();
-
-         $stmt4 = $DBH->prepare('SELECT * FROM orders_has_products  WHERE orders_id = :id');
-         $stmt4->execute(array('id' => $oldOrd['id']));
-         $ordProds = $stmt4->fetchAll();
-         foreach ($ordProds as &$ordP) {
-             $ordP['qty'] = $ordP['quantity'];
-             $ordP['id'] = $ordP['products_id'];
-             $ordP['price'] = $ordP['sold_price'];
-             //$ordP['old'] = 'yes';
-             $cart->addProduct($ordP);
-         }
-     }*/
     foreach ($cart->getProducts() as $row) {
         $stmt = $DBH->prepare('SELECT * FROM products WHERE id = :id');
         $stmt->execute(array('id' => $row['id']));
         $product = $stmt->fetch();
         $product['qty'] = $row['qty'];
 
-        //mette il prezzo giusto
         $product['price'] = $row['discount_price'];
-        /* if (isset($_SESSION['user']['price_range']))
-             switch ($_SESSION['user']['price_range']) {
-                 case 1 :
-                     $product['price'] = $product['wholesale_price'];
-                     break;
-                 case 3 :
-                     $product['price'] = $product['super_price'];
-                     break;
-             }*/
+
+        $product['row_price'] = $row['qty'] * $row['discount_price'];
 
         $stmt2 = $DBH->prepare('SELECT * FROM categories WHERE id = :id');
         $stmt2->execute(array('id' => $product['categories_id']));

@@ -1,19 +1,11 @@
 {% include 'user/structure/header.phtml' %}
-{% if message=='old.ord' %}
+{% if message == 'old.ord' %}
 <script>
     $(document).ready(function () {
-        alert('{% trans '
-        old.ord
-        ' %}'
-        )
-        ;
+        alert("{% trans 'old.ord' %}");
     })
 </script>
-
-
 {% endif %}
-
-
 <div id='content'>
 
     <p>
@@ -25,6 +17,8 @@
         %}</a>
     {% endif %}
 
+    <a href="../actions/changeClient.php" data-role="button" data-icon="add" data-theme="a">{% trans "change.client"
+        %}</a>
     {% if message=='' %}
     <a href="../products/catalog.php" data-role="button" data-icon="add" data-theme="a">{% trans "new" %} {% trans "ord"
         %}</a>

@@ -19,6 +19,7 @@
                 <th>&#128;</th>
                 <th>{% trans "cod" %}</th>
                 <th>{% trans "qty" %}</th>
+                <th>{% trans "tot" %}</th>
             </tr>
             {% for prod in prods %}
             <tr>
@@ -28,9 +29,12 @@
                 <td><b>{{ prod.price }}</b></td>
                 <td><i>{{ prod.cod }}</i></td>
                 <td style="text-align:center">{{ prod.qty }}</td>
+                <td >{{ prod.row_price }}</td>
             </tr>
             {% endfor %}
         </table>
+        </br>
+        <h7>{% trans 'tot' %}: {{ tot }}&#128;</h7>
         {% if client!='' %}
         <h7>{% trans 'cust' %}: {{client.name}}</h7>
         <input type="hidden" name="client_id" value='{{client.id}}'/>

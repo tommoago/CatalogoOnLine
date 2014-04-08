@@ -1,6 +1,6 @@
 <?php
 
-include 'data_Base.php';
+//include 'data_Base.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/catalogoonline/vendor/mpdf/mpdf.php';
 
 class PrintOrder
@@ -23,7 +23,9 @@ class PrintOrder
 
         $this->order_id = $id;
         $this->queryOrder();
+        $this->queryCustomer();
         $this->inv_date = date('d-m-y');
+
     }
 
     public function queryProducts()
@@ -55,6 +57,9 @@ class PrintOrder
             $stmt2 = $this->DBH->prepare('SELECT * FROM company_info');
             $stmt2->execute();
             $company = $stmt2->fetch();
+            $stmt2 = $this->DBH->prepare('SELECT path FROM company_images ');
+            $stmt2->execute();
+            $company['image'] = $stmt2->fetch();
         } catch (PDOException $e) {
             echo 'ERROR: ' . $e->getMessage();
         }
@@ -90,7 +95,7 @@ class PrintOrder
         try {
             $stmt5 = $this->DBH->prepare('SELECT clients.address, clients.zipcode, comuni.nome, province.nome
             FROM orders, clients, comuni, province
-            WHERE orders.id = :id AND oredrs.clients_id = clients.id AND clients.comuni_id = comuni.id AND comuni.id_provincia = province.id');
+            WHERE orders.id = :id AND orders.clients_id = clients.id AND clients.comuni_id = comuni.id AND comuni.id_provincia = province.id');
             $stmt5->execute(array('id' => $this->order_id));
             $adr = $stmt5->fetch();
         } catch (PDOException $e) {
@@ -118,12 +123,20 @@ class PrintOrder
         }
 
         //Create files
-        $fileName = $path . '-' . $type . $this->order_id . '-date' . $sDate . '.pdf';
-        $filePath = '../../../files/' . $path . '/' . $fileName;
-        chmod('../../../files/' . $path, 0777);
+        $fileName = $path . '-' . $type . $this->order_id . '.pdf';
+        $filePath = $_SERVER['DOCUMENT_ROOT'] . '/catalogoonline/files/' . $path . '/' . $fileName;
+        chmod($_SERVER['DOCUMENT_ROOT'] . '/catalogoonline/files/' . $path, 0777);
         $mpdf->Output($filePath, 'F');
         return $filePath;
     }
+
+    public function getPath()
+    {
+        $type = 'order_details';
+        $path = 'orders';
+        return $filePath = $_SERVER['DOCUMENT_ROOT'] . '/CatalogoOnLine/files/' . $path . '/' . $path . '-' . $type . $this->order_id . '.pdf';
+    }
+
 
     public function savePDF($filePath, $fileType)
     {
@@ -132,6 +145,18 @@ class PrintOrder
             $stmt6 = $this->DBH->prepare('INSERT INTO ' . $fileType . ' (path, orders_id)
                                            value (:path, :id)');
             $stmt6->execute($save);
+        } catch (PDOException $e) {
+            echo 'ERROR: ' . $e->getMessage();
+        }
+    }
+
+
+    public function deletePDF()
+    {
+        $del = array('id' => $this->order_id);
+        try {
+            $stmt6 = $this->DBH->prepare('DELETE FROM order_details WHERE orders_id = :id');
+            $stmt6->execute($del);
         } catch (PDOException $e) {
             echo 'ERROR: ' . $e->getMessage();
         }
@@ -152,18 +177,23 @@ class PrintOrder
 
             <p style="text-align:center; font-weight:bold; padding-top:5mm;padding-bottom:5mm;">' . gettext($type) . '</p><br />
                 <table>
-                    <tr>
-                        <td style="width:90mm;text-align:center" >
-                            <h1 class="heading">' . $company['name'] . '</h1>
-                            <h2 class="heading">
-                                ' . $company['address'] . '<br />
-                                ' . $company['zip'] . ' ' . $company['city'] . ' ' . $company['province'] . '<br />
-                                ' . $company['country'] . '<br />
-                                ' . $company['name'] . '<br />  
-                                ' . $company['website'] . '<br />
-                                ' . $company['telephone'] . '
-                            </h2>
-                        </td>
+                    <tr style="width:100%">
+                       <td style="width:100%" ><table style="width:100%">
+                       <tr style="width:100%"><td style="width:100%;">
+				<img src="' . $_SERVER['DOCUMENT_ROOT'] . '/CatalogoOnLine/' . $company['image']['path'] . '" style="width:253px; height:135px" />
+</td></tr><tr style="width:100%"><td style="text-align:center; width:100%;">
+					<h1 class="heading">' . $company['name'] . '</h1>
+					<h2 class="heading"> ' . $company['address'] . '
+					<br />
+					' . $company['zip'] . ' ' . $company['city'] . ' ' . $company['province'] . '
+					<br />
+					' . $company['country'] . '
+					<br />
+					' . $company['website'] . '
+					<br />
+					' . $company['telephone'] . ' </h2></td></tr>
+					</table>
+				</td>
                         <td>
                         	<table class="t3">   
                         		<tr>';
@@ -192,23 +222,8 @@ class PrintOrder
                          			<td style="width:45mm">' . gettext('piva') . ':<p>' . $this->customer['piva'] . '</p></td>
                          			<td style="width:45mm">' . gettext('codf') . ':<p>' . $this->customer['cod_fis'] . '</p></td>
                     			 </tr>
-                    			 <tr>
-                    			   	  <td style="width:45mm">Causale trasporto:<p>LOL</p></td>
-                         			  <td style="width:45mm">Trasporto:<p>LOL</p></td>
-                         		 </tr>
-                         		 <tr>
-                         		   	   <td style="width:45mm">Banca d&#146;appoggio:<p>LOL</p></td>
-                         		   	   <td style="width:45mm">Valuta:<p>LOL</p></td>
-                         		  </tr>
                  			</table>
                  		</td>
-                 		<td>
-                    		<table>
-                    			  <tr class="t4">
-                     			  	 <td style="width:90mm;height:35mm">' . gettext('descr') . ':<p>LOL</p></td>
-                     			  </tr>
-                 			</table>
-                    	</td>
                     </tr>
 			 </table>
                 <div id="content_pdf">
@@ -240,8 +255,9 @@ class PrintOrder
                           <td>' . $prod['quantity'] . '</td>
                           <td>' . $prod['retail_price'] . '</td>
                           <td>' . round($discount, 2) . '</td>
+                          <td>' . (($prod['retail_price'] / 100) * (100 - $prod['discount'])) . '</td>
                           <td>' . $prod['vat'] . '</td>
-                          <td>' . round($qty, 2) . '</td>';
+						  <td>' . round($qty, 2) . '</td>';
 
             $totQty += $prod['quantity'];
             $totOrd += $qty;

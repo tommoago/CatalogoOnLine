@@ -52,13 +52,13 @@
         {% endif %} </h5>
 
     <h3> &#128; {{ prod.price }} </h3>
-
+    <form action="../cart/add.php" method="post">
     <div>
 			<span>{% trans "sel" %} {% trans "qty" %}:
 				<input type="text" id="qty_add" name="qty_add" value="1"/>
 			</span>
     </div>
-    <form action="../cart/add.php" method="post">
+
         <label for="discount">{% trans 'discount' %}:</label>
         <input type="range" name="discount" id="discount" value="0" min="0" max="100"/>
         <input type="hidden" name="id" value="{{ prod.id }}"/>

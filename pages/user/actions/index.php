@@ -8,9 +8,6 @@ isset($_SESSION['cart']) ? : $_SESSION['cart'] = new Cart();
 $cart = $_SESSION['cart'];
 
 
-if (isset($cart->id)) {
-    header('location:../products/catalog.php');
-}
 if (isset($_GET['client_id'])) {
     $_SESSION['client'] = $_GET['client_id'];
 };

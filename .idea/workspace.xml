@@ -4,28 +4,28 @@
     <list default="true" id="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" name="Default" comment="" />
     <ignored path="CatalogoOnLine.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395823148640" ignored="false" />
+    <file path="/Dummy.txt" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396954346864" ignored="false" />
     <file path="/a.dummy" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1393000508182" ignored="false" />
     <file path="/authenticate.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1394642307148" ignored="false" />
-    <file path="/index.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395408707453" ignored="false" />
-    <file path="/header.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1394011669463" ignored="false" />
-    <file path="/list.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395403888907" ignored="false" />
+    <file path="/index.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396344359770" ignored="false" />
+    <file path="/header.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396627119613" ignored="false" />
+    <file path="/list.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396955097849" ignored="false" />
     <file path="/insert.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1393585945834" ignored="false" />
     <file path="/insert.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1393587326406" ignored="false" />
-    <file path="/delete.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395162013171" ignored="false" />
-    <file path="/list.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395410027509" ignored="false" />
+    <file path="/delete.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396261459684" ignored="false" />
+    <file path="/list.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396617042571" ignored="false" />
     <file path="/prepareUpdate.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1393595188561" ignored="false" />
     <file path="/show.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1394530694449" ignored="false" />
     <file path="/update.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1394814010833" ignored="false" />
     <file path="/update.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1393595539590" ignored="false" />
     <file path="/prepareInsert.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1393409005255" ignored="false" />
-    <file path="/show.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395142664215" ignored="false" />
-    <file path="/catalog.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1394037535590" ignored="false" />
-    <file path="/index.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395826979637" ignored="false" />
+    <file path="/show.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396954894464" ignored="false" />
+    <file path="/catalog.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396344185759" ignored="false" />
+    <file path="/index.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396339131806" ignored="false" />
     <file path="/newOrder.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1393926133065" ignored="false" />
     <file path="/pager.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1393940101937" ignored="false" />
     <file path="/menu-right.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1394009723526" ignored="false" />
-    <file path="/productBar.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1394114480905" ignored="false" />
+    <file path="/productBar.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396346227148" ignored="false" />
     <file path="/prepareListByCode.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1394101593318" ignored="false" />
     <file path="/listByCode.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1394103484827" ignored="false" />
     <file path="/listByCode.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395409670973" ignored="false" />
@@ -35,16 +35,18 @@
     <file path="/listByDN.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395409679094" ignored="false" />
     <file path="/addClient.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1394527949544" ignored="false" />
     <file path="/addClient.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1394528177308" ignored="false" />
-    <file path="/summary.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395409806021" ignored="false" />
-    <file path="/summary.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395323832401" ignored="false" />
-    <file path="/add.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395227794143" ignored="false" />
-    <file path="/confirm.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395843086875" ignored="false" />
+    <file path="/summary.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396607191600" ignored="false" />
+    <file path="/summary.phtml" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396608387931" ignored="false" />
+    <file path="/add.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396259366227" ignored="false" />
+    <file path="/confirm.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396617532998" ignored="false" />
     <file path="/Cart.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395825681049" ignored="false" />
-    <file path="/empty.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395762735843" ignored="false" />
-    <file path="/remove.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1394815939634" ignored="false" />
+    <file path="/empty.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396260806338" ignored="false" />
+    <file path="/remove.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396271784803" ignored="false" />
     <file path="/edit.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395323231831" ignored="false" />
-    <file path="/default.po" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395660589646" ignored="false" />
-    <file path="/PrintOrder.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1395834394332" ignored="false" />
+    <file path="/default.po" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396856801168" ignored="false" />
+    <file path="/PrintOrder.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396263702231" ignored="false" />
+    <file path="/changeClient.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396346110013" ignored="false" />
+    <file path="/orderByClient.php" changelist="0b3726ac-5f5f-4d9f-a2f2-6864df00e7d7" time="1396621741951" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,25 +60,84 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+  <component name="DatabaseView">
+    <flatten value="false" />
+    <groupTables value="false" />
+    <sortChildren value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="CatalogoOnLine" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="confirm.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/user/order/confirm.php">
+      <file leaf-file-name="prepareUpdate.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/user/clients/prepareUpdate.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="14" selection-start="4064" selection-end="4064" vertical-scroll-proportion="0.6445993">
+            <state line="6" column="45" selection-start="188" selection-end="188" vertical-scroll-proportion="-3.9230769">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrintOrder.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/PrintOrder.php">
+      <file leaf-file-name="delete.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/user/clients/delete.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="278" column="20" selection-start="10892" selection-end="10892" vertical-scroll-proportion="-181.76923">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getCom.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/user/clients/getCom.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getProv.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/user/clients/getProv.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/user/clients/list.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="11" selection-start="345" selection-end="345" vertical-scroll-proportion="-4.8076925">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/user/clients/show.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="45" selection-start="188" selection-end="188" vertical-scroll-proportion="-3.9230769">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/user/clients/show.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="16" selection-start="919" selection-end="919" vertical-scroll-proportion="-17.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.phtml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/user/clients/list.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="29" selection-start="331" selection-end="331" vertical-scroll-proportion="0.3074141">
               <folding />
             </state>
           </provider>
@@ -93,6 +154,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLogSettings">
+    <option name="myStructureFilterPaths" />
     <option name="myDateState">
       <MyDateState />
     </option>
@@ -100,22 +162,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/templates/admin/products/show.phtml" />
-        <option value="$PROJECT_DIR$/templates/user/actions/index.phtml" />
-        <option value="$PROJECT_DIR$/templates/user/products/listByCode.phtml" />
-        <option value="$PROJECT_DIR$/templates/user/products/listByDN.phtml" />
-        <option value="$PROJECT_DIR$/templates/user/products/listComplete.phtml" />
-        <option value="$PROJECT_DIR$/pages/user/order/summary.php" />
-        <option value="$PROJECT_DIR$/pages/user/cart/list.php" />
-        <option value="$PROJECT_DIR$/pages/user/products/listComplete.php" />
+        <option value="$PROJECT_DIR$/pages/user/order/confirm.php" />
+        <option value="$PROJECT_DIR$/templates/user/quotation/list.phtml" />
+        <option value="$PROJECT_DIR$/templates/user/orders/orderByClient.phtml" />
+        <option value="$PROJECT_DIR$/pages/user/clients/list.php" />
+        <option value="$PROJECT_DIR$/pages/user/orders/orderByClient.php" />
+        <option value="$PROJECT_DIR$/templates/user/quotation/quotationByClient.phtml" />
+        <option value="$PROJECT_DIR$/pages/user/quotation/quotationByClient.php" />
+        <option value="$PROJECT_DIR$/templates/user/structure/header.phtml" />
         <option value="$PROJECT_DIR$/locale/it/LC_MESSAGES/default.po" />
         <option value="$PROJECT_DIR$/locale/en/LC_MESSAGES/default.po" />
-        <option value="$PROJECT_DIR$/pages/user/cart/empty.php" />
-        <option value="$PROJECT_DIR$/classes/Cart.php" />
-        <option value="$PROJECT_DIR$/pages/user/index.php" />
-        <option value="$PROJECT_DIR$/pages/user/actions/index.php" />
-        <option value="$PROJECT_DIR$/classes/PrintOrder.php" />
-        <option value="$PROJECT_DIR$/pages/user/order/confirm.php" />
+        <option value="$PROJECT_DIR$/pages/user/quotation/edit.php" />
+        <option value="$PROJECT_DIR$/pages/user/quotation/delete.php" />
+        <option value="$PROJECT_DIR$/pages/user/clients/prepareUpdate.php" />
+        <option value="$PROJECT_DIR$/pages/user/clients/show.php" />
+        <option value="$PROJECT_DIR$/templates/user/clients/show.phtml" />
+        <option value="$PROJECT_DIR$/templates/user/clients/list.phtml" />
       </list>
     </option>
   </component>
@@ -181,6 +243,100 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CatalogoOnLine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CatalogoOnLine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CatalogoOnLine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CatalogoOnLine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clients" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CatalogoOnLine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CatalogoOnLine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CatalogoOnLine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CatalogoOnLine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="customers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CatalogoOnLine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CatalogoOnLine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -217,11 +373,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="order" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -235,7 +387,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="customers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -249,8 +409,8 @@
     <property name="options.lastSelected" value="vcs.Git" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../PHPStorm/StaffMan" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -265,13 +425,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\SoftwareDevelopment\Server\htdocs\CatalogoOnLine\templates\user\quotation" />
-      <recent name="C:\SoftwareDevelopment\Server\htdocs\CatalogoOnLine\pages\user\orders" />
-      <recent name="C:\SoftwareDevelopment\Server\htdocs\CatalogoOnLine\templates\admin" />
-      <recent name="C:\SoftwareDevelopment\Server\htdocs\CatalogoOnLine\pages\admin" />
-      <recent name="C:\SoftwareDevelopment\Server\htdocs\CatalogoOnLine\pages\user\actions" />
+      <recent name="C:\SoftwareDevelopment\Server\htdocs\CatalogoOnLine\templates\user\clients" />
+      <recent name="C:\SoftwareDevelopment\Server\htdocs\CatalogoOnLine\pages\user\clients" />
+      <recent name="C:\SoftwareDevelopment\Server\htdocs\CatalogoOnLine\templates\user\orders" />
+      <recent name="C:\SoftwareDevelopment\Server\htdocs\CatalogoOnLine\pages\user\quotation" />
+      <recent name="C:\SoftwareDevelopment\Server\htdocs\CatalogoOnLine\templates\user\structure" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\SoftwareDevelopment\Server\htdocs\CatalogoOnLine\templates\user\quotation" />
       <recent name="C:\SoftwareDevelopment\Server\htdocs\CatalogoOnLine\templates\user\products" />
       <recent name="C:\SoftwareDevelopment\Server\htdocs\CatalogoOnLine\pages\user\products" />
       <recent name="C:\SoftwareDevelopment\Server\htdocs\CatalogoOnLine\pages\admin" />
@@ -318,15 +479,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17651515" sideWeight="0.6709265" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19393939" sideWeight="0.6709265" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -404,106 +565,104 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pages/user/cart/list.php">
+    <entry file="file://$PROJECT_DIR$/pages/user/quotation/quotationByClient.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="32" selection-start="809" selection-end="809" vertical-scroll-proportion="0.39963832" />
+        <state line="31" column="109" selection-start="1027" selection-end="1027" vertical-scroll-proportion="0.030303031" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/order/summary.php">
+    <entry file="file://$PROJECT_DIR$/templates/user/quotation/quotationByClient.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="48" selection-start="1686" selection-end="1686" vertical-scroll-proportion="0.4848485" />
+        <state line="38" column="0" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.7630662" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/cart/add.php">
+    <entry file="file://$PROJECT_DIR$/templates/user/quotation/list.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="35" column="0" selection-start="729" selection-end="1388" vertical-scroll-proportion="0.5121951" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/products/listComplete.phtml">
+    <entry file="file://$PROJECT_DIR$/templates/user/structure/header.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="50" selection-start="648" selection-end="648" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/products/listByDN.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="37" selection-start="1701" selection-end="1903" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/products/listComplete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="37" selection-start="1418" selection-end="1418" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/data_Base.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="33" selection-start="303" selection-end="312" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="65" column="26" selection-start="3130" selection-end="3130" vertical-scroll-proportion="0.39198607" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/locale/it/LC_MESSAGES/default.po">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="492" column="0" selection-start="6604" selection-end="6974" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="149" column="13" selection-start="2639" selection-end="2639" vertical-scroll-proportion="0.87166667" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/locale/en/LC_MESSAGES/default.po">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="481" column="19" selection-start="6589" selection-end="6589" vertical-scroll-proportion="0.0">
+        <state line="139" column="77" selection-start="2429" selection-end="2429" vertical-scroll-proportion="0.028333334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
+    <entry file="file://$PROJECT_DIR$/pages/user/quotation/edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/cart/empty.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="6" selection-end="42" vertical-scroll-proportion="-0.65384614">
+        <state line="32" column="27" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.6219512">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/index.php">
+    <entry file="file://$PROJECT_DIR$/pages/user/quotation/delete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="31" selection-start="200" selection-end="200" vertical-scroll-proportion="0.2369338">
+        <state line="13" column="22" selection-start="328" selection-end="328" vertical-scroll-proportion="0.20731707">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Cart.php">
+    <entry file="file://$PROJECT_DIR$/pages/user/clients/prepareUpdate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="26" selection-start="1589" selection-end="1589" vertical-scroll-proportion="0.7108014">
+        <state line="6" column="45" selection-start="188" selection-end="188" vertical-scroll-proportion="-3.9230769">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/actions/index.php">
+    <entry file="file://$PROJECT_DIR$/pages/user/clients/delete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="1" selection-start="342" selection-end="342" vertical-scroll-proportion="0.3554007">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/PrintOrder.php">
+    <entry file="file://$PROJECT_DIR$/pages/user/clients/getCom.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="278" column="20" selection-start="10892" selection-end="10892" vertical-scroll-proportion="-181.76923">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/order/confirm.php">
+    <entry file="file://$PROJECT_DIR$/pages/user/clients/getProv.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="14" selection-start="4064" selection-end="4064" vertical-scroll-proportion="0.6445993">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/user/clients/list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="11" selection-start="345" selection-end="345" vertical-scroll-proportion="-4.8076925">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/user/clients/show.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="45" selection-start="188" selection-end="188" vertical-scroll-proportion="-3.9230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/clients/show.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="16" selection-start="919" selection-end="919" vertical-scroll-proportion="-17.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/clients/list.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="29" selection-start="331" selection-end="331" vertical-scroll-proportion="0.3074141">
           <folding />
         </state>
       </provider>

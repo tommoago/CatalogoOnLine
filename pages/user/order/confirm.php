@@ -1,5 +1,4 @@
 <?php
-
 include '../../../classes/Cart.php';
 include '../../../conf/config.php';
 include '../../../classes/Session.php';
@@ -15,12 +14,12 @@ if (!isset($_SESSION['user'])) {
     header('location:../../user/login.php?order=yes&message=' . $message);
     exit();
 }
+$id = $cart->id;
 $db = new data_base();
 $DBH = $db->connect();
 $stmt3 = $DBH->prepare('SELECT MAX(ide) FROM orders  WHERE customers_id = :id');
 $stmt3->execute(array('id' => $_SESSION['user']['id']));
 $lastide = $stmt3->fetch();
-print_r($cart->ide);
 if ($cart->ide) {
     $ide = $cart->ide;
 } else {
@@ -52,7 +51,13 @@ if (!isset($cart->id)) {
 
         $cart->emptyCart();
 
-        header('location:../../user/orders/list.php?message=' . $message);
+        if ($quotation == 0) {
+            $message = gettext('ord.conf.usr');
+            header('location:../../user/orders/list.php?message=' . $message);
+        } else {
+            $message = gettext('prev.conf.usr');
+            header('location:../../user/quotation/list.php?message=' . $message);
+        }
     } catch (PDOException $e) {
         echo 'ERROR: ' . $e->getMessage();
     }
@@ -65,11 +70,16 @@ if (!isset($cart->id)) {
          confirmed = :confirmed, quotation = :quotation, ide = :ide WHERE id = :id');
         $stmt->execute($data);
         $ord_id = $DBH->lastInsertId();
-        $message = gettext('ord.conf.usr');
 
         $cart->emptyCart();
 
-         header('location:../../user/orders/list.php?message=' . $message);
+        if ($quotation == 0) {
+            $message = gettext('ord.conf.usr');
+            header('location:../../user/orders/list.php?message=' . $message);
+        } else {
+            $message = gettext('prev.conf.usr');
+            header('location:../../user/quotation/list.php?message=' . $message);
+        }
     } catch (PDOException $e) {
         echo 'ERROR: ' . $e->getMessage();
     }
@@ -80,38 +90,55 @@ if (!isset($cart->id)) {
 
 
 //faccio questo per via di un conflitto con la clase printorder
-session_start();
 // I18N support information here
-$language =  isset($_SESSION['lang'])? $_SESSION['lang']: 'it';
-putenv('LANG='.$language);
+$language = isset($_SESSION['lang']) ? $_SESSION['lang'] : 'it';
+putenv('LANG=' . $language);
 setlocale(LC_ALL, $language);
 
 // Set the text domain as 'default'
 $domain = 'default';
-bindtextdomain($domain, $_SERVER["DOCUMENT_ROOT"] .'/catalogoonline/locale');
+bindtextdomain($domain, $_SERVER["DOCUMENT_ROOT"] . '/catalogoonline/locale');
 textdomain($domain);
 include '../../../classes/PrintOrder.php';
 require_once '../../../vendor/phpmailer/phpmailer/class.phpmailer.php';
-$session = new Session();
-$mail = new PHPMailer();
-$pdf = new PrintOrder($ord_id);
+$mail = new PHPMailer(true);
+$mail->SMTPDebug = true;
+$pdf = new PrintOrder($id);
+$pdf->deletePDF();
+if (file_exists($pdf->getPath())) {
+    unlink($pdf->getPath());
+}
 
 //crea pdf
 $path = $pdf->createPDF('order_details');
 $pdf->savePDF($path, 'order_details');
 $customer = $pdf->getCustomer();
 $order = $pdf->getOrder();
-
+try {
 //manda mail con il pdf, non la fattura TO DO : aggiunge nome ditta!
-$mail->AddReplyTo('azienda.catalogo@gmail.com', 'prova CatalogoOnLine');
-$mail->SetFrom('azienda.catalogo@gmail.com', 'prova CatalogoOnLine');
-$address = $customer['email'];
-$mail->AddAddress($address, $customer['name']);
-$mail->Subject = gettext('ord').' '.$order['id'].' '.gettext('conf');
-$mail->MsgHTML(gettext('ord.mail.body').' '.$order['id']);
-$mail->AddAttachment($path);      // attachment
-$mail->Send();
+    $mail->AddReplyTo($pdf->queryCompany()['email'], 'prova CatalogoOnLine');
+    $mail->SetFrom($pdf->queryCompany()['email'], 'prova CatalogoOnLine');
+    $address = $customer['mail'];
+    $mail->AddAddress($address, $customer['name']);
+    $mail->Subject = gettext('ord') . ' ' . $order['id'] . ' ' . gettext('conf');
+    if ($quotation == 1) {
+        $mail->MsgHTML(gettext('ord.mail.body.prev') . ' ' . $order['id']);
+    } else {
+        $mail->MsgHTML(gettext('ord.mail.body') . ' ' . $order['id']);
+    }
 
+
+    $mail->AddAttachment($path); // attachment
+    $mail->Send();
+    if ($quotation == 0) {
+        $mail->addAddress($pdf->queryCompany()['email'], 'prova CatalogoOnLine');
+        $mail->Send();
+    }
+} catch (phpmailerException $e) {
+    echo $e->errorMessage(); //Pretty error messages from PHPMailer
+} catch (Exception $e) {
+    echo $e->getMessage(); //Boring error messages from anything else!
+}
 $_SESSION['client'] = null;
 
 

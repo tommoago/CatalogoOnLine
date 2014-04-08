@@ -4,7 +4,7 @@ include '../../../conf/twig.php';
 include '../../../classes/Session.php';
 $session = new Session();
 
-$template = $twig->loadTemplate('user/orders/list.phtml');
+$template = $twig->loadTemplate('user/orders/orderByClient.phtml');
 
 $result = array();
 $message = '';
@@ -14,13 +14,13 @@ if (isset($_GET['message'])) {
 $offset = isset($_GET['offset']) ? $_GET['offset'] : 0;
 $limit = 30;
 $numPages = 0;
-
+$client = $_GET['id'];
 try {
     $db = new data_Base();
     $DBH = $db->connect();
 
-    $stmt = $DBH->prepare('SELECT COUNT(*) FROM orders WHERE customers_id = :id AND confirmed = 1 AND quotation = 0');
-    $stmt->execute(array('id' => $_SESSION['user']['id']));
+    $stmt = $DBH->prepare('SELECT COUNT(*) FROM orders WHERE customers_id = :id AND confirmed = 1 AND quotation = 0 AND clients_id = :id_client');
+    $stmt->execute(array('id' => $_SESSION['user']['id'], 'id_client' => $client));
     $totProd = $stmt->fetch();
     $count = $totProd[0];
     $numPages += intval($count / $limit);
@@ -29,8 +29,8 @@ try {
     }
     if ($offset != 0) $offset *= $limit;
 
-    $stmt2 = $DBH->prepare('SELECT * FROM orders WHERE customers_id = :id AND confirmed = 1 AND quotation = 0 LIMIT ' . $offset . ', ' . $limit);
-    $stmt2->execute(array('id' => $_SESSION['user']['id']));
+    $stmt2 = $DBH->prepare('SELECT * FROM orders WHERE customers_id = :id AND confirmed = 1 AND quotation = 0 AND clients_id = :id_client LIMIT ' . $offset . ', ' . $limit);
+    $stmt2->execute(array('id' => $_SESSION['user']['id'], 'id_client' => $client));
     $result = $stmt2->fetchAll();
 
     foreach ($result as &$row) {
